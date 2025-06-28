@@ -118,15 +118,14 @@ rich
 python-telegram-bot
 ```
 
-## 🤝 Let's Connect & Collaborate!
+## 🤝 Let's Connect For using :
 
-Whether you want to **start using V2Ray Tester Pro while it’s still free**, propose a **collaboration**, share your feedback, or simply say hi —  
-I’d love to hear from you!
+Whether you want to **start using V2Ray Tester Pro while it’s still free**, propose a **collaboration**, share your feedback
 
 <div align="center">
 
-<a href="https://github.com/Shayanthn/V2ray-Tester-Pro">
-  <img src="https://img.shields.io/badge/Get Started on GitHub-181717?logo=github&logoColor=white&style=for-the-badge" alt="GitHub Repository"/>
+<a href="https://www.linkedin.com/in/shayantaherkhani">
+  <img src="https://img.shields.io/badge/Connect on LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge" alt="LinkedIn"/>
 </a>
 &nbsp;
 <a href="mailto:shayan.taherkhani@studio.unibo.it">
@@ -138,6 +137,8 @@ I’d love to hear from you!
 </a>
 
 </div>
+
+---
 
 ---
 
