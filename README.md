@@ -101,7 +101,7 @@ In a sea of basic scripts, this tool stands out as a **complete, professional-gr
 ### Installation
 
 ```sh
-git clone git clone https://github.com/Shayanthn/V2ray-Tester-Pro.git
+git clone https://github.com/Shayanthn/V2ray-Tester-Pro.git
 cd V2ray-Tester-Pro
 pip install -r requirements.txt
 ````
