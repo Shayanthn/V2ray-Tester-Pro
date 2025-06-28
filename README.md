@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shaynthn/v2raytesterpro/main/one.gif" alt="V2Ray Tester Pro in Action" width="800"/>
+  <img src="https://raw.githubusercontent.com/Shayanthn/V2ray-Tester-Pro/main/one.gif" alt="V2Ray Tester Pro in Action" width="800"/>
 </div>
 
 <h1 align="center">V2Ray/Xray Config Tester Pro</h1>
@@ -101,8 +101,8 @@ In a sea of basic scripts, this tool stands out as a **complete, professional-gr
 ### Installation
 
 ```sh
-git clone https://github.com/shaynthn/v2raytesterpro.git
-cd v2raytesterpro
+git clone git clone https://github.com/Shayanthn/V2ray-Tester-Pro.git
+cd V2ray-Tester-Pro
 pip install -r requirements.txt
 ````
 
