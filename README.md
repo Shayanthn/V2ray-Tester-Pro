@@ -1,123 +1,133 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/shaynthn/v2raytesterpro/main/one.gif" alt="V2Ray Tester Pro in Action" width="800"/>
+</div>
 
-\<div align="center"\>
-\<img src="[https://raw.githubusercontent.com/shaynthn/v2raytesterpro/main/one.gif](https://www.google.com/search?q=https://raw.githubusercontent.com/shaynthn/v2raytesterpro/main/one.gif)" alt="V2Ray Tester Pro in Action" width="800"/\>
-\</div\>
+<h1 align="center">V2Ray/Xray Config Tester Pro</h1>
 
-\<h1 align="center"\>V2Ray/Xray Config Tester Pro\</h1\>
+<p align="center">
+  The ultimate enterprise-grade toolkit for discovering, testing, and managing V2Ray/Xray configurations.<br>
+  <strong>Control it your way: via a rich GUI, a powerful CLI, or a fully integrated Telegram Bot.</strong>
+</p>
 
-\<p align="center"\>
-An advanced, enterprise-grade tool for discovering, testing, and managing V2Ray/Xray configurations with a rich GUI and powerful CLI.
-\</p\>
+<p align="center">
+  <a href="https://github.com/shaynthn/v2raytesterpro/releases">
+    <img alt="Version" src="https://img.shields.io/badge/Version-4.0.0-blue?style=for-the-badge">
+  </a>
+  <a href="https://www.python.org/downloads/">
+    <img alt="Python" src="https://img.shields.io/badge/Python-3.8+-green?style=for-the-badge">
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge">
+  </a>
+  <img alt="Platform" src="https://img.shields.io/badge/Platform-Windows%20|%20Linux-lightgrey?style=for-the-badge">
+</p>
 
-\<p align="center"\>
-\<img src="[https://img.shields.io/badge/Version-4.0.0-blue.svg?style=for-the-badge](https://www.google.com/search?q=https://img.shields.io/badge/Version-4.0.0-blue.svg%3Fstyle%3Dfor-the-badge)" alt="Version"\>
-\<img src="[https://img.shields.io/badge/Python-3.8+-green.svg?style=for-the-badge](https://www.google.com/search?q=https://img.shields.io/badge/Python-3.8%2B-green.svg%3Fstyle%3Dfor-the-badge)" alt="Python Version"\>
-\<img src="[https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge](https://www.google.com/search?q=https://img.shields.io/badge/License-MIT-orange.svg%3Fstyle%3Dfor-the-badge)" alt="License"\>
-\<img src="[https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey.svg?style=for-the-badge](https://www.google.com/search?q=https://img.shields.io/badge/Platform-Windows%2520%257C%2520Linux-lightgrey.svg%3Fstyle%3Dfor-the-badge)" alt="Platform"\>
-\</p\>
+<p align="center">
+  <a href="#-why-choose-v2ray-tester-pro"><strong>Why Choose Us?</strong></a> ·
+  <a href="#-three-interfaces-one-powerful-core"><strong>3-in-1 Control</strong></a> ·
+  <a href="#-key-features"><strong>Features</strong></a> ·
+  <a href="#-built-with"><strong>Tech Stack</strong></a> ·
+  <a href="#-getting-started"><strong>Get Started</strong></a> ·
+  <a href="#-lets-connect"><strong>Contact</strong></a>
+</p>
 
-\<p align="center"\>
-\<a href="\#-about-the-project"\>\<strong\>About\</strong\>\</a\> ·
-\<a href="\#-key-features"\>\<strong\>Features\</strong\>\</a\> ·
-\<a href="\#-getting-started"\>\<strong\>Get Started\</strong\>\</a\> ·
-\<a href="\#-how-to-run"\>\<strong\>Usage\</strong\>\</a\> ·
-\<a href="\#-lets-connect"\>\<strong\>Contact\</strong\>\</a\>
-\</p\>
+---
 
------
+## 🤔 Why Choose V2Ray Tester Pro?
 
-## 📖 About The Project
+In a sea of basic scripts, this tool stands out as a **complete, professional-grade solution** designed for performance, control, and efficiency.
 
-This isn't just another config tester. It's a comprehensive, multi-protocol, and high-performance solution built for power users and developers. It automates the entire lifecycle of V2Ray/Xray configurations: from discovering sources and fetching thousands of configs to running detailed performance benchmarks and exporting the best ones. With both a sleek GUI and a feature-rich CLI, it adapts to your workflow.
+| 💡 **Advantage**           | **Description**                                                                                                                                                         |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ✅ **Unmatched Control**   | Use the feature-rich GUI, automate via CLI, or manage on the go with Telegram Bot.                                                                                      |
+| 🚀 **Superior Performance**| Built on **asyncio**, it runs hundreds of tests concurrently, finding working configs faster than any other tool.                                                      |
+| ⏱️ **Save Hours of Time** | Automates discovery, fetching, decoding, validation, and benchmarking—all in one click.                                                                                |
+| 📊 **Real-World Benchmarks** | Get actual **download/upload speeds, latency, jitter**—not just pings.                                                                                                  |
+| 🔔 **Stay Updated**        | Integrated **Telegram Bot** notifies you with the best results instantly.                                                                                              |
+| 🔒 **Secure and Reliable** | Automatically checks for **blacklisted IPs/domains and malicious payloads** to keep you safe.                                                                         |
 
-Developed with an enterprise-level architecture, it features **adaptive testing**, **Telegram bot integration**, and **advanced security validation** to ensure you always have the fastest and most reliable connections.
+---
 
-\<br\>
+## 🕹️ Three Interfaces, One Powerful Core
+
+### 🖥️ Graphical User Interface (GUI)
+- Built with **PyQt6**—modern and intuitive
+- **Live progress**, sortable tables, and rich data views
+- Export and manage configs visually
+
+### ⌨️ Command-Line Interface (CLI)
+- Beautiful **Rich-powered dashboards**
+- Scriptable and automation-friendly
+- Runs lightweight on any terminal
+
+### 🤖 Telegram Bot
+- Remote control from any device
+- Instant notifications with top configs
+- Simple commands to start/stop/check
+
+---
 
 ## ✨ Key Features
 
-  - **🛡️ Multi-Protocol Support:** Natively handles `VMess`, `VLESS`, `Trojan`, `Shadowsocks`, `TUIC`, and `Hysteria2`.
-  - **🚀 Advanced Performance Testing:** Measures real-world latency, jitter, and download/upload speeds (Mbps).
-  - **🤖 Cross-Platform GUI:** An intuitive and responsive graphical interface built with PyQt6, featuring advanced filtering, sorting, and context menus.
-  - **💻 Powerful CLI:** A rich command-line dashboard for automated environments and terminal lovers.
-  - **🌐 Smart Source Discovery:** Aggregates config sources and direct subscription links automatically.
-  - **⚙️ Adaptive Testing Engine:** Dynamically adjusts test batch sizes and sleep intervals based on success rates to maximize efficiency.
-  - **🔔 Telegram Integration:** Control the tester and receive results directly via a Telegram bot.
-  - **🔒 Enhanced Security:** Validates URIs and configs against blacklists and malicious payloads.
-  - **📄 Flexible Exporting:** Export working configs as plain text, Base64, or JSON.
-  - **🌍 Geo-IP Location:** Automatically detects and displays the server's country and flag.
+- 🛡️ **Multi-Protocol Support:** VMess, VLESS, Trojan, Shadowsocks, TUIC, Hysteria2
+- 🌐 **Smart Aggregation:** Auto-fetch from multiple subscription sources
+- ⚙️ **Adaptive Engine:** Adjusts concurrency based on network conditions
+- 🌍 **Geo-IP Detection:** Shows server country and flag
+- 📄 **Flexible Export:** Text, Base64 subscriptions, JSON
 
-\<br\>
+---
+
+## 🛠️ Built With
+
+| Category         | Technologies                                                                                                     |
+|------------------|------------------------------------------------------------------------------------------------------------------|
+| **Core Logic**   | ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Asyncio](https://img.shields.io/badge/Asyncio-4B0082) |
+| **GUI**          | ![PyQt6](https://img.shields.io/badge/PyQt6-41CD52?logo=qt&logoColor=white)                                       |
+| **CLI**          | ![Rich](https://img.shields.io/badge/Rich-FFD700)                                                               |
+| **Networking**   | ![Aiohttp](https://img.shields.io/badge/Aiohttp-2C5282) ![Requests](https://img.shields.io/badge/Requests-D94848)|
+| **Integration**  | ![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&logoColor=white)                          |
+
+---
 
 ## 🚀 Getting Started
 
-Getting the tester up and running is quick and easy.
-
 ### Prerequisites
 
-  - **Python 3.8+** and `pip` must be installed on your system.
-  - The **`xray.exe`** (for Windows) or `xray` (for Linux) core is **already included** in this repository, so you don't need to download it separately.
+- Python **3.8+**
+- `pip` installed
+
+> **Note:** `xray` binaries are **already included** in this repo.
 
 ### Installation
 
-1.  **Clone the repository:**
-
-    ```sh
-    git clone https://github.com/shaynthn/v2raytesterpro.git
-    cd v2raytesterpro
-    ```
-
-2.  **Install the required Python libraries:**
-    A `requirements.txt` file should be created containing the imported libraries.
-
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-    *The necessary libraries include `aiohttp`, `psutil`, `requests`, `python-dotenv`, `PyQt6`, `rich`, and `python-telegram-bot`.*
-
-\<br\>
-
-## ⚡ How to Run
-
-You can run the application in either GUI mode (default) or CLI mode.
-
-### 🖥️ GUI Mode
-
-For the full visual experience with all features at your fingertips, simply run the main script:
-
 ```sh
-python main.py
+git clone https://github.com/shaynthn/v2raytesterpro.git
+cd v2raytesterpro
+pip install -r requirements.txt
+````
+
+**requirements.txt** should contain:
+
+```
+aiohttp
+psutil
+requests
+python-dotenv
+PyQt6
+rich
+python-telegram-bot
 ```
 
-*(Assuming your main script is named `main.py`)*
+## 🤙 Let's Connect!
 
-### ⌨️ CLI Mode
+Feel free to get in touch:
 
-For automation, remote servers, or a terminal-based workflow, use the `--cli` flag:
+* 📩 **[GitHub](https://github.com/shaynthn)**
+* ✉️ **Email:** [shayan.taherkhani@studio.unibo.it](mailto:shayan.taherkhani@studio.unibo.it)
+* 🌐 **[Website](https://shayantaherkhani.ir)**
 
-```sh
-python main.py --cli
-```
+---
 
-\<br\>
-
-## 🤙 Let's Connect\!
-
-For now, I'm releasing this tool completely free for anyone with the expertise or interest to use and enjoy.
-
-If you want to get this version, have any questions, or just want to say hi, you can reach out to me in the following ways:
-
-  - **📩 Direct Message (DM)** me on GitHub: **[shayan.thn](https://www.google.com/search?q=https://github.com/shaynthn)**
-  - **✉️ Send an Email** to: **shayan.taherkhani@studio.unibo.it**
-
-I’m looking forward to your opinions and feedback. Also, if you need any help, just let me know.
-
-\<br\>
-
------
-
-\<div align="center"\>
-\<h3\>Developed by Shayan Taherkhani\</h3\>
-\<a href="[https://shayantaherkhani.ir](https://shayantaherkhani.ir)"\>\<strong\>Website\</strong\>\</a\> · \<a href="[https://github.com/shaynthn](https://www.google.com/search?q=https://github.com/shaynthn)"\>\<strong\>GitHub\</strong\>\</a\>
-\</div\>
+<div align="center">
+  <strong>Developed by Shayan Taherkhani</strong><br>
+  ❤️ Feel free to star and share!
