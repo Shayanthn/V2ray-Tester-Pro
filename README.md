@@ -128,12 +128,12 @@ Whether you want to **start using V2Ray Tester Pro while it’s still free**, pr
   <img src="https://img.shields.io/badge/Connect on LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge" alt="LinkedIn"/>
 </a>
 &nbsp;
-<a href="mailto:shayan.taherkhani@studio.unibo.it">
-  <img src="https://img.shields.io/badge/Email Me-0078D4?logo=gmail&logoColor=white&style=for-the-badge" alt="Email"/>
-</a>
-&nbsp;
 <a href="https://shayantaherkhani.ir">
   <img src="https://img.shields.io/badge/Visit My Website-006400?logo=firefox-browser&logoColor=white&style=for-the-badge" alt="Website"/>
+</a>
+&nbsp;
+<a href="mailto:shayan.taherkhani@studio.unibo.it">
+  <img src="https://img.shields.io/badge/Email Me-0078D4?logo=gmail&logoColor=white&style=for-the-badge" alt="Email"/>
 </a>
 
 </div>
