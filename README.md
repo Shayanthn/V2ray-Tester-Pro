@@ -6,7 +6,7 @@
 
 <p align="center">
   The ultimate enterprise-grade toolkit for discovering, testing, and managing V2Ray/Xray configurations.<br>
-  <strong>Control it your way: via a rich GUI, a powerful CLI, or a fully integrated Telegram Bot.</strong>
+  <strong>Control it your way: via a rich GUI, a powerful CLI, or a fully integrated Telegram Bot. (The code will be published in less than 7 days.)</strong>
 </p>
 
 <p align="center">
