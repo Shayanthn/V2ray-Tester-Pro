@@ -6,7 +6,7 @@
 
 <p align="center">
   The ultimate enterprise-grade toolkit for discovering, testing, and managing V2Ray/Xray configurations.<br>
-  <strong>Control it your way: via a rich GUI, a powerful CLI, or a fully integrated Telegram Bot. (The code will be published in less than 7 days.)</strong>
+  <strong>Control it your way: via a rich GUI, a powerful CLI, or a fully integrated Telegram Bot.</strong>
 </p>
 
 <p align="center">
@@ -88,36 +88,6 @@ In a sea of basic scripts, this tool stands out as a **complete, professional-gr
 | **Integration**  | ![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&logoColor=white)                          |
 
 ---
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Python **3.8+**
-- `pip` installed
-
-> **Note:** `xray` binaries are **already included** in this repo.
-
-### Installation
-
-```sh
-git clone https://github.com/Shayanthn/V2ray-Tester-Pro.git
-cd V2ray-Tester-Pro
-pip install -r requirements.txt
-````
-
-**requirements.txt** should contain:
-
-```
-aiohttp
-psutil
-requests
-python-dotenv
-PyQt6
-rich
-python-telegram-bot
-```
-
 ## 🤝 Let's Connect For using :
 
 Whether you want to **start using V2Ray Tester Pro while it’s still free**, propose a **collaboration**, share your feedback
