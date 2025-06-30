@@ -27,16 +27,16 @@ Welcome! This guide helps you easily use all features of the app and find the be
 
 Follow these two simple steps to start using the app:
 
-### 1. Place the Xray Core File (Important)
+### 1. Download release 
 
-- Put the `xray` or `xray.exe` file next to the app executable.
+-  the `xray` is on file . 
 - If you see **Xray core not found**, the file is missing or in the wrong location.
 
 > 💡 **Note:** The app will not work without this file.
 
 ### 2. Run the Application
 
-- Double-click the executable file (e.g., `V2RayTester.exe`).
+- Double-click the executable file (e.g., `V2RayTesterPro.exe`).
 - The main window will open.
 
 ---
