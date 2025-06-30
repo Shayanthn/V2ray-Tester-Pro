@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Shayanthn/V2ray-Tester-Pro/main/one.gif" alt="V2Ray Tester Pro" width="700"/>
+  <img src="https://github.com/Shayanthn/V2ray-Tester-Pro/blob/media/Guide.gif" alt="V2Ray Tester Pro" width="700"/>
   <br/><br/>
   <h1>V2Ray/Xray Tester Pro</h1>
   <h2>Complete User Guide</h2>
