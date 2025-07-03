@@ -15,15 +15,15 @@ Welcome to the engine room of the **V2Ray/Xray Enterprise Tester**. We're thrill
 
 ## Table of Contents
 
-  * [🚀 Project Philosophy](https://www.google.com/search?q=%23-project-philosophy)
-  * [🏗️ High-Level Architecture](https://www.google.com/search?q=%23%EF%B8%8F-high-level-architecture)
-  * [🧩 Core Components Deep Dive](https://www.google.com/search?q=%23-core-components-deep-dive)
-  * [🛠️ Setting Up Your Dev Environment](https://www.google.com/search?q=%23%EF%B8%8F-setting-up-your-dev-environment)
-  * [🔄 The Testing Workflow](https://www.google.com/search?q=%23-the-testing-workflow)
-  * [🧠 Key Concepts & Design Patterns](https://www.google.com/search?q=%23-key-concepts--design-patterns)
-  * [🤝 How to Contribute](https://www.google.com/search?q=%23-how-to-contribute)
-  * [🗺️ Future Roadmap](https://www.google.com/search?q=%23%EF%B8%8F-future-roadmap)
-  * [📞 Get In Touch](https://www.google.com/search?q=%23-get-in-touch)
+  * [🚀 Project Philosophy](https://github.com/Shayanthn/V2ray-Tester-Pro/tree/developer-mode?tab=readme-ov-file#-project-philosophy)
+  * [🏗️ High-Level Architecture](https://github.com/Shayanthn/V2ray-Tester-Pro/tree/developer-mode?tab=readme-ov-file#%EF%B8%8F-high-level-architecture)
+  * [🧩 Core Components Deep Dive](https://github.com/Shayanthn/V2ray-Tester-Pro/tree/developer-mode?tab=readme-ov-file#-core-components-deep-dive)
+  * [🛠️ Setting Up Your Dev Environment](https://github.com/Shayanthn/V2ray-Tester-Pro/tree/developer-mode?tab=readme-ov-file#%EF%B8%8F-setting-up-your-dev-environment)
+  * [🔄 The Testing Workflow](https://github.com/Shayanthn/V2ray-Tester-Pro/tree/developer-mode?tab=readme-ov-file#-the-testing-workflow)
+  * [🧠 Key Concepts & Design Patterns](https://github.com/Shayanthn/V2ray-Tester-Pro/tree/developer-mode?tab=readme-ov-file#-key-concepts--design-patterns)
+  * [🤝 How to Contribute](https://github.com/Shayanthn/V2ray-Tester-Pro/tree/developer-mode?tab=readme-ov-file#-how-to-contribute)
+  * [🗺️ Future Roadmap](https://github.com/Shayanthn/V2ray-Tester-Pro/tree/developer-mode?tab=readme-ov-file#%EF%B8%8F-future-roadmap)
+  * [📞 Get In Touch](https://github.com/Shayanthn/V2ray-Tester-Pro/tree/developer-mode?tab=readme-ov-file#-get-in-touch)
 
 -----
 
