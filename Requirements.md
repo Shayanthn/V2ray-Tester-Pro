@@ -19,7 +19,6 @@ rich
 python-telegram-bot
 ```
 
-\<br\>
 
 ### ۲. نصب یکجای نیازمندی‌ها
 
@@ -29,7 +28,6 @@ python-telegram-bot
 pip install -r requirements.txt
 ```
 
-\<br\>
 
 ### معرفی کتابخانه‌ها
 
