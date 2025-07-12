@@ -1,4 +1,4 @@
-# 🚀 V2Ray Configuration Links by Shayan 🚀
+# 🚀 V2Ray Free Configuration Links  🚀
 
 Welcome to the ultimate collection of **raw V2Ray configuration links**\! 🎉 This repository serves as a centralized hub for frequently updated and readily usable V2Ray configurations sourced from various active GitHub projects. Whether you're looking for general subscription links, protocol-specific configs, or even country-specific options, you'll find them here.
 
