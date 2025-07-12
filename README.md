@@ -1,117 +1,257 @@
-<div align="center">
-  <img src="https://github.com/Shayanthn/V2ray-Tester-Pro/blob/media/one.gif" alt="V2Ray Tester Pro in Action" width="800"/>
-</div>
+Alright, here's a professional and stylish README for your GitHub repository, complete with emojis and modern Markdown features. This README is designed to be engaging and easy to understand, providing a great overview of the V2Ray configuration links.
 
-<h1 align="center">V2Ray/Xray Config Tester Pro</h1>
+-----
 
-<p align="center">
-  The ultimate enterprise-grade toolkit for discovering, testing, and managing V2Ray/Xray configurations.<br>
-  <strong>Control it your way: via a rich GUI, a powerful CLI, or a fully integrated Telegram Bot.</strong>
-</p>
+# 🚀 V2Ray Configuration Links by Shayan 🚀
 
-<p align="center">
-  <a href="https://github.com/shaynthn/v2raytesterpro/releases">
-    <img alt="Version" src="https://img.shields.io/badge/Version-4.0.0-blue?style=for-the-badge">
-  </a>
-  <a href="https://www.python.org/downloads/">
-    <img alt="Python" src="https://img.shields.io/badge/Python-3.8+-green?style=for-the-badge">
-  </a>
-  <a href="https://opensource.org/licenses/MIT">
-    <img alt="License" src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge">
-  </a>
-  <img alt="Platform" src="https://img.shields.io/badge/Platform-Windows%20|%20Linux-lightgrey?style=for-the-badge">
-</p>
+Welcome to the ultimate collection of **raw V2Ray configuration links**\! 🎉 This repository serves as a centralized hub for frequently updated and readily usable V2Ray configurations sourced from various active GitHub projects. Whether you're looking for general subscription links, protocol-specific configs, or even country-specific options, you'll find them here.
 
-<p align="center">
-  <a href="#-why-choose-v2ray-tester-pro"><strong>Why Choose Us?</strong></a> ·
-  <a href="#-three-interfaces-one-powerful-core"><strong>3-in-1 Control</strong></a> ·
-  <a href="#-key-features"><strong>Features</strong></a> ·
-  <a href="#-built-with"><strong>Tech Stack</strong></a> ·
-  <a href="#-getting-started"><strong>Get Started</strong></a> ·
-  <a href="#-lets-connect"><strong>Contact</strong></a>
-</p>
+-----
 
----
+## 🌟 Why This Repository?
 
-## 🤔 Why Choose V2Ray Tester Pro?
+In the ever-evolving landscape of internet access, staying connected with reliable V2Ray configurations can be a challenge. This project aims to simplify that by:
 
-In a sea of basic scripts, this tool stands out as a **complete, professional-grade solution** designed for performance, control, and efficiency.
+  * **Centralizing Access:** No more searching through countless repositories. Find many useful links in one place.
+  * **Providing Raw Links:** Direct links that you can easily copy and paste into your V2Ray clients.
+  * **Highlighting Active Sources:** Focus on repositories that are frequently updated, ensuring fresher configurations.
 
-| 💡 **Advantage**           | **Description**                                                                                                                                                         |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ✅ **Unmatched Control**   | Use the feature-rich GUI, automate via CLI, or manage on the go with Telegram Bot.                                                                                      |
-| 🚀 **Superior Performance**| Built on **asyncio**, it runs hundreds of tests concurrently, finding working configs faster than any other tool.                                                      |
-| ⏱️ **Save Hours of Time** | Automates discovery, fetching, decoding, validation, and benchmarking—all in one click.                                                                                |
-| 📊 **Real-World Benchmarks** | Get actual **download/upload speeds, latency, jitter**—not just pings.                                                                                                  |
-| 🔔 **Stay Updated**        | Integrated **Telegram Bot** notifies you with the best results instantly.                                                                                              |
-| 🔒 **Secure and Reliable** | Automatically checks for **blacklisted IPs/domains and malicious payloads** to keep you safe.                                                                         |
+-----
 
----
+## 📚 Repository Overview & Links
 
-## 🕹️ Three Interfaces, One Powerful Core
+Below is a detailed breakdown of the featured GitHub repositories and their respective raw V2Ray configuration links. We've categorized them for your convenience.
 
-### 🖥️ Graphical User Interface (GUI)
-- Built with **PyQt6**—modern and intuitive
-- **Live progress**, sortable tables, and rich data views
-- Export and manage configs visually
+-----
 
-### ⌨️ Command-Line Interface (CLI)
-- Beautiful **Rich-powered dashboards**
-- Scriptable and automation-friendly
-- Runs lightweight on any terminal
+### 1\. M-Mashreghi/Free-V2ray-Collector
 
-### 🤖 Telegram Bot
-- Remote control from any device
-- Instant notifications with top configs
-- Simple commands to start/stop/check
+A comprehensive collection offering **shuffled subscription links**, and configurations sorted by **protocol** and **country**. This repository is a goldmine for diverse needs.
 
----
+#### 🔗 Raw Links:
 
-## ✨ Key Features
+**Subscription Links (Shuffled Configurations):**
 
-- 🛡️ **Multi-Protocol Support:** VMess, VLESS, Trojan, Shadowsocks, TUIC, Hysteria2
-- 🌐 **Smart Aggregation:** Auto-fetch from multiple subscription sources
-- ⚙️ **Adaptive Engine:** Adjusts concurrency based on network conditions
-- 🌍 **Geo-IP Detection:** Shows server country and flag
-- 📄 **Flexible Export:** Text, Base64 subscriptions, JSON
+```
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub1_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub2_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub3_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub4_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub5_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub6_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub7_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub8_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub9_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub10_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub11_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub12_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub13_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub14_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub15_shuffled.conf
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/shuffle/Sub16_shuffled.conf
+```
 
----
+**Configuration Files Split by Protocol:**
 
-## 🛠️ Built With
+```
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Splitted-By-Protocol/vmess.txt
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Splitted-By-Protocol/vless.txt
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Splitted-By-Protocol/trojan.txt
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Splitted-By-Protocol/ss.txt
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Splitted-By-Protocol/ssr.txt
+```
 
-| Category         | Technologies                                                                                                     |
-|------------------|------------------------------------------------------------------------------------------------------------------|
-| **Core Logic**   | ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Asyncio](https://img.shields.io/badge/Asyncio-4B0082) |
-| **GUI**          | ![PyQt6](https://img.shields.io/badge/PyQt6-41CD52?logo=qt&logoColor=white)                                       |
-| **CLI**          | ![Rich](https://img.shields.io/badge/Rich-FFD700)                                                               |
-| **Networking**   | ![Aiohttp](https://img.shields.io/badge/Aiohttp-2C5282) ![Requests](https://img.shields.io/badge/Requests-D94848)|
-| **Integration**  | ![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&logoColor=white)                          |
+**Configuration Files Split by Country:**
 
----
-## 🤝 Let's Connect For using :
+```
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_AU.txt  🇦🇺 Australia
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_CA.txt  🇨🇦 Canada
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_CN.txt  🇨🇳 China
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_DE.txt  🇩🇪 Germany
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_FI.txt  🇫🇮 Finland
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_FR.txt  🇫🇷 France
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_GB.txt  🇬🇧 United Kingdom
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_HK.txt  🇭🇰 Hong Kong
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_JP.txt  🇯🇵 Japan
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_NL.txt  🇳🇱 Netherlands
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_PL.txt  🇵🇱 Poland
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_SE.txt  🇸🇪 Sweden
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_SG.txt  🇸🇬 Singapore
+https://raw.githubusercontent.com/M-Mashreghi/Free-V2ray-Collector/main/Files/Config_by_country/server_US.txt  🇺🇸 United States
+```
 
-Whether you want to **start using V2Ray Tester Pro while it’s still free**, propose a **collaboration**, share your feedback
+-----
 
-<div align="center">
+### 2\. ebrasha/free-v2ray-public-list
 
-<a href="https://www.linkedin.com/in/shayantaherkhani">
-  <img src="https://img.shields.io/badge/Connect on LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge" alt="LinkedIn"/>
-</a>
-&nbsp;
-<a href="https://shayantaherkhani.ir">
-  <img src="https://img.shields.io/badge/Visit My Website-006400?logo=firefox-browser&logoColor=white&style=for-the-badge" alt="Website"/>
-</a>
-&nbsp;
-<a href="mailto:shayan.taherkhani@studio.unibo.it">
-  <img src="https://img.shields.io/badge/Email Me-0078D4?logo=gmail&logoColor=white&style=for-the-badge" alt="Email"/>
-</a>
+Known for its **simplicity** and **frequent updates**, this repository delivers a list of free and active V2Ray servers every **30 minutes**. A highly reliable source\! ⏱️
 
-</div>
+#### 🔗 Raw Links:
 
----
+**Main Configuration / Subscription Link:**
 
----
+```
+https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/V2Ray-Config-By-EbraSha.txt
+```
 
-<div align="center">
-  <strong>Developed by Shayan Taherkhani</strong><br>
-  ❤️ Feel free to star and share!
+**All Type Configuration Link:**
+
+```
+https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/V2Ray-Config-By-EbraSha-All-Type.txt
+```
+
+-----
+
+### 3\. ALIILAPRO/v2rayNG-Config
+
+This repository is dedicated to **V2rayNG configurations**, offering automatically validated and regularly updated links. Perfect for V2rayNG users\! ✨
+
+#### 🔗 Raw Links:
+
+**Subscription Link (for v2rayNG and SgerNet):**
+
+```
+https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt
+```
+
+**All Server Configurations (Direct Configs):**
+
+```
+https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/server.txt
+```
+
+-----
+
+### 4\. barry-far/V2ray-Config
+
+Get your free V2Ray configurations, updated incredibly frequently—every **12 minutes**\! This is a fantastic source for fresh and working links. ⚡
+
+#### 🔗 Raw Links:
+
+**Main Configuration Files:**
+
+```
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/configs.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/All_Config_base64_Sub.txt
+```
+
+**Subscription Links:**
+
+```
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub1.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub2.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub3.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub4.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub5.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub6.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub7.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub8.txt
+```
+
+**Configuration Files Split by Protocol:**
+
+```
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/trojan.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ss.txt
+https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ssr.txt
+```
+
+-----
+
+### 5\. Firmfox/Proxify
+
+An **automated tool** that diligently collects and updates a wide array of proxies and V2Ray configurations from various public sources. This repository is consistently maintained with working proxies. 🤖
+
+#### 🔗 Raw Links:
+
+**V2Ray Configuration Files (Mixed Subscriptions):**
+
+```
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-1.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-2.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-3.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-4.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-5.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-6.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-7.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-8.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-9.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-10.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-11.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-12.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-13.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-14.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-15.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-16.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-17.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-18.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-19.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/mixed/subscription-20.txt
+```
+
+**Configuration Files Split by Protocol:**
+
+```
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/seperated_by_protocol/vmess.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/seperated_by_protocol/vless.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/seperated_by_protocol/trojan.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/seperated_by_protocol/shadowsocks.txt
+https://raw.githubusercontent.com/Firmfox/proxify/main/v2ray_configs/seperated_by_protocol/other.txt
+```
+
+-----
+
+### 6\. miladtahanian/V2RayCFGDumper
+
+This repository provides a V2Ray configuration file that has been extracted from **Telegram Web**. It's a unique source for specific needs. 📑
+
+#### 🔗 Raw Link:
+
+**Main Configuration File:**
+
+```
+https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/config.txt
+```
+
+-----
+
+### 7\. Shaik360/v2ray-configs
+
+Offering free configurations for various internet circumvention tools, this repository primarily provides configurations as **zip files** within its [Releases section](https://github.com/Shaik360/v2ray-configs/releases). While not direct text-based raw links, these zip archives contain ready-to-use configurations. 📦
+
+#### 🔗 Download Links from Latest Release (v3.0):
+
+**Latest Release Download Link (Zip File):**
+
+```
+https://github.com/Shaik360/v2ray-configs/releases/download/v3.0/v2ray-configs.v3.0.zip
+```
+
+**Source Code Links (for developers):**
+
+```
+https://github.com/Shaik360/v2ray-configs/archive/v3.0.zip
+https://github.com/Shaik360/v2ray-configs/archive/v3.0.tar.gz
+```
+
+-----
+
+## ⚠️ Disclaimer
+
+The availability and functionality of these configurations may vary. These links are provided for informational purposes, and users should exercise caution and ensure compliance with their local regulations when using them. We do not host or directly provide these configurations; we merely list publicly available links.
+
+-----
+
+## 🤝 Contribution & Support
+
+This project is maintained by **Shayan**. Your feedback and suggestions are always welcome\!
+
+  * **GitHub:** [shayanthn](https://www.google.com/search?q=https://github.com/shayanthn)
+  * **Email:** shayanthn78@gmail.com
+  * **Website:** [Shayantaherkhani.ir](http://shayantaherkhani.ir/)
+
+-----
+
+Enjoy your seamless internet experience\! ✨
