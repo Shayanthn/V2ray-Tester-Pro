@@ -94,7 +94,7 @@ Whether you want to **start using V2Ray Tester Pro while it’s still free**, pr
 
 <div align="center">
 
-<a href="https://www.linkedin.com/in/shayantaherkhani">
+<a href="https://www.linkedin.com/in/shayantaherkhani78">
   <img src="https://img.shields.io/badge/Connect on LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge" alt="LinkedIn"/>
 </a>
 &nbsp;
