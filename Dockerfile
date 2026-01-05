@@ -12,32 +12,30 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first (for better caching)
-COPY Requirements.md .
-RUN pip install --no-cache-dir \
-    aiohttp \
-    psutil \
-    requests \
-    python-dotenv \
-    rich \
-    python-telegram-bot
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Download latest Xray core
+# Download Xray core with fallback and validation
 RUN XRAY_VERSION=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/') && \
-    wget https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip && \
-    unzip Xray-linux-64.zip && \
+    if [ -z "$XRAY_VERSION" ]; then \
+        echo "Failed to fetch latest Xray version. Using fallback."; \
+        XRAY_VERSION="v1.8.4"; \
+    fi && \
+    echo "Downloading Xray Core $XRAY_VERSION..." && \
+    wget -q "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip && \
+    unzip -o Xray-linux-64.zip && \
     chmod +x xray && \
     rm Xray-linux-64.zip
 
 # Copy application files
-COPY ["v2raytesterpro source.py", "./v2raytesterpro.py"]
-COPY subscription_manager.py .
-COPY .env* ./ || true
+COPY main.py .
+COPY core/ ./core/
+COPY config/ ./config/
+COPY utils/ ./utils/
+COPY gui/ ./gui/
 
 # Create output directories
-RUN mkdir -p /app/subscriptions /app/logs
-
-# Expose ports (if web dashboard is added)
-EXPOSE 5000
+RUN mkdir -p /app/subscriptions /app/logs /app/badges
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
@@ -48,5 +46,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import os; exit(0 if os.path.exists('/app/subscriptions/subscription.txt') else 1)"
 
 # Run in CLI mode by default
-ENTRYPOINT ["python", "v2raytesterpro.py"]
-CMD ["--cli", "--max-configs", "300", "--output-dir", "/app/subscriptions"]
+CMD ["python", "main.py", "--cli", "--max-configs", "500"]
