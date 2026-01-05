@@ -51,6 +51,7 @@ def main():
         adaptive_batch_min=config.ADAPTIVE_BATCH_MIN,
         adaptive_sleep_max=config.ADAPTIVE_SLEEP_MAX
     )
+    app_state.max_configs = args.max_configs
     
     xray_manager = XrayManager(
         xray_path=config.XRAY_PATH,
