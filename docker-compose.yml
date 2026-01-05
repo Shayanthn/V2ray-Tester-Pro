@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  v2ray-tester:
+    build: .
+    container_name: v2ray-tester-pro
+    restart: unless-stopped
+    
+    volumes:
+      # Mount subscriptions directory
+      - ./subscriptions:/app/subscriptions
+      # Mount logs directory
+      - ./logs:/app/logs
+      # Mount .env file
+      - ./.env:/app/.env:ro
+    
+    environment:
+      - TZ=Asia/Tehran
+      - PYTHONUNBUFFERED=1
+      - TEST_TIMEOUT=10
+      - MAX_CONCURRENT_TESTS=50
+    
+    # Run every 2 hours using cron-like schedule
+    command: >
+      sh -c "
+        while true; do
+          python v2raytesterpro.py --cli --max-configs 300 --output-dir /app/subscriptions;
+          echo '✅ Test completed. Sleeping for 2 hours...';
+          sleep 7200;
+        done
+      "
+    
+    networks:
+      - v2ray-network
+
+  # Optional: Web dashboard (for future use)
+  # web-dashboard:
+  #   build: .
+  #   container_name: v2ray-web-dashboard
+  #   restart: unless-stopped
+  #   ports:
+  #     - "5000:5000"
+  #   volumes:
+  #     - ./subscriptions:/app/subscriptions:ro
+  #   command: python web_dashboard.py
+  #   networks:
+  #     - v2ray-network
+  #   depends_on:
+  #     - v2ray-tester
+
+networks:
+  v2ray-network:
+    driver: bridge
+
+volumes:
+  subscriptions:
+  logs:

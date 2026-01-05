@@ -43,11 +43,40 @@ Follow these two simple steps to start using the app:
 
 ## 🖥️ Main Window Overview
 
-### 🔘 Top Control Buttons
+The application now features a modern, dark-themed interface with a sidebar for easy navigation.
 
-- 🚀 **Start Test:** Start testing configurations
-- 🛑 **Stop Test:** Stop testing
-- 📄 **Export Results:** Save test results
+### 📑 Sidebar Navigation
+
+- **Dashboard**: View real-time statistics (Total Configs, Working Configs, Avg Ping).
+- **Scan & Test**: The main control center to start/stop scans and view logs.
+- **Results Table**: A detailed list of all working configurations found.
+
+### 📊 Dashboard
+
+The dashboard provides a quick summary of your current session:
+- **Total Configs**: Number of links fetched from subscriptions.
+- **Working**: Number of valid, working configurations found.
+- **Avg Ping**: The average latency of working servers.
+
+### 🔍 Scan & Test Page
+
+- **Start New Scan**: Begins the process of fetching and testing configurations.
+- **Stop Scanning**: Halts the current operation.
+- **Progress Bar**: Shows the completion percentage.
+- **Status Log**: Displays real-time actions (e.g., "Testing: vless://...").
+
+### 📝 Results Table
+
+Displays the successful configurations with details:
+- **Protocol**: (vmess, vless, trojan, etc.)
+- **Address**: Server IP or Domain.
+- **Ping**: Latency in milliseconds.
+- **Download/Upload**: Speed test results.
+- **Country**: Server location.
+
+**Right-Click Menu:**
+- **Copy Link**: Copy the configuration link to clipboard.
+- **Show QR Code**: Generate a QR code for mobile scanning.
 - 📊 **Statistics:** Show test statistics
 - ⚙️ **Settings:** Open settings
 
