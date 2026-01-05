@@ -32,16 +32,30 @@ jobs:
       
       - name: Download Xray Core
         run: |
+          # Get latest version tag
           XRAY_VERSION=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
-          wget https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip
-          unzip Xray-linux-64.zip
+          if [ -z "$XRAY_VERSION" ]; then
+            echo "Failed to fetch latest Xray version. Using fallback."
+            XRAY_VERSION="v1.8.4"
+          fi
+          echo "Downloading Xray Core $XRAY_VERSION..."
+          wget -q "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip
+          
+          # Check if file is valid zip
+          if ! unzip -t Xray-linux-64.zip; then
+            echo "Downloaded file is not a valid zip. Content:"
+            cat Xray-linux-64.zip
+            exit 1
+          fi
+          
+          unzip -o Xray-linux-64.zip
           chmod +x xray
           ./xray version
       
       - name: Run V2Ray Tester (CLI Mode)
         timeout-minutes: 120
         run: |
-          python "v2raytesterpro source.py" --cli --max-configs 300 --output-dir ./subscriptions
+          python main.py --cli --max-configs 500
         env:
           PYTHONUNBUFFERED: 1
       

@@ -89,6 +89,12 @@ class CLIRunner:
                 if self.app_state.results:
                     print("Phase 4: Generating subscription files...")
                     self.subscription_manager.generate_all_formats(self.app_state.results)
+                    
+                    # Save raw results for statistics
+                    import json
+                    with open('results.json', 'w', encoding='utf-8') as f:
+                        json.dump(self.app_state.results, f, indent=2, ensure_ascii=False)
+                        
                     print(f"Success! Generated subscriptions in '{self.subscription_manager.output_dir}'")
                 
                 final_msg = (f"Test complete! Found {len(self.app_state.results)} working configs "
