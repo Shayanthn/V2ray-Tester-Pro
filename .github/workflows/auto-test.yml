@@ -32,19 +32,35 @@ jobs:
       
       - name: Download Xray Core
         run: |
-          # Get latest version tag
-          XRAY_VERSION=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+          # Get latest version tag safely with better error handling
+          XRAY_VERSION=$(curl -fsSL https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/' || echo "")
+          
           if [ -z "$XRAY_VERSION" ]; then
             echo "Failed to fetch latest Xray version. Using fallback."
             XRAY_VERSION="v1.8.4"
           fi
+          
           echo "Downloading Xray Core $XRAY_VERSION..."
-          wget -q "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip
+          
+          # Download with retry and better error handling
+          if ! wget -q --show-progress --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip; then
+            echo "Failed to download Xray Core. Retrying with fallback version..."
+            XRAY_VERSION="v1.8.4"
+            wget -q --show-progress --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip
+          fi
+          
+          # Check if file exists and is non-empty
+          if [ ! -s Xray-linux-64.zip ]; then
+            echo "Downloaded file is empty or does not exist."
+            ls -lh Xray-linux-64.zip || echo "File not found"
+            exit 1
+          fi
           
           # Check if file is valid zip
           if ! unzip -t Xray-linux-64.zip; then
-            echo "Downloaded file is not a valid zip. Content:"
-            cat Xray-linux-64.zip
+            echo "Downloaded file is not a valid zip. File size: $(stat -f%z Xray-linux-64.zip 2>/dev/null || stat -c%s Xray-linux-64.zip)"
+            echo "First 500 bytes of file:"
+            head -c 500 Xray-linux-64.zip
             exit 1
           fi
           
@@ -53,9 +69,9 @@ jobs:
           ./xray version
       
       - name: Run V2Ray Tester (CLI Mode)
-        timeout-minutes: 120
+        timeout-minutes: 90
         run: |
-          python main.py --cli --max-configs 500
+          python main.py --cli --max-configs 200
         env:
           PYTHONUNBUFFERED: 1
       

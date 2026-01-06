@@ -45,7 +45,12 @@ class CLIRunner:
         
         self.config_queue = asyncio.Queue()
         self.unique_uris: Set[str] = set()
-        self.semaphore = None 
+        self.semaphore = None
+        
+        # Blacklist mechanism for repeatedly failing configs
+        self.config_blacklist: Set[str] = set()
+        self.config_failure_count: dict = {}  # URI -> failure count
+        self.max_retries = 3  # Max failures before blacklisting 
 
     def run(self):
         """Entry point for CLI execution."""
@@ -94,12 +99,21 @@ class CLIRunner:
                     import json
                     with open('results.json', 'w', encoding='utf-8') as f:
                         json.dump(self.app_state.results, f, indent=2, ensure_ascii=False)
+                    
+                    # Save blacklist for debugging
+                    if self.config_blacklist:
+                        with open('blacklisted_configs.txt', 'w', encoding='utf-8') as f:
+                            f.write(f"# Blacklisted configs (failed {self.max_retries}+ times)\n")
+                            for uri in self.config_blacklist:
+                                f.write(f"{uri}\n")
+                        self.logger.info(f"Saved {len(self.config_blacklist)} blacklisted configs")
                         
                     print(f"Success! Generated subscriptions in '{self.subscription_manager.output_dir}'")
                 
                 final_msg = (f"Test complete! Found {len(self.app_state.results)} working configs "
-                             f"({self.app_state.failed} failed).")
+                             f"({self.app_state.failed} failed, {len(self.config_blacklist)} blacklisted).")
                 print(final_msg)
+                self.logger.info(final_msg)
             
         except Exception as e:
             self.logger.critical(f"Test pipeline failed: {e}", exc_info=True)
@@ -167,19 +181,45 @@ class CLIRunner:
         port = 10800 + worker_id
         success_count = 0
         total_count = 0
+        consecutive_failures = 0
         
         while True:
             try:
                 uri = await self.config_queue.get()
                 
+                # Check if config is blacklisted
+                if uri in self.config_blacklist:
+                    self.logger.debug(f"Skipping blacklisted config: {uri[:50]}...")
+                    self.app_state.progress += 1
+                    self.app_state.failed += 1
+                    self.config_queue.task_done()
+                    continue
+                
                 async with self.semaphore:
-                    # Process the URI
-                    config_json = self.config_processor.build_config_from_uri(uri, port)
-                    if config_json:
-                        # Run async test
-                        test_result = await self.test_runner.run_full_test(
-                            config_json, port, self.session
-                        )
+                    try:
+                        # Process the URI
+                        config_json = self.config_processor.build_config_from_uri(uri, port)
+                        if not config_json:
+                            self.logger.warning(f"Failed to build config from URI: {uri[:50]}...")
+                            self.app_state.failed += 1
+                            self.app_state.progress += 1
+                            self.config_queue.task_done()
+                            continue
+                        
+                        # Run async test with timeout
+                        try:
+                            test_result = await asyncio.wait_for(
+                                self.test_runner.run_full_test(config_json, port, self.session),
+                                timeout=30  # 30 second timeout per config
+                            )
+                        except asyncio.TimeoutError:
+                            self.logger.warning(f"Test timeout for config on port {port}")
+                            test_result = None
+                            # Track failure for potential blacklisting
+                            self.config_failure_count[uri] = self.config_failure_count.get(uri, 0) + 1
+                            if self.config_failure_count[uri] >= self.max_retries:
+                                self.config_blacklist.add(uri)
+                                self.logger.info(f"Blacklisted config after {self.max_retries} failures: {uri[:50]}...")
                         
                         total_count += 1
                         
@@ -193,11 +233,34 @@ class CLIRunner:
                             
                             self.app_state.found += 1
                             success_count += 1
+                            consecutive_failures = 0
                             self.app_state.results.append(test_result)
                             self.app_state.update_stats(test_result)
+                            
+                            # Reset failure count on success
+                            if uri in self.config_failure_count:
+                                del self.config_failure_count[uri]
                         else:
                             self.app_state.failed += 1
+                            consecutive_failures += 1
                             self.app_state.update_stats(None)
+                            
+                            # Track failure for potential blacklisting
+                            self.config_failure_count[uri] = self.config_failure_count.get(uri, 0) + 1
+                            if self.config_failure_count[uri] >= self.max_retries:
+                                self.config_blacklist.add(uri)
+                                self.logger.info(f"Blacklisted config after {self.max_retries} failures: {uri[:50]}...")
+                    
+                    except Exception as e:
+                        self.logger.error(f"Error processing config on port {port}: {e}")
+                        self.app_state.failed += 1
+                        consecutive_failures += 1
+                        
+                        # Track failure for potential blacklisting
+                        self.config_failure_count[uri] = self.config_failure_count.get(uri, 0) + 1
+                        if self.config_failure_count[uri] >= self.max_retries:
+                            self.config_blacklist.add(uri)
+                            self.logger.info(f"Blacklisted config after {self.max_retries} failures: {uri[:50]}...")
                 
                 # Update progress
                 self.app_state.progress += 1
@@ -212,10 +275,16 @@ class CLIRunner:
                     if self.app_state.adaptive_sleep > 0:
                         await asyncio.sleep(self.app_state.adaptive_sleep)
                 
+                # Add small delay if seeing too many consecutive failures
+                if consecutive_failures >= 5:
+                    await asyncio.sleep(1)
+                    consecutive_failures = 0
+                
                 self.config_queue.task_done()
                 
             except asyncio.CancelledError:
                 break
             except Exception as e:
-                self.logger.error(f"Worker {worker_id} error: {e}")
+                self.logger.error(f"Worker {worker_id} critical error: {e}", exc_info=True)
+                self.app_state.progress += 1
                 self.config_queue.task_done()

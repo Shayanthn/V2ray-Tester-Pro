@@ -57,27 +57,41 @@ class XrayManager(ProxyCoreAdapter):
 
         try:
             # Use asyncio.create_subprocess_exec instead of subprocess.Popen
+            # Capture both stdout and stderr for better debugging
             process = await asyncio.create_subprocess_exec(
                 *cmd,
-                stdout=asyncio.subprocess.DEVNULL,
+                stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE,
                 startupinfo=startup_info
             )
             
             # Wait briefly to ensure it didn't crash immediately
             try:
-                await asyncio.wait_for(process.wait(), timeout=0.1)
+                await asyncio.wait_for(process.wait(), timeout=0.2)
                 # If we get here, the process exited immediately (likely error)
                 stderr_data = await process.stderr.read()
-                error_msg = stderr_data.decode('utf-8', errors='ignore')
-                self.logger.error(f"Xray process exited immediately for port {port}: {error_msg}")
+                stdout_data = await process.stdout.read()
+                error_msg = stderr_data.decode('utf-8', errors='ignore').strip()
+                stdout_msg = stdout_data.decode('utf-8', errors='ignore').strip()
+                
+                # Log detailed error information
+                self.logger.error(
+                    f"Xray process exited immediately for port {port}:\n"
+                    f"  Config: {config_path}\n"
+                    f"  Return code: {process.returncode}\n"
+                    f"  STDERR: {error_msg[:500]}\n"
+                    f"  STDOUT: {stdout_msg[:500]}"
+                )
                 return None
             except asyncio.TimeoutError:
                 # Process is still running, which is good
                 return process
                 
+        except FileNotFoundError:
+            self.logger.error(f"Xray executable not found at: {self.xray_path}")
+            return None
         except Exception as e:
-            self.logger.error(f"Failed to start Xray process: {e}")
+            self.logger.error(f"Failed to start Xray process for port {port}: {e}", exc_info=True)
             return None
 
     async def stop(self, process: asyncio.subprocess.Process) -> None:

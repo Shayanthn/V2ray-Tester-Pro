@@ -31,6 +31,7 @@
 1. Download the latest `V2Ray-Tester-Pro.exe` from the [Releases](https://github.com/yourusername/V2ray-Tester-Pro/releases) page.
 2. Ensure `xray.exe` and `geoip.dat` are in the same folder (or let the app download them).
 3. Run the application.
+   > **Note:** If you see a "Windows protected your PC" warning, click **More info** and then **Run anyway**. This happens because the app does not have a paid digital signature yet.
 
 ### Running from Source
 1. Clone the repository:

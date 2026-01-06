@@ -39,6 +39,8 @@ Follow these two simple steps to start using the app:
 - Double-click the executable file (e.g., `V2RayTesterPro.exe`).
 - The main window will open.
 
+> ⚠️ **SmartScreen Warning:** If Windows shows "Windows protected your PC", click **More info** → **Run anyway**. This is normal for unsigned open-source applications.
+
 ---
 
 ## 🖥️ Main Window Overview
