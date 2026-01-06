@@ -32,21 +32,38 @@ jobs:
       
       - name: Download Xray Core
         run: |
-          # Get latest version tag safely with better error handling
-          XRAY_VERSION=$(curl -fsSL https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/' || echo "")
+          # Fetch latest Xray version using Python (more robust)
+          python -c "
+          import requests
+          import os
+          import sys
           
-          if [ -z "$XRAY_VERSION" ]; then
-            echo "Failed to fetch latest Xray version. Using fallback."
-            XRAY_VERSION="v1.8.4"
-          fi
+          try:
+              print('Fetching latest Xray version tag...')
+              response = requests.get('https://api.github.com/repos/XTLS/Xray-core/releases/latest', timeout=10)
+              response.raise_for_status()
+              tag = response.json()['tag_name']
+              print(f'Latest version: {tag}')
+              with open('xray_version.txt', 'w') as f:
+                  f.write(tag)
+          except Exception as e:
+              print(f'Error fetching version: {e}')
+              # Fallback to a known stable version
+              default_ver = 'v1.8.23' 
+              print(f'Using fallback version: {default_ver}')
+              with open('xray_version.txt', 'w') as f:
+                  f.write(default_ver)
+          "
+          
+          XRAY_VERSION=$(cat xray_version.txt)
+          echo "Determined Xray version: $XRAY_VERSION"
           
           echo "Downloading Xray Core $XRAY_VERSION..."
           
           # Download with retry and better error handling
           if ! wget -q --show-progress --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip; then
-            echo "Failed to download Xray Core. Retrying with fallback version..."
-            XRAY_VERSION="v1.8.4"
-            wget -q --show-progress --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip
+            echo "Failed to download Xray Core ${XRAY_VERSION}. Retrying with absolute fallback v1.8.4..."
+            wget -q --show-progress --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/v1.8.4/Xray-linux-64.zip" -O Xray-linux-64.zip
           fi
           
           # Check if file exists and is non-empty

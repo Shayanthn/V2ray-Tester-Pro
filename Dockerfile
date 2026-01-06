@@ -15,22 +15,22 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Download Xray core with retry and validation
-RUN XRAY_VERSION=$(curl -fsSL https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/' || echo "") && \
-    if [ -z "$XRAY_VERSION" ]; then \
-        echo "Failed to fetch latest Xray version. Using fallback."; \
-        XRAY_VERSION="v1.8.4"; \
-    fi && \
+# Download Xray core using Python for reliability (requests is installed)
+RUN python -c "import requests; \
+    try: \
+        r = requests.get('https://api.github.com/repos/XTLS/Xray-core/releases/latest', timeout=10); \
+        r.raise_for_status(); \
+        tag = r.json()['tag_name']; \
+        print(tag); \
+    except: \
+        print('v1.8.23')" > xray_version.txt && \
+    XRAY_VERSION=$(cat xray_version.txt) && \
     echo "Downloading Xray Core $XRAY_VERSION..." && \
     (wget -q --show-progress --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip || \
-    (echo "Failed to download. Retrying with fallback..." && \
-    XRAY_VERSION="v1.8.4" && \
-    wget -q --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip)) && \
-    [ -s Xray-linux-64.zip ] && \
-    unzip -t Xray-linux-64.zip && \
+    wget -q --show-progress --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/v1.8.4/Xray-linux-64.zip" -O Xray-linux-64.zip) && \
     unzip -o Xray-linux-64.zip && \
     chmod +x xray && \
-    rm Xray-linux-64.zip
+    rm Xray-linux-64.zip xray_version.txt
 
 # Copy application files
 COPY main.py .
