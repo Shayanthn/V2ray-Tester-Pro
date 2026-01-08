@@ -121,13 +121,6 @@ class CLIRunner:
                         # ...
                 
                 final_msg = (f"Test complete! Found {len(self.app_state.results)} working configs "
-                        # files_to_send = ['subscription.txt', 'configs.json']
-                        # for filename in files_to_send:
-                        #     file_path = os.path.join(self.subscription_manager.output_dir, filename)
-                        #     if os.path.exists(file_path):
-                        #         await self.notifier.send_file(file_path, caption=f"📄 {filename}")
-                
-                final_msg = (f"Test complete! Found {len(self.app_state.results)} working configs "
                              f"({self.app_state.failed} failed, {len(self.config_blacklist)} blacklisted).")
                 print(final_msg)
                 self.logger.info(final_msg)
