@@ -1,182 +1,18 @@
 [
   {
-    "protocol": "trojan",
-    "address": "35.181.130.235",
-    "ping": 246,
-    "jitter": 218,
-    "download_speed": 17.79,
-    "upload_speed": 12.17,
+    "protocol": "vless",
+    "address": "103.90.75.252",
+    "ping": 521,
+    "jitter": 688,
+    "download_speed": 0.64,
+    "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "35.181.130.235",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10801,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "35.181.130.235",
-                "port": 22222,
-                "password": "telegram-id-privatevpns"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "35.181.130.235",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://telegram-id-privatevpns@35.181.130.235:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S103)",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "Amazon.com, Inc."
-  },
-  {
-    "protocol": "trojan",
-    "address": "3.66.94.128",
-    "ping": 249,
-    "jitter": 223,
-    "download_speed": 17.05,
-    "upload_speed": 10.76,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "3.66.94.128",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10809,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "3.66.94.128",
-                "port": 22222,
-                "password": "telegram-id-privatevpns"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "3.66.94.128",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://telegram-id-privatevpns@3.66.94.128:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S101)",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt am Main",
-    "isp": "Amazon Technologies Inc."
-  },
-  {
-    "protocol": "trojan",
-    "address": "13.36.1.246",
-    "ping": 409,
-    "jitter": 434,
-    "download_speed": 5.38,
-    "upload_speed": 2.64,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "13.36.1.246",
+    "ip": "103.90.75.252",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -196,28 +32,25 @@
       ],
       "outbounds": [
         {
-          "protocol": "trojan",
+          "protocol": "vless",
           "settings": {
-            "servers": [
+            "vnext": [
               {
-                "address": "13.36.1.246",
-                "port": 22222,
-                "password": "telegram-id-privatevpns"
+                "address": "103.90.75.252",
+                "port": 3001,
+                "users": [
+                  {
+                    "id": "61757901-3818-46c7-8482-683fa7f6ba10",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
               }
             ]
           },
           "streamSettings": {
             "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "13.36.1.246",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
+            "security": "none"
           },
           "tag": "proxy"
         },
@@ -239,26 +72,26 @@
         ]
       }
     },
-    "uri": "trojan://telegram-id-privatevpns@13.36.1.246:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S104)",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "Amazon Technologies Inc."
+    "uri": "vless://61757901-3818-46c7-8482-683fa7f6ba10@103.90.75.252:3001?security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp#Netherlands%20Clodo%20Cloud",
+    "country": "The Netherlands",
+    "country_code": "NL",
+    "city": "Amsterdam",
+    "isp": "Clodo Cloud Service CO. L.L.C"
   },
   {
-    "protocol": "trojan",
-    "address": "172.238.229.254",
-    "ping": 262,
-    "jitter": 230,
-    "download_speed": 16.08,
-    "upload_speed": 11.36,
+    "protocol": "vless",
+    "address": "65.108.231.185",
+    "ping": 349,
+    "jitter": 368,
+    "download_speed": 10.22,
+    "upload_speed": 4.83,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "172.238.229.254",
+    "ip": "65.108.231.185",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -266,7 +99,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10800,
+          "port": 10812,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -278,13 +111,19 @@
       ],
       "outbounds": [
         {
-          "protocol": "trojan",
+          "protocol": "vless",
           "settings": {
-            "servers": [
+            "vnext": [
               {
-                "address": "172.238.229.254",
-                "port": 14051,
-                "password": "OdgHycGphesfLmPMYolUF"
+                "address": "65.108.231.185",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "440766d1-858f-4719-84f5-c2de6f6227b2",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
               }
             ]
           },
@@ -292,7 +131,7 @@
             "network": "tcp",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "172.238.229.254",
+              "serverName": "65.108.231.185",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
@@ -321,26 +160,26 @@
         ]
       }
     },
-    "uri": "trojan://OdgHycGphesfLmPMYolUF@172.238.229.254:14051?security=tls&amp;headerType=none&amp;type=tcp&amp;sni=api.avito.ru#@V2rayNG3",
-    "country": "Italy",
-    "country_code": "IT",
-    "city": "Milan",
-    "isp": "Akamai Technologies, Inc."
+    "uri": "vless://440766d1-858f-4719-84f5-c2de6f6227b2@65.108.231.185:443?security=tls&amp;encryption=none&amp;insecure=1&amp;headerType=none&amp;type=tcp&amp;allowInsecure=1&amp;sni=api.avito.ru#VPN_PROXY_CUSTOM%20%F0%9F%8F%B4",
+    "country": "Finland",
+    "country_code": "FI",
+    "city": "Helsinki",
+    "isp": "Hetzner Online GmbH"
   },
   {
-    "protocol": "trojan",
-    "address": "167.17.70.117",
-    "ping": 230,
-    "jitter": 198,
-    "download_speed": 15.77,
-    "upload_speed": 12.03,
-    "is_bypassing": false,
+    "protocol": "vless",
+    "address": "doprax.fxgoldensignals.com",
+    "ping": 222,
+    "jitter": 162,
+    "download_speed": 4.41,
+    "upload_speed": 2.81,
+    "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
-      "youtube": false
+      "youtube": true
     },
-    "ip": "167.17.70.117",
+    "ip": "doprax.fxgoldensignals.com",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -348,7 +187,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10809,
+          "port": 10813,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -360,13 +199,98 @@
       ],
       "outbounds": [
         {
-          "protocol": "trojan",
+          "protocol": "vless",
           "settings": {
-            "servers": [
+            "vnext": [
               {
-                "address": "167.17.70.117",
-                "port": 27234,
-                "password": "kuGDUhAYqXnvIomV0Kdljfor"
+                "address": "doprax.fxgoldensignals.com",
+                "port": 50904,
+                "users": [
+                  {
+                    "id": "d4795cd9-cd7b-4cea-edfb-20cdcca5837b",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "none"
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://d4795cd9-cd7b-4cea-edfb-20cdcca5837b@doprax.fxgoldensignals.com:50904?security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp#Allnet%20%7C%20telegram%3A%20%40ultrasurf_12",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt Am Main",
+    "isp": "Hetzner Online AG"
+  },
+  {
+    "protocol": "vless",
+    "address": "vpn.zorixvpn.site",
+    "ping": 320,
+    "jitter": 299,
+    "download_speed": 3.13,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "vpn.zorixvpn.site",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10805,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "vpn.zorixvpn.site",
+                "port": 8443,
+                "users": [
+                  {
+                    "id": "4ad217a5-5a96-4095-a96c-837ffc73f97c",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
               }
             ]
           },
@@ -374,7 +298,7 @@
             "network": "tcp",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "167.17.70.117",
+              "serverName": "vpn.zorixvpn.site",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
@@ -403,10 +327,89 @@
         ]
       }
     },
-    "uri": "trojan://kuGDUhAYqXnvIomV0Kdljfor@167.17.70.117:27234?security=tls&amp;headerType=none&amp;type=tcp#@V2rayNG3",
-    "country": "Netherlands",
+    "uri": "vless://4ad217a5-5a96-4095-a96c-837ffc73f97c@vpn.zorixvpn.site:8443?security=tls&amp;encryption=none&amp;insecure=0&amp;headerType=none&amp;type=tcp&amp;allowInsecure=0#Hamrah%20aval",
+    "country": "The Netherlands",
     "country_code": "NL",
     "city": "Amsterdam",
-    "isp": "GTHost"
+    "isp": "PSB HOSTING LTD"
+  },
+  {
+    "protocol": "vmess",
+    "address": "47.251.91.241",
+    "ping": 96,
+    "jitter": 76,
+    "download_speed": 13.21,
+    "upload_speed": 2.66,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "47.251.91.241",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10802,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "47.251.91.241",
+                "port": 42899,
+                "users": [
+                  {
+                    "id": "0925b355-2bcd-4eae-9720-d2709e4f7e36",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiI0Ny4yNTEuOTEuMjQxIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjA5MjViMzU1LTJiY2QtNGVhZS05NzIwLWQyNzA5ZTRmN2UzNiIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiNDI4OTkiLCJwcyI6IvCfh7rwn4e4W0Bwcm94eXN0b3JlMTFddm1lc3MtVVMiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9",
+    "country": "United States",
+    "country_code": "US",
+    "city": "Minkler",
+    "isp": "Alibaba Cloud LLC"
   }
 ]
