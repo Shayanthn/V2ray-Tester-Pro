@@ -253,6 +253,28 @@ class CLIRunner:
                         
                         total_count += 1
                         
+                        # Feature: Smart Fragment Revival
+                        # If normal test failed, try injecting Fragment settings for VLESS/VMess
+                        if not test_result:
+                             try:
+                                 # Only attempt for likely candidates
+                                 if "vless" in uri or "vmess" in uri:
+                                     # self.logger.info(f"Attempting Fragment Revival for {uri[:20]}...")
+                                     fragmented_config = self.config_processor.inject_fragment(config_json)
+                                     
+                                     # Check if config was actually modified (simple check: length of outbounds)
+                                     if len(fragmented_config.get('outbounds', [])) > len(config_json.get('outbounds', [])):
+                                         revival_result = await asyncio.wait_for(
+                                            self.test_runner.run_full_test(fragmented_config, port, self.session),
+                                            timeout=30
+                                         )
+                                         if revival_result:
+                                             test_result = revival_result
+                                             test_result['revived_with_fragment'] = True
+                                             self.logger.info(f"✨ Fragment Revival SUCCESS for {uri[:30]}!")
+                             except Exception:
+                                 pass
+
                         if test_result:
                             test_result['uri'] = uri
                             
@@ -275,14 +297,27 @@ class CLIRunner:
                                 try:
                                     proto = test_result.get('protocol', 'unknown').upper()
                                     ping = test_result.get('ping', 0)
+                                    dl_speed = test_result.get('download_speed', 0)
                                     country = test_result.get('country', 'Unknown')
+                                    is_fragment = test_result.get('revived_with_fragment', False)
+                                    
+                                    feature_tags = []
+                                    if is_fragment:
+                                        feature_tags.append("🛡️ **Mode**: Anti-Filter (Fragment)")
+                                    if dl_speed > 5:
+                                        feature_tags.append("🚀 **High Speed**")
+                                    
+                                    tags_str = "\n".join(feature_tags) + ("\n" if feature_tags else "")
+
                                     # Create fire-and-forget task to avoid blocking testing
                                     
                                     msg = (
                                         f"🟢 **New Config Found**\n\n"
                                         f"🔐 **Protocol**: {proto}\n"
                                         f"📶 **Ping**: {ping} ms\n"
-                                        f"🌍 **Location**: {country}\n\n"
+                                        f"⚡ **Speed**: {dl_speed} MB/s\n"
+                                        f"🌍 **Location**: {country}\n"
+                                        f"{tags_str}\n"
                                         f"📋 **Config** (Tap to copy):\n"
                                         f"`{uri}`\n\n"
                                         f"🤝 نشر حداکثری این کانال برای دسترسی هموطنامون به اینترنت بر عهده ماست\n"

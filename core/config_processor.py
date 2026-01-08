@@ -2,6 +2,7 @@ import base64
 import json
 import binascii
 import logging
+import copy
 from typing import Optional, Dict, Any
 from urllib.parse import parse_qs, quote, unquote, urlparse
 from utils.security_validator import SecurityValidator
@@ -98,6 +99,67 @@ class ConfigProcessor:
                 stream['xtlsSettings'] = tls_settings
             else:
                 stream['tlsSettings'] = tls_settings
+        
+        return stream
+
+    def inject_fragment(self, config: Dict[str, Any]) -> Dict[str, Any]:
+        """Injects Xray fragment outbound and routes traffic through it."""
+        try:
+            new_config = copy.deepcopy(config)
+            
+            # Find the first outbound (usually the proxy)
+            # We look for common proxy protocols
+            proxy_outbound = next((o for o in new_config.get('outbounds', []) 
+                                  if o.get('protocol') in ['vless', 'vmess', 'trojan', 'shadowsocks']), None)
+            
+            if not proxy_outbound:
+                return config # Cannot inject if no proxy outbound found
+
+            # Check if it has streamSettings
+            if 'streamSettings' not in proxy_outbound:
+                # If it doesn't have streamSettings (e.g. standard Shadowsocks), we might create it
+                # But typically only TCP/WS/GRPC/QUIC configs have it. 
+                # For safety, we only inject if streamSettings exists or protocol is vless/vmess
+                if proxy_outbound['protocol'] in ['shadowsocks']:
+                     proxy_outbound['streamSettings'] = {"network": "tcp"} # Default
+                else:
+                     return config 
+            
+            # Add dialerProxy to sockopt
+            if 'sockopt' not in proxy_outbound['streamSettings']:
+                proxy_outbound['streamSettings']['sockopt'] = {}
+            
+            proxy_outbound['streamSettings']['sockopt']['dialerProxy'] = "fragment"
+            proxy_outbound['streamSettings']['sockopt']['tcpKeepAliveIdle'] = 100
+            
+            # Add the fragment outbound
+            fragment_outbound = {
+                "tag": "fragment",
+                "protocol": "freedom",
+                "settings": {
+                    "fragment": {
+                        "packets": "tlshello",
+                        "length": "100-200",
+                        "interval": "10-20"
+                    }
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "tcpKeepAliveIdle": 100
+                    }
+                }
+            }
+            
+            # Ensure outbounds exists (it should)
+            if 'outbounds' not in new_config:
+                new_config['outbounds'] = []
+                
+            new_config['outbounds'].append(fragment_outbound)
+            return new_config
+            
+        except Exception as e:
+            self.logger.warning(f"Failed to inject fragment: {e}")
+            return config
 
         # Transport Settings
         if net == 'ws':
