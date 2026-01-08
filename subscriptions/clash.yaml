@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 92ms
+- name: VMESS-1 | 44ms
   type: vmess
   server: 172.234.132.232
   port: 10001
@@ -13,7 +13,15 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 261ms
+- name: VMESS-2 | 172ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 231ms
   type: vmess
   server: 162.19.248.238
   port: 550
@@ -21,7 +29,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 217ms
+- name: VMESS-4 | 168ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -29,15 +37,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 217ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 537ms
+- name: VMESS-5 | 508ms
   type: vmess
   server: n1753598451.74qxv.top
   port: 443
@@ -50,20 +50,7 @@ proxies:
   ws-opts:
     path: /
     headers: {}
-- name: VMESS-6 | 490ms
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: t1.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-7 | 221ms
+- name: VMESS-6 | 178ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -76,23 +63,21 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 92ms
-  - VMESS-2 | 261ms
-  - VMESS-3 | 217ms
-  - VMESS-4 | 217ms
-  - VMESS-5 | 537ms
-  - VMESS-6 | 490ms
-  - VMESS-7 | 221ms
+  - VMESS-1 | 44ms
+  - VMESS-2 | 172ms
+  - VMESS-3 | 231ms
+  - VMESS-4 | 168ms
+  - VMESS-5 | 508ms
+  - VMESS-6 | 178ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 92ms
-  - VMESS-2 | 261ms
-  - VMESS-3 | 217ms
-  - VMESS-4 | 217ms
-  - VMESS-5 | 537ms
-  - VMESS-6 | 490ms
-  - VMESS-7 | 221ms
+  - VMESS-1 | 44ms
+  - VMESS-2 | 172ms
+  - VMESS-3 | 231ms
+  - VMESS-4 | 168ms
+  - VMESS-5 | 508ms
+  - VMESS-6 | 178ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
