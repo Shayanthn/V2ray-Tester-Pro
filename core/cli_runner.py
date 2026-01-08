@@ -56,6 +56,9 @@ class CLIRunner:
         self.config_blacklist: Set[str] = set()
         self.config_failure_count: dict = {}  # URI -> failure count
         self.max_retries = 3  # Max failures before blacklisting 
+        
+        # History mechanism to prevent duplicate notifications
+        self.known_configs: Set[str] = set()
 
     def run(self):
         """Entry point for CLI execution."""
@@ -72,6 +75,9 @@ class CLIRunner:
         self.app_state.is_running = True
         self.app_state.reset()
         self.semaphore = asyncio.Semaphore(self.max_concurrent_tests)
+        
+        # Load known configs from previous run
+        self._load_known_configs()
         
         print("Initializing network session...")
         try:
@@ -131,6 +137,20 @@ class CLIRunner:
         finally:
             self.app_state.is_running = False
     
+    def _load_known_configs(self):
+        """Loads previously found working configs to avoid duplicate notifications."""
+        import json
+        if os.path.exists('results.json'):
+            try:
+                with open('results.json', 'r', encoding='utf-8') as f:
+                    results = json.load(f)
+                    for r in results:
+                        if r and 'uri' in r:
+                            self.known_configs.add(r['uri'])
+                self.logger.info(f"Loaded {len(self.known_configs)} known configs from history.")
+            except Exception as e:
+                self.logger.warning(f"Failed to load history: {e}")
+
     async def _fetch_and_queue_configs(self, sources: List[str]):
         """Fetches configs from all sources and puts them in the queue."""
         tasks = [self._process_source(url) for url in sources]
@@ -248,7 +268,10 @@ class CLIRunner:
                             self.app_state.update_stats(test_result)
                             
                             # Real-time Telegram Notification
-                            if self.notifier.is_enabled:
+                            # Only notify if this is a FREAKING NEW config (not in history)
+                            is_duplicate = uri in self.known_configs
+                            
+                            if self.notifier.is_enabled and not is_duplicate:
                                 try:
                                     proto = test_result.get('protocol', 'unknown').upper()
                                     ping = test_result.get('ping', 0)
@@ -268,6 +291,8 @@ class CLIRunner:
                                     asyncio.create_task(self.notifier.send_message(msg))
                                 except Exception as notify_err:
                                     self.logger.warning(f"Failed to send immediate notification: {notify_err}")
+                            elif is_duplicate:
+                                self.logger.info(f"Skipping Telegram notification for duplicate config: {uri[:30]}...")
                             
                             # Check if max_success limit reached
                             if self.max_success > 0 and self.app_state.found >= self.max_success:
