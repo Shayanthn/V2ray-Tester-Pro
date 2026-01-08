@@ -28,7 +28,8 @@ class CLIRunner:
                  adaptive_batch_min: int,
                  adaptive_sleep_min: float,
                  adaptive_sleep_max: float,
-                 logger: logging.Logger):
+                 logger: logging.Logger,
+                 max_success: int = 0):
         self.app_state = app_state
         self.test_runner = test_runner
         self.config_processor = config_processor
@@ -44,6 +45,7 @@ class CLIRunner:
         self.adaptive_sleep_min = adaptive_sleep_min
         self.adaptive_sleep_max = adaptive_sleep_max
         self.logger = logger
+        self.max_success = max_success
         self.notifier = TelegramNotifier(logger=logger)
         
         self.config_queue = asyncio.Queue()
@@ -282,6 +284,19 @@ class CLIRunner:
                                     asyncio.create_task(self.notifier.send_message(msg))
                                 except Exception as notify_err:
                                     self.logger.warning(f"Failed to send immediate notification: {notify_err}")
+                            
+                            # Check if max_success limit reached
+                            if self.max_success > 0 and self.app_state.found >= self.max_success:
+                                self.logger.info(f"Reached maximum success limit ({self.max_success}). Stopping tests.")
+                                # Drain queue to stop other workers
+                                while not self.config_queue.empty():
+                                    try:
+                                        self.config_queue.get_nowait()
+                                        self.config_queue.task_done()
+                                    except asyncio.QueueEmpty:
+                                        break
+                                self.config_queue.task_done()
+                                return
 
                             # Reset failure count on success
                             if uri in self.config_failure_count:

@@ -2,8 +2,8 @@ name: Auto Test & Update Subscriptions
 
 on:
   schedule:
-    # Run every 2 hours
-    - cron: '0 */2 * * *'
+    # Run every 12 hours
+    - cron: '0 */12 * * *'
   workflow_dispatch: # Allow manual trigger
   push:
     branches:
@@ -38,7 +38,7 @@ jobs:
       - name: Run V2Ray Tester (CLI Mode)
         timeout-minutes: 90
         run: |
-          python main.py --cli --max-configs 200
+          python main.py --cli --max-configs 200 --max-success 10
         env:
           PYTHONUNBUFFERED: 1
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
