@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 177ms
+- name: VMESS-1 | 175ms
   type: vmess
   server: 23.162.200.227
   port: 443
@@ -18,7 +18,7 @@ proxies:
   ws-opts:
     path: /linkvws
     headers: {}
-- name: VMESS-2 | 167ms
+- name: VMESS-2 | 165ms
   type: vmess
   server: 15.235.83.227
   port: 443
@@ -32,21 +32,7 @@ proxies:
     path: /linkvws
     headers:
       Host: mankadmu.com
-- name: VMESS-3 | 179ms
-  type: vmess
-  server: 15.235.50.172
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: baradiha.com
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: baradiha.com
-- name: VMESS-4 | 392ms
+- name: VMESS-3 | 368ms
   type: vmess
   server: 57.129.64.238
   port: 443
@@ -60,27 +46,7 @@ proxies:
     path: /linkvws
     headers:
       Host: kapelleng.com
-- name: VMESS-5 | 672ms
-  type: vmess
-  server: 57.129.25.20
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 1
-  cipher: auto
-  network: ws
-  tls: true
-  servername: 57.129.25.20
-  ws-opts:
-    path: linkvws
-    headers:
-      Host: 57.129.25.20
-- name: VLESS-6 | 539ms
-  type: vless
-  server: 162.19.228.119
-  port: 80
-  uuid: dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51
-  network: ws
-- name: VMESS-7 | 376ms
+- name: VMESS-4 | 373ms
   type: vmess
   server: 57.129.25.22
   port: 443
@@ -94,21 +60,7 @@ proxies:
     path: /linkvws
     headers:
       Host: o.metuji.com
-- name: VMESS-8 | 375ms
-  type: vmess
-  server: 57.129.25.25
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: f.khilei.com
-- name: VMESS-9 | 406ms
+- name: VMESS-5 | 410ms
   type: vmess
   server: 146.59.55.50
   port: 443
@@ -122,33 +74,47 @@ proxies:
     path: /linkvws
     headers:
       Host: o.metuji.com
-- name: SHADOWSOCKS-10 | 254ms
-  type: ss
-  server: 45.87.175.22
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: VMESS-11 | 500ms
+- name: VMESS-6 | 375ms
   type: vmess
-  server: 57.129.24.124
+  server: 57.129.25.20
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 1
+  cipher: auto
+  network: ws
+  tls: true
+  servername: 57.129.25.20
+  ws-opts:
+    path: linkvws
+    headers:
+      Host: 57.129.25.20
+- name: VMESS-7 | 383ms
+  type: vmess
+  server: 15.235.50.172
   port: 443
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   alterId: 0
   cipher: auto
   network: ws
   tls: true
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  servername: baradiha.com
   ws-opts:
     path: /linkvws
     headers:
-      Host: aveiror.com
-- name: SHADOWSOCKS-12 | 251ms
+      Host: baradiha.com
+- name: SHADOWSOCKS-8 | 263ms
+  type: ss
+  server: 45.87.175.22
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: SHADOWSOCKS-9 | 269ms
   type: ss
   server: 45.87.175.10
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: VMESS-13 | 183ms
+- name: VMESS-10 | 187ms
   type: vmess
   server: 134.195.198.147
   port: 443
@@ -162,40 +128,42 @@ proxies:
     path: /linkvws
     headers:
       Host: inna.cfd
+- name: VLESS-11 | 431ms
+  type: vless
+  server: 162.19.228.119
+  port: 80
+  uuid: dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51
+  network: ws
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 177ms
-  - VMESS-2 | 167ms
-  - VMESS-3 | 179ms
-  - VMESS-4 | 392ms
-  - VMESS-5 | 672ms
-  - VLESS-6 | 539ms
-  - VMESS-7 | 376ms
-  - VMESS-8 | 375ms
-  - VMESS-9 | 406ms
-  - SHADOWSOCKS-10 | 254ms
-  - VMESS-11 | 500ms
-  - SHADOWSOCKS-12 | 251ms
-  - VMESS-13 | 183ms
+  - VMESS-1 | 175ms
+  - VMESS-2 | 165ms
+  - VMESS-3 | 368ms
+  - VMESS-4 | 373ms
+  - VMESS-5 | 410ms
+  - VMESS-6 | 375ms
+  - VMESS-7 | 383ms
+  - SHADOWSOCKS-8 | 263ms
+  - SHADOWSOCKS-9 | 269ms
+  - VMESS-10 | 187ms
+  - VLESS-11 | 431ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 177ms
-  - VMESS-2 | 167ms
-  - VMESS-3 | 179ms
-  - VMESS-4 | 392ms
-  - VMESS-5 | 672ms
-  - VLESS-6 | 539ms
-  - VMESS-7 | 376ms
-  - VMESS-8 | 375ms
-  - VMESS-9 | 406ms
-  - SHADOWSOCKS-10 | 254ms
-  - VMESS-11 | 500ms
-  - SHADOWSOCKS-12 | 251ms
-  - VMESS-13 | 183ms
+  - VMESS-1 | 175ms
+  - VMESS-2 | 165ms
+  - VMESS-3 | 368ms
+  - VMESS-4 | 373ms
+  - VMESS-5 | 410ms
+  - VMESS-6 | 375ms
+  - VMESS-7 | 383ms
+  - SHADOWSOCKS-8 | 263ms
+  - SHADOWSOCKS-9 | 269ms
+  - VMESS-10 | 187ms
+  - VLESS-11 | 431ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
