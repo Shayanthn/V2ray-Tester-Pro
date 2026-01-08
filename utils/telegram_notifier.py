@@ -8,7 +8,16 @@ class TelegramNotifier:
     def __init__(self, logger: Optional[logging.Logger] = None):
         self.logger = logger or logging.getLogger(__name__)
         self.token = os.getenv('TELEGRAM_BOT_TOKEN')
-        self.chat_id = os.getenv('TELEGRAM_CHAT_ID')
+        
+        raw_chat_id = os.getenv('TELEGRAM_CHAT_ID')
+        # Smart handler for Chat ID:
+        # If user provides a username like "vpnbuying" without '@', and it's not a number, add '@'
+        if raw_chat_id and not raw_chat_id.startswith('@') and not raw_chat_id.lstrip('-').isdigit():
+            self.chat_id = f"@{raw_chat_id}"
+            self.logger.info(f"Auto-corrected Telegram Chat ID to: {self.chat_id}")
+        else:
+            self.chat_id = raw_chat_id
+            
         self.base_url = f"https://api.telegram.org/bot{self.token}" if self.token else None
 
     @property
