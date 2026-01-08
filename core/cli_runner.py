@@ -127,12 +127,12 @@ class CLIRunner:
                         )
                         await self.notifier.send_message(message)
                         
-                        # Send specific subscription files
-                        files_to_send = ['subscription.txt', 'configs.json']
-                        for filename in files_to_send:
-                            file_path = os.path.join(self.subscription_manager.output_dir, filename)
-                            if os.path.exists(file_path):
-                                await self.notifier.send_file(file_path, caption=f"📄 {filename}")
+                        # Files are NOT sent anymore (User preference: Text only)
+                        # files_to_send = ['subscription.txt', 'configs.json']
+                        # for filename in files_to_send:
+                        #     file_path = os.path.join(self.subscription_manager.output_dir, filename)
+                        #     if os.path.exists(file_path):
+                        #         await self.notifier.send_file(file_path, caption=f"📄 {filename}")
                 
                 final_msg = (f"Test complete! Found {len(self.app_state.results)} working configs "
                              f"({self.app_state.failed} failed, {len(self.config_blacklist)} blacklisted).")
@@ -309,20 +309,12 @@ class CLIRunner:
                                 self.logger.info(f"Blacklisted config after {self.max_retries} failures: {uri[:50]}...")
                     
                     except Exception as e:
-                        self.logger.error(f"Error processing config on port {port}: {e}")
+                        # Resilient error handling: Log error but keep worker alive
+                        self.logger.error(f"Worker unexpected error processing {uri[:30]}...: {e}")
                         self.app_state.failed += 1
-                        consecutive_failures += 1
                         
-                        # Track failure for potential blacklisting
-                        self.config_failure_count[uri] = self.config_failure_count.get(uri, 0) + 1
-                        if self.config_failure_count[uri] >= self.max_retries:
-                            self.config_blacklist.add(uri)
-                            self.logger.info(f"Blacklisted config after {self.max_retries} failures: {uri[:50]}...")
-                
-                # Update progress
-                self.app_state.progress += 1
-                
-                # Update adaptive parameters
+                        # Don't increment failure count here blindly to avoid blacklisting transient errors
+                        # Just move on to the next config
                 if self.adaptive_testing and total_count % 10 == 0:
                     self.app_state.update_adaptive_params(
                         success_count, total_count, 
