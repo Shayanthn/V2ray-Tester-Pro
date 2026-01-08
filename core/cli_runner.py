@@ -44,6 +44,7 @@ class CLIRunner:
         self.adaptive_sleep_min = adaptive_sleep_min
         self.adaptive_sleep_max = adaptive_sleep_max
         self.logger = logger
+        self.notifier = TelegramNotifier(logger=logger)
         
         self.config_queue = asyncio.Queue()
         self.unique_uris: Set[str] = set()
@@ -112,10 +113,9 @@ class CLIRunner:
                         
                     print(f"Success! Generated subscriptions in '{self.subscription_manager.output_dir}'")
                     
-                    # Telegram Notification
-                    notifier = TelegramNotifier(logger=self.logger)
-                    if notifier.is_enabled:
-                        print("Sending results to Telegram...")
+                    # Telegram Notification (Summary Only)
+                    if self.notifier.is_enabled:
+                        print("Sending summary to Telegram...")
                         message = (
                             f"✅ **Test Complete**\n"
                             f"Found: {len(self.app_state.results)}\n"
@@ -123,14 +123,14 @@ class CLIRunner:
                             f"Blacklisted: {len(self.config_blacklist)}\n"
                             f"Date: {self.app_state.start_time}"
                         )
-                        await notifier.send_message(message)
+                        await self.notifier.send_message(message)
                         
                         # Send specific subscription files
                         files_to_send = ['subscription.txt', 'configs.json']
                         for filename in files_to_send:
                             file_path = os.path.join(self.subscription_manager.output_dir, filename)
                             if os.path.exists(file_path):
-                                await notifier.send_file(file_path, caption=f"📄 {filename}")
+                                await self.notifier.send_file(file_path, caption=f"📄 {filename}")
                 
                 final_msg = (f"Test complete! Found {len(self.app_state.results)} working configs "
                              f"({self.app_state.failed} failed, {len(self.config_blacklist)} blacklisted).")
@@ -259,6 +259,18 @@ class CLIRunner:
                             self.app_state.results.append(test_result)
                             self.app_state.update_stats(test_result)
                             
+                            # Real-time Telegram Notification
+                            if self.notifier.is_enabled:
+                                try:
+                                    proto = test_result.get('protocol', 'unknown').upper()
+                                    ping = test_result.get('ping', 0)
+                                    country = test_result.get('country', 'Unknown')
+                                    # Create fire-and-forget task to avoid blocking testing
+                                    msg = f"🚀 *{proto}* | 📶 {ping}ms | 🌍 {country}\n`{uri}`"
+                                    asyncio.create_task(self.notifier.send_message(msg))
+                                except Exception as notify_err:
+                                    self.logger.warning(f"Failed to send immediate notification: {notify_err}")
+
                             # Reset failure count on success
                             if uri in self.config_failure_count:
                                 del self.config_failure_count[uri]
