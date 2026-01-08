@@ -1,0 +1,62 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxies:
+- name: TROJAN-1 | 246ms
+  type: trojan
+  server: 35.181.130.235
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 35.181.130.235
+- name: TROJAN-2 | 249ms
+  type: trojan
+  server: 3.66.94.128
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 3.66.94.128
+- name: TROJAN-3 | 262ms
+  type: trojan
+  server: 172.238.229.254
+  port: 14051
+  password: OdgHycGphesfLmPMYolUF
+  sni: 172.238.229.254
+- name: TROJAN-4 | 230ms
+  type: trojan
+  server: 167.17.70.117
+  port: 27234
+  password: kuGDUhAYqXnvIomV0Kdljfor
+  sni: 167.17.70.117
+- name: TROJAN-5 | 409ms
+  type: trojan
+  server: 13.36.1.246
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 13.36.1.246
+proxy-groups:
+- name: PROXY
+  type: select
+  proxies:
+  - Auto-Select
+  - TROJAN-1 | 246ms
+  - TROJAN-2 | 249ms
+  - TROJAN-3 | 262ms
+  - TROJAN-4 | 230ms
+  - TROJAN-5 | 409ms
+- name: Auto-Select
+  type: url-test
+  proxies:
+  - TROJAN-1 | 246ms
+  - TROJAN-2 | 249ms
+  - TROJAN-3 | 262ms
+  - TROJAN-4 | 230ms
+  - TROJAN-5 | 409ms
+  url: https://www.google.com/generate_204
+  interval: 300
+rules:
+- DOMAIN-SUFFIX,google.com,PROXY
+- DOMAIN-SUFFIX,youtube.com,PROXY
+- GEOIP,IR,DIRECT
+- MATCH,PROXY
