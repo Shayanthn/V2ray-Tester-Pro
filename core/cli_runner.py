@@ -115,19 +115,12 @@ class CLIRunner:
                         
                     print(f"Success! Generated subscriptions in '{self.subscription_manager.output_dir}'")
                     
-                    # Telegram Notification (Summary Only)
-                    if self.notifier.is_enabled:
-                        print("Sending summary to Telegram...")
-                        message = (
-                            f"✅ **Test Complete**\n"
-                            f"Found: {len(self.app_state.results)}\n"
-                            f"Failed: {self.app_state.failed}\n"
-                            f"Blacklisted: {len(self.config_blacklist)}\n"
-                            f"Date: {self.app_state.start_time}"
-                        )
-                        await self.notifier.send_message(message)
-                        
-                        # Files are NOT sent anymore (User preference: Text only)
+                    # Telegram Summary DISABLED by user request
+                    # if self.notifier.is_enabled:
+                        # print("Sending summary to Telegram...")
+                        # ...
+                
+                final_msg = (f"Test complete! Found {len(self.app_state.results)} working configs "
                         # files_to_send = ['subscription.txt', 'configs.json']
                         # for filename in files_to_send:
                         #     file_path = os.path.join(self.subscription_manager.output_dir, filename)
@@ -275,7 +268,9 @@ class CLIRunner:
                                         f"📶 **Ping**: {ping} ms\n"
                                         f"🌍 **Location**: {country}\n\n"
                                         f"📋 **Config** (Tap to copy):\n"
-                                        f"`{uri}`"
+                                        f"`{uri}`\n\n"
+                                        f"🕊️ اینترنت آزاد برای مردم وطنم\n"
+                                        f"🆔 {self.notifier.chat_id}"
                                     )
                                     asyncio.create_task(self.notifier.send_message(msg))
                                 except Exception as notify_err:
