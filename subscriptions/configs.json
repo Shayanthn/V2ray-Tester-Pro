@@ -6,184 +6,66 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
+        "port": 10807,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "217.69.5.32",
+              "port": 443,
+              "users": [
+                {
+                  "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
+                  "alterId": 0,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": ""
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
         "port": 10808,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "172.234.132.232",
-              "port": 10001,
-              "users": [
-                {
-                  "id": "a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10814,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "217.69.5.32",
-              "port": 443,
-              "users": [
-                {
-                  "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10812,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "217.69.5.32",
-              "port": 443,
-              "users": [
-                {
-                  "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "none"
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -242,7 +124,151 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10804,
+        "port": 10801,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fi.locations-service.com",
+              "port": 3031,
+              "users": [
+                {
+                  "id": "e59083aa-d933-4952-8cf0-eec74f718705",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "refersion.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "21V_VkMUD2XRbyRDg7hjpblUAwxHvlLmbarATdhhJQI",
+            "shortId": "",
+            "spiderX": "/"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10806,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "83.219.97.166",
+              "port": 30297,
+              "users": [
+                {
+                  "id": "f3b47775-edd2-42f8-94ac-9d315ae5463d",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "google.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "j07H9kYduVQkwjQw-7PW0um-0FUeCNe9J70oLv8I03I",
+            "shortId": "626617b8f5c8",
+            "spiderX": "/"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10816,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -258,23 +284,23 @@
         "settings": {
           "vnext": [
             {
-              "address": "n1753598451.74qxv.top",
-              "port": 443,
+              "address": "45.90.106.24",
+              "port": 1234,
               "users": [
                 {
-                  "id": "9798678f-5b8c-4ff1-bbdd-b9b5c1539de0",
+                  "id": "5c040f1d-45db-43bd-8d46-e4950e433735",
                   "alterId": 0,
-                  "security": "auto"
+                  "security": "aes-128-gcm"
                 }
               ]
             }
           ]
         },
         "streamSettings": {
-          "network": "ws",
+          "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "n1753598451.74qxv.top",
+            "serverName": "supervpn.super.com",
             "allowInsecure": true,
             "fingerprint": "chrome"
           }
@@ -306,7 +332,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10810,
+        "port": 10806,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -318,17 +344,17 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "vless",
         "settings": {
           "vnext": [
             {
-              "address": "94.232.247.165",
-              "port": 45653,
+              "address": "103.229.96.164",
+              "port": 42082,
               "users": [
                 {
-                  "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
-                  "alterId": 0,
-                  "security": "auto"
+                  "id": "ed4ac5b7-9814-465a-9b1d-afa2172c283b",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
                 }
               ]
             }
@@ -336,7 +362,20 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": ""
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "google.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "WQw0vAqB3VdXmSYbpKjKdC_e06bbgieUml2lvF2fPkA",
+            "shortId": "592d",
+            "spiderX": "/"
+          }
         },
         "tag": "proxy"
       },
