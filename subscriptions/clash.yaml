@@ -5,165 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 173ms
-  type: vmess
-  server: 23.162.200.227
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: ''
-  ws-opts:
-    path: /linkvws
-    headers: {}
-- name: VMESS-2 | 165ms
-  type: vmess
-  server: 15.235.50.172
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: baradiha.com
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: baradiha.com
-- name: VMESS-3 | 279ms
-  type: vmess
-  server: 15.235.83.227
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: mankadmu.com
-- name: VMESS-4 | 380ms
-  type: vmess
-  server: 57.129.64.238
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: kapelleng.com
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: kapelleng.com
-- name: VMESS-5 | 378ms
-  type: vmess
-  server: 57.129.25.22
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: o.metuji.com
-- name: VMESS-6 | 376ms
-  type: vmess
-  server: 57.129.25.20
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 1
-  cipher: auto
-  network: ws
-  tls: true
-  servername: 57.129.25.20
-  ws-opts:
-    path: linkvws
-    headers:
-      Host: 57.129.25.20
-- name: VMESS-7 | 412ms
-  type: vmess
-  server: 146.59.55.50
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: o.metuji.com
-- name: VMESS-8 | 185ms
-  type: vmess
-  server: 134.195.198.147
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: inna.cfd
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: inna.cfd
-- name: SHADOWSOCKS-9 | 259ms
-  type: ss
-  server: 45.87.175.10
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: VLESS-10 | 340ms
-  type: vless
-  server: 162.19.228.119
-  port: 80
-  uuid: dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51
-  network: ws
-- name: SHADOWSOCKS-11 | 247ms
-  type: ss
-  server: 45.87.175.22
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: TROJAN-1 | 192ms
+  type: trojan
+  server: 63.178.36.71
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 63.178.36.71
+- name: TROJAN-2 | 192ms
+  type: trojan
+  server: 3.66.94.128
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 3.66.94.128
+- name: TROJAN-3 | 249ms
+  type: trojan
+  server: 35.181.206.99
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 35.181.206.99
+- name: TROJAN-4 | 220ms
+  type: trojan
+  server: 172.238.229.254
+  port: 14051
+  password: OdgHycGphesfLmPMYolUF
+  sni: 172.238.229.254
+- name: TROJAN-5 | 698ms
+  type: trojan
+  server: 13.36.1.246
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 13.36.1.246
+- name: TROJAN-6 | 189ms
+  type: trojan
+  server: 167.17.70.117
+  port: 27234
+  password: kuGDUhAYqXnvIomV0Kdljfor
+  sni: 167.17.70.117
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 173ms
-  - VMESS-2 | 165ms
-  - VMESS-3 | 279ms
-  - VMESS-4 | 380ms
-  - VMESS-5 | 378ms
-  - VMESS-6 | 376ms
-  - VMESS-7 | 412ms
-  - VMESS-8 | 185ms
-  - SHADOWSOCKS-9 | 259ms
-  - VLESS-10 | 340ms
-  - SHADOWSOCKS-11 | 247ms
+  - TROJAN-1 | 192ms
+  - TROJAN-2 | 192ms
+  - TROJAN-3 | 249ms
+  - TROJAN-4 | 220ms
+  - TROJAN-5 | 698ms
+  - TROJAN-6 | 189ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 173ms
-  - VMESS-2 | 165ms
-  - VMESS-3 | 279ms
-  - VMESS-4 | 380ms
-  - VMESS-5 | 378ms
-  - VMESS-6 | 376ms
-  - VMESS-7 | 412ms
-  - VMESS-8 | 185ms
-  - SHADOWSOCKS-9 | 259ms
-  - VLESS-10 | 340ms
-  - SHADOWSOCKS-11 | 247ms
+  - TROJAN-1 | 192ms
+  - TROJAN-2 | 192ms
+  - TROJAN-3 | 249ms
+  - TROJAN-4 | 220ms
+  - TROJAN-5 | 698ms
+  - TROJAN-6 | 189ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
