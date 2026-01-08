@@ -81,10 +81,6 @@ class CLIRunner:
             async with aiohttp.ClientSession(timeout=timeout, connector=connector) as session:
                 self.session = session
                 
-                # Notify start
-                if self.notifier.is_enabled:
-                    await self.notifier.send_message(f"🤖 **V2Ray Tester Started**\n\nStarting checks on {len(self.aggregator_links) + len(self.direct_config_sources)} sources...")
-
                 # Phase 1: Aggregation
                 print(f"Phase 1: Fetching from {len(self.aggregator_links)} aggregators...")
                 await self._fetch_and_queue_configs(self.aggregator_links)
