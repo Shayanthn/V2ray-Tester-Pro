@@ -1,11 +1,186 @@
 [
   {
     "protocol": "vmess",
-    "address": "23.162.200.227",
-    "ping": 175,
+    "address": "15.235.50.172",
+    "ping": 165,
     "jitter": 170,
-    "download_speed": 30.83,
-    "upload_speed": 19.04,
+    "download_speed": 25.44,
+    "upload_speed": 19.65,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "15.235.50.172",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10800,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "15.235.50.172",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "03fcc618-b93d-6796-6aed-8a38c975d581",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "baradiha.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome"
+            },
+            "wsSettings": {
+              "path": "/linkvws",
+              "headers": {
+                "Host": "baradiha.com"
+              }
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://ewogICAgImFkZCI6ICIxNS4yMzUuNTAuMTcyIiwKICAgICJhaWQiOiAwLAogICAgImhvc3QiOiAiYmFyYWRpaGEuY29tIiwKICAgICJpZCI6ICIwM2ZjYzYxOC1iOTNkLTY3OTYtNmFlZC04YTM4Yzk3NWQ1ODEiLAogICAgIm5ldCI6ICJ3cyIsCiAgICAicGF0aCI6ICIvbGlua3Z3cyIsCiAgICAicG9ydCI6IDQ0MywKICAgICJwcyI6ICLwn4eo8J+HpkNBLTE1LjIzNS41MC4xNzItMTY0NSIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Montreal",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "vless",
+    "address": "162.19.228.119",
+    "ping": 340,
+    "jitter": 305,
+    "download_speed": 0.0,
+    "upload_speed": 4.4,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": false,
+      "instagram": false,
+      "youtube": false
+    },
+    "ip": "162.19.228.119",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10810,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "162.19.228.119",
+                "port": 80,
+                "users": [
+                  {
+                    "id": "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "ws",
+            "security": "none",
+            "wsSettings": {
+              "path": "/http#Telegram@V2ray_Alpha/?ed=2560",
+              "headers": {
+                "Host": "google.com"
+              }
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51@162.19.228.119:80?path=%2Fhttp%23Telegram%40V2ray_Alpha%2F%3Fed%3D2560&security=none&encryption=none&host=google.com&type=ws#@meli_proxyy",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "vmess",
+    "address": "23.162.200.227",
+    "ping": 173,
+    "jitter": 169,
+    "download_speed": 30.8,
+    "upload_speed": 21.66,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -20,7 +195,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10813,
+          "port": 10819,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -89,186 +264,11 @@
   },
   {
     "protocol": "vmess",
-    "address": "15.235.83.227",
-    "ping": 165,
-    "jitter": 170,
-    "download_speed": 27.78,
-    "upload_speed": 19.43,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "15.235.83.227",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10814,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "15.235.83.227",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "03fcc618-b93d-6796-6aed-8a38c975d581",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc",
-              "allowInsecure": true,
-              "fingerprint": "chrome"
-            },
-            "wsSettings": {
-              "path": "/linkvws",
-              "headers": {
-                "Host": "mankadmu.com"
-              }
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJ2IjogIjIiLCAicHMiOiAiMHwtLTM4IiwgImFkZCI6ICIxNS4yMzUuODMuMjI3IiwgInBvcnQiOiA0NDMsICJhaWQiOiAwLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAibm9uZSIsICJ0bHMiOiAidGxzIiwgImlkIjogIjAzZmNjNjE4LWI5M2QtNjc5Ni02YWVkLThhMzhjOTc1ZDU4MSIsICJzbmkiOiAid3JtZWxtd3hsZi5na3RldmxycXpud3Fxb3p5LmZhYnBmczY2Z2l6bW5vamhjdnF4d2wua3l0cmNmenFsYTg3Z3ZndnM2Yzdram5ydWJ1aC5jYyIsICJob3N0IjogIm1hbmthZG11LmNvbSIsICJwYXRoIjogIi9saW5rdndzIn0=",
-    "country": "Canada",
-    "country_code": "CA",
-    "city": "Montreal",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "vless",
-    "address": "162.19.228.119",
-    "ping": 431,
-    "jitter": 369,
-    "download_speed": 0.0,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "162.19.228.119",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10802,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vless",
-          "settings": {
-            "vnext": [
-              {
-                "address": "162.19.228.119",
-                "port": 80,
-                "users": [
-                  {
-                    "id": "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": "none",
-            "wsSettings": {
-              "path": "/http#Telegram@V2ray_Alpha/?ed=2560",
-              "headers": {
-                "Host": "google.com"
-              }
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vless://dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51@162.19.228.119:80?path=%2Fhttp%23Telegram%40V2ray_Alpha%2F%3Fed%3D2560&security=none&encryption=none&host=google.com&type=ws#@meli_proxyy",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Limburg an der Lahn",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "vmess",
     "address": "146.59.55.50",
-    "ping": 410,
-    "jitter": 413,
-    "download_speed": 12.06,
-    "upload_speed": 7.74,
+    "ping": 412,
+    "jitter": 414,
+    "download_speed": 11.3,
+    "upload_speed": 7.58,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -283,7 +283,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10804,
+          "port": 10805,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -354,11 +354,191 @@
   },
   {
     "protocol": "vmess",
+    "address": "15.235.83.227",
+    "ping": 279,
+    "jitter": 205,
+    "download_speed": 17.7,
+    "upload_speed": 8.99,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "15.235.83.227",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10811,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "15.235.83.227",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "03fcc618-b93d-6796-6aed-8a38c975d581",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc",
+              "allowInsecure": true,
+              "fingerprint": "chrome"
+            },
+            "wsSettings": {
+              "path": "/linkvws",
+              "headers": {
+                "Host": "mankadmu.com"
+              }
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJ2IjogIjIiLCAicHMiOiAiMHwtLTM4IiwgImFkZCI6ICIxNS4yMzUuODMuMjI3IiwgInBvcnQiOiA0NDMsICJhaWQiOiAwLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAibm9uZSIsICJ0bHMiOiAidGxzIiwgImlkIjogIjAzZmNjNjE4LWI5M2QtNjc5Ni02YWVkLThhMzhjOTc1ZDU4MSIsICJzbmkiOiAid3JtZWxtd3hsZi5na3RldmxycXpud3Fxb3p5LmZhYnBmczY2Z2l6bW5vamhjdnF4d2wua3l0cmNmenFsYTg3Z3ZndnM2Yzdram5ydWJ1aC5jYyIsICJob3N0IjogIm1hbmthZG11LmNvbSIsICJwYXRoIjogIi9saW5rdndzIn0=",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Montreal",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "vmess",
+    "address": "57.129.64.238",
+    "ping": 380,
+    "jitter": 374,
+    "download_speed": 12.65,
+    "upload_speed": 8.6,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "57.129.64.238",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10802,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "57.129.64.238",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "03fcc618-b93d-6796-6aed-8a38c975d581",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "kapelleng.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome"
+            },
+            "wsSettings": {
+              "path": "/linkvws",
+              "headers": {
+                "Host": "kapelleng.com"
+              }
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiI1Ny4xMjkuNjQuMjM4IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJrYXBlbGxlbmcuY29tIiwiaWQiOiIwM2ZjYzYxOC1iOTNkLTY3OTYtNmFlZC04YTM4Yzk3NWQ1ODEiLCJuZXQiOiJ3cyIsInBhdGgiOiIvbGlua3Z3cyIsInBvcnQiOiI0NDMiLCJwcyI6IkNoYW5uZWwgaWQ6IEBTaGFkb3dQcm94eTY28J+HqfCfh6oiLCJzY3kiOiJhdXRvIiwic25pIjoia2FwZWxsZW5nLmNvbSIsInRscyI6InRscyIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "vmess",
     "address": "57.129.25.20",
-    "ping": 375,
-    "jitter": 378,
-    "download_speed": 11.91,
-    "upload_speed": 8.4,
+    "ping": 376,
+    "jitter": 377,
+    "download_speed": 12.27,
+    "upload_speed": 8.56,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -373,7 +553,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10808,
+          "port": 10809,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -444,18 +624,18 @@
   },
   {
     "protocol": "vmess",
-    "address": "57.129.64.238",
-    "ping": 368,
-    "jitter": 370,
-    "download_speed": 12.62,
-    "upload_speed": 8.55,
+    "address": "134.195.198.147",
+    "ping": 185,
+    "jitter": 190,
+    "download_speed": 10.07,
+    "upload_speed": 17.46,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "57.129.64.238",
+    "ip": "134.195.198.147",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -463,7 +643,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10810,
+          "port": 10819,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -479,7 +659,7 @@
           "settings": {
             "vnext": [
               {
-                "address": "57.129.64.238",
+                "address": "134.195.198.147",
                 "port": 443,
                 "users": [
                   {
@@ -495,14 +675,14 @@
             "network": "ws",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "kapelleng.com",
+              "serverName": "inna.cfd",
               "allowInsecure": true,
               "fingerprint": "chrome"
             },
             "wsSettings": {
               "path": "/linkvws",
               "headers": {
-                "Host": "kapelleng.com"
+                "Host": "inna.cfd"
               }
             }
           },
@@ -526,159 +706,19 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiI1Ny4xMjkuNjQuMjM4IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJrYXBlbGxlbmcuY29tIiwiaWQiOiIwM2ZjYzYxOC1iOTNkLTY3OTYtNmFlZC04YTM4Yzk3NWQ1ODEiLCJuZXQiOiJ3cyIsInBhdGgiOiIvbGlua3Z3cyIsInBvcnQiOiI0NDMiLCJwcyI6IkNoYW5uZWwgaWQ6IEBTaGFkb3dQcm94eTY28J+HqfCfh6oiLCJzY3kiOiJhdXRvIiwic25pIjoia2FwZWxsZW5nLmNvbSIsInRscyI6InRscyIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt am Main",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "45.87.175.22",
-    "ping": 263,
-    "jitter": 186,
-    "download_speed": 1.42,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "45.87.175.22",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10812,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "45.87.175.22",
-                "port": 8080,
-                "method": "chacha20-ietf-poly1305",
-                "password": "oZIoA69Q8yhcQV8ka3Pa3A"
-              }
-            ]
-          },
-          "tag": "@meli_proxyy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@45.87.175.22:8080#@meli_proxyy",
-    "country": "United States",
-    "country_code": "US",
-    "city": "New York",
-    "isp": "SBL-OSL"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "45.87.175.10",
-    "ping": 269,
-    "jitter": 201,
-    "download_speed": 0.88,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "45.87.175.10",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10817,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "45.87.175.10",
-                "port": 8080,
-                "method": "chacha20-ietf-poly1305",
-                "password": "oZIoA69Q8yhcQV8ka3Pa3A"
-              }
-            ]
-          },
-          "tag": "@meli_proxyy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@45.87.175.10:8080#@meli_proxyy",
-    "country": "United States",
-    "country_code": "US",
-    "city": "New York",
-    "isp": "SBL-OSL"
+    "uri": "vmess://eyJhZGQiOiAiMTM0LjE5NS4xOTguMTQ3IiwgInYiOiAiMiIsICJwcyI6ICJcdTUzMTdcdTdmOGVcdTU3MzBcdTUzM2EgdjJyYXlmcmVlLmV1Lm9yZyIsICJwb3J0IjogNDQzLCAiaWQiOiAiMDNmY2M2MTgtYjkzZC02Nzk2LTZhZWQtOGEzOGM5NzVkNTgxIiwgImFpZCI6ICIwIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogImlubmEuY2ZkIiwgInBhdGgiOiAiL2xpbmt2d3MiLCAidGxzIjogInRscyJ9",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Montreal",
+    "isp": "GLOBALTELEHOST Corp."
   },
   {
     "protocol": "vmess",
     "address": "57.129.25.22",
-    "ping": 373,
-    "jitter": 371,
-    "download_speed": 12.5,
-    "upload_speed": 8.6,
+    "ping": 378,
+    "jitter": 380,
+    "download_speed": 12.48,
+    "upload_speed": 8.23,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -693,7 +733,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10804,
+          "port": 10803,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -763,19 +803,89 @@
     "isp": "OVH SAS"
   },
   {
-    "protocol": "vmess",
-    "address": "15.235.50.172",
-    "ping": 383,
-    "jitter": 179,
-    "download_speed": 6.99,
-    "upload_speed": 2.18,
+    "protocol": "shadowsocks",
+    "address": "45.87.175.22",
+    "ping": 247,
+    "jitter": 175,
+    "download_speed": 0.0,
+    "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
-      "telegram": false,
+      "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "15.235.50.172",
+    "ip": "45.87.175.22",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10818,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "45.87.175.22",
+                "port": 8080,
+                "method": "chacha20-ietf-poly1305",
+                "password": "oZIoA69Q8yhcQV8ka3Pa3A"
+              }
+            ]
+          },
+          "tag": "@meli_proxyy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@45.87.175.22:8080#@meli_proxyy",
+    "country": "United States",
+    "country_code": "US",
+    "city": "New York",
+    "isp": "SBL-OSL"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "45.87.175.10",
+    "ping": 259,
+    "jitter": 184,
+    "download_speed": 0.95,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "45.87.175.10",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -795,38 +905,18 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "15.235.50.172",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "03fcc618-b93d-6796-6aed-8a38c975d581",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
+                "address": "45.87.175.10",
+                "port": 8080,
+                "method": "chacha20-ietf-poly1305",
+                "password": "oZIoA69Q8yhcQV8ka3Pa3A"
               }
             ]
           },
-          "streamSettings": {
-            "network": "ws",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "baradiha.com",
-              "allowInsecure": true,
-              "fingerprint": "chrome"
-            },
-            "wsSettings": {
-              "path": "/linkvws",
-              "headers": {
-                "Host": "baradiha.com"
-              }
-            }
-          },
-          "tag": "proxy"
+          "tag": "@meli_proxyy"
         },
         {
           "protocol": "freedom",
@@ -846,100 +936,10 @@
         ]
       }
     },
-    "uri": "vmess://ewogICAgImFkZCI6ICIxNS4yMzUuNTAuMTcyIiwKICAgICJhaWQiOiAwLAogICAgImhvc3QiOiAiYmFyYWRpaGEuY29tIiwKICAgICJpZCI6ICIwM2ZjYzYxOC1iOTNkLTY3OTYtNmFlZC04YTM4Yzk3NWQ1ODEiLAogICAgIm5ldCI6ICJ3cyIsCiAgICAicGF0aCI6ICIvbGlua3Z3cyIsCiAgICAicG9ydCI6IDQ0MywKICAgICJwcyI6ICLwn4eo8J+HpkNBLTE1LjIzNS41MC4xNzItMTY0NSIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9",
-    "country": "Canada",
-    "country_code": "CA",
-    "city": "Montreal",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "vmess",
-    "address": "134.195.198.147",
-    "ping": 187,
-    "jitter": 191,
-    "download_speed": 0.57,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "134.195.198.147",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10813,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "134.195.198.147",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "03fcc618-b93d-6796-6aed-8a38c975d581",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "inna.cfd",
-              "allowInsecure": true,
-              "fingerprint": "chrome"
-            },
-            "wsSettings": {
-              "path": "/linkvws",
-              "headers": {
-                "Host": "inna.cfd"
-              }
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiAiMTM0LjE5NS4xOTguMTQ3IiwgInYiOiAiMiIsICJwcyI6ICJcdTUzMTdcdTdmOGVcdTU3MzBcdTUzM2EgdjJyYXlmcmVlLmV1Lm9yZyIsICJwb3J0IjogNDQzLCAiaWQiOiAiMDNmY2M2MTgtYjkzZC02Nzk2LTZhZWQtOGEzOGM5NzVkNTgxIiwgImFpZCI6ICIwIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogImlubmEuY2ZkIiwgInBhdGgiOiAiL2xpbmt2d3MiLCAidGxzIjogInRscyJ9",
-    "country": "Canada",
-    "country_code": "CA",
-    "city": "Montreal",
-    "isp": "GLOBALTELEHOST Corp."
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@45.87.175.10:8080#@meli_proxyy",
+    "country": "United States",
+    "country_code": "US",
+    "city": "New York",
+    "isp": "SBL-OSL"
   }
 ]
