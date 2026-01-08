@@ -79,6 +79,10 @@ class CLIRunner:
             async with aiohttp.ClientSession(timeout=timeout, connector=connector) as session:
                 self.session = session
                 
+                # Notify start
+                if self.notifier.is_enabled:
+                    await self.notifier.send_message(f"🤖 **V2Ray Tester Started**\n\nStarting checks on {len(self.aggregator_links) + len(self.direct_config_sources)} sources...")
+
                 # Phase 1: Aggregation
                 print(f"Phase 1: Fetching from {len(self.aggregator_links)} aggregators...")
                 await self._fetch_and_queue_configs(self.aggregator_links)
@@ -266,7 +270,15 @@ class CLIRunner:
                                     ping = test_result.get('ping', 0)
                                     country = test_result.get('country', 'Unknown')
                                     # Create fire-and-forget task to avoid blocking testing
-                                    msg = f"🚀 *{proto}* | 📶 {ping}ms | 🌍 {country}\n`{uri}`"
+                                    
+                                    msg = (
+                                        f"🟢 **New Config Found**\n\n"
+                                        f"🔐 **Protocol**: {proto}\n"
+                                        f"📶 **Ping**: {ping} ms\n"
+                                        f"🌍 **Location**: {country}\n\n"
+                                        f"📋 **Config** (Tap to copy):\n"
+                                        f"`{uri}`"
+                                    )
                                     asyncio.create_task(self.notifier.send_message(msg))
                                 except Exception as notify_err:
                                     self.logger.warning(f"Failed to send immediate notification: {notify_err}")
