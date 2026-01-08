@@ -5,79 +5,136 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 36ms
-  type: vmess
-  server: 172.234.132.232
-  port: 10001
-  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 168ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 170ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-1 | 99ms
+  type: vless
+  server: 38.107.233.59
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
+  uuid: eb162ab1-a006-4931-b1b3-8fc88a22b10e
   network: tcp
-- name: VMESS-4 | 168ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-2 | 198ms
+  type: vless
+  server: 104.21.86.253
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 211ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-6 | 503ms
-  type: vmess
-  server: n1753598451.74qxv.top
-  port: 443
-  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
-  alterId: 0
-  cipher: auto
-  network: ws
+  uuid: e4824193-4f54-453b-d037-88368e85ef0e
+  network: grpc
   tls: true
-  servername: n1753598451.74qxv.top
-  ws-opts:
-    path: /
-    headers: {}
+  servername: pqh27v1.carwashipdir.shop
+- name: VLESS-3 | 327ms
+  type: vless
+  server: 57.129.53.180
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-4 | 296ms
+  type: vless
+  server: 146.103.105.233
+  port: 443
+  uuid: osVPN_3111052
+  network: tcp
+- name: VLESS-5 | 662ms
+  type: vless
+  server: hk01-vlr01.tcp-reset-club.net
+  port: 443
+  uuid: e9dbc178-3656-40f8-8833-5023f306ef1d
+  network: tcp
+- name: VLESS-6 | 354ms
+  type: vless
+  server: 185.92.183.112
+  port: 443
+  uuid: eb162ab1-a006-4931-b1b3-8fc88a22b10e
+  network: tcp
+- name: VLESS-7 | 415ms
+  type: vless
+  server: 45.144.53.166
+  port: 443
+  uuid: a41550c8-daee-4f2c-b5a8-e66b314c99b1
+  network: grpc
+- name: SHADOWSOCKS-8 | 319ms
+  type: ss
+  server: fl3.cowjuice.me
+  port: 9443
+  cipher: chacha20-ietf-poly1305
+  password: X36TIi4C3NH6Oln3TdGyjg
+- name: SHADOWSOCKS-9 | 614ms
+  type: ss
+  server: 109.61.39.150
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 01dc0d7cbb650bc3
+- name: VLESS-10 | 538ms
+  type: vless
+  server: 109.248.222.151
+  port: 443
+  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
+  network: tcp
+- name: SHADOWSOCKS-11 | 510ms
+  type: ss
+  server: 91.106.109.74
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 11bf054dcc0342cd
+- name: VLESS-12 | 558ms
+  type: vless
+  server: 45.12.75.242
+  port: 26424
+  uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+  network: tcp
+- name: VLESS-13 | 368ms
+  type: vless
+  server: 95.128.157.251
+  port: 8443
+  uuid: 1068d6c4-cdf3-4b68-8159-99d367af5f64
+  network: tcp
+- name: SHADOWSOCKS-14 | 528ms
+  type: ss
+  server: 156.244.36.105
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 34bafa5f59fc339f
+- name: VLESS-15 | 400ms
+  type: vless
+  server: 94.232.247.168
+  port: 41360
+  uuid: e16a35ea-6715-4e75-9845-d20358bd0876
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 36ms
-  - VMESS-2 | 168ms
-  - VMESS-3 | 170ms
-  - VMESS-4 | 168ms
-  - VMESS-5 | 211ms
-  - VMESS-6 | 503ms
+  - VLESS-1 | 99ms
+  - VLESS-2 | 198ms
+  - VLESS-3 | 327ms
+  - VLESS-4 | 296ms
+  - VLESS-5 | 662ms
+  - VLESS-6 | 354ms
+  - VLESS-7 | 415ms
+  - SHADOWSOCKS-8 | 319ms
+  - SHADOWSOCKS-9 | 614ms
+  - VLESS-10 | 538ms
+  - SHADOWSOCKS-11 | 510ms
+  - VLESS-12 | 558ms
+  - VLESS-13 | 368ms
+  - SHADOWSOCKS-14 | 528ms
+  - VLESS-15 | 400ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 36ms
-  - VMESS-2 | 168ms
-  - VMESS-3 | 170ms
-  - VMESS-4 | 168ms
-  - VMESS-5 | 211ms
-  - VMESS-6 | 503ms
+  - VLESS-1 | 99ms
+  - VLESS-2 | 198ms
+  - VLESS-3 | 327ms
+  - VLESS-4 | 296ms
+  - VLESS-5 | 662ms
+  - VLESS-6 | 354ms
+  - VLESS-7 | 415ms
+  - SHADOWSOCKS-8 | 319ms
+  - SHADOWSOCKS-9 | 614ms
+  - VLESS-10 | 538ms
+  - SHADOWSOCKS-11 | 510ms
+  - VLESS-12 | 558ms
+  - VLESS-13 | 368ms
+  - SHADOWSOCKS-14 | 528ms
+  - VLESS-15 | 400ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
