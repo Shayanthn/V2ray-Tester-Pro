@@ -1,11 +1,27 @@
 import os
+import sys
 import zipfile
 import requests
 import shutil
+import stat
 
 def download_xray():
-    url = "https://github.com/XTLS/Xray-core/releases/download/v1.8.6/Xray-windows-64.zip"
-    filename = "Xray-windows-64.zip"
+    version = "v1.8.6"
+    
+    if sys.platform.startswith('win'):
+        filename = "Xray-windows-64.zip"
+        executable_name = "xray.exe"
+    elif sys.platform.startswith('linux'):
+        filename = "Xray-linux-64.zip"
+        executable_name = "xray"
+    elif sys.platform.startswith('darwin'): # macOS
+        filename = "Xray-macos-64.zip"
+        executable_name = "xray"
+    else:
+        print(f"❌ Unsupported platform: {sys.platform}")
+        return
+
+    url = f"https://github.com/XTLS/Xray-core/releases/download/{version}/{filename}"
     
     print(f"Downloading {filename} from {url}...")
     try:
@@ -21,13 +37,20 @@ def download_xray():
             zip_ref.extractall(".")
         print("Extraction complete.")
         
-        os.remove(filename)
-        print("Cleaned up zip file.")
+        if os.path.exists(filename):
+            os.remove(filename)
+            print("Cleaned up zip file.")
         
-        if os.path.exists("xray.exe"):
-            print("✅ xray.exe is ready.")
+        if os.path.exists(executable_name):
+            print(f"✅ {executable_name} is ready.")
+            
+            # Set executable permissions on Linux/macOS
+            if not sys.platform.startswith('win'):
+                st = os.stat(executable_name)
+                os.chmod(executable_name, st.st_mode | stat.S_IEXEC)
+                print(f"✅ Executable permissions set for {executable_name}.")
         else:
-            print("❌ xray.exe not found after extraction.")
+            print(f"❌ {executable_name} not found after extraction.")
             
     except Exception as e:
         print(f"❌ Error: {e}")

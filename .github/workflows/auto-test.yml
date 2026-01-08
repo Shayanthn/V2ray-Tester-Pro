@@ -32,57 +32,7 @@ jobs:
       
       - name: Download Xray Core
         run: |
-          # Fetch latest Xray version using Python (more robust)
-          python -c "
-          import requests
-          import os
-          import sys
-          
-          try:
-              print('Fetching latest Xray version tag...')
-              response = requests.get('https://api.github.com/repos/XTLS/Xray-core/releases/latest', timeout=10)
-              response.raise_for_status()
-              tag = response.json()['tag_name']
-              print(f'Latest version: {tag}')
-              with open('xray_version.txt', 'w') as f:
-                  f.write(tag)
-          except Exception as e:
-              print(f'Error fetching version: {e}')
-              # Fallback to a known stable version
-              default_ver = 'v1.8.23' 
-              print(f'Using fallback version: {default_ver}')
-              with open('xray_version.txt', 'w') as f:
-                  f.write(default_ver)
-          "
-          
-          XRAY_VERSION=$(cat xray_version.txt)
-          echo "Determined Xray version: $XRAY_VERSION"
-          
-          echo "Downloading Xray Core $XRAY_VERSION..."
-          
-          # Download with retry and better error handling
-          if ! wget -q --show-progress --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -O Xray-linux-64.zip; then
-            echo "Failed to download Xray Core ${XRAY_VERSION}. Retrying with absolute fallback v1.8.4..."
-            wget -q --show-progress --tries=3 --timeout=30 "https://github.com/XTLS/Xray-core/releases/download/v1.8.4/Xray-linux-64.zip" -O Xray-linux-64.zip
-          fi
-          
-          # Check if file exists and is non-empty
-          if [ ! -s Xray-linux-64.zip ]; then
-            echo "Downloaded file is empty or does not exist."
-            ls -lh Xray-linux-64.zip || echo "File not found"
-            exit 1
-          fi
-          
-          # Check if file is valid zip
-          if ! unzip -t Xray-linux-64.zip; then
-            echo "Downloaded file is not a valid zip. File size: $(stat -f%z Xray-linux-64.zip 2>/dev/null || stat -c%s Xray-linux-64.zip)"
-            echo "First 500 bytes of file:"
-            head -c 500 Xray-linux-64.zip
-            exit 1
-          fi
-          
-          unzip -o Xray-linux-64.zip
-          chmod +x xray
+          python download_xray.py
           ./xray version
       
       - name: Run V2Ray Tester (CLI Mode)
@@ -91,6 +41,8 @@ jobs:
           python main.py --cli --max-configs 200
         env:
           PYTHONUNBUFFERED: 1
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       
       - name: Generate Statistics
         run: |

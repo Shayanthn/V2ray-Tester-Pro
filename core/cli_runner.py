@@ -1,12 +1,14 @@
 import asyncio
 import logging
 import aiohttp
+import os
 from typing import Set, List
 from core.app_state import AppState
 from core.test_runner import TestRunner
 from core.config_processor import ConfigProcessor
 from core.network_manager import NetworkManager, ConfigDiscoverer
 from core.subscription_manager import SubscriptionManager
+from utils.telegram_notifier import TelegramNotifier
 
 class CLIRunner:
     """Manages the execution of tests in CLI mode."""
@@ -109,6 +111,26 @@ class CLIRunner:
                         self.logger.info(f"Saved {len(self.config_blacklist)} blacklisted configs")
                         
                     print(f"Success! Generated subscriptions in '{self.subscription_manager.output_dir}'")
+                    
+                    # Telegram Notification
+                    notifier = TelegramNotifier(logger=self.logger)
+                    if notifier.is_enabled:
+                        print("Sending results to Telegram...")
+                        message = (
+                            f"✅ **Test Complete**\n"
+                            f"Found: {len(self.app_state.results)}\n"
+                            f"Failed: {self.app_state.failed}\n"
+                            f"Blacklisted: {len(self.config_blacklist)}\n"
+                            f"Date: {self.app_state.start_time}"
+                        )
+                        await notifier.send_message(message)
+                        
+                        # Send specific subscription files
+                        files_to_send = ['subscription.txt', 'configs.json']
+                        for filename in files_to_send:
+                            file_path = os.path.join(self.subscription_manager.output_dir, filename)
+                            if os.path.exists(file_path):
+                                await notifier.send_file(file_path, caption=f"📄 {filename}")
                 
                 final_msg = (f"Test complete! Found {len(self.app_state.results)} working configs "
                              f"({self.app_state.failed} failed, {len(self.config_blacklist)} blacklisted).")
