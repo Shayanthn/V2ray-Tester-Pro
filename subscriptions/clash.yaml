@@ -5,94 +5,104 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 17ms
+- name: VMESS-1 | 325ms
   type: vmess
-  server: 172.234.132.232
-  port: 10001
-  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 142ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-2 | 184ms
+  type: vless
+  server: 103.35.190.51
+  port: 4443
+  uuid: d5d5b641-dd56-4f39-9754-8d3c45cc2c5e
+  network: tcp
+- name: VLESS-3 | 296ms
+  type: vless
+  server: 92.118.231.130
+  port: 4443
+  uuid: d5d5b641-dd56-4f39-9754-8d3c45cc2c5e
+  network: tcp
+- name: TROJAN-4 | 327ms
+  type: trojan
+  server: 58.152.110.104
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 140ms
-  type: vmess
-  server: 217.69.5.32
+  password: 381f2e86233720eacda26d50e9aa26da
+  sni: www.nintendogames.net
+- name: TROJAN-5 | 329ms
+  type: trojan
+  server: 58.152.110.104
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
+  password: 381f2e86233720eacda26d50e9aa26da
+  sni: www.nintendogames.net
+- name: VLESS-6 | 2150ms
+  type: vless
+  server: 178.17.53.28
+  port: 47539
+  uuid: 447c45cd-ade0-4bfe-90a0-3e581829f741
   network: tcp
-- name: VMESS-4 | 192ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
+- name: VLESS-7 | 467ms
+  type: vless
+  server: 45.139.26.152
+  port: 7443
+  uuid: 7fc953d6-ae75-46fb-a970-10b57d513487
   network: tcp
-- name: VMESS-5 | 143ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
+- name: VLESS-8 | 483ms
+  type: vless
+  server: 91.243.82.82
+  port: 443
+  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
   network: tcp
-- name: VMESS-6 | 542ms
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: t1.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-7 | 1490ms
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: t1.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
+- name: VLESS-9 | 561ms
+  type: vless
+  server: khabarovsk.geodema.network
+  port: 443
+  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
+  network: tcp
+- name: VLESS-10 | 564ms
+  type: vless
+  server: 158.160.53.57
+  port: 443
+  uuid: 3d29bd40-5f23-4024-aab6-17258cd55a7e
+  network: tcp
+- name: VLESS-11 | 866ms
+  type: vless
+  server: 45.15.127.139
+  port: 4443
+  uuid: d5d5b641-dd56-4f39-9754-8d3c45cc2c5e
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 17ms
-  - VMESS-2 | 142ms
-  - VMESS-3 | 140ms
-  - VMESS-4 | 192ms
-  - VMESS-5 | 143ms
-  - VMESS-6 | 542ms
-  - VMESS-7 | 1490ms
+  - VMESS-1 | 325ms
+  - VLESS-2 | 184ms
+  - VLESS-3 | 296ms
+  - TROJAN-4 | 327ms
+  - TROJAN-5 | 329ms
+  - VLESS-6 | 2150ms
+  - VLESS-7 | 467ms
+  - VLESS-8 | 483ms
+  - VLESS-9 | 561ms
+  - VLESS-10 | 564ms
+  - VLESS-11 | 866ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 17ms
-  - VMESS-2 | 142ms
-  - VMESS-3 | 140ms
-  - VMESS-4 | 192ms
-  - VMESS-5 | 143ms
-  - VMESS-6 | 542ms
-  - VMESS-7 | 1490ms
+  - VMESS-1 | 325ms
+  - VLESS-2 | 184ms
+  - VLESS-3 | 296ms
+  - TROJAN-4 | 327ms
+  - TROJAN-5 | 329ms
+  - VLESS-6 | 2150ms
+  - VLESS-7 | 467ms
+  - VLESS-8 | 483ms
+  - VLESS-9 | 561ms
+  - VLESS-10 | 564ms
+  - VLESS-11 | 866ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
