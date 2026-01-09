@@ -5,127 +5,56 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 24ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VLESS-2 | 132ms
+- name: VLESS-1 | 54ms
   type: vless
-  server: 103.35.190.51
-  port: 4443
-  uuid: d5d5b641-dd56-4f39-9754-8d3c45cc2c5e
-  network: tcp
-- name: TROJAN-3 | 320ms
-  type: trojan
-  server: 58.152.110.104
-  port: 443
-  password: 381f2e86233720eacda26d50e9aa26da
-  sni: www.nintendogames.net
-- name: TROJAN-4 | 319ms
-  type: trojan
-  server: 58.152.110.104
-  port: 443
-  password: 381f2e86233720eacda26d50e9aa26da
-  sni: www.nintendogames.net
-- name: VLESS-5 | 461ms
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-2 | 26ms
   type: vless
-  server: 91.243.82.82
-  port: 443
-  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
-  network: tcp
-- name: VLESS-6 | 538ms
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-3 | 37ms
   type: vless
-  server: khabarovsk.geodema.network
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-4 | 24ms
+  type: vless
+  server: 45.82.251.95
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-5 | 338ms
+  type: vless
+  server: trial.axo.foundation
   port: 443
-  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
+  uuid: 8f9ef160-7a47-4bde-918a-7ef36d4f2579
   network: tcp
-- name: VMESS-7 | 536ms
-  type: vmess
-  server: n1761214911.74qxv.top
-  port: 443
-  uuid: 372c1939-299d-4946-9633-5ffa971f8b67
-  alterId: 0
-  cipher: auto
-  network: ws
   tls: true
-  servername: n1761214911.74qxv.top
-  ws-opts:
-    path: /
-    headers: {}
-- name: VLESS-8 | 680ms
-  type: vless
-  server: 178.17.53.28
-  port: 47539
-  uuid: 447c45cd-ade0-4bfe-90a0-3e581829f741
-  network: tcp
-- name: VLESS-9 | 1193ms
-  type: vless
-  server: 158.160.53.57
-  port: 443
-  uuid: 3d29bd40-5f23-4024-aab6-17258cd55a7e
-  network: tcp
-- name: VLESS-10 | 309ms
-  type: vless
-  server: 92.118.231.130
-  port: 4443
-  uuid: d5d5b641-dd56-4f39-9754-8d3c45cc2c5e
-  network: tcp
-- name: VLESS-11 | 383ms
-  type: vless
-  server: 45.15.127.139
-  port: 4443
-  uuid: d5d5b641-dd56-4f39-9754-8d3c45cc2c5e
-  network: tcp
-- name: VLESS-12 | 391ms
-  type: vless
-  server: 45.139.26.152
-  port: 7443
-  uuid: 7fc953d6-ae75-46fb-a970-10b57d513487
-  network: tcp
-- name: SHADOWSOCKS-13 | 692ms
-  type: ss
-  server: switcher-nick-croquet.freesocks.work
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: wwzVn2ZnHfqYa6l8EWh3eY
+  servername: trial.axo.foundation
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 24ms
-  - VLESS-2 | 132ms
-  - TROJAN-3 | 320ms
-  - TROJAN-4 | 319ms
-  - VLESS-5 | 461ms
-  - VLESS-6 | 538ms
-  - VMESS-7 | 536ms
-  - VLESS-8 | 680ms
-  - VLESS-9 | 1193ms
-  - VLESS-10 | 309ms
-  - VLESS-11 | 383ms
-  - VLESS-12 | 391ms
-  - SHADOWSOCKS-13 | 692ms
+  - VLESS-1 | 54ms
+  - VLESS-2 | 26ms
+  - VLESS-3 | 37ms
+  - VLESS-4 | 24ms
+  - VLESS-5 | 338ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 24ms
-  - VLESS-2 | 132ms
-  - TROJAN-3 | 320ms
-  - TROJAN-4 | 319ms
-  - VLESS-5 | 461ms
-  - VLESS-6 | 538ms
-  - VMESS-7 | 536ms
-  - VLESS-8 | 680ms
-  - VLESS-9 | 1193ms
-  - VLESS-10 | 309ms
-  - VLESS-11 | 383ms
-  - VLESS-12 | 391ms
-  - SHADOWSOCKS-13 | 692ms
+  - VLESS-1 | 54ms
+  - VLESS-2 | 26ms
+  - VLESS-3 | 37ms
+  - VLESS-4 | 24ms
+  - VLESS-5 | 338ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
