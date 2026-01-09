@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10808,
+        "port": 10813,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -65,7 +65,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10809,
+        "port": 10817,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -81,11 +81,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "217.69.5.32",
+              "address": "n1753598451.74qxv.top",
               "port": 443,
               "users": [
                 {
-                  "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
+                  "id": "9798678f-5b8c-4ff1-bbdd-b9b5c1539de0",
                   "alterId": 0,
                   "security": "auto"
                 }
@@ -94,8 +94,13 @@
           ]
         },
         "streamSettings": {
-          "network": "tcp",
-          "security": ""
+          "network": "ws",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "n1753598451.74qxv.top",
+            "allowInsecure": true,
+            "fingerprint": "chrome"
+          }
         },
         "tag": "proxy"
       },
@@ -124,7 +129,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10807,
+        "port": 10814,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -183,7 +188,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10811,
+        "port": 10817,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -258,11 +263,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "n1753598451.74qxv.top",
+              "address": "217.69.5.32",
               "port": 443,
               "users": [
                 {
-                  "id": "9798678f-5b8c-4ff1-bbdd-b9b5c1539de0",
+                  "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
                   "alterId": 0,
                   "security": "auto"
                 }
@@ -271,13 +276,8 @@
           ]
         },
         "streamSettings": {
-          "network": "ws",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "n1753598451.74qxv.top",
-            "allowInsecure": true,
-            "fingerprint": "chrome"
-          }
+          "network": "tcp",
+          "security": ""
         },
         "tag": "proxy"
       },
@@ -306,7 +306,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10819,
+        "port": 10815,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -366,70 +366,6 @@
       {
         "listen": "127.0.0.1",
         "port": 10804,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "t1.620720.xyz",
-              "port": 8443,
-              "users": [
-                {
-                  "id": "516d8a7a-3f0b-41d3-bad0-246116381516",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "ws",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "t1.620720.xyz",
-            "allowInsecure": true,
-            "fingerprint": "chrome"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10807,
         "protocol": "http",
         "settings": {
           "timeout": 0,
