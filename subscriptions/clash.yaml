@@ -5,74 +5,111 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 42ms
-  type: vless
-  server: 15.204.97.165
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+- name: VMESS-1 | 120ms
+  type: vmess
+  server: 172.234.132.232
+  port: 10001
+  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
+  alterId: 0
+  cipher: auto
   network: tcp
-- name: VLESS-2 | 146ms
-  type: vless
-  server: all.tellmethetrue.shop
+- name: VMESS-2 | 256ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 305ms
+  type: vmess
+  server: 162.19.248.238
+  port: 550
+  uuid: ede27a79-b039-490b-932c-495de4b68880
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 254ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  uuid: e4824193-4f54-453b-d037-88368e85ef0e
-  network: grpc
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 253ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-6 | 391ms
+  type: vmess
+  server: n1753598451.74qxv.top
+  port: 443
+  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
+  alterId: 0
+  cipher: auto
+  network: ws
   tls: true
-  servername: pqh30v5.carwashipdir.shop
-- name: VLESS-3 | 459ms
-  type: vless
-  server: trial.axo.foundation
+  servername: n1753598451.74qxv.top
+  ws-opts:
+    path: /
+    headers: {}
+- name: SHADOWSOCKS-7 | 1050ms
+  type: ss
+  server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.358.onl
+  port: 18005
+  cipher: chacha20-ietf-poly1305
+  password: e611027a-7b55-4f64-b8df-258f2d7ef95c
+- name: SHADOWSOCKS-8 | 522ms
+  type: ss
+  server: 156.244.36.105
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 34bafa5f59fc339f
+- name: TROJAN-9 | 403ms
+  type: trojan
+  server: 58.152.30.149
   port: 443
-  uuid: 8f9ef160-7a47-4bde-918a-7ef36d4f2579
-  network: tcp
-  tls: true
-  servername: trial.axo.foundation
-- name: VLESS-4 | 325ms
-  type: vless
-  server: 57.129.53.180
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: VLESS-5 | 393ms
-  type: vless
-  server: vkru.outlinekeys.net
-  port: 443
-  uuid: eb162ab1-a006-4931-b1b3-8fc88a22b10e
-  network: tcp
-- name: VLESS-6 | 443ms
-  type: vless
-  server: 51.250.28.39
-  port: 4248
-  uuid: 84b24517-2989-4f23-b6df-a12effc3c432
-  network: tcp
-- name: VLESS-7 | 1195ms
-  type: vless
-  server: ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz
-  port: 443
-  uuid: 0e8a6896-ad90-4a3b-89a3-77d64aa409e2
-  network: tcp
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: TROJAN-10 | 136ms
+  type: trojan
+  server: 198.57.27.27
+  port: 12990
+  password: 6pRjKQJ0CWyFtG.9
+  sni: 198.57.27.27
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 42ms
-  - VLESS-2 | 146ms
-  - VLESS-3 | 459ms
-  - VLESS-4 | 325ms
-  - VLESS-5 | 393ms
-  - VLESS-6 | 443ms
-  - VLESS-7 | 1195ms
+  - VMESS-1 | 120ms
+  - VMESS-2 | 256ms
+  - VMESS-3 | 305ms
+  - VMESS-4 | 254ms
+  - VMESS-5 | 253ms
+  - VMESS-6 | 391ms
+  - SHADOWSOCKS-7 | 1050ms
+  - SHADOWSOCKS-8 | 522ms
+  - TROJAN-9 | 403ms
+  - TROJAN-10 | 136ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 42ms
-  - VLESS-2 | 146ms
-  - VLESS-3 | 459ms
-  - VLESS-4 | 325ms
-  - VLESS-5 | 393ms
-  - VLESS-6 | 443ms
-  - VLESS-7 | 1195ms
+  - VMESS-1 | 120ms
+  - VMESS-2 | 256ms
+  - VMESS-3 | 305ms
+  - VMESS-4 | 254ms
+  - VMESS-5 | 253ms
+  - VMESS-6 | 391ms
+  - SHADOWSOCKS-7 | 1050ms
+  - SHADOWSOCKS-8 | 522ms
+  - TROJAN-9 | 403ms
+  - TROJAN-10 | 136ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
