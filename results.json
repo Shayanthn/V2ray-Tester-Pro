@@ -2,10 +2,10 @@
   {
     "protocol": "vmess",
     "address": "172.234.132.232",
-    "ping": 22,
-    "jitter": 25,
-    "download_speed": 196.28,
-    "upload_speed": 197.56,
+    "ping": 87,
+    "jitter": 61,
+    "download_speed": 38.53,
+    "upload_speed": 32.43,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -80,18 +80,18 @@
   },
   {
     "protocol": "vmess",
-    "address": "217.69.5.32",
-    "ping": 142,
-    "jitter": 104,
-    "download_speed": 26.51,
-    "upload_speed": 19.33,
+    "address": "162.19.248.238",
+    "ping": 253,
+    "jitter": 181,
+    "download_speed": 18.08,
+    "upload_speed": 12.12,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "217.69.5.32",
+    "ip": "162.19.248.238",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -115,11 +115,11 @@
           "settings": {
             "vnext": [
               {
-                "address": "217.69.5.32",
-                "port": 443,
+                "address": "162.19.248.238",
+                "port": 550,
                 "users": [
                   {
-                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
+                    "id": "ede27a79-b039-490b-932c-495de4b68880",
                     "alterId": 0,
                     "security": "auto"
                   }
@@ -129,7 +129,7 @@
           },
           "streamSettings": {
             "network": "tcp",
-            "security": "none"
+            "security": ""
           },
           "tag": "proxy"
         },
@@ -151,19 +151,19 @@
         ]
       }
     },
-    "uri": "vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICIycWZybWszbCIsCiAgImFkZCI6ICIyMTcuNjkuNS4zMiIsCiAgInBvcnQiOiA0NDMsCiAgImlkIjogImVjNGMzNDljLWIzYzYtNGNmZi1iZTYzLTAxZWFhZDFkYzA5OCIsCiAgInNjeSI6ICJhdXRvIiwKICAibmV0IjogInRjcCIsCiAgInRscyI6ICJub25lIiwKICAidHlwZSI6ICJub25lIgp9",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Aubervilliers",
-    "isp": "The Constant Company, LLC"
+    "uri": "vmess://eyJhZGQiOiIxNjIuMTkuMjQ4LjIzOCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiSm9pbi0tLVBMQU5CX05FVC0tLUpvaW4tLS1QTEFOQl9ORVQtLS1Kb2luLS0tUExBTkJfTkVUIiwiaWQiOiJlZGUyN2E3OS1iMDM5LTQ5MGItOTMyYy00OTVkZTRiNjg4ODAiLCJpbnNlY3VyZSI6IjEiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjU1MCIsInBzIjoiQEZpbHRlcl9icmVha2VyIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
   },
   {
     "protocol": "vmess",
     "address": "94.232.247.165",
-    "ping": 145,
-    "jitter": 109,
-    "download_speed": 28.67,
-    "upload_speed": 19.19,
+    "ping": 218,
+    "jitter": 154,
+    "download_speed": 18.31,
+    "upload_speed": 12.63,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -239,10 +239,89 @@
   {
     "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 142,
-    "jitter": 106,
-    "download_speed": 26.72,
-    "upload_speed": 19.5,
+    "ping": 217,
+    "jitter": 152,
+    "download_speed": 17.5,
+    "upload_speed": 12.7,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "217.69.5.32",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10808,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "217.69.5.32",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "none"
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICIycWZybWszbCIsCiAgImFkZCI6ICIyMTcuNjkuNS4zMiIsCiAgInBvcnQiOiA0NDMsCiAgImlkIjogImVjNGMzNDljLWIzYzYtNGNmZi1iZTYzLTAxZWFhZDFkYzA5OCIsCiAgInNjeSI6ICJhdXRvIiwKICAibmV0IjogInRjcCIsCiAgInRscyI6ICJub25lIiwKICAidHlwZSI6ICJub25lIgp9",
+    "country": "France",
+    "country_code": "FR",
+    "city": "Aubervilliers",
+    "isp": "The Constant Company, LLC"
+  },
+  {
+    "protocol": "vmess",
+    "address": "217.69.5.32",
+    "ping": 217,
+    "jitter": 154,
+    "download_speed": 17.64,
+    "upload_speed": 12.52,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -314,168 +393,5 @@
     "country_code": "FR",
     "city": "Aubervilliers",
     "isp": "The Constant Company, LLC"
-  },
-  {
-    "protocol": "vmess",
-    "address": "162.19.248.238",
-    "ping": 188,
-    "jitter": 139,
-    "download_speed": 25.27,
-    "upload_speed": 17.23,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "162.19.248.238",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10810,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "162.19.248.238",
-                "port": 550,
-                "users": [
-                  {
-                    "id": "ede27a79-b039-490b-932c-495de4b68880",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiIxNjIuMTkuMjQ4LjIzOCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiSm9pbi0tLVBMQU5CX05FVC0tLUpvaW4tLS1QTEFOQl9ORVQtLS1Kb2luLS0tUExBTkJfTkVUIiwiaWQiOiJlZGUyN2E3OS1iMDM5LTQ5MGItOTMyYy00OTVkZTRiNjg4ODAiLCJpbnNlY3VyZSI6IjEiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjU1MCIsInBzIjoiQEZpbHRlcl9icmVha2VyIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Limburg an der Lahn",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "vmess",
-    "address": "n1753598451.74qxv.top",
-    "ping": 558,
-    "jitter": 683,
-    "download_speed": 9.6,
-    "upload_speed": 4.74,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": false,
-      "youtube": true
-    },
-    "ip": "n1753598451.74qxv.top",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10804,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "n1753598451.74qxv.top",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "9798678f-5b8c-4ff1-bbdd-b9b5c1539de0",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "n1753598451.74qxv.top",
-              "allowInsecure": true,
-              "fingerprint": "chrome"
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiJuMTc1MzU5ODQ1MS43NHF4di50b3AiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6Im4xNzUzNTk4NDUxLjc0cXh2LnRvcCIsImlkIjoiOTc5ODY3OGYtNWI4Yy00ZmYxLWJiZGQtYjliNWMxNTM5ZGUwIiwiaW5zZWN1cmUiOiIwIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiI0NDMiLCJwcyI6IldpRmktQFYycmF5QWxwaGEtMjkiLCJzY3kiOiJhdXRvIiwic25pIjoibjE3NTM1OTg0NTEuNzRxeHYudG9wIiwidGxzIjoidGxzIiwidHlwZSI6Ii0tLSIsInYiOiIyIn0=vmess",
-    "country": "Japan",
-    "country_code": "JP",
-    "city": "Tokyo",
-    "isp": "Alibaba Cloud LLC"
   }
 ]
