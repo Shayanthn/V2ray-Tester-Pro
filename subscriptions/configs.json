@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10800,
+        "port": 10814,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -18,27 +18,68 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "45.82.251.95",
-              "port": 8880,
-              "users": [
-                {
-                  "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
+              "address": "57.129.129.139",
+              "port": 29183,
+              "method": "chacha20-ietf-poly1305",
+              "password": "ab0b81a5bff7ddea"
             }
           ]
         },
-        "streamSettings": {
-          "network": "grpc",
-          "security": "none"
+        "tag": "🌐سرور"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10806,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
         },
-        "tag": "proxy"
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "135.125.245.131",
+              "port": 20939,
+              "method": "chacha20-ietf-poly1305",
+              "password": "85d3d8ccba287d3e"
+            }
+          ]
+        },
+        "tag": "🌐سرور"
       },
       {
         "protocol": "freedom",
@@ -77,15 +118,215 @@
     ],
     "outbounds": [
       {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "193.29.139.157",
+              "port": 8080,
+              "method": "chacha20-ietf-poly1305",
+              "password": "4a2rfixophdjffa8KVA4Aa"
+            }
+          ]
+        },
+        "tag": "🌐سرور"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10802,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "51.89.117.154",
+              "port": 11201,
+              "method": "chacha20-ietf-poly1305",
+              "password": "9bfee1388e960537"
+            }
+          ]
+        },
+        "tag": "🌐سرور"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "141.95.109.94",
+              "port": 11201,
+              "method": "chacha20-ietf-poly1305",
+              "password": "10f90af92b6c1a74"
+            }
+          ]
+        },
+        "tag": "🌐سرور"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "154.205.148.202",
+              "port": 11201,
+              "method": "chacha20-ietf-poly1305",
+              "password": "71807718f593d3e6"
+            }
+          ]
+        },
+        "tag": "🌐سرور"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10806,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
         "protocol": "vless",
         "settings": {
           "vnext": [
             {
-              "address": "pqh29v3.globalfymain.com",
-              "port": 8880,
+              "address": "5.182.36.56",
+              "port": 45886,
               "users": [
                 {
-                  "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
+                  "id": "8338171d-2ea7-4015-bdea-492f3d5d4e60",
                   "encryption": "none",
                   "flow": ""
                 }
@@ -94,10 +335,73 @@
           ]
         },
         "streamSettings": {
-          "network": "grpc",
-          "security": "none"
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0",
+            "shortId": "94f9",
+            "spiderX": "/"
+          }
         },
         "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10801,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "51.68.146.248",
+              "port": 10011,
+              "method": "chacha20-ietf-poly1305",
+              "password": "a792ff4b517fdf1c"
+            }
+          ]
+        },
+        "tag": "🌐سرور"
       },
       {
         "protocol": "freedom",
@@ -136,153 +440,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "pqh29v3.globalfymain.com",
-              "port": 8880,
-              "users": [
-                {
-                  "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
+              "address": "51.68.146.248",
+              "port": 10011,
+              "method": "chacha20-ietf-poly1305",
+              "password": "a792ff4b517fdf1c"
             }
           ]
         },
-        "streamSettings": {
-          "network": "grpc",
-          "security": "none"
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10810,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "pqh29v3.globalfymain.com",
-              "port": 8880,
-              "users": [
-                {
-                  "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "grpc",
-          "security": "none"
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10810,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "trial.axo.foundation",
-              "port": 443,
-              "users": [
-                {
-                  "id": "8f9ef160-7a47-4bde-918a-7ef36d4f2579",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "trial.axo.foundation",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "http/1.1"
-            ]
-          }
-        },
-        "tag": "proxy"
+        "tag": "🌐"
       },
       {
         "protocol": "freedom",

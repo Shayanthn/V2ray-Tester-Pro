@@ -5,56 +5,86 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 52ms
+- name: SHADOWSOCKS-1 | 182ms
+  type: ss
+  server: 57.129.129.139
+  port: 29183
+  cipher: chacha20-ietf-poly1305
+  password: ab0b81a5bff7ddea
+- name: SHADOWSOCKS-2 | 167ms
+  type: ss
+  server: 135.125.245.131
+  port: 20939
+  cipher: chacha20-ietf-poly1305
+  password: 85d3d8ccba287d3e
+- name: SHADOWSOCKS-3 | 164ms
+  type: ss
+  server: 193.29.139.157
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 4a2rfixophdjffa8KVA4Aa
+- name: SHADOWSOCKS-4 | 169ms
+  type: ss
+  server: 51.89.117.154
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 9bfee1388e960537
+- name: SHADOWSOCKS-5 | 161ms
+  type: ss
+  server: 141.95.109.94
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 10f90af92b6c1a74
+- name: SHADOWSOCKS-6 | 292ms
+  type: ss
+  server: 154.205.148.202
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 71807718f593d3e6
+- name: VLESS-7 | 324ms
   type: vless
-  server: 45.82.251.95
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 87ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-3 | 57ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-4 | 71ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-5 | 289ms
-  type: vless
-  server: trial.axo.foundation
-  port: 443
-  uuid: 8f9ef160-7a47-4bde-918a-7ef36d4f2579
+  server: 5.182.36.56
+  port: 45886
+  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
   network: tcp
-  tls: true
-  servername: trial.axo.foundation
+- name: SHADOWSOCKS-8 | 205ms
+  type: ss
+  server: 51.68.146.248
+  port: 10011
+  cipher: chacha20-ietf-poly1305
+  password: a792ff4b517fdf1c
+- name: SHADOWSOCKS-9 | 201ms
+  type: ss
+  server: 51.68.146.248
+  port: 10011
+  cipher: chacha20-ietf-poly1305
+  password: a792ff4b517fdf1c
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 52ms
-  - VLESS-2 | 87ms
-  - VLESS-3 | 57ms
-  - VLESS-4 | 71ms
-  - VLESS-5 | 289ms
+  - SHADOWSOCKS-1 | 182ms
+  - SHADOWSOCKS-2 | 167ms
+  - SHADOWSOCKS-3 | 164ms
+  - SHADOWSOCKS-4 | 169ms
+  - SHADOWSOCKS-5 | 161ms
+  - SHADOWSOCKS-6 | 292ms
+  - VLESS-7 | 324ms
+  - SHADOWSOCKS-8 | 205ms
+  - SHADOWSOCKS-9 | 201ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 52ms
-  - VLESS-2 | 87ms
-  - VLESS-3 | 57ms
-  - VLESS-4 | 71ms
-  - VLESS-5 | 289ms
+  - SHADOWSOCKS-1 | 182ms
+  - SHADOWSOCKS-2 | 167ms
+  - SHADOWSOCKS-3 | 164ms
+  - SHADOWSOCKS-4 | 169ms
+  - SHADOWSOCKS-5 | 161ms
+  - SHADOWSOCKS-6 | 292ms
+  - VLESS-7 | 324ms
+  - SHADOWSOCKS-8 | 205ms
+  - SHADOWSOCKS-9 | 201ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
