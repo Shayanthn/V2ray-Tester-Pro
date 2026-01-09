@@ -5,56 +5,94 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 54ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 26ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-3 | 37ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-4 | 24ms
-  type: vless
-  server: 45.82.251.95
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-5 | 338ms
-  type: vless
-  server: trial.axo.foundation
-  port: 443
-  uuid: 8f9ef160-7a47-4bde-918a-7ef36d4f2579
+- name: VMESS-1 | 15ms
+  type: vmess
+  server: 172.234.132.232
+  port: 10001
+  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
+  alterId: 0
+  cipher: auto
   network: tcp
+- name: VMESS-2 | 148ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 150ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 190ms
+  type: vmess
+  server: 162.19.248.238
+  port: 550
+  uuid: ede27a79-b039-490b-932c-495de4b68880
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 605ms
+  type: vmess
+  server: n1753598451.74qxv.top
+  port: 443
+  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
+  alterId: 0
+  cipher: auto
+  network: ws
   tls: true
-  servername: trial.axo.foundation
+  servername: n1753598451.74qxv.top
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-6 | 488ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-7 | 1369ms
+  type: vmess
+  server: n1753598451.74qxv.top
+  port: 443
+  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: n1753598451.74qxv.top
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 54ms
-  - VLESS-2 | 26ms
-  - VLESS-3 | 37ms
-  - VLESS-4 | 24ms
-  - VLESS-5 | 338ms
+  - VMESS-1 | 15ms
+  - VMESS-2 | 148ms
+  - VMESS-3 | 150ms
+  - VMESS-4 | 190ms
+  - VMESS-5 | 605ms
+  - VMESS-6 | 488ms
+  - VMESS-7 | 1369ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 54ms
-  - VLESS-2 | 26ms
-  - VLESS-3 | 37ms
-  - VLESS-4 | 24ms
-  - VLESS-5 | 338ms
+  - VMESS-1 | 15ms
+  - VMESS-2 | 148ms
+  - VMESS-3 | 150ms
+  - VMESS-4 | 190ms
+  - VMESS-5 | 605ms
+  - VMESS-6 | 488ms
+  - VMESS-7 | 1369ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
