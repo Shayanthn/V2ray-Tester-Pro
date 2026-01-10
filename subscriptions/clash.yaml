@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 76ms
+- name: VMESS-1 | 17ms
   type: vmess
   server: 172.234.132.232
   port: 10001
@@ -13,7 +13,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 221ms
+- name: VMESS-2 | 142ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -21,7 +21,15 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 269ms
+- name: VMESS-3 | 141ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 189ms
   type: vmess
   server: 162.19.248.238
   port: 550
@@ -29,15 +37,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 218ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 478ms
+- name: VMESS-5 | 626ms
   type: vmess
   server: n1753598451.74qxv.top
   port: 443
@@ -50,7 +50,7 @@ proxies:
   ws-opts:
     path: /
     headers: {}
-- name: VMESS-6 | 209ms
+- name: VMESS-6 | 578ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -63,21 +63,21 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 76ms
-  - VMESS-2 | 221ms
-  - VMESS-3 | 269ms
-  - VMESS-4 | 218ms
-  - VMESS-5 | 478ms
-  - VMESS-6 | 209ms
+  - VMESS-1 | 17ms
+  - VMESS-2 | 142ms
+  - VMESS-3 | 141ms
+  - VMESS-4 | 189ms
+  - VMESS-5 | 626ms
+  - VMESS-6 | 578ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 76ms
-  - VMESS-2 | 221ms
-  - VMESS-3 | 269ms
-  - VMESS-4 | 218ms
-  - VMESS-5 | 478ms
-  - VMESS-6 | 209ms
+  - VMESS-1 | 17ms
+  - VMESS-2 | 142ms
+  - VMESS-3 | 141ms
+  - VMESS-4 | 189ms
+  - VMESS-5 | 626ms
+  - VMESS-6 | 578ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:

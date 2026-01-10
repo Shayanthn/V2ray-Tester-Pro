@@ -2,10 +2,10 @@
   {
     "protocol": "vmess",
     "address": "172.234.132.232",
-    "ping": 76,
-    "jitter": 59,
-    "download_speed": 44.36,
-    "upload_speed": 32.61,
+    "ping": 17,
+    "jitter": 17,
+    "download_speed": 173.29,
+    "upload_speed": 42.96,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -20,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10801,
+          "port": 10806,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -81,10 +81,10 @@
   {
     "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 221,
-    "jitter": 158,
-    "download_speed": 18.16,
-    "upload_speed": 11.94,
+    "ping": 142,
+    "jitter": 101,
+    "download_speed": 26.78,
+    "upload_speed": 19.19,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -99,86 +99,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10806,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "217.69.5.32",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiIyMTcuNjkuNS4zMiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJlYzRjMzQ5Yy1iM2M2LTRjZmYtYmU2My0wMWVhYWQxZGMwOTgiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ0MyIsInBzIjoiQkVTVElJVlBOQk9UIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiIiLCJ2IjoiMiJ9",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Aubervilliers",
-    "isp": "The Constant Company, LLC"
-  },
-  {
-    "protocol": "vmess",
-    "address": "217.69.5.32",
-    "ping": 218,
-    "jitter": 160,
-    "download_speed": 17.1,
-    "upload_speed": 12.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "217.69.5.32",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10805,
+          "port": 10814,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -238,11 +159,90 @@
   },
   {
     "protocol": "vmess",
+    "address": "217.69.5.32",
+    "ping": 141,
+    "jitter": 98,
+    "download_speed": 26.62,
+    "upload_speed": 15.12,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "217.69.5.32",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10812,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "217.69.5.32",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiIyMTcuNjkuNS4zMiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJlYzRjMzQ5Yy1iM2M2LTRjZmYtYmU2My0wMWVhYWQxZGMwOTgiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ0MyIsInBzIjoiQkVTVElJVlBOQk9UIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiIiLCJ2IjoiMiJ9",
+    "country": "France",
+    "country_code": "FR",
+    "city": "Aubervilliers",
+    "isp": "The Constant Company, LLC"
+  },
+  {
+    "protocol": "vmess",
     "address": "162.19.248.238",
-    "ping": 269,
-    "jitter": 199,
-    "download_speed": 17.4,
-    "upload_speed": 11.73,
+    "ping": 189,
+    "jitter": 139,
+    "download_speed": 24.91,
+    "upload_speed": 17.28,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -257,7 +257,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10802,
+          "port": 10807,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -318,10 +318,10 @@
   {
     "protocol": "vmess",
     "address": "n1753598451.74qxv.top",
-    "ping": 478,
-    "jitter": 616,
-    "download_speed": 12.78,
-    "upload_speed": 7.21,
+    "ping": 626,
+    "jitter": 803,
+    "download_speed": 9.38,
+    "upload_speed": 8.14,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -336,7 +336,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10810,
+          "port": 10818,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -402,10 +402,10 @@
   {
     "protocol": "vmess",
     "address": "94.232.247.165",
-    "ping": 209,
-    "jitter": 151,
-    "download_speed": 0.4,
-    "upload_speed": 6.4,
+    "ping": 578,
+    "jitter": 859,
+    "download_speed": 0.36,
+    "upload_speed": 9.36,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -420,7 +420,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10803,
+          "port": 10802,
           "protocol": "http",
           "settings": {
             "timeout": 0,
