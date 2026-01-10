@@ -5,66 +5,79 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 22ms
+- name: VMESS-1 | 120ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: 172.234.132.232
+  port: 10001
+  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 21ms
+- name: VMESS-2 | 243ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
   alterId: 0
   cipher: auto
   network: tcp
-- name: TROJAN-3 | 350ms
-  type: trojan
-  server: 112.118.116.123
+- name: VMESS-3 | 245ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  password: 61d8077bfb174e171b8283f155a555ad
-  sni: www.nintendogames.net
-- name: TROJAN-4 | 709ms
-  type: trojan
-  server: 58.152.46.60
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 253ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  password: BxceQaOe
-  sni: '������ [By EbraSha] b2n.ir/v2ray-configs | 449 '
-- name: TROJAN-5 | 1096ms
-  type: trojan
-  server: 58.152.46.60
-  port: 443
-  password: BxceQaOe
-  sni: ' +[By+EbraSha]+trojan-HK+'
-- name: TROJAN-6 | 595ms
-  type: trojan
-  server: 58.152.46.60
-  port: 443
-  password: BxceQaOe
-  sni: ' [By EbraSha] b2n.ir/v2ray-configs '
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 296ms
+  type: vmess
+  server: 162.19.248.238
+  port: 550
+  uuid: ede27a79-b039-490b-932c-495de4b68880
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-6 | 275ms
+  type: vmess
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: t1.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 22ms
-  - VMESS-2 | 21ms
-  - TROJAN-3 | 350ms
-  - TROJAN-4 | 709ms
-  - TROJAN-5 | 1096ms
-  - TROJAN-6 | 595ms
+  - VMESS-1 | 120ms
+  - VMESS-2 | 243ms
+  - VMESS-3 | 245ms
+  - VMESS-4 | 253ms
+  - VMESS-5 | 296ms
+  - VMESS-6 | 275ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 22ms
-  - VMESS-2 | 21ms
-  - TROJAN-3 | 350ms
-  - TROJAN-4 | 709ms
-  - TROJAN-5 | 1096ms
-  - TROJAN-6 | 595ms
+  - VMESS-1 | 120ms
+  - VMESS-2 | 243ms
+  - VMESS-3 | 245ms
+  - VMESS-4 | 253ms
+  - VMESS-5 | 296ms
+  - VMESS-6 | 275ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
