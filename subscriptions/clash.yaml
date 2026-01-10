@@ -5,37 +5,43 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 44ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 62ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-3 | 44ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-4 | 32ms
+- name: VLESS-1 | 153ms
   type: vless
   server: 45.82.251.95
   port: 8880
   uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
   network: grpc
-- name: VLESS-5 | 366ms
+- name: VLESS-2 | 177ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-3 | 152ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-4 | 172ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-5 | 226ms
   type: vless
   server: japan.geodema.network
   port: 443
   uuid: a11ab9c5-4155-430b-9efc-7a7122531382
   network: tcp
-- name: VLESS-6 | 334ms
+- name: VLESS-6 | 328ms
+  type: vless
+  server: japan.geodema.network
+  port: 443
+  uuid: a11ab9c5-4155-430b-9efc-7a7122531382
+  network: tcp
+- name: VLESS-7 | 271ms
   type: vless
   server: japan.geodema.network
   port: 443
@@ -46,21 +52,23 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 44ms
-  - VLESS-2 | 62ms
-  - VLESS-3 | 44ms
-  - VLESS-4 | 32ms
-  - VLESS-5 | 366ms
-  - VLESS-6 | 334ms
+  - VLESS-1 | 153ms
+  - VLESS-2 | 177ms
+  - VLESS-3 | 152ms
+  - VLESS-4 | 172ms
+  - VLESS-5 | 226ms
+  - VLESS-6 | 328ms
+  - VLESS-7 | 271ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 44ms
-  - VLESS-2 | 62ms
-  - VLESS-3 | 44ms
-  - VLESS-4 | 32ms
-  - VLESS-5 | 366ms
-  - VLESS-6 | 334ms
+  - VLESS-1 | 153ms
+  - VLESS-2 | 177ms
+  - VLESS-3 | 152ms
+  - VLESS-4 | 172ms
+  - VLESS-5 | 226ms
+  - VLESS-6 | 328ms
+  - VLESS-7 | 271ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
