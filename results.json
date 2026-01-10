@@ -1,18 +1,228 @@
 [
   {
-    "protocol": "vless",
-    "address": "65.108.231.185",
-    "ping": 315,
-    "jitter": 335,
-    "download_speed": 14.58,
-    "upload_speed": 9.97,
+    "protocol": "shadowsocks",
+    "address": "193.29.139.157",
+    "ping": 170,
+    "jitter": 125,
+    "download_speed": 20.35,
+    "upload_speed": 13.81,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "65.108.231.185",
+    "ip": "193.29.139.157",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10808,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "193.29.139.157",
+                "port": 8080,
+                "method": "chacha20-ietf-poly1305",
+                "password": "4a2rfixophdjffa8KVA4Aa"
+              }
+            ]
+          },
+          "tag": "🌐سرور"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTJyZml4b3BoZGpmZmE4S1ZBNEFh@193.29.139.157:8080#🌐سرور",
+    "country": "The Netherlands",
+    "country_code": "NL",
+    "city": "Amsterdam",
+    "isp": "Greenhost BV"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "141.95.109.94",
+    "ping": 198,
+    "jitter": 143,
+    "download_speed": 17.18,
+    "upload_speed": 13.16,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "141.95.109.94",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10810,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "141.95.109.94",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "10f90af92b6c1a74"
+              }
+            ]
+          },
+          "tag": "🌐سرور"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxMGY5MGFmOTJiNmMxYTc0@141.95.109.94:11201#🌐سرور",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "135.125.245.131",
+    "ping": 189,
+    "jitter": 137,
+    "download_speed": 19.17,
+    "upload_speed": 13.97,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "135.125.245.131",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10818,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "135.125.245.131",
+                "port": 20939,
+                "method": "chacha20-ietf-poly1305",
+                "password": "85d3d8ccba287d3e"
+              }
+            ]
+          },
+          "tag": "🌐سرور"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4NWQzZDhjY2JhMjg3ZDNl@135.125.245.131:20939#🌐سرور",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "57.129.95.38",
+    "ping": 203,
+    "jitter": 148,
+    "download_speed": 17.13,
+    "upload_speed": 14.01,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "57.129.95.38",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -32,15 +242,85 @@
       ],
       "outbounds": [
         {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "57.129.95.38",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "f54cdee10f8b25ce"
+              }
+            ]
+          },
+          "tag": "🌐سرور"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmNTRjZGVlMTBmOGIyNWNl@57.129.95.38:11201#🌐سرور",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "vless",
+    "address": "5.182.36.56",
+    "ping": 353,
+    "jitter": 416,
+    "download_speed": 16.0,
+    "upload_speed": 11.02,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "5.182.36.56",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10819,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
           "protocol": "vless",
           "settings": {
             "vnext": [
               {
-                "address": "65.108.231.185",
-                "port": 443,
+                "address": "5.182.36.56",
+                "port": 45886,
                 "users": [
                   {
-                    "id": "440766d1-858f-4719-84f5-c2de6f6227b2",
+                    "id": "8338171d-2ea7-4015-bdea-492f3d5d4e60",
                     "encryption": "none",
                     "flow": ""
                   }
@@ -50,15 +330,19 @@
           },
           "streamSettings": {
             "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "65.108.231.185",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "yahoo.com",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
                 "h2",
                 "http/1.1"
-              ]
+              ],
+              "show": false,
+              "publicKey": "zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0",
+              "shortId": "94f9",
+              "spiderX": "/"
             }
           },
           "tag": "proxy"
@@ -81,26 +365,26 @@
         ]
       }
     },
-    "uri": "vless://440766d1-858f-4719-84f5-c2de6f6227b2@65.108.231.185:443?security=tls&amp;encryption=none&amp;insecure=1&amp;headerType=none&amp;type=tcp&amp;allowInsecure=1&amp;sni=api.avito.ru#VPN_PROXY_CUSTOM%20%F0%9F%8F%B4",
-    "country": "Finland",
-    "country_code": "FI",
-    "city": "Helsinki",
-    "isp": "Hetzner Online GmbH"
+    "uri": "vless://8338171d-2ea7-4015-bdea-492f3d5d4e60@5.182.36.56:45886?security=reality&encryption=none&pbk=zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=yahoo.com&sid=94f9#🌐سرور",
+    "country": "Switzerland",
+    "country_code": "CH",
+    "city": "Bern",
+    "isp": "WorkTitans B.V."
   },
   {
-    "protocol": "vless",
-    "address": "doprax.fxgoldensignals.com",
-    "ping": 196,
-    "jitter": 174,
-    "download_speed": 21.91,
-    "upload_speed": 16.68,
+    "protocol": "shadowsocks",
+    "address": "154.205.148.202",
+    "ping": 321,
+    "jitter": 242,
+    "download_speed": 10.68,
+    "upload_speed": 10.35,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "doprax.fxgoldensignals.com",
+    "ip": "154.205.148.202",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -108,7 +392,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10802,
+          "port": 10809,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -120,27 +404,18 @@
       ],
       "outbounds": [
         {
-          "protocol": "vless",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "doprax.fxgoldensignals.com",
-                "port": 50904,
-                "users": [
-                  {
-                    "id": "d4795cd9-cd7b-4cea-edfb-20cdcca5837b",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
+                "address": "154.205.148.202",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "71807718f593d3e6"
               }
             ]
           },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "none"
-          },
-          "tag": "proxy"
+          "tag": "🌐سرور"
         },
         {
           "protocol": "freedom",
@@ -160,26 +435,26 @@
         ]
       }
     },
-    "uri": "vless://d4795cd9-cd7b-4cea-edfb-20cdcca5837b@doprax.fxgoldensignals.com:50904?security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp#Allnet%20%7C%20telegram%3A%20%40ultrasurf_12",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt Am Main",
-    "isp": "Hetzner Online AG"
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3MTgwNzcxOGY1OTNkM2U2@154.205.148.202:11201#🌐سرور",
+    "country": "Türkiye",
+    "country_code": "TR",
+    "city": "Istanbul",
+    "isp": "Kaopu Cloud HK Limited"
   },
   {
-    "protocol": "vmess",
-    "address": "47.251.91.241",
-    "ping": 131,
-    "jitter": 98,
-    "download_speed": 35.27,
-    "upload_speed": 25.82,
+    "protocol": "shadowsocks",
+    "address": "51.68.146.248",
+    "ping": 215,
+    "jitter": 158,
+    "download_speed": 6.09,
+    "upload_speed": 12.8,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "47.251.91.241",
+    "ip": "51.68.146.248",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -187,7 +462,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10805,
+          "port": 10814,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -199,27 +474,18 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "47.251.91.241",
-                "port": 42899,
-                "users": [
-                  {
-                    "id": "0925b355-2bcd-4eae-9720-d2709e4f7e36",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
+                "address": "51.68.146.248",
+                "port": 10011,
+                "method": "chacha20-ietf-poly1305",
+                "password": "a792ff4b517fdf1c"
               }
             ]
           },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
+          "tag": "🌐سرور"
         },
         {
           "protocol": "freedom",
@@ -239,168 +505,10 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiI0Ny4yNTEuOTEuMjQxIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjA5MjViMzU1LTJiY2QtNGVhZS05NzIwLWQyNzA5ZTRmN2UzNiIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiNDI4OTkiLCJwcyI6IvCfh7rwn4e4W0Bwcm94eXN0b3JlMTFddm1lc3MtVVMiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Minkler",
-    "isp": "Alibaba Cloud LLC"
-  },
-  {
-    "protocol": "vmess",
-    "address": "85.195.101.122",
-    "ping": 158,
-    "jitter": 114,
-    "download_speed": 24.45,
-    "upload_speed": 16.94,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "85.195.101.122",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10800,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "85.195.101.122",
-                "port": 40878,
-                "users": [
-                  {
-                    "id": "f3d4167e-b15e-4e46-82e9-9286ef93fda7",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiI4NS4xOTUuMTAxLjEyMiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJmM2Q0MTY3ZS1iMTVlLTRlNDYtODJlOS05Mjg2ZWY5M2ZkYTciLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQwODc4IiwicHMiOiJAVk1FU1NJUjROINis2YfYqiDYrtix24zYryDaqdin2YbZgduM2q8iLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt am Main",
-    "isp": "velia.net Internetdienste GmbH"
-  },
-  {
-    "protocol": "vmess",
-    "address": "172.234.132.232",
-    "ping": 13,
-    "jitter": 10,
-    "download_speed": 204.26,
-    "upload_speed": 103.16,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "172.234.132.232",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10813,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "172.234.132.232",
-                "port": 10001,
-                "users": [
-                  {
-                    "id": "a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiIxNzIuMjM0LjEzMi4yMzIiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYTZiOTljMDUtOGUwYS00ZjdlLWJmN2ItZTRiOWZlYmI5NTg5IiwiaW5zZWN1cmUiOiIwIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIxMDAwMSIsInBzIjoiQFYyUkFZX1ZNRVNTX2ZyZWUiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Ashburn",
-    "isp": "Akamai Technologies, Inc."
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNzkyZmY0YjUxN2ZkZjFj@51.68.146.248:10011#🌐سرور",
+    "country": "Poland",
+    "country_code": "PL",
+    "city": "Warsaw",
+    "isp": "OVH SAS"
   }
 ]
