@@ -5,64 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 20ms
-  type: vmess
-  server: 172.234.132.232
-  port: 10001
-  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 143ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-1 | 44ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-2 | 62ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-3 | 44ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-4 | 32ms
+  type: vless
+  server: 45.82.251.95
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-5 | 366ms
+  type: vless
+  server: japan.geodema.network
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
+  uuid: a11ab9c5-4155-430b-9efc-7a7122531382
   network: tcp
-- name: VMESS-3 | 142ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-6 | 334ms
+  type: vless
+  server: japan.geodema.network
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 191ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 488ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
+  uuid: a11ab9c5-4155-430b-9efc-7a7122531382
   network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 20ms
-  - VMESS-2 | 143ms
-  - VMESS-3 | 142ms
-  - VMESS-4 | 191ms
-  - VMESS-5 | 488ms
+  - VLESS-1 | 44ms
+  - VLESS-2 | 62ms
+  - VLESS-3 | 44ms
+  - VLESS-4 | 32ms
+  - VLESS-5 | 366ms
+  - VLESS-6 | 334ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 20ms
-  - VMESS-2 | 143ms
-  - VMESS-3 | 142ms
-  - VMESS-4 | 191ms
-  - VMESS-5 | 488ms
+  - VLESS-1 | 44ms
+  - VLESS-2 | 62ms
+  - VLESS-3 | 44ms
+  - VLESS-4 | 32ms
+  - VLESS-5 | 366ms
+  - VLESS-6 | 334ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
