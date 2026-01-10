@@ -5,64 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 30ms
-  type: vmess
-  server: 172.234.132.232
-  port: 10001
-  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 173ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 214ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 166ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-1 | 48ms
+  type: vless
+  server: 45.82.251.95
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-2 | 56ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-3 | 195ms
+  type: vless
+  server: uk2.miyazono-kaori.com
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
   network: tcp
-- name: VMESS-5 | 179ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-4 | 225ms
+  type: vless
+  server: uk1.miyazono-kaori.com
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
   network: tcp
+- name: VLESS-5 | 236ms
+  type: vless
+  server: 57.129.53.180
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-6 | 240ms
+  type: vless
+  server: 91.107.148.79
+  port: 443
+  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
+  network: grpc
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 30ms
-  - VMESS-2 | 173ms
-  - VMESS-3 | 214ms
-  - VMESS-4 | 166ms
-  - VMESS-5 | 179ms
+  - VLESS-1 | 48ms
+  - VLESS-2 | 56ms
+  - VLESS-3 | 195ms
+  - VLESS-4 | 225ms
+  - VLESS-5 | 236ms
+  - VLESS-6 | 240ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 30ms
-  - VMESS-2 | 173ms
-  - VMESS-3 | 214ms
-  - VMESS-4 | 166ms
-  - VMESS-5 | 179ms
+  - VLESS-1 | 48ms
+  - VLESS-2 | 56ms
+  - VLESS-3 | 195ms
+  - VLESS-4 | 225ms
+  - VLESS-5 | 236ms
+  - VLESS-6 | 240ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
