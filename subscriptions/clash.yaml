@@ -5,90 +5,77 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 8ms
-  type: ss
-  server: 173.244.56.6
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: VMESS-2 | 22ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: SHADOWSOCKS-3 | 20ms
-  type: ss
-  server: 104.192.226.106
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-4 | 48ms
-  type: ss
-  server: 156.146.38.167
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: VMESS-5 | 21ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: SHADOWSOCKS-6 | 82ms
+- name: SHADOWSOCKS-1 | 54ms
   type: ss
   server: 79.127.233.170
   port: 990
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
-- name: TROJAN-7 | 86ms
-  type: trojan
-  server: 38.96.254.102
-  port: 18509
-  password: .ie4rghJuMkcf0oF
-  sni: shoppingmall.electricbanana.click
-- name: TROJAN-8 | 132ms
-  type: trojan
-  server: 198.57.27.27
-  port: 12990
-  password: 6pRjKQJ0CWyFtG.9
-  sni: 198.57.27.27
-- name: TROJAN-9 | 351ms
-  type: trojan
-  server: 58.152.25.220
+- name: SHADOWSOCKS-2 | 408ms
+  type: ss
+  server: 45.154.204.7
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-3 | 398ms
+  type: ss
+  server: 23.95.76.59
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: VLESS-4 | 307ms
+  type: vless
+  server: 146.103.105.233
   port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
+  uuid: osVPN_3111052
+  network: tcp
+- name: VLESS-5 | 648ms
+  type: vless
+  server: 176.120.72.63
+  port: 38339
+  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
+  network: tcp
+- name: VLESS-6 | 674ms
+  type: vless
+  server: kz.accesspoints.cloakify.app
+  port: 38339
+  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
+  network: tcp
+- name: VMESS-7 | 687ms
+  type: vmess
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: t1.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 8ms
-  - VMESS-2 | 22ms
-  - SHADOWSOCKS-3 | 20ms
-  - SHADOWSOCKS-4 | 48ms
-  - VMESS-5 | 21ms
-  - SHADOWSOCKS-6 | 82ms
-  - TROJAN-7 | 86ms
-  - TROJAN-8 | 132ms
-  - TROJAN-9 | 351ms
+  - SHADOWSOCKS-1 | 54ms
+  - SHADOWSOCKS-2 | 408ms
+  - SHADOWSOCKS-3 | 398ms
+  - VLESS-4 | 307ms
+  - VLESS-5 | 648ms
+  - VLESS-6 | 674ms
+  - VMESS-7 | 687ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 8ms
-  - VMESS-2 | 22ms
-  - SHADOWSOCKS-3 | 20ms
-  - SHADOWSOCKS-4 | 48ms
-  - VMESS-5 | 21ms
-  - SHADOWSOCKS-6 | 82ms
-  - TROJAN-7 | 86ms
-  - TROJAN-8 | 132ms
-  - TROJAN-9 | 351ms
+  - SHADOWSOCKS-1 | 54ms
+  - SHADOWSOCKS-2 | 408ms
+  - SHADOWSOCKS-3 | 398ms
+  - VLESS-4 | 307ms
+  - VLESS-5 | 648ms
+  - VLESS-6 | 674ms
+  - VMESS-7 | 687ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
