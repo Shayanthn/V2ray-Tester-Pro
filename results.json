@@ -1,103 +1,11 @@
 [
   {
     "protocol": "vless",
-    "address": "146.103.105.233",
-    "ping": 292,
-    "jitter": 261,
-    "download_speed": 0.54,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "146.103.105.233",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10808,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vless",
-          "settings": {
-            "vnext": [
-              {
-                "address": "146.103.105.233",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "osVPN_3111052",
-                    "encryption": "none",
-                    "flow": "xtls-rprx-vision"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "reality",
-            "realitySettings": {
-              "serverName": "whatsapp.com",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ],
-              "show": false,
-              "publicKey": "Z8A8Q4ZzljW2121vwEHNV6qVMnF9Z_FLULGozMOiGTE",
-              "shortId": "ffffffffff",
-              "spiderX": "/"
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vless://osVPN_3111052@146.103.105.233:443?security=reality&encryption=none&pbk=Z8A8Q4ZzljW2121vwEHNV6qVMnF9Z_FLULGozMOiGTE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=whatsapp.com&sid=ffffffffff#injl-%40Fr33C0nfig%20%2F%20%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20🔗",
-    "country": "The Netherlands",
-    "country_code": "NL",
-    "city": "Amsterdam",
-    "isp": "Servers Tech Fzco"
-  },
-  {
-    "protocol": "vless",
     "address": "kz.accesspoints.cloakify.app",
-    "ping": 660,
-    "jitter": 643,
-    "download_speed": 7.87,
-    "upload_speed": 5.31,
+    "ping": 657,
+    "jitter": 690,
+    "download_speed": 6.94,
+    "upload_speed": 6.23,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -112,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10812,
+          "port": 10801,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -184,12 +92,82 @@
     "isp": "WorkTitans B.V."
   },
   {
+    "protocol": "shadowsocks",
+    "address": "45.154.204.7",
+    "ping": 320,
+    "jitter": 234,
+    "download_speed": 23.57,
+    "upload_speed": 50.27,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "45.154.204.7",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10801,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "45.154.204.7",
+                "port": 990,
+                "method": "chacha20-ietf-poly1305",
+                "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+              }
+            ]
+          },
+          "tag": "🇦🇿 SS-阿塞拜疆-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-45.154.204.7:990"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@45.154.204.7:990#%F0%9F%87%A6%F0%9F%87%BF%20SS-%E9%98%BF%E5%A1%9E%E6%8B%9C%E7%96%86-NF%E8%A7%A3%E9%94%81%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%9C%B0%E5%8C%BA%E9%9D%9E%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-45.154.204.7%3A990",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Montreal",
+    "isp": "BrainStorm Network, Inc"
+  },
+  {
     "protocol": "vless",
     "address": "176.120.72.63",
-    "ping": 660,
-    "jitter": 621,
-    "download_speed": 8.2,
-    "upload_speed": 5.06,
+    "ping": 605,
+    "jitter": 619,
+    "download_speed": 8.05,
+    "upload_speed": 6.13,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -204,7 +182,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10815,
+          "port": 10819,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -277,81 +255,11 @@
   },
   {
     "protocol": "shadowsocks",
-    "address": "45.154.204.7",
-    "ping": 385,
-    "jitter": 278,
-    "download_speed": 19.48,
-    "upload_speed": 3.68,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "45.154.204.7",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10801,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "45.154.204.7",
-                "port": 990,
-                "method": "chacha20-ietf-poly1305",
-                "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
-              }
-            ]
-          },
-          "tag": "🇦🇿 SS-阿塞拜疆-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-45.154.204.7:990"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@45.154.204.7:990#%F0%9F%87%A6%F0%9F%87%BF%20SS-%E9%98%BF%E5%A1%9E%E6%8B%9C%E7%96%86-NF%E8%A7%A3%E9%94%81%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%9C%B0%E5%8C%BA%E9%9D%9E%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-45.154.204.7%3A990",
-    "country": "Canada",
-    "country_code": "CA",
-    "city": "Montreal",
-    "isp": "BrainStorm Network, Inc"
-  },
-  {
-    "protocol": "shadowsocks",
     "address": "23.95.76.59",
-    "ping": 402,
-    "jitter": 290,
-    "download_speed": 21.86,
-    "upload_speed": 12.62,
+    "ping": 57,
+    "jitter": 52,
+    "download_speed": 23.05,
+    "upload_speed": 13.14,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -366,7 +274,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10800,
+          "port": 10802,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -418,10 +326,10 @@
   {
     "protocol": "shadowsocks",
     "address": "79.127.233.170",
-    "ping": 81,
-    "jitter": 60,
-    "download_speed": 46.52,
-    "upload_speed": 35.93,
+    "ping": 93,
+    "jitter": 69,
+    "download_speed": 39.51,
+    "upload_speed": 31.33,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -436,7 +344,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10803,
+          "port": 10815,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -486,15 +394,85 @@
     "isp": "Datacamp Limited"
   },
   {
-    "protocol": "vmess",
-    "address": "t1.620720.xyz",
-    "ping": 282,
-    "jitter": 298,
-    "download_speed": 6.92,
-    "upload_speed": 2.49,
+    "protocol": "shadowsocks",
+    "address": "23.95.75.146",
+    "ping": 142,
+    "jitter": 209,
+    "download_speed": 22.0,
+    "upload_speed": 20.74,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "23.95.75.146",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10814,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "23.95.75.146",
+                "port": 443,
+                "method": "chacha20-ietf-poly1305",
+                "password": "NDRySIABARbErNIVsCNVkyYAHiBzhveT"
+              }
+            ]
+          },
+          "tag": "🇺🇸 SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-23.95.75.146:443"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpORFJ5U0lBQkFSYkVyTklWc0NOVmt5WUFIaUJ6aHZlVA@23.95.75.146:443#%F0%9F%87%BA%F0%9F%87%B8%20SS-%E7%BE%8E%E5%9B%BD-NF%E8%A7%A3%E9%94%81%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-23.95.75.146%3A443",
+    "country": "United States",
+    "country_code": "US",
+    "city": "New York",
+    "isp": "BrainStorm Network, Inc"
+  },
+  {
+    "protocol": "vmess",
+    "address": "t1.620720.xyz",
+    "ping": 928,
+    "jitter": 995,
+    "download_speed": 2.01,
+    "upload_speed": 1.97,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": false,
       "instagram": true,
       "youtube": true
     },
@@ -506,7 +484,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10819,
+          "port": 10810,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -541,6 +519,10 @@
               "serverName": "t1.620720.xyz",
               "allowInsecure": true,
               "fingerprint": "chrome"
+            },
+            "sockopt": {
+              "dialerProxy": "fragment",
+              "tcpKeepAliveIdle": 100
             }
           },
           "tag": "proxy"
@@ -548,6 +530,22 @@
         {
           "protocol": "freedom",
           "tag": "direct"
+        },
+        {
+          "tag": "fragment",
+          "protocol": "freedom",
+          "settings": {
+            "fragment": {
+              "packets": "tlshello",
+              "length": "100-200",
+              "interval": "10-20"
+            }
+          },
+          "streamSettings": {
+            "sockopt": {
+              "tcpKeepAliveIdle": 100
+            }
+          }
         }
       ],
       "routing": {
@@ -564,9 +562,10 @@
       }
     },
     "uri": "vmess://eyJ2IjoiMiIsInBzIjoi8J+Hr/Cfh7UgVk1FU1Mt576O5Zu9PuaXpeacrC1ORuino+mUgeaXpeacrOWcsOWMuumdnuiHquWItuWJpy1DaGF0R1BULVlvdVR1YmUtdDEuNjIwNzIwLnh5ejo4NDQzIiwiYWRkIjoidDEuNjIwNzIwLnh5eiIsInBvcnQiOiI4NDQzIiwidHlwZSI6Im5vbmUiLCJpZCI6IjUxNmQ4YTdhLTNmMGItNDFkMy1iYWQwLTI0NjExNjM4MTUxNiIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwiaG9zdCI6InQxLjYyMDcyMC54eXoiLCJ0bHMiOiJ0bHMifQ==",
+    "revived_with_fragment": true,
     "country": "Canada",
     "country_code": "CA",
-    "city": "Toronto",
+    "city": "Montreal",
     "isp": "Cloudflare, Inc."
   }
 ]
