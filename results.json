@@ -2,13 +2,13 @@
   {
     "protocol": "vless",
     "address": "146.103.105.233",
-    "ping": 368,
-    "jitter": 254,
-    "download_speed": 0.32,
-    "upload_speed": 0.0,
+    "ping": 335,
+    "jitter": 315,
+    "download_speed": 13.99,
+    "upload_speed": 9.69,
     "is_bypassing": true,
     "connectivity": {
-      "telegram": true,
+      "telegram": false,
       "instagram": true,
       "youtube": true
     },
@@ -20,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10800,
+          "port": 10815,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -94,10 +94,10 @@
   {
     "protocol": "vless",
     "address": "kz.accesspoints.cloakify.app",
-    "ping": 687,
-    "jitter": 627,
-    "download_speed": 2.9,
-    "upload_speed": 5.25,
+    "ping": 752,
+    "jitter": 747,
+    "download_speed": 8.14,
+    "upload_speed": 4.88,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -112,7 +112,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10818,
+          "port": 10819,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -184,12 +184,362 @@
     "isp": "WorkTitans B.V."
   },
   {
+    "protocol": "shadowsocks",
+    "address": "173.244.56.6",
+    "ping": 31,
+    "jitter": 24,
+    "download_speed": 99.25,
+    "upload_speed": 81.09,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "173.244.56.6",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10816,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "173.244.56.6",
+                "port": 443,
+                "method": "aes-128-gcm",
+                "password": "shadowsocks"
+              }
+            ]
+          },
+          "tag": "🇺🇸US-173.244.56.6-0242"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@173.244.56.6:443#%F0%9F%87%BA%F0%9F%87%B8US-173.244.56.6-0242",
+    "country": "United States",
+    "country_code": "US",
+    "city": "Us-az",
+    "isp": "GSL Networks Pty LTD"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "79.127.233.170",
+    "ping": 152,
+    "jitter": 114,
+    "download_speed": 73.47,
+    "upload_speed": 52.35,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "79.127.233.170",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10816,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "79.127.233.170",
+                "port": 990,
+                "method": "chacha20-ietf-poly1305",
+                "password": "f8f7aCzcPKbsF8p3"
+              }
+            ]
+          },
+          "tag": "🇨🇦CA-79.127.233.170-0291"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@79.127.233.170:990#%F0%9F%87%A8%F0%9F%87%A6CA-79.127.233.170-0291",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Vancouver",
+    "isp": "Datacamp Limited"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "156.146.38.168",
+    "ping": 78,
+    "jitter": 56,
+    "download_speed": 48.32,
+    "upload_speed": 38.17,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "156.146.38.168",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10811,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "156.146.38.168",
+                "port": 443,
+                "method": "aes-128-gcm",
+                "password": "shadowsocks"
+              }
+            ]
+          },
+          "tag": "🇺🇸US-156.146.38.168-0235"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.168:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.168-0235",
+    "country": "United States",
+    "country_code": "US",
+    "city": "Dallas",
+    "isp": "Datacamp Limited"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "156.146.38.167",
+    "ping": 72,
+    "jitter": 52,
+    "download_speed": 53.32,
+    "upload_speed": 34.41,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "156.146.38.167",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10817,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "156.146.38.167",
+                "port": 443,
+                "method": "aes-128-gcm",
+                "password": "shadowsocks"
+              }
+            ]
+          },
+          "tag": "🇺🇸US-156.146.38.167-0234"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.167:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.167-0234",
+    "country": "United States",
+    "country_code": "US",
+    "city": "Dallas",
+    "isp": "Datacamp Limited"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "104.192.226.106",
+    "ping": 21,
+    "jitter": 17,
+    "download_speed": 147.07,
+    "upload_speed": 134.01,
+    "is_bypassing": false,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "104.192.226.106",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10816,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "104.192.226.106",
+                "port": 990,
+                "method": "chacha20-ietf-poly1305",
+                "password": "f8f7aCzcPKbsF8p3"
+              }
+            ]
+          },
+          "tag": "🇺🇸US-104.192.226.106-0240"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@104.192.226.106:990#%F0%9F%87%BA%F0%9F%87%B8US-104.192.226.106-0240",
+    "country": "United States",
+    "country_code": "US",
+    "city": "Los Angeles",
+    "isp": "Dedicated.com"
+  },
+  {
     "protocol": "vless",
     "address": "176.120.72.63",
-    "ping": 702,
-    "jitter": 713,
-    "download_speed": 8.86,
-    "upload_speed": 3.56,
+    "ping": 655,
+    "jitter": 607,
+    "download_speed": 8.17,
+    "upload_speed": 5.26,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -204,7 +554,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10811,
+          "port": 10806,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -277,18 +627,18 @@
   },
   {
     "protocol": "shadowsocks",
-    "address": "45.154.204.7",
-    "ping": 398,
-    "jitter": 235,
-    "download_speed": 35.35,
-    "upload_speed": 13.65,
+    "address": "156.146.38.170",
+    "ping": 81,
+    "jitter": 58,
+    "download_speed": 0.0,
+    "upload_speed": 36.62,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "45.154.204.7",
+    "ip": "156.146.38.170",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -296,7 +646,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10812,
+          "port": 10800,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -312,14 +662,14 @@
           "settings": {
             "servers": [
               {
-                "address": "45.154.204.7",
-                "port": 990,
-                "method": "chacha20-ietf-poly1305",
-                "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+                "address": "156.146.38.170",
+                "port": 443,
+                "method": "aes-128-gcm",
+                "password": "shadowsocks"
               }
             ]
           },
-          "tag": "🇦🇿 SS-阿塞拜疆-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-45.154.204.7:990"
+          "tag": "🇺🇸US-156.146.38.170-0233"
         },
         {
           "protocol": "freedom",
@@ -339,164 +689,10 @@
         ]
       }
     },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@45.154.204.7:990#%F0%9F%87%A6%F0%9F%87%BF%20SS-%E9%98%BF%E5%A1%9E%E6%8B%9C%E7%96%86-NF%E8%A7%A3%E9%94%81%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%9C%B0%E5%8C%BA%E9%9D%9E%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-45.154.204.7%3A990",
-    "country": "Canada",
-    "country_code": "CA",
-    "city": "Montreal",
-    "isp": "BrainStorm Network, Inc"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "23.95.76.59",
-    "ping": 106,
-    "jitter": 84,
-    "download_speed": 19.87,
-    "upload_speed": 24.97,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "23.95.76.59",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10818,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "23.95.76.59",
-                "port": 990,
-                "method": "chacha20-ietf-poly1305",
-                "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
-              }
-            ]
-          },
-          "tag": "🇺🇸 SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@23.95.76.59:990#%F0%9F%87%BA%F0%9F%87%B8%20SS-%E7%BE%8E%E5%9B%BD-NF%E8%A7%A3%E9%94%81%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%9C%B0%E5%8C%BA%E9%9D%9E%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-23.95.76.59%3A990",
-    "country": "Canada",
-    "country_code": "CA",
-    "city": "Montreal",
-    "isp": "BrainStorm Network Inc."
-  },
-  {
-    "protocol": "vmess",
-    "address": "t1.620720.xyz",
-    "ping": 512,
-    "jitter": 485,
-    "download_speed": 10.07,
-    "upload_speed": 7.38,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "t1.620720.xyz",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10801,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "t1.620720.xyz",
-                "port": 8443,
-                "users": [
-                  {
-                    "id": "516d8a7a-3f0b-41d3-bad0-246116381516",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "t1.620720.xyz",
-              "allowInsecure": true,
-              "fingerprint": "chrome"
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJ2IjoiMiIsInBzIjoi8J+Hr/Cfh7UgVk1FU1Mt576O5Zu9PuaXpeacrC1ORuino+mUgeaXpeacrOWcsOWMuumdnuiHquWItuWJpy1DaGF0R1BULVlvdVR1YmUtdDEuNjIwNzIwLnh5ejo4NDQzIiwiYWRkIjoidDEuNjIwNzIwLnh5eiIsInBvcnQiOiI4NDQzIiwidHlwZSI6Im5vbmUiLCJpZCI6IjUxNmQ4YTdhLTNmMGItNDFkMy1iYWQwLTI0NjExNjM4MTUxNiIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwiaG9zdCI6InQxLjYyMDcyMC54eXoiLCJ0bHMiOiJ0bHMifQ==",
-    "country": "Canada",
-    "country_code": "CA",
-    "city": "Toronto",
-    "isp": "Cloudflare, Inc."
+    "uri": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.170:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.170-0233",
+    "country": "United States",
+    "country_code": "US",
+    "city": "Dallas",
+    "isp": "Datacamp Limited"
   }
 ]
