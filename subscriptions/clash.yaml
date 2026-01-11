@@ -5,78 +5,54 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 61ms
+- name: VLESS-1 | 235ms
   type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 29ms
-  type: vless
-  server: 45.82.251.95
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-3 | 33ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-4 | 31ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-5 | 750ms
-  type: vless
-  server: 91.243.82.82
+  server: uk2.miyazono-kaori.com
   port: 443
-  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
   network: tcp
-- name: VLESS-6 | 349ms
+- name: VLESS-2 | 249ms
   type: vless
-  server: japan.geodema.network
+  server: uk1.miyazono-kaori.com
   port: 443
-  uuid: a11ab9c5-4155-430b-9efc-7a7122531382
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
   network: tcp
-- name: VLESS-7 | 436ms
+- name: VLESS-3 | 218ms
   type: vless
-  server: japan.geodema.network
+  server: uk2.miyazono-kaori.com
   port: 443
-  uuid: a11ab9c5-4155-430b-9efc-7a7122531382
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
   network: tcp
-- name: VLESS-8 | 337ms
+- name: VLESS-4 | 237ms
   type: vless
-  server: japan.geodema.network
+  server: uk1.miyazono-kaori.com
   port: 443
-  uuid: a11ab9c5-4155-430b-9efc-7a7122531382
+  uuid: 582f44d4-4511-402c-a0b7-b5771a2a5c9d
   network: tcp
+- name: VLESS-5 | 260ms
+  type: vless
+  server: 91.107.148.79
+  port: 443
+  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
+  network: grpc
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 61ms
-  - VLESS-2 | 29ms
-  - VLESS-3 | 33ms
-  - VLESS-4 | 31ms
-  - VLESS-5 | 750ms
-  - VLESS-6 | 349ms
-  - VLESS-7 | 436ms
-  - VLESS-8 | 337ms
+  - VLESS-1 | 235ms
+  - VLESS-2 | 249ms
+  - VLESS-3 | 218ms
+  - VLESS-4 | 237ms
+  - VLESS-5 | 260ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 61ms
-  - VLESS-2 | 29ms
-  - VLESS-3 | 33ms
-  - VLESS-4 | 31ms
-  - VLESS-5 | 750ms
-  - VLESS-6 | 349ms
-  - VLESS-7 | 436ms
-  - VLESS-8 | 337ms
+  - VLESS-1 | 235ms
+  - VLESS-2 | 249ms
+  - VLESS-3 | 218ms
+  - VLESS-4 | 237ms
+  - VLESS-5 | 260ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
