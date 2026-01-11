@@ -5,123 +5,107 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 30ms
-  type: vmess
-  server: 172.234.132.232
-  port: 10001
-  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: TROJAN-2 | 124ms
+- name: TROJAN-1 | 225ms
   type: trojan
-  server: 38.96.254.102
-  port: 18509
-  password: .ie4rghJuMkcf0oF
-  sni: shoppingmall.electricbanana.click
-- name: VMESS-3 | 166ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 166ms
-  type: vmess
-  server: 217.69.5.32
+  server: 153.121.38.213
+  port: 1933
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: TROJAN-2 | 223ms
+  type: trojan
+  server: 160.16.130.66
+  port: 1933
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: TROJAN-3 | 346ms
+  type: trojan
+  server: 58.152.25.220
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 172ms
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: TROJAN-4 | 462ms
+  type: trojan
+  server: 153.121.38.213
+  port: 3076
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: VMESS-5 | 458ms
   type: vmess
-  server: 217.69.5.32
+  server: n1761214905.wpg27.xyz
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-6 | 222ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VLESS-7 | 317ms
-  type: vless
-  server: 146.103.105.233
-  port: 443
-  uuid: osVPN_3111052
-  network: tcp
-- name: VMESS-8 | 417ms
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  uuid: b1d3007c-441a-42d5-84b5-20301c46fa2c
   alterId: 0
   cipher: auto
   network: ws
   tls: true
-  servername: t1.620720.xyz
+  servername: n1761214905.wpg27.xyz
   ws-opts:
     path: /
     headers: {}
-- name: VMESS-9 | 114ms
+- name: VMESS-6 | 458ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: n1761214904.wpg27.xyz
+  port: 443
+  uuid: 7f6f64ae-3778-434c-adfc-95cb67ee8b73
   alterId: 0
   cipher: auto
-  network: tcp
-- name: VMESS-10 | 114ms
+  network: ws
+  tls: true
+  servername: n1761214904.wpg27.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: TROJAN-7 | 482ms
+  type: trojan
+  server: 153.121.38.213
+  port: 3901
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: TROJAN-8 | 755ms
+  type: trojan
+  server: 112.118.116.123
+  port: 443
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: VMESS-9 | 482ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: n1747624282.lie5d.cyou
+  port: 443
+  uuid: 30109222-8c53-41bc-9781-a01cdeb68e4c
   alterId: 0
   cipher: auto
-  network: tcp
-- name: SHADOWSOCKS-11 | 398ms
-  type: ss
-  server: 85.90.207.104
-  port: 18792
-  cipher: chacha20-ietf-poly1305
-  password: e716d7bbae4bdd14
+  network: ws
+  tls: true
+  servername: n1747624282.lie5d.cyou
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 30ms
-  - TROJAN-2 | 124ms
-  - VMESS-3 | 166ms
-  - VMESS-4 | 166ms
-  - VMESS-5 | 172ms
-  - VMESS-6 | 222ms
-  - VLESS-7 | 317ms
-  - VMESS-8 | 417ms
-  - VMESS-9 | 114ms
-  - VMESS-10 | 114ms
-  - SHADOWSOCKS-11 | 398ms
+  - TROJAN-1 | 225ms
+  - TROJAN-2 | 223ms
+  - TROJAN-3 | 346ms
+  - TROJAN-4 | 462ms
+  - VMESS-5 | 458ms
+  - VMESS-6 | 458ms
+  - TROJAN-7 | 482ms
+  - TROJAN-8 | 755ms
+  - VMESS-9 | 482ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 30ms
-  - TROJAN-2 | 124ms
-  - VMESS-3 | 166ms
-  - VMESS-4 | 166ms
-  - VMESS-5 | 172ms
-  - VMESS-6 | 222ms
-  - VLESS-7 | 317ms
-  - VMESS-8 | 417ms
-  - VMESS-9 | 114ms
-  - VMESS-10 | 114ms
-  - SHADOWSOCKS-11 | 398ms
+  - TROJAN-1 | 225ms
+  - TROJAN-2 | 223ms
+  - TROJAN-3 | 346ms
+  - TROJAN-4 | 462ms
+  - VMESS-5 | 458ms
+  - VMESS-6 | 458ms
+  - TROJAN-7 | 482ms
+  - TROJAN-8 | 755ms
+  - VMESS-9 | 482ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
