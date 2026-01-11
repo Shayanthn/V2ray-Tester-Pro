@@ -5,86 +5,86 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 21ms
-  type: ss
-  server: 104.192.226.106
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-2 | 31ms
+- name: SHADOWSOCKS-1 | 77ms
   type: ss
   server: 173.244.56.6
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: SHADOWSOCKS-3 | 152ms
+- name: SHADOWSOCKS-2 | 29ms
   type: ss
-  server: 79.127.233.170
+  server: 104.192.226.106
   port: 990
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-4 | 72ms
+- name: SHADOWSOCKS-3 | 44ms
   type: ss
   server: 156.146.38.167
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: SHADOWSOCKS-5 | 78ms
+- name: SHADOWSOCKS-4 | 47ms
   type: ss
-  server: 156.146.38.168
+  server: 156.146.38.169
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: VLESS-6 | 335ms
-  type: vless
-  server: 146.103.105.233
-  port: 443
-  uuid: osVPN_3111052
-  network: tcp
-- name: VLESS-7 | 655ms
-  type: vless
-  server: 176.120.72.63
-  port: 38339
-  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
-  network: tcp
-- name: VLESS-8 | 752ms
-  type: vless
-  server: kz.accesspoints.cloakify.app
-  port: 38339
-  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
-  network: tcp
-- name: SHADOWSOCKS-9 | 81ms
+- name: SHADOWSOCKS-5 | 53ms
   type: ss
   server: 156.146.38.170
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
+- name: SHADOWSOCKS-6 | 46ms
+  type: ss
+  server: 156.146.38.168
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-7 | 83ms
+  type: ss
+  server: 79.127.233.170
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+- name: SHADOWSOCKS-8 | 87ms
+  type: ss
+  server: 173.234.29.2
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-9 | 111ms
+  type: ss
+  server: 103.35.189.136
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: SS2QvbC9nqLp2sXXZo0BVy4slcErRuCt
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 21ms
-  - SHADOWSOCKS-2 | 31ms
-  - SHADOWSOCKS-3 | 152ms
-  - SHADOWSOCKS-4 | 72ms
-  - SHADOWSOCKS-5 | 78ms
-  - VLESS-6 | 335ms
-  - VLESS-7 | 655ms
-  - VLESS-8 | 752ms
-  - SHADOWSOCKS-9 | 81ms
+  - SHADOWSOCKS-1 | 77ms
+  - SHADOWSOCKS-2 | 29ms
+  - SHADOWSOCKS-3 | 44ms
+  - SHADOWSOCKS-4 | 47ms
+  - SHADOWSOCKS-5 | 53ms
+  - SHADOWSOCKS-6 | 46ms
+  - SHADOWSOCKS-7 | 83ms
+  - SHADOWSOCKS-8 | 87ms
+  - SHADOWSOCKS-9 | 111ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 21ms
-  - SHADOWSOCKS-2 | 31ms
-  - SHADOWSOCKS-3 | 152ms
-  - SHADOWSOCKS-4 | 72ms
-  - SHADOWSOCKS-5 | 78ms
-  - VLESS-6 | 335ms
-  - VLESS-7 | 655ms
-  - VLESS-8 | 752ms
-  - SHADOWSOCKS-9 | 81ms
+  - SHADOWSOCKS-1 | 77ms
+  - SHADOWSOCKS-2 | 29ms
+  - SHADOWSOCKS-3 | 44ms
+  - SHADOWSOCKS-4 | 47ms
+  - SHADOWSOCKS-5 | 53ms
+  - SHADOWSOCKS-6 | 46ms
+  - SHADOWSOCKS-7 | 83ms
+  - SHADOWSOCKS-8 | 87ms
+  - SHADOWSOCKS-9 | 111ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
