@@ -5,57 +5,19 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 17ms
-  type: vmess
-  server: 172.234.132.232
-  port: 10001
-  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 142ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 140ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 187ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: TROJAN-5 | 179ms
-  type: trojan
-  server: 51.45.9.101
-  port: 22222
-  password: telegram-id-privatevpns
-  sni: 51.45.9.101
-- name: TROJAN-6 | 188ms
-  type: trojan
-  server: 63.181.220.145
-  port: 22222
-  password: telegram-id-privatevpns
-  sni: 63.181.220.145
-- name: TROJAN-7 | 182ms
-  type: trojan
-  server: 167.17.70.117
-  port: 27234
-  password: kuGDUhAYqXnvIomV0Kdljfor
-  sni: 167.17.70.117
-- name: VMESS-8 | 568ms
+- name: SHADOWSOCKS-1 | 398ms
+  type: ss
+  server: 45.154.204.7
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-2 | 106ms
+  type: ss
+  server: 23.95.76.59
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: VMESS-3 | 512ms
   type: vmess
   server: t1.620720.xyz
   port: 8443
@@ -68,40 +30,44 @@ proxies:
   ws-opts:
     path: /
     headers: {}
-- name: VMESS-9 | 488ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
+- name: VLESS-4 | 702ms
+  type: vless
+  server: 176.120.72.63
+  port: 38339
+  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
+  network: tcp
+- name: VLESS-5 | 687ms
+  type: vless
+  server: kz.accesspoints.cloakify.app
+  port: 38339
+  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
+  network: tcp
+- name: VLESS-6 | 368ms
+  type: vless
+  server: 146.103.105.233
+  port: 443
+  uuid: osVPN_3111052
   network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 17ms
-  - VMESS-2 | 142ms
-  - VMESS-3 | 140ms
-  - VMESS-4 | 187ms
-  - TROJAN-5 | 179ms
-  - TROJAN-6 | 188ms
-  - TROJAN-7 | 182ms
-  - VMESS-8 | 568ms
-  - VMESS-9 | 488ms
+  - SHADOWSOCKS-1 | 398ms
+  - SHADOWSOCKS-2 | 106ms
+  - VMESS-3 | 512ms
+  - VLESS-4 | 702ms
+  - VLESS-5 | 687ms
+  - VLESS-6 | 368ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 17ms
-  - VMESS-2 | 142ms
-  - VMESS-3 | 140ms
-  - VMESS-4 | 187ms
-  - TROJAN-5 | 179ms
-  - TROJAN-6 | 188ms
-  - TROJAN-7 | 182ms
-  - VMESS-8 | 568ms
-  - VMESS-9 | 488ms
+  - SHADOWSOCKS-1 | 398ms
+  - SHADOWSOCKS-2 | 106ms
+  - VMESS-3 | 512ms
+  - VLESS-4 | 702ms
+  - VLESS-5 | 687ms
+  - VLESS-6 | 368ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:

@@ -1,18 +1,18 @@
 [
   {
-    "protocol": "trojan",
-    "address": "63.181.220.145",
-    "ping": 188,
-    "jitter": 170,
-    "download_speed": 23.06,
-    "upload_speed": 14.66,
+    "protocol": "vless",
+    "address": "146.103.105.233",
+    "ping": 368,
+    "jitter": 254,
+    "download_speed": 0.32,
+    "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "63.181.220.145",
+    "ip": "146.103.105.233",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -20,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10808,
+          "port": 10800,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -32,27 +32,37 @@
       ],
       "outbounds": [
         {
-          "protocol": "trojan",
+          "protocol": "vless",
           "settings": {
-            "servers": [
+            "vnext": [
               {
-                "address": "63.181.220.145",
-                "port": 22222,
-                "password": "telegram-id-privatevpns"
+                "address": "146.103.105.233",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "osVPN_3111052",
+                    "encryption": "none",
+                    "flow": "xtls-rprx-vision"
+                  }
+                ]
               }
             ]
           },
           "streamSettings": {
             "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "63.181.220.145",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "whatsapp.com",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
                 "h2",
                 "http/1.1"
-              ]
+              ],
+              "show": false,
+              "publicKey": "Z8A8Q4ZzljW2121vwEHNV6qVMnF9Z_FLULGozMOiGTE",
+              "shortId": "ffffffffff",
+              "spiderX": "/"
             }
           },
           "tag": "proxy"
@@ -75,26 +85,118 @@
         ]
       }
     },
-    "uri": "trojan://telegram-id-privatevpns@63.181.220.145:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S102)",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt am Main",
-    "isp": "Amazon.com"
+    "uri": "vless://osVPN_3111052@146.103.105.233:443?security=reality&encryption=none&pbk=Z8A8Q4ZzljW2121vwEHNV6qVMnF9Z_FLULGozMOiGTE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=whatsapp.com&sid=ffffffffff#injl-%40Fr33C0nfig%20%2F%20%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20🔗",
+    "country": "The Netherlands",
+    "country_code": "NL",
+    "city": "Amsterdam",
+    "isp": "Servers Tech Fzco"
   },
   {
-    "protocol": "trojan",
-    "address": "51.45.9.101",
-    "ping": 179,
-    "jitter": 159,
-    "download_speed": 23.66,
-    "upload_speed": 16.55,
+    "protocol": "vless",
+    "address": "kz.accesspoints.cloakify.app",
+    "ping": 687,
+    "jitter": 627,
+    "download_speed": 2.9,
+    "upload_speed": 5.25,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
-      "instagram": true,
+      "instagram": false,
       "youtube": true
     },
-    "ip": "51.45.9.101",
+    "ip": "kz.accesspoints.cloakify.app",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10818,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "kz.accesspoints.cloakify.app",
+                "port": 38339,
+                "users": [
+                  {
+                    "id": "481c5606-b586-44d7-bc2e-d8ef30d67f62",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "dl.google.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA",
+              "shortId": "e16883e511",
+              "spiderX": "/"
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://481c5606-b586-44d7-bc2e-d8ef30d67f62@kz.accesspoints.cloakify.app:38339?security=reality&encryption=none&pbk=o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA&headerType=none&fp=chrome&type=tcp&sni=dl.google.com&sid=e16883e511#%F0%9F%87%B0%F0%9F%87%BF%20Kazakhstan%20Z",
+    "country": "Kazakhstan",
+    "country_code": "KZ",
+    "city": "Almaty",
+    "isp": "WorkTitans B.V."
+  },
+  {
+    "protocol": "vless",
+    "address": "176.120.72.63",
+    "ping": 702,
+    "jitter": 713,
+    "download_speed": 8.86,
+    "upload_speed": 3.56,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": false,
+      "youtube": true
+    },
+    "ip": "176.120.72.63",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -114,27 +216,37 @@
       ],
       "outbounds": [
         {
-          "protocol": "trojan",
+          "protocol": "vless",
           "settings": {
-            "servers": [
+            "vnext": [
               {
-                "address": "51.45.9.101",
-                "port": 22222,
-                "password": "telegram-id-privatevpns"
+                "address": "176.120.72.63",
+                "port": 38339,
+                "users": [
+                  {
+                    "id": "481c5606-b586-44d7-bc2e-d8ef30d67f62",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
               }
             ]
           },
           "streamSettings": {
             "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "51.45.9.101",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "dl.google.com",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
                 "h2",
                 "http/1.1"
-              ]
+              ],
+              "show": false,
+              "publicKey": "o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA",
+              "shortId": "e16883e511",
+              "spiderX": "/"
             }
           },
           "tag": "proxy"
@@ -157,26 +269,26 @@
         ]
       }
     },
-    "uri": "trojan://telegram-id-privatevpns@51.45.9.101:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S103)",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "Amazon.com, Inc."
+    "uri": "vless://481c5606-b586-44d7-bc2e-d8ef30d67f62@176.120.72.63:38339?security=reality&encryption=none&pbk=o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA&headerType=none&fp=chrome&type=tcp&sni=dl.google.com&sid=e16883e511#%F0%9F%87%B0%F0%9F%87%BF%20Kazakhstan",
+    "country": "Kazakhstan",
+    "country_code": "KZ",
+    "city": "Almaty",
+    "isp": "WorkTitans B.V."
   },
   {
-    "protocol": "trojan",
-    "address": "167.17.70.117",
-    "ping": 182,
-    "jitter": 162,
-    "download_speed": 19.7,
-    "upload_speed": 10.85,
+    "protocol": "shadowsocks",
+    "address": "45.154.204.7",
+    "ping": 398,
+    "jitter": 235,
+    "download_speed": 35.35,
+    "upload_speed": 13.65,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "167.17.70.117",
+    "ip": "45.154.204.7",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -184,7 +296,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10805,
+          "port": 10812,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -196,30 +308,18 @@
       ],
       "outbounds": [
         {
-          "protocol": "trojan",
+          "protocol": "shadowsocks",
           "settings": {
             "servers": [
               {
-                "address": "167.17.70.117",
-                "port": 27234,
-                "password": "kuGDUhAYqXnvIomV0Kdljfor"
+                "address": "45.154.204.7",
+                "port": 990,
+                "method": "chacha20-ietf-poly1305",
+                "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
               }
             ]
           },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "167.17.70.117",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
+          "tag": "🇦🇿 SS-阿塞拜疆-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-45.154.204.7:990"
         },
         {
           "protocol": "freedom",
@@ -239,26 +339,26 @@
         ]
       }
     },
-    "uri": "trojan://kuGDUhAYqXnvIomV0Kdljfor@167.17.70.117:27234?security=tls&amp;headerType=none&amp;type=tcp#@V2rayNG3",
-    "country": "Netherlands",
-    "country_code": "NL",
-    "city": "Amsterdam",
-    "isp": "GTHost"
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@45.154.204.7:990#%F0%9F%87%A6%F0%9F%87%BF%20SS-%E9%98%BF%E5%A1%9E%E6%8B%9C%E7%96%86-NF%E8%A7%A3%E9%94%81%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%9C%B0%E5%8C%BA%E9%9D%9E%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-45.154.204.7%3A990",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Montreal",
+    "isp": "BrainStorm Network, Inc"
   },
   {
-    "protocol": "vmess",
-    "address": "172.234.132.232",
-    "ping": 17,
-    "jitter": 16,
-    "download_speed": 238.78,
-    "upload_speed": 133.68,
+    "protocol": "shadowsocks",
+    "address": "23.95.76.59",
+    "ping": 106,
+    "jitter": 84,
+    "download_speed": 19.87,
+    "upload_speed": 24.97,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "172.234.132.232",
+    "ip": "23.95.76.59",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -266,7 +366,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10815,
+          "port": 10818,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -278,27 +378,18 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "172.234.132.232",
-                "port": 10001,
-                "users": [
-                  {
-                    "id": "a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
+                "address": "23.95.76.59",
+                "port": 990,
+                "method": "chacha20-ietf-poly1305",
+                "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
               }
             ]
           },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
+          "tag": "🇺🇸 SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990"
         },
         {
           "protocol": "freedom",
@@ -318,256 +409,19 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiIxNzIuMjM0LjEzMi4yMzIiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYTZiOTljMDUtOGUwYS00ZjdlLWJmN2ItZTRiOWZlYmI5NTg5IiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIxMDAwMSIsInBzIjoiQG1lbGlfcHJveHl5Iiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Ashburn",
-    "isp": "Akamai Technologies, Inc."
-  },
-  {
-    "protocol": "vmess",
-    "address": "162.19.248.238",
-    "ping": 187,
-    "jitter": 135,
-    "download_speed": 24.85,
-    "upload_speed": 17.14,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "162.19.248.238",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10805,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "162.19.248.238",
-                "port": 550,
-                "users": [
-                  {
-                    "id": "ede27a79-b039-490b-932c-495de4b68880",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiIxNjIuMTkuMjQ4LjIzOCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiSm9pbi0tLVBMQU5CX05FVC0tLUpvaW4tLS1QTEFOQl9ORVQtLS1Kb2luLS0tUExBTkJfTkVUIiwiaWQiOiJlZGUyN2E3OS1iMDM5LTQ5MGItOTMyYy00OTVkZTRiNjg4ODAiLCJpbnNlY3VyZSI6IjEiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjU1MCIsInBzIjoiQEZpbHRlcl9icmVha2VyIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Limburg an der Lahn",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "vmess",
-    "address": "217.69.5.32",
-    "ping": 142,
-    "jitter": 103,
-    "download_speed": 26.21,
-    "upload_speed": 19.55,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "217.69.5.32",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10819,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "217.69.5.32",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "none"
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICIycWZybWszbCIsCiAgImFkZCI6ICIyMTcuNjkuNS4zMiIsCiAgInBvcnQiOiA0NDMsCiAgImlkIjogImVjNGMzNDljLWIzYzYtNGNmZi1iZTYzLTAxZWFhZDFkYzA5OCIsCiAgInNjeSI6ICJhdXRvIiwKICAibmV0IjogInRjcCIsCiAgInRscyI6ICJub25lIiwKICAidHlwZSI6ICJub25lIgp9",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Aubervilliers",
-    "isp": "The Constant Company, LLC"
-  },
-  {
-    "protocol": "vmess",
-    "address": "217.69.5.32",
-    "ping": 140,
-    "jitter": 98,
-    "download_speed": 26.2,
-    "upload_speed": 19.18,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "217.69.5.32",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10809,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "217.69.5.32",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiIyMTcuNjkuNS4zMiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJlYzRjMzQ5Yy1iM2M2LTRjZmYtYmU2My0wMWVhYWQxZGMwOTgiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ0MyIsInBzIjoiQkVTVElJVlBOQk9UIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiIiLCJ2IjoiMiJ9",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Aubervilliers",
-    "isp": "The Constant Company, LLC"
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@23.95.76.59:990#%F0%9F%87%BA%F0%9F%87%B8%20SS-%E7%BE%8E%E5%9B%BD-NF%E8%A7%A3%E9%94%81%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%9C%B0%E5%8C%BA%E9%9D%9E%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-23.95.76.59%3A990",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Montreal",
+    "isp": "BrainStorm Network Inc."
   },
   {
     "protocol": "vmess",
     "address": "t1.620720.xyz",
-    "ping": 568,
-    "jitter": 538,
-    "download_speed": 7.53,
-    "upload_speed": 3.34,
+    "ping": 512,
+    "jitter": 485,
+    "download_speed": 10.07,
+    "upload_speed": 7.38,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -639,89 +493,10 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiJ0MS42MjA3MjAueHl6IiwiYWlkIjoiMCIsImhvc3QiOiJ0MS42MjA3MjAueHl6IiwiaWQiOiI1MTZkOGE3YS0zZjBiLTQxZDMtYmFkMC0yNDYxMTYzODE1MTYiLCJuZXQiOiJ3cyIsInBhdGgiOiJcLyIsInBvcnQiOiI4NDQzIiwicHMiOiLwn5KZQEFQS0NMVULwn5KZMjIiLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=",
+    "uri": "vmess://eyJ2IjoiMiIsInBzIjoi8J+Hr/Cfh7UgVk1FU1Mt576O5Zu9PuaXpeacrC1ORuino+mUgeaXpeacrOWcsOWMuumdnuiHquWItuWJpy1DaGF0R1BULVlvdVR1YmUtdDEuNjIwNzIwLnh5ejo4NDQzIiwiYWRkIjoidDEuNjIwNzIwLnh5eiIsInBvcnQiOiI4NDQzIiwidHlwZSI6Im5vbmUiLCJpZCI6IjUxNmQ4YTdhLTNmMGItNDFkMy1iYWQwLTI0NjExNjM4MTUxNiIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwiaG9zdCI6InQxLjYyMDcyMC54eXoiLCJ0bHMiOiJ0bHMifQ==",
     "country": "Canada",
     "country_code": "CA",
     "city": "Toronto",
     "isp": "Cloudflare, Inc."
-  },
-  {
-    "protocol": "vmess",
-    "address": "94.232.247.165",
-    "ping": 488,
-    "jitter": 699,
-    "download_speed": 0.69,
-    "upload_speed": 3.33,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "94.232.247.165",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10815,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "94.232.247.165",
-                "port": 45653,
-                "users": [
-                  {
-                    "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiI5NC4yMzIuMjQ3LjE2NSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiI5ZTkxZDE5YS1jNzNmLTQyNzYtYWRiYy1iMzM3YzM3NDI1OWMiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ1NjUzIiwicHMiOiJodHRwczovL3QubWUvVjJyYU5HX0RBIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "WorkTitans B.V."
   }
 ]
