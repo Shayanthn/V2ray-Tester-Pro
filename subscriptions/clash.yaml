@@ -5,70 +5,138 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 228ms
-  type: ss
-  server: 57.129.129.139
-  port: 29183
-  cipher: chacha20-ietf-poly1305
-  password: ab0b81a5bff7ddea
-- name: SHADOWSOCKS-2 | 232ms
-  type: ss
-  server: 135.125.245.131
-  port: 20939
-  cipher: chacha20-ietf-poly1305
-  password: 85d3d8ccba287d3e
-- name: SHADOWSOCKS-3 | 236ms
-  type: ss
-  server: 57.129.95.38
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: f54cdee10f8b25ce
-- name: SHADOWSOCKS-4 | 362ms
-  type: ss
-  server: 154.205.148.202
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: 71807718f593d3e6
-- name: SHADOWSOCKS-5 | 227ms
-  type: ss
-  server: 51.89.117.154
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: 9bfee1388e960537
-- name: VLESS-6 | 398ms
-  type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
+- name: VMESS-1 | 25ms
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
   network: tcp
-- name: SHADOWSOCKS-7 | 229ms
-  type: ss
-  server: 51.89.117.154
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: 9bfee1388e960537
+- name: VMESS-2 | 26ms
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: TROJAN-3 | 1695ms
+  type: trojan
+  server: 58.152.25.220
+  port: 443
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: TROJAN-4 | 1142ms
+  type: trojan
+  server: 58.152.46.60
+  port: 443
+  password: BxceQaOe
+  sni: '%20%5BBy%20DukeMehdi%5D%20trojan-HK%20'
+- name: TROJAN-5 | 1165ms
+  type: trojan
+  server: 58.152.46.60
+  port: 443
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+- name: TROJAN-6 | 192ms
+  type: trojan
+  server: 58.152.46.60
+  port: 443
+  password: BxceQaOe
+  sni: '%25EF%25BF%25BD%25EF%25BF%25BD%25EF%25BF%25BD%25EF%25BF%25BD%25EF%25BF%25BD%25EF%25BF%25BD%252B%255BBy%252BDukeMehdi%255D%252Btrojan-HK%252B'
+- name: TROJAN-7 | 1227ms
+  type: trojan
+  server: 58.152.46.60
+  port: 443
+  password: BxceQaOe
+  sni: '%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%0A%5BBy%20DukeMehdi%5D%20b2n.ir%2Fv2ray-configs%20%7C%20783%20'
+- name: TROJAN-8 | 1713ms
+  type: trojan
+  server: 58.152.46.60
+  port: 443
+  password: BxceQaOe
+  sni: '%2520%2520%2520%2520%2520%2520%2520%255BBy%2520EbraSha%5D%2520b2n.ir%252Fv2ray-configs%2520'
+- name: TROJAN-9 | 525ms
+  type: trojan
+  server: 58.152.46.60
+  port: 443
+  password: BxceQaOe
+  sni: '%20%5BBy%20DukeMehdi%5D%20'
+- name: TROJAN-10 | 442ms
+  type: trojan
+  server: 58.152.46.60
+  port: 443
+  password: BxceQaOe
+  sni: '%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%2B%5BBy%2BDukeMehdi%5D%2B'
+- name: TROJAN-11 | 566ms
+  type: trojan
+  server: 58.152.46.60
+  port: 443
+  password: BxceQaOe
+  sni: '       [By DukeMehdi] b2n.ir/v2ray-configs '
+- name: TROJAN-12 | 817ms
+  type: trojan
+  server: green2.cdntencentmusic.com
+  port: 31103
+  password: a77233e9-abe2-4246-972e-48802c4c04fa
+  sni: green2.cdntencentmusic.com
+- name: TROJAN-13 | 1273ms
+  type: trojan
+  server: green2.cdntencentmusic.com
+  port: 35501
+  password: 774b491c-f809-4dbd-b31c-bc3bd6ab92ac
+  sni: green2.cdntencentmusic.com
+- name: TROJAN-14 | 921ms
+  type: trojan
+  server: green2.cdntencentmusic.com
+  port: 31103
+  password: 53ebd035-c5ed-4e1f-957b-d945b4ad947c
+  sni: green2.cdntencentmusic.com
+- name: TROJAN-15 | 1138ms
+  type: trojan
+  server: green2.cdntencentmusic.com
+  port: 35501
+  password: 9450ab5e-f86f-40c1-89b0-92dfa6679553
+  sni: green2.cdntencentmusic.com
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 228ms
-  - SHADOWSOCKS-2 | 232ms
-  - SHADOWSOCKS-3 | 236ms
-  - SHADOWSOCKS-4 | 362ms
-  - SHADOWSOCKS-5 | 227ms
-  - VLESS-6 | 398ms
-  - SHADOWSOCKS-7 | 229ms
+  - VMESS-1 | 25ms
+  - VMESS-2 | 26ms
+  - TROJAN-3 | 1695ms
+  - TROJAN-4 | 1142ms
+  - TROJAN-5 | 1165ms
+  - TROJAN-6 | 192ms
+  - TROJAN-7 | 1227ms
+  - TROJAN-8 | 1713ms
+  - TROJAN-9 | 525ms
+  - TROJAN-10 | 442ms
+  - TROJAN-11 | 566ms
+  - TROJAN-12 | 817ms
+  - TROJAN-13 | 1273ms
+  - TROJAN-14 | 921ms
+  - TROJAN-15 | 1138ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 228ms
-  - SHADOWSOCKS-2 | 232ms
-  - SHADOWSOCKS-3 | 236ms
-  - SHADOWSOCKS-4 | 362ms
-  - SHADOWSOCKS-5 | 227ms
-  - VLESS-6 | 398ms
-  - SHADOWSOCKS-7 | 229ms
+  - VMESS-1 | 25ms
+  - VMESS-2 | 26ms
+  - TROJAN-3 | 1695ms
+  - TROJAN-4 | 1142ms
+  - TROJAN-5 | 1165ms
+  - TROJAN-6 | 192ms
+  - TROJAN-7 | 1227ms
+  - TROJAN-8 | 1713ms
+  - TROJAN-9 | 525ms
+  - TROJAN-10 | 442ms
+  - TROJAN-11 | 566ms
+  - TROJAN-12 | 817ms
+  - TROJAN-13 | 1273ms
+  - TROJAN-14 | 921ms
+  - TROJAN-15 | 1138ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
