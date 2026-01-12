@@ -5,46 +5,25 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 222ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 218ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 211ms
-  type: vmess
-  server: 45.90.106.24
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  alterId: 0
-  cipher: aes-128-gcm
-  network: tcp
-  tls: true
-  servername: supervpn.super.com
-- name: VMESS-4 | 654ms
-  type: vmess
-  server: sy4.620720.xyz
-  port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: sy4.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-5 | 567ms
+- name: SHADOWSOCKS-1 | 74ms
+  type: ss
+  server: 79.127.233.170
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+- name: SHADOWSOCKS-2 | 130ms
+  type: ss
+  server: 45.154.204.7
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-3 | 444ms
+  type: ss
+  server: 23.95.76.59
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: VMESS-4 | 425ms
   type: vmess
   server: t1.620720.xyz
   port: 8443
@@ -57,24 +36,38 @@ proxies:
   ws-opts:
     path: /
     headers: {}
+- name: VLESS-5 | 622ms
+  type: vless
+  server: 176.120.72.63
+  port: 38339
+  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
+  network: tcp
+- name: VLESS-6 | 675ms
+  type: vless
+  server: kz.accesspoints.cloakify.app
+  port: 38339
+  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 222ms
-  - VMESS-2 | 218ms
-  - VMESS-3 | 211ms
-  - VMESS-4 | 654ms
-  - VMESS-5 | 567ms
+  - SHADOWSOCKS-1 | 74ms
+  - SHADOWSOCKS-2 | 130ms
+  - SHADOWSOCKS-3 | 444ms
+  - VMESS-4 | 425ms
+  - VLESS-5 | 622ms
+  - VLESS-6 | 675ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 222ms
-  - VMESS-2 | 218ms
-  - VMESS-3 | 211ms
-  - VMESS-4 | 654ms
-  - VMESS-5 | 567ms
+  - SHADOWSOCKS-1 | 74ms
+  - SHADOWSOCKS-2 | 130ms
+  - SHADOWSOCKS-3 | 444ms
+  - VMESS-4 | 425ms
+  - VLESS-5 | 622ms
+  - VLESS-6 | 675ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
