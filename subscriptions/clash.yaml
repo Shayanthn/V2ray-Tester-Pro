@@ -5,62 +5,89 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 180ms
-  type: ss
-  server: 57.129.129.139
-  port: 29183
-  cipher: chacha20-ietf-poly1305
-  password: ab0b81a5bff7ddea
-- name: SHADOWSOCKS-2 | 151ms
-  type: ss
-  server: 193.29.139.157
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: 4a2rfixophdjffa8KVA4Aa
-- name: SHADOWSOCKS-3 | 161ms
-  type: ss
-  server: 135.125.245.131
-  port: 20939
-  cipher: chacha20-ietf-poly1305
-  password: 85d3d8ccba287d3e
-- name: SHADOWSOCKS-4 | 169ms
-  type: ss
-  server: 51.89.117.154
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: 9bfee1388e960537
-- name: SHADOWSOCKS-5 | 169ms
-  type: ss
-  server: 57.129.95.38
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: f54cdee10f8b25ce
-- name: VLESS-6 | 288ms
-  type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
+- name: VMESS-1 | 27ms
+  type: vmess
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
+  alterId: 0
+  cipher: auto
   network: tcp
+- name: VMESS-2 | 119ms
+  type: vmess
+  server: 172.234.132.232
+  port: 10001
+  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 259ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 260ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 302ms
+  type: vmess
+  server: 162.19.248.238
+  port: 550
+  uuid: ede27a79-b039-490b-932c-495de4b68880
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-6 | 260ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-7 | 619ms
+  type: vmess
+  server: n1753598451.74qxv.top
+  port: 443
+  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: n1753598451.74qxv.top
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 180ms
-  - SHADOWSOCKS-2 | 151ms
-  - SHADOWSOCKS-3 | 161ms
-  - SHADOWSOCKS-4 | 169ms
-  - SHADOWSOCKS-5 | 169ms
-  - VLESS-6 | 288ms
+  - VMESS-1 | 27ms
+  - VMESS-2 | 119ms
+  - VMESS-3 | 259ms
+  - VMESS-4 | 260ms
+  - VMESS-5 | 302ms
+  - VMESS-6 | 260ms
+  - VMESS-7 | 619ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 180ms
-  - SHADOWSOCKS-2 | 151ms
-  - SHADOWSOCKS-3 | 161ms
-  - SHADOWSOCKS-4 | 169ms
-  - SHADOWSOCKS-5 | 169ms
-  - VLESS-6 | 288ms
+  - VMESS-1 | 27ms
+  - VMESS-2 | 119ms
+  - VMESS-3 | 259ms
+  - VMESS-4 | 260ms
+  - VMESS-5 | 302ms
+  - VMESS-6 | 260ms
+  - VMESS-7 | 619ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
