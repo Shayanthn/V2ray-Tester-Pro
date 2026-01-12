@@ -5,78 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 250ms
-  type: ss
-  server: 57.129.129.139
-  port: 29183
-  cipher: chacha20-ietf-poly1305
-  password: ab0b81a5bff7ddea
-- name: SHADOWSOCKS-2 | 227ms
-  type: ss
-  server: 193.29.139.157
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: 4a2rfixophdjffa8KVA4Aa
-- name: SHADOWSOCKS-3 | 261ms
-  type: ss
-  server: 141.95.109.94
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: 10f90af92b6c1a74
-- name: SHADOWSOCKS-4 | 252ms
-  type: ss
-  server: 51.89.117.154
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: 9bfee1388e960537
-- name: SHADOWSOCKS-5 | 263ms
-  type: ss
-  server: 135.125.245.131
-  port: 20939
-  cipher: chacha20-ietf-poly1305
-  password: 85d3d8ccba287d3e
-- name: SHADOWSOCKS-6 | 261ms
-  type: ss
-  server: 57.129.95.38
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: f54cdee10f8b25ce
-- name: SHADOWSOCKS-7 | 417ms
-  type: ss
-  server: 154.205.148.202
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: 71807718f593d3e6
-- name: SHADOWSOCKS-8 | 283ms
-  type: ss
-  server: 51.68.146.248
-  port: 10011
-  cipher: chacha20-ietf-poly1305
-  password: a792ff4b517fdf1c
+- name: VMESS-1 | 15ms
+  type: vmess
+  server: 172.234.132.232
+  port: 10001
+  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-2 | 117ms
+  type: vmess
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 154ms
+  type: vmess
+  server: 85.195.101.122
+  port: 40878
+  uuid: f3d4167e-b15e-4e46-82e9-9286ef93fda7
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VLESS-4 | 170ms
+  type: vless
+  server: doprax.fxgoldensignals.com
+  port: 50904
+  uuid: d4795cd9-cd7b-4cea-edfb-20cdcca5837b
+  network: tcp
+- name: VLESS-5 | 328ms
+  type: vless
+  server: 65.108.231.185
+  port: 443
+  uuid: 440766d1-858f-4719-84f5-c2de6f6227b2
+  network: tcp
+  tls: true
+  servername: 65.108.231.185
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 250ms
-  - SHADOWSOCKS-2 | 227ms
-  - SHADOWSOCKS-3 | 261ms
-  - SHADOWSOCKS-4 | 252ms
-  - SHADOWSOCKS-5 | 263ms
-  - SHADOWSOCKS-6 | 261ms
-  - SHADOWSOCKS-7 | 417ms
-  - SHADOWSOCKS-8 | 283ms
+  - VMESS-1 | 15ms
+  - VMESS-2 | 117ms
+  - VMESS-3 | 154ms
+  - VLESS-4 | 170ms
+  - VLESS-5 | 328ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 250ms
-  - SHADOWSOCKS-2 | 227ms
-  - SHADOWSOCKS-3 | 261ms
-  - SHADOWSOCKS-4 | 252ms
-  - SHADOWSOCKS-5 | 263ms
-  - SHADOWSOCKS-6 | 261ms
-  - SHADOWSOCKS-7 | 417ms
-  - SHADOWSOCKS-8 | 283ms
+  - VMESS-1 | 15ms
+  - VMESS-2 | 117ms
+  - VMESS-3 | 154ms
+  - VLESS-4 | 170ms
+  - VLESS-5 | 328ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
