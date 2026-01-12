@@ -1,18 +1,18 @@
 [
   {
     "protocol": "vless",
-    "address": "91.107.148.79",
-    "ping": 295,
-    "jitter": 258,
-    "download_speed": 12.52,
-    "upload_speed": 9.97,
+    "address": "kz.accesspoints.cloakify.app",
+    "ping": 820,
+    "jitter": 722,
+    "download_speed": 8.9,
+    "upload_speed": 3.61,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
-      "instagram": true,
+      "instagram": false,
       "youtube": true
     },
-    "ip": "91.107.148.79",
+    "ip": "kz.accesspoints.cloakify.app",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -20,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10805,
+          "port": 10813,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -36,11 +36,11 @@
           "settings": {
             "vnext": [
               {
-                "address": "91.107.148.79",
-                "port": 443,
+                "address": "kz.accesspoints.cloakify.app",
+                "port": 38339,
                 "users": [
                   {
-                    "id": "7b148add-4438-426e-a583-50f11e7bd0e4",
+                    "id": "481c5606-b586-44d7-bc2e-d8ef30d67f62",
                     "encryption": "none",
                     "flow": ""
                   }
@@ -49,8 +49,21 @@
             ]
           },
           "streamSettings": {
-            "network": "grpc",
-            "security": "none"
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "dl.google.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA",
+              "shortId": "e16883e511",
+              "spiderX": "/"
+            }
           },
           "tag": "proxy"
         },
@@ -72,26 +85,96 @@
         ]
       }
     },
-    "uri": "vless://7b148add-4438-426e-a583-50f11e7bd0e4@91.107.148.79:443?mode=gun&security=none&encryption=none&type=grpc#telegram@V2rayBaaz◇⃟💜",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt Am Main",
-    "isp": "Hetzner Online AG"
+    "uri": "vless://481c5606-b586-44d7-bc2e-d8ef30d67f62@kz.accesspoints.cloakify.app:38339?security=reality&encryption=none&pbk=o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA&headerType=none&fp=chrome&type=tcp&sni=dl.google.com&sid=e16883e511#%F0%9F%87%B0%F0%9F%87%BF%20Kazakhstan%20Z",
+    "country": "Kazakhstan",
+    "country_code": "KZ",
+    "city": "Almaty",
+    "isp": "WorkTitans B.V."
   },
   {
-    "protocol": "vless",
-    "address": "45.82.251.95",
-    "ping": 137,
-    "jitter": 119,
-    "download_speed": 26.71,
-    "upload_speed": 19.51,
+    "protocol": "shadowsocks",
+    "address": "45.154.204.7",
+    "ping": 57,
+    "jitter": 50,
+    "download_speed": 63.13,
+    "upload_speed": 16.54,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "45.82.251.95",
+    "ip": "45.154.204.7",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10814,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "45.154.204.7",
+                "port": 990,
+                "method": "chacha20-ietf-poly1305",
+                "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+              }
+            ]
+          },
+          "tag": "🇦🇿 SS-阿塞拜疆-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-45.154.204.7:990"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@45.154.204.7:990#%F0%9F%87%A6%F0%9F%87%BF%20SS-%E9%98%BF%E5%A1%9E%E6%8B%9C%E7%96%86-NF%E8%A7%A3%E9%94%81%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%9C%B0%E5%8C%BA%E9%9D%9E%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-45.154.204.7%3A990",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Montreal",
+    "isp": "BrainStorm Network, Inc"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "23.95.76.59",
+    "ping": 331,
+    "jitter": 255,
+    "download_speed": 15.11,
+    "upload_speed": 14.89,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "23.95.76.59",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -111,27 +194,18 @@
       ],
       "outbounds": [
         {
-          "protocol": "vless",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "45.82.251.95",
-                "port": 8880,
-                "users": [
-                  {
-                    "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
+                "address": "23.95.76.59",
+                "port": 990,
+                "method": "chacha20-ietf-poly1305",
+                "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
               }
             ]
           },
-          "streamSettings": {
-            "network": "grpc",
-            "security": "none"
-          },
-          "tag": "proxy"
+          "tag": "🇺🇸 SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990"
         },
         {
           "protocol": "freedom",
@@ -151,26 +225,26 @@
         ]
       }
     },
-    "uri": "vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.95:8880?mode=gun&security=none&encryption=none&type=grpc#@hopev2ray❤️",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Secaucus",
-    "isp": "WorkTitans B.V."
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@23.95.76.59:990#%F0%9F%87%BA%F0%9F%87%B8%20SS-%E7%BE%8E%E5%9B%BD-NF%E8%A7%A3%E9%94%81%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%9C%B0%E5%8C%BA%E9%9D%9E%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-23.95.76.59%3A990",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Montreal",
+    "isp": "BrainStorm Network Inc."
   },
   {
     "protocol": "vless",
-    "address": "pqh29v3.globalfymain.com",
-    "ping": 147,
-    "jitter": 144,
-    "download_speed": 26.36,
-    "upload_speed": 17.8,
+    "address": "176.120.72.63",
+    "ping": 806,
+    "jitter": 790,
+    "download_speed": 3.23,
+    "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
-      "telegram": true,
-      "instagram": true,
+      "telegram": false,
+      "instagram": false,
       "youtube": true
     },
-    "ip": "pqh29v3.globalfymain.com",
+    "ip": "176.120.72.63",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -178,7 +252,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10810,
+          "port": 10809,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -194,11 +268,11 @@
           "settings": {
             "vnext": [
               {
-                "address": "pqh29v3.globalfymain.com",
-                "port": 8880,
+                "address": "176.120.72.63",
+                "port": 38339,
                 "users": [
                   {
-                    "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
+                    "id": "481c5606-b586-44d7-bc2e-d8ef30d67f62",
                     "encryption": "none",
                     "flow": ""
                   }
@@ -207,8 +281,21 @@
             ]
           },
           "streamSettings": {
-            "network": "grpc",
-            "security": "none"
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "dl.google.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA",
+              "shortId": "e16883e511",
+              "spiderX": "/"
+            }
           },
           "tag": "proxy"
         },
@@ -230,105 +317,26 @@
         ]
       }
     },
-    "uri": "vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@pqh29v3.globalfymain.com:8880?mode=gun&security=none&encryption=none&type=grpc#All-@V2rayAlpha--25",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Secaucus",
+    "uri": "vless://481c5606-b586-44d7-bc2e-d8ef30d67f62@176.120.72.63:38339?security=reality&encryption=none&pbk=o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA&headerType=none&fp=chrome&type=tcp&sni=dl.google.com&sid=e16883e511#%F0%9F%87%B0%F0%9F%87%BF%20Kazakhstan",
+    "country": "Kazakhstan",
+    "country_code": "KZ",
+    "city": "Almaty",
     "isp": "WorkTitans B.V."
   },
   {
-    "protocol": "vless",
-    "address": "pqh29v3.globalfymain.com",
-    "ping": 151,
-    "jitter": 148,
-    "download_speed": 25.32,
-    "upload_speed": 19.41,
+    "protocol": "shadowsocks",
+    "address": "79.127.233.170",
+    "ping": 104,
+    "jitter": 75,
+    "download_speed": 39.89,
+    "upload_speed": 28.09,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "pqh29v3.globalfymain.com",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10805,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vless",
-          "settings": {
-            "vnext": [
-              {
-                "address": "pqh29v3.globalfymain.com",
-                "port": 8880,
-                "users": [
-                  {
-                    "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "grpc",
-            "security": "none"
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@pqh29v3.globalfymain.com:8880?mode=gun&security=none&encryption=none&type=grpc#All-@V2rayAlpha--4",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Secaucus",
-    "isp": "WorkTitans B.V."
-  },
-  {
-    "protocol": "vless",
-    "address": "pqh29v3.globalfymain.com",
-    "ping": 136,
-    "jitter": 121,
-    "download_speed": 25.1,
-    "upload_speed": 18.78,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "pqh29v3.globalfymain.com",
+    "ip": "79.127.233.170",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -348,25 +356,100 @@
       ],
       "outbounds": [
         {
-          "protocol": "vless",
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "79.127.233.170",
+                "port": 990,
+                "method": "chacha20-ietf-poly1305",
+                "password": "f8f7aCzcPKbsF8p3"
+              }
+            ]
+          },
+          "tag": "🇨🇦 SS-英国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-79.127.233.170:990"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@79.127.233.170:990#%F0%9F%87%A8%F0%9F%87%A6%20SS-%E8%8B%B1%E5%9B%BD-NF%E8%A7%A3%E9%94%81%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%9C%B0%E5%8C%BA%E9%9D%9E%E8%87%AA%E5%88%B6%E5%89%A7-ChatGPT-TikTok-YouTube-79.127.233.170%3A990",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Vancouver",
+    "isp": "Datacamp Limited"
+  },
+  {
+    "protocol": "vmess",
+    "address": "t1.620720.xyz",
+    "ping": 803,
+    "jitter": 584,
+    "download_speed": 3.3,
+    "upload_speed": 4.65,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "t1.620720.xyz",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10816,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
           "settings": {
             "vnext": [
               {
-                "address": "pqh29v3.globalfymain.com",
-                "port": 8880,
+                "address": "t1.620720.xyz",
+                "port": 8443,
                 "users": [
                   {
-                    "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                    "encryption": "none",
-                    "flow": ""
+                    "id": "516d8a7a-3f0b-41d3-bad0-246116381516",
+                    "alterId": 0,
+                    "security": "auto"
                   }
                 ]
               }
             ]
           },
           "streamSettings": {
-            "network": "grpc",
-            "security": "none"
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "t1.620720.xyz",
+              "allowInsecure": true,
+              "fingerprint": "chrome"
+            }
           },
           "tag": "proxy"
         },
@@ -388,10 +471,10 @@
         ]
       }
     },
-    "uri": "vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@pqh29v3.globalfymain.com:8880?mode=gun&security=none&encryption=none&type=grpc#All-@V2rayAlpha--7",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Secaucus",
-    "isp": "WorkTitans B.V."
+    "uri": "vmess://eyJ2IjoiMiIsInBzIjoi8J+Hr/Cfh7UgVk1FU1Mt576O5Zu9PuaXpeacrC1ORuino+mUgeaXpeacrOWcsOWMuumdnuiHquWItuWJpy1DaGF0R1BULVlvdVR1YmUtdDEuNjIwNzIwLnh5ejo4NDQzIiwiYWRkIjoidDEuNjIwNzIwLnh5eiIsInBvcnQiOiI4NDQzIiwidHlwZSI6Im5vbmUiLCJpZCI6IjUxNmQ4YTdhLTNmMGItNDFkMy1iYWQwLTI0NjExNjM4MTUxNiIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwiaG9zdCI6InQxLjYyMDcyMC54eXoiLCJ0bHMiOiJ0bHMifQ==",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Toronto",
+    "isp": "Cloudflare, Inc."
   }
 ]
