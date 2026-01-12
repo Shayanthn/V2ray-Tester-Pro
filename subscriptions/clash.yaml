@@ -5,25 +5,31 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 74ms
+- name: SHADOWSOCKS-1 | 51ms
   type: ss
   server: 79.127.233.170
   port: 990
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-2 | 130ms
+- name: SHADOWSOCKS-2 | 128ms
   type: ss
   server: 45.154.204.7
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-3 | 444ms
+- name: SHADOWSOCKS-3 | 129ms
   type: ss
   server: 23.95.76.59
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: VMESS-4 | 425ms
+- name: SHADOWSOCKS-4 | 226ms
+  type: ss
+  server: 23.95.75.146
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
+- name: VMESS-5 | 486ms
   type: vmess
   server: t1.620720.xyz
   port: 8443
@@ -36,13 +42,13 @@ proxies:
   ws-opts:
     path: /
     headers: {}
-- name: VLESS-5 | 622ms
+- name: VLESS-6 | 655ms
   type: vless
   server: 176.120.72.63
   port: 38339
   uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
   network: tcp
-- name: VLESS-6 | 675ms
+- name: VLESS-7 | 747ms
   type: vless
   server: kz.accesspoints.cloakify.app
   port: 38339
@@ -53,21 +59,23 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 74ms
-  - SHADOWSOCKS-2 | 130ms
-  - SHADOWSOCKS-3 | 444ms
-  - VMESS-4 | 425ms
-  - VLESS-5 | 622ms
-  - VLESS-6 | 675ms
+  - SHADOWSOCKS-1 | 51ms
+  - SHADOWSOCKS-2 | 128ms
+  - SHADOWSOCKS-3 | 129ms
+  - SHADOWSOCKS-4 | 226ms
+  - VMESS-5 | 486ms
+  - VLESS-6 | 655ms
+  - VLESS-7 | 747ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 74ms
-  - SHADOWSOCKS-2 | 130ms
-  - SHADOWSOCKS-3 | 444ms
-  - VMESS-4 | 425ms
-  - VLESS-5 | 622ms
-  - VLESS-6 | 675ms
+  - SHADOWSOCKS-1 | 51ms
+  - SHADOWSOCKS-2 | 128ms
+  - SHADOWSOCKS-3 | 129ms
+  - SHADOWSOCKS-4 | 226ms
+  - VMESS-5 | 486ms
+  - VLESS-6 | 655ms
+  - VLESS-7 | 747ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
