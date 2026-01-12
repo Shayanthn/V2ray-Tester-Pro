@@ -5,86 +5,54 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 80ms
-  type: ss
-  server: 173.244.56.6
+- name: VLESS-1 | 47ms
+  type: vless
+  server: 45.82.251.95
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-2 | 84ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-3 | 81ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-4 | 79ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-5 | 233ms
+  type: vless
+  server: 91.107.148.79
   port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-2 | 23ms
-  type: ss
-  server: 104.192.226.106
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-3 | 46ms
-  type: ss
-  server: 156.146.38.167
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-4 | 49ms
-  type: ss
-  server: 156.146.38.170
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-5 | 45ms
-  type: ss
-  server: 156.146.38.168
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-6 | 45ms
-  type: ss
-  server: 156.146.38.169
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-7 | 77ms
-  type: ss
-  server: 79.127.233.170
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-8 | 82ms
-  type: ss
-  server: 173.234.29.2
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-9 | 106ms
-  type: ss
-  server: 103.35.189.136
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: SS2QvbC9nqLp2sXXZo0BVy4slcErRuCt
+  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
+  network: grpc
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 80ms
-  - SHADOWSOCKS-2 | 23ms
-  - SHADOWSOCKS-3 | 46ms
-  - SHADOWSOCKS-4 | 49ms
-  - SHADOWSOCKS-5 | 45ms
-  - SHADOWSOCKS-6 | 45ms
-  - SHADOWSOCKS-7 | 77ms
-  - SHADOWSOCKS-8 | 82ms
-  - SHADOWSOCKS-9 | 106ms
+  - VLESS-1 | 47ms
+  - VLESS-2 | 84ms
+  - VLESS-3 | 81ms
+  - VLESS-4 | 79ms
+  - VLESS-5 | 233ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 80ms
-  - SHADOWSOCKS-2 | 23ms
-  - SHADOWSOCKS-3 | 46ms
-  - SHADOWSOCKS-4 | 49ms
-  - SHADOWSOCKS-5 | 45ms
-  - SHADOWSOCKS-6 | 45ms
-  - SHADOWSOCKS-7 | 77ms
-  - SHADOWSOCKS-8 | 82ms
-  - SHADOWSOCKS-9 | 106ms
+  - VLESS-1 | 47ms
+  - VLESS-2 | 84ms
+  - VLESS-3 | 81ms
+  - VLESS-4 | 79ms
+  - VLESS-5 | 233ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
