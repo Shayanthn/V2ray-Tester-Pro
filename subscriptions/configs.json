@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10803,
+        "port": 10818,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -65,66 +65,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10812,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "47.251.91.241",
-              "port": 42899,
-              "users": [
-                {
-                  "id": "0925b355-2bcd-4eae-9720-d2709e4f7e36",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10805,
+        "port": 10818,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -242,7 +183,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10807,
+        "port": 10812,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -301,7 +242,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10804,
+        "port": 10819,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -360,7 +301,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10806,
+        "port": 10811,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -395,10 +336,6 @@
             "serverName": "t1.620720.xyz",
             "allowInsecure": true,
             "fingerprint": "chrome"
-          },
-          "sockopt": {
-            "dialerProxy": "fragment",
-            "tcpKeepAliveIdle": 100
           }
         },
         "tag": "proxy"
@@ -406,22 +343,6 @@
       {
         "protocol": "freedom",
         "tag": "direct"
-      },
-      {
-        "tag": "fragment",
-        "protocol": "freedom",
-        "settings": {
-          "fragment": {
-            "packets": "tlshello",
-            "length": "100-200",
-            "interval": "10-20"
-          }
-        },
-        "streamSettings": {
-          "sockopt": {
-            "tcpKeepAliveIdle": 100
-          }
-        }
       }
     ],
     "routing": {
