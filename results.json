@@ -1,18 +1,100 @@
 [
   {
-    "protocol": "vmess",
-    "address": "162.19.248.238",
-    "ping": 297,
-    "jitter": 215,
-    "download_speed": 14.6,
-    "upload_speed": 10.11,
+    "protocol": "trojan",
+    "address": "153.121.39.240",
+    "ping": 226,
+    "jitter": 204,
+    "download_speed": 19.7,
+    "upload_speed": 13.22,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "162.19.248.238",
+    "ip": "153.121.39.240",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10811,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "153.121.39.240",
+                "port": 4006,
+                "password": "61d8077bfb174e171b8283f155a555ad"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.nintendogames.net",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://61d8077bfb174e171b8283f155a555ad@153.121.39.240:4006?allowInsecure=0&sni=www.nintendogames.net#%F0%9F%87%AF%F0%9F%87%B5%20%E6%97%A5%E6%9C%AC2%7C%40stairnode",
+    "country": "Japan",
+    "country_code": "JP",
+    "city": "Tokyo",
+    "isp": "SAKURA Internet Inc."
+  },
+  {
+    "protocol": "trojan",
+    "address": "160.16.57.238",
+    "ping": 227,
+    "jitter": 204,
+    "download_speed": 18.08,
+    "upload_speed": 12.43,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "160.16.57.238",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -32,25 +114,28 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "trojan",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "162.19.248.238",
-                "port": 550,
-                "users": [
-                  {
-                    "id": "ede27a79-b039-490b-932c-495de4b68880",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
+                "address": "160.16.57.238",
+                "port": 4006,
+                "password": "61d8077bfb174e171b8283f155a555ad"
               }
             ]
           },
           "streamSettings": {
             "network": "tcp",
-            "security": ""
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.nintendogames.net",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
           },
           "tag": "proxy"
         },
@@ -72,342 +157,26 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiIxNjIuMTkuMjQ4LjIzOCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJlZGUyN2E3OS1iMDM5LTQ5MGItOTMyYy00OTVkZTRiNjg4ODAiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjU1MCIsInBzIjoiQE1BUkFNQkFTSEkg8J+SmyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Limburg an der Lahn",
-    "isp": "OVH SAS"
+    "uri": "trojan://61d8077bfb174e171b8283f155a555ad@160.16.57.238:4006?allowInsecure=0&sni=www.nintendogames.net#%F0%9F%87%AF%F0%9F%87%B5%20%E6%97%A5%E6%9C%AC3%7C%40stairnode",
+    "country": "Japan",
+    "country_code": "JP",
+    "city": "Tokyo",
+    "isp": "SAKURA Internet Inc."
   },
   {
-    "protocol": "vmess",
-    "address": "5.196.29.123",
-    "ping": 346,
-    "jitter": 329,
-    "download_speed": 9.79,
-    "upload_speed": 9.07,
+    "protocol": "trojan",
+    "address": "153.121.45.139",
+    "ping": 415,
+    "jitter": 367,
+    "download_speed": 15.06,
+    "upload_speed": 9.94,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "5.196.29.123",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10804,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "5.196.29.123",
-                "port": 2082,
-                "users": [
-                  {
-                    "id": "112ac36f-3f53-4e26-8371-d25c028e1b9a",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiAiNS4xOTYuMjkuMTIzIiwgImFpZCI6ICIwIiwgImFscG4iOiAiIiwgImZwIjogIiIsICJob3N0IjogImdvb2dsZS5jb20iLCAiaWQiOiAiMTEyYWMzNmYtM2Y1My00ZTI2LTgzNzEtZDI1YzAyOGUxYjlhIiwgIm5ldCI6ICJ3cyIsICJwYXRoIjogIi8iLCAicG9ydCI6IDIwODIsICJwcyI6ICLwn4er8J+HtyAxNjggLSBGUiAtIFZNZXNzL1dTIC0gMjA4MiIsICJzY3kiOiAiYXV0byIsICJzbmkiOiAiIiwgInRscyI6ICIiLCAidHlwZSI6ICIiLCAidiI6ICIyIiwgIm5hbWUiOiAiPj5Ab25lY2xpY2t2cG5rZXlzOjpGUjo6RlI6OkZSOjpGUjo6RlI6OkZSIn0=",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Roubaix",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "vmess",
-    "address": "82.198.246.97",
-    "ping": 25,
-    "jitter": 23,
-    "download_speed": 5.91,
-    "upload_speed": 5.57,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "82.198.246.97",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10814,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "82.198.246.97",
-                "port": 180,
-                "users": [
-                  {
-                    "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                    "alterId": 0,
-                    "security": null
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJ2IjogbnVsbCwgInBzIjogIvCfh6jwn4e/IDY5IC0gQ1ogLSBWTWVzcyAtIDE4MCIsICJhZGQiOiAiODIuMTk4LjI0Ni45NyIsICJwb3J0IjogMTgwLCAiaWQiOiAiZDEzZmMyZjUtM2UwNS00Nzk1LTgxZWItNDQxNDNhMDllNTUyIiwgImFpZCI6ICIwIiwgInNjeSI6IG51bGwsICJuZXQiOiAidGNwIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6ICJncmVlbjIuY2RudGVuY2VudG11c2ljLmNvbSIsICJhbHBuIjogbnVsbCwgInBhdGgiOiAiLyIsICJ0bHMiOiAiIiwgInNuaSI6IG51bGwsICJmcCI6IG51bGwsICJuYW1lIjogIvCfh6jwn4e/IENaIDEyIn0=",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Los Angeles",
-    "isp": "Datacamp Limited"
-  },
-  {
-    "protocol": "vmess",
-    "address": "82.198.246.97",
-    "ping": 25,
-    "jitter": 23,
-    "download_speed": 44.13,
-    "upload_speed": 69.04,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "82.198.246.97",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10814,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "82.198.246.97",
-                "port": 180,
-                "users": [
-                  {
-                    "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJ2IjoiMiIsInBzIjoi8J+HrPCfh6cgR0Loi7Hlm70obWliZWk3Ny5jb20g57Gz6LSd6IqC54K55YiG5LqrKSIsImFkZCI6IjgyLjE5OC4yNDYuOTciLCJwb3J0IjoiMTgwIiwidHlwZSI6Im5vbmUiLCJpZCI6ImQxM2ZjMmY1LTNlMDUtNDc5NS04MWViLTQ0MTQzYTA5ZTU1MiIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiLyIsImhvc3QiOiJqb3NzLmdwajQud2ViLmlkIiwidGxzIjoiIn0=",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Los Angeles",
-    "isp": "Datacamp Limited"
-  },
-  {
-    "protocol": "vmess",
-    "address": "82.198.246.97",
-    "ping": 25,
-    "jitter": 26,
-    "download_speed": 5.9,
-    "upload_speed": 5.5,
-    "is_bypassing": false,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "82.198.246.97",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10810,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "82.198.246.97",
-                "port": 180,
-                "users": [
-                  {
-                    "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                    "alterId": 0,
-                    "security": null
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJ2IjogbnVsbCwgInBzIjogIvCfh6jwn4e/IDYzIC0gQ1ogLSBWTWVzcyAtIDE4MCIsICJhZGQiOiAiODIuMTk4LjI0Ni45NyIsICJwb3J0IjogMTgwLCAiaWQiOiAiZDEzZmMyZjUtM2UwNS00Nzk1LTgxZWItNDQxNDNhMDllNTUyIiwgImFpZCI6ICIwIiwgInNjeSI6IG51bGwsICJuZXQiOiAidGNwIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6ICJkRGRGZkdUSFlVLjkyMjkyMi5TSE9QIiwgImFscG4iOiBudWxsLCAicGF0aCI6ICIvUmtVVWJxaEE5R0paQlJPakwzUTV2VHltciIsICJ0bHMiOiAiIiwgInNuaSI6IG51bGwsICJmcCI6IG51bGwsICJuYW1lIjogIvCfh6jwn4e/IENaIDE3In0=",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Los Angeles",
-    "isp": "Datacamp Limited"
-  },
-  {
-    "protocol": "vmess",
-    "address": "94.232.247.165",
-    "ping": 268,
-    "jitter": 201,
-    "download_speed": 3.27,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "94.232.247.165",
+    "ip": "153.121.45.139",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -427,25 +196,28 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "trojan",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "94.232.247.165",
-                "port": 45653,
-                "users": [
-                  {
-                    "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
+                "address": "153.121.45.139",
+                "port": 3901,
+                "password": "61d8077bfb174e171b8283f155a555ad"
               }
             ]
           },
           "streamSettings": {
             "network": "tcp",
-            "security": ""
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.nintendogames.net",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
           },
           "tag": "proxy"
         },
@@ -467,10 +239,256 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiAiOTQuMjMyLjI0Ny4xNjUiLCAiYWlkIjogIjAiLCAiYWxwbiI6ICIiLCAiZnAiOiAiIiwgImhvc3QiOiAiIiwgImlkIjogIjllOTFkMTlhLWM3M2YtNDI3Ni1hZGJjLWIzMzdjMzc0MjU5YyIsICJpbnNlY3VyZSI6ICIwIiwgIm5ldCI6ICJ0Y3AiLCAicGF0aCI6ICIiLCAicG9ydCI6IDQ1NjUzLCAicHMiOiAi8J+Hq/Cfh7cgMTgyIC0gRlIgLSBWTWVzcyAtIDQ1NjUzIiwgInNjeSI6ICJhdXRvIiwgInNuaSI6ICIiLCAidGxzIjogIiIsICJ0eXBlIjogIm5vbmUiLCAidiI6ICIyIiwgIm5hbWUiOiAiaHR0cHM6Ly90Lm1lL1YycmFOR19EQSJ9",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "WorkTitans B.V."
+    "uri": "trojan://61d8077bfb174e171b8283f155a555ad@153.121.45.139:3901?allowInsecure=0&sni=www.nintendogames.net#%F0%9F%87%B8%F0%9F%87%AC%20%E6%96%B0%E5%8A%A0%E5%9D%A1%7C%40stairnode",
+    "country": "Japan",
+    "country_code": "JP",
+    "city": "Tokyo",
+    "isp": "SAKURA Internet Inc."
+  },
+  {
+    "protocol": "trojan",
+    "address": "112.118.116.123",
+    "ping": 495,
+    "jitter": 576,
+    "download_speed": 5.92,
+    "upload_speed": 9.04,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": false
+    },
+    "ip": "112.118.116.123",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10817,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "112.118.116.123",
+                "port": 443,
+                "password": "61d8077bfb174e171b8283f155a555ad"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.nintendogames.net",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://61d8077bfb174e171b8283f155a555ad@112.118.116.123:443?allowInsecure=0&sni=www.nintendogames.net#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF3%7C%40stairnode",
+    "country": "Hong Kong",
+    "country_code": "HK",
+    "city": "Central",
+    "isp": "Hong Kong Telecommunications (HKT) Limited Mass Internet"
+  },
+  {
+    "protocol": "trojan",
+    "address": "153.121.45.139",
+    "ping": 385,
+    "jitter": 338,
+    "download_speed": 12.25,
+    "upload_speed": 9.73,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "153.121.45.139",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10808,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "153.121.45.139",
+                "port": 3076,
+                "password": "61d8077bfb174e171b8283f155a555ad"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.nintendogames.net",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://61d8077bfb174e171b8283f155a555ad@153.121.45.139:3076?allowInsecure=0&sni=www.nintendogames.net#%F0%9F%87%B8%F0%9F%87%AC%20%E6%96%B0%E5%8A%A0%E5%9D%A12%7C%40stairnode",
+    "country": "Japan",
+    "country_code": "JP",
+    "city": "Tokyo",
+    "isp": "SAKURA Internet Inc."
+  },
+  {
+    "protocol": "trojan",
+    "address": "kfjdi.pages.dev",
+    "ping": 36,
+    "jitter": 55,
+    "download_speed": 0.0,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "kfjdi.pages.dev",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10816,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "kfjdi.pages.dev",
+                "port": 443,
+                "password": "er668"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "kfjdi.pages.dev",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://er668@kfjdi.pages.dev:443?path=%F0%9F%94%92&type=ws#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_2",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Toronto",
+    "isp": "Cloudflare, Inc."
   }
 ]

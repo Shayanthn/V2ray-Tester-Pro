@@ -5,77 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 25ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 297ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 346ms
-  type: vmess
-  server: 5.196.29.123
-  port: 2082
-  uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-4 | 25ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: null
-  network: tcp
-- name: VMESS-5 | 25ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: null
-  network: tcp
-- name: VMESS-6 | 268ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
+- name: TROJAN-1 | 226ms
+  type: trojan
+  server: 153.121.39.240
+  port: 4006
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: TROJAN-2 | 227ms
+  type: trojan
+  server: 160.16.57.238
+  port: 4006
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: TROJAN-3 | 415ms
+  type: trojan
+  server: 153.121.45.139
+  port: 3901
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: TROJAN-4 | 385ms
+  type: trojan
+  server: 153.121.45.139
+  port: 3076
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: TROJAN-5 | 495ms
+  type: trojan
+  server: 112.118.116.123
+  port: 443
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: TROJAN-6 | 36ms
+  type: trojan
+  server: kfjdi.pages.dev
+  port: 443
+  password: er668
+  sni: kfjdi.pages.dev
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 25ms
-  - VMESS-2 | 297ms
-  - VMESS-3 | 346ms
-  - VMESS-4 | 25ms
-  - VMESS-5 | 25ms
-  - VMESS-6 | 268ms
+  - TROJAN-1 | 226ms
+  - TROJAN-2 | 227ms
+  - TROJAN-3 | 415ms
+  - TROJAN-4 | 385ms
+  - TROJAN-5 | 495ms
+  - TROJAN-6 | 36ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 25ms
-  - VMESS-2 | 297ms
-  - VMESS-3 | 346ms
-  - VMESS-4 | 25ms
-  - VMESS-5 | 25ms
-  - VMESS-6 | 268ms
+  - TROJAN-1 | 226ms
+  - TROJAN-2 | 227ms
+  - TROJAN-3 | 415ms
+  - TROJAN-4 | 385ms
+  - TROJAN-5 | 495ms
+  - TROJAN-6 | 36ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
