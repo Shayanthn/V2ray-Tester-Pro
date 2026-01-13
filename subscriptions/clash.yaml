@@ -5,78 +5,109 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 32ms
-  type: ss
-  server: 79.127.200.169
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-2 | 45ms
-  type: ss
-  server: 156.146.38.167
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-3 | 41ms
-  type: ss
-  server: 156.146.38.170
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-4 | 46ms
-  type: ss
-  server: 156.146.38.168
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-5 | 42ms
-  type: ss
-  server: 156.146.38.169
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-6 | 81ms
-  type: ss
-  server: 104.192.226.106
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-7 | 95ms
+- name: SHADOWSOCKS-1 | 133ms
   type: ss
   server: 79.127.233.170
   port: 990
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-8 | 91ms
+- name: SHADOWSOCKS-2 | 328ms
   type: ss
-  server: 173.244.56.6
+  server: 45.154.204.7
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-3 | 330ms
+  type: ss
+  server: 23.95.76.59
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: TROJAN-4 | 819ms
+  type: trojan
+  server: 160.16.117.182
+  port: 1933
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: TROJAN-5 | 432ms
+  type: trojan
+  server: 58.152.53.219
   port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+- name: TROJAN-6 | 430ms
+  type: trojan
+  server: 58.152.25.130
+  port: 443
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: TROJAN-7 | 445ms
+  type: trojan
+  server: 58.152.25.130
+  port: 443
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+- name: TROJAN-8 | 452ms
+  type: trojan
+  server: 58.152.53.219
+  port: 443
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: VMESS-9 | 681ms
+  type: vmess
+  server: sy4.620720.xyz
+  port: 443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: sy4.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: TROJAN-10 | 1654ms
+  type: trojan
+  server: 112.118.116.123
+  port: 443
+  password: 61d8077bfb174e171b8283f155a555ad
+  sni: www.nintendogames.net
+- name: SHADOWSOCKS-11 | 270ms
+  type: ss
+  server: 23.95.75.146
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 32ms
-  - SHADOWSOCKS-2 | 45ms
-  - SHADOWSOCKS-3 | 41ms
-  - SHADOWSOCKS-4 | 46ms
-  - SHADOWSOCKS-5 | 42ms
-  - SHADOWSOCKS-6 | 81ms
-  - SHADOWSOCKS-7 | 95ms
-  - SHADOWSOCKS-8 | 91ms
+  - SHADOWSOCKS-1 | 133ms
+  - SHADOWSOCKS-2 | 328ms
+  - SHADOWSOCKS-3 | 330ms
+  - TROJAN-4 | 819ms
+  - TROJAN-5 | 432ms
+  - TROJAN-6 | 430ms
+  - TROJAN-7 | 445ms
+  - TROJAN-8 | 452ms
+  - VMESS-9 | 681ms
+  - TROJAN-10 | 1654ms
+  - SHADOWSOCKS-11 | 270ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 32ms
-  - SHADOWSOCKS-2 | 45ms
-  - SHADOWSOCKS-3 | 41ms
-  - SHADOWSOCKS-4 | 46ms
-  - SHADOWSOCKS-5 | 42ms
-  - SHADOWSOCKS-6 | 81ms
-  - SHADOWSOCKS-7 | 95ms
-  - SHADOWSOCKS-8 | 91ms
+  - SHADOWSOCKS-1 | 133ms
+  - SHADOWSOCKS-2 | 328ms
+  - SHADOWSOCKS-3 | 330ms
+  - TROJAN-4 | 819ms
+  - TROJAN-5 | 432ms
+  - TROJAN-6 | 430ms
+  - TROJAN-7 | 445ms
+  - TROJAN-8 | 452ms
+  - VMESS-9 | 681ms
+  - TROJAN-10 | 1654ms
+  - SHADOWSOCKS-11 | 270ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
