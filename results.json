@@ -2,10 +2,10 @@
   {
     "protocol": "vmess",
     "address": "172.234.132.232",
-    "ping": 104,
-    "jitter": 73,
-    "download_speed": 33.16,
-    "upload_speed": 26.29,
+    "ping": 115,
+    "jitter": 78,
+    "download_speed": 33.12,
+    "upload_speed": 23.81,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -20,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10812,
+          "port": 10808,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -81,10 +81,10 @@
   {
     "protocol": "vmess",
     "address": "162.19.248.238",
-    "ping": 273,
-    "jitter": 196,
-    "download_speed": 16.21,
-    "upload_speed": 10.53,
+    "ping": 281,
+    "jitter": 198,
+    "download_speed": 15.48,
+    "upload_speed": 10.56,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -99,7 +99,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10812,
+          "port": 10808,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -160,10 +160,10 @@
   {
     "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 220,
-    "jitter": 155,
-    "download_speed": 16.01,
-    "upload_speed": 12.23,
+    "ping": 225,
+    "jitter": 159,
+    "download_speed": 17.52,
+    "upload_speed": 12.16,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -239,10 +239,10 @@
   {
     "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 211,
-    "jitter": 149,
-    "download_speed": 17.18,
-    "upload_speed": 12.28,
+    "ping": 217,
+    "jitter": 153,
+    "download_speed": 17.11,
+    "upload_speed": 12.7,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -318,10 +318,10 @@
   {
     "protocol": "vmess",
     "address": "47.251.91.241",
-    "ping": 43,
+    "ping": 44,
     "jitter": 39,
-    "download_speed": 107.33,
-    "upload_speed": 69.37,
+    "download_speed": 101.87,
+    "upload_speed": 72.03,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -336,7 +336,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10815,
+          "port": 10811,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -396,11 +396,95 @@
   },
   {
     "protocol": "vmess",
+    "address": "n1753598451.74qxv.top",
+    "ping": 494,
+    "jitter": 660,
+    "download_speed": 0.88,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": false,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "n1753598451.74qxv.top",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10819,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "n1753598451.74qxv.top",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "9798678f-5b8c-4ff1-bbdd-b9b5c1539de0",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "n1753598451.74qxv.top",
+              "allowInsecure": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiJuMTc1MzU5ODQ1MS43NHF4di50b3AiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6Im4xNzUzNTk4NDUxLjc0cXh2LnRvcCIsImlkIjoiOTc5ODY3OGYtNWI4Yy00ZmYxLWJiZGQtYjliNWMxNTM5ZGUwIiwiaW5zZWN1cmUiOiIwIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiI0NDMiLCJwcyI6IldpRmktQFYycmF5QWxwaGEtMjkiLCJzY3kiOiJhdXRvIiwic25pIjoibjE3NTM1OTg0NTEuNzRxeHYudG9wIiwidGxzIjoidGxzIiwidHlwZSI6Ii0tLSIsInYiOiIyIn0=vmess",
+    "country": "Japan",
+    "country_code": "JP",
+    "city": "Tokyo",
+    "isp": "Alibaba Cloud LLC"
+  },
+  {
+    "protocol": "vmess",
     "address": "94.232.247.165",
-    "ping": 216,
-    "jitter": 149,
-    "download_speed": 1.83,
-    "upload_speed": 12.32,
+    "ping": 226,
+    "jitter": 165,
+    "download_speed": 1.42,
+    "upload_speed": 10.08,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -476,11 +560,11 @@
   {
     "protocol": "vmess",
     "address": "t1.620720.xyz",
-    "ping": 380,
-    "jitter": 303,
+    "ping": 413,
+    "jitter": 406,
     "download_speed": 0.0,
     "upload_speed": 0.0,
-    "is_bypassing": true,
+    "is_bypassing": false,
     "connectivity": {
       "telegram": false,
       "instagram": false,
@@ -494,7 +578,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10812,
+          "port": 10808,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -529,10 +613,6 @@
               "serverName": "t1.620720.xyz",
               "allowInsecure": true,
               "fingerprint": "chrome"
-            },
-            "sockopt": {
-              "dialerProxy": "fragment",
-              "tcpKeepAliveIdle": 100
             }
           },
           "tag": "proxy"
@@ -540,22 +620,6 @@
         {
           "protocol": "freedom",
           "tag": "direct"
-        },
-        {
-          "tag": "fragment",
-          "protocol": "freedom",
-          "settings": {
-            "fragment": {
-              "packets": "tlshello",
-              "length": "100-200",
-              "interval": "10-20"
-            }
-          },
-          "streamSettings": {
-            "sockopt": {
-              "tcpKeepAliveIdle": 100
-            }
-          }
         }
       ],
       "routing": {
@@ -572,7 +636,6 @@
       }
     },
     "uri": "vmess://eyJhZGQiOiJ0MS42MjA3MjAueHl6IiwiYWlkIjoiMCIsImhvc3QiOiJ0MS42MjA3MjAueHl6IiwiaWQiOiI1MTZkOGE3YS0zZjBiLTQxZDMtYmFkMC0yNDYxMTYzODE1MTYiLCJuZXQiOiJ3cyIsInBhdGgiOiJcLyIsInBvcnQiOiI4NDQzIiwicHMiOiLwn5KZQEFQS0NMVULwn5KZMjIiLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=",
-    "revived_with_fragment": true,
     "country": "Canada",
     "country_code": "CA",
     "city": "Montreal",
