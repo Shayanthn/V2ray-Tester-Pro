@@ -2,10 +2,10 @@
   {
     "protocol": "vmess",
     "address": "47.251.91.241",
-    "ping": 101,
-    "jitter": 80,
-    "download_speed": 43.82,
-    "upload_speed": 28.98,
+    "ping": 20,
+    "jitter": 26,
+    "download_speed": 205.24,
+    "upload_speed": 234.42,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -81,10 +81,10 @@
   {
     "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 177,
-    "jitter": 128,
-    "download_speed": 20.72,
-    "upload_speed": 14.69,
+    "ping": 257,
+    "jitter": 178,
+    "download_speed": 15.04,
+    "upload_speed": 10.53,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -160,10 +160,10 @@
   {
     "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 177,
-    "jitter": 130,
-    "download_speed": 20.6,
-    "upload_speed": 16.08,
+    "ping": 255,
+    "jitter": 177,
+    "download_speed": 14.49,
+    "upload_speed": 10.5,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -238,11 +238,90 @@
   },
   {
     "protocol": "vmess",
+    "address": "162.19.248.238",
+    "ping": 303,
+    "jitter": 215,
+    "download_speed": 13.13,
+    "upload_speed": 9.88,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "162.19.248.238",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10801,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "162.19.248.238",
+                "port": 550,
+                "users": [
+                  {
+                    "id": "ede27a79-b039-490b-932c-495de4b68880",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiIxNjIuMTkuMjQ4LjIzOCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiSm9pbi0tLVBMQU5CX05FVC0tLUpvaW4tLS1QTEFOQl9ORVQtLS1Kb2luLS0tUExBTkJfTkVUIiwiaWQiOiJlZGUyN2E3OS1iMDM5LTQ5MGItOTMyYy00OTVkZTRiNjg4ODAiLCJpbnNlY3VyZSI6IjEiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjU1MCIsInBzIjoiQEZpbHRlcl9icmVha2VyIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "vmess",
     "address": "94.232.247.165",
-    "ping": 178,
-    "jitter": 129,
-    "download_speed": 14.01,
-    "upload_speed": 14.91,
+    "ping": 258,
+    "jitter": 183,
+    "download_speed": 9.7,
+    "upload_speed": 10.72,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -317,18 +396,18 @@
   },
   {
     "protocol": "vmess",
-    "address": "162.19.248.238",
-    "ping": 231,
-    "jitter": 169,
-    "download_speed": 19.59,
-    "upload_speed": 12.4,
+    "address": "t1.620720.xyz",
+    "ping": 284,
+    "jitter": 298,
+    "download_speed": 9.4,
+    "upload_speed": 3.59,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "162.19.248.238",
+    "ip": "t1.620720.xyz",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -336,7 +415,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10801,
+          "port": 10819,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -352,11 +431,11 @@
           "settings": {
             "vnext": [
               {
-                "address": "162.19.248.238",
-                "port": 550,
+                "address": "t1.620720.xyz",
+                "port": 8443,
                 "users": [
                   {
-                    "id": "ede27a79-b039-490b-932c-495de4b68880",
+                    "id": "516d8a7a-3f0b-41d3-bad0-246116381516",
                     "alterId": 0,
                     "security": "auto"
                   }
@@ -365,8 +444,13 @@
             ]
           },
           "streamSettings": {
-            "network": "tcp",
-            "security": ""
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "t1.620720.xyz",
+              "allowInsecure": true,
+              "fingerprint": "chrome"
+            }
           },
           "tag": "proxy"
         },
@@ -388,10 +472,10 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiIxNjIuMTkuMjQ4LjIzOCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiSm9pbi0tLVBMQU5CX05FVC0tLUpvaW4tLS1QTEFOQl9ORVQtLS1Kb2luLS0tUExBTkJfTkVUIiwiaWQiOiJlZGUyN2E3OS1iMDM5LTQ5MGItOTMyYy00OTVkZTRiNjg4ODAiLCJpbnNlY3VyZSI6IjEiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjU1MCIsInBzIjoiQEZpbHRlcl9icmVha2VyIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Limburg an der Lahn",
-    "isp": "OVH SAS"
+    "uri": "vmess://eyJ2IjoiMiIsInBzIjoi8J+Hr/Cfh7UgVk1FU1Mt576O5Zu9PuaXpeacrC1ORuino+mUgeaXpeacrOWcsOWMuumdnuiHquWItuWJpy1DaGF0R1BULVlvdVR1YmUtdDEuNjIwNzIwLnh5ejo4NDQzIiwiYWRkIjoidDEuNjIwNzIwLnh5eiIsInBvcnQiOiI4NDQzIiwidHlwZSI6Im5vbmUiLCJpZCI6IjUxNmQ4YTdhLTNmMGItNDFkMy1iYWQwLTI0NjExNjM4MTUxNiIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwiaG9zdCI6InQxLjYyMDcyMC54eXoiLCJ0bHMiOiJ0bHMifQ==",
+    "country": "Canada",
+    "country_code": "CA",
+    "city": "Toronto",
+    "isp": "Cloudflare, Inc."
   }
 ]
