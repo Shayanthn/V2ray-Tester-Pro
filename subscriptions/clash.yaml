@@ -5,54 +5,158 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 47ms
-  type: vless
-  server: 45.82.251.95
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 53ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-3 | 85ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-4 | 57ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-5 | 238ms
-  type: vless
-  server: 91.107.148.79
+- name: SHADOWSOCKS-1 | 121ms
+  type: ss
+  server: 147.135.77.6
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 7f9cb9aef317f096
+- name: SHADOWSOCKS-2 | 255ms
+  type: ss
+  server: 57.129.129.247
+  port: 29757
+  cipher: chacha20-ietf-poly1305
+  password: 82f3a83f1556c0e3
+- name: SHADOWSOCKS-3 | 319ms
+  type: ss
+  server: 94.131.104.147
   port: 443
-  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
-  network: grpc
+  cipher: chacha20-ietf-poly1305
+  password: 6VAcll4P8xPTUVVtHeST3onRmLoVIBSU
+- name: SHADOWSOCKS-4 | 254ms
+  type: ss
+  server: 45.87.175.192
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 4a2rfixophdjffa8KVA4Aa
+- name: SHADOWSOCKS-5 | 249ms
+  type: ss
+  server: 57.130.28.148
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 74918bc801d53a4b
+- name: SHADOWSOCKS-6 | 275ms
+  type: ss
+  server: 45.87.175.171
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 4a2rfixophdjffa8KVA4Aa
+- name: SHADOWSOCKS-7 | 261ms
+  type: ss
+  server: 193.29.139.206
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 4a2rfixophdjffa8KVA4Aa
+- name: SHADOWSOCKS-8 | 280ms
+  type: ss
+  server: 135.125.245.131
+  port: 20939
+  cipher: chacha20-ietf-poly1305
+  password: 85d3d8ccba287d3e
+- name: SHADOWSOCKS-9 | 290ms
+  type: ss
+  server: 141.95.105.216
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 54c303c2866c8399
+- name: SHADOWSOCKS-10 | 280ms
+  type: ss
+  server: 141.95.109.160
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 823cdb94a457faee
+- name: SHADOWSOCKS-11 | 282ms
+  type: ss
+  server: 51.89.118.58
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 7a63df1a001759bf
+- name: SHADOWSOCKS-12 | 276ms
+  type: ss
+  server: 195.7.6.160
+  port: 18550
+  cipher: chacha20-ietf-poly1305
+  password: 75782921a8e70802
+- name: SHADOWSOCKS-13 | 285ms
+  type: ss
+  server: 141.95.101.202
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 8e3c75581ade471d
+- name: SHADOWSOCKS-14 | 264ms
+  type: ss
+  server: 135.125.10.106
+  port: 10018
+  cipher: chacha20-ietf-poly1305
+  password: 4b4763efefa95114
+- name: SHADOWSOCKS-15 | 309ms
+  type: ss
+  server: 141.95.104.30
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 59fa5541d1d9ccce
+- name: SHADOWSOCKS-16 | 263ms
+  type: ss
+  server: 193.29.139.157
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 4a2rfixophdjffa8KVA4Aa
+- name: SHADOWSOCKS-17 | 279ms
+  type: ss
+  server: 57.129.89.142
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 865bc80919a484a5
+- name: SHADOWSOCKS-18 | 466ms
+  type: ss
+  server: 107.174.114.71
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: 595HLF3fHUuw0McM51tpvPygSIB1uf4D
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 47ms
-  - VLESS-2 | 53ms
-  - VLESS-3 | 85ms
-  - VLESS-4 | 57ms
-  - VLESS-5 | 238ms
+  - SHADOWSOCKS-1 | 121ms
+  - SHADOWSOCKS-2 | 255ms
+  - SHADOWSOCKS-3 | 319ms
+  - SHADOWSOCKS-4 | 254ms
+  - SHADOWSOCKS-5 | 249ms
+  - SHADOWSOCKS-6 | 275ms
+  - SHADOWSOCKS-7 | 261ms
+  - SHADOWSOCKS-8 | 280ms
+  - SHADOWSOCKS-9 | 290ms
+  - SHADOWSOCKS-10 | 280ms
+  - SHADOWSOCKS-11 | 282ms
+  - SHADOWSOCKS-12 | 276ms
+  - SHADOWSOCKS-13 | 285ms
+  - SHADOWSOCKS-14 | 264ms
+  - SHADOWSOCKS-15 | 309ms
+  - SHADOWSOCKS-16 | 263ms
+  - SHADOWSOCKS-17 | 279ms
+  - SHADOWSOCKS-18 | 466ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 47ms
-  - VLESS-2 | 53ms
-  - VLESS-3 | 85ms
-  - VLESS-4 | 57ms
-  - VLESS-5 | 238ms
+  - SHADOWSOCKS-1 | 121ms
+  - SHADOWSOCKS-2 | 255ms
+  - SHADOWSOCKS-3 | 319ms
+  - SHADOWSOCKS-4 | 254ms
+  - SHADOWSOCKS-5 | 249ms
+  - SHADOWSOCKS-6 | 275ms
+  - SHADOWSOCKS-7 | 261ms
+  - SHADOWSOCKS-8 | 280ms
+  - SHADOWSOCKS-9 | 290ms
+  - SHADOWSOCKS-10 | 280ms
+  - SHADOWSOCKS-11 | 282ms
+  - SHADOWSOCKS-12 | 276ms
+  - SHADOWSOCKS-13 | 285ms
+  - SHADOWSOCKS-14 | 264ms
+  - SHADOWSOCKS-15 | 309ms
+  - SHADOWSOCKS-16 | 263ms
+  - SHADOWSOCKS-17 | 279ms
+  - SHADOWSOCKS-18 | 466ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:

@@ -1,18 +1,88 @@
 [
   {
-    "protocol": "vless",
-    "address": "91.107.148.79",
-    "ping": 238,
-    "jitter": 209,
-    "download_speed": 15.48,
-    "upload_speed": 12.52,
+    "protocol": "shadowsocks",
+    "address": "147.135.77.6",
+    "ping": 121,
+    "jitter": 89,
+    "download_speed": 17.79,
+    "upload_speed": 13.49,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "91.107.148.79",
+    "ip": "147.135.77.6",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10817,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "147.135.77.6",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "7f9cb9aef317f096"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZjljYjlhZWYzMTdmMDk2@147.135.77.6:11201",
+    "country": "United States",
+    "country_code": "US",
+    "city": "Reston",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "45.87.175.192",
+    "ping": 254,
+    "jitter": 182,
+    "download_speed": 15.04,
+    "upload_speed": 10.35,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "45.87.175.192",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -32,25 +102,16 @@
       ],
       "outbounds": [
         {
-          "protocol": "vless",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "91.107.148.79",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "7b148add-4438-426e-a583-50f11e7bd0e4",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
+                "address": "45.87.175.192",
+                "port": 8080,
+                "method": "chacha20-ietf-poly1305",
+                "password": "4a2rfixophdjffa8KVA4Aa"
               }
             ]
-          },
-          "streamSettings": {
-            "network": "grpc",
-            "security": "none"
           },
           "tag": "proxy"
         },
@@ -72,26 +133,166 @@
         ]
       }
     },
-    "uri": "vless://7b148add-4438-426e-a583-50f11e7bd0e4@91.107.148.79:443?mode=gun&security=none&encryption=none&type=grpc#telegram@V2rayBaaz◇⃟💜",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt Am Main",
-    "isp": "Hetzner Online AG"
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTJyZml4b3BoZGpmZmE4S1ZBNEFh@45.87.175.192:8080",
+    "country": "United States",
+    "country_code": "US",
+    "city": "New York",
+    "isp": "SBL-OSL"
   },
   {
-    "protocol": "vless",
-    "address": "45.82.251.95",
-    "ping": 47,
-    "jitter": 44,
-    "download_speed": 76.01,
-    "upload_speed": 59.5,
+    "protocol": "shadowsocks",
+    "address": "45.87.175.171",
+    "ping": 275,
+    "jitter": 206,
+    "download_speed": 14.33,
+    "upload_speed": 10.26,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "45.82.251.95",
+    "ip": "45.87.175.171",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10804,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "45.87.175.171",
+                "port": 8080,
+                "method": "chacha20-ietf-poly1305",
+                "password": "4a2rfixophdjffa8KVA4Aa"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTJyZml4b3BoZGpmZmE4S1ZBNEFh@45.87.175.171:8080",
+    "country": "United States",
+    "country_code": "US",
+    "city": "New York",
+    "isp": "SBL-OSL"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "57.129.129.247",
+    "ping": 255,
+    "jitter": 186,
+    "download_speed": 15.76,
+    "upload_speed": 10.49,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "57.129.129.247",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10819,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "57.129.129.247",
+                "port": 29757,
+                "method": "chacha20-ietf-poly1305",
+                "password": "82f3a83f1556c0e3"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4MmYzYTgzZjE1NTZjMGUz@57.129.129.247:29757",
+    "country": "United Kingdom",
+    "country_code": "GB",
+    "city": "Bexley",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "57.130.28.148",
+    "ping": 249,
+    "jitter": 178,
+    "download_speed": 14.99,
+    "upload_speed": 10.9,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "57.130.28.148",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -111,25 +312,16 @@
       ],
       "outbounds": [
         {
-          "protocol": "vless",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "45.82.251.95",
-                "port": 8880,
-                "users": [
-                  {
-                    "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
+                "address": "57.130.28.148",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "74918bc801d53a4b"
               }
             ]
-          },
-          "streamSettings": {
-            "network": "grpc",
-            "security": "none"
           },
           "tag": "proxy"
         },
@@ -151,26 +343,26 @@
         ]
       }
     },
-    "uri": "vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.95:8880?mode=gun&security=none&encryption=none&type=grpc#@hopev2ray❤️",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Secaucus",
-    "isp": "WorkTitans B.V."
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3NDkxOGJjODAxZDUzYTRi@57.130.28.148:11201",
+    "country": "France",
+    "country_code": "FR",
+    "city": "Paris",
+    "isp": "OVH SAS"
   },
   {
-    "protocol": "vless",
-    "address": "pqh29v3.globalfymain.com",
-    "ping": 85,
-    "jitter": 108,
-    "download_speed": 65.54,
-    "upload_speed": 58.43,
+    "protocol": "shadowsocks",
+    "address": "94.131.104.147",
+    "ping": 319,
+    "jitter": 227,
+    "download_speed": 15.26,
+    "upload_speed": 9.01,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "pqh29v3.globalfymain.com",
+    "ip": "94.131.104.147",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -178,7 +370,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10814,
+          "port": 10812,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -190,25 +382,16 @@
       ],
       "outbounds": [
         {
-          "protocol": "vless",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "pqh29v3.globalfymain.com",
-                "port": 8880,
-                "users": [
-                  {
-                    "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
+                "address": "94.131.104.147",
+                "port": 443,
+                "method": "chacha20-ietf-poly1305",
+                "password": "6VAcll4P8xPTUVVtHeST3onRmLoVIBSU"
               }
             ]
-          },
-          "streamSettings": {
-            "network": "grpc",
-            "security": "none"
           },
           "tag": "proxy"
         },
@@ -230,26 +413,166 @@
         ]
       }
     },
-    "uri": "vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@pqh29v3.globalfymain.com:8880?mode=gun&security=none&encryption=none&type=grpc#All-@V2rayAlpha--25",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Secaucus",
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo2VkFjbGw0UDh4UFRVVlZ0SGVTVDNvblJtTG9WSUJTVQ==@94.131.104.147:443",
+    "country": "Latvia",
+    "country_code": "LV",
+    "city": "Riga",
     "isp": "WorkTitans B.V."
   },
   {
-    "protocol": "vless",
-    "address": "pqh29v3.globalfymain.com",
-    "ping": 57,
-    "jitter": 54,
-    "download_speed": 64.01,
-    "upload_speed": 51.2,
+    "protocol": "shadowsocks",
+    "address": "193.29.139.157",
+    "ping": 263,
+    "jitter": 188,
+    "download_speed": 9.19,
+    "upload_speed": 10.31,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "pqh29v3.globalfymain.com",
+    "ip": "193.29.139.157",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10802,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "193.29.139.157",
+                "port": 8080,
+                "method": "chacha20-ietf-poly1305",
+                "password": "4a2rfixophdjffa8KVA4Aa"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTJyZml4b3BoZGpmZmE4S1ZBNEFh@193.29.139.157:8080",
+    "country": "The Netherlands",
+    "country_code": "NL",
+    "city": "Amsterdam",
+    "isp": "Greenhost BV"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "135.125.10.106",
+    "ping": 264,
+    "jitter": 191,
+    "download_speed": 10.94,
+    "upload_speed": 10.49,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "135.125.10.106",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10806,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "135.125.10.106",
+                "port": 10018,
+                "method": "chacha20-ietf-poly1305",
+                "password": "4b4763efefa95114"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YjQ3NjNlZmVmYTk1MTE0@135.125.10.106:10018",
+    "country": "France",
+    "country_code": "FR",
+    "city": "Gravelines",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "141.95.105.216",
+    "ping": 290,
+    "jitter": 211,
+    "download_speed": 12.98,
+    "upload_speed": 9.5,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "141.95.105.216",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -269,25 +592,16 @@
       ],
       "outbounds": [
         {
-          "protocol": "vless",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "pqh29v3.globalfymain.com",
-                "port": 8880,
-                "users": [
-                  {
-                    "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
+                "address": "141.95.105.216",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "54c303c2866c8399"
               }
             ]
-          },
-          "streamSettings": {
-            "network": "grpc",
-            "security": "none"
           },
           "tag": "proxy"
         },
@@ -309,26 +623,586 @@
         ]
       }
     },
-    "uri": "vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@pqh29v3.globalfymain.com:8880?mode=gun&security=none&encryption=none&type=grpc#All-@V2rayAlpha--7",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Secaucus",
-    "isp": "WorkTitans B.V."
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo1NGMzMDNjMjg2NmM4Mzk5@141.95.105.216:11201",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
   },
   {
-    "protocol": "vless",
-    "address": "pqh29v3.globalfymain.com",
-    "ping": 53,
-    "jitter": 55,
-    "download_speed": 69.23,
-    "upload_speed": 59.23,
+    "protocol": "shadowsocks",
+    "address": "195.7.6.160",
+    "ping": 276,
+    "jitter": 201,
+    "download_speed": 12.73,
+    "upload_speed": 9.85,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "pqh29v3.globalfymain.com",
+    "ip": "195.7.6.160",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10814,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "195.7.6.160",
+                "port": 18550,
+                "method": "chacha20-ietf-poly1305",
+                "password": "75782921a8e70802"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3NTc4MjkyMWE4ZTcwODAy@195.7.6.160:18550",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Karlsruhe",
+    "isp": "Contabo GmbH"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "141.95.109.160",
+    "ping": 280,
+    "jitter": 198,
+    "download_speed": 12.87,
+    "upload_speed": 9.84,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "141.95.109.160",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10818,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "141.95.109.160",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "823cdb94a457faee"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4MjNjZGI5NGE0NTdmYWVl@141.95.109.160:11201",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "51.89.118.58",
+    "ping": 282,
+    "jitter": 207,
+    "download_speed": 12.78,
+    "upload_speed": 9.76,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "51.89.118.58",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10816,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "51.89.118.58",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "7a63df1a001759bf"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3YTYzZGYxYTAwMTc1OWJm@51.89.118.58:11201",
+    "country": "United Kingdom",
+    "country_code": "GB",
+    "city": "London",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "141.95.104.30",
+    "ping": 309,
+    "jitter": 230,
+    "download_speed": 9.42,
+    "upload_speed": 3.16,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "141.95.104.30",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10811,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "141.95.104.30",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "59fa5541d1d9ccce"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo1OWZhNTU0MWQxZDljY2Nl@141.95.104.30:11201",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "135.125.245.131",
+    "ping": 280,
+    "jitter": 201,
+    "download_speed": 13.85,
+    "upload_speed": 9.7,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "135.125.245.131",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10815,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "135.125.245.131",
+                "port": 20939,
+                "method": "chacha20-ietf-poly1305",
+                "password": "85d3d8ccba287d3e"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4NWQzZDhjY2JhMjg3ZDNl@135.125.245.131:20939",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "141.95.101.202",
+    "ping": 285,
+    "jitter": 201,
+    "download_speed": 12.66,
+    "upload_speed": 9.73,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "141.95.101.202",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10804,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "141.95.101.202",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "8e3c75581ade471d"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4ZTNjNzU1ODFhZGU0NzFk@141.95.101.202:11201",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Limburg an der Lahn",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "193.29.139.206",
+    "ping": 261,
+    "jitter": 186,
+    "download_speed": 14.22,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "193.29.139.206",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10803,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "193.29.139.206",
+                "port": 8080,
+                "method": "chacha20-ietf-poly1305",
+                "password": "4a2rfixophdjffa8KVA4Aa"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTJyZml4b3BoZGpmZmE4S1ZBNEFh@193.29.139.206:8080",
+    "country": "The Netherlands",
+    "country_code": "NL",
+    "city": "Amsterdam",
+    "isp": "Greenhost BV"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "57.129.89.142",
+    "ping": 279,
+    "jitter": 197,
+    "download_speed": 5.54,
+    "upload_speed": 9.44,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "57.129.89.142",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10805,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "shadowsocks",
+          "settings": {
+            "servers": [
+              {
+                "address": "57.129.89.142",
+                "port": 11201,
+                "method": "chacha20-ietf-poly1305",
+                "password": "865bc80919a484a5"
+              }
+            ]
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4NjViYzgwOTE5YTQ4NGE1@57.129.89.142:11201",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "OVH SAS"
+  },
+  {
+    "protocol": "shadowsocks",
+    "address": "107.174.114.71",
+    "ping": 466,
+    "jitter": 467,
+    "download_speed": 2.75,
+    "upload_speed": 1.87,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "107.174.114.71",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -348,25 +1222,16 @@
       ],
       "outbounds": [
         {
-          "protocol": "vless",
+          "protocol": "shadowsocks",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "pqh29v3.globalfymain.com",
-                "port": 8880,
-                "users": [
-                  {
-                    "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
+                "address": "107.174.114.71",
+                "port": 443,
+                "method": "chacha20-ietf-poly1305",
+                "password": "595HLF3fHUuw0McM51tpvPygSIB1uf4D"
               }
             ]
-          },
-          "streamSettings": {
-            "network": "grpc",
-            "security": "none"
           },
           "tag": "proxy"
         },
@@ -388,10 +1253,10 @@
         ]
       }
     },
-    "uri": "vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@pqh29v3.globalfymain.com:8880?mode=gun&security=none&encryption=none&type=grpc#All-@V2rayAlpha--4",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Secaucus",
-    "isp": "WorkTitans B.V."
+    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo1OTVITEYzZkhVdXcwTWNNNTF0cHZQeWdTSUIxdWY0RA==@107.174.114.71:443",
+    "country": "Norway",
+    "country_code": "NO",
+    "city": "Oslo",
+    "isp": "BrainStorm Network, Inc"
   }
 ]
