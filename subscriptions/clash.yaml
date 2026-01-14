@@ -5,62 +5,54 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 14ms
-  type: vmess
-  server: 172.234.132.232
-  port: 10001
-  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 141ms
-  type: vmess
-  server: 47.251.91.241
-  port: 42899
-  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 162ms
-  type: vmess
-  server: 85.195.101.122
-  port: 40878
-  uuid: f3d4167e-b15e-4e46-82e9-9286ef93fda7
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VLESS-4 | 215ms
+- name: VLESS-1 | 47ms
   type: vless
-  server: doprax.fxgoldensignals.com
-  port: 50904
-  uuid: d4795cd9-cd7b-4cea-edfb-20cdcca5837b
-  network: tcp
-- name: VLESS-5 | 323ms
+  server: 45.82.251.95
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-2 | 53ms
   type: vless
-  server: 65.108.231.185
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-3 | 85ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-4 | 57ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-5 | 238ms
+  type: vless
+  server: 91.107.148.79
   port: 443
-  uuid: 440766d1-858f-4719-84f5-c2de6f6227b2
-  network: tcp
-  tls: true
-  servername: 65.108.231.185
+  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
+  network: grpc
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 14ms
-  - VMESS-2 | 141ms
-  - VMESS-3 | 162ms
-  - VLESS-4 | 215ms
-  - VLESS-5 | 323ms
+  - VLESS-1 | 47ms
+  - VLESS-2 | 53ms
+  - VLESS-3 | 85ms
+  - VLESS-4 | 57ms
+  - VLESS-5 | 238ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 14ms
-  - VMESS-2 | 141ms
-  - VMESS-3 | 162ms
-  - VLESS-4 | 215ms
-  - VLESS-5 | 323ms
+  - VLESS-1 | 47ms
+  - VLESS-2 | 53ms
+  - VLESS-3 | 85ms
+  - VLESS-4 | 57ms
+  - VLESS-5 | 238ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
