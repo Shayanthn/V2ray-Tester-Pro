@@ -5,96 +5,64 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 25ms
+- name: VMESS-1 | 124ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
   alterId: 0
   cipher: auto
   network: tcp
-- name: TROJAN-2 | 233ms
-  type: trojan
-  server: 43.206.227.6
-  port: 2053
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-- name: TROJAN-3 | 559ms
-  type: trojan
-  server: 160.16.106.99
-  port: 544
-  password: 61d8077bfb174e171b8283f155a555ad
-  sni: www.nintendogames.net
-- name: TROJAN-4 | 404ms
-  type: trojan
-  server: 160.16.106.99
-  port: 3076
-  password: 61d8077bfb174e171b8283f155a555ad
-  sni: www.nintendogames.net
-- name: TROJAN-5 | 1416ms
-  type: trojan
-  server: 58.152.110.111
+- name: VMESS-2 | 142ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 142ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-6 | 232ms
-  type: trojan
-  server: 160.16.81.84
-  port: 4006
-  password: 61d8077bfb174e171b8283f155a555ad
-  sni: www.nintendogames.net
-- name: TROJAN-7 | 292ms
-  type: trojan
-  server: 160.16.89.176
-  port: 4006
-  password: 61d8077bfb174e171b8283f155a555ad
-  sni: www.nintendogames.net
-- name: TROJAN-8 | 1015ms
-  type: trojan
-  server: 58.152.110.111
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 141ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  password: 61d8077bfb174e171b8283f155a555ad
-  sni: www.nintendogames.net
-- name: TROJAN-9 | 472ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-- name: VLESS-10 | 576ms
-  type: vless
-  server: 92.60.70.36
-  port: 2053
-  uuid: 08c7f096-d057-4d53-82fd-c739d372887b
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 191ms
+  type: vmess
+  server: 162.19.248.238
+  port: 550
+  uuid: ede27a79-b039-490b-932c-495de4b68880
+  alterId: 0
+  cipher: auto
   network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 25ms
-  - TROJAN-2 | 233ms
-  - TROJAN-3 | 559ms
-  - TROJAN-4 | 404ms
-  - TROJAN-5 | 1416ms
-  - TROJAN-6 | 232ms
-  - TROJAN-7 | 292ms
-  - TROJAN-8 | 1015ms
-  - TROJAN-9 | 472ms
-  - VLESS-10 | 576ms
+  - VMESS-1 | 124ms
+  - VMESS-2 | 142ms
+  - VMESS-3 | 142ms
+  - VMESS-4 | 141ms
+  - VMESS-5 | 191ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 25ms
-  - TROJAN-2 | 233ms
-  - TROJAN-3 | 559ms
-  - TROJAN-4 | 404ms
-  - TROJAN-5 | 1416ms
-  - TROJAN-6 | 232ms
-  - TROJAN-7 | 292ms
-  - TROJAN-8 | 1015ms
-  - TROJAN-9 | 472ms
-  - VLESS-10 | 576ms
+  - VMESS-1 | 124ms
+  - VMESS-2 | 142ms
+  - VMESS-3 | 142ms
+  - VMESS-4 | 141ms
+  - VMESS-5 | 191ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
