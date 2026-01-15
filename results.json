@@ -1,18 +1,18 @@
 [
   {
-    "protocol": "vmess",
-    "address": "94.232.247.165",
-    "ping": 251,
-    "jitter": 179,
-    "download_speed": 15.73,
-    "upload_speed": 10.78,
+    "protocol": "trojan",
+    "address": "35.181.131.135",
+    "ping": 183,
+    "jitter": 164,
+    "download_speed": 23.59,
+    "upload_speed": 14.85,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "94.232.247.165",
+    "ip": "35.181.131.135",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -20,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10819,
+          "port": 10817,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -32,25 +32,28 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "trojan",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "94.232.247.165",
-                "port": 45653,
-                "users": [
-                  {
-                    "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
+                "address": "35.181.131.135",
+                "port": 22222,
+                "password": "telegram-id-privatevpns"
               }
             ]
           },
           "streamSettings": {
             "network": "tcp",
-            "security": ""
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "35.181.131.135",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
           },
           "tag": "proxy"
         },
@@ -72,19 +75,101 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiI5NC4yMzIuMjQ3LjE2NSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiI5ZTkxZDE5YS1jNzNmLTQyNzYtYWRiYy1iMzM3YzM3NDI1OWMiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ1NjUzIiwicHMiOiJodHRwczovL3QubWUvVjJyYU5HX0RBIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
+    "uri": "trojan://telegram-id-privatevpns@35.181.131.135:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S103)",
     "country": "France",
     "country_code": "FR",
     "city": "Paris",
-    "isp": "WorkTitans B.V."
+    "isp": "Amazon.com, Inc."
+  },
+  {
+    "protocol": "trojan",
+    "address": "18.193.207.240",
+    "ping": 197,
+    "jitter": 177,
+    "download_speed": 21.69,
+    "upload_speed": 14.1,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "18.193.207.240",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10815,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "18.193.207.240",
+                "port": 22222,
+                "password": "telegram-id-privatevpns"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "18.193.207.240",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://telegram-id-privatevpns@18.193.207.240:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S101)",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "Amazon Technologies Inc."
   },
   {
     "protocol": "vmess",
     "address": "162.19.248.238",
-    "ping": 309,
-    "jitter": 218,
-    "download_speed": 13.84,
-    "upload_speed": 9.94,
+    "ping": 194,
+    "jitter": 140,
+    "download_speed": 24.09,
+    "upload_speed": 16.68,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -99,7 +184,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10818,
+          "port": 10806,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -159,11 +244,90 @@
   },
   {
     "protocol": "vmess",
+    "address": "94.232.247.165",
+    "ping": 164,
+    "jitter": 130,
+    "download_speed": 27.03,
+    "upload_speed": 19.42,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "94.232.247.165",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10814,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "94.232.247.165",
+                "port": 45653,
+                "users": [
+                  {
+                    "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiI5NC4yMzIuMjQ3LjE2NSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiI5ZTkxZDE5YS1jNzNmLTQyNzYtYWRiYy1iMzM3YzM3NDI1OWMiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ1NjUzIiwicHMiOiJodHRwczovL3QubWUvVjJyYU5HX0RBIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
+    "country": "France",
+    "country_code": "FR",
+    "city": "Paris",
+    "isp": "WorkTitans B.V."
+  },
+  {
+    "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 245,
-    "jitter": 172,
-    "download_speed": 14.92,
-    "upload_speed": 11.24,
+    "ping": 138,
+    "jitter": 98,
+    "download_speed": 26.86,
+    "upload_speed": 19.43,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -178,7 +342,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10808,
+          "port": 10804,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -239,10 +403,10 @@
   {
     "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 242,
-    "jitter": 171,
-    "download_speed": 14.98,
-    "upload_speed": 10.79,
+    "ping": 140,
+    "jitter": 101,
+    "download_speed": 26.04,
+    "upload_speed": 17.61,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -257,7 +421,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10812,
+          "port": 10818,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -318,10 +482,10 @@
   {
     "protocol": "vmess",
     "address": "47.251.91.241",
-    "ping": 22,
-    "jitter": 27,
-    "download_speed": 236.84,
-    "upload_speed": 111.71,
+    "ping": 143,
+    "jitter": 109,
+    "download_speed": 28.94,
+    "upload_speed": 20.5,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -336,7 +500,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10808,
+          "port": 10805,
           "protocol": "http",
           "settings": {
             "timeout": 0,

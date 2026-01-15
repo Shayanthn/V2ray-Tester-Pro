@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 22ms
+- name: VMESS-1 | 143ms
   type: vmess
   server: 47.251.91.241
   port: 42899
@@ -13,7 +13,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 251ms
+- name: VMESS-2 | 164ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -21,7 +21,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 242ms
+- name: VMESS-3 | 138ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -29,7 +29,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 245ms
+- name: VMESS-4 | 140ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -37,7 +37,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-5 | 309ms
+- name: VMESS-5 | 194ms
   type: vmess
   server: 162.19.248.238
   port: 550
@@ -45,24 +45,40 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
+- name: TROJAN-6 | 183ms
+  type: trojan
+  server: 35.181.131.135
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 35.181.131.135
+- name: TROJAN-7 | 197ms
+  type: trojan
+  server: 18.193.207.240
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 18.193.207.240
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 22ms
-  - VMESS-2 | 251ms
-  - VMESS-3 | 242ms
-  - VMESS-4 | 245ms
-  - VMESS-5 | 309ms
+  - VMESS-1 | 143ms
+  - VMESS-2 | 164ms
+  - VMESS-3 | 138ms
+  - VMESS-4 | 140ms
+  - VMESS-5 | 194ms
+  - TROJAN-6 | 183ms
+  - TROJAN-7 | 197ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 22ms
-  - VMESS-2 | 251ms
-  - VMESS-3 | 242ms
-  - VMESS-4 | 245ms
-  - VMESS-5 | 309ms
+  - VMESS-1 | 143ms
+  - VMESS-2 | 164ms
+  - VMESS-3 | 138ms
+  - VMESS-4 | 140ms
+  - VMESS-5 | 194ms
+  - TROJAN-6 | 183ms
+  - TROJAN-7 | 197ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
