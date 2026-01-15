@@ -5,86 +5,64 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 94ms
-  type: ss
-  server: 173.244.56.6
+- name: VMESS-1 | 137ms
+  type: vmess
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-2 | 144ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-2 | 20ms
-  type: ss
-  server: 104.192.226.106
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-3 | 48ms
-  type: ss
-  server: 156.146.38.167
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 146ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-4 | 50ms
-  type: ss
-  server: 156.146.38.169
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-5 | 45ms
-  type: ss
-  server: 156.146.38.168
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-6 | 46ms
-  type: ss
-  server: 156.146.38.170
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-7 | 78ms
-  type: ss
-  server: 79.127.233.170
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-8 | 110ms
-  type: ss
-  server: 103.35.189.136
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: SS2QvbC9nqLp2sXXZo0BVy4slcErRuCt
-- name: SHADOWSOCKS-9 | 103ms
-  type: ss
-  server: 79.127.200.169
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 190ms
+  type: vmess
+  server: 162.19.248.238
+  port: 550
+  uuid: ede27a79-b039-490b-932c-495de4b68880
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 155ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  alterId: 0
+  cipher: auto
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 94ms
-  - SHADOWSOCKS-2 | 20ms
-  - SHADOWSOCKS-3 | 48ms
-  - SHADOWSOCKS-4 | 50ms
-  - SHADOWSOCKS-5 | 45ms
-  - SHADOWSOCKS-6 | 46ms
-  - SHADOWSOCKS-7 | 78ms
-  - SHADOWSOCKS-8 | 110ms
-  - SHADOWSOCKS-9 | 103ms
+  - VMESS-1 | 137ms
+  - VMESS-2 | 144ms
+  - VMESS-3 | 146ms
+  - VMESS-4 | 190ms
+  - VMESS-5 | 155ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 94ms
-  - SHADOWSOCKS-2 | 20ms
-  - SHADOWSOCKS-3 | 48ms
-  - SHADOWSOCKS-4 | 50ms
-  - SHADOWSOCKS-5 | 45ms
-  - SHADOWSOCKS-6 | 46ms
-  - SHADOWSOCKS-7 | 78ms
-  - SHADOWSOCKS-8 | 110ms
-  - SHADOWSOCKS-9 | 103ms
+  - VMESS-1 | 137ms
+  - VMESS-2 | 144ms
+  - VMESS-3 | 146ms
+  - VMESS-4 | 190ms
+  - VMESS-5 | 155ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
