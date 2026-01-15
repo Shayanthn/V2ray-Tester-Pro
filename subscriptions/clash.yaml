@@ -5,64 +5,76 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 137ms
+- name: SHADOWSOCKS-1 | 134ms
+  type: ss
+  server: 79.127.233.170
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+- name: SHADOWSOCKS-2 | 333ms
+  type: ss
+  server: 45.154.204.7
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-3 | 333ms
+  type: ss
+  server: 23.95.76.59
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: VMESS-4 | 534ms
   type: vmess
-  server: 47.251.91.241
-  port: 42899
-  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
   alterId: 0
   cipher: auto
-  network: tcp
-- name: VMESS-2 | 144ms
+  network: ws
+  tls: true
+  servername: t1.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-5 | 592ms
   type: vmess
-  server: 217.69.5.32
+  server: sy4.620720.xyz
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
   alterId: 0
   cipher: auto
-  network: tcp
-- name: VMESS-3 | 146ms
-  type: vmess
-  server: 217.69.5.32
+  network: ws
+  tls: true
+  servername: sy4.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: SHADOWSOCKS-6 | 135ms
+  type: ss
+  server: 23.95.75.146
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 190ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 155ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
+  cipher: chacha20-ietf-poly1305
+  password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 137ms
-  - VMESS-2 | 144ms
-  - VMESS-3 | 146ms
-  - VMESS-4 | 190ms
-  - VMESS-5 | 155ms
+  - SHADOWSOCKS-1 | 134ms
+  - SHADOWSOCKS-2 | 333ms
+  - SHADOWSOCKS-3 | 333ms
+  - VMESS-4 | 534ms
+  - VMESS-5 | 592ms
+  - SHADOWSOCKS-6 | 135ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 137ms
-  - VMESS-2 | 144ms
-  - VMESS-3 | 146ms
-  - VMESS-4 | 190ms
-  - VMESS-5 | 155ms
+  - SHADOWSOCKS-1 | 134ms
+  - SHADOWSOCKS-2 | 333ms
+  - SHADOWSOCKS-3 | 333ms
+  - VMESS-4 | 534ms
+  - VMESS-5 | 592ms
+  - SHADOWSOCKS-6 | 135ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
