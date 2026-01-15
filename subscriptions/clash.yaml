@@ -5,70 +5,78 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 253ms
-  type: trojan
-  server: 35.158.18.102
-  port: 22222
-  password: telegram-id-privatevpns
-  sni: trojan.burgerip.co.uk
-- name: TROJAN-2 | 258ms
-  type: trojan
-  server: 35.158.18.102
-  port: 22223
-  password: telegram-id-directvpn
-  sni: trojan.burgerip.co.uk
-- name: TROJAN-3 | 254ms
-  type: trojan
-  server: 35.158.18.102
-  port: 22223
-  password: telegram-id-directvpn
-  sni: trojan.burgerip.co.uk
-- name: TROJAN-4 | 259ms
-  type: trojan
-  server: 35.158.18.102
-  port: 22222
-  password: telegram-id-privatevpns
-  sni: trojan.burgerip.co.uk
-- name: TROJAN-5 | 311ms
-  type: trojan
-  server: 80.173.230.196
-  port: 26279
-  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
-  sni: 80.173.230.196
-- name: VLESS-6 | 375ms
-  type: vless
-  server: 171.22.114.248
-  port: 27394
-  uuid: 00b0d4de-b126-4511-87c1-8f1feb462fa6
-  network: tcp
-- name: TROJAN-7 | 588ms
-  type: trojan
-  server: 160.16.196.59
-  port: 1281
-  password: 381f2e86233720eacda26d50e9aa26da
-  sni: www.nintendogames.net
+- name: SHADOWSOCKS-1 | 64ms
+  type: ss
+  server: 79.127.200.169
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-2 | 64ms
+  type: ss
+  server: 156.146.38.169
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-3 | 61ms
+  type: ss
+  server: 156.146.38.170
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-4 | 65ms
+  type: ss
+  server: 156.146.38.168
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-5 | 62ms
+  type: ss
+  server: 156.146.38.167
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-6 | 163ms
+  type: ss
+  server: 173.244.56.6
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-7 | 109ms
+  type: ss
+  server: 104.192.226.106
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+- name: SHADOWSOCKS-8 | 132ms
+  type: ss
+  server: 79.127.233.170
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 253ms
-  - TROJAN-2 | 258ms
-  - TROJAN-3 | 254ms
-  - TROJAN-4 | 259ms
-  - TROJAN-5 | 311ms
-  - VLESS-6 | 375ms
-  - TROJAN-7 | 588ms
+  - SHADOWSOCKS-1 | 64ms
+  - SHADOWSOCKS-2 | 64ms
+  - SHADOWSOCKS-3 | 61ms
+  - SHADOWSOCKS-4 | 65ms
+  - SHADOWSOCKS-5 | 62ms
+  - SHADOWSOCKS-6 | 163ms
+  - SHADOWSOCKS-7 | 109ms
+  - SHADOWSOCKS-8 | 132ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 253ms
-  - TROJAN-2 | 258ms
-  - TROJAN-3 | 254ms
-  - TROJAN-4 | 259ms
-  - TROJAN-5 | 311ms
-  - VLESS-6 | 375ms
-  - TROJAN-7 | 588ms
+  - SHADOWSOCKS-1 | 64ms
+  - SHADOWSOCKS-2 | 64ms
+  - SHADOWSOCKS-3 | 61ms
+  - SHADOWSOCKS-4 | 65ms
+  - SHADOWSOCKS-5 | 62ms
+  - SHADOWSOCKS-6 | 163ms
+  - SHADOWSOCKS-7 | 109ms
+  - SHADOWSOCKS-8 | 132ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
