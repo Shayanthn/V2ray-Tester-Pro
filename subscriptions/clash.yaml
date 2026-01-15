@@ -5,80 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 143ms
-  type: vmess
-  server: 47.251.91.241
-  port: 42899
-  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 164ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 138ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 140ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 194ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: TROJAN-6 | 183ms
+- name: TROJAN-1 | 291ms
   type: trojan
-  server: 35.181.131.135
-  port: 22222
-  password: telegram-id-privatevpns
-  sni: 35.181.131.135
-- name: TROJAN-7 | 197ms
+  server: 160.16.72.205
+  port: 4006
+  password: 4843e94d205f3893f588255a591abe94
+  sni: www.nintendogames.net
+- name: TROJAN-2 | 280ms
   type: trojan
-  server: 18.193.207.240
-  port: 22222
-  password: telegram-id-privatevpns
-  sni: 18.193.207.240
+  server: 160.16.72.205
+  port: 1933
+  password: 4843e94d205f3893f588255a591abe94
+  sni: www.nintendogames.net
+- name: TROJAN-3 | 454ms
+  type: trojan
+  server: 160.16.132.38
+  port: 544
+  password: 4843e94d205f3893f588255a591abe94
+  sni: www.nintendogames.net
+- name: TROJAN-4 | 476ms
+  type: trojan
+  server: 160.16.124.17
+  port: 3901
+  password: 4843e94d205f3893f588255a591abe94
+  sni: www.nintendogames.net
+- name: TROJAN-5 | 1422ms
+  type: trojan
+  server: 58.152.110.111
+  port: 443
+  password: 4843e94d205f3893f588255a591abe94
+  sni: www.nintendogames.net
+- name: TROJAN-6 | 208ms
+  type: trojan
+  server: 58.152.53.219
+  port: 443
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 143ms
-  - VMESS-2 | 164ms
-  - VMESS-3 | 138ms
-  - VMESS-4 | 140ms
-  - VMESS-5 | 194ms
-  - TROJAN-6 | 183ms
-  - TROJAN-7 | 197ms
+  - TROJAN-1 | 291ms
+  - TROJAN-2 | 280ms
+  - TROJAN-3 | 454ms
+  - TROJAN-4 | 476ms
+  - TROJAN-5 | 1422ms
+  - TROJAN-6 | 208ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 143ms
-  - VMESS-2 | 164ms
-  - VMESS-3 | 138ms
-  - VMESS-4 | 140ms
-  - VMESS-5 | 194ms
-  - TROJAN-6 | 183ms
-  - TROJAN-7 | 197ms
+  - TROJAN-1 | 291ms
+  - TROJAN-2 | 280ms
+  - TROJAN-3 | 454ms
+  - TROJAN-4 | 476ms
+  - TROJAN-5 | 1422ms
+  - TROJAN-6 | 208ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
