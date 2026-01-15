@@ -5,164 +5,70 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 46ms
-  type: ss
-  server: 156.146.38.168
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-2 | 27ms
-  type: ss
-  server: 156.146.38.169
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-3 | 42ms
-  type: ss
-  server: 156.146.38.167
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-4 | 47ms
-  type: ss
-  server: 156.146.38.170
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-5 | 86ms
-  type: ss
-  server: 104.192.226.106
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-6 | 81ms
-  type: ss
-  server: 173.244.56.6
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-7 | 98ms
-  type: ss
-  server: 79.127.233.170
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: TROJAN-8 | 248ms
-  type: trojan
-  server: 35.181.111.41
-  port: 22222
-  password: telegram-id-privatevpns
-  sni: 35.181.111.41
-- name: TROJAN-9 | 247ms
+- name: TROJAN-1 | 253ms
   type: trojan
   server: 35.158.18.102
   port: 22222
   password: telegram-id-privatevpns
-  sni: 35.158.18.102
-- name: VMESS-10 | 746ms
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12890
-  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-11 | 589ms
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12901
-  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-12 | 631ms
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12883
-  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-13 | 767ms
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12888
-  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-14 | 644ms
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12883
-  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-15 | 892ms
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12889
-  uuid: 1ec49aaf-2990-4c7b-a45c-d190e6ea5438
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /
-    headers: {}
+  sni: trojan.burgerip.co.uk
+- name: TROJAN-2 | 258ms
+  type: trojan
+  server: 35.158.18.102
+  port: 22223
+  password: telegram-id-directvpn
+  sni: trojan.burgerip.co.uk
+- name: TROJAN-3 | 254ms
+  type: trojan
+  server: 35.158.18.102
+  port: 22223
+  password: telegram-id-directvpn
+  sni: trojan.burgerip.co.uk
+- name: TROJAN-4 | 259ms
+  type: trojan
+  server: 35.158.18.102
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
+- name: TROJAN-5 | 311ms
+  type: trojan
+  server: 80.173.230.196
+  port: 26279
+  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
+  sni: 80.173.230.196
+- name: VLESS-6 | 375ms
+  type: vless
+  server: 171.22.114.248
+  port: 27394
+  uuid: 00b0d4de-b126-4511-87c1-8f1feb462fa6
+  network: tcp
+- name: TROJAN-7 | 588ms
+  type: trojan
+  server: 160.16.196.59
+  port: 1281
+  password: 381f2e86233720eacda26d50e9aa26da
+  sni: www.nintendogames.net
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 46ms
-  - SHADOWSOCKS-2 | 27ms
-  - SHADOWSOCKS-3 | 42ms
-  - SHADOWSOCKS-4 | 47ms
-  - SHADOWSOCKS-5 | 86ms
-  - SHADOWSOCKS-6 | 81ms
-  - SHADOWSOCKS-7 | 98ms
-  - TROJAN-8 | 248ms
-  - TROJAN-9 | 247ms
-  - VMESS-10 | 746ms
-  - VMESS-11 | 589ms
-  - VMESS-12 | 631ms
-  - VMESS-13 | 767ms
-  - VMESS-14 | 644ms
-  - VMESS-15 | 892ms
+  - TROJAN-1 | 253ms
+  - TROJAN-2 | 258ms
+  - TROJAN-3 | 254ms
+  - TROJAN-4 | 259ms
+  - TROJAN-5 | 311ms
+  - VLESS-6 | 375ms
+  - TROJAN-7 | 588ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 46ms
-  - SHADOWSOCKS-2 | 27ms
-  - SHADOWSOCKS-3 | 42ms
-  - SHADOWSOCKS-4 | 47ms
-  - SHADOWSOCKS-5 | 86ms
-  - SHADOWSOCKS-6 | 81ms
-  - SHADOWSOCKS-7 | 98ms
-  - TROJAN-8 | 248ms
-  - TROJAN-9 | 247ms
-  - VMESS-10 | 746ms
-  - VMESS-11 | 589ms
-  - VMESS-12 | 631ms
-  - VMESS-13 | 767ms
-  - VMESS-14 | 644ms
-  - VMESS-15 | 892ms
+  - TROJAN-1 | 253ms
+  - TROJAN-2 | 258ms
+  - TROJAN-3 | 254ms
+  - TROJAN-4 | 259ms
+  - TROJAN-5 | 311ms
+  - VLESS-6 | 375ms
+  - TROJAN-7 | 588ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:

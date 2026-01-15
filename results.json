@@ -2,10 +2,10 @@
   {
     "protocol": "trojan",
     "address": "35.158.18.102",
-    "ping": 247,
-    "jitter": 221,
-    "download_speed": 17.7,
-    "upload_speed": 11.55,
+    "ping": 258,
+    "jitter": 229,
+    "download_speed": 17.16,
+    "upload_speed": 11.54,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -20,7 +20,251 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10812,
+          "port": 10811,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "35.158.18.102",
+                "port": 22223,
+                "password": "telegram-id-directvpn"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "trojan.burgerip.co.uk",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://telegram-id-directvpn@35.158.18.102:22223?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#[🇩🇪]t.me/ConfigsHub",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "Amazon Technologies Inc."
+  },
+  {
+    "protocol": "trojan",
+    "address": "160.16.196.59",
+    "ping": 588,
+    "jitter": 523,
+    "download_speed": 10.35,
+    "upload_speed": 7.17,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "160.16.196.59",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10809,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "160.16.196.59",
+                "port": 1281,
+                "password": "381f2e86233720eacda26d50e9aa26da"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.nintendogames.net",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://381f2e86233720eacda26d50e9aa26da@160.16.196.59:1281?security=tls&sni=www.nintendogames.net&path=/#[81941]",
+    "country": "Japan",
+    "country_code": "JP",
+    "city": "Tokyo",
+    "isp": "SAKURA Internet Inc."
+  },
+  {
+    "protocol": "trojan",
+    "address": "35.158.18.102",
+    "ping": 254,
+    "jitter": 228,
+    "download_speed": 16.79,
+    "upload_speed": 9.62,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "35.158.18.102",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10802,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "35.158.18.102",
+                "port": 22223,
+                "password": "telegram-id-directvpn"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "trojan.burgerip.co.uk",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://telegram-id-directvpn@35.158.18.102:22223?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#[81950]",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "Amazon Technologies Inc."
+  },
+  {
+    "protocol": "trojan",
+    "address": "35.158.18.102",
+    "ping": 259,
+    "jitter": 232,
+    "download_speed": 16.68,
+    "upload_speed": 11.4,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "35.158.18.102",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10806,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -46,11 +290,10 @@
             "network": "tcp",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "35.158.18.102",
+              "serverName": "trojan.burgerip.co.uk",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
-                "h2",
                 "http/1.1"
               ]
             }
@@ -75,7 +318,7 @@
         ]
       }
     },
-    "uri": "trojan://telegram-id-privatevpns@35.158.18.102:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S102)",
+    "uri": "trojan://telegram-id-privatevpns@35.158.18.102:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#[81955]",
     "country": "Germany",
     "country_code": "DE",
     "city": "Frankfurt am Main",
@@ -83,590 +326,18 @@
   },
   {
     "protocol": "trojan",
-    "address": "35.181.111.41",
-    "ping": 248,
-    "jitter": 220,
-    "download_speed": 18.14,
-    "upload_speed": 12.74,
+    "address": "80.173.230.196",
+    "ping": 311,
+    "jitter": 272,
+    "download_speed": 13.21,
+    "upload_speed": 9.43,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "35.181.111.41",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10812,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "35.181.111.41",
-                "port": 22222,
-                "password": "telegram-id-privatevpns"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "35.181.111.41",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://telegram-id-privatevpns@35.181.111.41:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S103)",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "Amazon.com, Inc."
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "173.244.56.6",
-    "ping": 81,
-    "jitter": 59,
-    "download_speed": 43.14,
-    "upload_speed": 29.36,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "173.244.56.6",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10815,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "173.244.56.6",
-                "port": 443,
-                "method": "aes-128-gcm",
-                "password": "shadowsocks"
-              }
-            ]
-          },
-          "tag": "🇺🇸US-173.244.56.6-0280"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@173.244.56.6:443#%F0%9F%87%BA%F0%9F%87%B8US-173.244.56.6-0280",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Us-az",
-    "isp": "GSL Networks Pty LTD"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "156.146.38.168",
-    "ping": 46,
-    "jitter": 34,
-    "download_speed": 126.79,
-    "upload_speed": 60.32,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "156.146.38.168",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10810,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "156.146.38.168",
-                "port": 443,
-                "method": "aes-128-gcm",
-                "password": "shadowsocks"
-              }
-            ]
-          },
-          "tag": "🇺🇸US-156.146.38.168-0274"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.168:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.168-0274",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Dallas",
-    "isp": "Datacamp Limited"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "79.127.233.170",
-    "ping": 98,
-    "jitter": 71,
-    "download_speed": 34.49,
-    "upload_speed": 25.65,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "79.127.233.170",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10803,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "79.127.233.170",
-                "port": 990,
-                "method": "chacha20-ietf-poly1305",
-                "password": "f8f7aCzcPKbsF8p3"
-              }
-            ]
-          },
-          "tag": "🇨🇦CA-79.127.233.170-0281"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@79.127.233.170:990#%F0%9F%87%A8%F0%9F%87%A6CA-79.127.233.170-0281",
-    "country": "Canada",
-    "country_code": "CA",
-    "city": "Vancouver",
-    "isp": "Datacamp Limited"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "156.146.38.170",
-    "ping": 47,
-    "jitter": 36,
-    "download_speed": 75.21,
-    "upload_speed": 46.99,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "156.146.38.170",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10808,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "156.146.38.170",
-                "port": 443,
-                "method": "aes-128-gcm",
-                "password": "shadowsocks"
-              }
-            ]
-          },
-          "tag": "🇺🇸US-156.146.38.170-0273"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.170:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.170-0273",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Dallas",
-    "isp": "Datacamp Limited"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "104.192.226.106",
-    "ping": 86,
-    "jitter": 64,
-    "download_speed": 45.18,
-    "upload_speed": 38.51,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "104.192.226.106",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10807,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "104.192.226.106",
-                "port": 990,
-                "method": "chacha20-ietf-poly1305",
-                "password": "f8f7aCzcPKbsF8p3"
-              }
-            ]
-          },
-          "tag": "🇺🇸US-104.192.226.106-0284"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@104.192.226.106:990#%F0%9F%87%BA%F0%9F%87%B8US-104.192.226.106-0284",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Los Angeles",
-    "isp": "Dedicated.com"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "156.146.38.169",
-    "ping": 27,
-    "jitter": 21,
-    "download_speed": 125.55,
-    "upload_speed": 55.88,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "156.146.38.169",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10816,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "156.146.38.169",
-                "port": 443,
-                "method": "aes-128-gcm",
-                "password": "shadowsocks"
-              }
-            ]
-          },
-          "tag": "🇺🇸US-156.146.38.169-0271"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.169:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.169-0271",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Dallas",
-    "isp": "Datacamp Limited"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "156.146.38.167",
-    "ping": 42,
-    "jitter": 31,
-    "download_speed": 114.75,
-    "upload_speed": 58.94,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "156.146.38.167",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10810,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "156.146.38.167",
-                "port": 443,
-                "method": "aes-128-gcm",
-                "password": "shadowsocks"
-              }
-            ]
-          },
-          "tag": "🇺🇸US-156.146.38.167-0272"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.167:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.167-0272",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Dallas",
-    "isp": "Datacamp Limited"
-  },
-  {
-    "protocol": "vmess",
-    "address": "gtm1.ktmwan.net",
-    "ping": 589,
-    "jitter": 650,
-    "download_speed": 9.09,
-    "upload_speed": 6.25,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "gtm1.ktmwan.net",
+    "ip": "80.173.230.196",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -686,25 +357,28 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "trojan",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "gtm1.ktmwan.net",
-                "port": 12901,
-                "users": [
-                  {
-                    "id": "1ec49aaf-2990-4c7b-a45c-d190e6ea5438",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
+                "address": "80.173.230.196",
+                "port": 26279,
+                "password": "a5inYFE=JGV89+hjxIqgDp1tcWBd6"
               }
             ]
           },
           "streamSettings": {
-            "network": "ws",
-            "security": ""
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "80.173.230.196",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
           },
           "tag": "proxy"
         },
@@ -726,26 +400,26 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiAiZ3RtMS5rdG13YW4ubmV0IiwgInYiOiAiMiIsICJwcyI6ICJcdTgyZjFcdTU2ZmQgVjJDUk9TUy5DT00iLCAicG9ydCI6IDEyOTAxLCAiaWQiOiAiMWVjNDlhYWYtMjk5MC00YzdiLWE0NWMtZDE5MGU2ZWE1NDM4IiwgImFpZCI6ICIwIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogImJhaWR1LmNvbSIsICJwYXRoIjogIi8iLCAidGxzIjogIiJ9",
-    "country": "Malaysia",
-    "country_code": "MY",
-    "city": "Kuala Lumpur",
-    "isp": "MICROSOFT"
+    "uri": "trojan://a5inYFE=JGV89+hjxIqgDp1tcWBd6@80.173.230.196:26279?security=tls&headerType=none&type=tcp#WiFi--@V2rayAlpha-1",
+    "country": "Norway",
+    "country_code": "NO",
+    "city": "Oslo",
+    "isp": "ServeTheWorld"
   },
   {
-    "protocol": "vmess",
-    "address": "gtm1.ktmwan.net",
-    "ping": 746,
-    "jitter": 869,
-    "download_speed": 9.16,
-    "upload_speed": 6.36,
+    "protocol": "trojan",
+    "address": "35.158.18.102",
+    "ping": 253,
+    "jitter": 225,
+    "download_speed": 17.33,
+    "upload_speed": 11.79,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "gtm1.ktmwan.net",
+    "ip": "35.158.18.102",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -753,7 +427,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10814,
+          "port": 10810,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -765,25 +439,27 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "trojan",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "gtm1.ktmwan.net",
-                "port": 12890,
-                "users": [
-                  {
-                    "id": "1ec49aaf-2990-4c7b-a45c-d190e6ea5438",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
+                "address": "35.158.18.102",
+                "port": 22222,
+                "password": "telegram-id-privatevpns"
               }
             ]
           },
           "streamSettings": {
-            "network": "ws",
-            "security": ""
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "trojan.burgerip.co.uk",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "http/1.1"
+              ]
+            }
           },
           "tag": "proxy"
         },
@@ -805,26 +481,26 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiAiZ3RtMS5rdG13YW4ubmV0IiwgInYiOiAiMiIsICJwcyI6ICJcdTgyZjFcdTU2ZmQgVjJDUk9TUy5DT00iLCAicG9ydCI6IDEyODkwLCAiaWQiOiAiMWVjNDlhYWYtMjk5MC00YzdiLWE0NWMtZDE5MGU2ZWE1NDM4IiwgImFpZCI6ICIwIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogImJhaWR1LmNvbSIsICJwYXRoIjogIi8iLCAidGxzIjogIiJ9",
-    "country": "Malaysia",
-    "country_code": "MY",
-    "city": "Kuala Lumpur",
-    "isp": "MICROSOFT"
+    "uri": "trojan://telegram-id-privatevpns@35.158.18.102:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#[🇩🇪]t.me/ConfigsHub",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "Amazon Technologies Inc."
   },
   {
-    "protocol": "vmess",
-    "address": "gtm1.ktmwan.net",
-    "ping": 767,
-    "jitter": 885,
-    "download_speed": 8.24,
-    "upload_speed": 5.6,
+    "protocol": "vless",
+    "address": "171.22.114.248",
+    "ping": 375,
+    "jitter": 388,
+    "download_speed": 12.06,
+    "upload_speed": 7.72,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "gtm1.ktmwan.net",
+    "ip": "171.22.114.248",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -832,7 +508,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10819,
+          "port": 10801,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -844,25 +520,38 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "vless",
           "settings": {
             "vnext": [
               {
-                "address": "gtm1.ktmwan.net",
-                "port": 12888,
+                "address": "171.22.114.248",
+                "port": 27394,
                 "users": [
                   {
-                    "id": "1ec49aaf-2990-4c7b-a45c-d190e6ea5438",
-                    "alterId": 0,
-                    "security": "auto"
+                    "id": "00b0d4de-b126-4511-87c1-8f1feb462fa6",
+                    "encryption": "none",
+                    "flow": ""
                   }
                 ]
               }
             ]
           },
           "streamSettings": {
-            "network": "ws",
-            "security": ""
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "yahoo.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "TZO1nvxk-x90cL3v9ixowQNC56sQ8k76_KaGU6jczks",
+              "shortId": "c2fa",
+              "spiderX": "/"
+            }
           },
           "tag": "proxy"
         },
@@ -884,247 +573,10 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiAiZ3RtMS5rdG13YW4ubmV0IiwgInYiOiAiMiIsICJwcyI6ICJcdTgyZjFcdTU2ZmQgVjJDUk9TUy5DT00iLCAicG9ydCI6IDEyODg4LCAiaWQiOiAiMWVjNDlhYWYtMjk5MC00YzdiLWE0NWMtZDE5MGU2ZWE1NDM4IiwgImFpZCI6ICIwIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogImJhaWR1LmNvbSIsICJwYXRoIjogIi8iLCAidGxzIjogIiJ9",
-    "country": "Malaysia",
-    "country_code": "MY",
-    "city": "Kuala Lumpur",
-    "isp": "MICROSOFT"
-  },
-  {
-    "protocol": "vmess",
-    "address": "gtm1.ktmwan.net",
-    "ping": 644,
-    "jitter": 634,
-    "download_speed": 7.81,
-    "upload_speed": 6.18,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "gtm1.ktmwan.net",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10805,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "gtm1.ktmwan.net",
-                "port": 12883,
-                "users": [
-                  {
-                    "id": "1ec49aaf-2990-4c7b-a45c-d190e6ea5438",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiAiZ3RtMS5rdG13YW4ubmV0IiwgInYiOiAiMiIsICJwcyI6ICJcdTgyZjFcdTU2ZmQgVjJDUk9TUy5DT00iLCAicG9ydCI6IDEyODgzLCAiaWQiOiAiMWVjNDlhYWYtMjk5MC00YzdiLWE0NWMtZDE5MGU2ZWE1NDM4IiwgImFpZCI6ICIwIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogIiIsICJwYXRoIjogIi8iLCAidGxzIjogIiJ9",
-    "country": "Malaysia",
-    "country_code": "MY",
-    "city": "Kuala Lumpur",
-    "isp": "MICROSOFT"
-  },
-  {
-    "protocol": "vmess",
-    "address": "gtm1.ktmwan.net",
-    "ping": 631,
-    "jitter": 610,
-    "download_speed": 8.42,
-    "upload_speed": 5.54,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "gtm1.ktmwan.net",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10811,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "gtm1.ktmwan.net",
-                "port": 12883,
-                "users": [
-                  {
-                    "id": "1ec49aaf-2990-4c7b-a45c-d190e6ea5438",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiAiZ3RtMS5rdG13YW4ubmV0IiwgInYiOiAiMiIsICJwcyI6ICJcdTgyZjFcdTU2ZmQgVjJDUk9TUy5DT00iLCAicG9ydCI6IDEyODgzLCAiaWQiOiAiMWVjNDlhYWYtMjk5MC00YzdiLWE0NWMtZDE5MGU2ZWE1NDM4IiwgImFpZCI6ICIwIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogImJhaWR1LmNvbSIsICJwYXRoIjogIi8iLCAidGxzIjogIiJ9",
-    "country": "Malaysia",
-    "country_code": "MY",
-    "city": "Kuala Lumpur",
-    "isp": "MICROSOFT"
-  },
-  {
-    "protocol": "vmess",
-    "address": "gtm1.ktmwan.net",
-    "ping": 892,
-    "jitter": 1017,
-    "download_speed": 7.56,
-    "upload_speed": 5.91,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "gtm1.ktmwan.net",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10818,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "gtm1.ktmwan.net",
-                "port": 12889,
-                "users": [
-                  {
-                    "id": "1ec49aaf-2990-4c7b-a45c-d190e6ea5438",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiAiZ3RtMS5rdG13YW4ubmV0IiwgInYiOiAiMiIsICJwcyI6ICJcdTgyZjFcdTU2ZmQgVjJDUk9TUy5DT00iLCAicG9ydCI6IDEyODg5LCAiaWQiOiAiMWVjNDlhYWYtMjk5MC00YzdiLWE0NWMtZDE5MGU2ZWE1NDM4IiwgImFpZCI6ICIwIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogImJhaWR1LmNvbSIsICJwYXRoIjogIi8iLCAidGxzIjogIiJ9",
-    "country": "Malaysia",
-    "country_code": "MY",
-    "city": "Kuala Lumpur",
-    "isp": "MICROSOFT"
+    "uri": "vless://00b0d4de-b126-4511-87c1-8f1feb462fa6@171.22.114.248:27394?security=reality&encryption=none&pbk=TZO1nvxk-x90cL3v9ixowQNC56sQ8k76_KaGU6jczks&host=telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=c2fa#telegram",
+    "country": "Finland",
+    "country_code": "FI",
+    "city": "Helsinki",
+    "isp": "WorkTitans B.V."
   }
 ]
