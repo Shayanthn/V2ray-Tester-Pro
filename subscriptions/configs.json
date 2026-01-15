@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10807,
+        "port": 10802,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -22,11 +22,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "94.232.247.165",
-              "port": 45653,
+              "address": "82.198.246.97",
+              "port": 180,
               "users": [
                 {
-                  "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
+                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
                   "alterId": 0,
                   "security": "auto"
                 }
@@ -36,13 +36,33 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": ""
+          "security": "",
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100
+          }
         },
         "tag": "proxy"
       },
       {
         "protocol": "freedom",
         "tag": "direct"
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "tcpKeepAliveIdle": 100
+          }
+        }
       }
     ],
     "routing": {
@@ -77,204 +97,87 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "217.69.5.32",
-              "port": 443,
-              "users": [
-                {
-                  "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "none"
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10806,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "162.19.248.238",
-              "port": 550,
-              "users": [
-                {
-                  "id": "ede27a79-b039-490b-932c-495de4b68880",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10804,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "217.69.5.32",
-              "port": 443,
-              "users": [
-                {
-                  "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10819,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "trojan",
+        "protocol": "shadowsocks",
         "settings": {
           "servers": [
             {
-              "address": "18.193.207.240",
-              "port": 22222,
-              "password": "telegram-id-privatevpns"
+              "address": "207.244.226.239",
+              "port": 45995,
+              "method": "chacha20-ietf-poly1305",
+              "password": "98f7aedd8adda6fe"
+            }
+          ]
+        },
+        "tag": "US美国(mibei77.com 米贝节点分享)"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10816,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "178.17.53.28",
+              "port": 47539,
+              "users": [
+                {
+                  "id": "447c45cd-ade0-4bfe-90a0-3e581829f741",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
             }
           ]
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "18.193.207.240",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yandex.ru",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
               "h2",
               "http/1.1"
-            ]
+            ],
+            "show": false,
+            "publicKey": "uapzi5mhLkADHuak0eXEKq9vIl2A8IGrMhjdIG-tn3U",
+            "shortId": "82a55f31981ea6be",
+            "spiderX": "/"
           }
         },
         "tag": "proxy"
@@ -304,7 +207,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10815,
+        "port": 10817,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -316,27 +219,37 @@
     ],
     "outbounds": [
       {
-        "protocol": "trojan",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "51.45.55.248",
-              "port": 22222,
-              "password": "telegram-id-privatevpns"
+              "address": "45.139.26.152",
+              "port": 7443,
+              "users": [
+                {
+                  "id": "7fc953d6-ae75-46fb-a970-10b57d513487",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
             }
           ]
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "51.45.55.248",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "eh.vk.com",
             "allowInsecure": true,
-            "fingerprint": "chrome",
+            "fingerprint": "random",
             "alpn": [
               "h2",
               "http/1.1"
-            ]
+            ],
+            "show": false,
+            "publicKey": "BTkKaFt2xac4xAHn3EXrBKV0d8ItHSfciMFnxg57BGA",
+            "shortId": "fd88bd27db4cc661",
+            "spiderX": "/"
           }
         },
         "tag": "proxy"
@@ -378,27 +291,41 @@
     ],
     "outbounds": [
       {
-        "protocol": "trojan",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "35.180.175.3",
-              "port": 22222,
-              "password": "telegram-id-privatevpns"
+              "address": "217.12.40.76",
+              "port": 443,
+              "users": [
+                {
+                  "id": "4371ad14-b981-4699-bedf-83fb79bde3e6",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
             }
           ]
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "35.180.175.3",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "sun9-38.userapi.com",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
               "h2",
               "http/1.1"
-            ]
+            ],
+            "show": false,
+            "publicKey": "FkmYFobwxLMLEktYXywmjthuEYCZggITsxwPNasTKUg",
+            "shortId": "048fe5c8be4bb687",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100
           }
         },
         "tag": "proxy"
@@ -406,6 +333,22 @@
       {
         "protocol": "freedom",
         "tag": "direct"
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "tcpKeepAliveIdle": 100
+          }
+        }
       }
     ],
     "routing": {
@@ -428,7 +371,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10805,
+        "port": 10810,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -440,27 +383,37 @@
     ],
     "outbounds": [
       {
-        "protocol": "trojan",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "63.182.2.148",
-              "port": 22222,
-              "password": "telegram-id-privatevpns"
+              "address": "95.174.92.156",
+              "port": 443,
+              "users": [
+                {
+                  "id": "cc61ea7c-92f2-4c2d-b272-32cfe8fdf99f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
             }
           ]
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "63.182.2.148",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "sun6-21.userapi.com",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
               "h2",
               "http/1.1"
-            ]
+            ],
+            "show": false,
+            "publicKey": "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw",
+            "shortId": "c7e42004e5f024be",
+            "spiderX": "/"
           }
         },
         "tag": "proxy"
