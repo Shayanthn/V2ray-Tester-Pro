@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10814,
+        "port": 10801,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -22,11 +22,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "47.251.91.241",
-              "port": 42899,
+              "address": "82.198.246.97",
+              "port": 180,
               "users": [
                 {
-                  "id": "0925b355-2bcd-4eae-9720-d2709e4f7e36",
+                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
                   "alterId": 0,
                   "security": "auto"
                 }
@@ -65,7 +65,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10808,
+        "port": 10800,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -81,11 +81,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "94.232.247.165",
-              "port": 45653,
+              "address": "82.198.246.97",
+              "port": 180,
               "users": [
                 {
-                  "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
+                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
                   "alterId": 0,
                   "security": "auto"
                 }
@@ -136,27 +136,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "217.69.5.32",
-              "port": 443,
-              "users": [
-                {
-                  "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
+              "address": "57.129.95.232",
+              "port": 11201,
+              "method": "chacha20-ietf-poly1305",
+              "password": "420946afc5918c49"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
+        "tag": "DE德国(mibei77.com 米贝节点分享)"
       },
       {
         "protocol": "freedom",
@@ -183,7 +174,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10809,
+        "port": 10803,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -195,25 +186,28 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "trojan",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "217.69.5.32",
+              "address": "58.152.53.219",
               "port": 443,
-              "users": [
-                {
-                  "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
+              "password": "BxceQaOe"
             }
           ]
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "none"
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "t.me%2Fripaojiedian",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
         },
         "tag": "proxy"
       },
@@ -254,17 +248,17 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "vless",
         "settings": {
           "vnext": [
             {
-              "address": "162.19.248.238",
-              "port": 550,
+              "address": "92.60.70.36",
+              "port": 2053,
               "users": [
                 {
-                  "id": "ede27a79-b039-490b-932c-495de4b68880",
-                  "alterId": 0,
-                  "security": "auto"
+                  "id": "08c7f096-d057-4d53-82fd-c739d372887b",
+                  "encryption": "none",
+                  "flow": ""
                 }
               ]
             }
@@ -272,7 +266,7 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": ""
+          "security": "none"
         },
         "tag": "proxy"
       },
@@ -301,7 +295,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10804,
+        "port": 10813,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -313,32 +307,68 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "n1753598451.74qxv.top",
+              "address": "switcher-nick-croquet.freesocks.work",
               "port": 443,
-              "users": [
-                {
-                  "id": "9798678f-5b8c-4ff1-bbdd-b9b5c1539de0",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
+              "method": "chacha20-ietf-poly1305",
+              "password": "9tqhMdIrTkgQ46PvhyAtMH"
             }
           ]
         },
-        "streamSettings": {
-          "network": "ws",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "n1753598451.74qxv.top",
-            "allowInsecure": true,
-            "fingerprint": "chrome"
-          }
+        "tag": "US美国(mibei77.com 米贝节点分享)"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10817,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
         },
-        "tag": "proxy"
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "switcher-nick-croquet.freesocks.work",
+              "port": 443,
+              "method": "chacha20-ietf-poly1305",
+              "password": "wwzVn2ZnHfqYa6l8EWh3eY"
+            }
+          ]
+        },
+        "tag": "HK香港(mibei77.com 米贝节点分享)"
       },
       {
         "protocol": "freedom",
