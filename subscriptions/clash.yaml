@@ -13,7 +13,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 155ms
+- name: VMESS-2 | 139ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -37,7 +37,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-5 | 188ms
+- name: VMESS-5 | 189ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -45,39 +45,24 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-6 | 564ms
-  type: vmess
-  server: n1753598451.74qxv.top
-  port: 443
-  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: n1753598451.74qxv.top
-  ws-opts:
-    path: /
-    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
   - VMESS-1 | 120ms
-  - VMESS-2 | 155ms
+  - VMESS-2 | 139ms
   - VMESS-3 | 140ms
   - VMESS-4 | 219ms
-  - VMESS-5 | 188ms
-  - VMESS-6 | 564ms
+  - VMESS-5 | 189ms
 - name: Auto-Select
   type: url-test
   proxies:
   - VMESS-1 | 120ms
-  - VMESS-2 | 155ms
+  - VMESS-2 | 139ms
   - VMESS-3 | 140ms
   - VMESS-4 | 219ms
-  - VMESS-5 | 188ms
-  - VMESS-6 | 564ms
+  - VMESS-5 | 189ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
