@@ -5,62 +5,64 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 232ms
-  type: trojan
-  server: 160.16.72.205
-  port: 4006
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-2 | 234ms
-  type: trojan
-  server: 160.16.72.205
-  port: 1933
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-3 | 406ms
-  type: trojan
-  server: 160.16.132.38
-  port: 544
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-4 | 1054ms
-  type: trojan
-  server: 160.16.124.17
-  port: 3901
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-5 | 1666ms
-  type: trojan
-  server: 58.152.53.219
+- name: VMESS-1 | 125ms
+  type: vmess
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-2 | 170ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 174ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-- name: TROJAN-6 | 732ms
-  type: trojan
-  server: 58.152.53.219
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 168ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 210ms
+  type: vmess
+  server: 162.19.248.238
+  port: 550
+  uuid: ede27a79-b039-490b-932c-495de4b68880
+  alterId: 0
+  cipher: auto
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 232ms
-  - TROJAN-2 | 234ms
-  - TROJAN-3 | 406ms
-  - TROJAN-4 | 1054ms
-  - TROJAN-5 | 1666ms
-  - TROJAN-6 | 732ms
+  - VMESS-1 | 125ms
+  - VMESS-2 | 170ms
+  - VMESS-3 | 174ms
+  - VMESS-4 | 168ms
+  - VMESS-5 | 210ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 232ms
-  - TROJAN-2 | 234ms
-  - TROJAN-3 | 406ms
-  - TROJAN-4 | 1054ms
-  - TROJAN-5 | 1666ms
-  - TROJAN-6 | 732ms
+  - VMESS-1 | 125ms
+  - VMESS-2 | 170ms
+  - VMESS-3 | 174ms
+  - VMESS-4 | 168ms
+  - VMESS-5 | 210ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
