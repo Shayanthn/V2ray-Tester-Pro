@@ -13,7 +13,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 139ms
+- name: VMESS-2 | 239ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -21,7 +21,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 142ms
+- name: VMESS-3 | 191ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -29,7 +29,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 138ms
+- name: VMESS-4 | 190ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -37,7 +37,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-5 | 213ms
+- name: VMESS-5 | 250ms
   type: vmess
   server: 162.19.248.238
   port: 550
@@ -45,39 +45,52 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-6 | 571ms
+- name: VMESS-6 | 87ms
   type: vmess
-  server: n1753598451.74qxv.top
-  port: 443
-  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
-  network: ws
-  tls: true
-  servername: n1753598451.74qxv.top
-  ws-opts:
-    path: /
-    headers: {}
+  network: tcp
+- name: VMESS-7 | 86ms
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: TROJAN-8 | 548ms
+  type: trojan
+  server: 58.152.53.219
+  port: 443
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
   - VMESS-1 | 143ms
-  - VMESS-2 | 139ms
-  - VMESS-3 | 142ms
-  - VMESS-4 | 138ms
-  - VMESS-5 | 213ms
-  - VMESS-6 | 571ms
+  - VMESS-2 | 239ms
+  - VMESS-3 | 191ms
+  - VMESS-4 | 190ms
+  - VMESS-5 | 250ms
+  - VMESS-6 | 87ms
+  - VMESS-7 | 86ms
+  - TROJAN-8 | 548ms
 - name: Auto-Select
   type: url-test
   proxies:
   - VMESS-1 | 143ms
-  - VMESS-2 | 139ms
-  - VMESS-3 | 142ms
-  - VMESS-4 | 138ms
-  - VMESS-5 | 213ms
-  - VMESS-6 | 571ms
+  - VMESS-2 | 239ms
+  - VMESS-3 | 191ms
+  - VMESS-4 | 190ms
+  - VMESS-5 | 250ms
+  - VMESS-6 | 87ms
+  - VMESS-7 | 86ms
+  - TROJAN-8 | 548ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
