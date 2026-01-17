@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 33ms
+- name: VMESS-1 | 32ms
   type: vmess
   server: 172.234.132.232
   port: 10001
@@ -13,7 +13,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 99ms
+- name: VMESS-2 | 95ms
   type: vmess
   server: 47.251.91.241
   port: 42899
@@ -21,7 +21,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 190ms
+- name: VMESS-3 | 192ms
   type: vmess
   server: 85.195.101.122
   port: 40878
@@ -29,7 +29,13 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-4 | 350ms
+- name: VLESS-4 | 224ms
+  type: vless
+  server: doprax.fxgoldensignals.com
+  port: 50904
+  uuid: d4795cd9-cd7b-4cea-edfb-20cdcca5837b
+  network: tcp
+- name: VLESS-5 | 353ms
   type: vless
   server: 65.108.231.185
   port: 443
@@ -37,30 +43,24 @@ proxies:
   network: tcp
   tls: true
   servername: 65.108.231.185
-- name: VLESS-5 | 232ms
-  type: vless
-  server: doprax.fxgoldensignals.com
-  port: 50904
-  uuid: d4795cd9-cd7b-4cea-edfb-20cdcca5837b
-  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 33ms
-  - VMESS-2 | 99ms
-  - VMESS-3 | 190ms
-  - VLESS-4 | 350ms
-  - VLESS-5 | 232ms
+  - VMESS-1 | 32ms
+  - VMESS-2 | 95ms
+  - VMESS-3 | 192ms
+  - VLESS-4 | 224ms
+  - VLESS-5 | 353ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 33ms
-  - VMESS-2 | 99ms
-  - VMESS-3 | 190ms
-  - VLESS-4 | 350ms
-  - VLESS-5 | 232ms
+  - VMESS-1 | 32ms
+  - VMESS-2 | 95ms
+  - VMESS-3 | 192ms
+  - VLESS-4 | 224ms
+  - VLESS-5 | 353ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
