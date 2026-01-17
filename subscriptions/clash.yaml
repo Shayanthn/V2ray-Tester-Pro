@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 18ms
+- name: VMESS-1 | 23ms
   type: vmess
   server: 47.251.91.241
   port: 42899
@@ -29,7 +29,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 307ms
+- name: VMESS-4 | 308ms
   type: vmess
   server: 162.19.248.238
   port: 550
@@ -37,7 +37,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-5 | 294ms
+- name: VMESS-5 | 304ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -50,19 +50,19 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 18ms
+  - VMESS-1 | 23ms
   - VMESS-2 | 250ms
   - VMESS-3 | 255ms
-  - VMESS-4 | 307ms
-  - VMESS-5 | 294ms
+  - VMESS-4 | 308ms
+  - VMESS-5 | 304ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 18ms
+  - VMESS-1 | 23ms
   - VMESS-2 | 250ms
   - VMESS-3 | 255ms
-  - VMESS-4 | 307ms
-  - VMESS-5 | 294ms
+  - VMESS-4 | 308ms
+  - VMESS-5 | 304ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
