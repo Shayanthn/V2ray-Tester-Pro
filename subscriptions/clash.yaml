@@ -5,79 +5,70 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 126ms
-  type: vmess
-  server: 47.251.91.241
-  port: 42899
-  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
-  alterId: 0
-  cipher: auto
+- name: VLESS-1 | 140ms
+  type: vless
+  server: 45.82.251.95
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-2 | 439ms
+  type: vless
+  server: midorinote.online
+  port: 8443
+  uuid: 55e9b476-53fb-4a91-9d0e-48098267d926
   network: tcp
-- name: VMESS-2 | 139ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-3 | 330ms
+  type: vless
+  server: 91.107.148.79
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 138ms
-  type: vmess
-  server: 217.69.5.32
+  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
+  network: grpc
+- name: VLESS-4 | 676ms
+  type: vless
+  server: 84.201.130.224
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
+  uuid: 87d58e85-a4b3-4187-9fb7-6f0a73b21a6b
   network: tcp
-- name: VMESS-4 | 140ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 197ms
-  type: vmess
-  server: 162.19.248.238
-  port: 550
-  uuid: ede27a79-b039-490b-932c-495de4b68880
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-6 | 656ms
-  type: vmess
-  server: n1753598451.74qxv.top
-  port: 443
-  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: n1753598451.74qxv.top
-  ws-opts:
-    path: /
-    headers: {}
+- name: VLESS-5 | 149ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-6 | 149ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-7 | 140ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 126ms
-  - VMESS-2 | 139ms
-  - VMESS-3 | 138ms
-  - VMESS-4 | 140ms
-  - VMESS-5 | 197ms
-  - VMESS-6 | 656ms
+  - VLESS-1 | 140ms
+  - VLESS-2 | 439ms
+  - VLESS-3 | 330ms
+  - VLESS-4 | 676ms
+  - VLESS-5 | 149ms
+  - VLESS-6 | 149ms
+  - VLESS-7 | 140ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 126ms
-  - VMESS-2 | 139ms
-  - VMESS-3 | 138ms
-  - VMESS-4 | 140ms
-  - VMESS-5 | 197ms
-  - VMESS-6 | 656ms
+  - VLESS-1 | 140ms
+  - VLESS-2 | 439ms
+  - VLESS-3 | 330ms
+  - VLESS-4 | 676ms
+  - VLESS-5 | 149ms
+  - VLESS-6 | 149ms
+  - VLESS-7 | 140ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
