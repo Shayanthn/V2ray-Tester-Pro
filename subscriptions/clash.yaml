@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 57ms
+- name: VMESS-1 | 55ms
   type: vmess
   server: 47.251.91.241
   port: 42899
@@ -13,7 +13,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 264ms
+- name: VMESS-2 | 259ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -21,7 +21,23 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 270ms
+- name: VMESS-3 | 216ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 216ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 263ms
   type: vmess
   server: 162.19.248.238
   port: 550
@@ -29,48 +45,24 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 204ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 216ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VLESS-6 | 349ms
-  type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
-  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 57ms
-  - VMESS-2 | 264ms
-  - VMESS-3 | 270ms
-  - VMESS-4 | 204ms
-  - VMESS-5 | 216ms
-  - VLESS-6 | 349ms
+  - VMESS-1 | 55ms
+  - VMESS-2 | 259ms
+  - VMESS-3 | 216ms
+  - VMESS-4 | 216ms
+  - VMESS-5 | 263ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 57ms
-  - VMESS-2 | 264ms
-  - VMESS-3 | 270ms
-  - VMESS-4 | 204ms
-  - VMESS-5 | 216ms
-  - VLESS-6 | 349ms
+  - VMESS-1 | 55ms
+  - VMESS-2 | 259ms
+  - VMESS-3 | 216ms
+  - VMESS-4 | 216ms
+  - VMESS-5 | 263ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
