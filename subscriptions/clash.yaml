@@ -5,41 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 197ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 196ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: TROJAN-3 | 297ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: TROJAN-4 | 95ms
-  type: trojan
-  server: tuntro006.instconn.com
-  port: 443
-  password: 30077070-596e-48ea-9400-14c8ed07bd97
-  sni: torontorm1.686911.xyz
-- name: VLESS-5 | 382ms
-  type: vless
-  server: 45.139.26.152
-  port: 7443
-  uuid: 7fc953d6-ae75-46fb-a970-10b57d513487
-  network: tcp
-- name: VMESS-6 | 1587ms
+- name: VMESS-1 | 925ms
   type: vmess
   server: 82.198.246.97
   port: 180
@@ -47,13 +13,36 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-7 | 105ms
-  type: vless
-  server: 136.175.178.165
+- name: VMESS-2 | 264ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  uuid: e778320b-8bc2-4fa8-a4c6-18cb412d03e6
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
   network: tcp
-- name: VMESS-8 | 239ms
+- name: VMESS-3 | 265ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 329ms
+  type: vmess
+  server: sy4.620720.xyz
+  port: 443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: sy4.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-5 | 440ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -61,38 +50,39 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-9 | 323ms
-  type: vless
-  server: 37.27.254.251
-  port: 443
-  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
-  network: tcp
+- name: VMESS-6 | 625ms
+  type: vmess
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: t1.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 197ms
-  - VMESS-2 | 196ms
-  - TROJAN-3 | 297ms
-  - TROJAN-4 | 95ms
-  - VLESS-5 | 382ms
-  - VMESS-6 | 1587ms
-  - VLESS-7 | 105ms
-  - VMESS-8 | 239ms
-  - VLESS-9 | 323ms
+  - VMESS-1 | 925ms
+  - VMESS-2 | 264ms
+  - VMESS-3 | 265ms
+  - VMESS-4 | 329ms
+  - VMESS-5 | 440ms
+  - VMESS-6 | 625ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 197ms
-  - VMESS-2 | 196ms
-  - TROJAN-3 | 297ms
-  - TROJAN-4 | 95ms
-  - VLESS-5 | 382ms
-  - VMESS-6 | 1587ms
-  - VLESS-7 | 105ms
-  - VMESS-8 | 239ms
-  - VLESS-9 | 323ms
+  - VMESS-1 | 925ms
+  - VMESS-2 | 264ms
+  - VMESS-3 | 265ms
+  - VMESS-4 | 329ms
+  - VMESS-5 | 440ms
+  - VMESS-6 | 625ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
