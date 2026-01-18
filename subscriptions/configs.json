@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10817,
+        "port": 10801,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -18,266 +18,25 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vmess",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "147.135.77.6",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "7f9cb9aef317f096"
+              "address": "82.198.246.97",
+              "port": 180,
+              "users": [
+                {
+                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+                  "alterId": 0,
+                  "security": "auto"
+                }
+              ]
             }
           ]
         },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10813,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "94.131.104.147",
-              "port": 443,
-              "method": "chacha20-ietf-poly1305",
-              "password": "6VAcll4P8xPTUVVtHeST3onRmLoVIBSU"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10819,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "57.129.129.247",
-              "port": 29757,
-              "method": "chacha20-ietf-poly1305",
-              "password": "82f3a83f1556c0e3"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10814,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "57.130.28.148",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "74918bc801d53a4b"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10803,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "193.29.139.157",
-              "port": 8080,
-              "method": "chacha20-ietf-poly1305",
-              "password": "4a2rfixophdjffa8KVA4Aa"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10805,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "45.87.175.171",
-              "port": 8080,
-              "method": "chacha20-ietf-poly1305",
-              "password": "4a2rfixophdjffa8KVA4Aa"
-            }
-          ]
+        "streamSettings": {
+          "network": "tcp",
+          "security": ""
         },
         "tag": "proxy"
       },
@@ -318,166 +77,28 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "trojan",
         "settings": {
           "servers": [
             {
-              "address": "151.242.251.144",
-              "port": 8080,
-              "method": "chacha20-ietf-poly1305",
-              "password": "4a2rfixophdjffa8KVA4Aa"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10815,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "195.7.6.160",
-              "port": 18550,
-              "method": "chacha20-ietf-poly1305",
-              "password": "75782921a8e70802"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10817,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "135.125.245.131",
-              "port": 20939,
-              "method": "chacha20-ietf-poly1305",
-              "password": "85d3d8ccba287d3e"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10812,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "45.15.126.19",
+              "address": "58.152.46.246",
               "port": 443,
-              "method": "chacha20-ietf-poly1305",
-              "password": "6Ts2ZDTQAf3hkFoB8AFufDwsGrlF4e2t"
+              "password": "BxceQaOe"
             }
           ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "t.me/ripaojiedian",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
         },
         "tag": "proxy"
       },
@@ -506,7 +127,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10811,
+        "port": 10802,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -518,166 +139,28 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "trojan",
         "settings": {
           "servers": [
             {
-              "address": "141.95.104.30",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "59fa5541d1d9ccce"
+              "address": "58.152.46.246",
+              "port": 443,
+              "password": "BxceQaOe"
             }
           ]
         },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "141.95.105.216",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "54c303c2866c8399"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10816,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "51.89.118.58",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "7a63df1a001759bf"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10803,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "57.129.89.142",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "865bc80919a484a5"
-            }
-          ]
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "58.152.46.246",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
         },
         "tag": "proxy"
       },
@@ -718,16 +201,152 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "trojan",
         "settings": {
           "servers": [
             {
-              "address": "141.95.109.160",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "823cdb94a457faee"
+              "address": "58.152.53.219",
+              "port": 443,
+              "password": "BxceQaOe"
             }
           ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "58.152.53.219",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10817,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "58.152.53.219",
+              "port": 443,
+              "password": "BxceQaOe"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "t.me/ripaojiedian",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10818,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "tuntro000.instconn.com",
+              "port": 443,
+              "password": "30077070-596e-48ea-9400-14c8ed07bd97"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "hkip5.686911.xyz",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
         },
         "tag": "proxy"
       },
@@ -768,16 +387,28 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "trojan",
         "settings": {
           "servers": [
             {
-              "address": "beesyar.org",
-              "port": 8080,
-              "method": "chacha20-ietf-poly1305",
-              "password": "4a2rfixophdjffa8KVA4Aa"
+              "address": "green2.cdntencentmusic.com",
+              "port": 35502,
+              "password": "d0238c4d-d05b-421d-8890-124b22a50a5f"
             }
           ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "green2.cdntencentmusic.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
         },
         "tag": "proxy"
       },
@@ -806,7 +437,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10801,
+        "port": 10803,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -818,116 +449,28 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "trojan",
         "settings": {
           "servers": [
             {
-              "address": "103.106.3.82",
-              "port": 443,
-              "method": "chacha20-ietf-poly1305",
-              "password": "4SaCIazlgumYkM8FkPzlmwjpyWBDZFBk"
+              "address": "green2.cdntencentmusic.com",
+              "port": 31101,
+              "password": "9d23ec89-a50a-4634-b09e-37330ce09b37"
             }
           ]
         },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10804,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "193.29.139.206",
-              "port": 8080,
-              "method": "chacha20-ietf-poly1305",
-              "password": "4a2rfixophdjffa8KVA4Aa"
-            }
-          ]
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10810,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "107.174.114.71",
-              "port": 443,
-              "method": "chacha20-ietf-poly1305",
-              "password": "595HLF3fHUuw0McM51tpvPygSIB1uf4D"
-            }
-          ]
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "green2.cdntencentmusic.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
         },
         "tag": "proxy"
       },
