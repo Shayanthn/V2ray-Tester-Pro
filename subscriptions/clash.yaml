@@ -5,128 +5,86 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 141ms
+- name: SHADOWSOCKS-1 | 189ms
+  type: ss
+  server: 45.87.175.154
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: cvII85TrW6n0OGyfpHVS1u
+- name: SHADOWSOCKS-2 | 231ms
+  type: ss
+  server: 82.38.31.187
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: SHADOWSOCKS-3 | 266ms
+  type: ss
+  server: 157.185.173.60
+  port: 46727
+  cipher: chacha20-ietf-poly1305
+  password: 29acd960ab8e3408
+- name: VLESS-4 | 404ms
   type: vless
-  server: 40.160.14.104
-  port: 8880
-  uuid: 6251f84e-9c02-4140-921c-6b47d394fb96
-  network: grpc
-- name: VMESS-2 | 255ms
-  type: vmess
-  server: 217.69.5.32
+  server: 5.182.38.91
+  port: 17267
+  uuid: 1c7fcc38-e6be-43c5-875f-b8de2516b9f2
+  network: tcp
+- name: SHADOWSOCKS-5 | 524ms
+  type: ss
+  server: 212.34.140.184
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
+  cipher: chacha20-ietf-poly1305
+  password: 0NeN5ta7FLa5B9DLytU0um
+- name: VLESS-6 | 679ms
+  type: vless
+  server: 103.75.199.3
+  port: 52312
+  uuid: cb69f3d7-bfd3-4a83-8882-d5349ce5703c
   network: tcp
-- name: VMESS-3 | 262ms
-  type: vmess
-  server: 217.69.5.32
+- name: SHADOWSOCKS-7 | 310ms
+  type: ss
+  server: 45.138.157.162
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VLESS-4 | 322ms
-  type: vless
-  server: 57.129.53.180
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: VLESS-5 | 406ms
-  type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
-  network: tcp
-- name: VLESS-6 | 409ms
-  type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
-  network: tcp
-- name: VLESS-7 | 329ms
-  type: vless
-  server: 91.107.244.15
-  port: 443
-  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
-  network: grpc
-- name: VLESS-8 | 7ms
-  type: vless
-  server: pavosilene.qzz.io
-  port: 443
-  uuid: 3ceb7c2b-8aed-41b3-ad42-ba1e1a69bae5
-  network: ws
-  tls: true
-  servername: pavosilene.qzz.io
-- name: TROJAN-9 | 385ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: VLESS-10 | 510ms
-  type: vless
-  server: 45.12.143.191
-  port: 20329
-  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
-  network: tcp
-- name: VLESS-11 | 160ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VMESS-12 | 249ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VLESS-13 | 4ms
-  type: vless
-  server: pavosilene.qzz.io
-  port: 443
-  uuid: 3ceb7c2b-8aed-41b3-ad42-ba1e1a69bae5
-  network: ws
-  tls: true
-  servername: pavosilene.qzz.io
+  cipher: chacha20-ietf-poly1305
+  password: qFAJdBEqsI71jaSML67nHoPBCGhX94uk
+- name: SHADOWSOCKS-8 | 216ms
+  type: ss
+  server: 185.47.253.227
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+- name: SHADOWSOCKS-9 | 188ms
+  type: ss
+  server: 45.87.175.35
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 141ms
-  - VMESS-2 | 255ms
-  - VMESS-3 | 262ms
-  - VLESS-4 | 322ms
-  - VLESS-5 | 406ms
-  - VLESS-6 | 409ms
-  - VLESS-7 | 329ms
-  - VLESS-8 | 7ms
-  - TROJAN-9 | 385ms
-  - VLESS-10 | 510ms
-  - VLESS-11 | 160ms
-  - VMESS-12 | 249ms
-  - VLESS-13 | 4ms
+  - SHADOWSOCKS-1 | 189ms
+  - SHADOWSOCKS-2 | 231ms
+  - SHADOWSOCKS-3 | 266ms
+  - VLESS-4 | 404ms
+  - SHADOWSOCKS-5 | 524ms
+  - VLESS-6 | 679ms
+  - SHADOWSOCKS-7 | 310ms
+  - SHADOWSOCKS-8 | 216ms
+  - SHADOWSOCKS-9 | 188ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 141ms
-  - VMESS-2 | 255ms
-  - VMESS-3 | 262ms
-  - VLESS-4 | 322ms
-  - VLESS-5 | 406ms
-  - VLESS-6 | 409ms
-  - VLESS-7 | 329ms
-  - VLESS-8 | 7ms
-  - TROJAN-9 | 385ms
-  - VLESS-10 | 510ms
-  - VLESS-11 | 160ms
-  - VMESS-12 | 249ms
-  - VLESS-13 | 4ms
+  - SHADOWSOCKS-1 | 189ms
+  - SHADOWSOCKS-2 | 231ms
+  - SHADOWSOCKS-3 | 266ms
+  - VLESS-4 | 404ms
+  - SHADOWSOCKS-5 | 524ms
+  - VLESS-6 | 679ms
+  - SHADOWSOCKS-7 | 310ms
+  - SHADOWSOCKS-8 | 216ms
+  - SHADOWSOCKS-9 | 188ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
