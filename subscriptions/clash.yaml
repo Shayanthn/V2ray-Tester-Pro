@@ -5,19 +5,27 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 60ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 48ms
+- name: VLESS-1 | 40ms
   type: vless
   server: 40.160.14.104
   port: 8880
   uuid: 6251f84e-9c02-4140-921c-6b47d394fb96
   network: grpc
+- name: VLESS-2 | 53ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
 - name: VMESS-3 | 177ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 169ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -25,7 +33,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 172ms
+- name: VMESS-5 | 169ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -33,91 +41,76 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-5 | 170ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-6 | 1282ms
+  type: vless
+  server: pavosilene.qzz.io
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VLESS-6 | 322ms
+  uuid: 3ceb7c2b-8aed-41b3-ad42-ba1e1a69bae5
+  network: ws
+  tls: true
+  servername: pavosilene.qzz.io
+- name: VLESS-7 | 1433ms
+  type: vless
+  server: pavosilene.qzz.io
+  port: 443
+  uuid: 3ceb7c2b-8aed-41b3-ad42-ba1e1a69bae5
+  network: ws
+  tls: true
+  servername: pavosilene.qzz.io
+- name: VLESS-8 | 321ms
   type: vless
   server: 5.182.36.56
   port: 45886
   uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
   network: tcp
-- name: VLESS-7 | 238ms
+- name: VLESS-9 | 306ms
+  type: vless
+  server: 5.182.36.56
+  port: 45886
+  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
+  network: tcp
+- name: TROJAN-10 | 270ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: VLESS-11 | 240ms
   type: vless
   server: 91.107.244.15
   port: 443
   uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
   network: grpc
-- name: VLESS-8 | 319ms
-  type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
-  network: tcp
-- name: VLESS-9 | 85ms
-  type: vless
-  server: pavosilene.qzz.io
-  port: 443
-  uuid: 3ceb7c2b-8aed-41b3-ad42-ba1e1a69bae5
-  network: ws
-  tls: true
-  servername: pavosilene.qzz.io
-- name: VLESS-10 | 32ms
-  type: vless
-  server: pavosilene.qzz.io
-  port: 443
-  uuid: 3ceb7c2b-8aed-41b3-ad42-ba1e1a69bae5
-  network: ws
-  tls: true
-  servername: pavosilene.qzz.io
-- name: VMESS-11 | 558ms
-  type: vmess
-  server: n1753598451.74qxv.top
-  port: 443
-  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: n1753598451.74qxv.top
-  ws-opts:
-    path: /
-    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 60ms
-  - VLESS-2 | 48ms
+  - VLESS-1 | 40ms
+  - VLESS-2 | 53ms
   - VMESS-3 | 177ms
-  - VMESS-4 | 172ms
-  - VMESS-5 | 170ms
-  - VLESS-6 | 322ms
-  - VLESS-7 | 238ms
-  - VLESS-8 | 319ms
-  - VLESS-9 | 85ms
-  - VLESS-10 | 32ms
-  - VMESS-11 | 558ms
+  - VMESS-4 | 169ms
+  - VMESS-5 | 169ms
+  - VLESS-6 | 1282ms
+  - VLESS-7 | 1433ms
+  - VLESS-8 | 321ms
+  - VLESS-9 | 306ms
+  - TROJAN-10 | 270ms
+  - VLESS-11 | 240ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 60ms
-  - VLESS-2 | 48ms
+  - VLESS-1 | 40ms
+  - VLESS-2 | 53ms
   - VMESS-3 | 177ms
-  - VMESS-4 | 172ms
-  - VMESS-5 | 170ms
-  - VLESS-6 | 322ms
-  - VLESS-7 | 238ms
-  - VLESS-8 | 319ms
-  - VLESS-9 | 85ms
-  - VLESS-10 | 32ms
-  - VMESS-11 | 558ms
+  - VMESS-4 | 169ms
+  - VMESS-5 | 169ms
+  - VLESS-6 | 1282ms
+  - VLESS-7 | 1433ms
+  - VLESS-8 | 321ms
+  - VLESS-9 | 306ms
+  - TROJAN-10 | 270ms
+  - VLESS-11 | 240ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
