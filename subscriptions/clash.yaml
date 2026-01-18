@@ -5,37 +5,25 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 133ms
-  type: ss
-  server: 79.127.233.170
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: SHADOWSOCKS-2 | 328ms
+- name: SHADOWSOCKS-1 | 327ms
   type: ss
   server: 45.154.204.7
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-3 | 331ms
+- name: SHADOWSOCKS-2 | 337ms
   type: ss
   server: 23.95.76.59
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: VLESS-4 | 907ms
-  type: vless
-  server: 176.120.72.63
-  port: 38339
-  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
-  network: tcp
-- name: VLESS-5 | 828ms
-  type: vless
-  server: kz.accesspoints.cloakify.app
-  port: 38339
-  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
-  network: tcp
-- name: VMESS-6 | 688ms
+- name: TROJAN-3 | 870ms
+  type: trojan
+  server: 3.120.80.249
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: 3.120.80.249
+- name: VMESS-4 | 1053ms
   type: vmess
   server: t1.620720.xyz
   port: 8443
@@ -48,26 +36,53 @@ proxies:
   ws-opts:
     path: /
     headers: {}
+- name: VLESS-5 | 666ms
+  type: vless
+  server: 176.120.72.63
+  port: 38339
+  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
+  network: tcp
+- name: VLESS-6 | 860ms
+  type: vless
+  server: kz.accesspoints.cloakify.app
+  port: 38339
+  uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62
+  network: tcp
+- name: VMESS-7 | 564ms
+  type: vmess
+  server: n1753598451.74qxv.top
+  port: 443
+  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: n1753598451.74qxv.top
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 133ms
-  - SHADOWSOCKS-2 | 328ms
-  - SHADOWSOCKS-3 | 331ms
-  - VLESS-4 | 907ms
-  - VLESS-5 | 828ms
-  - VMESS-6 | 688ms
+  - SHADOWSOCKS-1 | 327ms
+  - SHADOWSOCKS-2 | 337ms
+  - TROJAN-3 | 870ms
+  - VMESS-4 | 1053ms
+  - VLESS-5 | 666ms
+  - VLESS-6 | 860ms
+  - VMESS-7 | 564ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 133ms
-  - SHADOWSOCKS-2 | 328ms
-  - SHADOWSOCKS-3 | 331ms
-  - VLESS-4 | 907ms
-  - VLESS-5 | 828ms
-  - VMESS-6 | 688ms
+  - SHADOWSOCKS-1 | 327ms
+  - SHADOWSOCKS-2 | 337ms
+  - TROJAN-3 | 870ms
+  - VMESS-4 | 1053ms
+  - VLESS-5 | 666ms
+  - VLESS-6 | 860ms
+  - VMESS-7 | 564ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
