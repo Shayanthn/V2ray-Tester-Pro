@@ -5,78 +5,78 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 344ms
-  type: trojan
-  server: 153.121.38.213
-  port: 4006
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-2 | 480ms
-  type: trojan
-  server: 153.121.38.213
-  port: 3901
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-3 | 493ms
-  type: trojan
-  server: 153.121.38.213
-  port: 544
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-4 | 432ms
-  type: trojan
-  server: 58.152.18.124
+- name: SHADOWSOCKS-1 | 432ms
+  type: ss
+  server: 38.165.231.25
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-2 | 347ms
+  type: ss
+  server: 212.34.140.184
   port: 443
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-5 | 434ms
-  type: trojan
-  server: 58.152.18.124
-  port: 443
-  password: 4843e94d205f3893f588255a591abe94
-  sni: 58.152.18.124
-- name: TROJAN-6 | 497ms
-  type: trojan
-  server: 16.162.252.227
-  port: 2673
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-- name: TROJAN-7 | 166ms
-  type: trojan
-  server: 153.121.38.213
-  port: 3423
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: VLESS-8 | 222ms
+  cipher: chacha20-ietf-poly1305
+  password: 0NeN5ta7FLa5B9DLytU0um
+- name: VLESS-3 | 1760ms
   type: vless
-  server: 212.113.109.101
-  port: 2584
-  uuid: 038a50c3-229c-41ef-a7ef-7abb504e4f33
+  server: 94.156.115.109
+  port: 443
+  uuid: 9357d31a-97f5-492b-9a9d-24dcb3449fb9
+  network: tcp
+- name: VLESS-4 | 418ms
+  type: vless
+  server: 159.195.26.28
+  port: 443
+  uuid: 84f66368-8a37-468e-ae95-5622255fd4db
+  network: tcp
+- name: VLESS-5 | 464ms
+  type: vless
+  server: 192.144.57.132
+  port: 4443
+  uuid: 3f688b2a-373a-4be1-846d-b159404b73b2
+  network: tcp
+- name: VLESS-6 | 447ms
+  type: vless
+  server: 45.139.26.152
+  port: 7443
+  uuid: 7fc953d6-ae75-46fb-a970-10b57d513487
+  network: tcp
+- name: VLESS-7 | 695ms
+  type: vless
+  server: 176.109.104.107
+  port: 443
+  uuid: cc61ea7c-92f2-4c2d-b272-32cfe8fdf99f
+  network: tcp
+- name: VLESS-8 | 691ms
+  type: vless
+  server: 95.174.92.156
+  port: 443
+  uuid: cc61ea7c-92f2-4c2d-b272-32cfe8fdf99f
   network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 344ms
-  - TROJAN-2 | 480ms
-  - TROJAN-3 | 493ms
-  - TROJAN-4 | 432ms
-  - TROJAN-5 | 434ms
-  - TROJAN-6 | 497ms
-  - TROJAN-7 | 166ms
-  - VLESS-8 | 222ms
+  - SHADOWSOCKS-1 | 432ms
+  - SHADOWSOCKS-2 | 347ms
+  - VLESS-3 | 1760ms
+  - VLESS-4 | 418ms
+  - VLESS-5 | 464ms
+  - VLESS-6 | 447ms
+  - VLESS-7 | 695ms
+  - VLESS-8 | 691ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 344ms
-  - TROJAN-2 | 480ms
-  - TROJAN-3 | 493ms
-  - TROJAN-4 | 432ms
-  - TROJAN-5 | 434ms
-  - TROJAN-6 | 497ms
-  - TROJAN-7 | 166ms
-  - VLESS-8 | 222ms
+  - SHADOWSOCKS-1 | 432ms
+  - SHADOWSOCKS-2 | 347ms
+  - VLESS-3 | 1760ms
+  - VLESS-4 | 418ms
+  - VLESS-5 | 464ms
+  - VLESS-6 | 447ms
+  - VLESS-7 | 695ms
+  - VLESS-8 | 691ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
