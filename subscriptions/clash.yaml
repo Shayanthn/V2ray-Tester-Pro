@@ -5,13 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 19ms
-  type: vless
-  server: 40.160.14.104
-  port: 8880
-  uuid: 6251f84e-9c02-4140-921c-6b47d394fb96
-  network: grpc
-- name: VMESS-2 | 141ms
+- name: VMESS-1 | 194ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -19,7 +13,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 141ms
+- name: VMESS-2 | 194ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -27,7 +21,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 140ms
+- name: VMESS-3 | 182ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -35,7 +29,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-5 | 163ms
+- name: VMESS-4 | 197ms
   type: vmess
   server: 85.195.101.122
   port: 40878
@@ -43,71 +37,30 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-6 | 193ms
-  type: vless
-  server: 91.107.244.15
-  port: 443
-  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
-  network: grpc
-- name: TROJAN-7 | 242ms
+- name: TROJAN-5 | 391ms
   type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: VLESS-8 | 301ms
-  type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
-  network: tcp
-- name: VLESS-9 | 299ms
-  type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
-  network: tcp
-- name: VMESS-10 | 727ms
-  type: vmess
-  server: n1753598451.74qxv.top
+  server: 58.152.18.124
   port: 443
-  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: n1753598451.74qxv.top
-  ws-opts:
-    path: /
-    headers: {}
+  password: 4843e94d205f3893f588255a591abe94
+  sni: www.nintendogames.net
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 19ms
-  - VMESS-2 | 141ms
-  - VMESS-3 | 141ms
-  - VMESS-4 | 140ms
-  - VMESS-5 | 163ms
-  - VLESS-6 | 193ms
-  - TROJAN-7 | 242ms
-  - VLESS-8 | 301ms
-  - VLESS-9 | 299ms
-  - VMESS-10 | 727ms
+  - VMESS-1 | 194ms
+  - VMESS-2 | 194ms
+  - VMESS-3 | 182ms
+  - VMESS-4 | 197ms
+  - TROJAN-5 | 391ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 19ms
-  - VMESS-2 | 141ms
-  - VMESS-3 | 141ms
-  - VMESS-4 | 140ms
-  - VMESS-5 | 163ms
-  - VLESS-6 | 193ms
-  - TROJAN-7 | 242ms
-  - VLESS-8 | 301ms
-  - VLESS-9 | 299ms
-  - VMESS-10 | 727ms
+  - VMESS-1 | 194ms
+  - VMESS-2 | 194ms
+  - VMESS-3 | 182ms
+  - VMESS-4 | 197ms
+  - TROJAN-5 | 391ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
