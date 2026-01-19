@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10812,
+        "port": 10801,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -18,22 +18,51 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vmess",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "79.127.233.170",
-              "port": 990,
-              "method": "chacha20-ietf-poly1305",
-              "password": "f8f7aCzcPKbsF8p3"
+              "address": "82.198.246.97",
+              "port": 180,
+              "users": [
+                {
+                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+                  "alterId": 0,
+                  "security": "auto"
+                }
+              ]
             }
           ]
         },
-        "tag": "🇨🇦 SS-英国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-79.127.233.170:990"
+        "streamSettings": {
+          "network": "tcp",
+          "security": "",
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100
+          }
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
         "tag": "direct"
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "tcpKeepAliveIdle": 100
+          }
+        }
       }
     ],
     "routing": {
@@ -56,7 +85,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10813,
+        "port": 10809,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -68,18 +97,109 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vmess",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "23.95.75.146",
-              "port": 443,
-              "method": "chacha20-ietf-poly1305",
-              "password": "NDRySIABARbErNIVsCNVkyYAHiBzhveT"
+              "address": "82.198.246.97",
+              "port": 180,
+              "users": [
+                {
+                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+                  "alterId": 0,
+                  "security": "auto"
+                }
+              ]
             }
           ]
         },
-        "tag": "🇺🇸 SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-23.95.75.146:443"
+        "streamSettings": {
+          "network": "tcp",
+          "security": "",
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "tcpKeepAliveIdle": 100
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10806,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "58.152.18.124",
+              "port": 443,
+              "password": "4843e94d205f3893f588255a591abe94"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "www.nintendogames.net",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
@@ -118,17 +238,17 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "vless",
         "settings": {
           "vnext": [
             {
-              "address": "85.195.101.122",
-              "port": 40878,
+              "address": "45.139.26.152",
+              "port": 7443,
               "users": [
                 {
-                  "id": "f3d4167e-b15e-4e46-82e9-9286ef93fda7",
-                  "alterId": 0,
-                  "security": "auto"
+                  "id": "7fc953d6-ae75-46fb-a970-10b57d513487",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
                 }
               ]
             }
@@ -136,7 +256,20 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": ""
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "eh.vk.com",
+            "allowInsecure": true,
+            "fingerprint": "random",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "BTkKaFt2xac4xAHn3EXrBKV0d8ItHSfciMFnxg57BGA",
+            "shortId": "fd88bd27db4cc661",
+            "spiderX": "/"
+          }
         },
         "tag": "proxy"
       },
@@ -165,7 +298,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10810,
+        "port": 10806,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -177,129 +310,367 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "45.154.204.7",
-              "port": 990,
-              "method": "chacha20-ietf-poly1305",
-              "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
-            }
-          ]
-        },
-        "tag": "🇦🇿 SS-阿塞拜疆-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-45.154.204.7:990"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "23.95.76.59",
-              "port": 990,
-              "method": "chacha20-ietf-poly1305",
-              "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
-            }
-          ]
-        },
-        "tag": "🇺🇸 SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10812,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
+        "protocol": "vless",
         "settings": {
           "vnext": [
             {
-              "address": "t1.620720.xyz",
-              "port": 8443,
+              "address": "95.174.92.156",
+              "port": 443,
               "users": [
                 {
-                  "id": "516d8a7a-3f0b-41d3-bad0-246116381516",
-                  "alterId": 0,
-                  "security": "auto"
+                  "id": "cc61ea7c-92f2-4c2d-b272-32cfe8fdf99f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
                 }
               ]
             }
           ]
         },
         "streamSettings": {
-          "network": "ws",
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "sun6-21.userapi.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw",
+            "shortId": "c7e42004e5f024be",
+            "spiderX": "/"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10805,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "159.195.26.28",
+              "port": 443,
+              "users": [
+                {
+                  "id": "84f66368-8a37-468e-ae95-5622255fd4db",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "live.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "ckRcueERkPqqjZABwxqni_J_Nbb70Q6k5fEEUAjoImw",
+            "shortId": "",
+            "spiderX": "/"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10811,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "16.162.252.227",
+              "port": 2673,
+              "password": "BxceQaOe"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "t1.620720.xyz",
+            "serverName": "t.me%2Fripaojiedian",
             "allowInsecure": true,
-            "fingerprint": "chrome"
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10814,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "58.152.46.246",
+              "port": 443,
+              "password": "BxceQaOe"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "t.me/ripaojiedian",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10807,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "58.152.53.219",
+              "port": 443,
+              "password": "BxceQaOe"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "t.me%2Fripaojiedian",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10807,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "176.109.104.107",
+              "port": 443,
+              "users": [
+                {
+                  "id": "cc61ea7c-92f2-4c2d-b272-32cfe8fdf99f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "sun6-21.userapi.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw",
+            "shortId": "c7e42004e5f024be",
+            "spiderX": "/"
           }
         },
         "tag": "proxy"
