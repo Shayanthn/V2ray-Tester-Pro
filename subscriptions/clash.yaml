@@ -5,77 +5,128 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 8ms
-  type: vmess
-  server: 172.234.132.232
-  port: 10001
-  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 125ms
-  type: vmess
-  server: 47.251.91.241
-  port: 42899
-  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 162ms
-  type: vmess
-  server: 85.195.101.122
-  port: 40878
-  uuid: f3d4167e-b15e-4e46-82e9-9286ef93fda7
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VLESS-4 | 183ms
+- name: VLESS-1 | 150ms
   type: vless
-  server: doprax.fxgoldensignals.com
-  port: 50904
-  uuid: d4795cd9-cd7b-4cea-edfb-20cdcca5837b
-  network: tcp
-- name: VMESS-5 | 343ms
+  server: 40.160.14.104
+  port: 8880
+  uuid: 6251f84e-9c02-4140-921c-6b47d394fb96
+  network: grpc
+- name: VMESS-2 | 255ms
   type: vmess
-  server: 89.31.120.192
+  server: 217.69.5.32
   port: 443
-  uuid: 44537595-9ccc-4b83-8936-5f9ad3229019
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-6 | 660ms
+- name: VMESS-3 | 245ms
   type: vmess
-  server: sy4.620720.xyz
+  server: 217.69.5.32
   port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
   alterId: 0
   cipher: auto
+  network: tcp
+- name: VLESS-4 | 14ms
+  type: vless
+  server: pavosilene.qzz.io
+  port: 443
+  uuid: 3ceb7c2b-8aed-41b3-ad42-ba1e1a69bae5
   network: ws
   tls: true
-  servername: sy4.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
+  servername: pavosilene.qzz.io
+- name: VLESS-5 | 8ms
+  type: vless
+  server: pavosilene.qzz.io
+  port: 443
+  uuid: 3ceb7c2b-8aed-41b3-ad42-ba1e1a69bae5
+  network: ws
+  tls: true
+  servername: pavosilene.qzz.io
+- name: VLESS-6 | 324ms
+  type: vless
+  server: 57.129.53.180
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-7 | 151ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-8 | 412ms
+  type: vless
+  server: 5.182.36.56
+  port: 45886
+  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
+  network: tcp
+- name: VLESS-9 | 439ms
+  type: vless
+  server: 5.182.36.56
+  port: 45886
+  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
+  network: tcp
+- name: TROJAN-10 | 366ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: VLESS-11 | 341ms
+  type: vless
+  server: 91.107.244.15
+  port: 443
+  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
+  network: grpc
+- name: VLESS-12 | 509ms
+  type: vless
+  server: 45.12.143.191
+  port: 20329
+  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
+  network: tcp
+- name: VMESS-13 | 308ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  alterId: 0
+  cipher: auto
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 8ms
-  - VMESS-2 | 125ms
-  - VMESS-3 | 162ms
-  - VLESS-4 | 183ms
-  - VMESS-5 | 343ms
-  - VMESS-6 | 660ms
+  - VLESS-1 | 150ms
+  - VMESS-2 | 255ms
+  - VMESS-3 | 245ms
+  - VLESS-4 | 14ms
+  - VLESS-5 | 8ms
+  - VLESS-6 | 324ms
+  - VLESS-7 | 151ms
+  - VLESS-8 | 412ms
+  - VLESS-9 | 439ms
+  - TROJAN-10 | 366ms
+  - VLESS-11 | 341ms
+  - VLESS-12 | 509ms
+  - VMESS-13 | 308ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 8ms
-  - VMESS-2 | 125ms
-  - VMESS-3 | 162ms
-  - VLESS-4 | 183ms
-  - VMESS-5 | 343ms
-  - VMESS-6 | 660ms
+  - VLESS-1 | 150ms
+  - VMESS-2 | 255ms
+  - VMESS-3 | 245ms
+  - VLESS-4 | 14ms
+  - VLESS-5 | 8ms
+  - VLESS-6 | 324ms
+  - VLESS-7 | 151ms
+  - VLESS-8 | 412ms
+  - VLESS-9 | 439ms
+  - TROJAN-10 | 366ms
+  - VLESS-11 | 341ms
+  - VLESS-12 | 509ms
+  - VMESS-13 | 308ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
