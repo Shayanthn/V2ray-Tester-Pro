@@ -2,10 +2,10 @@
   {
     "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 255,
-    "jitter": 180,
-    "download_speed": 14.47,
-    "upload_speed": 10.71,
+    "ping": 279,
+    "jitter": 176,
+    "download_speed": 14.94,
+    "upload_speed": 10.08,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -79,12 +79,91 @@
     "isp": "The Constant Company, LLC"
   },
   {
+    "protocol": "vmess",
+    "address": "217.69.5.32",
+    "ping": 266,
+    "jitter": 193,
+    "download_speed": 14.47,
+    "upload_speed": 10.26,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "217.69.5.32",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10802,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "217.69.5.32",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "none"
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICIycWZybWszbCIsCiAgImFkZCI6ICIyMTcuNjkuNS4zMiIsCiAgInBvcnQiOiA0NDMsCiAgImlkIjogImVjNGMzNDljLWIzYzYtNGNmZi1iZTYzLTAxZWFhZDFkYzA5OCIsCiAgInNjeSI6ICJhdXRvIiwKICAibmV0IjogInRjcCIsCiAgInRscyI6ICJub25lIiwKICAidHlwZSI6ICJub25lIgp9",
+    "country": "France",
+    "country_code": "FR",
+    "city": "Aubervilliers",
+    "isp": "The Constant Company, LLC"
+  },
+  {
     "protocol": "vless",
     "address": "40.160.14.104",
     "ping": 150,
-    "jitter": 130,
-    "download_speed": 24.21,
-    "upload_speed": 19.07,
+    "jitter": 131,
+    "download_speed": 25.5,
+    "upload_speed": 20.32,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -160,10 +239,10 @@
   {
     "protocol": "vless",
     "address": "91.107.244.15",
-    "ping": 341,
-    "jitter": 296,
-    "download_speed": 10.12,
-    "upload_speed": 8.78,
+    "ping": 331,
+    "jitter": 289,
+    "download_speed": 11.02,
+    "upload_speed": 8.26,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -178,7 +257,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10817,
+          "port": 10816,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -239,10 +318,10 @@
   {
     "protocol": "trojan",
     "address": "80.173.231.254",
-    "ping": 366,
-    "jitter": 314,
-    "download_speed": 10.49,
-    "upload_speed": 7.47,
+    "ping": 372,
+    "jitter": 323,
+    "download_speed": 10.73,
+    "upload_speed": 6.81,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -321,10 +400,10 @@
   {
     "protocol": "vless",
     "address": "5.182.36.56",
-    "ping": 412,
-    "jitter": 426,
-    "download_speed": 11.44,
-    "upload_speed": 7.25,
+    "ping": 420,
+    "jitter": 445,
+    "download_speed": 10.96,
+    "upload_speed": 7.84,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -339,7 +418,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10816,
+          "port": 10818,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -412,182 +491,11 @@
   },
   {
     "protocol": "vmess",
-    "address": "217.69.5.32",
-    "ping": 245,
-    "jitter": 176,
-    "download_speed": 14.07,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "217.69.5.32",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10802,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "217.69.5.32",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "none"
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICIycWZybWszbCIsCiAgImFkZCI6ICIyMTcuNjkuNS4zMiIsCiAgInBvcnQiOiA0NDMsCiAgImlkIjogImVjNGMzNDljLWIzYzYtNGNmZi1iZTYzLTAxZWFhZDFkYzA5OCIsCiAgInNjeSI6ICJhdXRvIiwKICAibmV0IjogInRjcCIsCiAgInRscyI6ICJub25lIiwKICAidHlwZSI6ICJub25lIgp9",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Aubervilliers",
-    "isp": "The Constant Company, LLC"
-  },
-  {
-    "protocol": "vless",
-    "address": "5.182.36.56",
-    "ping": 439,
-    "jitter": 468,
-    "download_speed": 11.39,
-    "upload_speed": 7.47,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "5.182.36.56",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10819,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vless",
-          "settings": {
-            "vnext": [
-              {
-                "address": "5.182.36.56",
-                "port": 45886,
-                "users": [
-                  {
-                    "id": "8338171d-2ea7-4015-bdea-492f3d5d4e60",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "reality",
-            "realitySettings": {
-              "serverName": "yahoo.com",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ],
-              "show": false,
-              "publicKey": "zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0",
-              "shortId": "94f9",
-              "spiderX": "/"
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vless://8338171d-2ea7-4015-bdea-492f3d5d4e60@5.182.36.56:45886?security=reality&encryption=none&pbk=zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=yahoo.com&sid=94f9#%F0%9F%8D%83%F0%9F%8D%815",
-    "country": "Switzerland",
-    "country_code": "CH",
-    "city": "Bern",
-    "isp": "WorkTitans B.V."
-  },
-  {
-    "protocol": "vmess",
     "address": "94.232.247.165",
-    "ping": 308,
-    "jitter": 222,
-    "download_speed": 0.72,
-    "upload_speed": 8.84,
+    "ping": 314,
+    "jitter": 227,
+    "download_speed": 0.48,
+    "upload_speed": 8.03,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -662,11 +570,103 @@
   },
   {
     "protocol": "vless",
+    "address": "5.182.36.56",
+    "ping": 414,
+    "jitter": 430,
+    "download_speed": 10.81,
+    "upload_speed": 7.33,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "5.182.36.56",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10802,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "5.182.36.56",
+                "port": 45886,
+                "users": [
+                  {
+                    "id": "8338171d-2ea7-4015-bdea-492f3d5d4e60",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "yahoo.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0",
+              "shortId": "94f9",
+              "spiderX": "/"
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://8338171d-2ea7-4015-bdea-492f3d5d4e60@5.182.36.56:45886?security=reality&encryption=none&pbk=zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=yahoo.com&sid=94f9#%F0%9F%8D%83%F0%9F%8D%815",
+    "country": "Switzerland",
+    "country_code": "CH",
+    "city": "Bern",
+    "isp": "WorkTitans B.V."
+  },
+  {
+    "protocol": "vless",
     "address": "pqh29v3.globalfymain.com",
-    "ping": 151,
-    "jitter": 143,
-    "download_speed": 11.5,
-    "upload_speed": 16.68,
+    "ping": 160,
+    "jitter": 150,
+    "download_speed": 10.15,
+    "upload_speed": 17.01,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -681,7 +681,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10815,
+          "port": 10816,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -741,195 +741,11 @@
   },
   {
     "protocol": "vless",
-    "address": "57.129.53.180",
-    "ping": 324,
-    "jitter": 279,
-    "download_speed": 12.7,
-    "upload_speed": 6.95,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "57.129.53.180",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10805,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vless",
-          "settings": {
-            "vnext": [
-              {
-                "address": "57.129.53.180",
-                "port": 23576,
-                "users": [
-                  {
-                    "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-                    "encryption": "none",
-                    "flow": "xtls-rprx-vision"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "reality",
-            "realitySettings": {
-              "serverName": "fuck.rkn",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ],
-              "show": false,
-              "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-              "shortId": "01",
-              "spiderX": "/"
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@57.129.53.180:23576?security=reality&encryption=none&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&headerType=none&fp=chrome&spx=%2F---Join---PLANB_NET---Join---PLANB_NET---Join---PLANB_NET&type=tcp&flow=xtls-rprx-vision&sni=fuck.rkn&sid=01#%F0%9F%8E%81%40planbnetvpnbot%20%F0%9F%91%88%D8%AA%D8%B3%D8%AA%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D9%86%D8%AA%20%D9%85%D9%84%DB%8C```",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt am Main",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "vless",
-    "address": "45.12.143.191",
-    "ping": 509,
-    "jitter": 526,
-    "download_speed": 9.9,
-    "upload_speed": 6.53,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "45.12.143.191",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10800,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vless",
-          "settings": {
-            "vnext": [
-              {
-                "address": "45.12.143.191",
-                "port": 20329,
-                "users": [
-                  {
-                    "id": "e105e56a-5f81-41a2-ab44-bfffc9b00674",
-                    "encryption": "none",
-                    "flow": ""
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "reality",
-            "realitySettings": {
-              "serverName": "yahoo.com",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ],
-              "show": false,
-              "publicKey": "Lj3MXlg16CTFHtU88acSS-ACfGnwJ_xkU6dC6k8OeDo",
-              "shortId": "4602ee9f9f36",
-              "spiderX": "/"
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vless://e105e56a-5f81-41a2-ab44-bfffc9b00674@45.12.143.191:20329?security=reality&encryption=none&pbk=Lj3MXlg16CTFHtU88acSS-ACfGnwJ_xkU6dC6k8OeDo&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=4602ee9f9f36#BESTIIVPNBOT",
-    "country": "Türkiye",
-    "country_code": "TR",
-    "city": "Izmir",
-    "isp": "WorkTitans B.V."
-  },
-  {
-    "protocol": "vless",
     "address": "pavosilene.qzz.io",
-    "ping": 8,
-    "jitter": 3,
-    "download_speed": 13.58,
-    "upload_speed": 3.24,
+    "ping": 1496,
+    "jitter": 2581,
+    "download_speed": 13.38,
+    "upload_speed": 12.36,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -944,7 +760,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10803,
+          "port": 10814,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -1014,10 +830,10 @@
   {
     "protocol": "vless",
     "address": "pavosilene.qzz.io",
-    "ping": 14,
-    "jitter": 14,
-    "download_speed": 13.68,
-    "upload_speed": 3.2,
+    "ping": 768,
+    "jitter": 1324,
+    "download_speed": 13.09,
+    "upload_speed": 12.16,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -1032,7 +848,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10817,
+          "port": 10803,
           "protocol": "http",
           "settings": {
             "timeout": 0,
