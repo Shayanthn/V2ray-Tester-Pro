@@ -1,11 +1,169 @@
 [
   {
     "protocol": "vmess",
+    "address": "85.195.101.122",
+    "ping": 153,
+    "jitter": 110,
+    "download_speed": 25.31,
+    "upload_speed": 16.41,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "85.195.101.122",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10811,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "85.195.101.122",
+                "port": 40878,
+                "users": [
+                  {
+                    "id": "f3d4167e-b15e-4e46-82e9-9286ef93fda7",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiI4NS4xOTUuMTAxLjEyMiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJmM2Q0MTY3ZS1iMTVlLTRlNDYtODJlOS05Mjg2ZWY5M2ZkYTciLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQwODc4IiwicHMiOiJARk5ldFBybyDwn4ep8J+HqiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "velia.net Internetdienste GmbH"
+  },
+  {
+    "protocol": "vmess",
+    "address": "94.232.247.165",
+    "ping": 139,
+    "jitter": 99,
+    "download_speed": 25.21,
+    "upload_speed": 19.32,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "94.232.247.165",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10805,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "94.232.247.165",
+                "port": 45653,
+                "users": [
+                  {
+                    "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiI5NC4yMzIuMjQ3LjE2NSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiI5ZTkxZDE5YS1jNzNmLTQyNzYtYWRiYy1iMzM3YzM3NDI1OWMiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ1NjUzIiwicHMiOiJodHRwczovL3QubWUvVjJyYU5HX0RBIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
+    "country": "France",
+    "country_code": "FR",
+    "city": "Paris",
+    "isp": "WorkTitans B.V."
+  },
+  {
+    "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 180,
-    "jitter": 134,
-    "download_speed": 21.63,
-    "upload_speed": 14.46,
+    "ping": 145,
+    "jitter": 104,
+    "download_speed": 26.44,
+    "upload_speed": 19.48,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -20,7 +178,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10809,
+          "port": 10811,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -81,10 +239,10 @@
   {
     "protocol": "vmess",
     "address": "217.69.5.32",
-    "ping": 176,
-    "jitter": 127,
-    "download_speed": 21.18,
-    "upload_speed": 14.98,
+    "ping": 139,
+    "jitter": 99,
+    "download_speed": 23.73,
+    "upload_speed": 19.43,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -99,7 +257,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10810,
+          "port": 10805,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -159,169 +317,11 @@
   },
   {
     "protocol": "vmess",
-    "address": "94.232.247.165",
-    "ping": 218,
-    "jitter": 161,
-    "download_speed": 22.17,
-    "upload_speed": 14.68,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "94.232.247.165",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10808,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "94.232.247.165",
-                "port": 45653,
-                "users": [
-                  {
-                    "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiI5NC4yMzIuMjQ3LjE2NSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiI5ZTkxZDE5YS1jNzNmLTQyNzYtYWRiYy1iMzM3YzM3NDI1OWMiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ1NjUzIiwicHMiOiJodHRwczovL3QubWUvVjJyYU5HX0RBIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "WorkTitans B.V."
-  },
-  {
-    "protocol": "vmess",
-    "address": "85.195.101.122",
-    "ping": 192,
-    "jitter": 140,
-    "download_speed": 20.01,
-    "upload_speed": 13.62,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "85.195.101.122",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10806,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "85.195.101.122",
-                "port": 40878,
-                "users": [
-                  {
-                    "id": "f3d4167e-b15e-4e46-82e9-9286ef93fda7",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiI4NS4xOTUuMTAxLjEyMiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJmM2Q0MTY3ZS1iMTVlLTRlNDYtODJlOS05Mjg2ZWY5M2ZkYTciLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQwODc4IiwicHMiOiJARk5ldFBybyDwn4ep8J+HqiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt am Main",
-    "isp": "velia.net Internetdienste GmbH"
-  },
-  {
-    "protocol": "vmess",
     "address": "t1.620720.xyz",
-    "ping": 834,
-    "jitter": 1163,
-    "download_speed": 9.75,
-    "upload_speed": 6.78,
+    "ping": 920,
+    "jitter": 0,
+    "download_speed": 9.13,
+    "upload_speed": 5.39,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -336,7 +336,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10807,
+          "port": 10814,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -371,10 +371,6 @@
               "serverName": "t1.620720.xyz",
               "allowInsecure": true,
               "fingerprint": "chrome"
-            },
-            "sockopt": {
-              "dialerProxy": "fragment",
-              "tcpKeepAliveIdle": 100
             }
           },
           "tag": "proxy"
@@ -382,22 +378,6 @@
         {
           "protocol": "freedom",
           "tag": "direct"
-        },
-        {
-          "tag": "fragment",
-          "protocol": "freedom",
-          "settings": {
-            "fragment": {
-              "packets": "tlshello",
-              "length": "100-200",
-              "interval": "10-20"
-            }
-          },
-          "streamSettings": {
-            "sockopt": {
-              "tcpKeepAliveIdle": 100
-            }
-          }
         }
       ],
       "routing": {
@@ -414,7 +394,6 @@
       }
     },
     "uri": "vmess://eyJ2IjoiMiIsInBzIjoi8J+Hr/Cfh7UgVk1FU1Mt576O5Zu9PuaXpeacrC1ORuino+mUgeaXpeacrOWcsOWMuumdnuiHquWItuWJpy1DaGF0R1BULVlvdVR1YmUtdDEuNjIwNzIwLnh5ejo4NDQzIiwiYWRkIjoidDEuNjIwNzIwLnh5eiIsInBvcnQiOiI4NDQzIiwidHlwZSI6Im5vbmUiLCJpZCI6IjUxNmQ4YTdhLTNmMGItNDFkMy1iYWQwLTI0NjExNjM4MTUxNiIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwiaG9zdCI6InQxLjYyMDcyMC54eXoiLCJ0bHMiOiJ0bHMifQ==",
-    "revived_with_fragment": true,
     "country": "Canada",
     "country_code": "CA",
     "city": "Toronto",
@@ -423,10 +402,10 @@
   {
     "protocol": "vmess",
     "address": "sy4.620720.xyz",
-    "ping": 521,
-    "jitter": 554,
-    "download_speed": 3.81,
-    "upload_speed": 1.68,
+    "ping": 552,
+    "jitter": 580,
+    "download_speed": 8.76,
+    "upload_speed": 6.56,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -441,7 +420,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10802,
+          "port": 10803,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -507,9 +486,9 @@
   {
     "protocol": "vmess",
     "address": "82.198.246.97",
-    "ping": 116,
-    "jitter": 85,
-    "download_speed": 9.9,
+    "ping": 1573,
+    "jitter": 2616,
+    "download_speed": 5.36,
     "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
@@ -525,7 +504,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10816,
+          "port": 10807,
           "protocol": "http",
           "settings": {
             "timeout": 0,
