@@ -5,23 +5,23 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 229ms
+- name: VMESS-1 | 8ms
   type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  server: 172.234.132.232
+  port: 10001
+  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 212ms
+- name: VMESS-2 | 125ms
   type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 228ms
+- name: VMESS-3 | 162ms
   type: vmess
   server: 85.195.101.122
   port: 40878
@@ -29,62 +29,53 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-4 | 396ms
+- name: VLESS-4 | 183ms
   type: vless
-  server: 159.195.26.28
-  port: 443
-  uuid: 84f66368-8a37-468e-ae95-5622255fd4db
+  server: doprax.fxgoldensignals.com
+  port: 50904
+  uuid: d4795cd9-cd7b-4cea-edfb-20cdcca5837b
   network: tcp
-- name: VLESS-5 | 637ms
-  type: vless
-  server: 176.109.104.107
-  port: 443
-  uuid: cc61ea7c-92f2-4c2d-b272-32cfe8fdf99f
-  network: tcp
-- name: VLESS-6 | 651ms
-  type: vless
-  server: 95.174.92.156
-  port: 443
-  uuid: cc61ea7c-92f2-4c2d-b272-32cfe8fdf99f
-  network: tcp
-- name: VMESS-7 | 268ms
+- name: VMESS-5 | 343ms
   type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  server: 89.31.120.192
+  port: 443
+  uuid: 44537595-9ccc-4b83-8936-5f9ad3229019
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-8 | 436ms
-  type: vless
-  server: 45.139.26.152
-  port: 7443
-  uuid: 7fc953d6-ae75-46fb-a970-10b57d513487
-  network: tcp
+- name: VMESS-6 | 660ms
+  type: vmess
+  server: sy4.620720.xyz
+  port: 443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: sy4.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 229ms
-  - VMESS-2 | 212ms
-  - VMESS-3 | 228ms
-  - VLESS-4 | 396ms
-  - VLESS-5 | 637ms
-  - VLESS-6 | 651ms
-  - VMESS-7 | 268ms
-  - VLESS-8 | 436ms
+  - VMESS-1 | 8ms
+  - VMESS-2 | 125ms
+  - VMESS-3 | 162ms
+  - VLESS-4 | 183ms
+  - VMESS-5 | 343ms
+  - VMESS-6 | 660ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 229ms
-  - VMESS-2 | 212ms
-  - VMESS-3 | 228ms
-  - VLESS-4 | 396ms
-  - VLESS-5 | 637ms
-  - VLESS-6 | 651ms
-  - VMESS-7 | 268ms
-  - VLESS-8 | 436ms
+  - VMESS-1 | 8ms
+  - VMESS-2 | 125ms
+  - VMESS-3 | 162ms
+  - VLESS-4 | 183ms
+  - VMESS-5 | 343ms
+  - VMESS-6 | 660ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
