@@ -5,31 +5,31 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 47ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 48ms
+- name: VLESS-1 | 54ms
   type: vless
   server: 45.82.251.95
   port: 8880
   uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
   network: grpc
-- name: VLESS-3 | 59ms
+- name: VLESS-2 | 52ms
   type: vless
   server: pqh29v3.globalfymain.com
   port: 8880
   uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
   network: grpc
-- name: VLESS-4 | 66ms
+- name: VLESS-3 | 54ms
   type: vless
   server: pqh29v3.globalfymain.com
   port: 8880
   uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
   network: grpc
-- name: VLESS-5 | 249ms
+- name: VLESS-4 | 55ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-5 | 234ms
   type: vless
   server: 91.107.148.79
   port: 443
@@ -40,19 +40,19 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 47ms
-  - VLESS-2 | 48ms
-  - VLESS-3 | 59ms
-  - VLESS-4 | 66ms
-  - VLESS-5 | 249ms
+  - VLESS-1 | 54ms
+  - VLESS-2 | 52ms
+  - VLESS-3 | 54ms
+  - VLESS-4 | 55ms
+  - VLESS-5 | 234ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 47ms
-  - VLESS-2 | 48ms
-  - VLESS-3 | 59ms
-  - VLESS-4 | 66ms
-  - VLESS-5 | 249ms
+  - VLESS-1 | 54ms
+  - VLESS-2 | 52ms
+  - VLESS-3 | 54ms
+  - VLESS-4 | 55ms
+  - VLESS-5 | 234ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
