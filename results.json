@@ -1,18 +1,18 @@
 [
   {
     "protocol": "trojan",
-    "address": "58.152.18.124",
-    "ping": 327,
-    "jitter": 295,
-    "download_speed": 1.35,
-    "upload_speed": 0.0,
+    "address": "3.76.159.25",
+    "ping": 272,
+    "jitter": 242,
+    "download_speed": 15.89,
+    "upload_speed": 11.18,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "58.152.18.124",
+    "ip": "3.76.159.25",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -20,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10819,
+          "port": 10809,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -36,9 +36,9 @@
           "settings": {
             "servers": [
               {
-                "address": "58.152.18.124",
-                "port": 443,
-                "password": "4843e94d205f3893f588255a591abe94"
+                "address": "3.76.159.25",
+                "port": 22222,
+                "password": "telegram-id-privatevpns"
               }
             ]
           },
@@ -46,7 +46,7 @@
             "network": "tcp",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "www.nintendogames.net",
+              "serverName": "3.76.159.25",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
@@ -75,190 +75,190 @@
         ]
       }
     },
-    "uri": "trojan://4843e94d205f3893f588255a591abe94@58.152.18.124:443?allowInsecure=1&sni=www.nintendogames.net#HK145%EF%BD%9C%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
-    "country": "Hong Kong",
-    "country_code": "HK",
-    "city": "Tsui Wan Estate",
-    "isp": "Hong Kong Telecommunications (HKT) Limited Mass Internet"
+    "uri": "trojan://telegram-id-privatevpns@3.76.159.25:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S101)",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "Amazon Technologies Inc."
   },
   {
     "protocol": "trojan",
-    "address": "tuntro011.instconn.com",
-    "ping": 1544,
-    "jitter": 0,
-    "download_speed": 1.44,
-    "upload_speed": 0.0,
+    "address": "13.37.174.80",
+    "ping": 264,
+    "jitter": 235,
+    "download_speed": 17.45,
+    "upload_speed": 10.65,
     "is_bypassing": true,
     "connectivity": {
-      "telegram": false,
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "13.37.174.80",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10809,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "13.37.174.80",
+                "port": 22222,
+                "password": "telegram-id-privatevpns"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "13.37.174.80",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://telegram-id-privatevpns@13.37.174.80:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S103)",
+    "country": "France",
+    "country_code": "FR",
+    "city": "Paris",
+    "isp": "Amazon Technologies Inc."
+  },
+  {
+    "protocol": "trojan",
+    "address": "35.181.110.226",
+    "ping": 280,
+    "jitter": 251,
+    "download_speed": 16.26,
+    "upload_speed": 10.33,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "35.181.110.226",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10809,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "35.181.110.226",
+                "port": 22222,
+                "password": "telegram-id-privatevpns"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "35.181.110.226",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://telegram-id-privatevpns@35.181.110.226:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S104)",
+    "country": "France",
+    "country_code": "FR",
+    "city": "Paris",
+    "isp": "Amazon.com, Inc."
+  },
+  {
+    "protocol": "trojan",
+    "address": "80.173.231.254",
+    "ping": 357,
+    "jitter": 306,
+    "download_speed": 13.19,
+    "upload_speed": 8.04,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
       "instagram": false,
-      "youtube": false
-    },
-    "ip": "tuntro011.instconn.com",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10800,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "tuntro011.instconn.com",
-                "port": 40130,
-                "password": "30077070-596e-48ea-9400-14c8ed07bd97"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "cntwbta.686911.xyz",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://30077070-596e-48ea-9400-14c8ed07bd97@tuntro011.instconn.com:40130?allowInsecure=1&sni=cntwbta.686911.xyz#TW2%EF%BD%9C%E5%95%86%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
-    "country": "Taiwan",
-    "country_code": "TW",
-    "city": "Taipei",
-    "isp": "Chunghwa Telecom Co., Ltd."
-  },
-  {
-    "protocol": "trojan",
-    "address": "58.152.18.124",
-    "ping": 337,
-    "jitter": 304,
-    "download_speed": 1.35,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
       "youtube": true
     },
-    "ip": "58.152.18.124",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10800,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "58.152.18.124",
-                "port": 443,
-                "password": "4843e94d205f3893f588255a591abe94"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "58.152.18.124",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://4843e94d205f3893f588255a591abe94@58.152.18.124:443?allowInsecure=1&sni=58.152.18.124#HK62%EF%BD%9C%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
-    "country": "Hong Kong",
-    "country_code": "HK",
-    "city": "Tsui Wan Estate",
-    "isp": "Hong Kong Telecommunications (HKT) Limited Mass Internet"
-  },
-  {
-    "protocol": "trojan",
-    "address": "153.121.45.139",
-    "ping": 226,
-    "jitter": 200,
-    "download_speed": 19.2,
-    "upload_speed": 12.66,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "153.121.45.139",
+    "ip": "80.173.231.254",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -282,9 +282,9 @@
           "settings": {
             "servers": [
               {
-                "address": "153.121.45.139",
-                "port": 3423,
-                "password": "4843e94d205f3893f588255a591abe94"
+                "address": "80.173.231.254",
+                "port": 12420,
+                "password": "wp9IsiY82uQhcmgNC1eoBM"
               }
             ]
           },
@@ -292,7 +292,7 @@
             "network": "tcp",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "www.nintendogames.net",
+              "serverName": "www.semanticstaplegun.click",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
@@ -321,26 +321,26 @@
         ]
       }
     },
-    "uri": "trojan://4843e94d205f3893f588255a591abe94@153.121.45.139:3423?allowInsecure=0&sni=www.nintendogames.net#%E6%97%A5%E6%9C%AC2%7C%40ripaojiedian",
-    "country": "Japan",
-    "country_code": "JP",
-    "city": "Tokyo",
-    "isp": "SAKURA Internet Inc."
+    "uri": "trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420/?type=tcp&security=tls&sni=www.semanticstaplegun.click&allowInsecure=1#%E8%A5%BF%E7%8F%AD%E7%89%99+V2CROSS.COM",
+    "country": "Norway",
+    "country_code": "NO",
+    "city": "Oslo",
+    "isp": "ServeTheWorld"
   },
   {
     "protocol": "trojan",
-    "address": "153.121.39.240",
-    "ping": 795,
-    "jitter": 1190,
-    "download_speed": 19.39,
-    "upload_speed": 7.23,
+    "address": "80.173.231.254",
+    "ping": 362,
+    "jitter": 305,
+    "download_speed": 12.52,
+    "upload_speed": 8.87,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "153.121.39.240",
+    "ip": "80.173.231.254",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -348,7 +348,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10811,
+          "port": 10816,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -364,9 +364,9 @@
           "settings": {
             "servers": [
               {
-                "address": "153.121.39.240",
-                "port": 4006,
-                "password": "4843e94d205f3893f588255a591abe94"
+                "address": "80.173.231.254",
+                "port": 12420,
+                "password": "wp9IsiY82uQhcmgNC1eoBM"
               }
             ]
           },
@@ -374,7 +374,7 @@
             "network": "tcp",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "www.nintendogames.net",
+              "serverName": "www.semanticstaplegun.click",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
@@ -403,26 +403,26 @@
         ]
       }
     },
-    "uri": "trojan://4843e94d205f3893f588255a591abe94@153.121.39.240:4006?allowInsecure=0&sni=www.nintendogames.net#%E6%97%A5%E6%9C%AC3%7C%40ripaojiedian",
-    "country": "Japan",
-    "country_code": "JP",
-    "city": "Tokyo",
-    "isp": "SAKURA Internet Inc."
+    "uri": "trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420?security=tls&headerType=none&type=tcp&sni=www.semanticstaplegun.click#%E8%A5%BF%E7%8F%AD%E7%89%99+V2CROSS.COM",
+    "country": "Norway",
+    "country_code": "NO",
+    "city": "Oslo",
+    "isp": "ServeTheWorld"
   },
   {
     "protocol": "trojan",
-    "address": "153.121.45.139",
-    "ping": 550,
-    "jitter": 576,
-    "download_speed": 8.1,
-    "upload_speed": 8.89,
+    "address": "212.193.18.144",
+    "ping": 513,
+    "jitter": 492,
+    "download_speed": 8.58,
+    "upload_speed": 1.79,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "153.121.45.139",
+    "ip": "212.193.18.144",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -430,7 +430,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10815,
+          "port": 10805,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -446,9 +446,9 @@
           "settings": {
             "servers": [
               {
-                "address": "153.121.45.139",
-                "port": 3076,
-                "password": "4843e94d205f3893f588255a591abe94"
+                "address": "212.193.18.144",
+                "port": 36158,
+                "password": "ZblhWr0mqMakCPg.N"
               }
             ]
           },
@@ -456,7 +456,7 @@
             "network": "tcp",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "www.nintendogames.net",
+              "serverName": "ya.ru",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
@@ -485,26 +485,26 @@
         ]
       }
     },
-    "uri": "trojan://4843e94d205f3893f588255a591abe94@153.121.45.139:3076?allowInsecure=1&sni=www.nintendogames.net#%E6%96%B0%E5%8A%A0%E5%9D%A12%7C%40ripaojiedian",
-    "country": "Japan",
-    "country_code": "JP",
-    "city": "Tokyo",
-    "isp": "SAKURA Internet Inc."
+    "uri": "trojan://ZblhWr0mqMakCPg.N@212.193.18.144:36158?security=tls&sni=ya.ru&allowInsecure=true#%E4%BF%84%E7%BD%97%E6%96%AF+V2CROSS.COM",
+    "country": "Finland",
+    "country_code": "FI",
+    "city": "Helsinki",
+    "isp": "Baxet Group Inc."
   },
   {
-    "protocol": "trojan",
-    "address": "153.121.45.139",
-    "ping": 592,
-    "jitter": 646,
-    "download_speed": 2.12,
-    "upload_speed": 4.95,
+    "protocol": "vless",
+    "address": "85.133.204.131",
+    "ping": 256,
+    "jitter": 191,
+    "download_speed": 0.0,
+    "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "153.121.45.139",
+    "ip": "85.133.204.131",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -512,7 +512,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10808,
+          "port": 10801,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -524,28 +524,25 @@
       ],
       "outbounds": [
         {
-          "protocol": "trojan",
+          "protocol": "vless",
           "settings": {
-            "servers": [
+            "vnext": [
               {
-                "address": "153.121.45.139",
-                "port": 544,
-                "password": "4843e94d205f3893f588255a591abe94"
+                "address": "85.133.204.131",
+                "port": 2024,
+                "users": [
+                  {
+                    "id": "efdd92c0-c32d-4039-a564-374abaa5d8ce",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
               }
             ]
           },
           "streamSettings": {
             "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "www.nintendogames.net",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
+            "security": "none"
           },
           "tag": "proxy"
         },
@@ -567,10 +564,10 @@
         ]
       }
     },
-    "uri": "trojan://4843e94d205f3893f588255a591abe94@153.121.45.139:544?allowInsecure=0&sni=www.nintendogames.net#%E6%96%B0%E5%8A%A0%E5%9D%A1%7C%40ripaojiedian",
-    "country": "Japan",
-    "country_code": "JP",
-    "city": "Tokyo",
-    "isp": "SAKURA Internet Inc."
+    "uri": "vless://efdd92c0-c32d-4039-a564-374abaa5d8ce@85.133.204.131:2024?security=none&encryption=none&headerType=none&type=tcp#%E4%BC%8A%E6%9C%97+V2CROSS.COM",
+    "country": "Iran",
+    "country_code": "IR",
+    "city": "Tehran",
+    "isp": "FanAvaran Mihan Mizban PJSC"
   }
 ]
