@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 116ms
+- name: VMESS-1 | 117ms
   type: vmess
   server: 47.251.91.241
   port: 42899
@@ -13,87 +13,56 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: SHADOWSOCKS-2 | 180ms
-  type: ss
-  server: 82.38.31.218
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-3 | 211ms
-  type: ss
-  server: 45.83.20.206
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: g5RQoxQuVtnFv3Xxsa8edPisXNPnyWKy
-- name: VLESS-4 | 294ms
-  type: vless
-  server: 85.192.48.50
-  port: 443
-  uuid: 02fb468f-21f2-460e-bfa1-ef52ae5e627f
-  network: tcp
-  tls: true
-  servername: 85.192.48.50
-- name: VMESS-5 | 448ms
+- name: VMESS-2 | 184ms
   type: vmess
-  server: 89.31.120.192
+  server: 217.69.5.32
   port: 443
-  uuid: 44537595-9ccc-4b83-8936-5f9ad3229019
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-6 | 117ms
+- name: VMESS-3 | 185ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-7 | 114ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-8 | 549ms
-  type: vmess
-  server: sy4.620720.xyz
+  server: 217.69.5.32
   port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
   alterId: 0
   cipher: auto
-  network: ws
-  tls: true
-  servername: sy4.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
+  network: tcp
+- name: VMESS-4 | 175ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 281ms
+  type: vmess
+  server: 45.89.52.207
+  port: 39651
+  uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
+  alterId: 0
+  cipher: auto
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 116ms
-  - SHADOWSOCKS-2 | 180ms
-  - SHADOWSOCKS-3 | 211ms
-  - VLESS-4 | 294ms
-  - VMESS-5 | 448ms
-  - VMESS-6 | 117ms
-  - VMESS-7 | 114ms
-  - VMESS-8 | 549ms
+  - VMESS-1 | 117ms
+  - VMESS-2 | 184ms
+  - VMESS-3 | 185ms
+  - VMESS-4 | 175ms
+  - VMESS-5 | 281ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 116ms
-  - SHADOWSOCKS-2 | 180ms
-  - SHADOWSOCKS-3 | 211ms
-  - VLESS-4 | 294ms
-  - VMESS-5 | 448ms
-  - VMESS-6 | 117ms
-  - VMESS-7 | 114ms
-  - VMESS-8 | 549ms
+  - VMESS-1 | 117ms
+  - VMESS-2 | 184ms
+  - VMESS-3 | 185ms
+  - VMESS-4 | 175ms
+  - VMESS-5 | 281ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
