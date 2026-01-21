@@ -5,13 +5,13 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 9ms
+- name: SHADOWSOCKS-1 | 10ms
   type: ss
   server: 173.234.29.2
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-2 | 40ms
+- name: SHADOWSOCKS-2 | 29ms
   type: ss
   server: 79.127.200.169
   port: 990
@@ -23,19 +23,19 @@ proxies:
   port: 443
   cipher: chacha20-ietf-poly1305
   password: SS2QvbC9nqLp2sXXZo0BVy4slcErRuCt
-- name: SHADOWSOCKS-4 | 42ms
+- name: SHADOWSOCKS-4 | 43ms
+  type: ss
+  server: 156.146.38.168
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-5 | 46ms
   type: ss
   server: 156.146.38.170
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: SHADOWSOCKS-5 | 42ms
-  type: ss
-  server: 156.146.38.169
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-6 | 42ms
+- name: SHADOWSOCKS-6 | 44ms
   type: ss
   server: 156.146.38.167
   port: 443
@@ -43,11 +43,11 @@ proxies:
   password: shadowsocks
 - name: SHADOWSOCKS-7 | 42ms
   type: ss
-  server: 156.146.38.168
+  server: 156.146.38.169
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: SHADOWSOCKS-8 | 86ms
+- name: SHADOWSOCKS-8 | 83ms
   type: ss
   server: 173.244.56.6
   port: 443
@@ -58,25 +58,25 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 9ms
-  - SHADOWSOCKS-2 | 40ms
+  - SHADOWSOCKS-1 | 10ms
+  - SHADOWSOCKS-2 | 29ms
   - SHADOWSOCKS-3 | 44ms
-  - SHADOWSOCKS-4 | 42ms
-  - SHADOWSOCKS-5 | 42ms
-  - SHADOWSOCKS-6 | 42ms
+  - SHADOWSOCKS-4 | 43ms
+  - SHADOWSOCKS-5 | 46ms
+  - SHADOWSOCKS-6 | 44ms
   - SHADOWSOCKS-7 | 42ms
-  - SHADOWSOCKS-8 | 86ms
+  - SHADOWSOCKS-8 | 83ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 9ms
-  - SHADOWSOCKS-2 | 40ms
+  - SHADOWSOCKS-1 | 10ms
+  - SHADOWSOCKS-2 | 29ms
   - SHADOWSOCKS-3 | 44ms
-  - SHADOWSOCKS-4 | 42ms
-  - SHADOWSOCKS-5 | 42ms
-  - SHADOWSOCKS-6 | 42ms
+  - SHADOWSOCKS-4 | 43ms
+  - SHADOWSOCKS-5 | 46ms
+  - SHADOWSOCKS-6 | 44ms
   - SHADOWSOCKS-7 | 42ms
-  - SHADOWSOCKS-8 | 86ms
+  - SHADOWSOCKS-8 | 83ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
