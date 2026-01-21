@@ -5,67 +5,43 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 70ms
+- name: VMESS-1 | 124ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
   alterId: 0
   cipher: auto
   network: tcp
-- name: TROJAN-2 | 498ms
-  type: trojan
-  server: 58.152.18.124
-  port: 443
-  password: 4843e94d205f3893f588255a591abe94
-  sni: www.nintendogames.net
-- name: TROJAN-3 | 443ms
-  type: trojan
-  server: 58.152.18.124
-  port: 443
-  password: 4843e94d205f3893f588255a591abe94
-  sni: 58.152.18.124
-- name: TROJAN-4 | 513ms
-  type: trojan
-  server: green2.cdntencentmusic.com
-  port: 31102
-  password: 9ab8fa39-7e45-43b1-8572-378fc62fe801
-  sni: green2.cdntencentmusic.com
-- name: TROJAN-5 | 490ms
-  type: trojan
-  server: green2.cdntencentmusic.com
-  port: 31102
-  password: 01c7c307-2ae3-4c9e-bfa2-d64b8a2f5e44
-  sni: green2.cdntencentmusic.com
-- name: TROJAN-6 | 834ms
-  type: trojan
-  server: green2.cdntencentmusic.com
-  port: 31102
-  password: efe9d5fc-823d-43d5-baef-9bc1fb0e651d
-  sni: green2.cdntencentmusic.com
-- name: TROJAN-7 | 478ms
-  type: trojan
-  server: green2.cdntencentmusic.com
-  port: 31102
-  password: a21089f4-d7b7-40fe-80db-cf483ff8e6c6
-  sni: green2.cdntencentmusic.com
-- name: TROJAN-8 | 694ms
-  type: trojan
-  server: green2.cdntencentmusic.com
-  port: 31102
-  password: 57d69288-b782-4798-81d6-64b13777549a
-  sni: green2.cdntencentmusic.com
-- name: TROJAN-9 | 644ms
-  type: trojan
-  server: green2.cdntencentmusic.com
-  port: 31102
-  password: 27c8cb66-d0c0-4a87-8ef6-177e12f70c80
-  sni: green2.cdntencentmusic.com
-- name: VMESS-10 | 1423ms
+- name: VMESS-2 | 199ms
   type: vmess
-  server: 23.138.148.47
-  port: 42507
-  uuid: 4db07b13-6524-49d2-b432-1f312c0e9c7c
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 182ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 287ms
+  type: vmess
+  server: 45.89.52.207
+  port: 39651
+  uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 191ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
   alterId: 0
   cipher: auto
   network: tcp
@@ -74,29 +50,19 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 70ms
-  - TROJAN-2 | 498ms
-  - TROJAN-3 | 443ms
-  - TROJAN-4 | 513ms
-  - TROJAN-5 | 490ms
-  - TROJAN-6 | 834ms
-  - TROJAN-7 | 478ms
-  - TROJAN-8 | 694ms
-  - TROJAN-9 | 644ms
-  - VMESS-10 | 1423ms
+  - VMESS-1 | 124ms
+  - VMESS-2 | 199ms
+  - VMESS-3 | 182ms
+  - VMESS-4 | 287ms
+  - VMESS-5 | 191ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 70ms
-  - TROJAN-2 | 498ms
-  - TROJAN-3 | 443ms
-  - TROJAN-4 | 513ms
-  - TROJAN-5 | 490ms
-  - TROJAN-6 | 834ms
-  - TROJAN-7 | 478ms
-  - TROJAN-8 | 694ms
-  - TROJAN-9 | 644ms
-  - VMESS-10 | 1423ms
+  - VMESS-1 | 124ms
+  - VMESS-2 | 199ms
+  - VMESS-3 | 182ms
+  - VMESS-4 | 287ms
+  - VMESS-5 | 191ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
