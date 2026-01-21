@@ -5,62 +5,69 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 224ms
-  type: vless
-  server: 91.84.101.227
-  port: 443
-  uuid: 94b14627-b624-4518-b9b6-9a3aae70f3ac
-  network: tcp
-- name: SHADOWSOCKS-2 | 203ms
+- name: SHADOWSOCKS-1 | 435ms
   type: ss
-  server: 57.129.95.38
-  port: 11201
+  server: 23.95.76.59
+  port: 990
   cipher: chacha20-ietf-poly1305
-  password: f54cdee10f8b25ce
-- name: SHADOWSOCKS-3 | 611ms
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-2 | 337ms
   type: ss
-  server: 212.34.140.184
-  port: 443
+  server: 45.154.204.7
+  port: 990
   cipher: chacha20-ietf-poly1305
-  password: 0NeN5ta7FLa5B9DLytU0um
-- name: VLESS-4 | 315ms
-  type: vless
-  server: 46.62.128.207
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: TROJAN-3 | 326ms
+  type: trojan
+  server: 80.173.230.196
+  port: 26279
+  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
+  sni: 80.173.230.196
+- name: VMESS-4 | 492ms
+  type: vmess
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: t1.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: TROJAN-5 | 421ms
+  type: trojan
+  server: 58.152.18.124
   port: 443
-  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
-  network: tcp
-- name: SHADOWSOCKS-5 | 308ms
-  type: ss
-  server: 90.156.203.62
-  port: 5112
-  cipher: chacha20-ietf-poly1305
-  password: VVlAff77CnAU43Aoc5j15Y
-- name: VLESS-6 | 667ms
-  type: vless
-  server: 51.250.35.199
+  password: 4843e94d205f3893f588255a591abe94
+  sni: www.nintendogames.net
+- name: TROJAN-6 | 462ms
+  type: trojan
+  server: 58.152.53.219
   port: 443
-  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
-  network: tcp
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 224ms
-  - SHADOWSOCKS-2 | 203ms
-  - SHADOWSOCKS-3 | 611ms
-  - VLESS-4 | 315ms
-  - SHADOWSOCKS-5 | 308ms
-  - VLESS-6 | 667ms
+  - SHADOWSOCKS-1 | 435ms
+  - SHADOWSOCKS-2 | 337ms
+  - TROJAN-3 | 326ms
+  - VMESS-4 | 492ms
+  - TROJAN-5 | 421ms
+  - TROJAN-6 | 462ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 224ms
-  - SHADOWSOCKS-2 | 203ms
-  - SHADOWSOCKS-3 | 611ms
-  - VLESS-4 | 315ms
-  - SHADOWSOCKS-5 | 308ms
-  - VLESS-6 | 667ms
+  - SHADOWSOCKS-1 | 435ms
+  - SHADOWSOCKS-2 | 337ms
+  - TROJAN-3 | 326ms
+  - VMESS-4 | 492ms
+  - TROJAN-5 | 421ms
+  - TROJAN-6 | 462ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
