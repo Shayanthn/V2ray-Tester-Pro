@@ -5,80 +5,70 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 310ms
+- name: SHADOWSOCKS-1 | 31ms
   type: ss
-  server: 45.12.136.170
+  server: 173.244.56.6
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-2 | 77ms
+  type: ss
+  server: 156.146.38.170
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-3 | 75ms
+  type: ss
+  server: 156.146.38.169
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-4 | 80ms
+  type: ss
+  server: 156.146.38.167
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-5 | 70ms
+  type: ss
+  server: 156.146.38.168
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-6 | 85ms
+  type: ss
+  server: 173.234.29.2
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-7 | 125ms
+  type: ss
+  server: 103.35.189.136
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: l668XHPejoSNNuD66BYzyehaCpZexiF7
-- name: VLESS-2 | 379ms
-  type: vless
-  server: 85.192.48.50
-  port: 443
-  uuid: 02fb468f-21f2-460e-bfa1-ef52ae5e627f
-  network: tcp
-  tls: true
-  servername: 85.192.48.50
-- name: SHADOWSOCKS-3 | 496ms
-  type: ss
-  server: 154.26.156.99
-  port: 47386
-  cipher: chacha20-ietf-poly1305
-  password: 78322e4b934870b6
-- name: TROJAN-4 | 364ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: SHADOWSOCKS-5 | 349ms
-  type: ss
-  server: 93.114.98.102
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: bed61f51dfec961a
-- name: TROJAN-6 | 376ms
-  type: trojan
-  server: 80.173.230.196
-  port: 26279
-  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
-  sni: 80.173.230.196
-- name: SHADOWSOCKS-7 | 274ms
-  type: ss
-  server: 158.220.80.123
-  port: 48436
-  cipher: chacha20-ietf-poly1305
-  password: a42c27bea19fc4db
-- name: VLESS-8 | 257ms
-  type: vless
-  server: 185.221.222.202
-  port: 31779
-  uuid: 052df1a5-f53f-46dc-8aeb-7ed893310551
-  network: tcp
+  password: SS2QvbC9nqLp2sXXZo0BVy4slcErRuCt
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 310ms
-  - VLESS-2 | 379ms
-  - SHADOWSOCKS-3 | 496ms
-  - TROJAN-4 | 364ms
-  - SHADOWSOCKS-5 | 349ms
-  - TROJAN-6 | 376ms
-  - SHADOWSOCKS-7 | 274ms
-  - VLESS-8 | 257ms
+  - SHADOWSOCKS-1 | 31ms
+  - SHADOWSOCKS-2 | 77ms
+  - SHADOWSOCKS-3 | 75ms
+  - SHADOWSOCKS-4 | 80ms
+  - SHADOWSOCKS-5 | 70ms
+  - SHADOWSOCKS-6 | 85ms
+  - SHADOWSOCKS-7 | 125ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 310ms
-  - VLESS-2 | 379ms
-  - SHADOWSOCKS-3 | 496ms
-  - TROJAN-4 | 364ms
-  - SHADOWSOCKS-5 | 349ms
-  - TROJAN-6 | 376ms
-  - SHADOWSOCKS-7 | 274ms
-  - VLESS-8 | 257ms
+  - SHADOWSOCKS-1 | 31ms
+  - SHADOWSOCKS-2 | 77ms
+  - SHADOWSOCKS-3 | 75ms
+  - SHADOWSOCKS-4 | 80ms
+  - SHADOWSOCKS-5 | 70ms
+  - SHADOWSOCKS-6 | 85ms
+  - SHADOWSOCKS-7 | 125ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:

@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10819,
+        "port": 10803,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -22,14 +22,14 @@
         "settings": {
           "servers": [
             {
-              "address": "45.12.136.170",
+              "address": "173.244.56.6",
               "port": 443,
-              "method": "chacha20-ietf-poly1305",
-              "password": "l668XHPejoSNNuD66BYzyehaCpZexiF7"
+              "method": "aes-128-gcm",
+              "password": "shadowsocks"
             }
           ]
         },
-        "tag": "欧盟+V2CROSS.COM"
+        "tag": "🇺🇸US-173.244.56.6-0435"
       },
       {
         "protocol": "freedom",
@@ -56,7 +56,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10817,
+        "port": 10812,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -68,36 +68,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "85.192.48.50",
+              "address": "156.146.38.170",
               "port": 443,
-              "users": [
-                {
-                  "id": "02fb468f-21f2-460e-bfa1-ef52ae5e627f",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
+              "method": "aes-128-gcm",
+              "password": "shadowsocks"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "85.192.48.50",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        },
-        "tag": "proxy"
+        "tag": "🇺🇸US-156.146.38.170-0436"
       },
       {
         "protocol": "freedom",
@@ -124,7 +106,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10814,
+        "port": 10803,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -140,14 +122,64 @@
         "settings": {
           "servers": [
             {
-              "address": "154.26.156.99",
-              "port": 47386,
-              "method": "chacha20-ietf-poly1305",
-              "password": "78322e4b934870b6"
+              "address": "156.146.38.169",
+              "port": 443,
+              "method": "aes-128-gcm",
+              "password": "shadowsocks"
             }
           ]
         },
-        "tag": "美国+V2CROSS.COM"
+        "tag": "🇺🇸US-156.146.38.169-0439"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10816,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "156.146.38.167",
+              "port": 443,
+              "method": "aes-128-gcm",
+              "password": "shadowsocks"
+            }
+          ]
+        },
+        "tag": "🇺🇸US-156.146.38.167-0440"
       },
       {
         "protocol": "freedom",
@@ -186,30 +218,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "trojan",
+        "protocol": "shadowsocks",
         "settings": {
           "servers": [
             {
-              "address": "80.173.231.254",
-              "port": 12420,
-              "password": "wp9IsiY82uQhcmgNC1eoBM"
+              "address": "156.146.38.168",
+              "port": 443,
+              "method": "aes-128-gcm",
+              "password": "shadowsocks"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "www.semanticstaplegun.click",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        },
-        "tag": "proxy"
+        "tag": "🇺🇸US-156.146.38.168-0437"
       },
       {
         "protocol": "freedom",
@@ -236,7 +256,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10810,
+        "port": 10809,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -252,14 +272,14 @@
         "settings": {
           "servers": [
             {
-              "address": "93.114.98.102",
-              "port": 11201,
+              "address": "173.234.29.2",
+              "port": 990,
               "method": "chacha20-ietf-poly1305",
-              "password": "bed61f51dfec961a"
+              "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
             }
           ]
         },
-        "tag": "罗马尼亚+V2CROSS.COM"
+        "tag": "🇺🇸US-173.234.29.2-0444"
       },
       {
         "protocol": "freedom",
@@ -286,69 +306,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10802,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "trojan",
-        "settings": {
-          "servers": [
-            {
-              "address": "80.173.230.196",
-              "port": 26279,
-              "password": "a5inYFE=JGV89+hjxIqgDp1tcWBd6"
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "80.173.230.196",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10807,
+        "port": 10803,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -364,73 +322,14 @@
         "settings": {
           "servers": [
             {
-              "address": "158.220.80.123",
-              "port": 48436,
+              "address": "103.35.189.136",
+              "port": 443,
               "method": "chacha20-ietf-poly1305",
-              "password": "a42c27bea19fc4db"
+              "password": "SS2QvbC9nqLp2sXXZo0BVy4slcErRuCt"
             }
           ]
         },
-        "tag": "瑞士+V2CROSS.COM"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10806,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "185.221.222.202",
-              "port": 31779,
-              "users": [
-                {
-                  "id": "052df1a5-f53f-46dc-8aeb-7ed893310551",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "none"
-        },
-        "tag": "proxy"
+        "tag": "🇲🇩MD-103.35.189.136-0445"
       },
       {
         "protocol": "freedom",
