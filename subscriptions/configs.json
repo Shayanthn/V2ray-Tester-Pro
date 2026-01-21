@@ -6,6 +6,78 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "91.84.101.227",
+              "port": 443,
+              "users": [
+                {
+                  "id": "94b14627-b624-4518-b9b6-9a3aae70f3ac",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "trialdays.store",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
+            "shortId": "",
+            "spiderX": "/"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
         "port": 10816,
         "protocol": "http",
         "settings": {
@@ -18,27 +90,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "pqh29v3.globalfymain.com",
-              "port": 8880,
-              "users": [
-                {
-                  "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
+              "address": "57.129.95.38",
+              "port": 11201,
+              "method": "chacha20-ietf-poly1305",
+              "password": "f54cdee10f8b25ce"
             }
           ]
         },
-        "streamSettings": {
-          "network": "grpc",
-          "security": "none"
-        },
-        "tag": "proxy"
+        "tag": "🌐سرور"
       },
       {
         "protocol": "freedom",
@@ -65,7 +128,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10806,
+        "port": 10818,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -77,27 +140,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "45.82.251.95",
-              "port": 8880,
-              "users": [
-                {
-                  "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
+              "address": "212.34.140.184",
+              "port": 443,
+              "method": "chacha20-ietf-poly1305",
+              "password": "0NeN5ta7FLa5B9DLytU0um"
             }
           ]
         },
-        "streamSettings": {
-          "network": "grpc",
-          "security": "none"
-        },
-        "tag": "proxy"
+        "tag": "🌐سرور"
       },
       {
         "protocol": "freedom",
@@ -124,7 +178,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10815,
+        "port": 10804,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -140,11 +194,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "144.31.0.65",
-              "port": 7443,
+              "address": "46.62.128.207",
+              "port": 443,
               "users": [
                 {
-                  "id": "87d58e85-a4b3-4187-9fb7-6f0a73b21a6b",
+                  "id": "309fa273-6579-4cb2-9143-7cad50401eba",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -156,7 +210,7 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "fastt.overload.ovh",
+            "serverName": "www.cloudflare.com",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
@@ -164,8 +218,8 @@
               "http/1.1"
             ],
             "show": false,
-            "publicKey": "J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs",
-            "shortId": "a20d3ed244c76426",
+            "publicKey": "gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY",
+            "shortId": "7cad5040",
             "spiderX": "/"
           }
         },
@@ -196,7 +250,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10819,
+        "port": 10801,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -208,40 +262,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "45.12.28.171",
-              "port": 443,
-              "users": [
-                {
-                  "id": "7f309339-ce9f-4c45-8fd9-de9846ffc9d4",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
+              "address": "90.156.203.62",
+              "port": 5112,
+              "method": "chacha20-ietf-poly1305",
+              "password": "VVlAff77CnAU43Aoc5j15Y"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "google.com",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ],
-            "show": false,
-            "publicKey": "qFBIVGsvXTMeJcdJz6GiL7DG0XNhCg7rItza7t0qTgU",
-            "shortId": "9eb31eb7572c0882",
-            "spiderX": "/"
-          }
-        },
-        "tag": "proxy"
+        "tag": "🌐سرور"
       },
       {
         "protocol": "freedom",
@@ -268,7 +300,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10817,
+        "port": 10802,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -284,11 +316,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "144.31.66.240",
+              "address": "51.250.35.199",
               "port": 443,
               "users": [
                 {
-                  "id": "87d58e85-a4b3-4187-9fb7-6f0a73b21a6b",
+                  "id": "95abaefc-7861-417a-81b7-166cb788ce1a",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -300,7 +332,7 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "reserve.ayagut.ovh",
+            "serverName": "eh.vk.com",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
@@ -308,8 +340,8 @@
               "http/1.1"
             ],
             "show": false,
-            "publicKey": "BAV9Syg0Gh9EpcKqOzxMD7qveljeNp0WqrjJrnQxoQA",
-            "shortId": "d61d02c4ce0222e2",
+            "publicKey": "Uwz6QjH6QTonKba4RVv35LNmhJLA6c2kxtI2nXRQWTg",
+            "shortId": "2c60d62e1d95c07a",
             "spiderX": "/"
           }
         },

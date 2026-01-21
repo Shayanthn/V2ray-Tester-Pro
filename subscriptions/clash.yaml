@@ -5,54 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 166ms
+- name: VLESS-1 | 224ms
   type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 151ms
-  type: vless
-  server: 45.82.251.95
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-3 | 366ms
-  type: vless
-  server: 144.31.0.65
-  port: 7443
-  uuid: 87d58e85-a4b3-4187-9fb7-6f0a73b21a6b
-  network: tcp
-- name: VLESS-4 | 504ms
-  type: vless
-  server: 45.12.28.171
+  server: 91.84.101.227
   port: 443
-  uuid: 7f309339-ce9f-4c45-8fd9-de9846ffc9d4
+  uuid: 94b14627-b624-4518-b9b6-9a3aae70f3ac
   network: tcp
-- name: VLESS-5 | 1228ms
-  type: vless
-  server: 144.31.66.240
+- name: SHADOWSOCKS-2 | 203ms
+  type: ss
+  server: 57.129.95.38
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: f54cdee10f8b25ce
+- name: SHADOWSOCKS-3 | 611ms
+  type: ss
+  server: 212.34.140.184
   port: 443
-  uuid: 87d58e85-a4b3-4187-9fb7-6f0a73b21a6b
+  cipher: chacha20-ietf-poly1305
+  password: 0NeN5ta7FLa5B9DLytU0um
+- name: VLESS-4 | 315ms
+  type: vless
+  server: 46.62.128.207
+  port: 443
+  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
+  network: tcp
+- name: SHADOWSOCKS-5 | 308ms
+  type: ss
+  server: 90.156.203.62
+  port: 5112
+  cipher: chacha20-ietf-poly1305
+  password: VVlAff77CnAU43Aoc5j15Y
+- name: VLESS-6 | 667ms
+  type: vless
+  server: 51.250.35.199
+  port: 443
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
   network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 166ms
-  - VLESS-2 | 151ms
-  - VLESS-3 | 366ms
-  - VLESS-4 | 504ms
-  - VLESS-5 | 1228ms
+  - VLESS-1 | 224ms
+  - SHADOWSOCKS-2 | 203ms
+  - SHADOWSOCKS-3 | 611ms
+  - VLESS-4 | 315ms
+  - SHADOWSOCKS-5 | 308ms
+  - VLESS-6 | 667ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 166ms
-  - VLESS-2 | 151ms
-  - VLESS-3 | 366ms
-  - VLESS-4 | 504ms
-  - VLESS-5 | 1228ms
+  - VLESS-1 | 224ms
+  - SHADOWSOCKS-2 | 203ms
+  - SHADOWSOCKS-3 | 611ms
+  - VLESS-4 | 315ms
+  - SHADOWSOCKS-5 | 308ms
+  - VLESS-6 | 667ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
