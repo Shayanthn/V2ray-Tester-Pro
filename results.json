@@ -2,10 +2,10 @@
   {
     "protocol": "vmess",
     "address": "82.198.246.97",
-    "ping": 93,
-    "jitter": 98,
-    "download_speed": 51.54,
-    "upload_speed": 2.0,
+    "ping": 70,
+    "jitter": 0,
+    "download_speed": 157.76,
+    "upload_speed": 78.57,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -20,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10814,
+          "port": 10819,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -81,9 +81,9 @@
   {
     "protocol": "trojan",
     "address": "58.152.18.124",
-    "ping": 1511,
-    "jitter": 2291,
-    "download_speed": 2.95,
+    "ping": 443,
+    "jitter": 488,
+    "download_speed": 12.15,
     "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
@@ -99,89 +99,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10812,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "58.152.18.124",
-                "port": 443,
-                "password": "4843e94d205f3893f588255a591abe94"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "www.nintendogames.net",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://4843e94d205f3893f588255a591abe94@58.152.18.124:443?allowInsecure=1&sni=www.nintendogames.net#HK61%EF%BD%9C%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
-    "country": "Hong Kong",
-    "country_code": "HK",
-    "city": "Tsui Wan Estate",
-    "isp": "Hong Kong Telecommunications (HKT) Limited Mass Internet"
-  },
-  {
-    "protocol": "trojan",
-    "address": "58.152.18.124",
-    "ping": 1511,
-    "jitter": 2289,
-    "download_speed": 3.04,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "58.152.18.124",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10815,
+          "port": 10809,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -244,10 +162,10 @@
   },
   {
     "protocol": "trojan",
-    "address": "green2.cdntencentmusic.com",
-    "ping": 602,
-    "jitter": 439,
-    "download_speed": 0.36,
+    "address": "58.152.18.124",
+    "ping": 498,
+    "jitter": 585,
+    "download_speed": 12.22,
     "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
@@ -255,7 +173,7 @@
       "instagram": true,
       "youtube": true
     },
-    "ip": "green2.cdntencentmusic.com",
+    "ip": "58.152.18.124",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -263,7 +181,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10816,
+          "port": 10815,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -279,9 +197,9 @@
           "settings": {
             "servers": [
               {
-                "address": "green2.cdntencentmusic.com",
-                "port": 31103,
-                "password": "b3c721c4-3c1d-4a87-bdce-9d11f8c57b96"
+                "address": "58.152.18.124",
+                "port": 443,
+                "password": "4843e94d205f3893f588255a591abe94"
               }
             ]
           },
@@ -289,7 +207,7 @@
             "network": "tcp",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "green2.cdntencentmusic.com",
+              "serverName": "www.nintendogames.net",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
@@ -318,188 +236,24 @@
         ]
       }
     },
-    "uri": "trojan://b3c721c4-3c1d-4a87-bdce-9d11f8c57b96@green2.cdntencentmusic.com:31103?allowInsecure=1&sni=green2.cdntencentmusic.com#HK64%EF%BD%9C%E5%8E%9F%E7%94%9F/%E7%96%91%E4%BC%BC%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
-    "country": "Taiwan",
-    "country_code": "TW",
-    "city": "Yunlin",
-    "isp": "Chunghwa Telecom Co., Ltd."
-  },
-  {
-    "protocol": "trojan",
-    "address": "green2.cdntencentmusic.com",
-    "ping": 607,
-    "jitter": 618,
-    "download_speed": 0.0,
-    "upload_speed": 1.47,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "green2.cdntencentmusic.com",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10817,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "green2.cdntencentmusic.com",
-                "port": 31103,
-                "password": "a21089f4-d7b7-40fe-80db-cf483ff8e6c6"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "green2.cdntencentmusic.com",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://a21089f4-d7b7-40fe-80db-cf483ff8e6c6@green2.cdntencentmusic.com:31103?allowInsecure=1&sni=green2.cdntencentmusic.com#HK65%EF%BD%9C%E5%8E%9F%E7%94%9F/%E7%96%91%E4%BC%BC%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
-    "country": "Taiwan",
-    "country_code": "TW",
-    "city": "Yunlin",
-    "isp": "Chunghwa Telecom Co., Ltd."
-  },
-  {
-    "protocol": "trojan",
-    "address": "tuntro011.instconn.com",
-    "ping": 1203,
-    "jitter": 996,
-    "download_speed": 3.51,
-    "upload_speed": 3.19,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "tuntro011.instconn.com",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10809,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "tuntro011.instconn.com",
-                "port": 40130,
-                "password": "30077070-596e-48ea-9400-14c8ed07bd97"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "cntwbta.686911.xyz",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://30077070-596e-48ea-9400-14c8ed07bd97@tuntro011.instconn.com:40130?allowInsecure=1&sni=cntwbta.686911.xyz#TW2%EF%BD%9C%E5%95%86%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
-    "country": "Taiwan",
-    "country_code": "TW",
-    "city": "Taipei",
-    "isp": "Chunghwa Telecom Co., Ltd."
+    "uri": "trojan://4843e94d205f3893f588255a591abe94@58.152.18.124:443?allowInsecure=1&sni=www.nintendogames.net#HK61%EF%BD%9C%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
+    "country": "Hong Kong",
+    "country_code": "HK",
+    "city": "Tsui Wan Estate",
+    "isp": "Hong Kong Telecommunications (HKT) Limited Mass Internet"
   },
   {
     "protocol": "vmess",
     "address": "23.138.148.47",
-    "ping": 797,
-    "jitter": 1257,
-    "download_speed": 0.95,
+    "ping": 1423,
+    "jitter": 2371,
+    "download_speed": 0.0,
     "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
-      "telegram": true,
+      "telegram": false,
       "instagram": true,
-      "youtube": true
+      "youtube": false
     },
     "ip": "23.138.148.47",
     "config_json": {
@@ -509,7 +263,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10807,
+          "port": 10819,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -566,5 +320,497 @@
     "country_code": "US",
     "city": "Denver",
     "isp": "Fastnet Data Inc"
+  },
+  {
+    "protocol": "trojan",
+    "address": "green2.cdntencentmusic.com",
+    "ping": 694,
+    "jitter": 684,
+    "download_speed": 0.35,
+    "upload_speed": 2.5,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "green2.cdntencentmusic.com",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10811,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "green2.cdntencentmusic.com",
+                "port": 31102,
+                "password": "57d69288-b782-4798-81d6-64b13777549a"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "green2.cdntencentmusic.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://57d69288-b782-4798-81d6-64b13777549a@green2.cdntencentmusic.com:31102?allowInsecure=1&sni=green2.cdntencentmusic.com#HK80%EF%BD%9C%E5%8E%9F%E7%94%9F/%E7%96%91%E4%BC%BC%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
+    "country": "Taiwan",
+    "country_code": "TW",
+    "city": "Yunlin",
+    "isp": "Chunghwa Telecom Co., Ltd."
+  },
+  {
+    "protocol": "trojan",
+    "address": "green2.cdntencentmusic.com",
+    "ping": 834,
+    "jitter": 667,
+    "download_speed": 0.36,
+    "upload_speed": 2.62,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "green2.cdntencentmusic.com",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10800,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "green2.cdntencentmusic.com",
+                "port": 31102,
+                "password": "efe9d5fc-823d-43d5-baef-9bc1fb0e651d"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "green2.cdntencentmusic.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://efe9d5fc-823d-43d5-baef-9bc1fb0e651d@green2.cdntencentmusic.com:31102?allowInsecure=1&sni=green2.cdntencentmusic.com#HK79%EF%BD%9C%E5%8E%9F%E7%94%9F/%E7%96%91%E4%BC%BC%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
+    "country": "Taiwan",
+    "country_code": "TW",
+    "city": "Yunlin",
+    "isp": "Chunghwa Telecom Co., Ltd."
+  },
+  {
+    "protocol": "trojan",
+    "address": "green2.cdntencentmusic.com",
+    "ping": 490,
+    "jitter": 422,
+    "download_speed": 0.37,
+    "upload_speed": 1.78,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "green2.cdntencentmusic.com",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10814,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "green2.cdntencentmusic.com",
+                "port": 31102,
+                "password": "01c7c307-2ae3-4c9e-bfa2-d64b8a2f5e44"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "green2.cdntencentmusic.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://01c7c307-2ae3-4c9e-bfa2-d64b8a2f5e44@green2.cdntencentmusic.com:31102?allowInsecure=1&sni=green2.cdntencentmusic.com#HK71%EF%BD%9C%E5%8E%9F%E7%94%9F/%E7%96%91%E4%BC%BC%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
+    "country": "Taiwan",
+    "country_code": "TW",
+    "city": "Yunlin",
+    "isp": "Chunghwa Telecom Co., Ltd."
+  },
+  {
+    "protocol": "trojan",
+    "address": "green2.cdntencentmusic.com",
+    "ping": 513,
+    "jitter": 456,
+    "download_speed": 0.39,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "green2.cdntencentmusic.com",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10807,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "green2.cdntencentmusic.com",
+                "port": 31102,
+                "password": "9ab8fa39-7e45-43b1-8572-378fc62fe801"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "green2.cdntencentmusic.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://9ab8fa39-7e45-43b1-8572-378fc62fe801@green2.cdntencentmusic.com:31102?allowInsecure=1&sni=green2.cdntencentmusic.com#HK74%EF%BD%9C%E5%8E%9F%E7%94%9F/%E7%96%91%E4%BC%BC%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
+    "country": "Taiwan",
+    "country_code": "TW",
+    "city": "Yunlin",
+    "isp": "Chunghwa Telecom Co., Ltd."
+  },
+  {
+    "protocol": "trojan",
+    "address": "green2.cdntencentmusic.com",
+    "ping": 478,
+    "jitter": 484,
+    "download_speed": 0.36,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "green2.cdntencentmusic.com",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10804,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "green2.cdntencentmusic.com",
+                "port": 31102,
+                "password": "a21089f4-d7b7-40fe-80db-cf483ff8e6c6"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "green2.cdntencentmusic.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://a21089f4-d7b7-40fe-80db-cf483ff8e6c6@green2.cdntencentmusic.com:31102?allowInsecure=1&sni=green2.cdntencentmusic.com#HK73%EF%BD%9C%E5%8E%9F%E7%94%9F/%E7%96%91%E4%BC%BC%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
+    "country": "Taiwan",
+    "country_code": "TW",
+    "city": "Yunlin",
+    "isp": "Chunghwa Telecom Co., Ltd."
+  },
+  {
+    "protocol": "trojan",
+    "address": "green2.cdntencentmusic.com",
+    "ping": 644,
+    "jitter": 430,
+    "download_speed": 0.35,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "green2.cdntencentmusic.com",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10801,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "green2.cdntencentmusic.com",
+                "port": 31102,
+                "password": "27c8cb66-d0c0-4a87-8ef6-177e12f70c80"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "green2.cdntencentmusic.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://27c8cb66-d0c0-4a87-8ef6-177e12f70c80@green2.cdntencentmusic.com:31102?allowInsecure=1&sni=green2.cdntencentmusic.com#HK76%EF%BD%9C%E5%8E%9F%E7%94%9F/%E7%96%91%E4%BC%BC%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
+    "country": "Taiwan",
+    "country_code": "TW",
+    "city": "Yunlin",
+    "isp": "Chunghwa Telecom Co., Ltd."
   }
 ]
