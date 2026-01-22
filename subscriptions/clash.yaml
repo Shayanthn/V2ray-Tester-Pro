@@ -5,7 +5,37 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 175ms
+- name: VLESS-1 | 39ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VMESS-2 | 124ms
+  type: vmess
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-3 | 145ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 139ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 141ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -13,35 +43,29 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 182ms
-  type: vmess
-  server: 217.69.5.32
+- name: TROJAN-6 | 281ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: VLESS-7 | 203ms
+  type: vless
+  server: 91.107.244.15
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
+  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
+  network: grpc
+- name: VLESS-8 | 302ms
+  type: vless
+  server: 5.182.36.56
+  port: 45886
+  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
   network: tcp
-- name: VMESS-3 | 182ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 279ms
+- name: VMESS-9 | 132ms
   type: vmess
   server: 45.89.52.207
   port: 39651
   uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 121ms
-  type: vmess
-  server: 47.251.91.241
-  port: 42899
-  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
   alterId: 0
   cipher: auto
   network: tcp
@@ -50,19 +74,27 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 175ms
-  - VMESS-2 | 182ms
-  - VMESS-3 | 182ms
-  - VMESS-4 | 279ms
-  - VMESS-5 | 121ms
+  - VLESS-1 | 39ms
+  - VMESS-2 | 124ms
+  - VMESS-3 | 145ms
+  - VMESS-4 | 139ms
+  - VMESS-5 | 141ms
+  - TROJAN-6 | 281ms
+  - VLESS-7 | 203ms
+  - VLESS-8 | 302ms
+  - VMESS-9 | 132ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 175ms
-  - VMESS-2 | 182ms
-  - VMESS-3 | 182ms
-  - VMESS-4 | 279ms
-  - VMESS-5 | 121ms
+  - VLESS-1 | 39ms
+  - VMESS-2 | 124ms
+  - VMESS-3 | 145ms
+  - VMESS-4 | 139ms
+  - VMESS-5 | 141ms
+  - TROJAN-6 | 281ms
+  - VLESS-7 | 203ms
+  - VLESS-8 | 302ms
+  - VMESS-9 | 132ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
