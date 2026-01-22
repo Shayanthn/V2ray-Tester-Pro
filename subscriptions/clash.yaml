@@ -5,136 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 312ms
-  type: trojan
-  server: 45.32.158.138
-  port: 20994
-  password: x.8ur1QiCyzlRHXeaB5UwoDfgZ04s
-  sni: ads.x5.ru
-- name: VLESS-2 | 326ms
-  type: vless
-  server: 45.82.255.32
-  port: 4443
-  uuid: 3f688b2a-373a-4be1-846d-b159404b73b2
+- name: VMESS-1 | 253ms
+  type: vmess
+  server: 217.69.5.32
+  port: 443
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
   network: tcp
-- name: TROJAN-3 | 577ms
-  type: trojan
-  server: 58.152.25.130
+- name: VMESS-2 | 249ms
+  type: vmess
+  server: 217.69.5.32
   port: 443
-  password: BxceQaOe
-  sni: 58.152.25.130
-- name: TROJAN-4 | 370ms
-  type: trojan
-  server: 58.152.25.130
-  port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-- name: VLESS-5 | 1070ms
-  type: vless
-  server: plcdn20.suio.me
-  port: 443
-  uuid: 02fb468f-21f2-460e-bfa1-ef52ae5e627f
+  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  alterId: 0
+  cipher: auto
   network: tcp
-  tls: true
-  servername: plcdn20.suio.me
-- name: TROJAN-6 | 401ms
+- name: VMESS-3 | 341ms
+  type: vmess
+  server: 45.89.52.207
+  port: 39651
+  uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-4 | 254ms
+  type: vmess
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: TROJAN-5 | 438ms
   type: trojan
-  server: 58.152.25.130
-  port: 443
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-- name: TROJAN-7 | 425ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-- name: TROJAN-8 | 416ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-- name: TROJAN-9 | 480ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: '🔒 [By EbraSha] b2n.ir/v2ray-configs | 111 '
-- name: TROJAN-10 | 386ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-- name: TROJAN-11 | 432ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: 🔒+[By+EbraSha]+b2n.ir/v2ray-configs+|+334+
-- name: TROJAN-12 | 421ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: t.me%25252Fripaojiedian
-- name: TROJAN-13 | 391ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: 🔒+[By+EbraSha]+b2n.ir/v2ray-configs+|+111+
-- name: TROJAN-14 | 555ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: '🔒 [By EbraSha] b2n.ir/v2ray-configs | 334 '
-- name: TROJAN-15 | 399ms
-  type: trojan
-  server: 160.16.89.176
-  port: 3076
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  sni: www.nintendogames.net
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 312ms
-  - VLESS-2 | 326ms
-  - TROJAN-3 | 577ms
-  - TROJAN-4 | 370ms
-  - VLESS-5 | 1070ms
-  - TROJAN-6 | 401ms
-  - TROJAN-7 | 425ms
-  - TROJAN-8 | 416ms
-  - TROJAN-9 | 480ms
-  - TROJAN-10 | 386ms
-  - TROJAN-11 | 432ms
-  - TROJAN-12 | 421ms
-  - TROJAN-13 | 391ms
-  - TROJAN-14 | 555ms
-  - TROJAN-15 | 399ms
+  - VMESS-1 | 253ms
+  - VMESS-2 | 249ms
+  - VMESS-3 | 341ms
+  - VMESS-4 | 254ms
+  - TROJAN-5 | 438ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 312ms
-  - VLESS-2 | 326ms
-  - TROJAN-3 | 577ms
-  - TROJAN-4 | 370ms
-  - VLESS-5 | 1070ms
-  - TROJAN-6 | 401ms
-  - TROJAN-7 | 425ms
-  - TROJAN-8 | 416ms
-  - TROJAN-9 | 480ms
-  - TROJAN-10 | 386ms
-  - TROJAN-11 | 432ms
-  - TROJAN-12 | 421ms
-  - TROJAN-13 | 391ms
-  - TROJAN-14 | 555ms
-  - TROJAN-15 | 399ms
+  - VMESS-1 | 253ms
+  - VMESS-2 | 249ms
+  - VMESS-3 | 341ms
+  - VMESS-4 | 254ms
+  - TROJAN-5 | 438ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
