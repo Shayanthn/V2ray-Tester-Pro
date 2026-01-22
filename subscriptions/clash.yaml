@@ -5,31 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 114ms
-  type: vmess
-  server: 165.140.216.141
-  port: 443
-  uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 192ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 141ms
-  type: vmess
-  server: 47.251.91.241
-  port: 42899
-  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 191ms
+- name: VMESS-1 | 207ms
   type: vmess
   server: 217.69.5.32
   port: 443
@@ -37,42 +13,80 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-5 | 292ms
+- name: TROJAN-2 | 293ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-3 | 292ms
+  type: trojan
+  server: 80.173.230.196
+  port: 26279
+  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
+  sni: 80.173.230.196
+- name: VMESS-4 | 62ms
   type: vmess
-  server: 45.89.52.207
-  port: 39651
-  uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-6 | 197ms
+- name: VMESS-5 | 556ms
   type: vmess
-  server: 217.69.5.32
+  server: sy4.620720.xyz
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
   alterId: 0
   cipher: auto
-  network: tcp
+  network: ws
+  tls: true
+  servername: sy4.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-6 | 1004ms
+  type: vmess
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: t1.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: TROJAN-7 | 353ms
+  type: trojan
+  server: 212.193.18.144
+  port: 36158
+  password: ZblhWr0mqMakCPg.N
+  sni: ya.ru
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 114ms
-  - VMESS-2 | 192ms
-  - VMESS-3 | 141ms
-  - VMESS-4 | 191ms
-  - VMESS-5 | 292ms
-  - VMESS-6 | 197ms
+  - VMESS-1 | 207ms
+  - TROJAN-2 | 293ms
+  - TROJAN-3 | 292ms
+  - VMESS-4 | 62ms
+  - VMESS-5 | 556ms
+  - VMESS-6 | 1004ms
+  - TROJAN-7 | 353ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 114ms
-  - VMESS-2 | 192ms
-  - VMESS-3 | 141ms
-  - VMESS-4 | 191ms
-  - VMESS-5 | 292ms
-  - VMESS-6 | 197ms
+  - VMESS-1 | 207ms
+  - TROJAN-2 | 293ms
+  - TROJAN-3 | 292ms
+  - VMESS-4 | 62ms
+  - VMESS-5 | 556ms
+  - VMESS-6 | 1004ms
+  - TROJAN-7 | 353ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
