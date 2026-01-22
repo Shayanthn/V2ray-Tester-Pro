@@ -65,7 +65,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10816,
+        "port": 10815,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -137,7 +137,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10803,
+        "port": 10818,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -209,7 +209,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10804,
+        "port": 10816,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -281,7 +281,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10813,
+        "port": 10810,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -331,6 +331,98 @@
       {
         "protocol": "freedom",
         "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10803,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "94.156.115.109",
+              "port": 443,
+              "users": [
+                {
+                  "id": "9357d31a-97f5-492b-9a9d-24dcb3449fb9",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "tunnel.vk-apps.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "2XHOm5oJ92noxYHfahYv6dABkpp-bdehIA5grPB1X2c",
+            "shortId": "beba4237",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "tcpKeepAliveIdle": 100
+          }
+        }
       }
     ],
     "routing": {

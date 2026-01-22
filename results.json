@@ -2,10 +2,10 @@
   {
     "protocol": "vless",
     "address": "45.82.251.95",
-    "ping": 24,
-    "jitter": 24,
-    "download_speed": 117.84,
-    "upload_speed": 47.82,
+    "ping": 155,
+    "jitter": 140,
+    "download_speed": 26.62,
+    "upload_speed": 19.16,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -80,11 +80,124 @@
   },
   {
     "protocol": "vless",
+    "address": "94.156.115.109",
+    "ping": 285,
+    "jitter": 156,
+    "download_speed": 3.87,
+    "upload_speed": 3.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": false,
+      "instagram": false,
+      "youtube": true
+    },
+    "ip": "94.156.115.109",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10803,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "94.156.115.109",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "9357d31a-97f5-492b-9a9d-24dcb3449fb9",
+                    "encryption": "none",
+                    "flow": "xtls-rprx-vision"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "tunnel.vk-apps.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "2XHOm5oJ92noxYHfahYv6dABkpp-bdehIA5grPB1X2c",
+              "shortId": "beba4237",
+              "spiderX": "/"
+            },
+            "sockopt": {
+              "dialerProxy": "fragment",
+              "tcpKeepAliveIdle": 100
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        },
+        {
+          "tag": "fragment",
+          "protocol": "freedom",
+          "settings": {
+            "fragment": {
+              "packets": "tlshello",
+              "length": "100-200",
+              "interval": "10-20"
+            }
+          },
+          "streamSettings": {
+            "sockopt": {
+              "tcpKeepAliveIdle": 100
+            }
+          }
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://9357d31a-97f5-492b-9a9d-24dcb3449fb9@94.156.115.109:443?security=reality&encryption=none&pbk=2XHOm5oJ92noxYHfahYv6dABkpp-bdehIA5grPB1X2c&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=tunnel.vk-apps.com&sid=beba4237#@hopev2ray❤️‍🔥",
+    "revived_with_fragment": true,
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "Play2go International Limited"
+  },
+  {
+    "protocol": "vless",
     "address": "95.164.85.109",
-    "ping": 248,
-    "jitter": 278,
-    "download_speed": 18.61,
-    "upload_speed": 11.64,
+    "ping": 386,
+    "jitter": 413,
+    "download_speed": 12.29,
+    "upload_speed": 8.61,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -99,7 +212,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10816,
+          "port": 10815,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -173,10 +286,10 @@
   {
     "protocol": "vless",
     "address": "176.120.67.77",
-    "ping": 301,
-    "jitter": 271,
-    "download_speed": 17.99,
-    "upload_speed": 12.5,
+    "ping": 467,
+    "jitter": 416,
+    "download_speed": 11.26,
+    "upload_speed": 7.88,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -191,7 +304,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10803,
+          "port": 10818,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -265,10 +378,10 @@
   {
     "protocol": "vless",
     "address": "176.120.67.77",
-    "ping": 305,
-    "jitter": 264,
-    "download_speed": 17.17,
-    "upload_speed": 7.71,
+    "ping": 506,
+    "jitter": 500,
+    "download_speed": 11.24,
+    "upload_speed": 7.55,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -283,7 +396,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10804,
+          "port": 10816,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -357,10 +470,10 @@
   {
     "protocol": "vless",
     "address": "176.120.67.95",
-    "ping": 307,
-    "jitter": 255,
-    "download_speed": 15.53,
-    "upload_speed": 11.11,
+    "ping": 784,
+    "jitter": 972,
+    "download_speed": 10.96,
+    "upload_speed": 7.55,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -375,7 +488,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10813,
+          "port": 10810,
           "protocol": "http",
           "settings": {
             "timeout": 0,
