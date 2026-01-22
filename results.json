@@ -1,96 +1,14 @@
 [
   {
-    "protocol": "trojan",
-    "address": "13.39.200.50",
-    "ping": 185,
-    "jitter": 162,
-    "download_speed": 10.16,
-    "upload_speed": 16.69,
+    "protocol": "vless",
+    "address": "65.109.178.83",
+    "ping": 339,
+    "jitter": 298,
+    "download_speed": 9.78,
+    "upload_speed": 9.46,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "13.39.200.50",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10814,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "13.39.200.50",
-                "port": 22222,
-                "password": "telegram-id-privatevpns"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "13.39.200.50",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://telegram-id-privatevpns@13.39.200.50:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#(S103)",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "Amazon Technologies Inc."
-  },
-  {
-    "protocol": "vless",
-    "address": "65.109.178.83",
-    "ping": 241,
-    "jitter": 211,
-    "download_speed": 13.84,
-    "upload_speed": 11.06,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": false,
       "instagram": true,
       "youtube": true
     },
@@ -102,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10814,
+          "port": 10809,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -163,10 +81,10 @@
   {
     "protocol": "vless",
     "address": "45.82.251.95",
-    "ping": 28,
-    "jitter": 28,
-    "download_speed": 123.29,
-    "upload_speed": 79.61,
+    "ping": 127,
+    "jitter": 113,
+    "download_speed": 29.4,
+    "upload_speed": 21.79,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -181,7 +99,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10801,
+          "port": 10815,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -242,10 +160,10 @@
   {
     "protocol": "vless",
     "address": "94.156.115.109",
-    "ping": 194,
-    "jitter": 175,
-    "download_speed": 21.63,
-    "upload_speed": 15.06,
+    "ping": 298,
+    "jitter": 265,
+    "download_speed": 15.04,
+    "upload_speed": 10.21,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -260,7 +178,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10805,
+          "port": 10808,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -333,18 +251,18 @@
   },
   {
     "protocol": "vless",
-    "address": "95.164.85.109",
-    "ping": 252,
-    "jitter": 272,
-    "download_speed": 20.08,
-    "upload_speed": 13.63,
+    "address": "185.126.67.73",
+    "ping": 847,
+    "jitter": 219,
+    "download_speed": 0.0,
+    "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "95.164.85.109",
+    "ip": "185.126.67.73",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -352,7 +270,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10805,
+          "port": 10806,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -368,13 +286,13 @@
           "settings": {
             "vnext": [
               {
-                "address": "95.164.85.109",
-                "port": 59374,
+                "address": "185.126.67.73",
+                "port": 443,
                 "users": [
                   {
-                    "id": "bfc78cd8-5951-4803-8d6c-4cedef8cd420",
+                    "id": "95abaefc-7861-417a-81b7-166cb788ce1a",
                     "encryption": "none",
-                    "flow": ""
+                    "flow": "xtls-rprx-vision"
                   }
                 ]
               }
@@ -384,7 +302,7 @@
             "network": "tcp",
             "security": "reality",
             "realitySettings": {
-              "serverName": "yahoo.com",
+              "serverName": "apple.com",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
@@ -392,8 +310,8 @@
                 "http/1.1"
               ],
               "show": false,
-              "publicKey": "ZsswZuBV8bEGQWFrpShCilSytnDUj0kwHFhTSLXzOwc",
-              "shortId": "d21e7c",
+              "publicKey": "9ajY_OBOn5CCPnCJTPjxg6J3IWE8uJYAiWQvG9CBGjU",
+              "shortId": "00684d2eae2cdd16",
               "spiderX": "/"
             }
           },
@@ -417,10 +335,307 @@
         ]
       }
     },
-    "uri": "vless://bfc78cd8-5951-4803-8d6c-4cedef8cd420@95.164.85.109:59374?security=reality&encryption=none&pbk=ZsswZuBV8bEGQWFrpShCilSytnDUj0kwHFhTSLXzOwc&host=telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray,telegram-@mainv2ray&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=d21e7c#telegram",
+    "uri": "vless://95abaefc-7861-417a-81b7-166cb788ce1a@185.126.67.73:443?security=reality&encryption=none&pbk=9ajY_OBOn5CCPnCJTPjxg6J3IWE8uJYAiWQvG9CBGjU&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=apple.com&sid=00684d2eae2cdd16#@YamYamProxy",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "WAIcore Ltd"
+  },
+  {
+    "protocol": "vless",
+    "address": "185.126.67.73",
+    "ping": 706,
+    "jitter": 294,
+    "download_speed": 0.0,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": false,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "185.126.67.73",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10811,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "185.126.67.73",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "95abaefc-7861-417a-81b7-166cb788ce1a",
+                    "encryption": "none",
+                    "flow": "xtls-rprx-vision"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "apple.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "9ajY_OBOn5CCPnCJTPjxg6J3IWE8uJYAiWQvG9CBGjU",
+              "shortId": "00684d2eae2cdd16",
+              "spiderX": "/"
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://95abaefc-7861-417a-81b7-166cb788ce1a@185.126.67.73:443?security=reality&encryption=none&pbk=9ajY_OBOn5CCPnCJTPjxg6J3IWE8uJYAiWQvG9CBGjU&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=apple.com&sid=00684d2eae2cdd16#@Capoit",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "WAIcore Ltd"
+  },
+  {
+    "protocol": "vless",
+    "address": "185.126.67.73",
+    "ping": 817,
+    "jitter": 1147,
+    "download_speed": 0.0,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "185.126.67.73",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10801,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "185.126.67.73",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "95abaefc-7861-417a-81b7-166cb788ce1a",
+                    "encryption": "none",
+                    "flow": "xtls-rprx-vision"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "apple.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "9ajY_OBOn5CCPnCJTPjxg6J3IWE8uJYAiWQvG9CBGjU",
+              "shortId": "00684d2eae2cdd16",
+              "spiderX": "/"
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://95abaefc-7861-417a-81b7-166cb788ce1a@185.126.67.73:443?security=reality&encryption=none&pbk=9ajY_OBOn5CCPnCJTPjxg6J3IWE8uJYAiWQvG9CBGjU&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=apple.com&sid=00684d2eae2cdd16#[🇩🇪]t.me%vmessorg",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "WAIcore Ltd"
+  },
+  {
+    "protocol": "vless",
+    "address": "165.140.202.177",
+    "ping": 283,
+    "jitter": 344,
+    "download_speed": 25.98,
+    "upload_speed": 25.56,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": false,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "165.140.202.177",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10804,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "165.140.202.177",
+                "port": 223,
+                "users": [
+                  {
+                    "id": "97d0961f-7f44-40cf-a0c7-3d77722e3a51",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "excoino.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "JOKX-kH_SOPrdPG26TdJzO6YSDItrRGXKhtv70Bn81o",
+              "shortId": "c7f175a94bd79f8d",
+              "spiderX": "/"
+            },
+            "sockopt": {
+              "dialerProxy": "fragment",
+              "tcpKeepAliveIdle": 100
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        },
+        {
+          "tag": "fragment",
+          "protocol": "freedom",
+          "settings": {
+            "fragment": {
+              "packets": "tlshello",
+              "length": "100-200",
+              "interval": "10-20"
+            }
+          },
+          "streamSettings": {
+            "sockopt": {
+              "tcpKeepAliveIdle": 100
+            }
+          }
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://97d0961f-7f44-40cf-a0c7-3d77722e3a51@165.140.202.177:223?security=reality&encryption=none&pbk=JOKX-kH_SOPrdPG26TdJzO6YSDItrRGXKhtv70Bn81o&headerType=none&fp=chrome&spx=/&type=tcp&sni=excoino.com&sid=c7f175a94bd79f8d#⚡Telegram",
+    "revived_with_fragment": true,
     "country": "United States",
     "country_code": "US",
-    "city": "Hackensack",
-    "isp": "WorkTitans B.V."
+    "city": "Kansas City",
+    "isp": "Bytefilter LLC"
   }
 ]

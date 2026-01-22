@@ -5,54 +5,70 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 28ms
+- name: VLESS-1 | 127ms
   type: vless
   server: 45.82.251.95
   port: 8880
   uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
   network: grpc
-- name: VLESS-2 | 194ms
+- name: VLESS-2 | 283ms
+  type: vless
+  server: 165.140.202.177
+  port: 223
+  uuid: 97d0961f-7f44-40cf-a0c7-3d77722e3a51
+  network: tcp
+- name: VLESS-3 | 298ms
   type: vless
   server: 94.156.115.109
   port: 443
   uuid: 9357d31a-97f5-492b-9a9d-24dcb3449fb9
   network: tcp
-- name: VLESS-3 | 252ms
-  type: vless
-  server: 95.164.85.109
-  port: 59374
-  uuid: bfc78cd8-5951-4803-8d6c-4cedef8cd420
-  network: tcp
-- name: VLESS-4 | 241ms
+- name: VLESS-4 | 339ms
   type: vless
   server: 65.109.178.83
   port: 443
   uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
   network: grpc
-- name: TROJAN-5 | 185ms
-  type: trojan
-  server: 13.39.200.50
-  port: 22222
-  password: telegram-id-privatevpns
-  sni: 13.39.200.50
+- name: VLESS-5 | 847ms
+  type: vless
+  server: 185.126.67.73
+  port: 443
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  network: tcp
+- name: VLESS-6 | 706ms
+  type: vless
+  server: 185.126.67.73
+  port: 443
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  network: tcp
+- name: VLESS-7 | 817ms
+  type: vless
+  server: 185.126.67.73
+  port: 443
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 28ms
-  - VLESS-2 | 194ms
-  - VLESS-3 | 252ms
-  - VLESS-4 | 241ms
-  - TROJAN-5 | 185ms
+  - VLESS-1 | 127ms
+  - VLESS-2 | 283ms
+  - VLESS-3 | 298ms
+  - VLESS-4 | 339ms
+  - VLESS-5 | 847ms
+  - VLESS-6 | 706ms
+  - VLESS-7 | 817ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 28ms
-  - VLESS-2 | 194ms
-  - VLESS-3 | 252ms
-  - VLESS-4 | 241ms
-  - TROJAN-5 | 185ms
+  - VLESS-1 | 127ms
+  - VLESS-2 | 283ms
+  - VLESS-3 | 298ms
+  - VLESS-4 | 339ms
+  - VLESS-5 | 847ms
+  - VLESS-6 | 706ms
+  - VLESS-7 | 817ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
