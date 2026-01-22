@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10818,
+        "port": 10814,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -18,18 +18,40 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "51.161.80.138",
-              "port": 12743,
-              "method": "chacha20-ietf-poly1305",
-              "password": "ae1f6fea74b7391a"
+              "address": "193.43.146.18",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "d0dea598-9047-4567-a934-84c2797c0978",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
             }
           ]
         },
-        "tag": "WiFi-@V2rayAlpha-3"
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ozon.ru",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "7HejPU15kdTl9QG_8AygEM3w0ythsbhG6q_SwUumyR0",
+            "shortId": "f1071c148a5aefc4",
+            "spiderX": "/"
+          }
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
@@ -56,7 +78,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10803,
+        "port": 10814,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -68,418 +90,40 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "147.135.77.6",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "7f9cb9aef317f096"
+              "address": "45.82.255.32",
+              "port": 4443,
+              "users": [
+                {
+                  "id": "3f688b2a-373a-4be1-846d-b159404b73b2",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
             }
           ]
         },
-        "tag": "WiFi-@V2rayAlpha-11"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10805,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "github.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE",
+            "shortId": "aa7e96542880027a",
+            "spiderX": "/"
+          }
         },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "135.125.245.131",
-              "port": 20939,
-              "method": "chacha20-ietf-poly1305",
-              "password": "85d3d8ccba287d3e"
-            }
-          ]
-        },
-        "tag": "@V2rayAlpha--4"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10818,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "135.125.219.2",
-              "port": 40266,
-              "method": "chacha20-ietf-poly1305",
-              "password": "a10bd25b21995e56"
-            }
-          ]
-        },
-        "tag": "WiFi-@V2rayAlpha-9"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10819,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "57.129.69.122",
-              "port": 27130,
-              "method": "chacha20-ietf-poly1305",
-              "password": "a3027c931ae07bce"
-            }
-          ]
-        },
-        "tag": "IR--@V2rayAlpha-4"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10803,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "57.129.69.122",
-              "port": 27130,
-              "method": "chacha20-ietf-poly1305",
-              "password": "a3027c931ae07bce"
-            }
-          ]
-        },
-        "tag": "WiFi-@V2rayAlpha-6"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10807,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "135.125.245.131",
-              "port": 20939,
-              "method": "chacha20-ietf-poly1305",
-              "password": "85d3d8ccba287d3e"
-            }
-          ]
-        },
-        "tag": "WiFi-@V2rayAlpha-36"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10807,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "141.95.101.9",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "bb33fe67a330b3ea"
-            }
-          ]
-        },
-        "tag": "WiFi-@V2rayAlpha-38"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10806,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "135.125.245.131",
-              "port": 20939,
-              "method": "chacha20-ietf-poly1305",
-              "password": "85d3d8ccba287d3e"
-            }
-          ]
-        },
-        "tag": "IR--@V2rayAlpha-1"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10812,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "54.37.78.193",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "267514960a86907d"
-            }
-          ]
-        },
-        "tag": "WiFi-@V2rayAlpha-5"
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
@@ -518,18 +162,40 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "141.95.109.94",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "10f90af92b6c1a74"
+              "address": "176.120.67.77",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "d0dea598-9047-4567-a934-84c2797c0978",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
             }
           ]
         },
-        "tag": "IR--@V2rayAlpha-2"
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ozon.ru",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "7HejPU15kdTl9QG_8AygEM3w0ythsbhG6q_SwUumyR0",
+            "shortId": "f1071c148a5aefc4",
+            "spiderX": "/"
+          }
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
@@ -556,7 +222,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10804,
+        "port": 10818,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -568,18 +234,40 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "141.95.109.160",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "823cdb94a457faee"
+              "address": "176.120.67.95",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "d0dea598-9047-4567-a934-84c2797c0978",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
             }
           ]
         },
-        "tag": "WiFi-@V2rayAlpha-10"
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ozon.ru",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "7HejPU15kdTl9QG_8AygEM3w0ythsbhG6q_SwUumyR0",
+            "shortId": "f1071c148a5aefc4",
+            "spiderX": "/"
+          }
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
@@ -606,7 +294,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10811,
+        "port": 10815,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -618,18 +306,36 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "51.89.119.213",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "15b0573830081d01"
+              "address": "plcdn20.suio.me",
+              "port": 443,
+              "users": [
+                {
+                  "id": "02fb468f-21f2-460e-bfa1-ef52ae5e627f",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
             }
           ]
         },
-        "tag": "WiFi-@V2rayAlpha-40"
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "plcdn20.suio.me",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
@@ -656,7 +362,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10808,
+        "port": 10816,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -668,18 +374,40 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "15.204.74.40",
-              "port": 13021,
-              "method": "chacha20-ietf-poly1305",
-              "password": "913fcc3aeb16eba3"
+              "address": "178.17.53.28",
+              "port": 47539,
+              "users": [
+                {
+                  "id": "447c45cd-ade0-4bfe-90a0-3e581829f741",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
             }
           ]
         },
-        "tag": "WiFi-@V2rayAlpha-2"
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yandex.ru",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "uapzi5mhLkADHuak0eXEKq9vIl2A8IGrMhjdIG-tn3U",
+            "shortId": "82a55f31981ea6be",
+            "spiderX": "/"
+          }
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
@@ -706,7 +434,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10805,
+        "port": 10813,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -718,22 +446,64 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "51.68.146.248",
-              "port": 10011,
-              "method": "chacha20-ietf-poly1305",
-              "password": "a792ff4b517fdf1c"
+              "address": "159.195.26.28",
+              "port": 443,
+              "users": [
+                {
+                  "id": "84f66368-8a37-468e-ae95-5622255fd4db",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
             }
           ]
         },
-        "tag": "IR--@V2rayAlpha-6"
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "live.com",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "show": false,
+            "publicKey": "ckRcueERkPqqjZABwxqni_J_Nbb70Q6k5fEEUAjoImw",
+            "shortId": "",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100
+          }
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
         "tag": "direct"
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "tcpKeepAliveIdle": 100
+          }
+        }
       }
     ],
     "routing": {
@@ -756,7 +526,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10802,
+        "port": 10803,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -772,114 +542,14 @@
         "settings": {
           "servers": [
             {
-              "address": "57.130.28.148",
-              "port": 11201,
+              "address": "lv.vpnsparta.pro",
+              "port": 57456,
               "method": "chacha20-ietf-poly1305",
-              "password": "74918bc801d53a4b"
+              "password": "8afc633eb63227e9"
             }
           ]
         },
-        "tag": "telegram"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10800,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "57.130.28.148",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "74918bc801d53a4b"
-            }
-          ]
-        },
-        "tag": "@V2rayAlpha--1"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10801,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "57.130.28.148",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "74918bc801d53a4b"
-            }
-          ]
-        },
-        "tag": "IR--@V2rayAlpha-3"
+        "tag": "US美国(mibei77.com 米贝节点分享)"
       },
       {
         "protocol": "freedom",
