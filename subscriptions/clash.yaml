@@ -5,62 +5,54 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 253ms
-  type: vmess
-  server: 217.69.5.32
+- name: VLESS-1 | 57ms
+  type: vless
+  server: 45.82.251.95
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-2 | 214ms
+  type: vless
+  server: 51.158.206.98
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-3 | 252ms
+  type: vless
+  server: 57.129.53.181
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-4 | 262ms
+  type: vless
+  server: 57.129.49.1
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-5 | 278ms
+  type: vless
+  server: 65.109.178.83
   port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 249ms
-  type: vmess
-  server: 217.69.5.32
-  port: 443
-  uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 341ms
-  type: vmess
-  server: 45.89.52.207
-  port: 39651
-  uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 254ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: TROJAN-5 | 438ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
+  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
+  network: grpc
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 253ms
-  - VMESS-2 | 249ms
-  - VMESS-3 | 341ms
-  - VMESS-4 | 254ms
-  - TROJAN-5 | 438ms
+  - VLESS-1 | 57ms
+  - VLESS-2 | 214ms
+  - VLESS-3 | 252ms
+  - VLESS-4 | 262ms
+  - VLESS-5 | 278ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 253ms
-  - VMESS-2 | 249ms
-  - VMESS-3 | 341ms
-  - VMESS-4 | 254ms
-  - TROJAN-5 | 438ms
+  - VLESS-1 | 57ms
+  - VLESS-2 | 214ms
+  - VLESS-3 | 252ms
+  - VLESS-4 | 262ms
+  - VLESS-5 | 278ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
