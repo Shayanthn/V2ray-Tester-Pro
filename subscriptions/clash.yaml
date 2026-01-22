@@ -5,54 +5,74 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 57ms
-  type: vless
-  server: 45.82.251.95
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 214ms
-  type: vless
-  server: 51.158.206.98
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: VLESS-3 | 252ms
-  type: vless
-  server: 57.129.53.181
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: VLESS-4 | 262ms
-  type: vless
-  server: 57.129.49.1
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: VLESS-5 | 278ms
-  type: vless
-  server: 65.109.178.83
+- name: SHADOWSOCKS-1 | 153ms
+  type: ss
+  server: 82.38.31.218
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: SHADOWSOCKS-2 | 274ms
+  type: ss
+  server: 163.171.137.72
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: d27faed8a9b98bd0
+- name: SHADOWSOCKS-3 | 258ms
+  type: ss
+  server: promo18v.bystrivpn.ru
   port: 443
-  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
-  network: grpc
+  cipher: chacha20-ietf-poly1305
+  password: dAHM1pm8ag7KdlrUylQi6t
+- name: VMESS-4 | 146ms
+  type: vmess
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: VMESS-5 | 609ms
+  type: vmess
+  server: 89.31.120.192
+  port: 443
+  uuid: 44537595-9ccc-4b83-8936-5f9ad3229019
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: SHADOWSOCKS-6 | 164ms
+  type: ss
+  server: 135.125.245.131
+  port: 20939
+  cipher: chacha20-ietf-poly1305
+  password: 85d3d8ccba287d3e
+- name: SHADOWSOCKS-7 | 1371ms
+  type: ss
+  server: 45.83.20.206
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: g5RQoxQuVtnFv3Xxsa8edPisXNPnyWKy
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 57ms
-  - VLESS-2 | 214ms
-  - VLESS-3 | 252ms
-  - VLESS-4 | 262ms
-  - VLESS-5 | 278ms
+  - SHADOWSOCKS-1 | 153ms
+  - SHADOWSOCKS-2 | 274ms
+  - SHADOWSOCKS-3 | 258ms
+  - VMESS-4 | 146ms
+  - VMESS-5 | 609ms
+  - SHADOWSOCKS-6 | 164ms
+  - SHADOWSOCKS-7 | 1371ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 57ms
-  - VLESS-2 | 214ms
-  - VLESS-3 | 252ms
-  - VLESS-4 | 262ms
-  - VLESS-5 | 278ms
+  - SHADOWSOCKS-1 | 153ms
+  - SHADOWSOCKS-2 | 274ms
+  - SHADOWSOCKS-3 | 258ms
+  - VMESS-4 | 146ms
+  - VMESS-5 | 609ms
+  - SHADOWSOCKS-6 | 164ms
+  - SHADOWSOCKS-7 | 1371ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
