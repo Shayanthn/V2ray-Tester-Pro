@@ -1,18 +1,18 @@
 [
   {
-    "protocol": "vmess",
-    "address": "165.140.216.141",
-    "ping": 54,
-    "jitter": 44,
-    "download_speed": 87.97,
-    "upload_speed": 68.19,
+    "protocol": "vless",
+    "address": "193.187.132.145",
+    "ping": 164,
+    "jitter": 0,
+    "download_speed": 12.32,
+    "upload_speed": 9.41,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "165.140.216.141",
+    "ip": "193.187.132.145",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -20,7 +20,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10818,
+          "port": 10817,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -32,17 +32,17 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "vless",
           "settings": {
             "vnext": [
               {
-                "address": "165.140.216.141",
-                "port": 443,
+                "address": "193.187.132.145",
+                "port": 587,
                 "users": [
                   {
-                    "id": "e7d72a8d-26f2-4b54-b366-0c43e0bcba7d",
-                    "alterId": 0,
-                    "security": "auto"
+                    "id": "65a1e22c-d37e-4b92-b6ca-1d09dcd1d441",
+                    "encryption": "none",
+                    "flow": ""
                   }
                 ]
               }
@@ -50,90 +50,19 @@
           },
           "streamSettings": {
             "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiIxNjUuMTQwLjIxNi4xNDEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZTdkNzJhOGQtMjZmMi00YjU0LWIzNjYtMGM0M2UwYmNiYTdkIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI0NDMiLCJwcyI6IvCfjoQ4M0BvbmVjbGlja3ZwbmtleXMiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6IiIsInYiOiIyIn0=vmess",
-    "country": "United States",
-    "country_code": "US",
-    "city": "San Francisco",
-    "isp": "Xicomm LLC"
-  },
-  {
-    "protocol": "vmess",
-    "address": "seoul03.zgjok.com",
-    "ping": 1454,
-    "jitter": 2216,
-    "download_speed": 0.0,
-    "upload_speed": 5.22,
-    "is_bypassing": false,
-    "connectivity": {
-      "telegram": false,
-      "instagram": true,
-      "youtube": false
-    },
-    "ip": "seoul03.zgjok.com",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10804,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "seoul03.zgjok.com",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "72a0dac4-9689-4a57-b164-5c65bfa94772",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "ws",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "seoul03.zgjok.com",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "excoino.com",
               "allowInsecure": true,
-              "fingerprint": "chrome"
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "HnPEhCDTcZnDejsAiidoOSx2-h0EvJMILj4bv3X1mBc",
+              "shortId": "916e8258c4a01b02",
+              "spiderX": "/"
             }
           },
           "tag": "proxy"
@@ -156,26 +85,26 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiJzZW91bDAzLnpnam9rLmNvbSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0Ijoic2VvdWwwMy56Z2pvay5jb20iLCJpZCI6IjcyYTBkYWM0LTk2ODktNGE1Ny1iMTY0LTVjNjViZmE5NDc3MiIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJwb3J0IjoiNDQzIiwicHMiOiLwn4ew8J+Ht0tSLTE0Ni41Ni4xNzcuMTY2LTAyNjMiLCJzY3kiOiJhdXRvIiwic25pIjoic2VvdWwwMy56Z2pvay5jb20iLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoiIiwidiI6IjIifQ==vmess",
-    "country": "South Korea",
-    "country_code": "KR",
-    "city": "Seoul",
-    "isp": "Oracle Corporation"
+    "uri": "vless://65a1e22c-d37e-4b92-b6ca-1d09dcd1d441@193.187.132.145:587?security=reality&encryption=none&pbk=HnPEhCDTcZnDejsAiidoOSx2-h0EvJMILj4bv3X1mBc&headerType=none&fp=chrome&type=tcp&sni=excoino.com&sid=916e8258c4a01b02#channel",
+    "country": "Türkiye",
+    "country_code": "TR",
+    "city": "Istanbul",
+    "isp": "Datacamp Limited"
   },
   {
-    "protocol": "vmess",
-    "address": "217.69.5.32",
-    "ping": 223,
-    "jitter": 157,
-    "download_speed": 17.27,
-    "upload_speed": 12.45,
+    "protocol": "vless",
+    "address": "198.55.103.204",
+    "ping": 1510,
+    "jitter": 1634,
+    "download_speed": 3.76,
+    "upload_speed": 6.77,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
-      "youtube": true
+      "youtube": false
     },
-    "ip": "217.69.5.32",
+    "ip": "198.55.103.204",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -183,7 +112,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10818,
+          "port": 10819,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -195,17 +124,17 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "vless",
           "settings": {
             "vnext": [
               {
-                "address": "217.69.5.32",
+                "address": "198.55.103.204",
                 "port": 443,
                 "users": [
                   {
-                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                    "alterId": 0,
-                    "security": "auto"
+                    "id": "7d15c8de-4448-488f-a580-acab3fa30a4e",
+                    "encryption": "none",
+                    "flow": ""
                   }
                 ]
               }
@@ -213,6 +142,190 @@
           },
           "streamSettings": {
             "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "miro.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "YLSRUKO-sm6In4ckqgVjagHKrWcA5r2aV7khO5brOUQ",
+              "shortId": "e3c5c005cae07eb7",
+              "spiderX": "/"
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://7d15c8de-4448-488f-a580-acab3fa30a4e@198.55.103.204:443?security=reality&encryption=none&pbk=YLSRUKO-sm6In4ckqgVjagHKrWcA5r2aV7khO5brOUQ&headerType=none&fp=chrome&spx=/SeyyedMT&type=tcp&sni=miro.com&sid=e3c5c005cae07eb7#⚡Telegram",
+    "country": "Ireland",
+    "country_code": "IE",
+    "city": "Dublin",
+    "isp": "HostPapa"
+  },
+  {
+    "protocol": "vless",
+    "address": "5.182.36.56",
+    "ping": 313,
+    "jitter": 339,
+    "download_speed": 14.7,
+    "upload_speed": 9.52,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "5.182.36.56",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10809,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "5.182.36.56",
+                "port": 45886,
+                "users": [
+                  {
+                    "id": "8338171d-2ea7-4015-bdea-492f3d5d4e60",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "yahoo.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0",
+              "shortId": "94f9",
+              "spiderX": "/"
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://8338171d-2ea7-4015-bdea-492f3d5d4e60@5.182.36.56:45886?security=reality&encryption=none&pbk=zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0&headerType=none&fp=chrome&spx=/&type=tcp&sni=yahoo.com&sid=94f9#⚡Telegram",
+    "country": "Switzerland",
+    "country_code": "CH",
+    "city": "Bern",
+    "isp": "WorkTitans B.V."
+  },
+  {
+    "protocol": "vless",
+    "address": "217.195.200.233",
+    "ping": 449,
+    "jitter": 426,
+    "download_speed": 0.0,
+    "upload_speed": 3.15,
+    "is_bypassing": false,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "217.195.200.233",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10800,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "217.195.200.233",
+                "port": 35177,
+                "users": [
+                  {
+                    "id": "8d51e92a-7f6f-433c-b946-1ec411e7a759",
+                    "encryption": "none",
+                    "flow": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "ws",
             "security": "none"
           },
           "tag": "proxy"
@@ -235,26 +348,26 @@
         ]
       }
     },
-    "uri": "vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICIycWZybWszbCIsCiAgImFkZCI6ICIyMTcuNjkuNS4zMiIsCiAgInBvcnQiOiA0NDMsCiAgImlkIjogImVjNGMzNDljLWIzYzYtNGNmZi1iZTYzLTAxZWFhZDFkYzA5OCIsCiAgInNjeSI6ICJhdXRvIiwKICAibmV0IjogInRjcCIsCiAgInRscyI6ICJub25lIiwKICAidHlwZSI6ICJub25lIgp9",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Aubervilliers",
-    "isp": "The Constant Company, LLC"
+    "uri": "vless://8d51e92a-7f6f-433c-b946-1ec411e7a759@217.195.200.233:35177?path=/&security=&encryption=none&type=ws#@Capoit",
+    "country": "United Arab Emirates",
+    "country_code": "AE",
+    "city": "Dubai",
+    "isp": "G-Core Labs S.A."
   },
   {
-    "protocol": "vmess",
-    "address": "217.69.5.32",
-    "ping": 217,
-    "jitter": 153,
-    "download_speed": 17.06,
-    "upload_speed": 12.02,
-    "is_bypassing": true,
+    "protocol": "vless",
+    "address": "217.195.200.233",
+    "ping": 646,
+    "jitter": 785,
+    "download_speed": 0.0,
+    "upload_speed": 3.51,
+    "is_bypassing": false,
     "connectivity": {
       "telegram": true,
-      "instagram": true,
+      "instagram": false,
       "youtube": true
     },
-    "ip": "217.69.5.32",
+    "ip": "217.195.200.233",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -262,7 +375,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10800,
+          "port": 10807,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -274,25 +387,25 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "vless",
           "settings": {
             "vnext": [
               {
-                "address": "217.69.5.32",
-                "port": 443,
+                "address": "217.195.200.233",
+                "port": 35177,
                 "users": [
                   {
-                    "id": "ec4c349c-b3c6-4cff-be63-01eaad1dc098",
-                    "alterId": 0,
-                    "security": "auto"
+                    "id": "8d51e92a-7f6f-433c-b946-1ec411e7a759",
+                    "encryption": "none",
+                    "flow": ""
                   }
                 ]
               }
             ]
           },
           "streamSettings": {
-            "network": "tcp",
-            "security": ""
+            "network": "ws",
+            "security": "none"
           },
           "tag": "proxy"
         },
@@ -314,26 +427,26 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiIyMTcuNjkuNS4zMiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJlYzRjMzQ5Yy1iM2M2LTRjZmYtYmU2My0wMWVhYWQxZGMwOTgiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ0MyIsInBzIjoiQkVTVElJVlBOQk9UIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiIiLCJ2IjoiMiJ9",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Aubervilliers",
-    "isp": "The Constant Company, LLC"
+    "uri": "vless://8d51e92a-7f6f-433c-b946-1ec411e7a759@217.195.200.233:35177?path=/&security=none&encryption=none&type=ws#⚡Telegram",
+    "country": "United Arab Emirates",
+    "country_code": "AE",
+    "city": "Dubai",
+    "isp": "G-Core Labs S.A."
   },
   {
-    "protocol": "vmess",
-    "address": "94.232.247.165",
-    "ping": 220,
-    "jitter": 154,
-    "download_speed": 1.74,
-    "upload_speed": 11.93,
+    "protocol": "vless",
+    "address": "217.195.200.233",
+    "ping": 1334,
+    "jitter": 1617,
+    "download_speed": 0.0,
+    "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
+      "telegram": false,
+      "instagram": false,
+      "youtube": false
     },
-    "ip": "94.232.247.165",
+    "ip": "217.195.200.233",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -353,25 +466,25 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "vless",
           "settings": {
             "vnext": [
               {
-                "address": "94.232.247.165",
-                "port": 45653,
+                "address": "217.195.200.233",
+                "port": 35177,
                 "users": [
                   {
-                    "id": "9e91d19a-c73f-4276-adbc-b337c374259c",
-                    "alterId": 0,
-                    "security": "auto"
+                    "id": "8d51e92a-7f6f-433c-b946-1ec411e7a759",
+                    "encryption": "none",
+                    "flow": ""
                   }
                 ]
               }
             ]
           },
           "streamSettings": {
-            "network": "tcp",
-            "security": ""
+            "network": "ws",
+            "security": "none"
           },
           "tag": "proxy"
         },
@@ -393,10 +506,102 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiI5NC4yMzIuMjQ3LjE2NSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiI5ZTkxZDE5YS1jNzNmLTQyNzYtYWRiYy1iMzM3YzM3NDI1OWMiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQ1NjUzIiwicHMiOiJodHRwczovL3QubWUvVjJyYU5HX0RBIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "WorkTitans B.V."
+    "uri": "vless://8d51e92a-7f6f-433c-b946-1ec411e7a759@217.195.200.233:35177?path=/&security=none&encryption=none&type=ws#✅سرورها",
+    "country": "United Arab Emirates",
+    "country_code": "AE",
+    "city": "Dubai",
+    "isp": "G-Core Labs S.A."
+  },
+  {
+    "protocol": "vless",
+    "address": "185.126.67.73",
+    "ping": 237,
+    "jitter": 211,
+    "download_speed": 0.0,
+    "upload_speed": 0.0,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "185.126.67.73",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10800,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vless",
+          "settings": {
+            "vnext": [
+              {
+                "address": "185.126.67.73",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "95abaefc-7861-417a-81b7-166cb788ce1a",
+                    "encryption": "none",
+                    "flow": "xtls-rprx-vision"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "reality",
+            "realitySettings": {
+              "serverName": "apple.com",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ],
+              "show": false,
+              "publicKey": "9ajY_OBOn5CCPnCJTPjxg6J3IWE8uJYAiWQvG9CBGjU",
+              "shortId": "00684d2eae2cdd16",
+              "spiderX": "/"
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vless://95abaefc-7861-417a-81b7-166cb788ce1a@185.126.67.73:443?security=reality&encryption=none&pbk=9ajY_OBOn5CCPnCJTPjxg6J3IWE8uJYAiWQvG9CBGjU&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=apple.com&sid=00684d2eae2cdd16#@Shh_Proxy",
+    "country": "Germany",
+    "country_code": "DE",
+    "city": "Frankfurt am Main",
+    "isp": "WAIcore Ltd"
   }
 ]
