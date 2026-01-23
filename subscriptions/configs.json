@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10818,
+        "port": 10816,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -22,273 +22,64 @@
         "settings": {
           "servers": [
             {
-              "address": "82.38.31.210",
+              "address": "37.19.198.243",
+              "port": 443,
+              "method": "aes-128-gcm",
+              "password": "shadowsocks"
+            }
+          ]
+        },
+        "tag": "🇺🇸"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "82.38.31.176",
               "port": 8080,
               "method": "chacha20-ietf-poly1305",
               "password": "k1dBOmOB4oqi7Ump37a1bQ"
             }
           ]
         },
-        "tag": "@V2rayNG3"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10815,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "90.156.203.62",
-              "port": 5112,
-              "method": "chacha20-ietf-poly1305",
-              "password": "VVlAff77CnAU43Aoc5j15Y"
-            }
-          ]
-        },
-        "tag": "@V2rayNG3"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10818,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "47.251.91.241",
-              "port": 42899,
-              "users": [
-                {
-                  "id": "0925b355-2bcd-4eae-9720-d2709e4f7e36",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10810,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "57.130.28.148",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "74918bc801d53a4b"
-            }
-          ]
-        },
-        "tag": "@V2rayNG3"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10813,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "82.38.31.205",
-              "port": 8080,
-              "method": "chacha20-ietf-poly1305",
-              "password": "k1dBOmOB4oqi7Ump37a1bQ"
-            }
-          ]
-        },
-        "tag": "Netherlands Greenhost"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10805,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "57.129.95.38",
-              "port": 11201,
-              "method": "chacha20-ietf-poly1305",
-              "password": "f54cdee10f8b25ce"
-            }
-          ]
-        },
-        "tag": "@V2rayNG3"
+        "tag": "@Rayan_Config-82.38.31.176-@beepassvpn_bot"
       },
       {
         "protocol": "freedom",
@@ -331,14 +122,14 @@
         "settings": {
           "servers": [
             {
-              "address": "135.125.245.131",
-              "port": 20939,
+              "address": "193.29.139.157",
+              "port": 8080,
               "method": "chacha20-ietf-poly1305",
-              "password": "85d3d8ccba287d3e"
+              "password": "4a2rfixophdjffa8KVA4Aa"
             }
           ]
         },
-        "tag": "WQ 5 (@Outline_Vpn) free"
+        "tag": "🇳🇱"
       },
       {
         "protocol": "freedom",
@@ -365,7 +156,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10814,
+        "port": 10810,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -381,14 +172,14 @@
         "settings": {
           "servers": [
             {
-              "address": "promo18v.bystrivpn.ru",
-              "port": 443,
+              "address": "193.29.139.177",
+              "port": 8080,
               "method": "chacha20-ietf-poly1305",
-              "password": "dAHM1pm8ag7KdlrUylQi6t"
+              "password": "oZIoA69Q8yhcQV8ka3Pa3A"
             }
           ]
         },
-        "tag": "@V2rayNG3"
+        "tag": "🇳🇱"
       },
       {
         "protocol": "freedom",
@@ -415,7 +206,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10818,
+        "port": 10813,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -431,14 +222,14 @@
         "settings": {
           "servers": [
             {
-              "address": "135.125.245.131",
-              "port": 20939,
+              "address": "45.87.175.10",
+              "port": 8080,
               "method": "chacha20-ietf-poly1305",
-              "password": "85d3d8ccba287d3e"
+              "password": "oZIoA69Q8yhcQV8ka3Pa3A"
             }
           ]
         },
-        "tag": "@V2rayNG3"
+        "tag": "@meli_proxyy"
       },
       {
         "protocol": "freedom",
