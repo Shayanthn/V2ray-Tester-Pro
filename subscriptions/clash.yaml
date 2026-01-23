@@ -5,96 +5,84 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 535ms
+- name: SHADOWSOCKS-1 | 133ms
+  type: ss
+  server: 45.154.204.7
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-2 | 132ms
+  type: ss
+  server: 23.95.76.59
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-3 | 491ms
+  type: ss
+  server: 15.204.247.49
+  port: 12000
+  cipher: aes-256-gcm
+  password: 8JCsPssfgS8tiRwiMlhARg==
+- name: TROJAN-4 | 403ms
   type: trojan
-  server: 58.152.25.130
-  port: 443
-  password: BxceQaOe
-  sni: 58.152.25.130
-- name: TROJAN-2 | 548ms
-  type: trojan
-  server: 58.152.25.130
-  port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-- name: TROJAN-3 | 1674ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-- name: TROJAN-4 | 870ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: t.me%25252Fripaojiedian
-- name: TROJAN-5 | 259ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-- name: TROJAN-6 | 1749ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: '%F0%9F%94%92%20%5BBy%20EbraSha%5D%20b2n.ir%2Fv2ray-configs%20%7C%20160%20'
-- name: TROJAN-7 | 248ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: '🔒 [By EbraSha] b2n.ir/v2ray-configs | 334 '
-- name: TROJAN-8 | 1541ms
-  type: trojan
-  server: 58.152.53.219
-  port: 443
-  password: BxceQaOe
-  sni: 🔒+[By+EbraSha]+b2n.ir/v2ray-configs+|+111+
-- name: VMESS-9 | 118ms
+  server: 212.193.18.144
+  port: 36158
+  password: ZblhWr0mqMakCPg.N
+  sni: ya.ru
+- name: VMESS-5 | 428ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: sy4.620720.xyz
+  port: 443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
   alterId: 0
   cipher: auto
-  network: tcp
-- name: TROJAN-10 | 551ms
+  network: ws
+  tls: true
+  servername: sy4.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-6 | 396ms
+  type: vmess
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: t1.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
+- name: TROJAN-7 | 359ms
   type: trojan
-  server: 160.16.89.176
-  port: 3076
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  sni: www.nintendogames.net
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 535ms
-  - TROJAN-2 | 548ms
-  - TROJAN-3 | 1674ms
-  - TROJAN-4 | 870ms
-  - TROJAN-5 | 259ms
-  - TROJAN-6 | 1749ms
-  - TROJAN-7 | 248ms
-  - TROJAN-8 | 1541ms
-  - VMESS-9 | 118ms
-  - TROJAN-10 | 551ms
+  - SHADOWSOCKS-1 | 133ms
+  - SHADOWSOCKS-2 | 132ms
+  - SHADOWSOCKS-3 | 491ms
+  - TROJAN-4 | 403ms
+  - VMESS-5 | 428ms
+  - VMESS-6 | 396ms
+  - TROJAN-7 | 359ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 535ms
-  - TROJAN-2 | 548ms
-  - TROJAN-3 | 1674ms
-  - TROJAN-4 | 870ms
-  - TROJAN-5 | 259ms
-  - TROJAN-6 | 1749ms
-  - TROJAN-7 | 248ms
-  - TROJAN-8 | 1541ms
-  - VMESS-9 | 118ms
-  - TROJAN-10 | 551ms
+  - SHADOWSOCKS-1 | 133ms
+  - SHADOWSOCKS-2 | 132ms
+  - SHADOWSOCKS-3 | 491ms
+  - TROJAN-4 | 403ms
+  - VMESS-5 | 428ms
+  - VMESS-6 | 396ms
+  - TROJAN-7 | 359ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
