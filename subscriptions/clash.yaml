@@ -5,84 +5,54 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 330ms
-  type: ss
-  server: 45.154.204.7
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-2 | 325ms
-  type: ss
-  server: 23.95.76.59
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: TROJAN-3 | 263ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: TROJAN-4 | 303ms
-  type: trojan
-  server: 212.193.18.144
-  port: 36158
-  password: ZblhWr0mqMakCPg.N
-  sni: ya.ru
-- name: SHADOWSOCKS-5 | 187ms
-  type: ss
-  server: 149.102.144.110
-  port: 26138
-  cipher: chacha20-ietf-poly1305
-  password: 2602101eff2c9250
-- name: VMESS-6 | 1027ms
-  type: vmess
-  server: sy4.620720.xyz
+- name: VLESS-1 | 19ms
+  type: vless
+  server: 40.160.4.20
+  port: 8880
+  uuid: 6251f84e-9c02-4140-921c-6b47d394fb96
+  network: grpc
+- name: VLESS-2 | 193ms
+  type: vless
+  server: 93.186.201.64
   port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: sy4.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-7 | 2255ms
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: t1.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
+  uuid: 7005f499-036f-4570-a2a1-29761cfbbd9e
+  network: tcp
+- name: VLESS-3 | 199ms
+  type: vless
+  server: 212.224.125.154
+  port: 443
+  uuid: 7005f499-036f-4570-a2a1-29761cfbbd9e
+  network: tcp
+- name: VLESS-4 | 344ms
+  type: vless
+  server: 193.187.132.145
+  port: 587
+  uuid: 65a1e22c-d37e-4b92-b6ca-1d09dcd1d441
+  network: tcp
+- name: VLESS-5 | 434ms
+  type: vless
+  server: swit.zerosulution.com
+  port: 7567
+  uuid: 773ee54d-898b-433c-a5d9-ff197e90a054
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 330ms
-  - SHADOWSOCKS-2 | 325ms
-  - TROJAN-3 | 263ms
-  - TROJAN-4 | 303ms
-  - SHADOWSOCKS-5 | 187ms
-  - VMESS-6 | 1027ms
-  - VMESS-7 | 2255ms
+  - VLESS-1 | 19ms
+  - VLESS-2 | 193ms
+  - VLESS-3 | 199ms
+  - VLESS-4 | 344ms
+  - VLESS-5 | 434ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 330ms
-  - SHADOWSOCKS-2 | 325ms
-  - TROJAN-3 | 263ms
-  - TROJAN-4 | 303ms
-  - SHADOWSOCKS-5 | 187ms
-  - VMESS-6 | 1027ms
-  - VMESS-7 | 2255ms
+  - VLESS-1 | 19ms
+  - VLESS-2 | 193ms
+  - VLESS-3 | 199ms
+  - VLESS-4 | 344ms
+  - VLESS-5 | 434ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
