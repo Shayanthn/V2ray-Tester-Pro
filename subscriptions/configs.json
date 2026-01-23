@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10805,
+        "port": 10801,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -18,27 +18,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "40.160.4.20",
-              "port": 8880,
-              "users": [
-                {
-                  "id": "6251f84e-9c02-4140-921c-6b47d394fb96",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
+              "address": "82.38.31.210",
+              "port": 8080,
+              "method": "chacha20-ietf-poly1305",
+              "password": "k1dBOmOB4oqi7Ump37a1bQ"
             }
           ]
         },
-        "streamSettings": {
-          "network": "grpc",
-          "security": "none"
-        },
-        "tag": "proxy"
+        "tag": "@V2rayNG3"
       },
       {
         "protocol": "freedom",
@@ -65,7 +56,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10801,
+        "port": 10815,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -77,17 +68,217 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "135.125.245.131",
+              "port": 20939,
+              "method": "chacha20-ietf-poly1305",
+              "password": "85d3d8ccba287d3e"
+            }
+          ]
+        },
+        "tag": "WQ 5 (@Outline_Vpn) free"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "135.125.245.131",
+              "port": 20939,
+              "method": "chacha20-ietf-poly1305",
+              "password": "85d3d8ccba287d3e"
+            }
+          ]
+        },
+        "tag": "@V2rayNG3"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10812,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "57.129.95.38",
+              "port": 11201,
+              "method": "chacha20-ietf-poly1305",
+              "password": "f54cdee10f8b25ce"
+            }
+          ]
+        },
+        "tag": "@V2rayNG3"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10812,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "promo18v.bystrivpn.ru",
+              "port": 443,
+              "method": "chacha20-ietf-poly1305",
+              "password": "dAHM1pm8ag7KdlrUylQi6t"
+            }
+          ]
+        },
+        "tag": "@V2rayNG3"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10819,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vmess",
         "settings": {
           "vnext": [
             {
-              "address": "93.186.201.64",
-              "port": 443,
+              "address": "47.251.91.241",
+              "port": 42899,
               "users": [
                 {
-                  "id": "7005f499-036f-4570-a2a1-29761cfbbd9e",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
+                  "id": "0925b355-2bcd-4eae-9720-d2709e4f7e36",
+                  "alterId": 0,
+                  "security": "auto"
                 }
               ]
             }
@@ -95,20 +286,7 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "desrv.fasti.win",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ],
-            "show": false,
-            "publicKey": "THd83pRAiz68QKKNCzCdj3hvVq9Wy7NIFeIk1WjRJ1c",
-            "shortId": "15cdd4ff88310cf0",
-            "spiderX": "/"
-          }
+          "security": ""
         },
         "tag": "proxy"
       },
@@ -149,17 +327,17 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "vmess",
         "settings": {
           "vnext": [
             {
-              "address": "212.224.125.154",
+              "address": "89.31.120.192",
               "port": 443,
               "users": [
                 {
-                  "id": "7005f499-036f-4570-a2a1-29761cfbbd9e",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
+                  "id": "44537595-9ccc-4b83-8936-5f9ad3229019",
+                  "alterId": 0,
+                  "security": "auto"
                 }
               ]
             }
@@ -167,20 +345,7 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "desrv.fasti.win",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ],
-            "show": false,
-            "publicKey": "THd83pRAiz68QKKNCzCdj3hvVq9Wy7NIFeIk1WjRJ1c",
-            "shortId": "15cdd4ff88310cf0",
-            "spiderX": "/"
-          }
+          "security": ""
         },
         "tag": "proxy"
       },
@@ -209,7 +374,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10819,
+        "port": 10815,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -221,112 +386,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "193.187.132.145",
-              "port": 587,
-              "users": [
-                {
-                  "id": "65a1e22c-d37e-4b92-b6ca-1d09dcd1d441",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
+              "address": "57.130.28.148",
+              "port": 11201,
+              "method": "chacha20-ietf-poly1305",
+              "password": "74918bc801d53a4b"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "excoino.com",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ],
-            "show": false,
-            "publicKey": "HnPEhCDTcZnDejsAiidoOSx2-h0EvJMILj4bv3X1mBc",
-            "shortId": "916e8258c4a01b02",
-            "spiderX": "/"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10818,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "swit.zerosulution.com",
-              "port": 7567,
-              "users": [
-                {
-                  "id": "773ee54d-898b-433c-a5d9-ff197e90a054",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "excoino.com",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ],
-            "show": false,
-            "publicKey": "DSF9EhsLMGd7Clgh7PhrY4AmCxIYtCnATRrzA2sVTis",
-            "shortId": "abb50e",
-            "spiderX": "/"
-          }
-        },
-        "tag": "proxy"
+        "tag": "@V2rayNG3"
       },
       {
         "protocol": "freedom",
