@@ -5,134 +5,54 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 32ms
-  type: vless
-  server: 45.82.251.126
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-2 | 252ms
-  type: vless
-  server: 185.254.98.165
-  port: 443
-  uuid: 7f309339-ce9f-4c45-8fd9-de9846ffc9d4
-  network: tcp
-- name: VLESS-3 | 1162ms
-  type: vless
-  server: 212.224.125.154
-  port: 443
-  uuid: 7005f499-036f-4570-a2a1-29761cfbbd9e
-  network: tcp
-- name: VLESS-4 | 526ms
-  type: vless
-  server: 93.186.201.64
-  port: 443
-  uuid: 7005f499-036f-4570-a2a1-29761cfbbd9e
-  network: tcp
-- name: VLESS-5 | 175ms
-  type: vless
-  server: 185.10.18.130
-  port: 443
-  uuid: 7e496ad4-bcbf-46e3-a1d7-f75778968a75
-  network: tcp
-- name: VLESS-6 | 1522ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
-- name: VLESS-7 | 1698ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
-- name: VLESS-8 | 1671ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
-- name: VLESS-9 | 1074ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
-- name: VLESS-10 | 1454ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
-- name: VLESS-11 | 1172ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
-- name: VLESS-12 | 994ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
-- name: VLESS-13 | 2792ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
-- name: VLESS-14 | 2645ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
-- name: VLESS-15 | 462ms
-  type: vless
-  server: 217.195.200.233
-  port: 35177
-  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
-  network: ws
+- name: SHADOWSOCKS-1 | 223ms
+  type: ss
+  server: 149.102.144.110
+  port: 26138
+  cipher: chacha20-ietf-poly1305
+  password: 2602101eff2c9250
+- name: TROJAN-2 | 295ms
+  type: trojan
+  server: 83.143.87.9
+  port: 18581
+  password: RPyW62_b9aH.ztJKeArou
+  sni: 83.143.87.9
+- name: TROJAN-3 | 369ms
+  type: trojan
+  server: 212.193.18.144
+  port: 36158
+  password: ZblhWr0mqMakCPg.N
+  sni: ya.ru
+- name: TROJAN-4 | 317ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-5 | 307ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 32ms
-  - VLESS-2 | 252ms
-  - VLESS-3 | 1162ms
-  - VLESS-4 | 526ms
-  - VLESS-5 | 175ms
-  - VLESS-6 | 1522ms
-  - VLESS-7 | 1698ms
-  - VLESS-8 | 1671ms
-  - VLESS-9 | 1074ms
-  - VLESS-10 | 1454ms
-  - VLESS-11 | 1172ms
-  - VLESS-12 | 994ms
-  - VLESS-13 | 2792ms
-  - VLESS-14 | 2645ms
-  - VLESS-15 | 462ms
+  - SHADOWSOCKS-1 | 223ms
+  - TROJAN-2 | 295ms
+  - TROJAN-3 | 369ms
+  - TROJAN-4 | 317ms
+  - TROJAN-5 | 307ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 32ms
-  - VLESS-2 | 252ms
-  - VLESS-3 | 1162ms
-  - VLESS-4 | 526ms
-  - VLESS-5 | 175ms
-  - VLESS-6 | 1522ms
-  - VLESS-7 | 1698ms
-  - VLESS-8 | 1671ms
-  - VLESS-9 | 1074ms
-  - VLESS-10 | 1454ms
-  - VLESS-11 | 1172ms
-  - VLESS-12 | 994ms
-  - VLESS-13 | 2792ms
-  - VLESS-14 | 2645ms
-  - VLESS-15 | 462ms
+  - SHADOWSOCKS-1 | 223ms
+  - TROJAN-2 | 295ms
+  - TROJAN-3 | 369ms
+  - TROJAN-4 | 317ms
+  - TROJAN-5 | 307ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
