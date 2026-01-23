@@ -5,54 +5,142 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 1003ms
+- name: VLESS-1 | 118ms
   type: vless
-  server: 93.186.201.64
-  port: 443
-  uuid: 7005f499-036f-4570-a2a1-29761cfbbd9e
-  network: tcp
-- name: VLESS-2 | 292ms
+  server: 45.82.251.126
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-2 | 119ms
+  type: vless
+  server: 45.82.251.135
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-3 | 434ms
   type: vless
   server: 185.254.98.165
   port: 443
   uuid: 7f309339-ce9f-4c45-8fd9-de9846ffc9d4
   network: tcp
-- name: VLESS-3 | 1706ms
+- name: VLESS-4 | 276ms
   type: vless
   server: 212.224.125.154
   port: 443
   uuid: 7005f499-036f-4570-a2a1-29761cfbbd9e
   network: tcp
-- name: VLESS-4 | 717ms
+- name: VLESS-5 | 1108ms
   type: vless
-  server: 193.187.132.145
-  port: 587
-  uuid: 65a1e22c-d37e-4b92-b6ca-1d09dcd1d441
+  server: 93.186.201.64
+  port: 443
+  uuid: 7005f499-036f-4570-a2a1-29761cfbbd9e
   network: tcp
-- name: VLESS-5 | 240ms
+- name: VLESS-6 | 281ms
   type: vless
   server: 185.10.18.130
   port: 443
   uuid: 7e496ad4-bcbf-46e3-a1d7-f75778968a75
   network: tcp
+- name: VLESS-7 | 887ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
+- name: VLESS-8 | 1379ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
+- name: VLESS-9 | 1245ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
+- name: VLESS-10 | 1573ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
+- name: VLESS-11 | 962ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
+- name: VLESS-12 | 1418ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
+- name: VLESS-13 | 1172ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
+- name: VLESS-14 | 921ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
+- name: VLESS-15 | 945ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
+- name: VLESS-16 | 938ms
+  type: vless
+  server: 217.195.200.233
+  port: 35177
+  uuid: 8d51e92a-7f6f-433c-b946-1ec411e7a759
+  network: ws
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 1003ms
-  - VLESS-2 | 292ms
-  - VLESS-3 | 1706ms
-  - VLESS-4 | 717ms
-  - VLESS-5 | 240ms
+  - VLESS-1 | 118ms
+  - VLESS-2 | 119ms
+  - VLESS-3 | 434ms
+  - VLESS-4 | 276ms
+  - VLESS-5 | 1108ms
+  - VLESS-6 | 281ms
+  - VLESS-7 | 887ms
+  - VLESS-8 | 1379ms
+  - VLESS-9 | 1245ms
+  - VLESS-10 | 1573ms
+  - VLESS-11 | 962ms
+  - VLESS-12 | 1418ms
+  - VLESS-13 | 1172ms
+  - VLESS-14 | 921ms
+  - VLESS-15 | 945ms
+  - VLESS-16 | 938ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 1003ms
-  - VLESS-2 | 292ms
-  - VLESS-3 | 1706ms
-  - VLESS-4 | 717ms
-  - VLESS-5 | 240ms
+  - VLESS-1 | 118ms
+  - VLESS-2 | 119ms
+  - VLESS-3 | 434ms
+  - VLESS-4 | 276ms
+  - VLESS-5 | 1108ms
+  - VLESS-6 | 281ms
+  - VLESS-7 | 887ms
+  - VLESS-8 | 1379ms
+  - VLESS-9 | 1245ms
+  - VLESS-10 | 1573ms
+  - VLESS-11 | 962ms
+  - VLESS-12 | 1418ms
+  - VLESS-13 | 1172ms
+  - VLESS-14 | 921ms
+  - VLESS-15 | 945ms
+  - VLESS-16 | 938ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
