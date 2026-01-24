@@ -5,54 +5,98 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 366ms
-  type: trojan
-  server: node-fr-1.v2sv.top
-  port: 2083
-  password: nodes-b211f28a
-  sni: node-fr-1.v2sv.top
-- name: TROJAN-2 | 339ms
-  type: trojan
-  server: 219.76.135.98
-  port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-- name: TROJAN-3 | 356ms
-  type: trojan
-  server: 80.173.230.196
-  port: 26279
-  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
-  sni: 80.173.230.196
-- name: TROJAN-4 | 461ms
-  type: trojan
-  server: 167.17.185.172
-  port: 10889
-  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
-  sni: web.max.ru
-- name: VLESS-5 | 158ms
-  type: vless
-  server: 43.161.253.78
-  port: 9527
-  uuid: d4a23188-85b0-4b46-b84b-f1d36d66c03e
+- name: SHADOWSOCKS-1 | 160ms
+  type: ss
+  server: 82.38.31.210
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: SHADOWSOCKS-2 | 162ms
+  type: ss
+  server: 135.125.245.131
+  port: 20939
+  cipher: chacha20-ietf-poly1305
+  password: 85d3d8ccba287d3e
+- name: SHADOWSOCKS-3 | 162ms
+  type: ss
+  server: 135.125.245.131
+  port: 20939
+  cipher: chacha20-ietf-poly1305
+  password: 85d3d8ccba287d3e
+- name: SHADOWSOCKS-4 | 174ms
+  type: ss
+  server: 57.129.95.38
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: f54cdee10f8b25ce
+- name: SHADOWSOCKS-5 | 239ms
+  type: ss
+  server: 90.156.203.62
+  port: 5112
+  cipher: chacha20-ietf-poly1305
+  password: VVlAff77CnAU43Aoc5j15Y
+- name: VMESS-6 | 118ms
+  type: vmess
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
+  alterId: 0
+  cipher: auto
   network: tcp
+- name: VMESS-7 | 449ms
+  type: vmess
+  server: 89.31.120.192
+  port: 443
+  uuid: 44537595-9ccc-4b83-8936-5f9ad3229019
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: SHADOWSOCKS-8 | 317ms
+  type: ss
+  server: promo18v.bystrivpn.ru
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dAHM1pm8ag7KdlrUylQi6t
+- name: VLESS-9 | 550ms
+  type: vless
+  server: 217.16.16.160
+  port: 47014
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  network: tcp
+- name: SHADOWSOCKS-10 | 144ms
+  type: ss
+  server: 57.130.28.148
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 74918bc801d53a4b
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 366ms
-  - TROJAN-2 | 339ms
-  - TROJAN-3 | 356ms
-  - TROJAN-4 | 461ms
-  - VLESS-5 | 158ms
+  - SHADOWSOCKS-1 | 160ms
+  - SHADOWSOCKS-2 | 162ms
+  - SHADOWSOCKS-3 | 162ms
+  - SHADOWSOCKS-4 | 174ms
+  - SHADOWSOCKS-5 | 239ms
+  - VMESS-6 | 118ms
+  - VMESS-7 | 449ms
+  - SHADOWSOCKS-8 | 317ms
+  - VLESS-9 | 550ms
+  - SHADOWSOCKS-10 | 144ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 366ms
-  - TROJAN-2 | 339ms
-  - TROJAN-3 | 356ms
-  - TROJAN-4 | 461ms
-  - VLESS-5 | 158ms
+  - SHADOWSOCKS-1 | 160ms
+  - SHADOWSOCKS-2 | 162ms
+  - SHADOWSOCKS-3 | 162ms
+  - SHADOWSOCKS-4 | 174ms
+  - SHADOWSOCKS-5 | 239ms
+  - VMESS-6 | 118ms
+  - VMESS-7 | 449ms
+  - SHADOWSOCKS-8 | 317ms
+  - VLESS-9 | 550ms
+  - SHADOWSOCKS-10 | 144ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
