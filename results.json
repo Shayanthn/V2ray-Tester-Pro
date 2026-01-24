@@ -1,16 +1,95 @@
 [
   {
     "protocol": "vmess",
-    "address": "seoul03.zgjok.com",
-    "ping": 494,
-    "jitter": 495,
-    "download_speed": 11.09,
-    "upload_speed": 6.81,
+    "address": "165.140.216.141",
+    "ping": 29,
+    "jitter": 29,
+    "download_speed": 194.33,
+    "upload_speed": 270.05,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
+    },
+    "ip": "165.140.216.141",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10818,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "165.140.216.141",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "e7d72a8d-26f2-4b54-b366-0c43e0bcba7d",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiIxNjUuMTQwLjIxNi4xNDEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZTdkNzJhOGQtMjZmMi00YjU0LWIzNjYtMGM0M2UwYmNiYTdkIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI0NDMiLCJwcyI6IvCfjoQ4M0BvbmVjbGlja3ZwbmtleXMiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6IiIsInYiOiIyIn0=vmess",
+    "country": "United States",
+    "country_code": "US",
+    "city": "San Francisco",
+    "isp": "Xicomm LLC"
+  },
+  {
+    "protocol": "vmess",
+    "address": "seoul03.zgjok.com",
+    "ping": 382,
+    "jitter": 375,
+    "download_speed": 8.69,
+    "upload_speed": 9.3,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": false
     },
     "ip": "seoul03.zgjok.com",
     "config_json": {
@@ -20,7 +99,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10819,
+          "port": 10804,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -85,94 +164,15 @@
   },
   {
     "protocol": "vmess",
-    "address": "165.140.216.141",
-    "ping": 106,
-    "jitter": 80,
-    "download_speed": 42.63,
-    "upload_speed": 30.27,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "165.140.216.141",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10814,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "165.140.216.141",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "e7d72a8d-26f2-4b54-b366-0c43e0bcba7d",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiIxNjUuMTQwLjIxNi4xNDEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZTdkNzJhOGQtMjZmMi00YjU0LWIzNjYtMGM0M2UwYmNiYTdkIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI0NDMiLCJwcyI6IvCfjoQ4M0BvbmVjbGlja3ZwbmtleXMiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6IiIsInYiOiIyIn0=vmess",
-    "country": "United States",
-    "country_code": "US",
-    "city": "San Francisco",
-    "isp": "Xicomm LLC"
-  },
-  {
-    "protocol": "vmess",
     "address": "seoul03.zgjok.com",
-    "ping": 508,
-    "jitter": 519,
-    "download_speed": 10.82,
-    "upload_speed": 5.44,
+    "ping": 696,
+    "jitter": 937,
+    "download_speed": 0.0,
+    "upload_speed": 10.09,
     "is_bypassing": true,
     "connectivity": {
-      "telegram": true,
-      "instagram": true,
+      "telegram": false,
+      "instagram": false,
       "youtube": true
     },
     "ip": "seoul03.zgjok.com",
@@ -249,10 +249,10 @@
   {
     "protocol": "vmess",
     "address": "94.232.247.165",
-    "ping": 177,
-    "jitter": 126,
+    "ping": 312,
+    "jitter": 153,
     "download_speed": 0.0,
-    "upload_speed": 4.61,
+    "upload_speed": 3.09,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -267,7 +267,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10801,
+          "port": 10807,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -328,10 +328,10 @@
   {
     "protocol": "vmess",
     "address": "47.251.91.241",
-    "ping": 120,
-    "jitter": 89,
-    "download_speed": 6.66,
-    "upload_speed": 2.21,
+    "ping": 17,
+    "jitter": 19,
+    "download_speed": 24.22,
+    "upload_speed": 17.64,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -346,7 +346,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10805,
+          "port": 10802,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -407,10 +407,10 @@
   {
     "protocol": "vmess",
     "address": "45.89.52.207",
-    "ping": 259,
-    "jitter": 190,
-    "download_speed": 16.35,
-    "upload_speed": 11.5,
+    "ping": 338,
+    "jitter": 254,
+    "download_speed": 12.23,
+    "upload_speed": 8.5,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -425,7 +425,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10815,
+          "port": 10812,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -455,33 +455,13 @@
           },
           "streamSettings": {
             "network": "tcp",
-            "security": "",
-            "sockopt": {
-              "dialerProxy": "fragment",
-              "tcpKeepAliveIdle": 100
-            }
+            "security": ""
           },
           "tag": "proxy"
         },
         {
           "protocol": "freedom",
           "tag": "direct"
-        },
-        {
-          "tag": "fragment",
-          "protocol": "freedom",
-          "settings": {
-            "fragment": {
-              "packets": "tlshello",
-              "length": "100-200",
-              "interval": "10-20"
-            }
-          },
-          "streamSettings": {
-            "sockopt": {
-              "tcpKeepAliveIdle": 100
-            }
-          }
         }
       ],
       "routing": {
@@ -498,7 +478,6 @@
       }
     },
     "uri": "vmess://eyJhZGQiOiI0NS44OS41Mi4yMDciLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYWM0YzEyYzUtNDVmMi00Mzk4LWE3MTgtOTk4Mzk0MWVkZTJiIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIzOTY1MSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIiLCJwcyI6IkBWMnJheXNDb2xsZWN0b3Ig8J+PkCJ9",
-    "revived_with_fragment": true,
     "country": "Turkey",
     "country_code": "TR",
     "city": "Izmir",
