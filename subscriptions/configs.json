@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10804,
+        "port": 10817,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -18,25 +18,28 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "trojan",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "43.161.253.78",
-              "port": 9527,
-              "users": [
-                {
-                  "id": "d4a23188-85b0-4b46-b84b-f1d36d66c03e",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
+              "address": "node-fr-1.v2sv.top",
+              "port": 2083,
+              "password": "nodes-b211f28a"
             }
           ]
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "none"
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "node-fr-1.v2sv.top",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
         },
         "tag": "proxy"
       },
@@ -127,7 +130,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10805,
+        "port": 10811,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -143,9 +146,9 @@
         "settings": {
           "servers": [
             {
-              "address": "node-fr-1.v2sv.top",
-              "port": 2083,
-              "password": "nodes-b211f28a"
+              "address": "80.173.230.196",
+              "port": 26279,
+              "password": "a5inYFE=JGV89+hjxIqgDp1tcWBd6"
             }
           ]
         },
@@ -153,7 +156,7 @@
           "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "node-fr-1.v2sv.top",
+            "serverName": "80.173.230.196",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
@@ -189,7 +192,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10809,
+        "port": 10805,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -251,7 +254,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10807,
+        "port": 10819,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -263,28 +266,25 @@
     ],
     "outbounds": [
       {
-        "protocol": "trojan",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "80.173.230.196",
-              "port": 26279,
-              "password": "a5inYFE=JGV89+hjxIqgDp1tcWBd6"
+              "address": "43.161.253.78",
+              "port": 9527,
+              "users": [
+                {
+                  "id": "d4a23188-85b0-4b46-b84b-f1d36d66c03e",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
             }
           ]
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "80.173.230.196",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
+          "security": "none"
         },
         "tag": "proxy"
       },

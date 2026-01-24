@@ -5,54 +5,54 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 277ms
-  type: vless
-  server: 43.161.253.78
-  port: 9527
-  uuid: d4a23188-85b0-4b46-b84b-f1d36d66c03e
-  network: tcp
-- name: TROJAN-2 | 367ms
-  type: trojan
-  server: 219.76.135.98
-  port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-- name: TROJAN-3 | 399ms
+- name: TROJAN-1 | 366ms
   type: trojan
   server: node-fr-1.v2sv.top
   port: 2083
   password: nodes-b211f28a
   sni: node-fr-1.v2sv.top
-- name: TROJAN-4 | 438ms
+- name: TROJAN-2 | 339ms
   type: trojan
-  server: 167.17.185.172
-  port: 10889
-  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
-  sni: web.max.ru
-- name: TROJAN-5 | 369ms
+  server: 219.76.135.98
+  port: 443
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: TROJAN-3 | 356ms
   type: trojan
   server: 80.173.230.196
   port: 26279
   password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
   sni: 80.173.230.196
+- name: TROJAN-4 | 461ms
+  type: trojan
+  server: 167.17.185.172
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  sni: web.max.ru
+- name: VLESS-5 | 158ms
+  type: vless
+  server: 43.161.253.78
+  port: 9527
+  uuid: d4a23188-85b0-4b46-b84b-f1d36d66c03e
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 277ms
-  - TROJAN-2 | 367ms
-  - TROJAN-3 | 399ms
-  - TROJAN-4 | 438ms
-  - TROJAN-5 | 369ms
+  - TROJAN-1 | 366ms
+  - TROJAN-2 | 339ms
+  - TROJAN-3 | 356ms
+  - TROJAN-4 | 461ms
+  - VLESS-5 | 158ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 277ms
-  - TROJAN-2 | 367ms
-  - TROJAN-3 | 399ms
-  - TROJAN-4 | 438ms
-  - TROJAN-5 | 369ms
+  - TROJAN-1 | 366ms
+  - TROJAN-2 | 339ms
+  - TROJAN-3 | 356ms
+  - TROJAN-4 | 461ms
+  - VLESS-5 | 158ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
