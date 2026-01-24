@@ -5,89 +5,74 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 23ms
+- name: VLESS-1 | 98ms
+  type: vless
+  server: 172.93.100.151
+  port: 443
+  uuid: 45e3b7ad-03b6-42fc-b616-1e92bdd0a5b3
+  network: tcp
+- name: VLESS-2 | 410ms
+  type: vless
+  server: 193.43.146.34
+  port: 8443
+  uuid: d0dea598-9047-4567-a934-84c2797c0978
+  network: tcp
+- name: VMESS-3 | 70ms
   type: vmess
-  server: 47.251.91.241
-  port: 42899
-  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 23ms
+- name: VMESS-4 | 99ms
   type: vmess
-  server: 165.140.216.141
-  port: 443
-  uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 359ms
-  type: vmess
-  server: seoul03.zgjok.com
+- name: TROJAN-5 | 230ms
+  type: trojan
+  server: tuntro006.instconn.com
   port: 443
-  uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: seoul03.zgjok.com
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-4 | 174ms
-  type: vmess
-  server: seoul03.zgjok.com
-  port: 443
-  uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: seoul03.zgjok.com
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-5 | 251ms
-  type: vmess
-  server: 94.232.247.165
-  port: 45653
-  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
-  alterId: 0
-  cipher: auto
+  password: 30077070-596e-48ea-9400-14c8ed07bd97
+  sni: torontorm1.686911.xyz
+- name: VLESS-6 | 994ms
+  type: vless
+  server: 217.16.16.160
+  port: 47014
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
   network: tcp
-- name: VMESS-6 | 599ms
-  type: vmess
-  server: n1753598451.74qxv.top
-  port: 443
-  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: n1753598451.74qxv.top
-  ws-opts:
-    path: /
-    headers: {}
+- name: VLESS-7 | 1883ms
+  type: vless
+  server: 178.17.53.28
+  port: 47539
+  uuid: 447c45cd-ade0-4bfe-90a0-3e581829f741
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 23ms
-  - VMESS-2 | 23ms
-  - VMESS-3 | 359ms
-  - VMESS-4 | 174ms
-  - VMESS-5 | 251ms
-  - VMESS-6 | 599ms
+  - VLESS-1 | 98ms
+  - VLESS-2 | 410ms
+  - VMESS-3 | 70ms
+  - VMESS-4 | 99ms
+  - TROJAN-5 | 230ms
+  - VLESS-6 | 994ms
+  - VLESS-7 | 1883ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 23ms
-  - VMESS-2 | 23ms
-  - VMESS-3 | 359ms
-  - VMESS-4 | 174ms
-  - VMESS-5 | 251ms
-  - VMESS-6 | 599ms
+  - VLESS-1 | 98ms
+  - VLESS-2 | 410ms
+  - VMESS-3 | 70ms
+  - VMESS-4 | 99ms
+  - TROJAN-5 | 230ms
+  - VLESS-6 | 994ms
+  - VLESS-7 | 1883ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
