@@ -5,7 +5,13 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 106ms
+- name: VLESS-1 | 57ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VMESS-2 | 135ms
   type: vmess
   server: 165.140.216.141
   port: 443
@@ -13,7 +19,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-2 | 174ms
+- name: VMESS-3 | 140ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -21,7 +27,31 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-3 | 266ms
+- name: VLESS-4 | 206ms
+  type: vless
+  server: 57.129.53.180
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-5 | 287ms
+  type: vless
+  server: 5.182.36.56
+  port: 45886
+  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
+  network: tcp
+- name: TROJAN-6 | 250ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: VLESS-7 | 403ms
+  type: vless
+  server: 45.12.143.191
+  port: 20329
+  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
+  network: tcp
+- name: VMESS-8 | 236ms
   type: vmess
   server: 45.89.52.207
   port: 39651
@@ -29,60 +59,38 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 1402ms
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: t1.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-5 | 167ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-6 | 619ms
-  type: vmess
-  server: sy4.620720.xyz
+- name: VLESS-9 | 218ms
+  type: vless
+  server: 188.34.193.153
   port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: sy4.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
+  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 106ms
-  - VMESS-2 | 174ms
-  - VMESS-3 | 266ms
-  - VMESS-4 | 1402ms
-  - VMESS-5 | 167ms
-  - VMESS-6 | 619ms
+  - VLESS-1 | 57ms
+  - VMESS-2 | 135ms
+  - VMESS-3 | 140ms
+  - VLESS-4 | 206ms
+  - VLESS-5 | 287ms
+  - TROJAN-6 | 250ms
+  - VLESS-7 | 403ms
+  - VMESS-8 | 236ms
+  - VLESS-9 | 218ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 106ms
-  - VMESS-2 | 174ms
-  - VMESS-3 | 266ms
-  - VMESS-4 | 1402ms
-  - VMESS-5 | 167ms
-  - VMESS-6 | 619ms
+  - VLESS-1 | 57ms
+  - VMESS-2 | 135ms
+  - VMESS-3 | 140ms
+  - VLESS-4 | 206ms
+  - VLESS-5 | 287ms
+  - TROJAN-6 | 250ms
+  - VLESS-7 | 403ms
+  - VMESS-8 | 236ms
+  - VLESS-9 | 218ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
