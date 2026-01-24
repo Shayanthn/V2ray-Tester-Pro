@@ -5,13 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 65ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VMESS-2 | 135ms
+- name: VMESS-1 | 107ms
   type: vmess
   server: 165.140.216.141
   port: 443
@@ -19,25 +13,19 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-3 | 326ms
+- name: VLESS-2 | 114ms
   type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
-  network: tcp
-- name: VLESS-4 | 419ms
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-3 | 261ms
   type: vless
-  server: 45.12.143.191
-  port: 20329
-  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
+  server: 57.129.53.180
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
   network: tcp
-- name: TROJAN-5 | 283ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: VMESS-6 | 131ms
+- name: VMESS-4 | 293ms
   type: vmess
   server: 45.89.52.207
   port: 39651
@@ -45,20 +33,31 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-7 | 577ms
-  type: vmess
-  server: n1753598451.74qxv.top
+- name: VLESS-5 | 338ms
+  type: vless
+  server: 5.182.36.56
+  port: 45886
+  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
+  network: tcp
+- name: TROJAN-6 | 303ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: VLESS-7 | 288ms
+  type: vless
+  server: 188.34.193.153
   port: 443
-  uuid: 9798678f-5b8c-4ff1-bbdd-b9b5c1539de0
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: n1753598451.74qxv.top
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-8 | 140ms
+  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
+  network: tcp
+- name: VLESS-8 | 440ms
+  type: vless
+  server: 45.12.143.191
+  port: 20329
+  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
+  network: tcp
+- name: VMESS-9 | 187ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -71,25 +70,27 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 65ms
-  - VMESS-2 | 135ms
-  - VLESS-3 | 326ms
-  - VLESS-4 | 419ms
-  - TROJAN-5 | 283ms
-  - VMESS-6 | 131ms
-  - VMESS-7 | 577ms
-  - VMESS-8 | 140ms
+  - VMESS-1 | 107ms
+  - VLESS-2 | 114ms
+  - VLESS-3 | 261ms
+  - VMESS-4 | 293ms
+  - VLESS-5 | 338ms
+  - TROJAN-6 | 303ms
+  - VLESS-7 | 288ms
+  - VLESS-8 | 440ms
+  - VMESS-9 | 187ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 65ms
-  - VMESS-2 | 135ms
-  - VLESS-3 | 326ms
-  - VLESS-4 | 419ms
-  - TROJAN-5 | 283ms
-  - VMESS-6 | 131ms
-  - VMESS-7 | 577ms
-  - VMESS-8 | 140ms
+  - VMESS-1 | 107ms
+  - VLESS-2 | 114ms
+  - VLESS-3 | 261ms
+  - VMESS-4 | 293ms
+  - VLESS-5 | 338ms
+  - TROJAN-6 | 303ms
+  - VLESS-7 | 288ms
+  - VLESS-8 | 440ms
+  - VMESS-9 | 187ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
