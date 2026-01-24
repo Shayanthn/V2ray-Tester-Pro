@@ -2,15 +2,15 @@
   {
     "protocol": "vmess",
     "address": "seoul03.zgjok.com",
-    "ping": 375,
-    "jitter": 373,
-    "download_speed": 14.08,
-    "upload_speed": 9.78,
-    "is_bypassing": true,
+    "ping": 510,
+    "jitter": 529,
+    "download_speed": 11.0,
+    "upload_speed": 7.08,
+    "is_bypassing": false,
     "connectivity": {
       "telegram": true,
       "instagram": true,
-      "youtube": true
+      "youtube": false
     },
     "ip": "seoul03.zgjok.com",
     "config_json": {
@@ -85,11 +85,95 @@
   },
   {
     "protocol": "vmess",
+    "address": "n1753598451.74qxv.top",
+    "ping": 1724,
+    "jitter": 2730,
+    "download_speed": 0.0,
+    "upload_speed": 0.0,
+    "is_bypassing": false,
+    "connectivity": {
+      "telegram": true,
+      "instagram": false,
+      "youtube": false
+    },
+    "ip": "n1753598451.74qxv.top",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10815,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "n1753598451.74qxv.top",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "9798678f-5b8c-4ff1-bbdd-b9b5c1539de0",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "n1753598451.74qxv.top",
+              "allowInsecure": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiJuMTc1MzU5ODQ1MS43NHF4di50b3AiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6Im4xNzUzNTk4NDUxLjc0cXh2LnRvcCIsImlkIjoiOTc5ODY3OGYtNWI4Yy00ZmYxLWJiZGQtYjliNWMxNTM5ZGUwIiwiaW5zZWN1cmUiOiIwIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiI0NDMiLCJwcyI6IldpRmktQFYycmF5QWxwaGEtMjkiLCJzY3kiOiJhdXRvIiwic25pIjoibjE3NTM1OTg0NTEuNzRxeHYudG9wIiwidGxzIjoidGxzIiwidHlwZSI6Ii0tLSIsInYiOiIyIn0=vmess",
+    "country": "Japan",
+    "country_code": "JP",
+    "city": "Tokyo",
+    "isp": "Alibaba Cloud LLC"
+  },
+  {
+    "protocol": "vmess",
     "address": "165.140.216.141",
-    "ping": 29,
-    "jitter": 31,
-    "download_speed": 312.3,
-    "upload_speed": 113.52,
+    "ping": 114,
+    "jitter": 87,
+    "download_speed": 41.49,
+    "upload_speed": 28.5,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -165,15 +249,15 @@
   {
     "protocol": "vmess",
     "address": "seoul03.zgjok.com",
-    "ping": 358,
-    "jitter": 347,
-    "download_speed": 14.2,
-    "upload_speed": 9.78,
-    "is_bypassing": true,
+    "ping": 453,
+    "jitter": 423,
+    "download_speed": 0.0,
+    "upload_speed": 6.69,
+    "is_bypassing": false,
     "connectivity": {
       "telegram": true,
       "instagram": true,
-      "youtube": true
+      "youtube": false
     },
     "ip": "seoul03.zgjok.com",
     "config_json": {
@@ -183,7 +267,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10819,
+          "port": 10811,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -249,10 +333,10 @@
   {
     "protocol": "vmess",
     "address": "94.232.247.165",
-    "ping": 260,
-    "jitter": 190,
-    "download_speed": 15.93,
-    "upload_speed": 11.24,
+    "ping": 167,
+    "jitter": 118,
+    "download_speed": 22.53,
+    "upload_speed": 16.09,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -267,7 +351,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10811,
+          "port": 10800,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -324,84 +408,5 @@
     "country_code": "FR",
     "city": "Paris",
     "isp": "WorkTitans B.V."
-  },
-  {
-    "protocol": "vmess",
-    "address": "47.251.91.241",
-    "ping": 18,
-    "jitter": 20,
-    "download_speed": 138.61,
-    "upload_speed": 185.9,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "47.251.91.241",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10805,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "47.251.91.241",
-                "port": 42899,
-                "users": [
-                  {
-                    "id": "0925b355-2bcd-4eae-9720-d2709e4f7e36",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiI0Ny4yNTEuOTEuMjQxIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjA5MjViMzU1LTJiY2QtNGVhZS05NzIwLWQyNzA5ZTRmN2UzNiIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiNDI4OTkiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6IiIsInYiOiIyIiwicHMiOiJAVjJyYXlzQ29sbGVjdG9yIOKYg++4jyJ9",
-    "country": "United States",
-    "country_code": "US",
-    "city": "Minkler",
-    "isp": "Alibaba Cloud LLC"
   }
 ]
