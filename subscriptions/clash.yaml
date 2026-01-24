@@ -5,72 +5,86 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 22ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
+- name: VLESS-1 | 195ms
+  type: vless
+  server: 5.129.231.109
+  port: 4443
+  uuid: 6e6609bf-6867-4fa7-b4c3-d5555d67d724
   network: tcp
-- name: VMESS-2 | 19ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
+- name: VLESS-2 | 197ms
+  type: vless
+  server: 45.67.231.116
+  port: 4443
+  uuid: 6e6609bf-6867-4fa7-b4c3-d5555d67d724
   network: tcp
-- name: VMESS-3 | 535ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
+- name: VLESS-3 | 230ms
+  type: vless
+  server: 5.181.21.101
+  port: 4443
+  uuid: 6e6609bf-6867-4fa7-b4c3-d5555d67d724
   network: tcp
-- name: VMESS-4 | 20ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
+- name: VLESS-4 | 537ms
+  type: vless
+  server: 5.129.214.27
+  port: 4443
+  uuid: 6e6609bf-6867-4fa7-b4c3-d5555d67d724
   network: tcp
-- name: VMESS-5 | 25ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
+- name: VLESS-5 | 239ms
+  type: vless
+  server: 89.23.123.15
+  port: 4443
+  uuid: 6e6609bf-6867-4fa7-b4c3-d5555d67d724
   network: tcp
-- name: TROJAN-6 | 324ms
-  type: trojan
-  server: tuntro006.instconn.com
-  port: 443
-  password: 30077070-596e-48ea-9400-14c8ed07bd97
-  sni: torontorm1.686911.xyz
+- name: VLESS-6 | 228ms
+  type: vless
+  server: 45.82.255.32
+  port: 4443
+  uuid: 6e6609bf-6867-4fa7-b4c3-d5555d67d724
+  network: tcp
+- name: VLESS-7 | 314ms
+  type: vless
+  server: 92.118.231.130
+  port: 4443
+  uuid: 6e6609bf-6867-4fa7-b4c3-d5555d67d724
+  network: tcp
+- name: VLESS-8 | 452ms
+  type: vless
+  server: 92.118.234.9
+  port: 4443
+  uuid: 6e6609bf-6867-4fa7-b4c3-d5555d67d724
+  network: tcp
+- name: VLESS-9 | 578ms
+  type: vless
+  server: 45.82.14.32
+  port: 4443
+  uuid: 6e6609bf-6867-4fa7-b4c3-d5555d67d724
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 22ms
-  - VMESS-2 | 19ms
-  - VMESS-3 | 535ms
-  - VMESS-4 | 20ms
-  - VMESS-5 | 25ms
-  - TROJAN-6 | 324ms
+  - VLESS-1 | 195ms
+  - VLESS-2 | 197ms
+  - VLESS-3 | 230ms
+  - VLESS-4 | 537ms
+  - VLESS-5 | 239ms
+  - VLESS-6 | 228ms
+  - VLESS-7 | 314ms
+  - VLESS-8 | 452ms
+  - VLESS-9 | 578ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 22ms
-  - VMESS-2 | 19ms
-  - VMESS-3 | 535ms
-  - VMESS-4 | 20ms
-  - VMESS-5 | 25ms
-  - TROJAN-6 | 324ms
+  - VLESS-1 | 195ms
+  - VLESS-2 | 197ms
+  - VLESS-3 | 230ms
+  - VLESS-4 | 537ms
+  - VLESS-5 | 239ms
+  - VLESS-6 | 228ms
+  - VLESS-7 | 314ms
+  - VLESS-8 | 452ms
+  - VLESS-9 | 578ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
