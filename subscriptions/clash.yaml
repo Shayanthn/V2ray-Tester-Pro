@@ -5,61 +5,86 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 57ms
-  type: ss
-  server: 45.154.204.7
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-2 | 326ms
-  type: ss
-  server: 23.95.76.59
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: TROJAN-3 | 276ms
+- name: VLESS-1 | 84ms
+  type: vless
+  server: pqh29v3.globalfymain.com
+  port: 8880
+  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
+  network: grpc
+- name: VLESS-2 | 117ms
+  type: vless
+  server: 15.204.97.149
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-3 | 242ms
+  type: vless
+  server: 57.129.53.180
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-4 | 241ms
+  type: vless
+  server: 91.107.173.252
+  port: 41647
+  uuid: e50fa46f-20c6-4c0d-fa0e-d9ffd92df36f
+  network: grpc
+- name: TROJAN-5 | 374ms
   type: trojan
-  server: 80.173.230.196
-  port: 26279
-  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
-  sni: 80.173.230.196
-- name: VMESS-4 | 739ms
-  type: vmess
-  server: t1.620720.xyz
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: VLESS-6 | 443ms
+  type: vless
+  server: 45.12.143.191
+  port: 20329
+  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
+  network: tcp
+- name: VLESS-7 | 450ms
+  type: vless
+  server: 45.12.143.191
+  port: 20329
+  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
+  network: tcp
+- name: VLESS-8 | 494ms
+  type: vless
+  server: 45.89.107.200
   port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: t1.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
-- name: TROJAN-5 | 1607ms
-  type: trojan
-  server: 212.193.18.144
-  port: 36158
-  password: ZblhWr0mqMakCPg.N
-  sni: ya.ru
+  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
+  network: tcp
+- name: VLESS-9 | 273ms
+  type: vless
+  server: 188.34.193.153
+  port: 443
+  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 57ms
-  - SHADOWSOCKS-2 | 326ms
-  - TROJAN-3 | 276ms
-  - VMESS-4 | 739ms
-  - TROJAN-5 | 1607ms
+  - VLESS-1 | 84ms
+  - VLESS-2 | 117ms
+  - VLESS-3 | 242ms
+  - VLESS-4 | 241ms
+  - TROJAN-5 | 374ms
+  - VLESS-6 | 443ms
+  - VLESS-7 | 450ms
+  - VLESS-8 | 494ms
+  - VLESS-9 | 273ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 57ms
-  - SHADOWSOCKS-2 | 326ms
-  - TROJAN-3 | 276ms
-  - VMESS-4 | 739ms
-  - TROJAN-5 | 1607ms
+  - VLESS-1 | 84ms
+  - VLESS-2 | 117ms
+  - VLESS-3 | 242ms
+  - VLESS-4 | 241ms
+  - TROJAN-5 | 374ms
+  - VLESS-6 | 443ms
+  - VLESS-7 | 450ms
+  - VLESS-8 | 494ms
+  - VLESS-9 | 273ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
