@@ -5,96 +5,54 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 462ms
-  type: trojan
-  server: 160.16.72.33
-  port: 544
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  sni: www.nintendogames.net
-- name: TROJAN-2 | 1451ms
-  type: trojan
-  server: 160.16.72.33
-  port: 3901
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  sni: www.nintendogames.net
-- name: TROJAN-3 | 612ms
-  type: trojan
-  server: 58.152.53.45
-  port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-- name: TROJAN-4 | 906ms
-  type: trojan
-  server: 219.76.135.98
-  port: 443
-  password: BxceQaOe
-  sni: 219.76.135.98
-- name: VMESS-5 | 63ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
+- name: VLESS-1 | 252ms
+  type: vless
+  server: gcre.segstar.info
+  port: 10100
+  uuid: '@SEGVPN'
   network: tcp
-- name: TROJAN-6 | 251ms
-  type: trojan
-  server: 160.16.132.38
-  port: 4006
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  sni: www.nintendogames.net
-- name: TROJAN-7 | 253ms
-  type: trojan
-  server: 160.16.132.38
-  port: 3423
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  sni: www.nintendogames.net
-- name: TROJAN-8 | 532ms
-  type: trojan
-  server: 160.16.132.38
-  port: 5076
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  sni: www.nintendogames.net
-- name: TROJAN-9 | 558ms
-  type: trojan
-  server: 58.152.25.130
+- name: VLESS-2 | 659ms
+  type: vless
+  server: 45.144.48.192
+  port: 8443
+  uuid: 787ae54e-40ad-4caf-899b-ad3a19ff1103
+  network: tcp
+- name: VLESS-3 | 412ms
+  type: vless
+  server: tr.sepserver.de
+  port: 8516
+  uuid: 676ad67f-0983-4689-9047-2f7b5e0ebd3e
+  network: tcp
+- name: VLESS-4 | 382ms
+  type: vless
+  server: fin.zerosulution.com
+  port: 2000
+  uuid: 93bd8127-1bdd-4a0c-8cf8-8ff079a594d6
+  network: tcp
+- name: VLESS-5 | 800ms
+  type: vless
+  server: 51.250.45.183
   port: 443
-  password: BxceQaOe
-  sni: 58.152.25.130
-- name: TROJAN-10 | 430ms
-  type: trojan
-  server: 58.152.25.130
-  port: 443
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
+  uuid: 71031aa1-067e-425e-97f5-37875f838a10
+  network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 462ms
-  - TROJAN-2 | 1451ms
-  - TROJAN-3 | 612ms
-  - TROJAN-4 | 906ms
-  - VMESS-5 | 63ms
-  - TROJAN-6 | 251ms
-  - TROJAN-7 | 253ms
-  - TROJAN-8 | 532ms
-  - TROJAN-9 | 558ms
-  - TROJAN-10 | 430ms
+  - VLESS-1 | 252ms
+  - VLESS-2 | 659ms
+  - VLESS-3 | 412ms
+  - VLESS-4 | 382ms
+  - VLESS-5 | 800ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 462ms
-  - TROJAN-2 | 1451ms
-  - TROJAN-3 | 612ms
-  - TROJAN-4 | 906ms
-  - VMESS-5 | 63ms
-  - TROJAN-6 | 251ms
-  - TROJAN-7 | 253ms
-  - TROJAN-8 | 532ms
-  - TROJAN-9 | 558ms
-  - TROJAN-10 | 430ms
+  - VLESS-1 | 252ms
+  - VLESS-2 | 659ms
+  - VLESS-3 | 412ms
+  - VLESS-4 | 382ms
+  - VLESS-5 | 800ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
