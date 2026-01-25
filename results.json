@@ -2,10 +2,10 @@
   {
     "protocol": "vmess",
     "address": "165.140.216.141",
-    "ping": 142,
-    "jitter": 109,
-    "download_speed": 32.37,
-    "upload_speed": 20.81,
+    "ping": 117,
+    "jitter": 95,
+    "download_speed": 41.82,
+    "upload_speed": 29.42,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -81,10 +81,10 @@
   {
     "protocol": "vmess",
     "address": "seoul03.zgjok.com",
-    "ping": 534,
-    "jitter": 550,
-    "download_speed": 9.7,
-    "upload_speed": 6.97,
+    "ping": 484,
+    "jitter": 499,
+    "download_speed": 10.84,
+    "upload_speed": 7.87,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -165,10 +165,10 @@
   {
     "protocol": "vmess",
     "address": "seoul03.zgjok.com",
-    "ping": 500,
-    "jitter": 485,
-    "download_speed": 9.82,
-    "upload_speed": 6.44,
+    "ping": 559,
+    "jitter": 616,
+    "download_speed": 9.45,
+    "upload_speed": 7.52,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -249,10 +249,10 @@
   {
     "protocol": "vmess",
     "address": "94.232.247.165",
-    "ping": 145,
-    "jitter": 103,
-    "download_speed": 7.94,
-    "upload_speed": 18.25,
+    "ping": 168,
+    "jitter": 118,
+    "download_speed": 23.08,
+    "upload_speed": 15.46,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -267,7 +267,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10810,
+          "port": 10807,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -327,16 +327,95 @@
   },
   {
     "protocol": "vmess",
-    "address": "47.251.91.241",
-    "ping": 116,
-    "jitter": 87,
-    "download_speed": 15.19,
-    "upload_speed": 23.99,
+    "address": "45.89.52.207",
+    "ping": 260,
+    "jitter": 195,
+    "download_speed": 7.61,
+    "upload_speed": 6.65,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
+    },
+    "ip": "45.89.52.207",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10815,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "45.89.52.207",
+                "port": 39651,
+                "users": [
+                  {
+                    "id": "ac4c12c5-45f2-4398-a718-9983941ede2b",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiI0NS44OS41Mi4yMDciLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYWM0YzEyYzUtNDVmMi00Mzk4LWE3MTgtOTk4Mzk0MWVkZTJiIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIzOTY1MSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIiLCJwcyI6IkBWMnJheXNDb2xsZWN0b3Ig8J+PkCJ9",
+    "country": "Turkey",
+    "country_code": "TR",
+    "city": "Izmir",
+    "isp": "WorkTitans B.V."
+  },
+  {
+    "protocol": "vmess",
+    "address": "47.251.91.241",
+    "ping": 117,
+    "jitter": 88,
+    "download_speed": 8.31,
+    "upload_speed": 0.0,
+    "is_bypassing": false,
+    "connectivity": {
+      "telegram": false,
+      "instagram": false,
+      "youtube": false
     },
     "ip": "47.251.91.241",
     "config_json": {
@@ -346,7 +425,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10808,
+          "port": 10811,
           "protocol": "http",
           "settings": {
             "timeout": 0,
