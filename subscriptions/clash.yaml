@@ -5,103 +5,61 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 824ms
-  type: ss
-  server: lv.vpnsparta.pro
-  port: 57456
-  cipher: chacha20-ietf-poly1305
-  password: 8afc633eb63227e9
-- name: TROJAN-2 | 98ms
-  type: trojan
-  server: tuntro006.instconn.com
+- name: VMESS-1 | 137ms
+  type: vmess
+  server: 165.140.216.141
   port: 443
-  password: 30077070-596e-48ea-9400-14c8ed07bd97
-  sni: torontorm1.686911.xyz
-- name: VMESS-3 | 116ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-4 | 112ms
+- name: VMESS-2 | 147ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: 94.232.247.165
+  port: 45653
+  uuid: 9e91d19a-c73f-4276-adbc-b337c374259c
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-5 | 111ms
+- name: VMESS-3 | 243ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: 45.89.52.207
+  port: 39651
+  uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
   alterId: 0
   cipher: auto
   network: tcp
-- name: VMESS-6 | 113ms
+- name: VMESS-4 | 546ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: seoul03.zgjok.com
+  port: 443
+  uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
   alterId: 0
   cipher: auto
-  network: tcp
-- name: VMESS-7 | 117ms
+  network: ws
+  tls: true
+  servername: seoul03.zgjok.com
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-5 | 529ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: seoul03.zgjok.com
+  port: 443
+  uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
   alterId: 0
   cipher: auto
-  network: tcp
-- name: VMESS-8 | 117ms
+  network: ws
+  tls: true
+  servername: seoul03.zgjok.com
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-6 | 137ms
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-9 | 117ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-10 | 147ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-11 | 112ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-12 | 123ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-13 | 112ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: 47.251.91.241
+  port: 42899
+  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
   alterId: 0
   cipher: auto
   network: tcp
@@ -110,35 +68,21 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 824ms
-  - TROJAN-2 | 98ms
-  - VMESS-3 | 116ms
-  - VMESS-4 | 112ms
-  - VMESS-5 | 111ms
-  - VMESS-6 | 113ms
-  - VMESS-7 | 117ms
-  - VMESS-8 | 117ms
-  - VMESS-9 | 117ms
-  - VMESS-10 | 147ms
-  - VMESS-11 | 112ms
-  - VMESS-12 | 123ms
-  - VMESS-13 | 112ms
+  - VMESS-1 | 137ms
+  - VMESS-2 | 147ms
+  - VMESS-3 | 243ms
+  - VMESS-4 | 546ms
+  - VMESS-5 | 529ms
+  - VMESS-6 | 137ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 824ms
-  - TROJAN-2 | 98ms
-  - VMESS-3 | 116ms
-  - VMESS-4 | 112ms
-  - VMESS-5 | 111ms
-  - VMESS-6 | 113ms
-  - VMESS-7 | 117ms
-  - VMESS-8 | 117ms
-  - VMESS-9 | 117ms
-  - VMESS-10 | 147ms
-  - VMESS-11 | 112ms
-  - VMESS-12 | 123ms
-  - VMESS-13 | 112ms
+  - VMESS-1 | 137ms
+  - VMESS-2 | 147ms
+  - VMESS-3 | 243ms
+  - VMESS-4 | 546ms
+  - VMESS-5 | 529ms
+  - VMESS-6 | 137ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
