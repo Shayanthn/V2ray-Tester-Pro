@@ -1,15 +1,94 @@
 [
   {
     "protocol": "vmess",
-    "address": "seoul03.zgjok.com",
-    "ping": 477,
-    "jitter": 497,
-    "download_speed": 10.97,
-    "upload_speed": 6.97,
+    "address": "165.140.216.141",
+    "ping": 58,
+    "jitter": 50,
+    "download_speed": 83.12,
+    "upload_speed": 72.05,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
+      "youtube": true
+    },
+    "ip": "165.140.216.141",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10818,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "165.140.216.141",
+                "port": 443,
+                "users": [
+                  {
+                    "id": "e7d72a8d-26f2-4b54-b366-0c43e0bcba7d",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiIxNjUuMTQwLjIxNi4xNDEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZTdkNzJhOGQtMjZmMi00YjU0LWIzNjYtMGM0M2UwYmNiYTdkIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI0NDMiLCJwcyI6IvCfjoQ4M0BvbmVjbGlja3ZwbmtleXMiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6IiIsInYiOiIyIn0=vmess",
+    "country": "United States",
+    "country_code": "US",
+    "city": "San Francisco",
+    "isp": "Xicomm LLC"
+  },
+  {
+    "protocol": "vmess",
+    "address": "seoul03.zgjok.com",
+    "ping": 391,
+    "jitter": 388,
+    "download_speed": 13.5,
+    "upload_speed": 8.23,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": false,
       "youtube": true
     },
     "ip": "seoul03.zgjok.com",
@@ -20,7 +99,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10819,
+          "port": 10804,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -85,90 +164,11 @@
   },
   {
     "protocol": "vmess",
-    "address": "165.140.216.141",
-    "ping": 102,
-    "jitter": 75,
-    "download_speed": 43.65,
-    "upload_speed": 29.66,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "165.140.216.141",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10814,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "165.140.216.141",
-                "port": 443,
-                "users": [
-                  {
-                    "id": "e7d72a8d-26f2-4b54-b366-0c43e0bcba7d",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiIxNjUuMTQwLjIxNi4xNDEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZTdkNzJhOGQtMjZmMi00YjU0LWIzNjYtMGM0M2UwYmNiYTdkIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI0NDMiLCJwcyI6IvCfjoQ4M0BvbmVjbGlja3ZwbmtleXMiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6IiIsInYiOiIyIn0=vmess",
-    "country": "United States",
-    "country_code": "US",
-    "city": "San Francisco",
-    "isp": "Xicomm LLC"
-  },
-  {
-    "protocol": "vmess",
     "address": "seoul03.zgjok.com",
-    "ping": 460,
-    "jitter": 460,
-    "download_speed": 11.56,
-    "upload_speed": 7.47,
+    "ping": 380,
+    "jitter": 374,
+    "download_speed": 12.9,
+    "upload_speed": 8.33,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -183,7 +183,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10809,
+          "port": 10801,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -249,10 +249,10 @@
   {
     "protocol": "vmess",
     "address": "94.232.247.165",
-    "ping": 170,
-    "jitter": 120,
-    "download_speed": 2.66,
-    "upload_speed": 15.88,
+    "ping": 219,
+    "jitter": 155,
+    "download_speed": 2.6,
+    "upload_speed": 12.34,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -267,7 +267,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10807,
+          "port": 10803,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -327,95 +327,16 @@
   },
   {
     "protocol": "vmess",
-    "address": "45.89.52.207",
-    "ping": 273,
-    "jitter": 202,
-    "download_speed": 5.82,
-    "upload_speed": 11.39,
+    "address": "47.251.91.241",
+    "ping": 40,
+    "jitter": 36,
+    "download_speed": 104.73,
+    "upload_speed": 77.92,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
-    },
-    "ip": "45.89.52.207",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10815,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "vmess",
-          "settings": {
-            "vnext": [
-              {
-                "address": "45.89.52.207",
-                "port": 39651,
-                "users": [
-                  {
-                    "id": "ac4c12c5-45f2-4398-a718-9983941ede2b",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": ""
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "vmess://eyJhZGQiOiI0NS44OS41Mi4yMDciLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYWM0YzEyYzUtNDVmMi00Mzk4LWE3MTgtOTk4Mzk0MWVkZTJiIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIzOTY1MSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIiLCJwcyI6IkBWMnJheXNDb2xsZWN0b3Ig8J+PkCJ9",
-    "country": "Turkey",
-    "country_code": "TR",
-    "city": "Izmir",
-    "isp": "WorkTitans B.V."
-  },
-  {
-    "protocol": "vmess",
-    "address": "47.251.91.241",
-    "ping": 2166,
-    "jitter": 0,
-    "download_speed": 0.0,
-    "upload_speed": 0.0,
-    "is_bypassing": false,
-    "connectivity": {
-      "telegram": false,
-      "instagram": false,
-      "youtube": false
     },
     "ip": "47.251.91.241",
     "config_json": {
@@ -425,7 +346,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10819,
+          "port": 10808,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -482,5 +403,84 @@
     "country_code": "US",
     "city": "Minkler",
     "isp": "Alibaba Cloud LLC"
+  },
+  {
+    "protocol": "vmess",
+    "address": "45.89.52.207",
+    "ping": 314,
+    "jitter": 233,
+    "download_speed": 13.36,
+    "upload_speed": 8.89,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "45.89.52.207",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10814,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "vmess",
+          "settings": {
+            "vnext": [
+              {
+                "address": "45.89.52.207",
+                "port": 39651,
+                "users": [
+                  {
+                    "id": "ac4c12c5-45f2-4398-a718-9983941ede2b",
+                    "alterId": 0,
+                    "security": "auto"
+                  }
+                ]
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": ""
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "vmess://eyJhZGQiOiI0NS44OS41Mi4yMDciLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYWM0YzEyYzUtNDVmMi00Mzk4LWE3MTgtOTk4Mzk0MWVkZTJiIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIzOTY1MSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIiLCJwcyI6IkBWMnJheXNDb2xsZWN0b3Ig8J+PkCJ9",
+    "country": "Turkey",
+    "country_code": "TR",
+    "city": "Izmir",
+    "isp": "WorkTitans B.V."
   }
 ]
