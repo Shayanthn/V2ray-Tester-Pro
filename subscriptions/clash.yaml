@@ -5,86 +5,70 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 77ms
+- name: VLESS-1 | 644ms
   type: vless
-  server: 15.204.97.149
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  server: gcre.segstar.info
+  port: 10100
+  uuid: '@SEGVPN'
   network: tcp
-- name: VLESS-2 | 143ms
+- name: VLESS-2 | 320ms
   type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-3 | 320ms
-  type: vless
-  server: 57.129.53.180
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  server: tr.sepserver.de
+  port: 8516
+  uuid: 676ad67f-0983-4689-9047-2f7b5e0ebd3e
   network: tcp
-- name: VLESS-4 | 304ms
+- name: VLESS-3 | 224ms
   type: vless
-  server: 91.107.173.252
-  port: 41647
-  uuid: e50fa46f-20c6-4c0d-fa0e-d9ffd92df36f
-  network: grpc
-- name: VLESS-5 | 503ms
-  type: vless
-  server: 45.12.143.191
-  port: 20329
-  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
-  network: tcp
-- name: TROJAN-6 | 357ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: VLESS-7 | 467ms
-  type: vless
-  server: 45.12.143.191
-  port: 20329
-  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
-  network: tcp
-- name: VLESS-8 | 507ms
-  type: vless
-  server: 45.89.107.200
-  port: 8443
-  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
-  network: tcp
-- name: VLESS-9 | 307ms
-  type: vless
-  server: 188.34.193.153
+  server: 185.126.67.73
   port: 443
-  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  network: tcp
+- name: VLESS-4 | 331ms
+  type: vless
+  server: 45.151.136.70
+  port: 443
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  network: tcp
+- name: VLESS-5 | 412ms
+  type: vless
+  server: 5.199.173.116
+  port: 443
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  network: tcp
+- name: VLESS-6 | 534ms
+  type: vless
+  server: 51.250.45.183
+  port: 443
+  uuid: 71031aa1-067e-425e-97f5-37875f838a10
+  network: tcp
+- name: VLESS-7 | 355ms
+  type: vless
+  server: fin.zerosulution.com
+  port: 2000
+  uuid: 93bd8127-1bdd-4a0c-8cf8-8ff079a594d6
   network: tcp
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 77ms
-  - VLESS-2 | 143ms
-  - VLESS-3 | 320ms
-  - VLESS-4 | 304ms
-  - VLESS-5 | 503ms
-  - TROJAN-6 | 357ms
-  - VLESS-7 | 467ms
-  - VLESS-8 | 507ms
-  - VLESS-9 | 307ms
+  - VLESS-1 | 644ms
+  - VLESS-2 | 320ms
+  - VLESS-3 | 224ms
+  - VLESS-4 | 331ms
+  - VLESS-5 | 412ms
+  - VLESS-6 | 534ms
+  - VLESS-7 | 355ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 77ms
-  - VLESS-2 | 143ms
-  - VLESS-3 | 320ms
-  - VLESS-4 | 304ms
-  - VLESS-5 | 503ms
-  - TROJAN-6 | 357ms
-  - VLESS-7 | 467ms
-  - VLESS-8 | 507ms
-  - VLESS-9 | 307ms
+  - VLESS-1 | 644ms
+  - VLESS-2 | 320ms
+  - VLESS-3 | 224ms
+  - VLESS-4 | 331ms
+  - VLESS-5 | 412ms
+  - VLESS-6 | 534ms
+  - VLESS-7 | 355ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
