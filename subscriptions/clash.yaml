@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 109ms
+- name: VMESS-1 | 93ms
   type: vmess
   server: 165.140.216.141
   port: 443
@@ -13,13 +13,7 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-2 | 205ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VMESS-3 | 179ms
+- name: VMESS-2 | 218ms
   type: vmess
   server: 94.232.247.165
   port: 45653
@@ -27,80 +21,78 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-4 | 275ms
-  type: vless
-  server: 57.129.53.180
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: VMESS-5 | 115ms
+- name: VMESS-3 | 410ms
   type: vmess
-  server: 47.251.91.241
-  port: 42899
-  uuid: 0925b355-2bcd-4eae-9720-d2709e4f7e36
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VLESS-6 | 368ms
-  type: vless
-  server: 5.182.36.56
-  port: 45886
-  uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
-  network: tcp
-- name: VMESS-7 | 274ms
-  type: vmess
-  server: 45.89.52.207
-  port: 39651
-  uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: TROJAN-8 | 275ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: VLESS-9 | 429ms
-  type: vless
-  server: 45.12.143.191
-  port: 20329
-  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
-  network: tcp
-- name: VLESS-10 | 273ms
-  type: vless
-  server: 188.34.193.153
+  server: seoul03.zgjok.com
   port: 443
-  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
-  network: tcp
+  uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: seoul03.zgjok.com
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-4 | 464ms
+  type: vmess
+  server: seoul03.zgjok.com
+  port: 443
+  uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: seoul03.zgjok.com
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-5 | 581ms
+  type: vmess
+  server: n1761214911.74qxv.top
+  port: 443
+  uuid: 372c1939-299d-4946-9633-5ffa971f8b67
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: n1761214911.74qxv.top
+  ws-opts:
+    path: /
+    headers: {}
+- name: VMESS-6 | 641ms
+  type: vmess
+  server: n1761214911.74qxv.top
+  port: 443
+  uuid: 372c1939-299d-4946-9633-5ffa971f8b67
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: n1761214911.74qxv.top
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 109ms
-  - VLESS-2 | 205ms
-  - VMESS-3 | 179ms
-  - VLESS-4 | 275ms
-  - VMESS-5 | 115ms
-  - VLESS-6 | 368ms
-  - VMESS-7 | 274ms
-  - TROJAN-8 | 275ms
-  - VLESS-9 | 429ms
-  - VLESS-10 | 273ms
+  - VMESS-1 | 93ms
+  - VMESS-2 | 218ms
+  - VMESS-3 | 410ms
+  - VMESS-4 | 464ms
+  - VMESS-5 | 581ms
+  - VMESS-6 | 641ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 109ms
-  - VLESS-2 | 205ms
-  - VMESS-3 | 179ms
-  - VLESS-4 | 275ms
-  - VMESS-5 | 115ms
-  - VLESS-6 | 368ms
-  - VMESS-7 | 274ms
-  - TROJAN-8 | 275ms
-  - VLESS-9 | 429ms
-  - VLESS-10 | 273ms
+  - VMESS-1 | 93ms
+  - VMESS-2 | 218ms
+  - VMESS-3 | 410ms
+  - VMESS-4 | 464ms
+  - VMESS-5 | 581ms
+  - VMESS-6 | 641ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
