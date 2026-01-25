@@ -65,7 +65,66 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10816,
+        "port": 10819,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "pqh29v3.globalfymain.com",
+              "port": 8880,
+              "users": [
+                {
+                  "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10818,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -137,66 +196,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10815,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "pqh29v3.globalfymain.com",
-              "port": 8880,
-              "users": [
-                {
-                  "id": "8dc7722c-2767-4eea-a28b-2f8daacc07e3",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "grpc",
-          "security": "none"
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10813,
+        "port": 10812,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -268,7 +268,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10818,
+        "port": 10812,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -340,7 +340,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10813,
+        "port": 10819,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -399,7 +399,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10813,
+        "port": 10807,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -411,27 +411,37 @@
     ],
     "outbounds": [
       {
-        "protocol": "trojan",
+        "protocol": "vless",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "80.173.231.254",
-              "port": 12420,
-              "password": "wp9IsiY82uQhcmgNC1eoBM"
+              "address": "188.34.193.153",
+              "port": 443,
+              "users": [
+                {
+                  "id": "309fa273-6579-4cb2-9143-7cad50401eba",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
             }
           ]
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "www.semanticstaplegun.click",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.cloudflare.com",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
               "h2",
               "http/1.1"
-            ]
+            ],
+            "show": false,
+            "publicKey": "gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY",
+            "shortId": "7cad5040",
+            "spiderX": "/"
           }
         },
         "tag": "proxy"
@@ -461,7 +471,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10804,
+        "port": 10808,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -601,7 +611,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10816,
+        "port": 10809,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -673,7 +683,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10803,
+        "port": 10804,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -745,7 +755,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10807,
+        "port": 10814,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -817,7 +827,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10815,
+        "port": 10818,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -833,13 +843,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "188.34.193.153",
-              "port": 443,
+              "address": "94.131.8.19",
+              "port": 45448,
               "users": [
                 {
-                  "id": "309fa273-6579-4cb2-9143-7cad50401eba",
+                  "id": "96fcf8cc-535d-46c4-b8f9-76058df48e3b",
                   "encryption": "none",
-                  "flow": "xtls-rprx-vision"
+                  "flow": ""
                 }
               ]
             }
@@ -849,7 +859,7 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "www.cloudflare.com",
+            "serverName": "yahoo.com",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
@@ -857,8 +867,8 @@
               "http/1.1"
             ],
             "show": false,
-            "publicKey": "gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY",
-            "shortId": "7cad5040",
+            "publicKey": "MmEVCRy11fz67vYJQWyA2a_ZPMBzv2le2cus1XSSI0E",
+            "shortId": "958639bf55e679",
             "spiderX": "/"
           }
         },
