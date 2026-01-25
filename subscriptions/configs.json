@@ -6,183 +6,6 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10811,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10802,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10803,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
         "port": 10810,
         "protocol": "http",
         "settings": {
@@ -195,27 +18,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
+              "address": "154.205.154.184",
+              "port": 11201,
+              "method": "chacha20-ietf-poly1305",
+              "password": "5b978047b47f7eab"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
+        "tag": "ConfigV2RayNG"
       },
       {
         "protocol": "freedom",
@@ -242,7 +56,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10819,
+        "port": 10800,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -254,145 +68,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
+              "address": "38.54.29.130",
+              "port": 11203,
+              "method": "chacha20-ietf-poly1305",
+              "password": "4df2be7c6eef0ed6"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10812,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10819,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
+        "tag": "⚡Telegram"
       },
       {
         "protocol": "freedom",
@@ -431,27 +118,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
+              "address": "154.205.134.155",
+              "port": 24852,
+              "method": "chacha20-ietf-poly1305",
+              "password": "2916150efedd2d17"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
+        "tag": "ConfigV2RayNG"
       },
       {
         "protocol": "freedom",
@@ -478,7 +156,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10814,
+        "port": 10805,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -490,27 +168,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
+              "address": "154.90.62.145",
+              "port": 46577,
+              "method": "chacha20-ietf-poly1305",
+              "password": "907e91edf84826c3"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
+        "tag": "ConfigV2RayNG"
       },
       {
         "protocol": "freedom",
@@ -537,7 +206,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10801,
+        "port": 10809,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -549,27 +218,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
+              "address": "57.130.28.148",
+              "port": 11201,
+              "method": "chacha20-ietf-poly1305",
+              "password": "74918bc801d53a4b"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
+        "tag": "telegram"
       },
       {
         "protocol": "freedom",
@@ -596,7 +256,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10801,
+        "port": 10807,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -608,155 +268,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "vmess",
+        "protocol": "shadowsocks",
         "settings": {
-          "vnext": [
+          "servers": [
             {
-              "address": "82.198.246.97",
-              "port": 180,
-              "users": [
-                {
-                  "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
+              "address": "193.29.139.164",
+              "port": 8080,
+              "method": "chacha20-ietf-poly1305",
+              "password": "4a2rfixophdjffa8KVA4Aa"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": ""
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10813,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "t1.620720.xyz",
-              "port": 8443,
-              "users": [
-                {
-                  "id": "516d8a7a-3f0b-41d3-bad0-246116381516",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "ws",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "t1.620720.xyz",
-            "allowInsecure": true,
-            "fingerprint": "chrome"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "sy4.620720.xyz",
-              "port": 443,
-              "users": [
-                {
-                  "id": "516d8a7a-3f0b-41d3-bad0-246116381516",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "ws",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "sy4.620720.xyz",
-            "allowInsecure": true,
-            "fingerprint": "chrome"
-          }
-        },
-        "tag": "proxy"
+        "tag": "@icv2ray"
       },
       {
         "protocol": "freedom",

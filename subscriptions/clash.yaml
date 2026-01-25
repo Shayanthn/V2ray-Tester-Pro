@@ -5,154 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 21ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-2 | 22ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-3 | 21ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-4 | 22ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 22ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-6 | 21ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-7 | 20ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-8 | 23ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-9 | 22ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-10 | 20ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-11 | 24ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-12 | 232ms
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: t1.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
-- name: VMESS-13 | 601ms
-  type: vmess
-  server: sy4.620720.xyz
-  port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: sy4.620720.xyz
-  ws-opts:
-    path: /
-    headers: {}
+- name: SHADOWSOCKS-1 | 277ms
+  type: ss
+  server: 154.205.154.184
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 5b978047b47f7eab
+- name: SHADOWSOCKS-2 | 349ms
+  type: ss
+  server: 38.54.29.130
+  port: 11203
+  cipher: chacha20-ietf-poly1305
+  password: 4df2be7c6eef0ed6
+- name: SHADOWSOCKS-3 | 517ms
+  type: ss
+  server: 154.205.134.155
+  port: 24852
+  cipher: chacha20-ietf-poly1305
+  password: 2916150efedd2d17
+- name: SHADOWSOCKS-4 | 497ms
+  type: ss
+  server: 154.90.62.145
+  port: 46577
+  cipher: chacha20-ietf-poly1305
+  password: 907e91edf84826c3
+- name: SHADOWSOCKS-5 | 292ms
+  type: ss
+  server: 57.130.28.148
+  port: 11201
+  cipher: chacha20-ietf-poly1305
+  password: 74918bc801d53a4b
+- name: SHADOWSOCKS-6 | 184ms
+  type: ss
+  server: 193.29.139.164
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 4a2rfixophdjffa8KVA4Aa
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 21ms
-  - VMESS-2 | 22ms
-  - VMESS-3 | 21ms
-  - VMESS-4 | 22ms
-  - VMESS-5 | 22ms
-  - VMESS-6 | 21ms
-  - VMESS-7 | 20ms
-  - VMESS-8 | 23ms
-  - VMESS-9 | 22ms
-  - VMESS-10 | 20ms
-  - VMESS-11 | 24ms
-  - VMESS-12 | 232ms
-  - VMESS-13 | 601ms
+  - SHADOWSOCKS-1 | 277ms
+  - SHADOWSOCKS-2 | 349ms
+  - SHADOWSOCKS-3 | 517ms
+  - SHADOWSOCKS-4 | 497ms
+  - SHADOWSOCKS-5 | 292ms
+  - SHADOWSOCKS-6 | 184ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 21ms
-  - VMESS-2 | 22ms
-  - VMESS-3 | 21ms
-  - VMESS-4 | 22ms
-  - VMESS-5 | 22ms
-  - VMESS-6 | 21ms
-  - VMESS-7 | 20ms
-  - VMESS-8 | 23ms
-  - VMESS-9 | 22ms
-  - VMESS-10 | 20ms
-  - VMESS-11 | 24ms
-  - VMESS-12 | 232ms
-  - VMESS-13 | 601ms
+  - SHADOWSOCKS-1 | 277ms
+  - SHADOWSOCKS-2 | 349ms
+  - SHADOWSOCKS-3 | 517ms
+  - SHADOWSOCKS-4 | 497ms
+  - SHADOWSOCKS-5 | 292ms
+  - SHADOWSOCKS-6 | 184ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
