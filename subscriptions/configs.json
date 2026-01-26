@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10800,
+        "port": 10805,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -18,87 +18,27 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "trojan",
         "settings": {
           "servers": [
             {
-              "address": "119.159.245.24",
-              "port": 26738,
-              "method": "chacha20-ietf-poly1305",
-              "password": "1d1bc54689ed4b75"
-            }
-          ]
-        },
-        "tag": "🇵🇰"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10813,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "51.158.206.19",
-              "port": 23576,
-              "users": [
-                {
-                  "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
+              "address": "219.76.135.98",
+              "port": 443,
+              "password": "BxceQaOe"
             }
           ]
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "fuck.rkn",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "t.me/ripaojiedian",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
               "h2",
               "http/1.1"
-            ],
-            "show": false,
-            "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-            "shortId": "01",
-            "spiderX": "/"
+            ]
           }
         },
         "tag": "proxy"
@@ -128,7 +68,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10810,
+        "port": 10807,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -144,9 +84,9 @@
         "settings": {
           "servers": [
             {
-              "address": "160.16.150.76",
-              "port": 3901,
-              "password": "869e9086806483ca4744a4cb0f3d6e16"
+              "address": "219.76.135.98",
+              "port": 443,
+              "password": "BxceQaOe"
             }
           ]
         },
@@ -154,7 +94,7 @@
           "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "www.nintendogames.net",
+            "serverName": "t.me%2Fripaojiedian",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
@@ -202,18 +142,27 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vmess",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "112.197.26.106",
-              "port": 45311,
-              "method": "chacha20-ietf-poly1305",
-              "password": "ca5a5efae00a832b"
+              "address": "knd.balouliangzhimao.xyz",
+              "port": 10151,
+              "users": [
+                {
+                  "id": "d744bb69-3ef6-3d90-8695-87b59ac22a02",
+                  "alterId": 0,
+                  "security": "auto"
+                }
+              ]
             }
           ]
         },
-        "tag": "🇻🇳"
+        "streamSettings": {
+          "network": "tcp",
+          "security": ""
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
@@ -240,7 +189,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10809,
+        "port": 10816,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -256,9 +205,9 @@
         "settings": {
           "servers": [
             {
-              "address": "160.16.72.33",
-              "port": 3901,
-              "password": "869e9086806483ca4744a4cb0f3d6e16"
+              "address": "58.152.53.45",
+              "port": 443,
+              "password": "BxceQaOe"
             }
           ]
         },
@@ -266,7 +215,7 @@
           "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "www.nintendogames.net",
+            "serverName": "t.me%2Fripaojiedian",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
@@ -302,7 +251,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10802,
+        "port": 10815,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -314,68 +263,30 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "trojan",
         "settings": {
           "servers": [
             {
-              "address": "154.90.62.145",
-              "port": 46576,
-              "method": "chacha20-ietf-poly1305",
-              "password": "907e91edf84826c3"
+              "address": "219.76.135.98",
+              "port": 443,
+              "password": "BxceQaOe"
             }
           ]
         },
-        "tag": "🇰🇷"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10813,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "219.76.135.98",
+            "allowInsecure": true,
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
         },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "45.87.175.188",
-              "port": 8080,
-              "method": "chacha20-ietf-poly1305",
-              "password": "cvII85TrW6n0OGyfpHVS1u"
-            }
-          ]
-        },
-        "tag": "🇱🇹 LT | SS | @NamiraConfigs #2"
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
