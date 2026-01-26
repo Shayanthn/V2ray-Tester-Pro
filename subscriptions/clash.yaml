@@ -5,7 +5,37 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 84ms
+- name: TROJAN-1 | 210ms
+  type: trojan
+  server: 45.32.158.138
+  port: 20994
+  password: x.8ur1QiCyzlRHXeaB5UwoDfgZ04s
+  sni: ads.x5.ru
+- name: TROJAN-2 | 200ms
+  type: trojan
+  server: 140.82.35.244
+  port: 20994
+  password: x.8ur1QiCyzlRHXeaB5UwoDfgZ04s
+  sni: ads.x5.ru
+- name: TROJAN-3 | 237ms
+  type: trojan
+  server: 83.143.87.9
+  port: 18581
+  password: RPyW62_b9aH.ztJKeArou
+  sni: 83.143.87.9
+- name: TROJAN-4 | 426ms
+  type: trojan
+  server: 80.173.230.196
+  port: 26279
+  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
+  sni: 80.173.230.196
+- name: TROJAN-5 | 529ms
+  type: trojan
+  server: 167.17.185.228
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  sni: web.max
+- name: VMESS-6 | 109ms
   type: vmess
   server: 82.198.246.97
   port: 180
@@ -13,72 +43,26 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: TROJAN-2 | 266ms
-  type: trojan
-  server: 140.82.35.244
-  port: 20994
-  password: x.8ur1QiCyzlRHXeaB5UwoDfgZ04s
-  sni: ads.x5.ru
-- name: TROJAN-3 | 259ms
-  type: trojan
-  server: 45.32.158.138
-  port: 20994
-  password: x.8ur1QiCyzlRHXeaB5UwoDfgZ04s
-  sni: ads.x5.ru
-- name: TROJAN-4 | 294ms
-  type: trojan
-  server: 83.143.87.9
-  port: 18581
-  password: RPyW62_b9aH.ztJKeArou
-  sni: 83.143.87.9
-- name: TROJAN-5 | 323ms
-  type: trojan
-  server: 80.173.230.196
-  port: 26279
-  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
-  sni: 80.173.230.196
-- name: SHADOWSOCKS-6 | 534ms
-  type: ss
-  server: 112.197.26.106
-  port: 45311
-  cipher: chacha20-ietf-poly1305
-  password: ca5a5efae00a832b
-- name: VLESS-7 | 1041ms
-  type: vless
-  server: ss.02020.sbs
-  port: 8443
-  uuid: c19fb567-74a9-454f-9757-e612fc4be371
-  network: tcp
-- name: TROJAN-8 | 880ms
-  type: trojan
-  server: 167.17.185.228
-  port: 10889
-  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
-  sni: web.max
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 84ms
-  - TROJAN-2 | 266ms
-  - TROJAN-3 | 259ms
-  - TROJAN-4 | 294ms
-  - TROJAN-5 | 323ms
-  - SHADOWSOCKS-6 | 534ms
-  - VLESS-7 | 1041ms
-  - TROJAN-8 | 880ms
+  - TROJAN-1 | 210ms
+  - TROJAN-2 | 200ms
+  - TROJAN-3 | 237ms
+  - TROJAN-4 | 426ms
+  - TROJAN-5 | 529ms
+  - VMESS-6 | 109ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 84ms
-  - TROJAN-2 | 266ms
-  - TROJAN-3 | 259ms
-  - TROJAN-4 | 294ms
-  - TROJAN-5 | 323ms
-  - SHADOWSOCKS-6 | 534ms
-  - VLESS-7 | 1041ms
-  - TROJAN-8 | 880ms
+  - TROJAN-1 | 210ms
+  - TROJAN-2 | 200ms
+  - TROJAN-3 | 237ms
+  - TROJAN-4 | 426ms
+  - TROJAN-5 | 529ms
+  - VMESS-6 | 109ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
