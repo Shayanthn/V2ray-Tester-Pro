@@ -5,136 +5,54 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 42ms
-  type: vless
-  server: 15.204.97.149
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: VLESS-2 | 152ms
-  type: vless
-  server: 45.82.251.98
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-3 | 171ms
-  type: vless
-  server: pqh29v3.globalfymain.com
-  port: 8880
-  uuid: 8dc7722c-2767-4eea-a28b-2f8daacc07e3
-  network: grpc
-- name: VLESS-4 | 342ms
-  type: vless
-  server: 57.129.53.180
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: VLESS-5 | 324ms
-  type: vless
-  server: 57.129.53.180
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: VLESS-6 | 397ms
-  type: vless
-  server: 95.164.85.109
-  port: 59374
-  uuid: bfc78cd8-5951-4803-8d6c-4cedef8cd420
-  network: tcp
-- name: VLESS-7 | 345ms
-  type: vless
-  server: 91.107.173.252
-  port: 41647
-  uuid: e50fa46f-20c6-4c0d-fa0e-d9ffd92df36f
-  network: grpc
-- name: VLESS-8 | 400ms
-  type: vless
-  server: nasnet-146198073-direct.iranpress.co
-  port: 443
-  uuid: nasnet
-  network: tcp
-  tls: true
-  servername: nasnet-146198073-direct.iranpress.co
-- name: TROJAN-9 | 349ms
+- name: TROJAN-1 | 324ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: VLESS-10 | 501ms
+- name: TROJAN-2 | 351ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: VLESS-3 | 390ms
   type: vless
-  server: 45.12.143.191
-  port: 20329
-  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
-  network: tcp
-- name: VLESS-11 | 500ms
-  type: vless
-  server: 45.12.143.191
-  port: 20329
-  uuid: e105e56a-5f81-41a2-ab44-bfffc9b00674
-  network: tcp
-- name: VLESS-12 | 553ms
-  type: vless
-  server: 94.131.8.19
-  port: 45448
-  uuid: 96fcf8cc-535d-46c4-b8f9-76058df48e3b
-  network: tcp
-- name: VLESS-13 | 496ms
-  type: vless
-  server: 45.89.107.200
-  port: 8443
-  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
-  network: tcp
-- name: VLESS-14 | 435ms
-  type: vless
-  server: 179.61.132.58
-  port: 32143
-  uuid: d4a0cc8c-2f9c-41fb-a5b8-d60c9a2a347d
-  network: ws
-- name: VLESS-15 | 364ms
-  type: vless
-  server: 188.34.193.153
+  server: 77.91.84.103
   port: 443
-  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
+  uuid: 772d810c-4886-4475-81b2-2673b682c778
   network: tcp
+- name: TROJAN-4 | 329ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-5 | 341ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 42ms
-  - VLESS-2 | 152ms
-  - VLESS-3 | 171ms
-  - VLESS-4 | 342ms
-  - VLESS-5 | 324ms
-  - VLESS-6 | 397ms
-  - VLESS-7 | 345ms
-  - VLESS-8 | 400ms
-  - TROJAN-9 | 349ms
-  - VLESS-10 | 501ms
-  - VLESS-11 | 500ms
-  - VLESS-12 | 553ms
-  - VLESS-13 | 496ms
-  - VLESS-14 | 435ms
-  - VLESS-15 | 364ms
+  - TROJAN-1 | 324ms
+  - TROJAN-2 | 351ms
+  - VLESS-3 | 390ms
+  - TROJAN-4 | 329ms
+  - TROJAN-5 | 341ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 42ms
-  - VLESS-2 | 152ms
-  - VLESS-3 | 171ms
-  - VLESS-4 | 342ms
-  - VLESS-5 | 324ms
-  - VLESS-6 | 397ms
-  - VLESS-7 | 345ms
-  - VLESS-8 | 400ms
-  - TROJAN-9 | 349ms
-  - VLESS-10 | 501ms
-  - VLESS-11 | 500ms
-  - VLESS-12 | 553ms
-  - VLESS-13 | 496ms
-  - VLESS-14 | 435ms
-  - VLESS-15 | 364ms
+  - TROJAN-1 | 324ms
+  - TROJAN-2 | 351ms
+  - VLESS-3 | 390ms
+  - TROJAN-4 | 329ms
+  - TROJAN-5 | 341ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
