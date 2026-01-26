@@ -5,54 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 223ms
+- name: TROJAN-1 | 374ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: TROJAN-2 | 224ms
+- name: TROJAN-2 | 354ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: TROJAN-3 | 226ms
+- name: TROJAN-3 | 363ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: TROJAN-4 | 227ms
+- name: TROJAN-4 | 362ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: VLESS-5 | 284ms
-  type: vless
-  server: 77.91.84.103
-  port: 443
-  uuid: 772d810c-4886-4475-81b2-2673b682c778
-  network: tcp
+- name: TROJAN-5 | 364ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-6 | 353ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 223ms
-  - TROJAN-2 | 224ms
-  - TROJAN-3 | 226ms
-  - TROJAN-4 | 227ms
-  - VLESS-5 | 284ms
+  - TROJAN-1 | 374ms
+  - TROJAN-2 | 354ms
+  - TROJAN-3 | 363ms
+  - TROJAN-4 | 362ms
+  - TROJAN-5 | 364ms
+  - TROJAN-6 | 353ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 223ms
-  - TROJAN-2 | 224ms
-  - TROJAN-3 | 226ms
-  - TROJAN-4 | 227ms
-  - VLESS-5 | 284ms
+  - TROJAN-1 | 374ms
+  - TROJAN-2 | 354ms
+  - TROJAN-3 | 363ms
+  - TROJAN-4 | 362ms
+  - TROJAN-5 | 364ms
+  - TROJAN-6 | 353ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
