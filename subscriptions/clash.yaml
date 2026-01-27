@@ -5,58 +5,88 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 331ms
-  type: vless
-  server: vy1.sangar.net
-  port: 443
-  uuid: 5a9a33eb-546c-4ffa-aadc-1c75b3ac084b
+- name: VMESS-1 | 24ms
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
   network: tcp
-  tls: true
-  servername: vy1.sangar.net
-- name: SHADOWSOCKS-2 | 481ms
-  type: ss
-  server: 163.171.207.11
-  port: 19688
-  cipher: chacha20-ietf-poly1305
-  password: 638bb05eab35adec
-- name: VLESS-3 | 325ms
-  type: vless
-  server: vy1.sangar.net
-  port: 443
-  uuid: 5a9a33eb-546c-4ffa-aadc-1c75b3ac084b
-  network: tcp
-  tls: true
-  servername: vy1.sangar.net
-- name: SHADOWSOCKS-4 | 270ms
-  type: ss
-  server: 45.87.175.69
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: SHADOWSOCKS-5 | 428ms
-  type: ss
-  server: promo18v.bystrivpn.ru
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: dAHM1pm8ag7KdlrUylQi6t
+- name: TROJAN-2 | 370ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-3 | 365ms
+  type: trojan
+  server: 80.173.230.196
+  port: 26279
+  password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
+  sni: 80.173.230.196
+- name: TROJAN-4 | 371ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-5 | 375ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-6 | 374ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-7 | 362ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-8 | 382ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-9 | 391ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 331ms
-  - SHADOWSOCKS-2 | 481ms
-  - VLESS-3 | 325ms
-  - SHADOWSOCKS-4 | 270ms
-  - SHADOWSOCKS-5 | 428ms
+  - VMESS-1 | 24ms
+  - TROJAN-2 | 370ms
+  - TROJAN-3 | 365ms
+  - TROJAN-4 | 371ms
+  - TROJAN-5 | 375ms
+  - TROJAN-6 | 374ms
+  - TROJAN-7 | 362ms
+  - TROJAN-8 | 382ms
+  - TROJAN-9 | 391ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 331ms
-  - SHADOWSOCKS-2 | 481ms
-  - VLESS-3 | 325ms
-  - SHADOWSOCKS-4 | 270ms
-  - SHADOWSOCKS-5 | 428ms
+  - VMESS-1 | 24ms
+  - TROJAN-2 | 370ms
+  - TROJAN-3 | 365ms
+  - TROJAN-4 | 371ms
+  - TROJAN-5 | 375ms
+  - TROJAN-6 | 374ms
+  - TROJAN-7 | 362ms
+  - TROJAN-8 | 382ms
+  - TROJAN-9 | 391ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
