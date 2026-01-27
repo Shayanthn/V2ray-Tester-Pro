@@ -5,70 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 315ms
-  type: ss
-  server: 45.154.204.7
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-2 | 139ms
-  type: ss
-  server: 23.95.75.146
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
-- name: SHADOWSOCKS-3 | 328ms
-  type: ss
-  server: 23.95.76.59
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-4 | 338ms
-  type: ss
-  server: 15.204.247.49
-  port: 12000
-  cipher: aes-256-gcm
-  password: 8JCsPssfgS8tiRwiMlhARg==
-- name: TROJAN-5 | 262ms
+- name: TROJAN-1 | 646ms
   type: trojan
-  server: 83.143.87.9
-  port: 18581
-  password: RPyW62_b9aH.ztJKeArou
-  sni: 83.143.87.9
-- name: TROJAN-6 | 413ms
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-2 | 291ms
   type: trojan
-  server: 58.152.53.45
-  port: 443
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-- name: TROJAN-7 | 401ms
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-3 | 545ms
   type: trojan
-  server: 219.76.135.98
-  port: 443
-  password: BxceQaOe
-  sni: 219.76.135.98
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-4 | 285ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-5 | 302ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-6 | 295ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 315ms
-  - SHADOWSOCKS-2 | 139ms
-  - SHADOWSOCKS-3 | 328ms
-  - SHADOWSOCKS-4 | 338ms
-  - TROJAN-5 | 262ms
-  - TROJAN-6 | 413ms
-  - TROJAN-7 | 401ms
+  - TROJAN-1 | 646ms
+  - TROJAN-2 | 291ms
+  - TROJAN-3 | 545ms
+  - TROJAN-4 | 285ms
+  - TROJAN-5 | 302ms
+  - TROJAN-6 | 295ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 315ms
-  - SHADOWSOCKS-2 | 139ms
-  - SHADOWSOCKS-3 | 328ms
-  - SHADOWSOCKS-4 | 338ms
-  - TROJAN-5 | 262ms
-  - TROJAN-6 | 413ms
-  - TROJAN-7 | 401ms
+  - TROJAN-1 | 646ms
+  - TROJAN-2 | 291ms
+  - TROJAN-3 | 545ms
+  - TROJAN-4 | 285ms
+  - TROJAN-5 | 302ms
+  - TROJAN-6 | 295ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
