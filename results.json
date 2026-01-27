@@ -1,18 +1,18 @@
 [
   {
-    "protocol": "vmess",
-    "address": "85.195.101.122",
-    "ping": 254,
-    "jitter": 184,
-    "download_speed": 14.42,
-    "upload_speed": 9.69,
+    "protocol": "trojan",
+    "address": "vn.yiciyuanquicken.online",
+    "ping": 561,
+    "jitter": 520,
+    "download_speed": 0.54,
+    "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "85.195.101.122",
+    "ip": "vn.yiciyuanquicken.online",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -20,7 +20,253 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10807,
+          "port": 10809,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "vn.yiciyuanquicken.online",
+                "port": 27638,
+                "password": "d51abb35-94a4-4529-9244-2808beaa4624"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "vn.yiciyuanquicken.online",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://d51abb35-94a4-4529-9244-2808beaa4624@vn.yiciyuanquicken.online:27638?allowInsecure=1&sni=vn.yiciyuanquicken.online#VN1%EF%BD%9C%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
+    "country": "Vietnam",
+    "country_code": "VN",
+    "city": "Ho Chi Minh City",
+    "isp": "Antbox Networks Limited"
+  },
+  {
+    "protocol": "trojan",
+    "address": "203.198.122.187",
+    "ping": 335,
+    "jitter": 304,
+    "download_speed": 3.24,
+    "upload_speed": 8.4,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "203.198.122.187",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10818,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "203.198.122.187",
+                "port": 443,
+                "password": "BxceQaOe"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "203.198.122.187",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://BxceQaOe@203.198.122.187:443?allowInsecure=1&sni=203.198.122.187#HK11%EF%BD%9C%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8",
+    "country": "Hong Kong",
+    "country_code": "HK",
+    "city": "Tsui Wan Estate",
+    "isp": "Hong Kong Telecommunications (HKT) Limited Mass Internet"
+  },
+  {
+    "protocol": "trojan",
+    "address": "52.195.170.6",
+    "ping": 454,
+    "jitter": 389,
+    "download_speed": 11.3,
+    "upload_speed": 6.24,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "52.195.170.6",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10804,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "52.195.170.6",
+                "port": 491,
+                "password": "869e9086806483ca4744a4cb0f3d6e16"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.nintendogames.net",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://869e9086806483ca4744a4cb0f3d6e16@52.195.170.6:491?allowInsecure=0&sni=www.nintendogames.net#%E7%BE%8E%E5%9B%BD2%7C%40ripaojiedian",
+    "country": "Japan",
+    "country_code": "JP",
+    "city": "Tokyo",
+    "isp": "Amazon Technologies Inc."
+  },
+  {
+    "protocol": "vmess",
+    "address": "82.198.246.97",
+    "ping": 24,
+    "jitter": 24,
+    "download_speed": 174.48,
+    "upload_speed": 119.54,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "82.198.246.97",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10804,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -36,11 +282,11 @@
           "settings": {
             "vnext": [
               {
-                "address": "85.195.101.122",
-                "port": 40878,
+                "address": "82.198.246.97",
+                "port": 180,
                 "users": [
                   {
-                    "id": "f3d4167e-b15e-4e46-82e9-9286ef93fda7",
+                    "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
                     "alterId": 0,
                     "security": "auto"
                   }
@@ -72,26 +318,26 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiI4NS4xOTUuMTAxLjEyMiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJmM2Q0MTY3ZS1iMTVlLTRlNDYtODJlOS05Mjg2ZWY5M2ZkYTciLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjQwODc4IiwicHMiOiJAVk1FU1NJUjROINis2YfYqiDYrtix24zYryDaqdin2YbZgduM2q8iLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt am Main",
-    "isp": "velia.net Internetdienste GmbH"
+    "uri": "vmess://eyJ2IjogIjIiLCAicHMiOiAiREUyOe+9nOacuuaIv++9nOmrmOmjjumZqSAo6buR5ZCN5Y2VKSIsICJhZGQiOiAiODIuMTk4LjI0Ni45NyIsICJwb3J0IjogIjE4MCIsICJhaWQiOiAwLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAidGxzIjogIiIsICJpZCI6ICJkMTNmYzJmNS0zZTA1LTQ3OTUtODFlYi00NDE0M2EwOWU1NTIifQ==",
+    "country": "United States",
+    "country_code": "US",
+    "city": "Los Angeles",
+    "isp": "Datacamp Limited"
   },
   {
-    "protocol": "vmess",
-    "address": "mv1.multipubg.com",
-    "ping": 326,
-    "jitter": 297,
-    "download_speed": 13.23,
-    "upload_speed": 7.82,
+    "protocol": "trojan",
+    "address": "203.198.122.187",
+    "ping": 338,
+    "jitter": 309,
+    "download_speed": 3.25,
+    "upload_speed": 8.15,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "mv1.multipubg.com",
+    "ip": "203.198.122.187",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -99,7 +345,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10800,
+          "port": 10814,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -111,25 +357,28 @@
       ],
       "outbounds": [
         {
-          "protocol": "vmess",
+          "protocol": "trojan",
           "settings": {
-            "vnext": [
+            "servers": [
               {
-                "address": "mv1.multipubg.com",
-                "port": 80,
-                "users": [
-                  {
-                    "id": "eaec8713-fc4d-465c-a7e6-e5ba034e3263",
-                    "alterId": 0,
-                    "security": "auto"
-                  }
-                ]
+                "address": "203.198.122.187",
+                "port": 443,
+                "password": "BxceQaOe"
               }
             ]
           },
           "streamSettings": {
-            "network": "ws",
-            "security": ""
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "t.me/ripaojiedian",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
           },
           "tag": "proxy"
         },
@@ -151,306 +400,26 @@
         ]
       }
     },
-    "uri": "vmess://eyJhZGQiOiJtdjEubXVsdGlwdWJnLmNvbSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJlYWVjODcxMy1mYzRkLTQ2NWMtYTdlNi1lNWJhMDM0ZTMyNjMiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIiLCJwb3J0IjoiODAiLCJwcyI6IuKclO+4jvCdkJzwnZCh8J2QmvCdkKfwnZCn8J2QnvCdkKXinqpAQ29uZmlnVjJyYXlGb3JGcmVlIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "Serverbike LTD"
+    "uri": "trojan://BxceQaOe@203.198.122.187:443?allowInsecure=1&sni=t.me%2Fripaojiedian#%E9%A6%99%E6%B8%AF4%7C%40ripaojiedian",
+    "country": "Hong Kong",
+    "country_code": "HK",
+    "city": "Tsui Wan Estate",
+    "isp": "Hong Kong Telecommunications (HKT) Limited Mass Internet"
   },
   {
-    "protocol": "shadowsocks",
-    "address": "135.125.245.131",
-    "ping": 261,
-    "jitter": 187,
-    "download_speed": 2.91,
-    "upload_speed": 10.38,
+    "protocol": "trojan",
+    "address": "160.16.87.174",
+    "ping": 352,
+    "jitter": 309,
+    "download_speed": 0.55,
+    "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "135.125.245.131",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10800,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "135.125.245.131",
-                "port": 20939,
-                "method": "chacha20-ietf-poly1305",
-                "password": "85d3d8ccba287d3e"
-              }
-            ]
-          },
-          "tag": "WQ 5 (@Outline_Vpn) free"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4NWQzZDhjY2JhMjg3ZDNl@135.125.245.131:20939#WQ%205%20%28%40Outline_Vpn%29%20free",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Limburg an der Lahn",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "82.38.31.210",
-    "ping": 240,
-    "jitter": 170,
-    "download_speed": 14.61,
-    "upload_speed": 10.08,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "82.38.31.210",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10815,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "82.38.31.210",
-                "port": 8080,
-                "method": "chacha20-ietf-poly1305",
-                "password": "k1dBOmOB4oqi7Ump37a1bQ"
-              }
-            ]
-          },
-          "tag": "@V2rayNG3"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.210:8080#@V2rayNG3",
-    "country": "The Netherlands",
-    "country_code": "NL",
-    "city": "Amsterdam",
-    "isp": "Greenhost BV"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "57.129.95.38",
-    "ping": 285,
-    "jitter": 204,
-    "download_speed": 12.33,
-    "upload_speed": 9.59,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "57.129.95.38",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10803,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "57.129.95.38",
-                "port": 11201,
-                "method": "chacha20-ietf-poly1305",
-                "password": "f54cdee10f8b25ce"
-              }
-            ]
-          },
-          "tag": "@V2rayNG3"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmNTRjZGVlMTBmOGIyNWNl@57.129.95.38:11201#@V2rayNG3",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Frankfurt am Main",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "193.29.139.151",
-    "ping": 288,
-    "jitter": 235,
-    "download_speed": 14.43,
-    "upload_speed": 6.16,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": false,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "193.29.139.151",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10817,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "193.29.139.151",
-                "port": 8080,
-                "method": "chacha20-ietf-poly1305",
-                "password": "oZIoA69Q8yhcQV8ka3Pa3A"
-              }
-            ]
-          },
-          "tag": "@Easy_Free_VPN"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.151:8080#%40Easy_Free_VPN",
-    "country": "The Netherlands",
-    "country_code": "NL",
-    "city": "Amsterdam",
-    "isp": "Greenhost BV"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "38.54.29.18",
-    "ping": 371,
-    "jitter": 268,
-    "download_speed": 11.82,
-    "upload_speed": 7.96,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "38.54.29.18",
+    "ip": "160.16.87.174",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -470,18 +439,30 @@
       ],
       "outbounds": [
         {
-          "protocol": "shadowsocks",
+          "protocol": "trojan",
           "settings": {
             "servers": [
               {
-                "address": "38.54.29.18",
-                "port": 11201,
-                "method": "chacha20-ietf-poly1305",
-                "password": "932a519c8147a998"
+                "address": "160.16.87.174",
+                "port": 3901,
+                "password": "869e9086806483ca4744a4cb0f3d6e16"
               }
             ]
           },
-          "tag": "✔︎𝐜𝐡𝐚𝐧𝐧𝐞𝐥➪@ConfigV2rayForFree"
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.nintendogames.net",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
         },
         {
           "protocol": "freedom",
@@ -501,220 +482,10 @@
         ]
       }
     },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5MzJhNTE5YzgxNDdhOTk4@38.54.29.18:11201#%E2%9C%94%EF%B8%8E%F0%9D%90%9C%F0%9D%90%A1%F0%9D%90%9A%F0%9D%90%A7%F0%9D%90%A7%F0%9D%90%9E%F0%9D%90%A5%E2%9E%AA%40ConfigV2rayForFree",
-    "country": "Greece",
-    "country_code": "GR",
-    "city": "Athens",
-    "isp": "Kaopu Cloud HK Limited"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "135.125.245.131",
-    "ping": 275,
-    "jitter": 195,
-    "download_speed": 2.89,
-    "upload_speed": 10.25,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "135.125.245.131",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10810,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "135.125.245.131",
-                "port": 20939,
-                "method": "chacha20-ietf-poly1305",
-                "password": "85d3d8ccba287d3e"
-              }
-            ]
-          },
-          "tag": "@V2rayNG3"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4NWQzZDhjY2JhMjg3ZDNl@135.125.245.131:20939#@V2rayNG3",
-    "country": "Germany",
-    "country_code": "DE",
-    "city": "Limburg an der Lahn",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "57.130.28.148",
-    "ping": 253,
-    "jitter": 179,
-    "download_speed": 2.5,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "57.130.28.148",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10808,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "57.130.28.148",
-                "port": 11201,
-                "method": "chacha20-ietf-poly1305",
-                "password": "74918bc801d53a4b"
-              }
-            ]
-          },
-          "tag": "@V2rayNG3"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3NDkxOGJjODAxZDUzYTRi@57.130.28.148:11201#@V2rayNG3",
-    "country": "France",
-    "country_code": "FR",
-    "city": "Paris",
-    "isp": "OVH SAS"
-  },
-  {
-    "protocol": "shadowsocks",
-    "address": "82.38.31.205",
-    "ping": 281,
-    "jitter": 203,
-    "download_speed": 0.96,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "82.38.31.205",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10800,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "shadowsocks",
-          "settings": {
-            "servers": [
-              {
-                "address": "82.38.31.205",
-                "port": 8080,
-                "method": "chacha20-ietf-poly1305",
-                "password": "k1dBOmOB4oqi7Ump37a1bQ"
-              }
-            ]
-          },
-          "tag": "Netherlands Greenhost"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.205:8080#Netherlands%20Greenhost",
-    "country": "The Netherlands",
-    "country_code": "NL",
-    "city": "Amsterdam",
-    "isp": "Greenhost BV"
+    "uri": "trojan://869e9086806483ca4744a4cb0f3d6e16@160.16.87.174:3901?allowInsecure=1&sni=www.nintendogames.net#%E6%96%B0%E5%8A%A0%E5%9D%A12%7C%40ripaojiedian",
+    "country": "Japan",
+    "country_code": "JP",
+    "city": "Tokyo",
+    "isp": "SAKURA Internet Inc."
   }
 ]
