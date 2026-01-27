@@ -5,37 +5,37 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 336ms
+- name: SHADOWSOCKS-1 | 406ms
   type: ss
   server: 23.95.76.59
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-2 | 142ms
-  type: ss
-  server: 23.95.75.146
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
-- name: SHADOWSOCKS-3 | 344ms
+- name: SHADOWSOCKS-2 | 392ms
   type: ss
   server: 45.154.204.7
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: TROJAN-4 | 235ms
+- name: SHADOWSOCKS-3 | 232ms
+  type: ss
+  server: 23.95.75.146
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
+- name: TROJAN-4 | 395ms
   type: trojan
   server: 140.82.35.244
   port: 20994
   password: x.8ur1QiCyzlRHXeaB5UwoDfgZ04s
   sni: ads.x5.ru
-- name: TROJAN-5 | 266ms
+- name: TROJAN-5 | 369ms
   type: trojan
   server: 80.173.230.196
   port: 26279
   password: a5inYFE=JGV89+hjxIqgDp1tcWBd6
   sni: 80.173.230.196
-- name: VMESS-6 | 791ms
+- name: VMESS-6 | 1920ms
   type: vmess
   server: t1.620720.xyz
   port: 8443
@@ -53,21 +53,21 @@ proxy-groups:
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 336ms
-  - SHADOWSOCKS-2 | 142ms
-  - SHADOWSOCKS-3 | 344ms
-  - TROJAN-4 | 235ms
-  - TROJAN-5 | 266ms
-  - VMESS-6 | 791ms
+  - SHADOWSOCKS-1 | 406ms
+  - SHADOWSOCKS-2 | 392ms
+  - SHADOWSOCKS-3 | 232ms
+  - TROJAN-4 | 395ms
+  - TROJAN-5 | 369ms
+  - VMESS-6 | 1920ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 336ms
-  - SHADOWSOCKS-2 | 142ms
-  - SHADOWSOCKS-3 | 344ms
-  - TROJAN-4 | 235ms
-  - TROJAN-5 | 266ms
-  - VMESS-6 | 791ms
+  - SHADOWSOCKS-1 | 406ms
+  - SHADOWSOCKS-2 | 392ms
+  - SHADOWSOCKS-3 | 232ms
+  - TROJAN-4 | 395ms
+  - TROJAN-5 | 369ms
+  - VMESS-6 | 1920ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
