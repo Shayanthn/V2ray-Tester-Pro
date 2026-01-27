@@ -1,18 +1,100 @@
 [
   {
     "protocol": "trojan",
-    "address": "80.173.231.254",
-    "ping": 380,
-    "jitter": 312,
-    "download_speed": 0.0,
-    "upload_speed": 0.0,
+    "address": "58.152.53.45",
+    "ping": 525,
+    "jitter": 548,
+    "download_speed": 10.13,
+    "upload_speed": 3.78,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
       "instagram": true,
       "youtube": true
     },
-    "ip": "80.173.231.254",
+    "ip": "58.152.53.45",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10805,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "58.152.53.45",
+                "port": 443,
+                "password": "BxceQaOe"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "t.me/ripaojiedian",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://BxceQaOe@58.152.53.45:443?allowInsecure=1&sni=t.me%2Fripaojiedian#%E9%A6%99%E6%B8%AF+%E7%94%B5%E8%AE%AF%E7%9B%88%E7%A7%91%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8",
+    "country": "Hong Kong",
+    "country_code": "HK",
+    "city": "Central",
+    "isp": "Hong Kong Telecommunications (HKT) Limited Mass Internet"
+  },
+  {
+    "protocol": "trojan",
+    "address": "167.17.185.228",
+    "ping": 700,
+    "jitter": 688,
+    "download_speed": 6.78,
+    "upload_speed": 2.18,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": false,
+      "instagram": false,
+      "youtube": true
+    },
+    "ip": "167.17.185.228",
     "config_json": {
       "log": {
         "loglevel": "warning"
@@ -36,9 +118,9 @@
           "settings": {
             "servers": [
               {
-                "address": "80.173.231.254",
-                "port": 12420,
-                "password": "wp9IsiY82uQhcmgNC1eoBM"
+                "address": "167.17.185.228",
+                "port": 10889,
+                "password": "cTv.9PDdCt-wybBrG1qlxI5UJuaEj"
               }
             ]
           },
@@ -46,7 +128,7 @@
             "network": "tcp",
             "security": "tls",
             "tlsSettings": {
-              "serverName": "www.semanticstaplegun.click",
+              "serverName": "web.max",
               "allowInsecure": true,
               "fingerprint": "chrome",
               "alpn": [
@@ -75,101 +157,19 @@
         ]
       }
     },
-    "uri": "trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420?sni=www.semanticstaplegun.click&fp=chrome#%F0%9F%91%89%F0%9F%86%94%20%40v2ray_configs_pool%20%F0%9F%93%A1%20%F0%9F%87%AA%F0%9F%87%B8ES%20%F0%9F%A7%AD%203.4MB%2Fs",
-    "country": "Norway",
-    "country_code": "NO",
-    "city": "Oslo",
-    "isp": "ServeTheWorld"
+    "uri": "trojan://cTv.9PDdCt-wybBrG1qlxI5UJuaEj@167.17.185.228:10889?security=tls&sni=web.max#%E5%8A%A0%E6%8B%BF%E5%A4%A7+V2CROSS.COM",
+    "country": "Iceland",
+    "country_code": "IS",
+    "city": "Reykjavik",
+    "isp": "Baxet Group Inc."
   },
   {
     "protocol": "trojan",
     "address": "80.173.231.254",
-    "ping": 367,
-    "jitter": 320,
-    "download_speed": 0.0,
-    "upload_speed": 0.0,
-    "is_bypassing": true,
-    "connectivity": {
-      "telegram": true,
-      "instagram": true,
-      "youtube": true
-    },
-    "ip": "80.173.231.254",
-    "config_json": {
-      "log": {
-        "loglevel": "warning"
-      },
-      "inbounds": [
-        {
-          "listen": "127.0.0.1",
-          "port": 10810,
-          "protocol": "http",
-          "settings": {
-            "timeout": 0,
-            "allowTransparent": false,
-            "userLevel": 0
-          },
-          "tag": "http-in"
-        }
-      ],
-      "outbounds": [
-        {
-          "protocol": "trojan",
-          "settings": {
-            "servers": [
-              {
-                "address": "80.173.231.254",
-                "port": 12420,
-                "password": "wp9IsiY82uQhcmgNC1eoBM"
-              }
-            ]
-          },
-          "streamSettings": {
-            "network": "tcp",
-            "security": "tls",
-            "tlsSettings": {
-              "serverName": "www.semanticstaplegun.click",
-              "allowInsecure": true,
-              "fingerprint": "chrome",
-              "alpn": [
-                "h2",
-                "http/1.1"
-              ]
-            }
-          },
-          "tag": "proxy"
-        },
-        {
-          "protocol": "freedom",
-          "tag": "direct"
-        }
-      ],
-      "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-          {
-            "type": "field",
-            "ip": [
-              "geoip:private"
-            ],
-            "outboundTag": "direct"
-          }
-        ]
-      }
-    },
-    "uri": "trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420?sni=www.semanticstaplegun.click&fp=chrome#%F0%9F%91%89%F0%9F%86%94%20%40v2ray_configs_pool%20%F0%9F%93%A1%20%F0%9F%87%AA%F0%9F%87%B8ES%20%F0%9F%A7%AD%203.3MB%2Fs",
-    "country": "Norway",
-    "country_code": "NO",
-    "city": "Oslo",
-    "isp": "ServeTheWorld"
-  },
-  {
-    "protocol": "trojan",
-    "address": "80.173.231.254",
-    "ping": 456,
-    "jitter": 465,
-    "download_speed": 0.0,
-    "upload_speed": 0.0,
+    "ping": 305,
+    "jitter": 268,
+    "download_speed": 12.07,
+    "upload_speed": 9.21,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -239,7 +239,7 @@
         ]
       }
     },
-    "uri": "trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420?sni=www.semanticstaplegun.click&fp=chrome#%F0%9F%91%89%F0%9F%86%94%20%40v2ray_configs_pool%20%F0%9F%93%A1%20%F0%9F%87%AA%F0%9F%87%B8ES%20%F0%9F%A7%AD%203.0MB%2Fs",
+    "uri": "trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420?sni=www.semanticstaplegun.click&fp=chrome#%F0%9F%91%89%F0%9F%86%94%20%40v2ray_configs_pool%20%F0%9F%93%A1%20%F0%9F%87%AA%F0%9F%87%B8ES%20%F0%9F%A7%AD%203.3MB%2Fs",
     "country": "Norway",
     "country_code": "NO",
     "city": "Oslo",
@@ -248,10 +248,10 @@
   {
     "protocol": "trojan",
     "address": "80.173.231.254",
-    "ping": 687,
-    "jitter": 535,
-    "download_speed": 0.0,
-    "upload_speed": 0.0,
+    "ping": 299,
+    "jitter": 268,
+    "download_speed": 12.29,
+    "upload_speed": 5.99,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -266,7 +266,171 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10802,
+          "port": 10817,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "80.173.231.254",
+                "port": 12420,
+                "password": "wp9IsiY82uQhcmgNC1eoBM"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.semanticstaplegun.click",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420?sni=www.semanticstaplegun.click&fp=chrome#%F0%9F%91%89%F0%9F%86%94%20%40v2ray_configs_pool%20%F0%9F%93%A1%20%F0%9F%87%AA%F0%9F%87%B8ES%20%F0%9F%A7%AD%203.4MB%2Fs",
+    "country": "Norway",
+    "country_code": "NO",
+    "city": "Oslo",
+    "isp": "ServeTheWorld"
+  },
+  {
+    "protocol": "trojan",
+    "address": "80.173.231.254",
+    "ping": 431,
+    "jitter": 244,
+    "download_speed": 12.83,
+    "upload_speed": 5.38,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "80.173.231.254",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10814,
+          "protocol": "http",
+          "settings": {
+            "timeout": 0,
+            "allowTransparent": false,
+            "userLevel": 0
+          },
+          "tag": "http-in"
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "trojan",
+          "settings": {
+            "servers": [
+              {
+                "address": "80.173.231.254",
+                "port": 12420,
+                "password": "wp9IsiY82uQhcmgNC1eoBM"
+              }
+            ]
+          },
+          "streamSettings": {
+            "network": "tcp",
+            "security": "tls",
+            "tlsSettings": {
+              "serverName": "www.semanticstaplegun.click",
+              "allowInsecure": true,
+              "fingerprint": "chrome",
+              "alpn": [
+                "h2",
+                "http/1.1"
+              ]
+            }
+          },
+          "tag": "proxy"
+        },
+        {
+          "protocol": "freedom",
+          "tag": "direct"
+        }
+      ],
+      "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+          {
+            "type": "field",
+            "ip": [
+              "geoip:private"
+            ],
+            "outboundTag": "direct"
+          }
+        ]
+      }
+    },
+    "uri": "trojan://wp9IsiY82uQhcmgNC1eoBM@80.173.231.254:12420?sni=www.semanticstaplegun.click&fp=chrome#%F0%9F%91%89%F0%9F%86%94%20%40v2ray_configs_pool%20%F0%9F%93%A1%20%F0%9F%87%AA%F0%9F%87%B8ES%20%F0%9F%A7%AD%203.0MB%2Fs",
+    "country": "Norway",
+    "country_code": "NO",
+    "city": "Oslo",
+    "isp": "ServeTheWorld"
+  },
+  {
+    "protocol": "trojan",
+    "address": "80.173.231.254",
+    "ping": 312,
+    "jitter": 264,
+    "download_speed": 12.28,
+    "upload_speed": 7.5,
+    "is_bypassing": true,
+    "connectivity": {
+      "telegram": true,
+      "instagram": true,
+      "youtube": true
+    },
+    "ip": "80.173.231.254",
+    "config_json": {
+      "log": {
+        "loglevel": "warning"
+      },
+      "inbounds": [
+        {
+          "listen": "127.0.0.1",
+          "port": 10812,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -330,10 +494,10 @@
   {
     "protocol": "trojan",
     "address": "80.173.231.254",
-    "ping": 449,
-    "jitter": 272,
-    "download_speed": 0.0,
-    "upload_speed": 0.0,
+    "ping": 302,
+    "jitter": 255,
+    "download_speed": 12.9,
+    "upload_speed": 2.32,
     "is_bypassing": true,
     "connectivity": {
       "telegram": true,
@@ -348,7 +512,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10811,
+          "port": 10817,
           "protocol": "http",
           "settings": {
             "timeout": 0,
@@ -412,9 +576,9 @@
   {
     "protocol": "trojan",
     "address": "80.173.231.254",
-    "ping": 639,
-    "jitter": 779,
-    "download_speed": 0.0,
+    "ping": 437,
+    "jitter": 250,
+    "download_speed": 9.08,
     "upload_speed": 0.0,
     "is_bypassing": true,
     "connectivity": {
@@ -430,7 +594,7 @@
       "inbounds": [
         {
           "listen": "127.0.0.1",
-          "port": 10812,
+          "port": 10816,
           "protocol": "http",
           "settings": {
             "timeout": 0,

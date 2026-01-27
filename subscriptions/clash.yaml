@@ -5,62 +5,78 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 380ms
+- name: TROJAN-1 | 302ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: TROJAN-2 | 367ms
+- name: TROJAN-2 | 431ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: TROJAN-3 | 456ms
+- name: TROJAN-3 | 299ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: TROJAN-4 | 687ms
+- name: TROJAN-4 | 312ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: TROJAN-5 | 449ms
+- name: TROJAN-5 | 305ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
-- name: TROJAN-6 | 639ms
+- name: TROJAN-6 | 525ms
+  type: trojan
+  server: 58.152.53.45
+  port: 443
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: TROJAN-7 | 437ms
   type: trojan
   server: 80.173.231.254
   port: 12420
   password: wp9IsiY82uQhcmgNC1eoBM
   sni: www.semanticstaplegun.click
+- name: TROJAN-8 | 700ms
+  type: trojan
+  server: 167.17.185.228
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  sni: web.max
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 380ms
-  - TROJAN-2 | 367ms
-  - TROJAN-3 | 456ms
-  - TROJAN-4 | 687ms
-  - TROJAN-5 | 449ms
-  - TROJAN-6 | 639ms
+  - TROJAN-1 | 302ms
+  - TROJAN-2 | 431ms
+  - TROJAN-3 | 299ms
+  - TROJAN-4 | 312ms
+  - TROJAN-5 | 305ms
+  - TROJAN-6 | 525ms
+  - TROJAN-7 | 437ms
+  - TROJAN-8 | 700ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 380ms
-  - TROJAN-2 | 367ms
-  - TROJAN-3 | 456ms
-  - TROJAN-4 | 687ms
-  - TROJAN-5 | 449ms
-  - TROJAN-6 | 639ms
+  - TROJAN-1 | 302ms
+  - TROJAN-2 | 431ms
+  - TROJAN-3 | 299ms
+  - TROJAN-4 | 312ms
+  - TROJAN-5 | 305ms
+  - TROJAN-6 | 525ms
+  - TROJAN-7 | 437ms
+  - TROJAN-8 | 700ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
