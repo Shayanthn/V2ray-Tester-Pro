@@ -5,88 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 148ms
-  type: ss
-  server: 82.38.31.210
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: VMESS-2 | 164ms
-  type: vmess
-  server: 85.195.101.122
-  port: 40878
-  uuid: f3d4167e-b15e-4e46-82e9-9286ef93fda7
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: SHADOWSOCKS-3 | 164ms
-  type: ss
-  server: 193.29.139.151
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: SHADOWSOCKS-4 | 183ms
-  type: ss
-  server: 82.38.31.205
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-5 | 169ms
-  type: ss
-  server: 135.125.245.131
-  port: 20939
-  cipher: chacha20-ietf-poly1305
-  password: 85d3d8ccba287d3e
-- name: SHADOWSOCKS-6 | 163ms
-  type: ss
-  server: 135.125.245.131
-  port: 20939
-  cipher: chacha20-ietf-poly1305
-  password: 85d3d8ccba287d3e
-- name: SHADOWSOCKS-7 | 257ms
-  type: ss
-  server: promo18v.bystrivpn.ru
+- name: TROJAN-1 | 431ms
+  type: trojan
+  server: 58.152.53.45
   port: 443
-  cipher: chacha20-ietf-poly1305
-  password: dAHM1pm8ag7KdlrUylQi6t
-- name: SHADOWSOCKS-8 | 144ms
-  type: ss
-  server: 57.130.28.148
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: 74918bc801d53a4b
-- name: SHADOWSOCKS-9 | 166ms
-  type: ss
-  server: 57.129.95.38
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: f54cdee10f8b25ce
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: TROJAN-2 | 478ms
+  type: trojan
+  server: 160.16.72.33
+  port: 544
+  password: 869e9086806483ca4744a4cb0f3d6e16
+  sni: www.nintendogames.net
+- name: TROJAN-3 | 443ms
+  type: trojan
+  server: 160.16.72.33
+  port: 3901
+  password: 869e9086806483ca4744a4cb0f3d6e16
+  sni: www.nintendogames.net
+- name: TROJAN-4 | 539ms
+  type: trojan
+  server: 160.16.132.38
+  port: 5076
+  password: 869e9086806483ca4744a4cb0f3d6e16
+  sni: www.nintendogames.net
+- name: TROJAN-5 | 259ms
+  type: trojan
+  server: 160.16.132.38
+  port: 3423
+  password: 869e9086806483ca4744a4cb0f3d6e16
+  sni: www.nintendogames.net
+- name: TROJAN-6 | 299ms
+  type: trojan
+  server: 160.16.132.38
+  port: 4006
+  password: 869e9086806483ca4744a4cb0f3d6e16
+  sni: www.nintendogames.net
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 148ms
-  - VMESS-2 | 164ms
-  - SHADOWSOCKS-3 | 164ms
-  - SHADOWSOCKS-4 | 183ms
-  - SHADOWSOCKS-5 | 169ms
-  - SHADOWSOCKS-6 | 163ms
-  - SHADOWSOCKS-7 | 257ms
-  - SHADOWSOCKS-8 | 144ms
-  - SHADOWSOCKS-9 | 166ms
+  - TROJAN-1 | 431ms
+  - TROJAN-2 | 478ms
+  - TROJAN-3 | 443ms
+  - TROJAN-4 | 539ms
+  - TROJAN-5 | 259ms
+  - TROJAN-6 | 299ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 148ms
-  - VMESS-2 | 164ms
-  - SHADOWSOCKS-3 | 164ms
-  - SHADOWSOCKS-4 | 183ms
-  - SHADOWSOCKS-5 | 169ms
-  - SHADOWSOCKS-6 | 163ms
-  - SHADOWSOCKS-7 | 257ms
-  - SHADOWSOCKS-8 | 144ms
-  - SHADOWSOCKS-9 | 166ms
+  - TROJAN-1 | 431ms
+  - TROJAN-2 | 478ms
+  - TROJAN-3 | 443ms
+  - TROJAN-4 | 539ms
+  - TROJAN-5 | 259ms
+  - TROJAN-6 | 299ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
