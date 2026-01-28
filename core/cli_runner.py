@@ -8,6 +8,7 @@ from core.test_runner import TestRunner
 from core.config_processor import ConfigProcessor
 from core.network_manager import NetworkManager, ConfigDiscoverer
 from core.subscription_manager import SubscriptionManager
+from core.iran_optimizer import IranOptimizer
 from utils.telegram_notifier import TelegramNotifier
 
 class CLIRunner:
@@ -59,6 +60,9 @@ class CLIRunner:
         
         # History mechanism to prevent duplicate notifications
         self.known_configs: Set[str] = set()
+        
+        # Iran Network Optimizer for advanced bypass features
+        self.iran_optimizer = IranOptimizer(logger=logger)
 
     def run(self):
         """Entry point for CLI execution."""
@@ -87,6 +91,22 @@ class CLIRunner:
             async with aiohttp.ClientSession(timeout=timeout, connector=connector) as session:
                 self.session = session
                 
+                # Phase 0: Network Status Check (Iran Optimizer)
+                print("Phase 0: Checking network status...")
+                network_status = await self.iran_optimizer.check_network_status(session)
+                if network_status.get('filtering_detected'):
+                    print("⚠️  Filtering detected! Enabling advanced bypass features...")
+                    # Fetch clean IPs for potential use
+                    try:
+                        clean_ips = await self.iran_optimizer.fetch_clean_ips_from_sources(session)
+                        if clean_ips:
+                            print(f"   Found {len(clean_ips)} pre-tested clean IPs")
+                    except Exception as e:
+                        self.logger.debug(f"Clean IP fetch failed: {e}")
+                elif network_status.get('domestic_ok') == False:
+                    print("❌ Complete internet outage! Cannot proceed.")
+                    return
+                
                 # Phase 1: Aggregation
                 print(f"Phase 1: Fetching from {len(self.aggregator_links)} aggregators...")
                 await self._fetch_and_queue_configs(self.aggregator_links)
@@ -94,6 +114,10 @@ class CLIRunner:
                 # Phase 2: Direct Sources
                 print(f"Phase 2: Fetching from {len(self.direct_config_sources)} direct sources...")
                 await self._fetch_and_queue_configs(self.direct_config_sources)
+                
+                # Phase 2.5: Sort queue by protocol priority (Reality > XTLS > TLS)
+                print("Sorting configs by protocol priority (Reality/XTLS first)...")
+                await self._prioritize_queue()
                 
                 self.app_state.total = self.config_queue.qsize()
                 print(f"Phase 3: Testing {self.app_state.total} configs with {self.max_concurrent_tests} concurrent workers...")
@@ -172,6 +196,30 @@ class CLIRunner:
         except Exception as e:
             self.logger.warning(f"Failed to process source {url}: {e}")
     
+    async def _prioritize_queue(self):
+        """Re-orders the queue to prioritize Reality/XTLS protocols."""
+        # Drain the queue
+        all_uris = []
+        while not self.config_queue.empty():
+            try:
+                uri = self.config_queue.get_nowait()
+                all_uris.append(uri)
+                self.config_queue.task_done()
+            except asyncio.QueueEmpty:
+                break
+        
+        # Sort by protocol priority (Reality > XTLS > VLESS+TLS > VMess > others)
+        sorted_uris = IranOptimizer.sort_by_priority(all_uris)
+        
+        # Re-queue in priority order
+        for uri in sorted_uris:
+            await self.config_queue.put(uri)
+        
+        # Log priority distribution
+        reality_count = sum(1 for u in sorted_uris if 'reality' in u.lower() or 'pbk=' in u.lower())
+        xtls_count = sum(1 for u in sorted_uris if 'flow=xtls' in u.lower())
+        self.logger.info(f"Priority queue: {reality_count} Reality, {xtls_count} XTLS, {len(sorted_uris) - reality_count - xtls_count} others")
+
     async def _run_workers(self):
         """Creates and manages a pool of worker tasks."""
         num_workers = min(self.max_concurrent_tests, self.config_queue.qsize())
@@ -253,27 +301,40 @@ class CLIRunner:
                         
                         total_count += 1
                         
-                        # Feature: Smart Fragment Revival
-                        # If normal test failed, try injecting Fragment settings for VLESS/VMess
-                        if not test_result:
-                             try:
-                                 # Only attempt for likely candidates
-                                 if "vless" in uri or "vmess" in uri:
-                                     # self.logger.info(f"Attempting Fragment Revival for {uri[:20]}...")
-                                     fragmented_config = self.config_processor.inject_fragment(config_json)
-                                     
-                                     # Check if config was actually modified (simple check: length of outbounds)
-                                     if len(fragmented_config.get('outbounds', [])) > len(config_json.get('outbounds', [])):
-                                         revival_result = await asyncio.wait_for(
-                                            self.test_runner.run_full_test(fragmented_config, port, self.session),
-                                            timeout=30
-                                         )
-                                         if revival_result:
-                                             test_result = revival_result
-                                             test_result['revived_with_fragment'] = True
-                                             self.logger.info(f"✨ Fragment Revival SUCCESS for {uri[:30]}!")
-                             except Exception:
-                                 pass
+                        # Feature: Proactive Fragment Injection for TLS-based protocols
+                        # Apply fragment BEFORE first test for eligible configs
+                        should_fragment = IranOptimizer.should_auto_fragment(uri)
+                        if should_fragment and not test_result:
+                            try:
+                                fragmented_config = self.config_processor.inject_fragment(config_json)
+                                if len(fragmented_config.get('outbounds', [])) > len(config_json.get('outbounds', [])):
+                                    # Test with fragment first
+                                    fragment_result = await asyncio.wait_for(
+                                        self.test_runner.run_full_test(fragmented_config, port, self.session),
+                                        timeout=30
+                                    )
+                                    if fragment_result:
+                                        test_result = fragment_result
+                                        test_result['fragment_mode'] = True
+                                        self.logger.info(f"🛡️ Fragment mode success for {uri[:30]}...")
+                            except Exception:
+                                pass
+                        
+                        # Feature: SNI Randomization retry if still failing
+                        if not test_result and ('vless' in uri.lower() or 'vmess' in uri.lower()):
+                            try:
+                                random_sni = self.iran_optimizer.get_random_sni()
+                                sni_config = self.iran_optimizer.inject_sni(config_json, random_sni)
+                                sni_result = await asyncio.wait_for(
+                                    self.test_runner.run_full_test(sni_config, port, self.session),
+                                    timeout=25
+                                )
+                                if sni_result:
+                                    test_result = sni_result
+                                    test_result['custom_sni'] = random_sni
+                                    self.logger.info(f"🎭 SNI bypass success with {random_sni} for {uri[:30]}...")
+                            except Exception:
+                                pass
 
                         if test_result:
                             test_result['uri'] = uri
