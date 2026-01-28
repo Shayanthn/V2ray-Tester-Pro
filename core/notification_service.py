@@ -54,6 +54,13 @@ class NotificationService:
         self._sent_hashes: Set[str] = set()
         self._dedup_window = 3600  # 1 hour deduplication window
         self._hash_timestamps: Dict[str, float] = {}
+        # Persistence file for cross-run deduplication
+        self._sent_file = os.path.join(os.getcwd(), 'notifications', 'sent_hashes.json')
+        try:
+            self._load_sent_hashes()
+        except Exception:
+            # non-fatal
+            pass
         # State
         self._running = False
         self._batch_task: Optional[asyncio.Task] = None
@@ -95,7 +102,50 @@ class NotificationService:
         # Record new hash
         self._sent_hashes.add(msg_hash)
         self._hash_timestamps[msg_hash] = now
+        # Persist cross-run record
+        try:
+            self._persist_sent_hash(msg_hash)
+        except Exception:
+            self.logger.debug("Failed to persist sent hash")
         return False
+
+    def _load_sent_hashes(self) -> None:
+        """Load sent hashes from disk for cross-run deduplication."""
+        try:
+            os.makedirs(os.path.dirname(self._sent_file), exist_ok=True)
+            if os.path.exists(self._sent_file):
+                import json
+                with open(self._sent_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    if isinstance(data, list):
+                        now = time.time()
+                        for h in data:
+                            self._sent_hashes.add(h)
+                            self._hash_timestamps[h] = now
+        except Exception as e:
+            self.logger.debug(f"Could not load sent hashes: {e}")
+
+    def _persist_sent_hash(self, h: str) -> None:
+        """Append a sent hash to the persisted file (atomic write)."""
+        try:
+            import json, tempfile
+            os.makedirs(os.path.dirname(self._sent_file), exist_ok=True)
+            existing = []
+            if os.path.exists(self._sent_file):
+                with open(self._sent_file, 'r', encoding='utf-8') as f:
+                    try:
+                        existing = json.load(f) or []
+                    except Exception:
+                        existing = []
+            if h in existing:
+                return
+            existing.append(h)
+            fd, tmp = tempfile.mkstemp(dir=os.path.dirname(self._sent_file))
+            with os.fdopen(fd, 'w', encoding='utf-8') as tf:
+                json.dump(existing, tf)
+            os.replace(tmp, self._sent_file)
+        except Exception as e:
+            self.logger.debug(f"Failed to persist sent hash: {e}")
     
     async def send_config_notification(self, result: Dict[str, Any], 
                                          is_new: bool = True) -> bool:
@@ -300,7 +350,6 @@ class NotificationService:
         """Get notification service statistics."""
         return {
             **self.stats,
-            'pending_priority': self._priority_queue.qsize(),
             'pending_batch': len(self._batch_buffer),
             'rate_limiter': self.rate_limiter.get_stats()
         }

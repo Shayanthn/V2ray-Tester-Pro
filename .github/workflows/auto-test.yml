@@ -15,6 +15,9 @@ permissions:
 jobs:
   test-and-update:
     runs-on: ubuntu-latest
+    concurrency:
+      group: Auto-Test-Update-Subscriptions
+      cancel-in-progress: false
     
     steps:
       - name: Checkout repository
