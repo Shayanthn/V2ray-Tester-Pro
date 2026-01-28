@@ -25,9 +25,7 @@ class TestRunner:
                  logger: logging.Logger,
                  test_url_telegram: str = "https://api.telegram.org",
                  test_url_instagram: str = "https://www.instagram.com",
-                 test_url_youtube: str = "https://www.youtube.com",
-                 test_url_ping_fallback: str = "https://1.1.1.1",
-                 domestic_check_url: str = "https://www.aparat.com"):
+                 test_url_youtube: str = "https://www.youtube.com"):
         self.xray_manager = xray_manager
         self.config_processor = config_processor
         self.security_validator = security_validator
@@ -40,8 +38,6 @@ class TestRunner:
         self.test_url_telegram = test_url_telegram
         self.test_url_instagram = test_url_instagram
         self.test_url_youtube = test_url_youtube
-        self.test_url_ping_fallback = test_url_ping_fallback
-        self.domestic_check_url = domestic_check_url
 
     async def run_full_test(self, config_json: Dict[str, Any], port: int, session: aiohttp.ClientSession) -> Optional[Dict[str, Any]]:
         """
@@ -68,48 +64,27 @@ class TestRunner:
             # Use HTTP proxy for aiohttp (ConfigProcessor must be updated to use HTTP inbound)
             proxy_url = f"http://127.0.0.1:{port}"
             
-            # 1. Latency and Jitter Test (Robust / Cloudflare Radar Compatible)
+            # 1. Latency and Jitter Test
             latencies = []
-            # We try the primary (e.g. Google) and if fails, the fallback (e.g. 1.1.1.1 or Cloudflare Trace)
-            test_targets = [self.test_url_ping]
-            if hasattr(self, 'test_url_ping_fallback'):
-                test_targets.append(self.test_url_ping_fallback)
+            for _ in range(3):
+                try:
+                    start_time = time.monotonic()
+                    async with session.get(
+                        self.test_url_ping, proxy=proxy_url, timeout=self.test_timeout
+                    ) as response:
+                        if response.status == 204 or response.status == 200:
+                            latency = (time.monotonic() - start_time) * 1000
+                            if latency < 5000:  # Filter out extremely high latencies
+                                latencies.append(latency)
+                except (aiohttp.ClientError, asyncio.TimeoutError):
+                    latencies.append(float('inf'))
             
-            check_passed = False
-            for target in test_targets:
-                target_latencies = []
-                # Try 2 requests per target. Reduced from 3 to 2 for speed, relying on fallback if needed.
-                for _ in range(2):
-                    try:
-                        start_time = time.monotonic()
-                        # Increased timeout tolerance for "National Internet" conditions
-                        async with session.get(
-                            target, proxy=proxy_url, timeout=self.test_timeout + 2
-                        ) as response:
-                            if response.status in (200, 204):
-                                latency = (time.monotonic() - start_time) * 1000
-                                if latency < 10000:  # Allow up to 10s latency for extreme conditions
-                                    target_latencies.append(latency)
-                    except (aiohttp.ClientError, asyncio.TimeoutError):
-                        continue
-                
-                if target_latencies:
-                    latencies = target_latencies
-                    check_passed = True
-                    break # If one target works, we assume connectivity is established.
-
-            if not check_passed or not latencies:
-                # Optional: Domestic Check for Logging/Diagnostics (doesn't change result)
-                if hasattr(self, 'domestic_check_url'):
-                    try:
-                        async with session.get(self.domestic_check_url, proxy=proxy_url, timeout=5) as resp:
-                             pass # Domestic works
-                    except:
-                        pass
+            valid_latencies = [l for l in latencies if l != float('inf')]
+            if not valid_latencies:
                 return None  # Failed basic connectivity
 
-            avg_ping = int(statistics.mean(latencies))
-            jitter = int(statistics.stdev(latencies) if len(latencies) > 1 else 0)
+            avg_ping = int(statistics.mean(valid_latencies))
+            jitter = int(statistics.stdev(valid_latencies) if len(valid_latencies) > 1 else 0)
 
             # 2. Speed Test
             dl_speed = await self._download_speed_test(session, proxy_url)

@@ -24,11 +24,9 @@ class EnterpriseConfig:
         
         # Network Configuration
         self.TEST_URL_PING = os.getenv('TEST_URL_PING', "https://www.google.com/generate_204")
-        self.TEST_URL_PING_FALLBACK = os.getenv('TEST_URL_PING_FALLBACK', "https://1.1.1.1")
         self.TEST_URL_DOWNLOAD = os.getenv('TEST_URL_DOWNLOAD', "https://speed.cloudflare.com/__down?bytes=5000000")
         self.TEST_URL_UPLOAD = os.getenv('TEST_URL_UPLOAD', "https://speed.cloudflare.com/__up")
         self.CENSORSHIP_CHECK_URL = os.getenv('CENSORSHIP_CHECK_URL', "https://www.youtube.com")
-        self.DOMESTIC_CHECK_URL = os.getenv('DOMESTIC_CHECK_URL', "https://www.aparat.com")
         
         # Real-World Connection Test Targets
         self.TEST_URL_TELEGRAM = os.getenv('TEST_URL_TELEGRAM', "https://api.telegram.org")
