@@ -39,8 +39,8 @@ class NotificationService:
     
     # Telegram limits: 30 messages/second to different chats, 1 message/second to same chat
     TELEGRAM_RATE_LIMIT = 1.0  # 1 message per second
-    BATCH_WINDOW = 1800.0  # 30 minutes
-    MAX_BATCH_SIZE = 5  # Max messages to send per batch (per 30 min)
+    BATCH_WINDOW = 3600.0  # 1 hour (safer)
+    MAX_BATCH_SIZE = 5  # Max messages to send per batch (per window)
     
     def __init__(self, logger: Optional[logging.Logger] = None):
         self.logger = logger or logging.getLogger(__name__)
@@ -266,6 +266,11 @@ class NotificationService:
     async def start(self) -> None:
         """Start the notification service background worker."""
         if self._running:
+            return
+        # If emergency disable exists, don't start
+        disable_file = os.path.join(os.getcwd(), '.disable_telegram_sends')
+        if os.path.exists(disable_file):
+            self.logger.warning("Notification service not started: .disable_telegram_sends present")
             return
         self._running = True
         self._batch_task = asyncio.create_task(self._batch_loop())

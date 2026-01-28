@@ -25,6 +25,12 @@ class TelegramNotifier:
         return bool(self.token and self.chat_id)
 
     async def send_message(self, text: str) -> bool:
+        # Emergency kill-switch: create a file named .disable_telegram_sends in repo root to stop all sends
+        disable_file = os.path.join(os.getcwd(), '.disable_telegram_sends')
+        if os.path.exists(disable_file):
+            self.logger.warning("Telegram sends disabled by .disable_telegram_sends file. Skipping send.")
+            return False
+
         if not self.is_enabled:
             self.logger.debug("Telegram notification skipped: Credentials not found.")
             return False
