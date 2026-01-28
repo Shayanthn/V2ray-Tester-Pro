@@ -143,14 +143,16 @@ class NotificationService:
             f"📶 **Ping**: {ping} ms\n"
             f"⚡ **Speed**: {dl_speed} MB/s\n"
             f"🌍 **Location**: {country}\n"
-            f"{tags_str}\n"
+            f"{tags_str}"
             f"📋 **Config** (Tap to copy):\n"
             f"`{uri}`\n\n"
             f"🤝 نشر حداکثری این کانال برای دسترسی هموطنامون به اینترنت بر عهده ماست\n"
-            f"🕊️ اینترنت آزاد برای مردم وطنم\n"
-            f"\n📢 @vpnbuying"
+            f"🕊️ اینترنت آزاد برای مردم وطنم"
         )
-        
+        # اطمینان از اینکه فقط یکبار @vpnbuying در انتهای پیام باشد
+        msg = msg.strip()
+        if not msg.endswith("@vpnbuying"):
+            msg = f"{msg}\n\n📢 @vpnbuying"
         return await self.send(msg, priority=2 if is_new else 1)
     
     async def send_summary(self, found: int, failed: int, 
