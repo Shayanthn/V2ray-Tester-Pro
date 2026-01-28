@@ -12,7 +12,7 @@ class EnterpriseConfig:
     def __init__(self):
         # Application Metadata
         self.APP_NAME = "V2Ray/Xray Enterprise"
-        self.APP_VERSION = "5.1.2"
+        self.APP_VERSION = "5.4.0"
         self.AUTHOR_NAME = "Shayan Taherkhani"
         self.AUTHOR_WEBSITE = "https://shayantaherkhani.ir"
         
@@ -36,7 +36,7 @@ class EnterpriseConfig:
         self.TEST_URL_YOUTUBE = os.getenv('TEST_URL_YOUTUBE', "https://www.youtube.com")
         
         self.TEST_TIMEOUT = int(os.getenv('TEST_TIMEOUT', 10))
-        self.MAX_CONCURRENT_TESTS = int(os.getenv('MAX_CONCURRENT_TESTS', 20))
+        self.MAX_CONCURRENT_TESTS = int(os.getenv('MAX_CONCURRENT_TESTS', 50))
         self.NETWORK_RETRY_COUNT = int(os.getenv('NETWORK_RETRY_COUNT', 5))
         self.DOH_RESOLVER_URL = os.getenv('DOH_RESOLVER_URL', "https://cloudflare-dns.com/dns-query")
         
