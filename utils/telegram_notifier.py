@@ -30,6 +30,13 @@ class TelegramNotifier:
             return False
 
         try:
+            # Log a short preview (no secrets) for debugging deliverability/format issues
+            try:
+                preview = text.replace('\n', ' ')[:300]
+            except Exception:
+                preview = '<unprintable>'
+            self.logger.debug(f"Telegram payload preview: {preview}")
+
             async with aiohttp.ClientSession() as session:
                 payload = {
                     'chat_id': self.chat_id,
