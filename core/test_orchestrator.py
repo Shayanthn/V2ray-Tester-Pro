@@ -401,10 +401,12 @@ class TestOrchestrator:
         monitor_task = asyncio.create_task(self._monitor_progress())
         self.shutdown_manager.register_task(monitor_task)
         
-        # Wait for completion or shutdown
+        # Wait for completion or shutdown (fix: wrap coroutines in tasks)
         try:
+            join_task = asyncio.create_task(self.config_queue.join())
+            shutdown_task = asyncio.create_task(self.shutdown_manager.wait_for_shutdown())
             done, pending = await asyncio.wait(
-                [self.config_queue.join(), self.shutdown_manager.wait_for_shutdown()],
+                [join_task, shutdown_task],
                 return_when=asyncio.FIRST_COMPLETED
             )
         except asyncio.CancelledError:
