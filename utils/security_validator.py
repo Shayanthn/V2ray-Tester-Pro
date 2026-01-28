@@ -1,6 +1,7 @@
 import re
 import json
 import logging
+import unicodedata
 from typing import Set, Dict, Any
 
 class SecurityValidator:
@@ -20,10 +21,19 @@ class SecurityValidator:
         self.domain_blacklist = domain_blacklist
         self.logger = logger
 
+    def _normalize_unicode(self, text: str) -> str:
+        """Normalize unicode to prevent bypass attacks using confusable characters."""
+        # NFKC normalization converts confusable characters to their canonical form
+        # e.g., ｅｖａｌ -> eval, ℯval -> eval
+        return unicodedata.normalize('NFKC', text)
+
     def validate_uri(self, uri: str) -> bool:
         """Performs comprehensive security validation on a URI."""
         if not uri or not isinstance(uri, str):
             return False
+        
+        # Normalize unicode to prevent bypass attacks
+        normalized_uri = self._normalize_unicode(uri)
             
         # Length check
         if len(uri) > self.max_uri_length:
@@ -36,20 +46,23 @@ class SecurityValidator:
             self.logger.debug(f"Protocol not allowed: {protocol}")
             return False
             
-        # Blacklist checks
+        # Blacklist checks (on normalized string)
         for banned in self.banned_payloads:
-            if banned in uri.lower():
+            if banned in normalized_uri.lower():
                 self.logger.warning(f"Banned payload detected: {banned}")
                 return False
                 
-        # Suspicious pattern detection
+        # Enhanced suspicious pattern detection (works on normalized string)
         suspicious_patterns = [
             r"eval\s*\(", r"exec\s*\(", r"fromCharCode", r"base64_decode",
-            r"[\x00-\x1F\x7F-\xFF]"  # Non-printable characters
+            r"[\x00-\x1F\x7F]",  # Control characters (excluding extended ASCII for valid UTF-8)
+            r"javascript:", r"data:", r"vbscript:",  # Dangerous URI schemes
+            r"<script", r"</script", r"onerror", r"onload",  # XSS patterns
+            r"\\u00", r"\\x",  # Escaped unicode/hex that might hide payloads
         ]
         
         for pattern in suspicious_patterns:
-            if re.search(pattern, uri):
+            if re.search(pattern, normalized_uri, re.IGNORECASE):
                 self.logger.warning(f"Suspicious pattern detected in URI: {pattern}")
                 return False
                 

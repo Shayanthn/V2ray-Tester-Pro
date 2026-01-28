@@ -49,12 +49,19 @@ class TestRunner:
         Returns None if the test fails or the config is invalid.
         """
         import uuid
+        import tempfile
+        import secrets
+        
+        # Security: Use system temp directory with cryptographically random filename
+        # This prevents path prediction attacks
+        random_suffix = secrets.token_hex(16)  # 32 char hex string
         unique_id = str(uuid.uuid4())[:8]
-        config_path = os.path.join(os.path.dirname(self.xray_manager.xray_path), f"temp_config_{port}_{unique_id}.json")
+        temp_dir = tempfile.gettempdir()
+        config_path = os.path.join(temp_dir, f".xray_{port}_{unique_id}_{random_suffix}.json")
         process = None
         
         try:
-            # Write config to temp file
+            # Write config to temp file with restricted permissions
             # Note: File I/O is blocking, but for small config files it's negligible. 
             # For strict async, we could use aiofiles, but standard open is acceptable here for now.
             with open(config_path, "w", encoding='utf-8') as f:

@@ -70,8 +70,13 @@ class ConfigProcessor:
             }
         }
     
-    def _build_stream_settings(self, net, security, path, host, sni, alpn=None, fingerprint=None, service_name=None, reality_pbk=None, reality_sid=None, reality_spiderx=None):
-        """Helper to build streamSettings."""
+    def _build_stream_settings(self, net, security, path, host, sni, alpn=None, fingerprint=None, service_name=None, reality_pbk=None, reality_sid=None, reality_spiderx=None, allow_insecure=None):
+        """Helper to build streamSettings.
+        
+        Args:
+            allow_insecure: If None, defaults to True for testing purposes.
+                           Set to False for production/security-critical usage.
+        """
         stream = {
             "network": net,
             "security": security,
@@ -79,9 +84,12 @@ class ConfigProcessor:
         
         # TLS/Reality Settings
         if security in ['tls', 'reality', 'xtls']:
+            # Security consideration: allowInsecure=True bypasses certificate validation
+            # For testing configs from unknown sources, we default to True
+            # For production usage, this should be False
             tls_settings = {
                 "serverName": sni or host,
-                "allowInsecure": True,
+                "allowInsecure": allow_insecure if allow_insecure is not None else True,
                 "fingerprint": fingerprint or "chrome"
             }
             if alpn:

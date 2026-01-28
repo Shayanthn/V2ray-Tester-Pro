@@ -65,21 +65,29 @@ class NetworkManager:
         return await self.fetch_geoip_online(ip, session)
 
     async def fetch_geoip_online(self, ip: str, session: aiohttp.ClientSession = None) -> Dict[str, str]:
-        """Fallback to online GeoIP API."""
-        url = f"http://ip-api.com/json/{ip}"
-        try:
-            response_text = await self.safe_get(url, session=session, retry_count=2)
-            if response_text:
-                data = json.loads(response_text)
-                if data.get('status') == 'success':
-                    return {
-                        'country': data.get('country', 'Unknown'),
-                        'country_code': data.get('countryCode', 'XX'),
-                        'city': data.get('city', 'Unknown'),
-                        'isp': data.get('isp', 'Unknown')
-                    }
-        except Exception as e:
-            self.logger.debug(f"Online GeoIP lookup failed for {ip}: {e}")
+        """Fallback to online GeoIP API with secure HTTPS endpoints."""
+        # Use multiple HTTPS providers for reliability and security
+        geoip_providers = [
+            f"https://ipapi.co/{ip}/json/",  # Primary: HTTPS, no API key needed
+            f"https://ipwho.is/{ip}",  # Secondary: HTTPS, free
+        ]
+        
+        for url in geoip_providers:
+            try:
+                response_text = await self.safe_get(url, session=session, retry_count=1)
+                if response_text:
+                    data = json.loads(response_text)
+                    # Handle different API response formats
+                    if 'error' not in data and data.get('success', True) != False:
+                        return {
+                            'country': data.get('country_name') or data.get('country') or 'Unknown',
+                            'country_code': data.get('country_code') or data.get('country') or 'XX',
+                            'city': data.get('city') or 'Unknown',
+                            'isp': data.get('org') or data.get('isp') or data.get('connection', {}).get('isp') or 'Unknown'
+                        }
+            except Exception as e:
+                self.logger.debug(f"GeoIP lookup failed for {ip} with {url}: {e}")
+                continue
         return {}
 
     async def resolve_doh(self, hostname: str, session: aiohttp.ClientSession = None) -> Optional[str]:
