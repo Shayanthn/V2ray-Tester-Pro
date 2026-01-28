@@ -5,77 +5,84 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VMESS-1 | 153ms
+- name: VMESS-1 | 24ms
   type: vmess
-  server: 85.195.101.122
-  port: 40878
-  uuid: f3d4167e-b15e-4e46-82e9-9286ef93fda7
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   network: tcp
-- name: VLESS-2 | 147ms
-  type: vless
-  server: 91.216.71.109
-  port: 8880
-  uuid: 4660d0c6-4367-40c9-b730-864194e7efa7
-  network: tcp
-- name: SHADOWSOCKS-3 | 150ms
-  type: ss
-  server: 82.38.31.210
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-4 | 161ms
-  type: ss
-  server: 135.125.245.131
-  port: 20939
-  cipher: chacha20-ietf-poly1305
-  password: 85d3d8ccba287d3e
-- name: VMESS-5 | 243ms
-  type: vmess
-  server: mv1.multipubg.com
-  port: 80
-  uuid: eaec8713-fc4d-465c-a7e6-e5ba034e3263
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /
-    headers: {}
-- name: SHADOWSOCKS-6 | 144ms
-  type: ss
-  server: 57.130.28.148
-  port: 11201
-  cipher: chacha20-ietf-poly1305
-  password: 74918bc801d53a4b
-- name: SHADOWSOCKS-7 | 1306ms
-  type: ss
-  server: promo18v.bystrivpn.ru
+- name: TROJAN-2 | 370ms
+  type: trojan
+  server: 160.16.87.174
+  port: 3901
+  password: 869e9086806483ca4744a4cb0f3d6e16
+  sni: www.nintendogames.net
+- name: TROJAN-3 | 479ms
+  type: trojan
+  server: 52.195.170.6
+  port: 491
+  password: 869e9086806483ca4744a4cb0f3d6e16
+  sni: www.nintendogames.net
+- name: TROJAN-4 | 328ms
+  type: trojan
+  server: 203.198.122.187
   port: 443
-  cipher: chacha20-ietf-poly1305
-  password: dAHM1pm8ag7KdlrUylQi6t
+  password: BxceQaOe
+  sni: 203.198.122.187
+- name: TROJAN-5 | 344ms
+  type: trojan
+  server: 203.198.122.187
+  port: 443
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: TROJAN-6 | 483ms
+  type: trojan
+  server: vn.yiciyuanquicken.online
+  port: 27638
+  password: d51abb35-94a4-4529-9244-2808beaa4624
+  sni: vn.yiciyuanquicken.online
+- name: VMESS-7 | 390ms
+  type: vmess
+  server: tw.yiciyuanquicken.online
+  port: 31224
+  uuid: d51abb35-94a4-4529-9244-2808beaa4624
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: true
+  servername: tw.yiciyuanquicken.online
+- name: TROJAN-8 | 1074ms
+  type: trojan
+  server: tuntro006.instconn.com
+  port: 443
+  password: 30077070-596e-48ea-9400-14c8ed07bd97
+  sni: torontorm1.686911.xyz
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VMESS-1 | 153ms
-  - VLESS-2 | 147ms
-  - SHADOWSOCKS-3 | 150ms
-  - SHADOWSOCKS-4 | 161ms
-  - VMESS-5 | 243ms
-  - SHADOWSOCKS-6 | 144ms
-  - SHADOWSOCKS-7 | 1306ms
+  - VMESS-1 | 24ms
+  - TROJAN-2 | 370ms
+  - TROJAN-3 | 479ms
+  - TROJAN-4 | 328ms
+  - TROJAN-5 | 344ms
+  - TROJAN-6 | 483ms
+  - VMESS-7 | 390ms
+  - TROJAN-8 | 1074ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VMESS-1 | 153ms
-  - VLESS-2 | 147ms
-  - SHADOWSOCKS-3 | 150ms
-  - SHADOWSOCKS-4 | 161ms
-  - VMESS-5 | 243ms
-  - SHADOWSOCKS-6 | 144ms
-  - SHADOWSOCKS-7 | 1306ms
+  - VMESS-1 | 24ms
+  - TROJAN-2 | 370ms
+  - TROJAN-3 | 479ms
+  - TROJAN-4 | 328ms
+  - TROJAN-5 | 344ms
+  - TROJAN-6 | 483ms
+  - VMESS-7 | 390ms
+  - TROJAN-8 | 1074ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
