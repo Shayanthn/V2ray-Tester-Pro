@@ -44,28 +44,19 @@ class NotificationService:
     
     def __init__(self, logger: Optional[logging.Logger] = None):
         self.logger = logger or logging.getLogger(__name__)
-        
         # Telegram notifier
         self.telegram = TelegramNotifier(logger=self.logger)
-        
         # Rate limiter
         self.rate_limiter = RateLimiter(logger=self.logger)
-        
-        # Message queues
-        self._pending_queue: asyncio.Queue = asyncio.Queue()
-        self._priority_queue: asyncio.PriorityQueue = asyncio.PriorityQueue()
+        # Message buffer (all priorities)
         self._batch_buffer: List[NotificationMessage] = []
-        
         # Deduplication
         self._sent_hashes: Set[str] = set()
         self._dedup_window = 3600  # 1 hour deduplication window
         self._hash_timestamps: Dict[str, float] = {}
-        
         # State
         self._running = False
-        self._worker_task: Optional[asyncio.Task] = None
         self._batch_task: Optional[asyncio.Task] = None
-        
         # Statistics
         self.stats = {
             'total_sent': 0,
@@ -198,98 +189,54 @@ class NotificationService:
         
         return await self.send(msg, priority=priority)
     
-    async def send(self, content: str, priority: int = 1, 
-                    skip_dedup: bool = False) -> bool:
+    async def send(self, content: str, priority: int = 1, skip_dedup: bool = False) -> bool:
         """
-        Queue a message for sending.
-        
-        Args:
-            content: Message content
-            priority: 1 = normal, 2 = high, 3 = critical
-            skip_dedup: Skip deduplication check
-            
-        Returns:
-            True if message was queued successfully
+        Queue a message for sending (all priorities batched, deduped, anti-spam).
         """
         if not self.is_enabled:
             return False
-        
-        # Check for duplicates (unless skipped)
+        # همیشه @vpnbuying به انتها اضافه کن (اگر نبود)
+        if "@vpnbuying" not in content:
+            content = f"{content}\n\n📢 @vpnbuying"
+        # Deduplication
         if not skip_dedup and self._is_duplicate(content):
             self.stats['total_deduplicated'] += 1
             self.logger.debug("Skipping duplicate notification")
             return False
-        
         msg = NotificationMessage(
             content=content,
             priority=priority,
             channel='telegram'
         )
-        
-        # High priority messages go to priority queue
-        if priority >= 2:
-            await self._priority_queue.put((-priority, time.time(), msg))
-        else:
-            self._batch_buffer.append(msg)
-        
+        self._batch_buffer.append(msg)
         return True
     
     async def start(self) -> None:
-        """Start the notification service background workers."""
+        """Start the notification service background worker."""
         if self._running:
             return
-        
         self._running = True
-        self._worker_task = asyncio.create_task(self._worker_loop())
         self._batch_task = asyncio.create_task(self._batch_loop())
         self.logger.info("Notification service started")
     
     async def stop(self) -> None:
         """Stop the notification service gracefully."""
         self._running = False
-        
         # Flush remaining messages
         await self._flush_batch()
-        
-        # Cancel worker tasks
-        if self._worker_task:
-            self._worker_task.cancel()
-            try:
-                await self._worker_task
-            except asyncio.CancelledError:
-                pass
-        
+        # Cancel worker task
         if self._batch_task:
             self._batch_task.cancel()
             try:
                 await self._batch_task
             except asyncio.CancelledError:
                 pass
-        
         self.logger.info(f"Notification service stopped. Stats: {self.stats}")
     
-    async def _worker_loop(self) -> None:
-        """Process priority queue messages."""
-        while self._running:
-            try:
-                # Check priority queue first
-                try:
-                    _, _, msg = await asyncio.wait_for(
-                        self._priority_queue.get(),
-                        timeout=1.0
-                    )
-                    await self._send_message(msg)
-                except asyncio.TimeoutError:
-                    continue
-                
-            except asyncio.CancelledError:
-                break
-            except Exception as e:
-                self.logger.error(f"Notification worker error: {e}")
-                await asyncio.sleep(1)
+    # حذف کامل worker_loop و صف priority
     
     async def _batch_loop(self) -> None:
-        """Process batched messages periodically."""
+        """Process batched messages periodically (all priorities)."""
         while self._running:
             try:
                 await asyncio.sleep(self.BATCH_WINDOW)
@@ -300,37 +247,36 @@ class NotificationService:
                 self.logger.error(f"Batch processor error: {e}")
     
     async def _flush_batch(self) -> None:
-        """Send up to MAX_BATCH_SIZE new messages per batch window."""
+        """Send up to MAX_BATCH_SIZE new messages per batch window (all priorities, sorted by priority desc)."""
         if not self._batch_buffer:
             return
-        # فقط پیام‌های غیرتکراری را ارسال کن
-        sent = 0
-        new_batch = []
+        # فقط پیام‌های غیرتکراری را ارسال کن (دوباره چک کن)
+        unique_msgs = []
+        seen_hashes = set()
         for msg in self._batch_buffer:
-            if sent >= self.MAX_BATCH_SIZE:
-                break
-            # اگر پیام تکراری نیست
-            if not self._is_duplicate(msg.content):
-                new_batch.append(msg)
-                sent += 1
+            h = self._hash_message(msg.content)
+            if h not in seen_hashes:
+                unique_msgs.append(msg)
+                seen_hashes.add(h)
+        # اولویت بالا اول
+        unique_msgs.sort(key=lambda m: -m.priority)
+        to_send = unique_msgs[:self.MAX_BATCH_SIZE]
         # حذف پیام‌های ارسال شده از بافر
-        self._batch_buffer = [msg for msg in self._batch_buffer if msg not in new_batch]
+        self._batch_buffer = [msg for msg in self._batch_buffer if msg not in to_send]
         # ارسال پیام‌ها
-        for msg in new_batch:
+        for msg in to_send:
             await self._send_message(msg)
     
     async def _send_message(self, msg: NotificationMessage) -> bool:
         """Actually send a message with rate limiting."""
-        # Rate limiting
         allowed = await self.rate_limiter.acquire('telegram', 'telegram')
         if not allowed:
             self.stats['total_rate_limited'] += 1
-            # Re-queue for retry
+            # پیام را دوباره به بافر اضافه کن برای batch بعدی
             if msg.retries < msg.max_retries:
                 msg.retries += 1
-                await self._priority_queue.put((-msg.priority, time.time(), msg))
+                self._batch_buffer.append(msg)
             return False
-        
         # Send via Telegram
         try:
             success = await self.telegram.send_message(msg.content)
