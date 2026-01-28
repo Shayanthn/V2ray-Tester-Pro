@@ -61,6 +61,16 @@ class NotificationService:
         except Exception:
             # non-fatal
             pass
+        # Pending messages persistence
+        self._pending_file = os.path.join(os.getcwd(), 'notifications', 'pending_messages.json')
+        # Send ledger to enforce cross-run caps (list of unix timestamps)
+        self._ledger_file = os.path.join(os.getcwd(), 'notifications', 'send_ledger.json')
+        self._send_ledger: List[float] = []
+        try:
+            self._load_pending()
+            self._load_send_ledger()
+        except Exception:
+            pass
         # State
         self._running = False
         self._batch_task: Optional[asyncio.Task] = None
@@ -261,6 +271,10 @@ class NotificationService:
             channel='telegram'
         )
         self._batch_buffer.append(msg)
+        try:
+            self._persist_pending()
+        except Exception:
+            self.logger.debug("Failed to persist pending messages")
         return True
     
     async def start(self) -> None:
@@ -322,14 +336,30 @@ class NotificationService:
         self._batch_buffer = [msg for msg in self._batch_buffer if msg not in to_send]
         # ارسال پیام‌ها
         for msg in to_send:
-            await self._send_message(msg)
+            sent = await self._send_message(msg)
+            # If sent, ledger already updated; if not sent due to cap, re-persist pending
+            if not sent:
+                try:
+                    self._persist_pending()
+                except Exception:
+                    pass
     
     async def _send_message(self, msg: NotificationMessage) -> bool:
         """Actually send a message with rate limiting."""
+        # First check ledger: enforce max sends per window across runs
+        now = time.time()
+        # clean old entries
+        self._send_ledger = [t for t in self._send_ledger if now - t <= self.BATCH_WINDOW]
+        if len(self._send_ledger) >= self.MAX_BATCH_SIZE:
+            self.stats['total_rate_limited'] += 1
+            # requeue for next window
+            if msg.retries < msg.max_retries:
+                msg.retries += 1
+                self._batch_buffer.append(msg)
+            return False
         allowed = await self.rate_limiter.acquire('telegram', 'telegram')
         if not allowed:
             self.stats['total_rate_limited'] += 1
-            # پیام را دوباره به بافر اضافه کن برای batch بعدی
             if msg.retries < msg.max_retries:
                 msg.retries += 1
                 self._batch_buffer.append(msg)
@@ -340,6 +370,17 @@ class NotificationService:
             if success:
                 self.stats['total_sent'] += 1
                 self.rate_limiter.record_success('telegram')
+                # record send in ledger and persist
+                try:
+                    self._send_ledger.append(time.time())
+                    self._persist_send_ledger()
+                except Exception:
+                    self.logger.debug("Failed to persist send ledger")
+                # remove from pending file if present
+                try:
+                    self._remove_pending(msg)
+                except Exception:
+                    pass
                 return True
             else:
                 self.stats['total_failed'] += 1
@@ -358,6 +399,61 @@ class NotificationService:
             'pending_batch': len(self._batch_buffer),
             'rate_limiter': self.rate_limiter.get_stats()
         }
+
+    def _load_pending(self) -> None:
+        try:
+            import json
+            if os.path.exists(self._pending_file):
+                with open(self._pending_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f) or []
+                    for item in data:
+                        if isinstance(item, dict) and 'content' in item:
+                            self._batch_buffer.append(NotificationMessage(content=item['content'], priority=item.get('priority',1)))
+        except Exception as e:
+            self.logger.debug(f"Failed to load pending messages: {e}")
+
+    def _persist_pending(self) -> None:
+        try:
+            import json, tempfile
+            os.makedirs(os.path.dirname(self._pending_file), exist_ok=True)
+            data = [{'content': m.content, 'priority': m.priority} for m in self._batch_buffer]
+            fd, tmp = tempfile.mkstemp(dir=os.path.dirname(self._pending_file))
+            with os.fdopen(fd, 'w', encoding='utf-8') as tf:
+                json.dump(data, tf)
+            os.replace(tmp, self._pending_file)
+        except Exception as e:
+            self.logger.debug(f"Failed to persist pending messages: {e}")
+
+    def _remove_pending(self, msg: NotificationMessage) -> None:
+        try:
+            self._batch_buffer = [m for m in self._batch_buffer if m is not msg]
+            self._persist_pending()
+        except Exception as e:
+            self.logger.debug(f"Failed to remove pending message: {e}")
+
+    def _load_send_ledger(self) -> None:
+        try:
+            import json
+            if os.path.exists(self._ledger_file):
+                with open(self._ledger_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f) or []
+                    self._send_ledger = [float(t) for t in data]
+        except Exception as e:
+            self.logger.debug(f"Failed to load send ledger: {e}")
+
+    def _persist_send_ledger(self) -> None:
+        try:
+            import json, tempfile
+            os.makedirs(os.path.dirname(self._ledger_file), exist_ok=True)
+            # keep only recent entries within window
+            now = time.time()
+            self._send_ledger = [t for t in self._send_ledger if now - t <= self.BATCH_WINDOW]
+            fd, tmp = tempfile.mkstemp(dir=os.path.dirname(self._ledger_file))
+            with os.fdopen(fd, 'w', encoding='utf-8') as tf:
+                json.dump(self._send_ledger, tf)
+            os.replace(tmp, self._ledger_file)
+        except Exception as e:
+            self.logger.debug(f"Failed to persist send ledger: {e}")
 
 
 # Global notification service instance
