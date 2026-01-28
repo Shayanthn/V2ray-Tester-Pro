@@ -99,13 +99,21 @@ class SecurityValidator:
             if address.endswith(domain):
                 return True
                 
-        # Check for Iranian government/infra domains to avoid self-testing loops
-        iran_blocked = [
-            ".ir", "arvancloud.com", "parsonline.com", "asiatech.ir", "shatel.ir"
+        # Check for infrastructure domains to avoid self-testing loops
+        # Note: Only block CDN/ISP infrastructure, NOT all .ir domains
+        # (Valid proxy servers may have .ir TLD but be hosted abroad)
+        infra_blocked = [
+            "arvancloud.ir", "arvancloud.com",  # Iranian CDN
+            "parsonline.com", "parsonline.ir",  # Iranian ISP
+            "asiatech.ir",  # Iranian ISP
+            "shatel.ir",  # Iranian ISP
+            "mci.ir",  # Mobile operator
+            "irancell.ir",  # Mobile operator
+            "rightel.ir",  # Mobile operator
         ]
         
-        for domain in iran_blocked:
-            if address.endswith(domain):
+        for domain in infra_blocked:
+            if address.endswith(domain) or address == domain.lstrip('.'):
                 return True
                 
         return False

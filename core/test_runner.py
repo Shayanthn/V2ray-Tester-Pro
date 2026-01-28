@@ -169,22 +169,19 @@ class TestRunner:
             if process:
                 await self.xray_manager.stop(process)
             
-            # Clean up temp config file
-            try:
-                if os.path.exists(config_path):
-                    os.remove(config_path)
-            except Exception as e:
-                self.logger.warning(f"Failed to remove temp config {config_path}: {e}")
-            
-            if os.path.exists(config_path):
-                for _ in range(5): # Retry up to 5 times
-                    try:
+            # Clean up temp config file with retry logic
+            for attempt in range(5):
+                try:
+                    if os.path.exists(config_path):
                         os.remove(config_path)
-                        break
-                    except Exception as e:
-                        await asyncio.sleep(0.5)
-                else:
-                    self.logger.warning(f"Failed to remove temp config '{config_path}' after retries.")
+                    break  # Success or file doesn't exist
+                except PermissionError:
+                    # File may be locked by Xray process, wait and retry
+                    await asyncio.sleep(0.3 * (attempt + 1))
+                except Exception as e:
+                    if attempt == 4:  # Last attempt
+                        self.logger.warning(f"Failed to remove temp config '{config_path}': {e}")
+                    break
 
     async def _check_connectivity(self, session: aiohttp.ClientSession, proxy_url: str) -> Dict[str, bool]:
         """Checks connectivity to specific services (Telegram, Instagram, YouTube)."""

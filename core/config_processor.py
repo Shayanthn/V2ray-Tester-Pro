@@ -100,6 +100,34 @@ class ConfigProcessor:
             else:
                 stream['tlsSettings'] = tls_settings
         
+        # Transport Settings (MUST be before return)
+        if net == 'ws':
+            stream['wsSettings'] = {
+                "path": path,
+                "headers": {"Host": host} if host else {}
+            }
+        elif net == 'grpc':
+            stream['grpcSettings'] = {
+                "serviceName": service_name,
+                "multiMode": True
+            }
+        elif net == 'http':
+            stream['httpSettings'] = {
+                "path": path,
+                "host": [host] if host else []
+            }
+        elif net == 'quic':
+            stream['quicSettings'] = {
+                "security": host,
+                "key": path,
+                "header": {"type": "none"}
+            }
+        elif net == 'tcp':
+            # TCP with optional HTTP header obfuscation
+            stream['tcpSettings'] = {
+                "header": {"type": "none"}
+            }
+        
         return stream
 
     def inject_fragment(self, config: Dict[str, Any]) -> Dict[str, Any]:
@@ -160,31 +188,6 @@ class ConfigProcessor:
         except Exception as e:
             self.logger.warning(f"Failed to inject fragment: {e}")
             return config
-
-        # Transport Settings
-        if net == 'ws':
-            stream['wsSettings'] = {
-                "path": path,
-                "headers": {"Host": host} if host else {}
-            }
-        elif net == 'grpc':
-            stream['grpcSettings'] = {
-                "serviceName": service_name,
-                "multiMode": True
-            }
-        elif net == 'http':
-            stream['httpSettings'] = {
-                "path": path,
-                "host": [host] if host else []
-            }
-        elif net == 'quic':
-            stream['quicSettings'] = {
-                "security": host, # QUIC security type is often passed in host/header
-                "key": path,
-                "header": {"type": "none"}
-            }
-        
-        return stream
 
     def _parse_vmess(self, uri: str, port: int) -> Optional[Dict[str, Any]]:
         """Comprehensive VMess URI parser."""

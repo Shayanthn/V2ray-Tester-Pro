@@ -284,6 +284,7 @@ class CLIRunner:
                             test_result.update(geoip_info)
                             
                             self.app_state.found += 1
+                            self.app_state.progress += 1  # Bug fix: increment progress on success
                             success_count += 1
                             consecutive_failures = 0
                             self.app_state.results.append(test_result)
