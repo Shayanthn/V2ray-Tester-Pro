@@ -5,56 +5,154 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 480ms
-  type: ss
-  server: 45.87.175.175
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: QCXDxuDlTTMD7jtgHUjIoj
-- name: SHADOWSOCKS-2 | 269ms
-  type: ss
-  server: 45.87.175.28
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: VLESS-3 | 356ms
+- name: VLESS-1 | 53ms
   type: vless
-  server: 57.129.53.181
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  server: 162.159.152.4
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  network: ws
+  tls: true
+  servername: l.ayovo.netlib.re
+- name: VLESS-2 | 45ms
+  type: vless
+  server: 104.16.147.32
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  network: ws
+  tls: true
+  servername: l.ayovo.netlib.re
+- name: VLESS-3 | 39ms
+  type: vless
+  server: 162.159.16.63
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  network: ws
+  tls: true
+  servername: l.ayovo.netlib.re
+- name: VLESS-4 | 80ms
+  type: vless
+  server: 104.21.224.5
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  network: ws
+  tls: true
+  servername: l.ayovo.netlib.re
+- name: VLESS-5 | 517ms
+  type: vless
+  server: 94.228.213.219
+  port: 443
+  uuid: 45e3b7ad-03b6-42fc-b616-1e92bdd0a5b3
   network: tcp
-- name: VMESS-4 | 114ms
-  type: vmess
-  server: 172.234.132.232
-  port: 10001
-  uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: TROJAN-5 | 520ms
+- name: TROJAN-6 | 3001ms
   type: trojan
-  server: 160.16.81.84
-  port: 5076
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  sni: www.nintendogames.net
+  server: 58.152.53.45
+  port: 443
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: VLESS-7 | 74ms
+  type: vless
+  server: 104.18.185.26
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  network: ws
+  tls: true
+  servername: l.ayovo.netlib.re
+- name: VLESS-8 | 522ms
+  type: vless
+  server: 138.124.79.4
+  port: 443
+  uuid: d6b1327d-2bec-4366-a3a1-9b1284f95841
+  network: tcp
+- name: VLESS-9 | 81ms
+  type: vless
+  server: 104.21.224.5
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  network: ws
+  tls: true
+  servername: l.ayovo.netlib.re
+- name: VLESS-10 | 100ms
+  type: vless
+  server: 198.62.62.241
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  network: ws
+  tls: true
+  servername: l.ayovo.netlib.re
+- name: TROJAN-11 | 427ms
+  type: trojan
+  server: 219.76.135.98
+  port: 443
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+- name: VLESS-12 | 83ms
+  type: vless
+  server: 104.21.227.134
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  network: ws
+  tls: true
+  servername: l.ayovo.netlib.re
+- name: VLESS-13 | 42ms
+  type: vless
+  server: 104.17.25.173
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  network: ws
+  tls: true
+  servername: l.ayovo.netlib.re
+- name: VLESS-14 | 790ms
+  type: vless
+  server: 178.17.53.28
+  port: 47539
+  uuid: 447c45cd-ade0-4bfe-90a0-3e581829f741
+  network: tcp
+- name: VLESS-15 | 1173ms
+  type: vless
+  server: 172.64.152.23
+  port: 443
+  uuid: 1b9d8449-479f-40a0-a326-1a5ea3481c42
+  network: ws
+  tls: true
+  servername: ch1.sooot.ir
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 480ms
-  - SHADOWSOCKS-2 | 269ms
-  - VLESS-3 | 356ms
-  - VMESS-4 | 114ms
-  - TROJAN-5 | 520ms
+  - VLESS-1 | 53ms
+  - VLESS-2 | 45ms
+  - VLESS-3 | 39ms
+  - VLESS-4 | 80ms
+  - VLESS-5 | 517ms
+  - TROJAN-6 | 3001ms
+  - VLESS-7 | 74ms
+  - VLESS-8 | 522ms
+  - VLESS-9 | 81ms
+  - VLESS-10 | 100ms
+  - TROJAN-11 | 427ms
+  - VLESS-12 | 83ms
+  - VLESS-13 | 42ms
+  - VLESS-14 | 790ms
+  - VLESS-15 | 1173ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 480ms
-  - SHADOWSOCKS-2 | 269ms
-  - VLESS-3 | 356ms
-  - VMESS-4 | 114ms
-  - TROJAN-5 | 520ms
+  - VLESS-1 | 53ms
+  - VLESS-2 | 45ms
+  - VLESS-3 | 39ms
+  - VLESS-4 | 80ms
+  - VLESS-5 | 517ms
+  - TROJAN-6 | 3001ms
+  - VLESS-7 | 74ms
+  - VLESS-8 | 522ms
+  - VLESS-9 | 81ms
+  - VLESS-10 | 100ms
+  - TROJAN-11 | 427ms
+  - VLESS-12 | 83ms
+  - VLESS-13 | 42ms
+  - VLESS-14 | 790ms
+  - VLESS-15 | 1173ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
