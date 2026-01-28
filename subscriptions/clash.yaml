@@ -5,62 +5,77 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TROJAN-1 | 243ms
+- name: SHADOWSOCKS-1 | 134ms
+  type: ss
+  server: 45.154.204.7
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-2 | 132ms
+  type: ss
+  server: 23.95.76.59
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: TROJAN-3 | 345ms
   type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: TROJAN-2 | 234ms
+  server: 83.143.87.9
+  port: 18581
+  password: RPyW62_b9aH.ztJKeArou
+  sni: 83.143.87.9
+- name: SHADOWSOCKS-4 | 1353ms
+  type: ss
+  server: 167.160.90.51
+  port: 11475
+  cipher: aes-128-gcm
+  password: 523z2fgrd7jx0z5xv6o5
+- name: TROJAN-5 | 748ms
   type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: TROJAN-3 | 251ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: TROJAN-4 | 268ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: TROJAN-5 | 251ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
-- name: TROJAN-6 | 238ms
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  sni: www.semanticstaplegun.click
+  server: 167.17.185.228
+  port: 10889
+  password: cTv.9PDdCt-wybBrG1qlxI5UJuaEj
+  sni: web.max
+- name: SHADOWSOCKS-6 | 267ms
+  type: ss
+  server: 82.38.31.82
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: VMESS-7 | 875ms
+  type: vmess
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: t1.620720.xyz
+  ws-opts:
+    path: /
+    headers: {}
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - TROJAN-1 | 243ms
-  - TROJAN-2 | 234ms
-  - TROJAN-3 | 251ms
-  - TROJAN-4 | 268ms
-  - TROJAN-5 | 251ms
-  - TROJAN-6 | 238ms
+  - SHADOWSOCKS-1 | 134ms
+  - SHADOWSOCKS-2 | 132ms
+  - TROJAN-3 | 345ms
+  - SHADOWSOCKS-4 | 1353ms
+  - TROJAN-5 | 748ms
+  - SHADOWSOCKS-6 | 267ms
+  - VMESS-7 | 875ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - TROJAN-1 | 243ms
-  - TROJAN-2 | 234ms
-  - TROJAN-3 | 251ms
-  - TROJAN-4 | 268ms
-  - TROJAN-5 | 251ms
-  - TROJAN-6 | 238ms
+  - SHADOWSOCKS-1 | 134ms
+  - SHADOWSOCKS-2 | 132ms
+  - TROJAN-3 | 345ms
+  - SHADOWSOCKS-4 | 1353ms
+  - TROJAN-5 | 748ms
+  - SHADOWSOCKS-6 | 267ms
+  - VMESS-7 | 875ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:

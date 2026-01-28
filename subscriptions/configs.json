@@ -6,7 +6,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10806,
+        "port": 10802,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -18,30 +18,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "trojan",
+        "protocol": "shadowsocks",
         "settings": {
           "servers": [
             {
-              "address": "80.173.231.254",
-              "port": 12420,
-              "password": "wp9IsiY82uQhcmgNC1eoBM"
+              "address": "45.154.204.7",
+              "port": 990,
+              "method": "chacha20-ietf-poly1305",
+              "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "www.semanticstaplegun.click",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        },
-        "tag": "proxy"
+        "tag": "🇨🇦CA-45.154.204.7-0850"
       },
       {
         "protocol": "freedom",
@@ -80,13 +68,63 @@
     ],
     "outbounds": [
       {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "23.95.76.59",
+              "port": 990,
+              "method": "chacha20-ietf-poly1305",
+              "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+            }
+          ]
+        },
+        "tag": "🇨🇦CA-23.95.76.59-0855"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10804,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
         "protocol": "trojan",
         "settings": {
           "servers": [
             {
-              "address": "80.173.231.254",
-              "port": 12420,
-              "password": "wp9IsiY82uQhcmgNC1eoBM"
+              "address": "83.143.87.9",
+              "port": 18581,
+              "password": "RPyW62_b9aH.ztJKeArou"
             }
           ]
         },
@@ -94,7 +132,7 @@
           "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "www.semanticstaplegun.click",
+            "serverName": "83.143.87.9",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
@@ -130,7 +168,57 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10817,
+        "port": 10812,
+        "protocol": "http",
+        "settings": {
+          "timeout": 0,
+          "allowTransparent": false,
+          "userLevel": 0
+        },
+        "tag": "http-in"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "167.160.90.51",
+              "port": 11475,
+              "method": "aes-128-gcm",
+              "password": "523z2fgrd7jx0z5xv6o5"
+            }
+          ]
+        },
+        "tag": "🇺🇸US-167.160.90.51-0627"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10805,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -146,9 +234,9 @@
         "settings": {
           "servers": [
             {
-              "address": "80.173.231.254",
-              "port": 12420,
-              "password": "wp9IsiY82uQhcmgNC1eoBM"
+              "address": "167.17.185.228",
+              "port": 10889,
+              "password": "cTv.9PDdCt-wybBrG1qlxI5UJuaEj"
             }
           ]
         },
@@ -156,7 +244,7 @@
           "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "www.semanticstaplegun.click",
+            "serverName": "web.max",
             "allowInsecure": true,
             "fingerprint": "chrome",
             "alpn": [
@@ -192,7 +280,7 @@
     "inbounds": [
       {
         "listen": "127.0.0.1",
-        "port": 10806,
+        "port": 10818,
         "protocol": "http",
         "settings": {
           "timeout": 0,
@@ -204,92 +292,18 @@
     ],
     "outbounds": [
       {
-        "protocol": "trojan",
+        "protocol": "shadowsocks",
         "settings": {
           "servers": [
             {
-              "address": "80.173.231.254",
-              "port": 12420,
-              "password": "wp9IsiY82uQhcmgNC1eoBM"
+              "address": "82.38.31.82",
+              "port": 8080,
+              "method": "chacha20-ietf-poly1305",
+              "password": "oZIoA69Q8yhcQV8ka3Pa3A"
             }
           ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "www.semanticstaplegun.click",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10819,
-        "protocol": "http",
-        "settings": {
-          "timeout": 0,
-          "allowTransparent": false,
-          "userLevel": 0
-        },
-        "tag": "http-in"
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "trojan",
-        "settings": {
-          "servers": [
-            {
-              "address": "80.173.231.254",
-              "port": 12420,
-              "password": "wp9IsiY82uQhcmgNC1eoBM"
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "www.semanticstaplegun.click",
-            "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        },
-        "tag": "proxy"
+        "tag": "🇬🇧GB-82.38.31.82-0626"
       },
       {
         "protocol": "freedom",
@@ -328,27 +342,29 @@
     ],
     "outbounds": [
       {
-        "protocol": "trojan",
+        "protocol": "vmess",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "80.173.231.254",
-              "port": 12420,
-              "password": "wp9IsiY82uQhcmgNC1eoBM"
+              "address": "t1.620720.xyz",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "516d8a7a-3f0b-41d3-bad0-246116381516",
+                  "alterId": 0,
+                  "security": "auto"
+                }
+              ]
             }
           ]
         },
         "streamSettings": {
-          "network": "tcp",
+          "network": "ws",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "www.semanticstaplegun.click",
+            "serverName": "t1.620720.xyz",
             "allowInsecure": true,
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
+            "fingerprint": "chrome"
           }
         },
         "tag": "proxy"
