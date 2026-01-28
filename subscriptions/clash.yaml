@@ -5,96 +5,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VLESS-1 | 299ms
-  type: vless
-  server: 94.228.213.219
-  port: 443
-  uuid: 45e3b7ad-03b6-42fc-b616-1e92bdd0a5b3
-  network: tcp
-- name: VLESS-2 | 290ms
-  type: vless
-  server: 138.124.79.4
-  port: 443
-  uuid: d6b1327d-2bec-4366-a3a1-9b1284f95841
-  network: tcp
-- name: VLESS-3 | 986ms
-  type: vless
-  server: 178.17.53.28
-  port: 47539
-  uuid: 447c45cd-ade0-4bfe-90a0-3e581829f741
-  network: tcp
-- name: VMESS-4 | 113ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-5 | 118ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-6 | 116ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-7 | 118ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: VMESS-8 | 499ms
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: TROJAN-9 | 972ms
+- name: TROJAN-1 | 226ms
   type: trojan
-  server: green2.cdntencentmusic.com
-  port: 31102
-  password: 3b100ed1-75ad-48e3-94cd-92152a8ef2d3
-  sni: green2.cdntencentmusic.com
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-2 | 226ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-3 | 241ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-4 | 225ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-5 | 229ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: TROJAN-6 | 226ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - VLESS-1 | 299ms
-  - VLESS-2 | 290ms
-  - VLESS-3 | 986ms
-  - VMESS-4 | 113ms
-  - VMESS-5 | 118ms
-  - VMESS-6 | 116ms
-  - VMESS-7 | 118ms
-  - VMESS-8 | 499ms
-  - TROJAN-9 | 972ms
+  - TROJAN-1 | 226ms
+  - TROJAN-2 | 226ms
+  - TROJAN-3 | 241ms
+  - TROJAN-4 | 225ms
+  - TROJAN-5 | 229ms
+  - TROJAN-6 | 226ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - VLESS-1 | 299ms
-  - VLESS-2 | 290ms
-  - VLESS-3 | 986ms
-  - VMESS-4 | 113ms
-  - VMESS-5 | 118ms
-  - VMESS-6 | 116ms
-  - VMESS-7 | 118ms
-  - VMESS-8 | 499ms
-  - TROJAN-9 | 972ms
+  - TROJAN-1 | 226ms
+  - TROJAN-2 | 226ms
+  - TROJAN-3 | 241ms
+  - TROJAN-4 | 225ms
+  - TROJAN-5 | 229ms
+  - TROJAN-6 | 226ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
