@@ -39,8 +39,8 @@ class NotificationService:
     
     # Telegram limits: 30 messages/second to different chats, 1 message/second to same chat
     TELEGRAM_RATE_LIMIT = 1.0  # 1 message per second
-    BATCH_WINDOW = 10.0  # Seconds to batch messages
-    MAX_BATCH_SIZE = 5  # Max messages to batch together
+    BATCH_WINDOW = 1800.0  # 30 minutes
+    MAX_BATCH_SIZE = 5  # Max messages to send per batch (per 30 min)
     
     def __init__(self, logger: Optional[logging.Logger] = None):
         self.logger = logger or logging.getLogger(__name__)
@@ -156,7 +156,8 @@ class NotificationService:
             f"📋 **Config** (Tap to copy):\n"
             f"`{uri}`\n\n"
             f"🤝 نشر حداکثری این کانال برای دسترسی هموطنامون به اینترنت بر عهده ماست\n"
-            f"🕊️ اینترنت آزاد برای مردم وطنم"
+            f"🕊️ اینترنت آزاد برای مردم وطنم\n"
+            f"\n📢 @vpnbuying"
         )
         
         return await self.send(msg, priority=2 if is_new else 1)
@@ -299,25 +300,24 @@ class NotificationService:
                 self.logger.error(f"Batch processor error: {e}")
     
     async def _flush_batch(self) -> None:
-        """Send all batched messages."""
+        """Send up to MAX_BATCH_SIZE new messages per batch window."""
         if not self._batch_buffer:
             return
-        
-        # Take up to MAX_BATCH_SIZE messages
-        batch = self._batch_buffer[:self.MAX_BATCH_SIZE]
-        self._batch_buffer = self._batch_buffer[self.MAX_BATCH_SIZE:]
-        
-        if len(batch) == 1:
-            # Single message, send directly
-            await self._send_message(batch[0])
-        else:
-            # Multiple messages, combine into batch
-            self.stats['total_batched'] += len(batch)
-            combined = "📦 **Batch Update** ({} configs)\n\n".format(len(batch))
-            combined += "\n---\n".join(msg.content[:500] for msg in batch[:5])
-            
-            batch_msg = NotificationMessage(content=combined)
-            await self._send_message(batch_msg)
+        # فقط پیام‌های غیرتکراری را ارسال کن
+        sent = 0
+        new_batch = []
+        for msg in self._batch_buffer:
+            if sent >= self.MAX_BATCH_SIZE:
+                break
+            # اگر پیام تکراری نیست
+            if not self._is_duplicate(msg.content):
+                new_batch.append(msg)
+                sent += 1
+        # حذف پیام‌های ارسال شده از بافر
+        self._batch_buffer = [msg for msg in self._batch_buffer if msg not in new_batch]
+        # ارسال پیام‌ها
+        for msg in new_batch:
+            await self._send_message(msg)
     
     async def _send_message(self, msg: NotificationMessage) -> bool:
         """Actually send a message with rate limiting."""
