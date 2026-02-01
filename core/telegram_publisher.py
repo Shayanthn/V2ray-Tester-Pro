@@ -75,30 +75,29 @@ class TelegramPublisher:
         if current_hash == self.state.get('last_configs_hash'):
             return False, "Configs unchanged - no new content to post"
         
-        # Check daily limit (max 10 posts per day to avoid spam)
-        if self.state['post_count_today'] >= 10:
-            return False, "Daily limit reached (10 posts/day)"
+        # Check daily limit (max 3 batches per day = 15 configs total)
+        if self.state['post_count_today'] >= 3:
+            return False, "Daily limit reached (3 batches/day)"
         
-        # Check time since last post (minimum 30 minutes)
+        # Check time since last post (minimum 2 hours)
         if self.state.get('last_post_time'):
             try:
                 last_post = datetime.fromisoformat(self.state['last_post_time'])
                 time_diff = datetime.now() - last_post
-                if time_diff < timedelta(minutes=30):
-                    minutes_left = 30 - int(time_diff.total_seconds() / 60)
-                    return False, f"Too soon - wait {minutes_left} more minutes"
+                if time_diff < timedelta(hours=2):
+                    hours_left = 2 - (time_diff.total_seconds() / 3600)
+                    return False, f"Too soon - wait {hours_left:.1f} more hours"
             except:
                 pass
         
         return True, "Ready to post"
     
-    async def post_update(self, stats: Dict, subscription_link: str) -> bool:
+    async def post_configs(self, results: List[Dict]) -> bool:
         """
-        Post update to Telegram channel with smart formatting.
+        Post top 5 configs to Telegram channel individually.
         
         Args:
-            stats: Statistics dictionary with test results
-            subscription_link: Direct link to subscription file
+            results: List of test results (already sorted by speed)
         
         Returns:
             bool: True if posted successfully
@@ -108,92 +107,113 @@ class TelegramPublisher:
             return False
         
         # Extract config URIs for duplicate detection
-        configs = stats.get('config_uris', [])
+        configs = [r.get('uri', '') for r in results if r.get('uri')]
         should_post, reason = self.should_post(configs)
         
         if not should_post:
             self.logger.info(f"Skipping Telegram post: {reason}")
             return False
         
-        # Build message
-        message = self._build_message(stats, subscription_link)
+        # Get top 5 configs
+        top_configs = results[:5]
         
-        # Send to Telegram
-        success = await self.notifier.send_message(message)
+        if not top_configs:
+            self.logger.warning("No configs to post")
+            return False
         
-        if success:
+        # Post each config individually
+        success_count = 0
+        for config in top_configs:
+            message = self._build_config_message(config)
+            success = await self.notifier.send_message(message)
+            
+            if success:
+                success_count += 1
+                # Small delay between posts to avoid rate limiting
+                await asyncio.sleep(2)
+            else:
+                self.logger.warning(f"Failed to post config: {config.get('uri', 'unknown')[:50]}...")
+        
+        if success_count > 0:
             # Update state
             self.state['last_post_time'] = datetime.now().isoformat()
             self.state['last_configs_hash'] = self._calculate_configs_hash(configs)
             self.state['post_count_today'] += 1
             self.save_state()
-            self.logger.info("✅ Successfully posted to Telegram channel")
+            self.logger.info(f"✅ Successfully posted {success_count}/5 configs to Telegram channel")
+            return True
         
-        return success
+        return False
     
-    def _build_message(self, stats: Dict, subscription_link: str) -> str:
-        """Build formatted Telegram message."""
-        total_working = stats.get('total_working', 0)
-        avg_ping = stats.get('avg_ping', 0)
-        avg_download = stats.get('avg_download', 0)
-        protocols = stats.get('protocols', {})
-        last_updated = stats.get('last_updated', datetime.now().isoformat())
+    def _build_config_message(self, result: Dict) -> str:
+        """Build formatted message for individual config."""
+        protocol = result.get('protocol', 'UNKNOWN').upper()
+        ping = result.get('ping', 0)
+        download_speed = result.get('download_speed', 0)
+        address = result.get('address', 'Unknown')
+        uri = result.get('uri', '')
         
-        # Format timestamp
-        try:
-            dt = datetime.fromisoformat(last_updated)
-            time_str = dt.strftime('%Y-%m-%d %H:%M')
-        except:
-            time_str = last_updated[:16]
+        # Try to guess country from address/URI
+        country = self._guess_location(address, uri)
         
-        # Build protocol distribution
-        protocol_lines = []
-        for proto, count in sorted(protocols.items(), key=lambda x: x[1], reverse=True):
-            protocol_lines.append(f"  • {proto.upper()}: {count}")
-        protocol_text = '\n'.join(protocol_lines) if protocol_lines else "  • N/A"
+        # Convert speed to MB/s
+        speed_mbps = download_speed / 8  # Mbps to MB/s
+        
+        # Map protocol names
+        protocol_emoji = {
+            'VMESS': '🔐',
+            'VLESS': '🔐',
+            'TROJAN': '🔐',
+            'SHADOWSOCKS': '🔐',
+            'SS': '🔐'
+        }
+        emoji = protocol_emoji.get(protocol, '🔐')
         
         # Build message
-        message = f"""🚀 **V2Ray Configs - Auto Update**
+        message = f"""🟢 New Config Found
 
-━━━━━━━━━━━━━━━━━━━
+{emoji} Protocol: {protocol}
+📶 Ping: {ping:.0f} ms
+⚡ Speed: {speed_mbps:.2f} MB/s
+🌍 Location: {country}
 
-✅ **Working Servers:** {total_working}
-📊 **Avg Ping:** {avg_ping:.0f} ms
-⚡ **Avg Speed:** {avg_download:.1f} Mbps
-🕐 **Updated:** {time_str}
+📋 Config (Tap to copy):
+{uri}
 
-📱 **Protocols:**
-{protocol_text}
-
-━━━━━━━━━━━━━━━━━━━
-
-📥 **Import to Your App:**
-
-**v2rayN/NG/Matsuri:**
-```
-{subscription_link}
-```
-
-**Clash/ClashX:**
-```
-https://raw.githubusercontent.com/Shayanthn/V2ray-Tester-Pro/main/subscriptions/clash.yaml
-```
-
-**SingBox:**
-```
-https://raw.githubusercontent.com/Shayanthn/V2ray-Tester-Pro/main/subscriptions/singbox.json
-```
-
-━━━━━━━━━━━━━━━━━━━
-
-⭐ **How to Use:**
-1. Copy the link for your app
-2. Add subscription in app settings
-3. Update to get all configs
-
-🔄 Auto-updates every 30 minutes
-🔒 All configs tested & verified
-
-🤖 Powered by V2Ray Tester Pro
+🤝 نشر حداکثری این کانال برای دسترسی هموطنامون به اینترنت بر عهده ماست
+🕊️ اینترنت آزاد برای مردم وطنم
+🆔 @vpnbuying
 """
         return message
+    
+    def _guess_location(self, address: str, uri: str) -> str:
+        """Guess location from domain or URI hints."""
+        text = (address + uri).lower()
+        
+        # Country hints in domain/URI
+        hints = {
+            'us': 'United States', 'usa': 'United States', 'america': 'United States',
+            'uk': 'United Kingdom', 'london': 'United Kingdom',
+            'de': 'Germany', 'germany': 'Germany',
+            'fr': 'France', 'paris': 'France',
+            'nl': 'Netherlands', 'amsterdam': 'Netherlands',
+            'sg': 'Singapore', 'singapore': 'Singapore',
+            'jp': 'Japan', 'tokyo': 'Japan', 'japan': 'Japan',
+            'hk': 'Hong Kong', 'hongkong': 'Hong Kong',
+            'tw': 'Taiwan', 'taiwan': 'Taiwan',
+            'kr': 'South Korea', 'korea': 'South Korea', 'seoul': 'South Korea',
+            'ca': 'Canada', 'toronto': 'Canada',
+            'au': 'Australia', 'sydney': 'Australia',
+            'ru': 'Russia', 'moscow': 'Russia',
+            'tr': 'Turkey', 'istanbul': 'Turkey',
+            'ir': 'Iran', 'iran': 'Iran', 'tehran': 'Iran',
+            'ae': 'UAE', 'dubai': 'UAE',
+            'in': 'India', 'mumbai': 'India',
+            'br': 'Brazil', 'brazil': 'Brazil',
+        }
+        
+        for hint, country in hints.items():
+            if hint in text:
+                return country
+        
+        return 'Unknown'

@@ -2,7 +2,7 @@ name: Auto Test & Update Subscriptions
 
 on:
   schedule:
-    # Run every 30 minutes
+    # Test and update every 30 minutes
     - cron: '*/30 * * * *'
   workflow_dispatch: # Allow manual trigger
   push:
@@ -99,24 +99,33 @@ jobs:
               notifier = TelegramNotifier(logger)
               publisher = TelegramPublisher(notifier, logger)
               
-              # Load stats
-              if os.path.exists('subscriptions/stats.json'):
-                  with open('subscriptions/stats.json', 'r') as f:
-                      stats = json.load(f)
+              # Load results (not stats, we need full results)
+              if os.path.exists('results.json'):
+                  with open('results.json', 'r') as f:
+                      all_results = json.load(f)
                   
-                  # Direct link to subscription
-                  repo = os.getenv('GITHUB_REPOSITORY', 'Shayanthn/V2ray-Tester-Pro')
-                  sub_link = f'https://raw.githubusercontent.com/{repo}/main/subscriptions/subscription.txt'
+                  # Filter only working configs
+                  working_results = [r for r in all_results if r]
                   
-                  # Post to channel
-                  success = await publisher.post_update(stats, sub_link)
+                  if not working_results:
+                      print('⚠️ No working configs found')
+                      return
+                  
+                  # Sort by download speed (descending)
+                  working_results.sort(
+                      key=lambda x: x.get('download_speed', 0),
+                      reverse=True
+                  )
+                  
+                  # Post top 5 configs individually
+                  success = await publisher.post_configs(working_results)
                   
                   if success:
-                      print('✅ Posted to Telegram channel')
+                      print('✅ Posted top 5 configs to Telegram channel')
                   else:
-                      print('ℹ️ Telegram post skipped (no changes or rate limited)')
+                      print('ℹ️ Telegram post skipped (rate limited or no changes)')
               else:
-                  print('⚠️ No stats file found')
+                  print('⚠️ No results file found')
           
           asyncio.run(main())
           "
