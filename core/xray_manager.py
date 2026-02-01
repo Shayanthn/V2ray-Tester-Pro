@@ -4,12 +4,10 @@ import logging
 import psutil
 import subprocess
 from typing import Optional
-from core.proxy_core_adapter import ProxyCoreAdapter
 
-class XrayManager(ProxyCoreAdapter):
+class XrayManager:
     """
     Manages the Xray Core process lifecycle using asyncio.
-    Implements the ProxyCoreAdapter interface.
     
     MULTIPLEXING ARCHITECTURE BLUEPRINT (DESIGN ONLY):
     --------------------------------------------------

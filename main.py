@@ -31,7 +31,6 @@ def main():
     parser = argparse.ArgumentParser(description=config.APP_NAME)
     parser.add_argument('--cli', action='store_true', help='Run in CLI mode')
     parser.add_argument('--max-configs', type=int, default=0, help='Limit number of configs to test')
-    parser.add_argument('--max-success', type=int, default=0, help='Stop after finding N successful configs')
     parser.add_argument('--debug', action='store_true', help='Enable debug logging')
     args = parser.parse_args()
     
@@ -124,7 +123,6 @@ def main():
             adaptive_batch_min=config.ADAPTIVE_BATCH_MIN,
             adaptive_sleep_min=config.ADAPTIVE_SLEEP_MIN,
             adaptive_sleep_max=config.ADAPTIVE_SLEEP_MAX,
-            max_success=args.max_success,
             logger=logger
         )
         runner.run()
