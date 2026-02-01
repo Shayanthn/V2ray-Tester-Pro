@@ -67,7 +67,8 @@ jobs:
                   'avg_ping': sum(r['ping'] for r in results if r) / len([r for r in results if r]) if results else 0,
                   'avg_download': sum(r['download_speed'] for r in results if r) / len([r for r in results if r]) if results else 0,
                   'last_updated': datetime.now().isoformat(),
-                  'protocols': {}
+                  'protocols': {},
+                  'config_uris': [r.get('uri', '') for r in results if r and r.get('uri')]
               }
               
               for result in results:
@@ -80,6 +81,48 @@ jobs:
               
               print(f'✅ Tested: {stats[\"total_tested\"]} | Working: {stats[\"total_working\"]}')
           "
+      
+      - name: Send to Telegram Channel
+        if: success()
+        run: |
+          python -c "
+          import asyncio
+          import json
+          import os
+          import sys
+          from utils.telegram_notifier import TelegramNotifier
+          from core.telegram_publisher import TelegramPublisher
+          from utils.logger import setup_logger
+          
+          async def main():
+              logger = setup_logger('TelegramBot', 'telegram.log')
+              notifier = TelegramNotifier(logger)
+              publisher = TelegramPublisher(notifier, logger)
+              
+              # Load stats
+              if os.path.exists('subscriptions/stats.json'):
+                  with open('subscriptions/stats.json', 'r') as f:
+                      stats = json.load(f)
+                  
+                  # Direct link to subscription
+                  repo = os.getenv('GITHUB_REPOSITORY', 'Shayanthn/V2ray-Tester-Pro')
+                  sub_link = f'https://raw.githubusercontent.com/{repo}/main/subscriptions/subscription.txt'
+                  
+                  # Post to channel
+                  success = await publisher.post_update(stats, sub_link)
+                  
+                  if success:
+                      print('✅ Posted to Telegram channel')
+                  else:
+                      print('ℹ️ Telegram post skipped (no changes or rate limited)')
+              else:
+                  print('⚠️ No stats file found')
+          
+          asyncio.run(main())
+          "
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       
       - name: Update badge data
         run: |
@@ -109,7 +152,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f subscriptions/ badges/ results.json
+          git add -f subscriptions/ badges/ results.json telegram_state.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 Auto-update: $(date +'%Y-%m-%d %H:%M:%S')" && git push)
       
       - name: Create release on major update

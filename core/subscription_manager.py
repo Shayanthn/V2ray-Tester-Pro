@@ -32,7 +32,8 @@ class SubscriptionManager:
             'v2ray_json': self._generate_v2ray_json(sorted_results),
             'singbox': self._generate_singbox(sorted_results),
             'hiddify': self._generate_hiddify(sorted_results),
-            'nekobox': self._generate_nekobox(sorted_results)
+            'nekobox': self._generate_nekobox(sorted_results),
+            'config_uris': [r.get('uri', '') for r in sorted_results if r.get('uri')]  # For duplicate detection
         }
         
         # Save to files
