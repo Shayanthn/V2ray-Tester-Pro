@@ -12,7 +12,7 @@ class EnterpriseConfig:
     def __init__(self):
         # Application Metadata
         self.APP_NAME = "V2Ray/Xray Enterprise"
-        self.APP_VERSION = "5.4.0"
+        self.APP_VERSION = "5.1.2"
         self.AUTHOR_NAME = "Shayan Taherkhani"
         self.AUTHOR_WEBSITE = "https://shayantaherkhani.ir"
         
@@ -24,11 +24,9 @@ class EnterpriseConfig:
         
         # Network Configuration
         self.TEST_URL_PING = os.getenv('TEST_URL_PING', "https://www.google.com/generate_204")
-        self.TEST_URL_PING_FALLBACK = os.getenv('TEST_URL_PING_FALLBACK', "https://1.1.1.1")
         self.TEST_URL_DOWNLOAD = os.getenv('TEST_URL_DOWNLOAD', "https://speed.cloudflare.com/__down?bytes=5000000")
         self.TEST_URL_UPLOAD = os.getenv('TEST_URL_UPLOAD', "https://speed.cloudflare.com/__up")
         self.CENSORSHIP_CHECK_URL = os.getenv('CENSORSHIP_CHECK_URL', "https://www.youtube.com")
-        self.DOMESTIC_CHECK_URL = os.getenv('DOMESTIC_CHECK_URL', "https://www.aparat.com")
         
         # Real-World Connection Test Targets
         self.TEST_URL_TELEGRAM = os.getenv('TEST_URL_TELEGRAM', "https://api.telegram.org")
@@ -36,7 +34,7 @@ class EnterpriseConfig:
         self.TEST_URL_YOUTUBE = os.getenv('TEST_URL_YOUTUBE', "https://www.youtube.com")
         
         self.TEST_TIMEOUT = int(os.getenv('TEST_TIMEOUT', 10))
-        self.MAX_CONCURRENT_TESTS = int(os.getenv('MAX_CONCURRENT_TESTS', 50))
+        self.MAX_CONCURRENT_TESTS = int(os.getenv('MAX_CONCURRENT_TESTS', 20))
         self.NETWORK_RETRY_COUNT = int(os.getenv('NETWORK_RETRY_COUNT', 5))
         self.DOH_RESOLVER_URL = os.getenv('DOH_RESOLVER_URL', "https://cloudflare-dns.com/dns-query")
         

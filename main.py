@@ -79,9 +79,7 @@ def main():
         logger=logger,
         test_url_telegram=config.TEST_URL_TELEGRAM,
         test_url_instagram=config.TEST_URL_INSTAGRAM,
-        test_url_youtube=config.TEST_URL_YOUTUBE,
-        test_url_ping_fallback=getattr(config, 'TEST_URL_PING_FALLBACK', "https://1.1.1.1"),
-        domestic_check_url=getattr(config, 'DOMESTIC_CHECK_URL', "https://www.aparat.com")
+        test_url_youtube=config.TEST_URL_YOUTUBE
     )
     
     network_manager = NetworkManager(
