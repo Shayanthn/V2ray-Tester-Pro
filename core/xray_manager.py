@@ -8,6 +8,7 @@ from typing import Optional
 class XrayManager:
     """
     Manages the Xray Core process lifecycle using asyncio.
+    Updated for v5.1.2 Revert verification.
     
     MULTIPLEXING ARCHITECTURE BLUEPRINT (DESIGN ONLY):
     --------------------------------------------------
