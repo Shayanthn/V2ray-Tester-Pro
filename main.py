@@ -100,6 +100,10 @@ def main():
         output_dir="subscriptions"
     )
     
+    # Get rotating batch of sources (10 at a time)
+    batch_aggregator, batch_direct = config.get_rotating_sources(batch_size=10)
+    logger.info(f"Using rotating sources - Aggregators: {len(batch_aggregator)}, Direct: {len(batch_direct)}")
+    
     # 6. Launch Application
     if args.cli:
         logger.info("Starting in CLI mode...")
@@ -112,8 +116,8 @@ def main():
             network_manager=network_manager,
             config_discoverer=config_discoverer,
             subscription_manager=subscription_manager,
-            aggregator_links=config.AGGREGATOR_LINKS,
-            direct_config_sources=config.DIRECT_CONFIG_SOURCES,
+            aggregator_links=batch_aggregator,
+            direct_config_sources=batch_direct,
             max_concurrent_tests=config.MAX_CONCURRENT_TESTS,
             adaptive_testing=config.ADAPTIVE_TESTING,
             adaptive_batch_max=config.ADAPTIVE_BATCH_MAX,
@@ -141,8 +145,8 @@ def main():
                 network_manager=network_manager,
                 config_discoverer=config_discoverer,
                 subscription_manager=subscription_manager,
-                aggregator_links=config.AGGREGATOR_LINKS,
-                direct_config_sources=config.DIRECT_CONFIG_SOURCES,
+                aggregator_links=batch_aggregator,
+                direct_config_sources=batch_direct,
                 max_concurrent_tests=config.MAX_CONCURRENT_TESTS,
                 adaptive_testing=config.ADAPTIVE_TESTING,
                 adaptive_batch_max=config.ADAPTIVE_BATCH_MAX,

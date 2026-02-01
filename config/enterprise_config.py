@@ -95,6 +95,7 @@ class EnterpriseConfig:
         """Loads sources from JSON file or uses defaults."""
         self.AGGREGATOR_LINKS = []
         self.DIRECT_CONFIG_SOURCES = []
+        self.ALL_SOURCES = []  # Store all sources for rotation
         
         # Default lists (Hardcoded fallback)
         default_direct = [
@@ -115,6 +116,25 @@ class EnterpriseConfig:
              # Create default file if not exists
              self.DIRECT_CONFIG_SOURCES = default_direct
              self._save_sources()
+        
+        # Combine all sources for rotation
+        self.ALL_SOURCES = self.AGGREGATOR_LINKS + self.DIRECT_CONFIG_SOURCES
+    
+    def get_rotating_sources(self, batch_size=10):
+        """Get next batch of sources using rotation."""
+        from core.source_rotator import SourceRotator
+        
+        if not self.ALL_SOURCES:
+            return [], []
+        
+        rotator = SourceRotator(self.ALL_SOURCES, batch_size=batch_size)
+        batch = rotator.get_next_batch()
+        
+        # Split batch back to aggregator/direct
+        batch_aggregator = [s for s in batch if s in self.AGGREGATOR_LINKS]
+        batch_direct = [s for s in batch if s in self.DIRECT_CONFIG_SOURCES]
+        
+        return batch_aggregator, batch_direct
 
     def _save_sources(self):
         """Saves current sources to JSON file."""
