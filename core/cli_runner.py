@@ -171,12 +171,20 @@ class CLIRunner:
                 uri = await self.config_queue.get()
                 
                 async with self.semaphore:
-                    # Process the URI
-                    config_json = self.config_processor.build_config_from_uri(uri, port)
-                    if config_json:
-                        # Run async test
-                        test_result = await self.test_runner.run_full_test(
-                            config_json, port, self.session
+                    # Process the URI with timeout protection
+                    try:
+                        config_json = self.config_processor.build_config_from_uri(uri, port)
+                        if not config_json:
+                            self.app_state.failed += 1
+                            self.app_state.update_stats(None)
+                            self.app_state.progress += 1
+                            self.config_queue.task_done()
+                            continue
+                        
+                        # Run test with timeout (max 30 seconds per config)
+                        test_result = await asyncio.wait_for(
+                            self.test_runner.run_full_test(config_json, port, self.session),
+                            timeout=30.0
                         )
                         
                         total_count += 1
@@ -184,10 +192,20 @@ class CLIRunner:
                         if test_result:
                             test_result['uri'] = uri
                             
-                            # GeoIP Lookup
+                            # GeoIP Lookup with timeout
                             ip = test_result.get('ip')
-                            geoip_info = await self.network_manager.get_geoip_info(ip, self.session)
-                            test_result.update(geoip_info)
+                            try:
+                                geoip_info = await asyncio.wait_for(
+                                    self.network_manager.get_geoip_info(ip, self.session),
+                                    timeout=5.0
+                                )
+                                test_result.update(geoip_info)
+                            except asyncio.TimeoutError:
+                                self.logger.warning(f"GeoIP lookup timeout for {ip}")
+                                test_result.update({'country': 'Unknown', 'country_code': 'XX'})
+                            except Exception as e:
+                                self.logger.error(f"GeoIP error: {e}")
+                                test_result.update({'country': 'Unknown', 'country_code': 'XX'})
                             
                             self.app_state.found += 1
                             success_count += 1
@@ -195,10 +213,22 @@ class CLIRunner:
                             self.app_state.update_stats(test_result)
                             
                             # 🔥 REAL-TIME SAVE: Save immediately!
-                            self.realtime_saver.save_config(test_result)
+                            try:
+                                self.realtime_saver.save_config(test_result)
+                            except Exception as e:
+                                self.logger.error(f"Failed to save config: {e}")
                         else:
                             self.app_state.failed += 1
                             self.app_state.update_stats(None)
+                    
+                    except asyncio.TimeoutError:
+                        self.logger.warning(f"Test timeout for config (skipping)")
+                        self.app_state.failed += 1
+                        self.app_state.update_stats(None)
+                    except Exception as e:
+                        self.logger.error(f"Config test error: {e}")
+                        self.app_state.failed += 1
+                        self.app_state.update_stats(None)
                 
                 # Update progress
                 self.app_state.progress += 1
