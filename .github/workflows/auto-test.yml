@@ -90,42 +90,64 @@ jobs:
           import json
           import os
           import sys
+          from core.realtime_saver import RealtimeConfigSaver
           from utils.telegram_notifier import TelegramNotifier
           from core.telegram_publisher import TelegramPublisher
           from utils.logger import setup_logger
           
           async def main():
               logger = setup_logger('TelegramBot', 'telegram.log')
+              
+              # Use unified source: working_configs.json
+              saver = RealtimeConfigSaver('working_configs.json', logger)
               notifier = TelegramNotifier(logger)
               publisher = TelegramPublisher(notifier, logger)
               
-              # Load results (not stats, we need full results)
-              if os.path.exists('results.json'):
-                  with open('results.json', 'r') as f:
-                      all_results = json.load(f)
-                  
-                  # Filter only working configs
-                  working_results = [r for r in all_results if r]
-                  
-                  if not working_results:
-                      print('⚠️ No working configs found')
-                      return
-                  
-                  # Sort by download speed (descending)
-                  working_results.sort(
-                      key=lambda x: x.get('download_speed', 0),
-                      reverse=True
-                  )
-                  
-                  # Post top 5 configs individually
-                  success = await publisher.post_configs(working_results)
+              stats = saver.get_stats()
+              print(f'📊 Stats: {stats[\"total\"]} total, {stats[\"unsent\"]} unsent')
+              
+              if stats['unsent'] == 0:
+                  print('ℹ️ No new configs to send')
+                  return
+              
+              # Get unsent configs (top 5 by speed)
+              unsent = saver.get_unsent_configs(limit=5)
+              
+              if not unsent:
+                  print('ℹ️ No unsent configs found')
+                  return
+              
+              # Check rate limits
+              config_uris = [c.get('uri', '') for c in unsent]
+              should_post, reason = publisher.should_post(config_uris)
+              
+              if not should_post:
+                  print(f'ℹ️ Skipping: {reason}')
+                  return
+              
+              # Post each config
+              success_count = 0
+              sent_hashes = []
+              
+              for config in unsent:
+                  message = publisher._build_config_message(config)
+                  success = await notifier.send_message(message)
                   
                   if success:
-                      print('✅ Posted top 5 configs to Telegram channel')
-                  else:
-                      print('ℹ️ Telegram post skipped (rate limited or no changes)')
+                      success_count += 1
+                      sent_hashes.append(config.get('hash', ''))
+                      print(f'✅ Sent: {config.get(\"protocol\", \"unknown\")} - {config.get(\"ping\", 0)}ms')
+                      await asyncio.sleep(2)  # Rate limit
+              
+              # Mark as sent
+              if sent_hashes:
+                  saver.mark_as_sent(sent_hashes)
+                  publisher.state['last_post_time'] = __import__('datetime').datetime.now().isoformat()
+                  publisher.state['post_count_today'] += 1
+                  publisher.save_state()
+                  print(f'✅ Sent {success_count} configs to Telegram')
               else:
-                  print('⚠️ No results file found')
+                  print('⚠️ Failed to send configs')
           
           asyncio.run(main())
           "
