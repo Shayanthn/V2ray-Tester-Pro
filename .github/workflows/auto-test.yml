@@ -42,9 +42,9 @@ jobs:
           ./xray version
       
       - name: Run V2Ray Tester (CLI Mode)
-        timeout-minutes: 120
+        timeout-minutes: 25
         run: |
-          python main.py --cli --max-configs 0
+          python main.py --cli --max-configs 500
         env:
           PYTHONUNBUFFERED: 1
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
