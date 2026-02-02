@@ -150,31 +150,18 @@ class TelegramPublisher:
         protocol = result.get('protocol', 'UNKNOWN').upper()
         ping = result.get('ping', 0)
         download_speed = result.get('download_speed', 0)
-        address = result.get('address', 'Unknown')
+        country = result.get('country', 'Unknown')
         uri = result.get('uri', '')
         
-        # Try to guess country from address/URI
-        country = self._guess_location(address, uri)
+        # Convert speed to MB/s (download_speed is in bytes/sec)
+        speed_mb = download_speed / (1024 * 1024) if download_speed > 0 else 0
         
-        # Convert speed to MB/s
-        speed_mbps = download_speed / 8  # Mbps to MB/s
-        
-        # Map protocol names
-        protocol_emoji = {
-            'VMESS': '🔐',
-            'VLESS': '🔐',
-            'TROJAN': '🔐',
-            'SHADOWSOCKS': '🔐',
-            'SS': '🔐'
-        }
-        emoji = protocol_emoji.get(protocol, '🔐')
-        
-        # Build message
+        # Build message with exact format requested
         message = f"""🟢 New Config Found
 
-{emoji} Protocol: {protocol}
+🔐 Protocol: {protocol}
 📶 Ping: {ping:.0f} ms
-⚡ Speed: {speed_mbps:.2f} MB/s
+⚡ Speed: {speed_mb:.2f} MB/s
 🌍 Location: {country}
 
 📋 Config (Tap to copy):
@@ -182,38 +169,7 @@ class TelegramPublisher:
 
 🤝 نشر حداکثری این کانال برای دسترسی هموطنامون به اینترنت بر عهده ماست
 🕊️ اینترنت آزاد برای مردم وطنم
-🆔 @vpnbuying
-"""
+🆔 @vpnbuying"""
+        
         return message
-    
-    def _guess_location(self, address: str, uri: str) -> str:
-        """Guess location from domain or URI hints."""
-        text = (address + uri).lower()
-        
-        # Country hints in domain/URI
-        hints = {
-            'us': 'United States', 'usa': 'United States', 'america': 'United States',
-            'uk': 'United Kingdom', 'london': 'United Kingdom',
-            'de': 'Germany', 'germany': 'Germany',
-            'fr': 'France', 'paris': 'France',
-            'nl': 'Netherlands', 'amsterdam': 'Netherlands',
-            'sg': 'Singapore', 'singapore': 'Singapore',
-            'jp': 'Japan', 'tokyo': 'Japan', 'japan': 'Japan',
-            'hk': 'Hong Kong', 'hongkong': 'Hong Kong',
-            'tw': 'Taiwan', 'taiwan': 'Taiwan',
-            'kr': 'South Korea', 'korea': 'South Korea', 'seoul': 'South Korea',
-            'ca': 'Canada', 'toronto': 'Canada',
-            'au': 'Australia', 'sydney': 'Australia',
-            'ru': 'Russia', 'moscow': 'Russia',
-            'tr': 'Turkey', 'istanbul': 'Turkey',
-            'ir': 'Iran', 'iran': 'Iran', 'tehran': 'Iran',
-            'ae': 'UAE', 'dubai': 'UAE',
-            'in': 'India', 'mumbai': 'India',
-            'br': 'Brazil', 'brazil': 'Brazil',
-        }
-        
-        for hint, country in hints.items():
-            if hint in text:
-                return country
-        
-        return 'Unknown'
+
