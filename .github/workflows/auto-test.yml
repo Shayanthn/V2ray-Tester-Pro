@@ -161,7 +161,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f subscriptions/ badges/ results.json telegram_state.json source_rotation_state.json
+          git add -f subscriptions/ badges/ results.json telegram_state.json source_rotation_state.json working_configs.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 Auto-update: $(date +'%Y-%m-%d %H:%M:%S')" && git push)
       
       - name: Create release on major update

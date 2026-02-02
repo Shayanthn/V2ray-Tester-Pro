@@ -7,6 +7,7 @@ from core.test_runner import TestRunner
 from core.config_processor import ConfigProcessor
 from core.network_manager import NetworkManager, ConfigDiscoverer
 from core.subscription_manager import SubscriptionManager
+from core.realtime_saver import RealtimeConfigSaver
 
 class CLIRunner:
     """Manages the execution of tests in CLI mode."""
@@ -42,6 +43,9 @@ class CLIRunner:
         self.adaptive_sleep_min = adaptive_sleep_min
         self.adaptive_sleep_max = adaptive_sleep_max
         self.logger = logger
+        
+        # Real-time config saver for modular architecture
+        self.realtime_saver = RealtimeConfigSaver('working_configs.json', logger)
         
         self.config_queue = asyncio.Queue()
         self.unique_uris: Set[str] = set()
@@ -189,6 +193,9 @@ class CLIRunner:
                             success_count += 1
                             self.app_state.results.append(test_result)
                             self.app_state.update_stats(test_result)
+                            
+                            # 🔥 REAL-TIME SAVE: Save immediately!
+                            self.realtime_saver.save_config(test_result)
                         else:
                             self.app_state.failed += 1
                             self.app_state.update_stats(None)
