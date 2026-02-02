@@ -104,10 +104,13 @@ jobs:
           asyncio.run(main())
           "
         env:
+          PYTHONIOENCODING: utf-8
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       
       - name: Cleanup old configs (daily)
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           python -c "
           import sys

@@ -46,11 +46,14 @@ jobs:
         run: |
           python main.py --cli --max-configs 500
         env:
+          PYTHONIOENCODING: utf-8
           PYTHONUNBUFFERED: 1
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       
       - name: Generate Statistics
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           python -c "
           import json
@@ -83,6 +86,8 @@ jobs:
           "
       
       - name: Update badge data
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           python -c "
           import json
