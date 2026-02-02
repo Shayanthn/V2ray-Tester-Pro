@@ -6,7 +6,7 @@ import shutil
 import stat
 
 def download_xray():
-    version = "v1.8.6"
+    version = "v25.1.1"  # Latest version with xhttp support
     
     if sys.platform.startswith('win'):
         filename = "Xray-windows-64.zip"

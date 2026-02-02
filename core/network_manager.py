@@ -67,9 +67,10 @@ class NetworkManager:
     async def fetch_geoip_online(self, ip: str, session: aiohttp.ClientSession = None) -> Dict[str, str]:
         """Fallback to online GeoIP API with secure HTTPS endpoints."""
         # Use multiple HTTPS providers for reliability and security
+        # ipwho.is has better rate limits than ipapi.co
         geoip_providers = [
-            f"https://ipapi.co/{ip}/json/",  # Primary: HTTPS, no API key needed
-            f"https://ipwho.is/{ip}",  # Secondary: HTTPS, free
+            f"https://ipwho.is/{ip}",  # Primary: HTTPS, free, better rate limits
+            f"http://ip-api.com/json/{ip}",  # Secondary: free, 45 requests/min
         ]
         
         for url in geoip_providers:
