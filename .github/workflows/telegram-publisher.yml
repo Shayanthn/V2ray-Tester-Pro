@@ -4,7 +4,7 @@ on:
   schedule:
     # Run every 10 minutes - independent from testing
     - cron: '*/10 * * * *'
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:  # Allow manual trigger
 
 permissions:
   contents: write
@@ -12,24 +12,24 @@ permissions:
 jobs:
   publish-to-telegram:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           cache: 'pip'
-      
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-      
+
       - name: Check for new configs and send to Telegram
         run: |
           python -c "
@@ -37,77 +37,77 @@ jobs:
           import json
           import os
           import sys
-          
+
           # Add project root to path
           sys.path.insert(0, '.')
-          
+
           from core.realtime_saver import RealtimeConfigSaver
           from utils.telegram_notifier import TelegramNotifier
           from core.telegram_publisher import TelegramPublisher
           from utils.logger import setup_logger
-          
+
           async def main():
               logger = setup_logger('TelegramPublisher', 'telegram.log')
-              
+
               # Initialize components
               saver = RealtimeConfigSaver('working_configs.json', logger)
               notifier = TelegramNotifier(logger)
               publisher = TelegramPublisher(notifier, logger)
-              
+
               # Get stats
               stats = saver.get_stats()
               logger.info(f'📊 Current stats: {stats[\"total\"]} total, {stats[\"unsent\"]} unsent')
-              
+
               if stats['unsent'] == 0:
                   print('ℹ️ No new configs to send')
                   return
-              
+
               # Get unsent configs (top 5 by speed)
               unsent = saver.get_unsent_configs(limit=5)
-              
+
               if not unsent:
                   print('ℹ️ No unsent configs found')
                   return
-              
+
               # Check if we should post
               config_uris = [c.get('uri', '') for c in unsent]
               should_post, reason = publisher.should_post(config_uris)
-              
+
               if not should_post:
                   print(f'ℹ️ Skipping: {reason}')
                   return
-              
+
               # Post each config
               success_count = 0
               sent_hashes = []
-              
+
               for config in unsent:
                   message = publisher._build_config_message(config)
                   success = await notifier.send_message(message)
-                  
+
                   if success:
                       success_count += 1
                       sent_hashes.append(config.get('hash', ''))
                       await asyncio.sleep(2)  # Rate limit
-              
+
               # Mark as sent
               if sent_hashes:
                   saver.mark_as_sent(sent_hashes)
-                  
+
                   # Update publisher state
                   publisher.state['last_post_time'] = __import__('datetime').datetime.now().isoformat()
                   publisher.state['post_count_today'] += 1
                   publisher.save_state()
-              
+
               print(f'✅ Sent {success_count}/{len(unsent)} configs to Telegram')
-          
+
           asyncio.run(main())
           "
         env:
           PYTHONIOENCODING: utf-8
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      
+
       - name: Cleanup old configs (daily)
         env:
           PYTHONIOENCODING: utf-8
@@ -117,13 +117,13 @@ jobs:
           sys.path.insert(0, '.')
           from core.realtime_saver import RealtimeConfigSaver
           from utils.logger import setup_logger
-          
+
           logger = setup_logger('Cleanup', 'cleanup.log')
           saver = RealtimeConfigSaver('working_configs.json', logger)
           removed = saver.cleanup_old_configs(max_age_hours=24)
           print(f'🧹 Removed {removed} old configs')
           "
-      
+
       - name: Commit state changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

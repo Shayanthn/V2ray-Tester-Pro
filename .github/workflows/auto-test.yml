@@ -4,7 +4,7 @@ on:
   schedule:
     # Test and update every 30 minutes
     - cron: '*/30 * * * *'
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:  # Allow manual trigger
   push:
     branches:
       - main
@@ -18,31 +18,31 @@ jobs:
     concurrency:
       group: Auto-Test-Update-Subscriptions
       cancel-in-progress: true
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           cache: 'pip'
-      
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-      
+
       - name: Download Xray Core
         run: |
           python download_xray.py
           ./xray version
-      
+
       - name: Run V2Ray Tester (CLI Mode)
-        timeout-minutes: 25
+        timeout-minutes: 45
         run: |
           python main.py --cli --max-configs 500
         env:
@@ -50,7 +50,7 @@ jobs:
           PYTHONUNBUFFERED: 1
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      
+
       - name: Generate Statistics
         env:
           PYTHONIOENCODING: utf-8
@@ -59,11 +59,11 @@ jobs:
           import json
           import os
           from datetime import datetime
-          
+
           if os.path.exists('results.json'):
               with open('results.json', 'r') as f:
                   results = json.load(f)
-              
+
               stats = {
                   'total_tested': len(results),
                   'total_working': len([r for r in results if r]),
@@ -73,18 +73,18 @@ jobs:
                   'protocols': {},
                   'config_uris': [r.get('uri', '') for r in results if r and r.get('uri')]
               }
-              
+
               for result in results:
                   if result:
                       protocol = result['protocol']
                       stats['protocols'][protocol] = stats['protocols'].get(protocol, 0) + 1
-              
+
               with open('subscriptions/stats.json', 'w') as f:
                   json.dump(stats, f, indent=2)
-              
+
               print(f'✅ Tested: {stats[\"total_tested\"]} | Working: {stats[\"total_working\"]}')
           "
-      
+
       - name: Update badge data
         env:
           PYTHONIOENCODING: utf-8
@@ -92,13 +92,13 @@ jobs:
           python -c "
           import json
           import os
-          
+
           if os.path.exists('subscriptions/stats.json'):
               with open('subscriptions/stats.json', 'r') as f:
                   stats = json.load(f)
-              
+
               os.makedirs('badges', exist_ok=True)
-              
+
               # Create badge JSON for shields.io
               badge_data = {
                   'schemaVersion': 1,
@@ -106,18 +106,18 @@ jobs:
                   'message': str(stats['total_working']),
                   'color': 'brightgreen'
               }
-              
+
               with open('badges/nodes.json', 'w') as f:
                   json.dump(badge_data, f)
           "
-      
+
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -f subscriptions/ badges/ results.json telegram_state.json source_rotation_state.json working_configs.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 Auto-update: $(date +'%Y-%m-%d %H:%M:%S')" && git push)
-      
+
       - name: Create release on major update
         if: github.event_name == 'workflow_dispatch'
         uses: softprops/action-gh-release@v1
@@ -126,10 +126,10 @@ jobs:
           name: Auto-Release ${{ github.run_number }}
           body: |
             **Automated Release**
-            
+
             📊 Statistics:
             - Check `subscriptions/stats.json` for details
-            
+
             📥 Quick Import:
             - [Base64 Subscription](https://raw.githubusercontent.com/${{ github.repository }}/main/subscriptions/subscription.txt)
             - [Clash Config](https://raw.githubusercontent.com/${{ github.repository }}/main/subscriptions/clash.yaml)
@@ -139,7 +139,7 @@ jobs:
             subscriptions/configs.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Notify on failure
         if: failure()
         run: |
