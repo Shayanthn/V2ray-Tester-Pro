@@ -117,7 +117,11 @@ class CLIRunner:
             # Assuming ConfigDiscoverer has this method based on Worker usage
             configs = await self.config_discoverer.fetch_configs_from_source(url, session=self.session)
             count = 0
+            max_configs = self.app_state.max_configs
             for uri in configs:
+                # Enforce max_configs limit
+                if max_configs > 0 and self.config_queue.qsize() >= max_configs:
+                    break
                 if uri not in self.unique_uris and self.test_runner.security_validator.validate_uri(uri):
                     self.unique_uris.add(uri)
                     await self.config_queue.put(uri)
