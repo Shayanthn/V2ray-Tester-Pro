@@ -75,17 +75,17 @@ class TelegramPublisher:
         if current_hash == self.state.get('last_configs_hash'):
             return False, "Configs unchanged - no new content to post"
         
-        # Check daily limit (max 3 batches per day = 15 configs total)
-        if self.state['post_count_today'] >= 3:
-            return False, "Daily limit reached (3 batches/day)"
+        # Check daily limit (max 8 batches per day, i.e. every 3 hours = 40 configs total)
+        if self.state['post_count_today'] >= 8:
+            return False, "Daily limit reached (8 batches/day)"
         
-        # Check time since last post (minimum 2 hours)
+        # Check time since last post (minimum 3 hours)
         if self.state.get('last_post_time'):
             try:
                 last_post = datetime.fromisoformat(self.state['last_post_time'])
                 time_diff = datetime.now() - last_post
-                if time_diff < timedelta(hours=2):
-                    hours_left = 2 - (time_diff.total_seconds() / 3600)
+                if time_diff < timedelta(hours=3):
+                    hours_left = 3 - (time_diff.total_seconds() / 3600)
                     return False, f"Too soon - wait {hours_left:.1f} more hours"
             except:
                 pass

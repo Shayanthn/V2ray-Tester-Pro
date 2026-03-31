@@ -96,6 +96,8 @@ class ConfigProcessor:
                 tls_settings["alpn"] = alpn.split(',')
             
             if security == 'reality':
+                if not reality_pbk:
+                    raise ConfigError("REALITY config requires a non-empty publicKey (pbk)")
                 tls_settings.update({
                     "show": False,
                     "publicKey": reality_pbk,
