@@ -57,7 +57,7 @@ class EnterpriseConfig:
 
         # Telegram Configuration
         self.TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '')
-        self.TELEGRAM_ADMIN_ID = os.getenv('TELEGRAM_ADMIN_ID', '')
+        self.TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID', '')
         self.TELEGRAM_TARGET_IDS = os.getenv('TELEGRAM_TARGET_IDS', '').split(',')
         
         # Adaptive Testing
@@ -99,8 +99,8 @@ class EnterpriseConfig:
         
         # Default lists (Hardcoded fallback)
         default_direct = [
-             "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/mix",
-             "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt"
+             "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/reality",
+             "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Splitted-By-Protocol/vless.txt"
         ]
         
         if os.path.exists(self.SOURCES_FILE):
@@ -212,7 +212,7 @@ class EnterpriseConfig:
                 'AGGREGATOR_LINKS': self.AGGREGATOR_LINKS,
                 'DIRECT_CONFIG_SOURCES': self.DIRECT_CONFIG_SOURCES,
                 'TELEGRAM_BOT_TOKEN': self.TELEGRAM_BOT_TOKEN,
-                'TELEGRAM_ADMIN_ID': self.TELEGRAM_ADMIN_ID,
+                'TELEGRAM_CHAT_ID': self.TELEGRAM_CHAT_ID,
                 'TELEGRAM_TARGET_IDS': self.TELEGRAM_TARGET_IDS,
                 'ADAPTIVE_TESTING': self.ADAPTIVE_TESTING,
                 'ADAPTIVE_BATCH_MIN': self.ADAPTIVE_BATCH_MIN,
