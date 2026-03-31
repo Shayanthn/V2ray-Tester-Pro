@@ -165,7 +165,7 @@ class TelegramPublisher:
 🌍 Location: {country}
 
 📋 Config (Tap to copy):
-{uri}
+`{uri}`
 
 🤝 نشر حداکثری این کانال برای دسترسی هموطنامون به اینترنت بر عهده ماست
 🕊️ اینترنت آزاد برای مردم وطنم
