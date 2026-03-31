@@ -115,7 +115,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f subscriptions/ badges/ results.json telegram_state.json source_rotation_state.json working_configs.json
+          [ -d "subscriptions" ] && git add -f subscriptions/
+          [ -d "badges" ] && git add -f badges/
+          for f in results.json telegram_state.json source_rotation_state.json working_configs.json; do [ -f "$f" ] && git add -f "$f"; done
           git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 Auto-update: $(date +'%Y-%m-%d %H:%M:%S')" && git push)
       
       - name: Create release on major update
