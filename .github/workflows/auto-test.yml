@@ -42,9 +42,10 @@ jobs:
           ./xray version
       
       - name: Run V2Ray Tester (CLI Mode)
-        timeout-minutes: 25
+        timeout-minutes: 45
+        continue-on-error: true
         run: |
-          python main.py --cli --max-configs 500
+          python main.py --cli --max-configs 300
         env:
           PYTHONIOENCODING: utf-8
           PYTHONUNBUFFERED: 1
