@@ -108937,9 +108937,168 @@
       "found_at": "2026-04-07T04:23:05.102162",
       "hash": "73cb252d2e0ccdb5fce9b73feb9bc84f",
       "sent_to_telegram": false
+    },
+    {
+      "protocol": "shadowsocks",
+      "address": "57.128.214.100",
+      "ping": 548,
+      "jitter": 452,
+      "download_speed": 9.77,
+      "upload_speed": 6.14,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "57.128.214.100",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10818,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "shadowsocks",
+            "settings": {
+              "servers": [
+                {
+                  "address": "57.128.214.100",
+                  "port": 12000,
+                  "method": "aes-256-gcm",
+                  "password": "8JCsPssfgS8tiRwiMlhARg=="
+                }
+              ]
+            },
+            "tag": "🇵🇱PL-57.128.214.100-0276"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "ss://YWVzLTI1Ni1nY206OEpDc1Bzc2ZnUzh0aVJ3aU1saEFSZz09@57.128.214.100:12000#%F0%9F%87%B5%F0%9F%87%B1PL-57.128.214.100-0276",
+      "country": "Poland",
+      "country_code": "PL",
+      "city": "Warsaw",
+      "isp": "OVH SAS",
+      "found_at": "2026-04-07T05:48:52.685010",
+      "hash": "37ab72e959ceb638596da2ea4067a6b1",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "149.30.232.103",
+      "ping": 477,
+      "jitter": 387,
+      "download_speed": 0.24,
+      "upload_speed": 0.0,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": false,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "149.30.232.103",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "149.30.232.103",
+                  "port": 31469,
+                  "users": [
+                    {
+                      "id": "5381445d-6ae4-4948-b61a-a16d9498d21b",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "",
+              "wsSettings": {
+                "path": "/arki?ed=2048",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICIxNDkuMzAuMjMyLjEwMyIsCiAgICAiYWlkIjogMCwKICAgICJob3N0IjogIiIsCiAgICAiaWQiOiAiNTM4MTQ0NWQtNmFlNC00OTQ4LWI2MWEtYTE2ZDk0OThkMjFiIiwKICAgICJuZXQiOiAid3MiLAogICAgInBhdGgiOiAiL2Fya2k/ZWQ9MjA0OCIsCiAgICAicG9ydCI6IDMxNDY5LAogICAgInBzIjogIvCfh7rwn4e4VVMtMTQ5LjMwLjIzMi4xMDMtNDgwNiIsCiAgICAidGxzIjogIiIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9",
+      "country": "United States",
+      "country_code": "US",
+      "city": "Los Angeles",
+      "isp": "Sondercloud Limited",
+      "found_at": "2026-04-07T06:16:15.694878",
+      "hash": "64528c309176e6fd41d6e47a4aebef82",
+      "sent_to_telegram": false
     }
   ],
-  "last_updated": "2026-04-07T04:23:05.102174",
-  "total_configs": 1202,
+  "last_updated": "2026-04-07T06:16:15.694891",
+  "total_configs": 1204,
   "created_at": "2026-02-02T00:00:00"
 }
