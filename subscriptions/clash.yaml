@@ -5,77 +5,47 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SHADOWSOCKS-1 | 19ms
+- name: SHADOWSOCKS-1 | 25ms
   type: ss
   server: 37.19.198.236
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: VLESS-2 | 26ms
-  type: vless
-  server: 162.159.36.20
-  port: 80
-  uuid: 388a6c57-87e7-420b-afe2-b3eb670fd7da
-  network: ws
-- name: SHADOWSOCKS-3 | 93ms
+- name: SHADOWSOCKS-2 | 26ms
+  type: ss
+  server: tinkered-pennies-puppies.freesocks.work
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: hbGrpfvNrJsUmKmPbR3iY2
+- name: SHADOWSOCKS-3 | 38ms
   type: ss
   server: 173.234.29.2
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-4 | 48ms
+- name: SHADOWSOCKS-4 | 53ms
   type: ss
   server: 79.127.200.169
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-5 | 64ms
-  type: ss
-  server: 156.146.38.167
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-6 | 66ms
-  type: ss
-  server: 156.146.38.169
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-7 | 65ms
-  type: ss
-  server: 156.146.38.170
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: VLESS-8 | 46ms
+- name: VLESS-5 | 34ms
   type: vless
-  server: 104.16.250.22
-  port: 2096
+  server: bestcf.030101.xyz
+  port: 443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-9 | 48ms
+  servername: sni.111000.dynv6.net
+- name: VLESS-6 | 43ms
   type: vless
-  server: 172.67.203.94
-  port: 2086
-  uuid: 7890ce31-9a25-4fd4-90e7-80e5823ff510
-  network: ws
-- name: VLESS-10 | 51ms
-  type: vless
-  server: 5.175.141.238
+  server: 192.0.54.238
   port: 2096
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
   servername: sni.jpmj.dev
-- name: SHADOWSOCKS-11 | 95ms
-  type: ss
-  server: 173.244.56.6
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: VLESS-12 | 32ms
+- name: VLESS-7 | 28ms
   type: vless
   server: 216.205.52.138
   port: 2096
@@ -83,21 +53,143 @@ proxies:
   network: ws
   tls: true
   servername: sni.111000.indevs.in
-- name: VLESS-13 | 30ms
+- name: VLESS-8 | 27ms
   type: vless
-  server: 104.18.13.229
-  port: 8880
-  uuid: 78c5b6bd-1cb6-463c-bcba-9f17ef70c85b
+  server: 135.84.64.222
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
-- name: VLESS-14 | 58ms
+  tls: true
+  servername: sni.111000.dynv6.net
+- name: VLESS-9 | 29ms
   type: vless
-  server: 188.244.122.138
+  server: 104.16.250.22
   port: 2096
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
   servername: sni.111000.indevs.in
-- name: VMESS-15 | 138ms
+- name: VLESS-10 | 33ms
+  type: vless
+  server: 154.197.75.138
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: SHADOWSOCKS-11 | 66ms
+  type: ss
+  server: 156.146.38.169
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-12 | 69ms
+  type: ss
+  server: 156.146.38.167
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-13 | 67ms
+  type: ss
+  server: 156.146.38.170
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: VLESS-14 | 29ms
+  type: vless
+  server: 135.84.74.118
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.dynv6.net
+- name: VMESS-15 | 66ms
+  type: vmess
+  server: 134.195.198.147
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: inna.cfd
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: inna.cfd
+- name: VLESS-16 | 36ms
+  type: vless
+  server: 156.225.72.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.jpmj.dev
+- name: VLESS-17 | 29ms
+  type: vless
+  server: 172.64.155.209
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: VLESS-18 | 40ms
+  type: vless
+  server: 104.18.13.229
+  port: 8880
+  uuid: 78c5b6bd-1cb6-463c-bcba-9f17ef70c85b
+  network: ws
+- name: SHADOWSOCKS-19 | 297ms
+  type: ss
+  server: 23.95.76.59
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-20 | 103ms
+  type: ss
+  server: 173.244.56.6
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: VLESS-21 | 32ms
+  type: vless
+  server: 156.225.72.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.jpmj.dev
+- name: SHADOWSOCKS-22 | 133ms
+  type: ss
+  server: admin.c1.webramz.co
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: W74XFALLLuw6m5IA
+- name: SHADOWSOCKS-23 | 133ms
+  type: ss
+  server: series-a2.samanehha.co
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: W74XFALLLuw6m5IA
+- name: SHADOWSOCKS-24 | 153ms
+  type: ss
+  server: series-a1.samanehha.co
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: W74XFALLLuw6m5IA
+- name: SHADOWSOCKS-25 | 136ms
+  type: ss
+  server: admin.c1.havij.co
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: 1kVr0KATIJI7mwOF
+- name: VLESS-26 | 31ms
+  type: vless
+  server: 172.67.150.254
+  port: 2095
+  uuid: 7890ce31-9a25-4fd4-90e7-80e5823ff510
+  network: ws
+- name: VMESS-27 | 139ms
   type: vmess
   server: 173.249.209.146
   port: 20086
@@ -108,25 +200,7 @@ proxies:
   ws-opts:
     path: /
     headers: {}
-- name: SHADOWSOCKS-16 | 365ms
-  type: ss
-  server: 45.154.204.7
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-17 | 141ms
-  type: ss
-  server: admin.c1.havij.co
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: 1kVr0KATIJI7mwOF
-- name: SHADOWSOCKS-18 | 134ms
-  type: ss
-  server: admin.c1.webramz.co
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: W74XFALLLuw6m5IA
-- name: VLESS-19 | 49ms
+- name: VLESS-28 | 37ms
   type: vless
   server: 104.24.39.51
   port: 443
@@ -134,35 +208,29 @@ proxies:
   network: ws
   tls: true
   servername: hex.1tb.workers.dev
-- name: VLESS-20 | 37ms
+- name: VLESS-29 | 26ms
   type: vless
-  server: 160.153.0.78
-  port: 443
-  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  server: 162.159.36.20
+  port: 80
+  uuid: 388a6c57-87e7-420b-afe2-b3eb670fd7da
+  network: ws
+- name: VLESS-30 | 34ms
+  type: vless
+  server: 172.64.153.235
+  port: 8443
+  uuid: 656bb400-3b7a-47e3-94b0-0362f3865072
   network: ws
   tls: true
-  servername: qyi.fqjd663.ggff.net
-- name: VLESS-21 | 42ms
+  servername: socks5.revil-time3.workers.dev
+- name: VLESS-31 | 71ms
   type: vless
-  server: 192.200.160.253
+  server: 172.66.1.143
   port: 443
-  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  uuid: d2d0f796-edb0-427a-af32-ae360679f9e7
   network: ws
   tls: true
-  servername: qyi.fqjd663.ggff.net
-- name: SHADOWSOCKS-22 | 159ms
-  type: ss
-  server: series-a2.samanehha.co
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: W74XFALLLuw6m5IA
-- name: SHADOWSOCKS-23 | 158ms
-  type: ss
-  server: series-a1.samanehha.co
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: W74XFALLLuw6m5IA
-- name: VLESS-24 | 36ms
+  servername: rAyAn-007.fOtOn.dPdNs.oRg
+- name: VLESS-32 | 28ms
   type: vless
   server: 192.200.160.253
   port: 2053
@@ -170,283 +238,65 @@ proxies:
   network: ws
   tls: true
   servername: qyi.fqjd663.ggff.net
-- name: VLESS-25 | 190ms
-  type: vless
-  server: 57.129.49.1
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: SHADOWSOCKS-26 | 161ms
-  type: ss
-  server: 193.29.139.217
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: QCXDxuDlTTMD7jtgHUjIoj
-- name: VLESS-27 | 191ms
+- name: VLESS-33 | 192ms
   type: vless
   server: 57.129.53.180
   port: 23576
   uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
   network: tcp
-- name: SHADOWSOCKS-28 | 164ms
-  type: ss
-  server: 82.38.31.210
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-29 | 161ms
-  type: ss
-  server: 193.29.139.251
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: VLESS-30 | 218ms
-  type: vless
-  server: fl01.grani.site
-  port: 443
-  uuid: 2262d82d-f203-41f4-920d-dacb8370ae73
-  network: tcp
-- name: SHADOWSOCKS-31 | 258ms
-  type: ss
-  server: 82.38.31.218
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: VLESS-32 | 192ms
+- name: VLESS-34 | 188ms
   type: vless
   server: 57.129.53.182
   port: 23576
   uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
   network: tcp
-- name: SHADOWSOCKS-33 | 168ms
-  type: ss
-  server: 193.29.139.141
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: SHADOWSOCKS-34 | 161ms
+- name: VLESS-35 | 35ms
+  type: vless
+  server: 104.19.173.68
+  port: 443
+  uuid: 7e346122-2ee0-406e-b964-a8ee665f1814
+  network: ws
+  tls: true
+  servername: paRMis-1Tk63J.PArMiS.WoRkeRs.DeV
+- name: VLESS-36 | 205ms
+  type: vless
+  server: 45.15.128.183
+  port: 603
+  uuid: 4484eae9-e195-4adf-b2b5-ad0b9132162b
+  network: tcp
+- name: VLESS-37 | 31ms
+  type: vless
+  server: 216.24.57.1
+  port: 2053
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  network: ws
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+- name: SHADOWSOCKS-38 | 176ms
   type: ss
   server: 82.38.31.187
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-35 | 164ms
-  type: ss
-  server: 82.38.31.205
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-36 | 162ms
-  type: ss
-  server: 82.38.31.194
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: VLESS-37 | 215ms
-  type: vless
-  server: uk3.magnetgateway.onnstreaming.ru
-  port: 443
-  uuid: 197a0c0a-574d-497a-9e44-7bec185f8662
-  network: tcp
-- name: VLESS-38 | 190ms
-  type: vless
-  server: 57.129.53.181
-  port: 23576
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  network: tcp
-- name: SHADOWSOCKS-39 | 157ms
-  type: ss
-  server: 141.98.101.182
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: VLESS-40 | 266ms
-  type: vless
-  server: 82.26.91.244
-  port: 443
-  uuid: 6f99ed2f-9879-40e3-b5b4-5590c60f8e4a
-  network: grpc
-- name: SHADOWSOCKS-41 | 162ms
-  type: ss
-  server: 82.38.31.191
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: VLESS-42 | 1662ms
-  type: vless
-  server: fl01.grani.site
-  port: 443
-  uuid: 81d82277-c095-4613-ba51-cafd0e413e69
-  network: tcp
-- name: SHADOWSOCKS-43 | 162ms
+- name: SHADOWSOCKS-39 | 160ms
   type: ss
   server: 193.29.139.202
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: SHADOWSOCKS-44 | 166ms
-  type: ss
-  server: 193.29.139.206
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: 4a2rfixophdjffa8KVA4Aa
-- name: SHADOWSOCKS-45 | 167ms
-  type: ss
-  server: 82.38.31.176
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-46 | 175ms
-  type: ss
-  server: 82.38.31.189
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: VLESS-47 | 218ms
+- name: VLESS-40 | 190ms
   type: vless
-  server: 172.86.94.48
-  port: 8443
-  uuid: ca05976a-2dea-11f1-9ec5-baabcd4be2cd
+  server: 57.129.53.181
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
   network: tcp
-- name: VLESS-48 | 186ms
-  type: vless
-  server: 51.158.62.94
-  port: 443
-  uuid: 43488128-319e-f480-64ea-0acdc712e2a8
-  network: tcp
-- name: VLESS-49 | 195ms
-  type: vless
-  server: 138.124.186.80
-  port: 443
-  uuid: e346f220-4ca4-4f69-a66b-52e992b3b625
-  network: tcp
-- name: SHADOWSOCKS-50 | 162ms
-  type: ss
-  server: 82.38.31.35
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: VLESS-51 | 198ms
-  type: vless
-  server: 138.124.186.202
-  port: 443
-  uuid: e346f220-4ca4-4f69-a66b-52e992b3b625
-  network: tcp
-- name: VLESS-52 | 192ms
-  type: vless
-  server: 81.19.141.96
-  port: 8443
-  uuid: ca05976a-2dea-11f1-9ec5-baabcd4be2cd
-  network: tcp
-- name: VLESS-53 | 209ms
-  type: vless
-  server: 85.192.49.230
-  port: 443
-  uuid: 8de7627c-1995-41f7-93e6-7fd9715514a2
-  network: tcp
-- name: VLESS-54 | 194ms
-  type: vless
-  server: 81.19.141.91
-  port: 8443
-  uuid: f3a1017d-1ebf-11f1-8cae-c3845d39d2de
-  network: tcp
-- name: SHADOWSOCKS-55 | 163ms
-  type: ss
-  server: 82.38.31.214
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: VLESS-56 | 198ms
-  type: vless
-  server: 54.37.75.187
-  port: 443
-  uuid: a0b067ac-162d-4237-956d-10b8b471d3f5
-  network: tcp
-- name: VLESS-57 | 201ms
-  type: vless
-  server: 104.194.158.80
-  port: 8443
-  uuid: 4b056394-2f40-11f1-bffe-46c4782ac1a7
-  network: tcp
-- name: VLESS-58 | 194ms
-  type: vless
-  server: 64.188.106.202
-  port: 38765
-  uuid: 7a0ae662-eee7-44c0-8998-d575870bd749
-  network: tcp
-- name: VLESS-59 | 200ms
-  type: vless
-  server: 104.194.158.108
-  port: 8443
-  uuid: f374a660-2dc5-11f1-9ec5-baabcd4be2cd
-  network: tcp
-- name: SHADOWSOCKS-60 | 258ms
-  type: ss
-  server: 138.186.142.81
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: VLESS-61 | 199ms
-  type: vless
-  server: 45.141.119.105
-  port: 443
-  uuid: 197a0c0a-574d-497a-9e44-7bec185f8662
-  network: tcp
-- name: VLESS-62 | 59ms
-  type: vless
-  server: 216.24.57.1
-  port: 443
-  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
-  network: ws
-  tls: true
-  servername: qyi.fqjd663.ggff.net
-- name: SHADOWSOCKS-63 | 160ms
-  type: ss
-  server: 82.38.31.82
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: SHADOWSOCKS-64 | 160ms
-  type: ss
-  server: 82.38.31.99
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: SHADOWSOCKS-65 | 219ms
-  type: ss
-  server: 82.38.31.217
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: VLESS-66 | 278ms
-  type: vless
-  server: 152.53.48.237
-  port: 22955
-  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-  network: grpc
-- name: VLESS-67 | 195ms
-  type: vless
-  server: 93.94.51.210
-  port: 443
-  uuid: 405ba2d6-7fcb-4cdd-9c77-4ecc616d77c8
-  network: tcp
-  tls: true
-  servername: deu549.worldbypass.org
-- name: VLESS-68 | 49ms
-  type: vless
-  server: 141.193.213.11
-  port: 443
-  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
-  network: ws
-  tls: true
-  servername: qyi.fqjd663.ggff.net
-- name: SHADOWSOCKS-69 | 161ms
+- name: SHADOWSOCKS-41 | 163ms
   type: ss
   server: 82.38.31.101
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: VLESS-70 | 313ms
+- name: VLESS-42 | 296ms
   type: vless
   server: 141.101.121.11
   port: 2053
@@ -454,261 +304,39 @@ proxies:
   network: ws
   tls: true
   servername: ir1.airpanel.top
-- name: SHADOWSOCKS-71 | 223ms
+- name: SHADOWSOCKS-43 | 161ms
   type: ss
-  server: 82.38.31.208
+  server: 82.38.31.82
   port: 8080
   cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-72 | 199ms
-  type: ss
-  server: 193.29.139.227
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: QCXDxuDlTTMD7jtgHUjIoj
-- name: VLESS-73 | 198ms
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: VLESS-44 | 299ms
   type: vless
-  server: 144.31.233.146
-  port: 43361
-  uuid: bf432795-1383-46e5-8823-d638b956cabe
-  network: tcp
-- name: VLESS-74 | 219ms
-  type: vless
-  server: 144.31.238.232
-  port: 443
-  uuid: a1afced8-420b-430d-b25a-08db1c3332da
-  network: tcp
-- name: VLESS-75 | 204ms
-  type: vless
-  server: 84.21.189.25
-  port: 443
-  uuid: 6053689d-39d6-4005-b1bd-c0dce854f429
-  network: tcp
-  tls: true
-  servername: de-fast.chunkyvpn.shop
-- name: VLESS-76 | 186ms
-  type: vless
-  server: 72.56.75.169
-  port: 8443
-  uuid: 1c61a6c0-9bc7-4cb8-9188-6d86d5989388
-  network: tcp
-- name: VLESS-77 | 51ms
-  type: vless
-  server: 141.193.213.10
-  port: 443
-  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  server: 162.159.36.5
+  port: 2053
+  uuid: e5f8a9f6-f164-479b-b3b5-b90f213c7145
   network: ws
   tls: true
-  servername: qyi.fqjd663.ggff.net
-- name: SHADOWSOCKS-78 | 361ms
-  type: ss
-  server: 193.47.60.186
-  port: 28687
-  cipher: chacha20-ietf-poly1305
-  password: yKVMoB3AwiTEznpnoq2FYR
-- name: VLESS-79 | 215ms
-  type: vless
-  server: 51.195.91.135
-  port: 10004
-  uuid: ec76ba12-2e86-11f1-8e37-df39dc6cc8d2
-  network: ws
-- name: SHADOWSOCKS-80 | 254ms
+  servername: ir1.airpanel.top
+- name: SHADOWSOCKS-45 | 161ms
   type: ss
   server: 82.38.31.124
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: SHADOWSOCKS-81 | 112ms
-  type: ss
-  server: 147.78.1.230
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-82 | 161ms
-  type: ss
-  server: 193.29.139.157
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: 4a2rfixophdjffa8KVA4Aa
-- name: VLESS-83 | 299ms
-  type: vless
-  server: est1.trost-shield.ru
-  port: 20229
-  uuid: 4f0b281e-8a49-4a2d-9e54-3abe1c9b9d1f
-  network: tcp
-- name: VLESS-84 | 231ms
-  type: vless
-  server: 91.132.142.10
-  port: 443
-  uuid: 5b77fb18-cece-4759-9a81-571f1be53e0c
-  network: tcp
-- name: SHADOWSOCKS-85 | 207ms
-  type: ss
-  server: 46.183.217.204
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-86 | 359ms
-  type: ss
-  server: 138.186.142.80
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: TROJAN-87 | 352ms
-  type: trojan
-  server: 216.238.102.254
-  port: 26593
-  password: BvzUvt45hON9We5X9wM6I9ZrxHRcYd46QK
-  sni: sao2.cdn-graph.click
-- name: VLESS-88 | 50ms
-  type: vless
-  server: 185.158.133.138
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: SHADOWSOCKS-89 | 161ms
-  type: ss
-  server: 82.38.31.202
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-90 | 163ms
+- name: SHADOWSOCKS-46 | 160ms
   type: ss
   server: 193.29.139.189
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: cvII85TrW6n0OGyfpHVS1u
-- name: SHADOWSOCKS-91 | 371ms
+- name: SHADOWSOCKS-47 | 160ms
   type: ss
-  server: 23.95.76.59
-  port: 990
+  server: 193.29.139.179
+  port: 8080
   cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-92 | 311ms
-  type: ss
-  server: 38.54.20.59
-  port: 8881
-  cipher: aes-256-gcm
-  password: kDWvXYZoTBcGkC4
-- name: VLESS-93 | 220ms
-  type: vless
-  server: 57.128.178.36
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: SHADOWSOCKS-94 | 188ms
-  type: ss
-  server: 141.98.101.178
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: SHADOWSOCKS-95 | 201ms
-  type: ss
-  server: 185.176.221.72
-  port: 24637
-  cipher: chacha20-ietf-poly1305
-  password: MholStyHL7DhrewKbpQa20
-- name: VLESS-96 | 37ms
-  type: vless
-  server: 216.24.57.1
-  port: 2053
-  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
-  network: ws
-  tls: true
-  servername: qyi.fqjd663.ggff.net
-- name: VLESS-97 | 52ms
-  type: vless
-  server: 104.24.55.23
-  port: 443
-  uuid: d435363f-b221-428b-94d2-8d0db0113b60
-  network: ws
-  tls: true
-  servername: fancy-disk-fbb6.tmpesterouglas.workers.dev
-- name: VLESS-98 | 273ms
-  type: vless
-  server: 185.72.86.38
-  port: 59999
-  uuid: a2b431d9-d5d3-41c8-ad5b-8f95aa5a6712
-  network: tcp
-- name: VLESS-99 | 291ms
-  type: vless
-  server: nl6.404-it.ru
-  port: 8443
-  uuid: 6d0e9ded-d23d-4ffb-b165-7bc757be84d3
-  network: tcp
-- name: VLESS-100 | 269ms
-  type: vless
-  server: 89.208.97.50
-  port: 443
-  uuid: 1bc8a2e7-4c5d-4376-a24b-b877997fd997
-  network: tcp
-- name: VLESS-101 | 292ms
-  type: vless
-  server: 38.180.101.136
-  port: 443
-  uuid: c8d1c6d3-388f-48fc-a8f0-ed90d955d096
-  network: tcp
-- name: VLESS-102 | 32ms
-  type: vless
-  server: 45.40.144.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.jpmj.dev
-- name: VLESS-103 | 328ms
-  type: vless
-  server: 46.149.71.197
-  port: 2083
-  uuid: 40600c8a-730a-411c-b72b-c3bca115dcf7
-  network: grpc
-- name: SHADOWSOCKS-104 | 235ms
-  type: ss
-  server: 38.165.231.25
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: VLESS-105 | 207ms
-  type: vless
-  server: 194.124.250.34
-  port: 1443
-  uuid: 8e4eb711-d633-4750-99dd-282b792500ca
-  network: tcp
-- name: VLESS-106 | 218ms
-  type: vless
-  server: 57.128.176.37
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: VLESS-107 | 239ms
-  type: vless
-  server: 51.75.23.189
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: VLESS-108 | 322ms
-  type: vless
-  server: 103.231.73.181
-  port: 8443
-  uuid: e033ef6e-ab4b-47d4-a523-ff568d2c8dbb
-  network: tcp
-- name: VLESS-109 | 262ms
-  type: vless
-  server: 222.167.202.32
-  port: 7443
-  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
-  network: ws
-  tls: true
-  servername: 2026.hhhhh.eu.org
-- name: VLESS-110 | 41ms
+  password: cvII85TrW6n0OGyfpHVS1u
+- name: VLESS-48 | 42ms
   type: vless
   server: 172.64.149.80
   port: 443
@@ -716,49 +344,95 @@ proxies:
   network: ws
   tls: true
   servername: noisy-paper-6b70.grirbp.workers.dev
-- name: VLESS-111 | 241ms
-  type: vless
-  server: 51.91.252.61
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: SHADOWSOCKS-112 | 317ms
+- name: SHADOWSOCKS-49 | 161ms
   type: ss
-  server: 149.22.87.204
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: VLESS-113 | 423ms
-  type: vless
-  server: fin5.frostbot.ru
-  port: 443
-  uuid: 5b77fb18-cece-4759-9a81-571f1be53e0c
-  network: tcp
-- name: SHADOWSOCKS-114 | 376ms
-  type: ss
-  server: 89.44.197.181
-  port: 31348
+  server: 193.29.139.227
+  port: 8080
   cipher: chacha20-ietf-poly1305
-  password: zDLmeWRsfcFdKT1Tpy02xodEToqCldTxvZcRoPIZZtBdnIEL
-- name: VLESS-115 | 81ms
+  password: QCXDxuDlTTMD7jtgHUjIoj
+- name: VLESS-50 | 57ms
   type: vless
-  server: 160.153.0.78
-  port: 2053
+  server: 185.146.173.20
+  port: 443
   uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
   network: ws
   tls: true
   servername: qyi.fqjd663.ggff.net
-- name: VLESS-116 | 242ms
+- name: SHADOWSOCKS-51 | 163ms
+  type: ss
+  server: 193.29.139.157
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 4a2rfixophdjffa8KVA4Aa
+- name: SHADOWSOCKS-52 | 167ms
+  type: ss
+  server: 82.38.31.217
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: SHADOWSOCKS-53 | 161ms
+  type: ss
+  server: 82.38.31.199
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: SHADOWSOCKS-54 | 162ms
+  type: ss
+  server: 82.38.31.214
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: SHADOWSOCKS-55 | 159ms
+  type: ss
+  server: 82.38.31.208
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: SHADOWSOCKS-56 | 161ms
+  type: ss
+  server: 193.29.139.141
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: SHADOWSOCKS-57 | 159ms
+  type: ss
+  server: 82.38.31.179
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: VLESS-58 | 194ms
   type: vless
-  server: 57.129.63.144
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
+  server: 84.21.189.25
+  port: 443
+  uuid: 6053689d-39d6-4005-b1bd-c0dce854f429
+  network: tcp
   tls: true
-  servername: sni.111000.dynv6.net
-- name: VMESS-117 | 221ms
+  servername: de-fast.chunkyvpn.shop
+- name: SHADOWSOCKS-59 | 160ms
+  type: ss
+  server: 82.38.31.202
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: VLESS-60 | 278ms
+  type: vless
+  server: 152.53.48.237
+  port: 22955
+  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
+  network: grpc
+- name: VLESS-61 | 243ms
+  type: vless
+  server: 138.124.186.202
+  port: 443
+  uuid: e346f220-4ca4-4f69-a66b-52e992b3b625
+  network: tcp
+- name: VLESS-62 | 191ms
+  type: vless
+  server: 104.194.158.108
+  port: 8443
+  uuid: f374a660-2dc5-11f1-9ec5-baabcd4be2cd
+  network: tcp
+- name: VMESS-63 | 97ms
   type: vmess
   server: v2ray.codefyinc.com
   port: 443
@@ -770,63 +444,471 @@ proxies:
     path: /vmessws
     headers:
       Host: v2ray.codefyinc.com
-- name: SHADOWSOCKS-118 | 335ms
+- name: SHADOWSOCKS-64 | 167ms
   type: ss
-  server: 147.78.0.182
+  server: 82.38.31.99
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: VLESS-65 | 191ms
+  type: vless
+  server: 57.129.49.1
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+- name: VLESS-66 | 266ms
+  type: vless
+  server: 82.26.91.244
+  port: 443
+  uuid: 6f99ed2f-9879-40e3-b5b4-5590c60f8e4a
+  network: grpc
+- name: VLESS-67 | 190ms
+  type: vless
+  server: 81.19.141.91
+  port: 8443
+  uuid: f3a1017d-1ebf-11f1-8cae-c3845d39d2de
+  network: tcp
+- name: VLESS-68 | 182ms
+  type: vless
+  server: 72.56.75.169
+  port: 8443
+  uuid: 1c61a6c0-9bc7-4cb8-9188-6d86d5989388
+  network: tcp
+- name: VLESS-69 | 38ms
+  type: vless
+  server: 141.193.213.11
+  port: 443
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  network: ws
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+- name: SHADOWSOCKS-70 | 164ms
+  type: ss
+  server: 82.38.31.194
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: SHADOWSOCKS-71 | 168ms
+  type: ss
+  server: 82.38.31.218
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: VLESS-72 | 198ms
+  type: vless
+  server: 150.251.145.244
+  port: 8443
+  uuid: f3a1017d-1ebf-11f1-8cae-c3845d39d2de
+  network: tcp
+- name: VLESS-73 | 33ms
+  type: vless
+  server: 141.193.213.10
+  port: 443
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  network: ws
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+- name: VLESS-74 | 195ms
+  type: vless
+  server: 138.124.186.80
+  port: 443
+  uuid: e346f220-4ca4-4f69-a66b-52e992b3b625
+  network: tcp
+- name: VLESS-75 | 36ms
+  type: vless
+  server: 160.153.0.78
+  port: 2053
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  network: ws
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+- name: SHADOWSOCKS-76 | 299ms
+  type: ss
+  server: 45.154.204.7
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: VLESS-119 | 280ms
+- name: SHADOWSOCKS-77 | 169ms
+  type: ss
+  server: 82.38.31.210
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: VLESS-78 | 26ms
   type: vless
-  server: 88.218.78.167
+  server: 160.153.0.78
   port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
   network: ws
   tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-120 | 243ms
+  servername: qyi.fqjd663.ggff.net
+- name: VLESS-79 | 196ms
   type: vless
-  server: 51.75.23.173
+  server: 54.37.75.187
+  port: 443
+  uuid: a0b067ac-162d-4237-956d-10b8b471d3f5
+  network: tcp
+- name: SHADOWSOCKS-80 | 168ms
+  type: ss
+  server: 82.38.31.205
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: VLESS-81 | 36ms
+  type: vless
+  server: 192.200.160.253
+  port: 443
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  network: ws
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+- name: SHADOWSOCKS-82 | 169ms
+  type: ss
+  server: 193.29.139.217
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: QCXDxuDlTTMD7jtgHUjIoj
+- name: SHADOWSOCKS-83 | 173ms
+  type: ss
+  server: 193.47.60.186
+  port: 28687
+  cipher: chacha20-ietf-poly1305
+  password: yKVMoB3AwiTEznpnoq2FYR
+- name: SHADOWSOCKS-84 | 169ms
+  type: ss
+  server: 82.38.31.189
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: VLESS-85 | 195ms
+  type: vless
+  server: 93.94.51.210
+  port: 443
+  uuid: 405ba2d6-7fcb-4cdd-9c77-4ecc616d77c8
+  network: tcp
+  tls: true
+  servername: deu549.worldbypass.org
+- name: SHADOWSOCKS-86 | 164ms
+  type: ss
+  server: 82.38.31.176
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: VLESS-87 | 197ms
+  type: vless
+  server: 150.251.145.242
   port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: VLESS-121 | 248ms
+  uuid: 4b056394-2f40-11f1-bffe-46c4782ac1a7
+  network: tcp
+- name: SHADOWSOCKS-88 | 168ms
+  type: ss
+  server: 82.38.31.35
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: SHADOWSOCKS-89 | 255ms
+  type: ss
+  server: 138.186.142.80
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-90 | 280ms
+  type: ss
+  server: 138.186.142.81
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: VLESS-91 | 202ms
   type: vless
-  server: 51.195.119.195
+  server: 85.192.49.230
+  port: 443
+  uuid: 8de7627c-1995-41f7-93e6-7fd9715514a2
+  network: tcp
+- name: VLESS-92 | 216ms
+  type: vless
+  server: 45.15.128.75
+  port: 8443
+  uuid: fad2b7e0-d80c-4b7b-a84f-d86e0e49f627
+  network: tcp
+- name: SHADOWSOCKS-93 | 170ms
+  type: ss
+  server: 82.38.31.191
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: SHADOWSOCKS-94 | 160ms
+  type: ss
+  server: 193.29.139.251
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: VLESS-95 | 271ms
+  type: vless
+  server: 162.159.36.20
   port: 2053
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  uuid: e5f8a9f6-f164-479b-b3b5-b90f213c7145
   network: ws
   tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-122 | 251ms
+  servername: ir1.airpanel.top
+- name: VLESS-96 | 35ms
   type: vless
-  server: 62.84.183.222
-  port: 8443
+  server: 104.18.32.47
+  port: 2096
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
   servername: sni.111000.indevs.in
-- name: SHADOWSOCKS-123 | 402ms
+- name: VLESS-97 | 243ms
+  type: vless
+  server: 81.19.141.96
+  port: 8443
+  uuid: ca05976a-2dea-11f1-9ec5-baabcd4be2cd
+  network: tcp
+- name: SHADOWSOCKS-98 | 169ms
   type: ss
-  server: r3mrcg001286ek2.cybervena.com
-  port: 50099
+  server: 193.29.139.206
+  port: 8080
   cipher: chacha20-ietf-poly1305
-  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
-- name: SHADOWSOCKS-124 | 381ms
+  password: 4a2rfixophdjffa8KVA4Aa
+- name: SHADOWSOCKS-99 | 160ms
   type: ss
-  server: r3mrcg007147vhp.cybervena.com
-  port: 50099
+  server: 141.98.101.182
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: VLESS-100 | 196ms
+  type: vless
+  server: 172.86.94.48
+  port: 8443
+  uuid: ca05976a-2dea-11f1-9ec5-baabcd4be2cd
+  network: tcp
+- name: SHADOWSOCKS-101 | 194ms
+  type: ss
+  server: 46.183.217.204
+  port: 990
   cipher: chacha20-ietf-poly1305
-  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
-- name: VLESS-125 | 280ms
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: TROJAN-102 | 250ms
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
+  sni: www.semanticstaplegun.click
+- name: VLESS-103 | 330ms
+  type: vless
+  server: 91.132.142.10
+  port: 443
+  uuid: 5b77fb18-cece-4759-9a81-571f1be53e0c
+  network: tcp
+- name: VLESS-104 | 189ms
+  type: vless
+  server: 51.195.91.135
+  port: 10004
+  uuid: ec76ba12-2e86-11f1-8e37-df39dc6cc8d2
+  network: ws
+- name: SHADOWSOCKS-105 | 198ms
+  type: ss
+  server: 185.176.221.72
+  port: 24637
+  cipher: chacha20-ietf-poly1305
+  password: MholStyHL7DhrewKbpQa20
+- name: VLESS-106 | 29ms
+  type: vless
+  server: 104.18.5.46
+  port: 8880
+  uuid: 5b002005-7fb1-413e-8cbd-08e50c87c2ea
+  network: ws
+- name: VLESS-107 | 258ms
   type: vless
   server: 8tf3qy.by-api-yandex.com
   port: 10121
   uuid: d1209ffb-c159-48d5-b40d-542ce11fc768
   network: tcp
-- name: VLESS-126 | 238ms
+- name: VLESS-108 | 228ms
+  type: vless
+  server: 2.27.43.20
+  port: 443
+  uuid: 1bc8a2e7-4c5d-4376-a24b-b877997fd997
+  network: tcp
+- name: VLESS-109 | 191ms
+  type: vless
+  server: 144.31.233.146
+  port: 43361
+  uuid: bf432795-1383-46e5-8823-d638b956cabe
+  network: tcp
+- name: TROJAN-110 | 253ms
+  type: trojan
+  server: 216.238.102.254
+  port: 26593
+  password: BvzUvt45hON9We5X9wM6I9ZrxHRcYd46QK
+  sni: sao2.cdn-graph.click
+- name: VLESS-111 | 272ms
+  type: vless
+  server: 94.232.247.168
+  port: 41360
+  uuid: e16a35ea-6715-4e75-9845-d20358bd0876
+  network: tcp
+- name: VLESS-112 | 26ms
+  type: vless
+  server: 104.18.3.11
+  port: 2082
+  uuid: cb213db5-803d-49dd-a7e2-46d938af0751
+  network: ws
+- name: SHADOWSOCKS-113 | 226ms
+  type: ss
+  server: 38.165.231.25
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: VLESS-114 | 51ms
+  type: vless
+  server: 104.24.45.247
+  port: 80
+  uuid: 2e71d8fc-d2e8-44fc-89bd-c8a449a193aa
+  network: ws
+- name: VLESS-115 | 297ms
+  type: vless
+  server: nl6.404-it.ru
+  port: 8443
+  uuid: 6d0e9ded-d23d-4ffb-b165-7bc757be84d3
+  network: tcp
+- name: VLESS-116 | 202ms
+  type: vless
+  server: 57.128.178.36
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.v6.navy
+- name: SHADOWSOCKS-117 | 205ms
+  type: ss
+  server: 38.54.20.59
+  port: 8881
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
+- name: SHADOWSOCKS-118 | 113ms
+  type: ss
+  server: 147.78.1.230
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: VLESS-119 | 315ms
+  type: vless
+  server: 46.149.71.197
+  port: 2083
+  uuid: 40600c8a-730a-411c-b72b-c3bca115dcf7
+  network: grpc
+- name: VLESS-120 | 305ms
+  type: vless
+  server: 46.149.68.27
+  port: 2083
+  uuid: e11ca047-3e50-469b-aa1a-beb9be0256b2
+  network: grpc
+- name: VLESS-121 | 189ms
+  type: vless
+  server: 64.188.106.202
+  port: 38765
+  uuid: 7a0ae662-eee7-44c0-8998-d575870bd749
+  network: tcp
+- name: VLESS-122 | 289ms
+  type: vless
+  server: 38.180.101.136
+  port: 443
+  uuid: c8d1c6d3-388f-48fc-a8f0-ed90d955d096
+  network: tcp
+- name: VLESS-123 | 260ms
+  type: vless
+  server: 222.167.202.32
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  network: ws
+  tls: true
+  servername: 2026.hhhhh.eu.org
+- name: VLESS-124 | 255ms
+  type: vless
+  server: 167.234.255.2
+  port: 34045
+  uuid: d8dd94fd-540e-461d-b5d4-acebef02c22a
+  network: tcp
+- name: VLESS-125 | 253ms
+  type: vless
+  server: 202.155.11.73
+  port: 8443
+  uuid: 4b056394-2f40-11f1-bffe-46c4782ac1a7
+  network: tcp
+- name: VLESS-126 | 207ms
+  type: vless
+  server: 57.129.137.83
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.v6.navy
+- name: VLESS-127 | 309ms
+  type: vless
+  server: fin5.frostbot.ru
+  port: 443
+  uuid: 5b77fb18-cece-4759-9a81-571f1be53e0c
+  network: tcp
+- name: VLESS-128 | 47ms
+  type: vless
+  server: 104.18.5.46
+  port: 8880
+  uuid: 623d675e-8748-4881-ac0f-dc1a10b595b1
+  network: ws
+- name: VLESS-129 | 35ms
+  type: vless
+  server: 104.24.55.23
+  port: 443
+  uuid: d435363f-b221-428b-94d2-8d0db0113b60
+  network: ws
+  tls: true
+  servername: fancy-disk-fbb6.tmpesterouglas.workers.dev
+- name: VLESS-130 | 215ms
+  type: vless
+  server: 77.238.248.80
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.v6.navy
+- name: VLESS-131 | 200ms
+  type: vless
+  server: 57.128.182.234
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: VLESS-132 | 27ms
+  type: vless
+  server: 104.254.140.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.jpmj.dev
+- name: VLESS-133 | 335ms
+  type: vless
+  server: 51.75.16.244
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.v6.navy
+- name: SHADOWSOCKS-134 | 319ms
+  type: ss
+  server: 89.44.197.181
+  port: 31348
+  cipher: chacha20-ietf-poly1305
+  password: zDLmeWRsfcFdKT1Tpy02xodEToqCldTxvZcRoPIZZtBdnIEL
+- name: SHADOWSOCKS-135 | 222ms
+  type: ss
+  server: 185.5.38.111
+  port: 55988
+  cipher: chacha20-ietf-poly1305
+  password: 2EmWRS1TkS3TkxKApnrihb3aHjDSXRvT1T1K9U2Bruxrnp5A8zmpTxwwTNje6BkVqmn9BgRF6pq8qoRHCfZdcah7BLbjrpT1
+- name: VLESS-136 | 235ms
   type: vless
   server: 54.36.98.189
   port: 2053
@@ -834,13 +916,7 @@ proxies:
   network: ws
   tls: true
   servername: sni.111000.v6.navy
-- name: SHADOWSOCKS-127 | 444ms
-  type: ss
-  server: r3mrcg007117fb8.cybervena.com
-  port: 50099
-  cipher: chacha20-ietf-poly1305
-  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
-- name: VLESS-128 | 244ms
+- name: VLESS-137 | 265ms
   type: vless
   server: 54.36.98.82
   port: 2053
@@ -848,39 +924,31 @@ proxies:
   network: ws
   tls: true
   servername: sni.111000.v6.navy
-- name: SHADOWSOCKS-129 | 401ms
-  type: ss
-  server: r3mrcg007151w9v.cybervena.com
-  port: 50099
-  cipher: chacha20-ietf-poly1305
-  password: 76fd2910-8f2d-4f0f-883a-8da226f52000
-- name: VLESS-130 | 506ms
+- name: VLESS-138 | 343ms
   type: vless
-  server: 94.131.86.204
-  port: 443
-  uuid: 41808414-6496-4d3c-89d6-9442f76a155a
-  network: tcp
-- name: VLESS-131 | 235ms
-  type: vless
-  server: 45.15.128.75
+  server: 87.120.92.150
   port: 8443
-  uuid: fad2b7e0-d80c-4b7b-a84f-d86e0e49f627
-  network: tcp
-- name: TROJAN-132 | 442ms
-  type: trojan
-  server: 82.26.155.3
-  port: 10369
-  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
-  sni: fra34.chasem2026sud.com
-- name: VLESS-133 | 268ms
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: VLESS-139 | 270ms
   type: vless
-  server: 51.210.151.193
-  port: 2053
+  server: 88.218.78.167
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: VLESS-140 | 232ms
+  type: vless
+  server: 51.75.24.59
+  port: 8443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
   servername: sni.111000.v6.navy
-- name: VMESS-134 | 103ms
+- name: VMESS-141 | 81ms
   type: vmess
   server: 209.126.84.189
   port: 443
@@ -892,69 +960,185 @@ proxies:
     path: /vmessws
     headers:
       Host: 209.126.84.189
-- name: TROJAN-135 | 458ms
-  type: trojan
-  server: 82.26.155.105
-  port: 10369
-  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
-  sni: fra32.chasem2026sud.com
-- name: VLESS-136 | 237ms
+- name: VLESS-142 | 55ms
   type: vless
-  server: 51.75.19.60
+  server: 104.16.63.239
+  port: 80
+  uuid: 04969b01-ac6a-4056-b5cd-852ccf45f100
+  network: ws
+- name: VLESS-143 | 25ms
+  type: vless
+  server: 104.18.2.11
+  port: 2082
+  uuid: cb213db5-803d-49dd-a7e2-46d938af0751
+  network: ws
+- name: SHADOWSOCKS-144 | 273ms
+  type: ss
+  server: 149.22.87.204
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: SHADOWSOCKS-145 | 332ms
+  type: ss
+  server: 147.78.0.182
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-146 | 177ms
+  type: ss
+  server: 141.98.101.178
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: VLESS-147 | 312ms
+  type: vless
+  server: 54.36.98.93
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.v6.navy
+- name: VLESS-148 | 238ms
+  type: vless
+  server: 51.195.118.15
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: SHADOWSOCKS-149 | 258ms
+  type: ss
+  server: mx2.drawnrisha.one
+  port: 55988
+  cipher: chacha20-ietf-poly1305
+  password: bZ87amPpdG7KuWM62bKtm1KHoowuVjnV8CKtq653ymHcg2dPYcPJfnaQ61stuAjr2ZiLDaqH56XpkxEYuwDzzRrMWieebWGt
+- name: VLESS-150 | 204ms
+  type: vless
+  server: 57.129.137.93
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.v6.navy
+- name: SHADOWSOCKS-151 | 342ms
+  type: ss
+  server: r3mrcg001287h3p.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+- name: VLESS-152 | 237ms
+  type: vless
+  server: 57.129.47.41
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: SHADOWSOCKS-153 | 335ms
+  type: ss
+  server: r3mrcg007151w9v.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 76fd2910-8f2d-4f0f-883a-8da226f52000
+- name: SHADOWSOCKS-154 | 333ms
+  type: ss
+  server: r3mrcg001286ek2.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+- name: VLESS-155 | 32ms
+  type: vless
+  server: 216.24.57.1
+  port: 443
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  network: ws
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+- name: VLESS-156 | 294ms
+  type: vless
+  server: 57.129.63.149
   port: 8443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
   servername: sni.111000.indevs.in
-- name: TROJAN-137 | 491ms
-  type: trojan
-  server: 82.26.155.20
-  port: 10369
-  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
-  sni: fra35.chasem2026sud.com
-- name: SHADOWSOCKS-138 | 488ms
+- name: VLESS-157 | 268ms
+  type: vless
+  server: 88.218.78.167
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: SHADOWSOCKS-158 | 602ms
   type: ss
-  server: 156.38.168.58
+  server: 193.135.174.135
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: TROJAN-139 | 282ms
+- name: SHADOWSOCKS-159 | 347ms
+  type: ss
+  server: r3mrcg007117fb8.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+- name: VLESS-160 | 482ms
+  type: vless
+  server: 94.131.86.204
+  port: 443
+  uuid: 41808414-6496-4d3c-89d6-9442f76a155a
+  network: tcp
+- name: VLESS-161 | 281ms
+  type: vless
+  server: 57.129.63.60
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: TROJAN-162 | 413ms
   type: trojan
-  server: 166.88.197.60
-  port: 26650
-  password: UNWA6USASAb6=uAAZeZMFd+2uKB4.d5KOm
-  sni: sea9.firewallcontract.click
-- name: TROJAN-140 | 445ms
-  type: trojan
-  server: 82.26.155.199
+  server: 82.26.155.105
   port: 10369
   password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
-  sni: fra4.chasem2026sud.com
-- name: TROJAN-141 | 417ms
-  type: trojan
-  server: 82.26.155.237
-  port: 10369
-  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
-  sni: fra5.chasem2026sud.com
-- name: TROJAN-142 | 493ms
+  sni: fra32.chasem2026sud.com
+- name: TROJAN-163 | 416ms
   type: trojan
   server: 82.26.155.121
   port: 10369
   password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
   sni: fra33.chasem2026sud.com
-- name: SHADOWSOCKS-143 | 455ms
+- name: SHADOWSOCKS-164 | 404ms
   type: ss
-  server: 102.37.156.224
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: aduB9HGxQHjA2SBMRjkHX6
-- name: SHADOWSOCKS-144 | 455ms
+  server: 82.180.146.173
+  port: 35652
+  cipher: aes-128-gcm
+  password: 93498539-7838-4836-b9b3-8311ffc79bcf
+- name: TROJAN-165 | 400ms
+  type: trojan
+  server: 82.26.155.199
+  port: 10369
+  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
+  sni: fra4.chasem2026sud.com
+- name: SHADOWSOCKS-166 | 177ms
   type: ss
-  server: 102.133.165.160
-  port: 16233
+  server: 213.109.147.242
+  port: 62685
   cipher: chacha20-ietf-poly1305
-  password: Xsy8Ox4yOV3xLlpxtjzs3X
-- name: VMESS-145 | 594ms
+  password: VpKABcOpNNA0l5G2AVOmw8
+- name: TROJAN-167 | 398ms
+  type: trojan
+  server: 82.26.155.20
+  port: 10369
+  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
+  sni: fra35.chasem2026sud.com
+- name: TROJAN-168 | 412ms
+  type: trojan
+  server: 82.26.155.237
+  port: 10369
+  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
+  sni: fra5.chasem2026sud.com
+- name: VMESS-169 | 532ms
   type: vmess
   server: chuncheon03.zgjok.com
   port: 443
@@ -968,121 +1152,174 @@ proxies:
     path: /
     headers:
       Host: chuncheon03.zgjok.com
-- name: SHADOWSOCKS-146 | 28ms
+- name: TROJAN-170 | 390ms
+  type: trojan
+  server: 82.26.155.3
+  port: 10369
+  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
+  sni: fra34.chasem2026sud.com
+- name: SHADOWSOCKS-171 | 427ms
   type: ss
-  server: tinkered-pennies-puppies.freesocks.work
-  port: 443
+  server: 156.38.168.58
+  port: 990
   cipher: chacha20-ietf-poly1305
-  password: hbGrpfvNrJsUmKmPbR3iY2
-- name: SHADOWSOCKS-147 | 362ms
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-172 | 429ms
   type: ss
-  server: 82.180.146.173
-  port: 35652
-  cipher: aes-128-gcm
-  password: 93498539-7838-4836-b9b3-8311ffc79bcf
-- name: VLESS-148 | 39ms
+  server: 102.133.165.160
+  port: 16233
+  cipher: chacha20-ietf-poly1305
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+- name: VLESS-173 | 215ms
   type: vless
-  server: 135.84.74.118
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.dynv6.net
-- name: VLESS-149 | 476ms
-  type: vless
-  server: 46.149.68.27
-  port: 2083
-  uuid: e11ca047-3e50-469b-aa1a-beb9be0256b2
-  network: grpc
-- name: VLESS-150 | 206ms
-  type: vless
-  server: 57.128.182.234
+  server: 91.84.99.166
   port: 8443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
   servername: sni.111000.indevs.in
-- name: VLESS-151 | 247ms
-  type: vless
-  server: 54.36.99.75
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: VLESS-152 | 564ms
-  type: vless
-  server: 103.245.237.124
-  port: 58202
-  uuid: cca053d5-7123-4a87-83d6-babe4e9c8115
-  network: ws
-- name: VLESS-153 | 785ms
-  type: vless
-  server: 45.43.75.69
-  port: 7443
-  uuid: 8f8380ae-9f5d-4cb5-8f5f-0f70fbe054a9
-  network: tcp
-- name: SHADOWSOCKS-154 | 330ms
-  type: ss
-  server: 138.186.143.32
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: VLESS-155 | 261ms
-  type: vless
-  server: 51.195.37.32
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.dynv6.net
-- name: SHADOWSOCKS-156 | 605ms
+- name: SHADOWSOCKS-174 | 460ms
   type: ss
   server: 156.59.243.6
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: VLESS-157 | 241ms
-  type: vless
-  server: 141.94.220.210
+- name: SHADOWSOCKS-175 | 429ms
+  type: ss
+  server: 102.37.156.224
   port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: VLESS-158 | 126ms
+  cipher: chacha20-ietf-poly1305
+  password: aduB9HGxQHjA2SBMRjkHX6
+- name: VLESS-176 | 658ms
   type: vless
-  server: cdn.7zz.cn
-  port: 443
-  uuid: 506e4a91-1d05-5683-b84c-2113f673cb19
-  network: ws
-  tls: true
-  servername: vltj.qzz.io
-- name: VLESS-159 | 210ms
-  type: vless
-  server: 51.210.73.175
-  port: 8443
-  uuid: 81afc754-96c8-4cca-8d5e-3fc993b9afb9
+  server: 178.236.16.98
+  port: 35728
+  uuid: a00d89f6-ab7e-4e30-a5e5-54c701d62c93
   network: tcp
-- name: TROJAN-160 | 119ms
+- name: SHADOWSOCKS-177 | 344ms
+  type: ss
+  server: r3mrcg007147vhp.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+- name: SHADOWSOCKS-178 | 262ms
+  type: ss
+  server: 138.186.143.32
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: VLESS-179 | 371ms
+  type: vless
+  server: 103.231.73.181
+  port: 8443
+  uuid: e033ef6e-ab4b-47d4-a523-ff568d2c8dbb
+  network: tcp
+- name: VLESS-180 | 535ms
+  type: vless
+  server: 103.245.237.124
+  port: 58202
+  uuid: cca053d5-7123-4a87-83d6-babe4e9c8115
+  network: ws
+- name: TROJAN-181 | 498ms
+  type: trojan
+  server: 194.87.10.31
+  port: 23357
+  password: fQmMJwOLMlqHednu2SVED8gi-+H-db9kbg
+  sni: sgp9.node-resource.click
+- name: TROJAN-182 | 75ms
   type: trojan
   server: 104.238.162.6
   port: 13109
   password: WwipNOSqUh49CEapMmIrv6m6AZLf-EC0+T
   sni: ord2.edge-command.click
-- name: VLESS-161 | 629ms
+- name: VLESS-183 | 258ms
   type: vless
-  server: 45.15.128.183
-  port: 603
-  uuid: 4484eae9-e195-4adf-b2b5-ad0b9132162b
-  network: tcp
-- name: SHADOWSOCKS-162 | 410ms
+  server: 94.130.132.180
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: SHADOWSOCKS-184 | 427ms
   type: ss
   server: 154.70.207.97
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: VMESS-163 | 474ms
+- name: VLESS-185 | 286ms
+  type: vless
+  server: 57.129.47.67
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: SHADOWSOCKS-186 | 163ms
+  type: ss
+  server: 82.38.31.184
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: VMESS-187 | 592ms
+  type: vmess
+  server: 103.229.124.3
+  port: 20521
+  uuid: 292e9c90-25b3-4ff5-b98a-9ef5877714ab
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /
+    headers: {}
+- name: SHADOWSOCKS-188 | 205ms
+  type: ss
+  server: 38.60.250.107
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-189 | 369ms
+  type: ss
+  server: 141.164.45.187
+  port: 6679
+  cipher: aes-256-gcm
+  password: TEzjfAYq2IjtuoS
+- name: VLESS-190 | 327ms
+  type: vless
+  server: 43.164.198.39
+  port: 443
+  uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+  network: ws
+  tls: true
+  servername: shenbaoluo1.zqjsqapi.com
+- name: SHADOWSOCKS-191 | 277ms
+  type: ss
+  server: 37.143.130.203
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: SHADOWSOCKS-192 | 481ms
+  type: ss
+  server: 141.164.45.187
+  port: 7001
+  cipher: aes-256-gcm
+  password: RexnBgU7EV5ADxG
+- name: VLESS-193 | 390ms
+  type: vless
+  server: 51.75.19.60
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.indevs.in
+- name: VLESS-194 | 29ms
+  type: vless
+  server: 185.146.173.20
+  port: 2053
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  network: ws
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+- name: VMESS-195 | 418ms
   type: vmess
   server: 47.243.135.74
   port: 55185
@@ -1093,687 +1330,452 @@ proxies:
   ws-opts:
     path: /Notif_Chat
     headers: {}
-- name: SHADOWSOCKS-164 | 159ms
-  type: ss
-  server: 193.29.139.179
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: cvII85TrW6n0OGyfpHVS1u
-- name: VLESS-165 | 217ms
-  type: vless
-  server: 150.251.145.244
-  port: 8443
-  uuid: f3a1017d-1ebf-11f1-8cae-c3845d39d2de
-  network: tcp
-- name: SHADOWSOCKS-166 | 227ms
-  type: ss
-  server: 82.38.31.199
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-167 | 249ms
-  type: ss
-  server: 213.109.147.242
-  port: 62685
-  cipher: chacha20-ietf-poly1305
-  password: VpKABcOpNNA0l5G2AVOmw8
-- name: VLESS-168 | 44ms
-  type: vless
-  server: 135.84.64.222
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.dynv6.net
-- name: VLESS-169 | 52ms
-  type: vless
-  server: bestcf.030101.xyz
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.dynv6.net
-- name: VLESS-170 | 294ms
-  type: vless
-  server: 144.31.94.4
-  port: 42428
-  uuid: 27d0c642-693c-4070-83b4-0e9803ba71b3
-  network: tcp
-- name: VLESS-171 | 243ms
-  type: vless
-  server: 54.36.98.158
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: SHADOWSOCKS-172 | 204ms
-  type: ss
-  server: 82.38.31.179
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SHADOWSOCKS-173 | 160ms
-  type: ss
-  server: 82.38.31.184
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: VLESS-174 | 274ms
-  type: vless
-  server: 88.218.78.167
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-175 | 240ms
-  type: vless
-  server: 94.232.247.168
-  port: 41360
-  uuid: e16a35ea-6715-4e75-9845-d20358bd0876
-  network: tcp
-- name: SHADOWSOCKS-176 | 254ms
-  type: ss
-  server: 37.143.130.203
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-177 | 1060ms
-  type: ss
-  server: 193.135.174.135
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-178 | 431ms
+- name: SHADOWSOCKS-196 | 424ms
   type: ss
   server: 185.93.173.60
   port: 990
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: SHADOWSOCKS-179 | 571ms
-  type: ss
-  server: 185.5.38.111
-  port: 55988
-  cipher: chacha20-ietf-poly1305
-  password: 2EmWRS1TkS3TkxKApnrihb3aHjDSXRvT1T1K9U2Bruxrnp5A8zmpTxwwTNje6BkVqmn9BgRF6pq8qoRHCfZdcah7BLbjrpT1
-- name: VLESS-180 | 293ms
+- name: VLESS-197 | 49ms
   type: vless
-  server: 57.129.47.12
+  server: v2ngfast-v2ngfast-v2ngfast-v2ngfast.jovego2551.workers.dev
+  port: 443
+  uuid: 2730487f-0ed5-4f04-92d5-f95f9253d4f4
+  network: ws
+  tls: true
+  servername: v2ngfast-v2ngfast-v2ngfast-v2ngfast.jovego2551.workers.dev
+- name: VLESS-198 | 230ms
+  type: vless
+  server: 51.210.151.193
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  servername: sni.111000.v6.navy
+- name: VLESS-199 | 235ms
+  type: vless
+  server: 54.36.98.4
   port: 2053
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
   servername: sni.111000.indevs.in
-- name: VLESS-181 | 199ms
+- name: VLESS-200 | 245ms
   type: vless
-  server: 57.129.137.87
+  server: 51.77.213.238
   port: 8443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
-  servername: sni.111000.v6.navy
-- name: VMESS-182 | 1324ms
-  type: vmess
-  server: 47.244.120.197
-  port: 44867
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /arki?ed=2048
-    headers: {}
-- name: VLESS-183 | 238ms
-  type: vless
-  server: 57.129.63.60
-  port: 2053
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-184 | 237ms
-  type: vless
-  server: 57.129.47.59
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-185 | 51ms
-  type: vless
-  server: 104.17.152.254
-  port: 80
-  uuid: 388a6c57-87e7-420b-afe2-b3eb670fd7da
-  network: ws
-- name: VLESS-186 | 37ms
-  type: vless
-  server: 104.18.32.47
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-187 | 34ms
-  type: vless
-  server: 172.64.155.209
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-188 | 260ms
-  type: vless
-  server: 49.13.85.76
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: VLESS-189 | 252ms
-  type: vless
-  server: 51.195.118.15
-  port: 2053
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-190 | 265ms
-  type: vless
-  server: 51.178.137.248
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: VLESS-191 | 238ms
-  type: vless
-  server: 51.210.151.165
-  port: 2053
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-192 | 242ms
-  type: vless
-  server: 57.129.14.56
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-193 | 239ms
-  type: vless
-  server: 51.75.24.59
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: VLESS-194 | 234ms
-  type: vless
-  server: 87.120.92.150
-  port: 8443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.indevs.in
-- name: VLESS-195 | 226ms
-  type: vless
-  server: 77.238.248.80
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: true
-  servername: sni.111000.v6.navy
-- name: VLESS-196 | 66ms
-  type: vless
-  server: 104.17.106.12
-  port: 443
-  uuid: 6fb65356-788e-4118-8280-148ec6eca18a
-  network: ws
-  tls: true
-  servername: xn--cz8h.pages.dev
-- name: VLESS-197 | 50ms
-  type: vless
-  server: 104.18.45.50
-  port: 443
-  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
-  network: ws
-  tls: true
-  servername: xqkxw.ccwu.cc
-- name: VLESS-198 | 57ms
-  type: vless
-  server: 104.19.33.3
-  port: 2083
-  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
-  network: ws
-  tls: true
-  servername: xqkxw.ccwu.cc
-- name: VLESS-199 | 60ms
-  type: vless
-  server: 104.19.60.19
-  port: 2096
-  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
-  network: ws
-  tls: true
-  servername: xqkxw.ccwu.cc
-- name: VLESS-200 | 77ms
-  type: vless
-  server: 162.159.152.151
-  port: 2096
-  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
-  network: ws
-  tls: true
-  servername: xqkxw.ccwu.cc
+  servername: sni.111000.dynv6.net
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - Auto-Select
-  - SHADOWSOCKS-1 | 19ms
-  - VLESS-2 | 26ms
-  - SHADOWSOCKS-3 | 93ms
-  - SHADOWSOCKS-4 | 48ms
-  - SHADOWSOCKS-5 | 64ms
-  - SHADOWSOCKS-6 | 66ms
-  - SHADOWSOCKS-7 | 65ms
-  - VLESS-8 | 46ms
-  - VLESS-9 | 48ms
-  - VLESS-10 | 51ms
-  - SHADOWSOCKS-11 | 95ms
-  - VLESS-12 | 32ms
-  - VLESS-13 | 30ms
-  - VLESS-14 | 58ms
-  - VMESS-15 | 138ms
-  - SHADOWSOCKS-16 | 365ms
-  - SHADOWSOCKS-17 | 141ms
-  - SHADOWSOCKS-18 | 134ms
-  - VLESS-19 | 49ms
-  - VLESS-20 | 37ms
-  - VLESS-21 | 42ms
-  - SHADOWSOCKS-22 | 159ms
-  - SHADOWSOCKS-23 | 158ms
-  - VLESS-24 | 36ms
-  - VLESS-25 | 190ms
-  - SHADOWSOCKS-26 | 161ms
-  - VLESS-27 | 191ms
-  - SHADOWSOCKS-28 | 164ms
-  - SHADOWSOCKS-29 | 161ms
-  - VLESS-30 | 218ms
-  - SHADOWSOCKS-31 | 258ms
-  - VLESS-32 | 192ms
-  - SHADOWSOCKS-33 | 168ms
-  - SHADOWSOCKS-34 | 161ms
-  - SHADOWSOCKS-35 | 164ms
-  - SHADOWSOCKS-36 | 162ms
-  - VLESS-37 | 215ms
-  - VLESS-38 | 190ms
-  - SHADOWSOCKS-39 | 157ms
-  - VLESS-40 | 266ms
-  - SHADOWSOCKS-41 | 162ms
-  - VLESS-42 | 1662ms
-  - SHADOWSOCKS-43 | 162ms
-  - SHADOWSOCKS-44 | 166ms
-  - SHADOWSOCKS-45 | 167ms
-  - SHADOWSOCKS-46 | 175ms
-  - VLESS-47 | 218ms
-  - VLESS-48 | 186ms
-  - VLESS-49 | 195ms
-  - SHADOWSOCKS-50 | 162ms
-  - VLESS-51 | 198ms
-  - VLESS-52 | 192ms
-  - VLESS-53 | 209ms
-  - VLESS-54 | 194ms
-  - SHADOWSOCKS-55 | 163ms
-  - VLESS-56 | 198ms
-  - VLESS-57 | 201ms
+  - SHADOWSOCKS-1 | 25ms
+  - SHADOWSOCKS-2 | 26ms
+  - SHADOWSOCKS-3 | 38ms
+  - SHADOWSOCKS-4 | 53ms
+  - VLESS-5 | 34ms
+  - VLESS-6 | 43ms
+  - VLESS-7 | 28ms
+  - VLESS-8 | 27ms
+  - VLESS-9 | 29ms
+  - VLESS-10 | 33ms
+  - SHADOWSOCKS-11 | 66ms
+  - SHADOWSOCKS-12 | 69ms
+  - SHADOWSOCKS-13 | 67ms
+  - VLESS-14 | 29ms
+  - VMESS-15 | 66ms
+  - VLESS-16 | 36ms
+  - VLESS-17 | 29ms
+  - VLESS-18 | 40ms
+  - SHADOWSOCKS-19 | 297ms
+  - SHADOWSOCKS-20 | 103ms
+  - VLESS-21 | 32ms
+  - SHADOWSOCKS-22 | 133ms
+  - SHADOWSOCKS-23 | 133ms
+  - SHADOWSOCKS-24 | 153ms
+  - SHADOWSOCKS-25 | 136ms
+  - VLESS-26 | 31ms
+  - VMESS-27 | 139ms
+  - VLESS-28 | 37ms
+  - VLESS-29 | 26ms
+  - VLESS-30 | 34ms
+  - VLESS-31 | 71ms
+  - VLESS-32 | 28ms
+  - VLESS-33 | 192ms
+  - VLESS-34 | 188ms
+  - VLESS-35 | 35ms
+  - VLESS-36 | 205ms
+  - VLESS-37 | 31ms
+  - SHADOWSOCKS-38 | 176ms
+  - SHADOWSOCKS-39 | 160ms
+  - VLESS-40 | 190ms
+  - SHADOWSOCKS-41 | 163ms
+  - VLESS-42 | 296ms
+  - SHADOWSOCKS-43 | 161ms
+  - VLESS-44 | 299ms
+  - SHADOWSOCKS-45 | 161ms
+  - SHADOWSOCKS-46 | 160ms
+  - SHADOWSOCKS-47 | 160ms
+  - VLESS-48 | 42ms
+  - SHADOWSOCKS-49 | 161ms
+  - VLESS-50 | 57ms
+  - SHADOWSOCKS-51 | 163ms
+  - SHADOWSOCKS-52 | 167ms
+  - SHADOWSOCKS-53 | 161ms
+  - SHADOWSOCKS-54 | 162ms
+  - SHADOWSOCKS-55 | 159ms
+  - SHADOWSOCKS-56 | 161ms
+  - SHADOWSOCKS-57 | 159ms
   - VLESS-58 | 194ms
-  - VLESS-59 | 200ms
-  - SHADOWSOCKS-60 | 258ms
-  - VLESS-61 | 199ms
-  - VLESS-62 | 59ms
-  - SHADOWSOCKS-63 | 160ms
-  - SHADOWSOCKS-64 | 160ms
-  - SHADOWSOCKS-65 | 219ms
-  - VLESS-66 | 278ms
-  - VLESS-67 | 195ms
-  - VLESS-68 | 49ms
-  - SHADOWSOCKS-69 | 161ms
-  - VLESS-70 | 313ms
-  - SHADOWSOCKS-71 | 223ms
-  - SHADOWSOCKS-72 | 199ms
-  - VLESS-73 | 198ms
-  - VLESS-74 | 219ms
-  - VLESS-75 | 204ms
-  - VLESS-76 | 186ms
-  - VLESS-77 | 51ms
-  - SHADOWSOCKS-78 | 361ms
-  - VLESS-79 | 215ms
-  - SHADOWSOCKS-80 | 254ms
-  - SHADOWSOCKS-81 | 112ms
-  - SHADOWSOCKS-82 | 161ms
-  - VLESS-83 | 299ms
-  - VLESS-84 | 231ms
-  - SHADOWSOCKS-85 | 207ms
-  - SHADOWSOCKS-86 | 359ms
-  - TROJAN-87 | 352ms
-  - VLESS-88 | 50ms
-  - SHADOWSOCKS-89 | 161ms
-  - SHADOWSOCKS-90 | 163ms
-  - SHADOWSOCKS-91 | 371ms
-  - SHADOWSOCKS-92 | 311ms
-  - VLESS-93 | 220ms
-  - SHADOWSOCKS-94 | 188ms
-  - SHADOWSOCKS-95 | 201ms
-  - VLESS-96 | 37ms
-  - VLESS-97 | 52ms
-  - VLESS-98 | 273ms
-  - VLESS-99 | 291ms
-  - VLESS-100 | 269ms
-  - VLESS-101 | 292ms
-  - VLESS-102 | 32ms
-  - VLESS-103 | 328ms
-  - SHADOWSOCKS-104 | 235ms
-  - VLESS-105 | 207ms
-  - VLESS-106 | 218ms
-  - VLESS-107 | 239ms
-  - VLESS-108 | 322ms
-  - VLESS-109 | 262ms
-  - VLESS-110 | 41ms
-  - VLESS-111 | 241ms
-  - SHADOWSOCKS-112 | 317ms
-  - VLESS-113 | 423ms
-  - SHADOWSOCKS-114 | 376ms
-  - VLESS-115 | 81ms
-  - VLESS-116 | 242ms
-  - VMESS-117 | 221ms
-  - SHADOWSOCKS-118 | 335ms
-  - VLESS-119 | 280ms
-  - VLESS-120 | 243ms
-  - VLESS-121 | 248ms
-  - VLESS-122 | 251ms
-  - SHADOWSOCKS-123 | 402ms
-  - SHADOWSOCKS-124 | 381ms
-  - VLESS-125 | 280ms
-  - VLESS-126 | 238ms
-  - SHADOWSOCKS-127 | 444ms
-  - VLESS-128 | 244ms
-  - SHADOWSOCKS-129 | 401ms
-  - VLESS-130 | 506ms
-  - VLESS-131 | 235ms
-  - TROJAN-132 | 442ms
-  - VLESS-133 | 268ms
-  - VMESS-134 | 103ms
-  - TROJAN-135 | 458ms
-  - VLESS-136 | 237ms
-  - TROJAN-137 | 491ms
-  - SHADOWSOCKS-138 | 488ms
-  - TROJAN-139 | 282ms
-  - TROJAN-140 | 445ms
-  - TROJAN-141 | 417ms
-  - TROJAN-142 | 493ms
-  - SHADOWSOCKS-143 | 455ms
-  - SHADOWSOCKS-144 | 455ms
-  - VMESS-145 | 594ms
-  - SHADOWSOCKS-146 | 28ms
-  - SHADOWSOCKS-147 | 362ms
-  - VLESS-148 | 39ms
-  - VLESS-149 | 476ms
-  - VLESS-150 | 206ms
-  - VLESS-151 | 247ms
-  - VLESS-152 | 564ms
-  - VLESS-153 | 785ms
-  - SHADOWSOCKS-154 | 330ms
-  - VLESS-155 | 261ms
-  - SHADOWSOCKS-156 | 605ms
-  - VLESS-157 | 241ms
-  - VLESS-158 | 126ms
-  - VLESS-159 | 210ms
-  - TROJAN-160 | 119ms
-  - VLESS-161 | 629ms
-  - SHADOWSOCKS-162 | 410ms
-  - VMESS-163 | 474ms
-  - SHADOWSOCKS-164 | 159ms
-  - VLESS-165 | 217ms
-  - SHADOWSOCKS-166 | 227ms
-  - SHADOWSOCKS-167 | 249ms
-  - VLESS-168 | 44ms
-  - VLESS-169 | 52ms
-  - VLESS-170 | 294ms
-  - VLESS-171 | 243ms
-  - SHADOWSOCKS-172 | 204ms
-  - SHADOWSOCKS-173 | 160ms
-  - VLESS-174 | 274ms
-  - VLESS-175 | 240ms
-  - SHADOWSOCKS-176 | 254ms
-  - SHADOWSOCKS-177 | 1060ms
-  - SHADOWSOCKS-178 | 431ms
-  - SHADOWSOCKS-179 | 571ms
-  - VLESS-180 | 293ms
-  - VLESS-181 | 199ms
-  - VMESS-182 | 1324ms
-  - VLESS-183 | 238ms
-  - VLESS-184 | 237ms
-  - VLESS-185 | 51ms
-  - VLESS-186 | 37ms
-  - VLESS-187 | 34ms
-  - VLESS-188 | 260ms
-  - VLESS-189 | 252ms
-  - VLESS-190 | 265ms
-  - VLESS-191 | 238ms
-  - VLESS-192 | 242ms
-  - VLESS-193 | 239ms
-  - VLESS-194 | 234ms
-  - VLESS-195 | 226ms
-  - VLESS-196 | 66ms
-  - VLESS-197 | 50ms
-  - VLESS-198 | 57ms
-  - VLESS-199 | 60ms
-  - VLESS-200 | 77ms
+  - SHADOWSOCKS-59 | 160ms
+  - VLESS-60 | 278ms
+  - VLESS-61 | 243ms
+  - VLESS-62 | 191ms
+  - VMESS-63 | 97ms
+  - SHADOWSOCKS-64 | 167ms
+  - VLESS-65 | 191ms
+  - VLESS-66 | 266ms
+  - VLESS-67 | 190ms
+  - VLESS-68 | 182ms
+  - VLESS-69 | 38ms
+  - SHADOWSOCKS-70 | 164ms
+  - SHADOWSOCKS-71 | 168ms
+  - VLESS-72 | 198ms
+  - VLESS-73 | 33ms
+  - VLESS-74 | 195ms
+  - VLESS-75 | 36ms
+  - SHADOWSOCKS-76 | 299ms
+  - SHADOWSOCKS-77 | 169ms
+  - VLESS-78 | 26ms
+  - VLESS-79 | 196ms
+  - SHADOWSOCKS-80 | 168ms
+  - VLESS-81 | 36ms
+  - SHADOWSOCKS-82 | 169ms
+  - SHADOWSOCKS-83 | 173ms
+  - SHADOWSOCKS-84 | 169ms
+  - VLESS-85 | 195ms
+  - SHADOWSOCKS-86 | 164ms
+  - VLESS-87 | 197ms
+  - SHADOWSOCKS-88 | 168ms
+  - SHADOWSOCKS-89 | 255ms
+  - SHADOWSOCKS-90 | 280ms
+  - VLESS-91 | 202ms
+  - VLESS-92 | 216ms
+  - SHADOWSOCKS-93 | 170ms
+  - SHADOWSOCKS-94 | 160ms
+  - VLESS-95 | 271ms
+  - VLESS-96 | 35ms
+  - VLESS-97 | 243ms
+  - SHADOWSOCKS-98 | 169ms
+  - SHADOWSOCKS-99 | 160ms
+  - VLESS-100 | 196ms
+  - SHADOWSOCKS-101 | 194ms
+  - TROJAN-102 | 250ms
+  - VLESS-103 | 330ms
+  - VLESS-104 | 189ms
+  - SHADOWSOCKS-105 | 198ms
+  - VLESS-106 | 29ms
+  - VLESS-107 | 258ms
+  - VLESS-108 | 228ms
+  - VLESS-109 | 191ms
+  - TROJAN-110 | 253ms
+  - VLESS-111 | 272ms
+  - VLESS-112 | 26ms
+  - SHADOWSOCKS-113 | 226ms
+  - VLESS-114 | 51ms
+  - VLESS-115 | 297ms
+  - VLESS-116 | 202ms
+  - SHADOWSOCKS-117 | 205ms
+  - SHADOWSOCKS-118 | 113ms
+  - VLESS-119 | 315ms
+  - VLESS-120 | 305ms
+  - VLESS-121 | 189ms
+  - VLESS-122 | 289ms
+  - VLESS-123 | 260ms
+  - VLESS-124 | 255ms
+  - VLESS-125 | 253ms
+  - VLESS-126 | 207ms
+  - VLESS-127 | 309ms
+  - VLESS-128 | 47ms
+  - VLESS-129 | 35ms
+  - VLESS-130 | 215ms
+  - VLESS-131 | 200ms
+  - VLESS-132 | 27ms
+  - VLESS-133 | 335ms
+  - SHADOWSOCKS-134 | 319ms
+  - SHADOWSOCKS-135 | 222ms
+  - VLESS-136 | 235ms
+  - VLESS-137 | 265ms
+  - VLESS-138 | 343ms
+  - VLESS-139 | 270ms
+  - VLESS-140 | 232ms
+  - VMESS-141 | 81ms
+  - VLESS-142 | 55ms
+  - VLESS-143 | 25ms
+  - SHADOWSOCKS-144 | 273ms
+  - SHADOWSOCKS-145 | 332ms
+  - SHADOWSOCKS-146 | 177ms
+  - VLESS-147 | 312ms
+  - VLESS-148 | 238ms
+  - SHADOWSOCKS-149 | 258ms
+  - VLESS-150 | 204ms
+  - SHADOWSOCKS-151 | 342ms
+  - VLESS-152 | 237ms
+  - SHADOWSOCKS-153 | 335ms
+  - SHADOWSOCKS-154 | 333ms
+  - VLESS-155 | 32ms
+  - VLESS-156 | 294ms
+  - VLESS-157 | 268ms
+  - SHADOWSOCKS-158 | 602ms
+  - SHADOWSOCKS-159 | 347ms
+  - VLESS-160 | 482ms
+  - VLESS-161 | 281ms
+  - TROJAN-162 | 413ms
+  - TROJAN-163 | 416ms
+  - SHADOWSOCKS-164 | 404ms
+  - TROJAN-165 | 400ms
+  - SHADOWSOCKS-166 | 177ms
+  - TROJAN-167 | 398ms
+  - TROJAN-168 | 412ms
+  - VMESS-169 | 532ms
+  - TROJAN-170 | 390ms
+  - SHADOWSOCKS-171 | 427ms
+  - SHADOWSOCKS-172 | 429ms
+  - VLESS-173 | 215ms
+  - SHADOWSOCKS-174 | 460ms
+  - SHADOWSOCKS-175 | 429ms
+  - VLESS-176 | 658ms
+  - SHADOWSOCKS-177 | 344ms
+  - SHADOWSOCKS-178 | 262ms
+  - VLESS-179 | 371ms
+  - VLESS-180 | 535ms
+  - TROJAN-181 | 498ms
+  - TROJAN-182 | 75ms
+  - VLESS-183 | 258ms
+  - SHADOWSOCKS-184 | 427ms
+  - VLESS-185 | 286ms
+  - SHADOWSOCKS-186 | 163ms
+  - VMESS-187 | 592ms
+  - SHADOWSOCKS-188 | 205ms
+  - SHADOWSOCKS-189 | 369ms
+  - VLESS-190 | 327ms
+  - SHADOWSOCKS-191 | 277ms
+  - SHADOWSOCKS-192 | 481ms
+  - VLESS-193 | 390ms
+  - VLESS-194 | 29ms
+  - VMESS-195 | 418ms
+  - SHADOWSOCKS-196 | 424ms
+  - VLESS-197 | 49ms
+  - VLESS-198 | 230ms
+  - VLESS-199 | 235ms
+  - VLESS-200 | 245ms
 - name: Auto-Select
   type: url-test
   proxies:
-  - SHADOWSOCKS-1 | 19ms
-  - VLESS-2 | 26ms
-  - SHADOWSOCKS-3 | 93ms
-  - SHADOWSOCKS-4 | 48ms
-  - SHADOWSOCKS-5 | 64ms
-  - SHADOWSOCKS-6 | 66ms
-  - SHADOWSOCKS-7 | 65ms
-  - VLESS-8 | 46ms
-  - VLESS-9 | 48ms
-  - VLESS-10 | 51ms
-  - SHADOWSOCKS-11 | 95ms
-  - VLESS-12 | 32ms
-  - VLESS-13 | 30ms
-  - VLESS-14 | 58ms
-  - VMESS-15 | 138ms
-  - SHADOWSOCKS-16 | 365ms
-  - SHADOWSOCKS-17 | 141ms
-  - SHADOWSOCKS-18 | 134ms
-  - VLESS-19 | 49ms
-  - VLESS-20 | 37ms
-  - VLESS-21 | 42ms
-  - SHADOWSOCKS-22 | 159ms
-  - SHADOWSOCKS-23 | 158ms
-  - VLESS-24 | 36ms
-  - VLESS-25 | 190ms
-  - SHADOWSOCKS-26 | 161ms
-  - VLESS-27 | 191ms
-  - SHADOWSOCKS-28 | 164ms
-  - SHADOWSOCKS-29 | 161ms
-  - VLESS-30 | 218ms
-  - SHADOWSOCKS-31 | 258ms
-  - VLESS-32 | 192ms
-  - SHADOWSOCKS-33 | 168ms
-  - SHADOWSOCKS-34 | 161ms
-  - SHADOWSOCKS-35 | 164ms
-  - SHADOWSOCKS-36 | 162ms
-  - VLESS-37 | 215ms
-  - VLESS-38 | 190ms
-  - SHADOWSOCKS-39 | 157ms
-  - VLESS-40 | 266ms
-  - SHADOWSOCKS-41 | 162ms
-  - VLESS-42 | 1662ms
-  - SHADOWSOCKS-43 | 162ms
-  - SHADOWSOCKS-44 | 166ms
-  - SHADOWSOCKS-45 | 167ms
-  - SHADOWSOCKS-46 | 175ms
-  - VLESS-47 | 218ms
-  - VLESS-48 | 186ms
-  - VLESS-49 | 195ms
-  - SHADOWSOCKS-50 | 162ms
-  - VLESS-51 | 198ms
-  - VLESS-52 | 192ms
-  - VLESS-53 | 209ms
-  - VLESS-54 | 194ms
-  - SHADOWSOCKS-55 | 163ms
-  - VLESS-56 | 198ms
-  - VLESS-57 | 201ms
+  - SHADOWSOCKS-1 | 25ms
+  - SHADOWSOCKS-2 | 26ms
+  - SHADOWSOCKS-3 | 38ms
+  - SHADOWSOCKS-4 | 53ms
+  - VLESS-5 | 34ms
+  - VLESS-6 | 43ms
+  - VLESS-7 | 28ms
+  - VLESS-8 | 27ms
+  - VLESS-9 | 29ms
+  - VLESS-10 | 33ms
+  - SHADOWSOCKS-11 | 66ms
+  - SHADOWSOCKS-12 | 69ms
+  - SHADOWSOCKS-13 | 67ms
+  - VLESS-14 | 29ms
+  - VMESS-15 | 66ms
+  - VLESS-16 | 36ms
+  - VLESS-17 | 29ms
+  - VLESS-18 | 40ms
+  - SHADOWSOCKS-19 | 297ms
+  - SHADOWSOCKS-20 | 103ms
+  - VLESS-21 | 32ms
+  - SHADOWSOCKS-22 | 133ms
+  - SHADOWSOCKS-23 | 133ms
+  - SHADOWSOCKS-24 | 153ms
+  - SHADOWSOCKS-25 | 136ms
+  - VLESS-26 | 31ms
+  - VMESS-27 | 139ms
+  - VLESS-28 | 37ms
+  - VLESS-29 | 26ms
+  - VLESS-30 | 34ms
+  - VLESS-31 | 71ms
+  - VLESS-32 | 28ms
+  - VLESS-33 | 192ms
+  - VLESS-34 | 188ms
+  - VLESS-35 | 35ms
+  - VLESS-36 | 205ms
+  - VLESS-37 | 31ms
+  - SHADOWSOCKS-38 | 176ms
+  - SHADOWSOCKS-39 | 160ms
+  - VLESS-40 | 190ms
+  - SHADOWSOCKS-41 | 163ms
+  - VLESS-42 | 296ms
+  - SHADOWSOCKS-43 | 161ms
+  - VLESS-44 | 299ms
+  - SHADOWSOCKS-45 | 161ms
+  - SHADOWSOCKS-46 | 160ms
+  - SHADOWSOCKS-47 | 160ms
+  - VLESS-48 | 42ms
+  - SHADOWSOCKS-49 | 161ms
+  - VLESS-50 | 57ms
+  - SHADOWSOCKS-51 | 163ms
+  - SHADOWSOCKS-52 | 167ms
+  - SHADOWSOCKS-53 | 161ms
+  - SHADOWSOCKS-54 | 162ms
+  - SHADOWSOCKS-55 | 159ms
+  - SHADOWSOCKS-56 | 161ms
+  - SHADOWSOCKS-57 | 159ms
   - VLESS-58 | 194ms
-  - VLESS-59 | 200ms
-  - SHADOWSOCKS-60 | 258ms
-  - VLESS-61 | 199ms
-  - VLESS-62 | 59ms
-  - SHADOWSOCKS-63 | 160ms
-  - SHADOWSOCKS-64 | 160ms
-  - SHADOWSOCKS-65 | 219ms
-  - VLESS-66 | 278ms
-  - VLESS-67 | 195ms
-  - VLESS-68 | 49ms
-  - SHADOWSOCKS-69 | 161ms
-  - VLESS-70 | 313ms
-  - SHADOWSOCKS-71 | 223ms
-  - SHADOWSOCKS-72 | 199ms
-  - VLESS-73 | 198ms
-  - VLESS-74 | 219ms
-  - VLESS-75 | 204ms
-  - VLESS-76 | 186ms
-  - VLESS-77 | 51ms
-  - SHADOWSOCKS-78 | 361ms
-  - VLESS-79 | 215ms
-  - SHADOWSOCKS-80 | 254ms
-  - SHADOWSOCKS-81 | 112ms
-  - SHADOWSOCKS-82 | 161ms
-  - VLESS-83 | 299ms
-  - VLESS-84 | 231ms
-  - SHADOWSOCKS-85 | 207ms
-  - SHADOWSOCKS-86 | 359ms
-  - TROJAN-87 | 352ms
-  - VLESS-88 | 50ms
-  - SHADOWSOCKS-89 | 161ms
-  - SHADOWSOCKS-90 | 163ms
-  - SHADOWSOCKS-91 | 371ms
-  - SHADOWSOCKS-92 | 311ms
-  - VLESS-93 | 220ms
-  - SHADOWSOCKS-94 | 188ms
-  - SHADOWSOCKS-95 | 201ms
-  - VLESS-96 | 37ms
-  - VLESS-97 | 52ms
-  - VLESS-98 | 273ms
-  - VLESS-99 | 291ms
-  - VLESS-100 | 269ms
-  - VLESS-101 | 292ms
-  - VLESS-102 | 32ms
-  - VLESS-103 | 328ms
-  - SHADOWSOCKS-104 | 235ms
-  - VLESS-105 | 207ms
-  - VLESS-106 | 218ms
-  - VLESS-107 | 239ms
-  - VLESS-108 | 322ms
-  - VLESS-109 | 262ms
-  - VLESS-110 | 41ms
-  - VLESS-111 | 241ms
-  - SHADOWSOCKS-112 | 317ms
-  - VLESS-113 | 423ms
-  - SHADOWSOCKS-114 | 376ms
-  - VLESS-115 | 81ms
-  - VLESS-116 | 242ms
-  - VMESS-117 | 221ms
-  - SHADOWSOCKS-118 | 335ms
-  - VLESS-119 | 280ms
-  - VLESS-120 | 243ms
-  - VLESS-121 | 248ms
-  - VLESS-122 | 251ms
-  - SHADOWSOCKS-123 | 402ms
-  - SHADOWSOCKS-124 | 381ms
-  - VLESS-125 | 280ms
-  - VLESS-126 | 238ms
-  - SHADOWSOCKS-127 | 444ms
-  - VLESS-128 | 244ms
-  - SHADOWSOCKS-129 | 401ms
-  - VLESS-130 | 506ms
-  - VLESS-131 | 235ms
-  - TROJAN-132 | 442ms
-  - VLESS-133 | 268ms
-  - VMESS-134 | 103ms
-  - TROJAN-135 | 458ms
-  - VLESS-136 | 237ms
-  - TROJAN-137 | 491ms
-  - SHADOWSOCKS-138 | 488ms
-  - TROJAN-139 | 282ms
-  - TROJAN-140 | 445ms
-  - TROJAN-141 | 417ms
-  - TROJAN-142 | 493ms
-  - SHADOWSOCKS-143 | 455ms
-  - SHADOWSOCKS-144 | 455ms
-  - VMESS-145 | 594ms
-  - SHADOWSOCKS-146 | 28ms
-  - SHADOWSOCKS-147 | 362ms
-  - VLESS-148 | 39ms
-  - VLESS-149 | 476ms
-  - VLESS-150 | 206ms
-  - VLESS-151 | 247ms
-  - VLESS-152 | 564ms
-  - VLESS-153 | 785ms
-  - SHADOWSOCKS-154 | 330ms
-  - VLESS-155 | 261ms
-  - SHADOWSOCKS-156 | 605ms
-  - VLESS-157 | 241ms
-  - VLESS-158 | 126ms
-  - VLESS-159 | 210ms
-  - TROJAN-160 | 119ms
-  - VLESS-161 | 629ms
-  - SHADOWSOCKS-162 | 410ms
-  - VMESS-163 | 474ms
-  - SHADOWSOCKS-164 | 159ms
-  - VLESS-165 | 217ms
-  - SHADOWSOCKS-166 | 227ms
-  - SHADOWSOCKS-167 | 249ms
-  - VLESS-168 | 44ms
-  - VLESS-169 | 52ms
-  - VLESS-170 | 294ms
-  - VLESS-171 | 243ms
-  - SHADOWSOCKS-172 | 204ms
-  - SHADOWSOCKS-173 | 160ms
-  - VLESS-174 | 274ms
-  - VLESS-175 | 240ms
-  - SHADOWSOCKS-176 | 254ms
-  - SHADOWSOCKS-177 | 1060ms
-  - SHADOWSOCKS-178 | 431ms
-  - SHADOWSOCKS-179 | 571ms
-  - VLESS-180 | 293ms
-  - VLESS-181 | 199ms
-  - VMESS-182 | 1324ms
-  - VLESS-183 | 238ms
-  - VLESS-184 | 237ms
-  - VLESS-185 | 51ms
-  - VLESS-186 | 37ms
-  - VLESS-187 | 34ms
-  - VLESS-188 | 260ms
-  - VLESS-189 | 252ms
-  - VLESS-190 | 265ms
-  - VLESS-191 | 238ms
-  - VLESS-192 | 242ms
-  - VLESS-193 | 239ms
-  - VLESS-194 | 234ms
-  - VLESS-195 | 226ms
-  - VLESS-196 | 66ms
-  - VLESS-197 | 50ms
-  - VLESS-198 | 57ms
-  - VLESS-199 | 60ms
-  - VLESS-200 | 77ms
+  - SHADOWSOCKS-59 | 160ms
+  - VLESS-60 | 278ms
+  - VLESS-61 | 243ms
+  - VLESS-62 | 191ms
+  - VMESS-63 | 97ms
+  - SHADOWSOCKS-64 | 167ms
+  - VLESS-65 | 191ms
+  - VLESS-66 | 266ms
+  - VLESS-67 | 190ms
+  - VLESS-68 | 182ms
+  - VLESS-69 | 38ms
+  - SHADOWSOCKS-70 | 164ms
+  - SHADOWSOCKS-71 | 168ms
+  - VLESS-72 | 198ms
+  - VLESS-73 | 33ms
+  - VLESS-74 | 195ms
+  - VLESS-75 | 36ms
+  - SHADOWSOCKS-76 | 299ms
+  - SHADOWSOCKS-77 | 169ms
+  - VLESS-78 | 26ms
+  - VLESS-79 | 196ms
+  - SHADOWSOCKS-80 | 168ms
+  - VLESS-81 | 36ms
+  - SHADOWSOCKS-82 | 169ms
+  - SHADOWSOCKS-83 | 173ms
+  - SHADOWSOCKS-84 | 169ms
+  - VLESS-85 | 195ms
+  - SHADOWSOCKS-86 | 164ms
+  - VLESS-87 | 197ms
+  - SHADOWSOCKS-88 | 168ms
+  - SHADOWSOCKS-89 | 255ms
+  - SHADOWSOCKS-90 | 280ms
+  - VLESS-91 | 202ms
+  - VLESS-92 | 216ms
+  - SHADOWSOCKS-93 | 170ms
+  - SHADOWSOCKS-94 | 160ms
+  - VLESS-95 | 271ms
+  - VLESS-96 | 35ms
+  - VLESS-97 | 243ms
+  - SHADOWSOCKS-98 | 169ms
+  - SHADOWSOCKS-99 | 160ms
+  - VLESS-100 | 196ms
+  - SHADOWSOCKS-101 | 194ms
+  - TROJAN-102 | 250ms
+  - VLESS-103 | 330ms
+  - VLESS-104 | 189ms
+  - SHADOWSOCKS-105 | 198ms
+  - VLESS-106 | 29ms
+  - VLESS-107 | 258ms
+  - VLESS-108 | 228ms
+  - VLESS-109 | 191ms
+  - TROJAN-110 | 253ms
+  - VLESS-111 | 272ms
+  - VLESS-112 | 26ms
+  - SHADOWSOCKS-113 | 226ms
+  - VLESS-114 | 51ms
+  - VLESS-115 | 297ms
+  - VLESS-116 | 202ms
+  - SHADOWSOCKS-117 | 205ms
+  - SHADOWSOCKS-118 | 113ms
+  - VLESS-119 | 315ms
+  - VLESS-120 | 305ms
+  - VLESS-121 | 189ms
+  - VLESS-122 | 289ms
+  - VLESS-123 | 260ms
+  - VLESS-124 | 255ms
+  - VLESS-125 | 253ms
+  - VLESS-126 | 207ms
+  - VLESS-127 | 309ms
+  - VLESS-128 | 47ms
+  - VLESS-129 | 35ms
+  - VLESS-130 | 215ms
+  - VLESS-131 | 200ms
+  - VLESS-132 | 27ms
+  - VLESS-133 | 335ms
+  - SHADOWSOCKS-134 | 319ms
+  - SHADOWSOCKS-135 | 222ms
+  - VLESS-136 | 235ms
+  - VLESS-137 | 265ms
+  - VLESS-138 | 343ms
+  - VLESS-139 | 270ms
+  - VLESS-140 | 232ms
+  - VMESS-141 | 81ms
+  - VLESS-142 | 55ms
+  - VLESS-143 | 25ms
+  - SHADOWSOCKS-144 | 273ms
+  - SHADOWSOCKS-145 | 332ms
+  - SHADOWSOCKS-146 | 177ms
+  - VLESS-147 | 312ms
+  - VLESS-148 | 238ms
+  - SHADOWSOCKS-149 | 258ms
+  - VLESS-150 | 204ms
+  - SHADOWSOCKS-151 | 342ms
+  - VLESS-152 | 237ms
+  - SHADOWSOCKS-153 | 335ms
+  - SHADOWSOCKS-154 | 333ms
+  - VLESS-155 | 32ms
+  - VLESS-156 | 294ms
+  - VLESS-157 | 268ms
+  - SHADOWSOCKS-158 | 602ms
+  - SHADOWSOCKS-159 | 347ms
+  - VLESS-160 | 482ms
+  - VLESS-161 | 281ms
+  - TROJAN-162 | 413ms
+  - TROJAN-163 | 416ms
+  - SHADOWSOCKS-164 | 404ms
+  - TROJAN-165 | 400ms
+  - SHADOWSOCKS-166 | 177ms
+  - TROJAN-167 | 398ms
+  - TROJAN-168 | 412ms
+  - VMESS-169 | 532ms
+  - TROJAN-170 | 390ms
+  - SHADOWSOCKS-171 | 427ms
+  - SHADOWSOCKS-172 | 429ms
+  - VLESS-173 | 215ms
+  - SHADOWSOCKS-174 | 460ms
+  - SHADOWSOCKS-175 | 429ms
+  - VLESS-176 | 658ms
+  - SHADOWSOCKS-177 | 344ms
+  - SHADOWSOCKS-178 | 262ms
+  - VLESS-179 | 371ms
+  - VLESS-180 | 535ms
+  - TROJAN-181 | 498ms
+  - TROJAN-182 | 75ms
+  - VLESS-183 | 258ms
+  - SHADOWSOCKS-184 | 427ms
+  - VLESS-185 | 286ms
+  - SHADOWSOCKS-186 | 163ms
+  - VMESS-187 | 592ms
+  - SHADOWSOCKS-188 | 205ms
+  - SHADOWSOCKS-189 | 369ms
+  - VLESS-190 | 327ms
+  - SHADOWSOCKS-191 | 277ms
+  - SHADOWSOCKS-192 | 481ms
+  - VLESS-193 | 390ms
+  - VLESS-194 | 29ms
+  - VMESS-195 | 418ms
+  - SHADOWSOCKS-196 | 424ms
+  - VLESS-197 | 49ms
+  - VLESS-198 | 230ms
+  - VLESS-199 | 235ms
+  - VLESS-200 | 245ms
   url: https://www.google.com/generate_204
   interval: 300
 rules:
