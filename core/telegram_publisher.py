@@ -149,12 +149,12 @@ class TelegramPublisher:
         """Build formatted message for individual config."""
         protocol = result.get('protocol', 'UNKNOWN').upper()
         ping = result.get('ping', 0)
+        # Get speed directly (already in Mbps from test_runner)
         download_speed = result.get('download_speed', 0)
         country = result.get('country', 'Unknown')
         uri = result.get('uri', '')
         
-        # Convert speed to MB/s (download_speed is in bytes/sec)
-        speed_mb = download_speed / (1024 * 1024) if download_speed > 0 else 0
+        speed_mb = download_speed / 8 if download_speed > 0 else 0  # Convert Mbps to MB/s
         
         # Build message with exact format requested
         message = f"""🟢 New Config Found
