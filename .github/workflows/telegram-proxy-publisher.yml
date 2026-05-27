@@ -1,0 +1,47 @@
+name: Telegram Proxy Publisher
+
+on:
+  schedule:
+    # Run every 30 minutes (rate limited to 30/day in code)
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-proxy-to-telegram:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Collect, test and publish Telegram proxy
+        env:
+          PYTHONIOENCODING: utf-8
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHANNEL_HANDLE: ${{ vars.TELEGRAM_CHANNEL_HANDLE }}
+        run: |
+          python core/telegram_proxy_runner.py
+
+      - name: Commit proxy state changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -f working_telegram_proxies.json telegram_proxy_state.json 2>/dev/null || true
+          git diff --quiet && git diff --staged --quiet || (git commit -m "📤 Telegram proxy update: $(date +'%Y-%m-%d %H:%M')" && git push)
