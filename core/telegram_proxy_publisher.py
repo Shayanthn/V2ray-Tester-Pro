@@ -1,4 +1,3 @@
-import hashlib
 import json
 import logging
 import os
@@ -86,8 +85,8 @@ class TelegramProxyPublisher:
             json.dump(data, file, indent=2, ensure_ascii=False)
 
     @staticmethod
-    def _proxy_hash(proxy: Dict[str, Any]) -> str:
-        raw = "|".join(
+    def _proxy_id(proxy: Dict[str, Any]) -> str:
+        return "|".join(
             [
                 proxy.get("type", ""),
                 proxy.get("server", ""),
@@ -97,7 +96,6 @@ class TelegramProxyPublisher:
                 proxy.get("password", ""),
             ]
         )
-        return hashlib.md5(raw.encode("utf-8")).hexdigest()
 
     def _reset_daily_counter_if_needed(self):
         today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -118,7 +116,7 @@ class TelegramProxyPublisher:
 
         now = datetime.now(timezone.utc).isoformat()
         for proxy in proxies:
-            proxy_hash = self._proxy_hash(proxy)
+            proxy_hash = self._proxy_id(proxy)
             existing = indexed.get(proxy_hash)
 
             if existing:
