@@ -2,8 +2,8 @@ name: Telegram Proxy Publisher
 
 on:
   schedule:
-    # Offset from other workflows and keep low-noise cadence
-    - cron: '7 * * * *'
+    # Run every 30 minutes (rate limited to 30/day in code)
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -15,12 +15,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
