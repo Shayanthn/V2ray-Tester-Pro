@@ -1,364 +1,6 @@
 {
   "configs": [
     {
-      "protocol": "trojan",
-      "address": "64.94.95.118",
-      "ping": 85,
-      "jitter": 80,
-      "download_speed": 43.67,
-      "upload_speed": 33.78,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "64.94.95.118",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10803,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "trojan",
-            "settings": {
-              "servers": [
-                {
-                  "address": "64.94.95.118",
-                  "port": 57142,
-                  "password": "kkzh2prsyr2ik47as615"
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "tcp",
-              "security": "tls",
-              "tlsSettings": {
-                "serverName": "64.94.95.118",
-                "allowInsecure": true,
-                "fingerprint": "chrome",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ]
-              },
-              "tcpSettings": {
-                "header": {
-                  "type": "none"
-                }
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "trojan://kkzh2prsyr2ik47as615@64.94.95.118:57142?security=tls#%F0%9F%87%BA%F0%9F%87%B8US-64.94.95.118-4581",
-      "country": "United States",
-      "country_code": "US",
-      "city": "Dallas",
-      "isp": "Dedicated.com",
-      "found_at": "2026-05-29T20:57:21.326054",
-      "hash": "f9ab8e44474a9c24b98cdf9dad2904c6",
-      "sent_to_telegram": true,
-      "sent_at": "2026-05-29T22:02:18.733010"
-    },
-    {
-      "protocol": "trojan",
-      "address": "5.180.78.22",
-      "ping": 469,
-      "jitter": 407,
-      "download_speed": 6.42,
-      "upload_speed": 6.3,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "5.180.78.22",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10813,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "trojan",
-            "settings": {
-              "servers": [
-                {
-                  "address": "5.180.78.22",
-                  "port": 443,
-                  "password": "d30ab83dbde4480082048fb315bedebd"
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "tcp",
-              "security": "tls",
-              "tlsSettings": {
-                "serverName": "5.180.78.22",
-                "allowInsecure": true,
-                "fingerprint": "chrome",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ]
-              },
-              "tcpSettings": {
-                "header": {
-                  "type": "none"
-                }
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "trojan://d30ab83dbde4480082048fb315bedebd@5.180.78.22:443?security=tls#%F0%9F%87%B8%F0%9F%87%ACSG-5.180.78.22-4557",
-      "country": "Singapore",
-      "country_code": "SG",
-      "city": "Singapore",
-      "isp": "Datacamp Limited",
-      "found_at": "2026-05-29T20:57:29.513931",
-      "hash": "7aac25d4c332c20ac7155f77f2c6c9e0",
-      "sent_to_telegram": false
-    },
-    {
-      "protocol": "vmess",
-      "address": "172.111.146.64",
-      "ping": 331,
-      "jitter": 275,
-      "download_speed": 3.24,
-      "upload_speed": 3.18,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "172.111.146.64",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10810,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vmess",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "172.111.146.64",
-                  "port": 80,
-                  "users": [
-                    {
-                      "id": "05b8c783-7f59-47f9-9923-06a465679f6a",
-                      "alterId": 0,
-                      "security": "auto"
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "ws",
-              "security": "",
-              "wsSettings": {
-                "path": "/vmess/",
-                "headers": {}
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vmess://ewogICAgImFkZCI6ICIxNzIuMTExLjE0Ni42NCIsCiAgICAiYWlkIjogMCwKICAgICJob3N0IjogIiIsCiAgICAiaWQiOiAiMDViOGM3ODMtN2Y1OS00N2Y5LTk5MjMtMDZhNDY1Njc5ZjZhIiwKICAgICJuZXQiOiAid3MiLAogICAgInBhdGgiOiAiL3ZtZXNzLyIsCiAgICAicG9ydCI6IDgwLAogICAgInBzIjogIvCfh6/wn4e1SlAtMTcyLjExMS4xNDYuNjQtNDY4OCIsCiAgICAidGxzIjogIiIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9",
-      "country": "Japan",
-      "country_code": "JP",
-      "city": "Shibuya City",
-      "isp": "Latitude.sh",
-      "found_at": "2026-05-29T20:57:37.479402",
-      "hash": "ad95fde98a7b6e81f68ec0a212262585",
-      "sent_to_telegram": false
-    },
-    {
-      "protocol": "vmess",
-      "address": "104.17.77.77",
-      "ping": 1664,
-      "jitter": 2086,
-      "download_speed": 1.64,
-      "upload_speed": 1.68,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "104.17.77.77",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10804,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vmess",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "104.17.77.77",
-                  "port": 8443,
-                  "users": [
-                    {
-                      "id": "60441548-b68e-43b2-8191-e3b884be4b3c",
-                      "alterId": 0,
-                      "security": "auto"
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "ws",
-              "security": "tls",
-              "tlsSettings": {
-                "serverName": "v2ray1.dozapp.xyz",
-                "allowInsecure": true,
-                "fingerprint": "chrome"
-              },
-              "wsSettings": {
-                "path": "/lMnsZUN4/",
-                "headers": {}
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vmess://ewogICAgImFkZCI6ICIxMDQuMTcuNzcuNzciLAogICAgImFpZCI6IDAsCiAgICAiaG9zdCI6ICIiLAogICAgImlkIjogIjYwNDQxNTQ4LWI2OGUtNDNiMi04MTkxLWUzYjg4NGJlNGIzYyIsCiAgICAibmV0IjogIndzIiwKICAgICJwYXRoIjogIi9sTW5zWlVONC8iLAogICAgInBvcnQiOiA4NDQzLAogICAgInBzIjogIvCfj4FSRUxBWS0xMDQuMTcuNzcuNzctNDY4NyIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogZmFsc2UsCiAgICAic25pIjogInYycmF5MS5kb3phcHAueHl6Igp9",
-      "country": "United States",
-      "country_code": "US",
-      "city": "San Francisco",
-      "isp": "Cloudflare, Inc.",
-      "found_at": "2026-05-29T20:57:49.472705",
-      "hash": "bba55ffd84cdd6906310c9fc563cfd1d",
-      "sent_to_telegram": false
-    },
-    {
       "protocol": "shadowsocks",
       "address": "82.38.31.218",
       "ping": 170,
@@ -4604,7 +4246,8 @@
       "isp": "Global Connectivity Solutions LLP",
       "found_at": "2026-05-30T00:15:50.568977",
       "hash": "ed81ec4bfbb0d1c83542baab9ba6ce6c",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-05-30T21:42:43.919048"
     },
     {
       "protocol": "vless",
@@ -17911,7 +17554,8 @@
       "isp": "HostPapa",
       "found_at": "2026-05-30T00:22:32.704546",
       "hash": "9dda80d433f49de52337c70b44d5c038",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-05-30T21:42:43.919077"
     },
     {
       "protocol": "vless",
@@ -29537,7 +29181,8 @@
       "isp": "Cloudflare, Inc.",
       "found_at": "2026-05-30T00:27:25.922096",
       "hash": "d54d39cac6510c19d2c89235f108369d",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-05-30T21:42:43.919092"
     },
     {
       "protocol": "vless",
@@ -33749,7 +33394,8 @@
       "isp": "Baykov Ilya Sergeevich",
       "found_at": "2026-05-30T00:29:45.107658",
       "hash": "5833faa02051d6ad1a64811f94462d85",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-05-30T21:42:43.919098"
     },
     {
       "protocol": "vless",
@@ -35805,7 +35451,8 @@
       "isp": "Cloudflare, Inc.",
       "found_at": "2026-05-30T00:30:22.114093",
       "hash": "73ac87bc2735e68d727b31422b51d23f",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-05-30T21:42:43.919101"
     },
     {
       "protocol": "vless",
@@ -45308,6 +44955,6 @@
     }
   ],
   "last_updated": "2026-05-30T10:49:10.932509",
-  "total_configs": 479,
+  "total_configs": 475,
   "created_at": "2026-05-22T15:35:41.926037"
 }
