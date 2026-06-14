@@ -120434,9 +120434,95 @@
       "found_at": "2026-06-14T17:11:31.820502",
       "hash": "c9c4c84eb670fd1f6f2025570416b9c9",
       "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "47.244.120.197",
+      "ping": 1586,
+      "jitter": 2421,
+      "download_speed": 0.06,
+      "upload_speed": 0.0,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "47.244.120.197",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10803,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "47.244.120.197",
+                  "port": 44867,
+                  "users": [
+                    {
+                      "id": "845e6b08-2919-4290-ade0-5dc7dcea59ca",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "",
+              "wsSettings": {
+                "path": "/arki?ed=2048",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICI0Ny4yNDQuMTIwLjE5NyIsCiAgICAiYWlkIjogMCwKICAgICJob3N0IjogIiIsCiAgICAiaWQiOiAiODQ1ZTZiMDgtMjkxOS00MjkwLWFkZTAtNWRjN2RjZWE1OWNhIiwKICAgICJuZXQiOiAid3MiLAogICAgInBhdGgiOiAiL2Fya2k/ZWQ9MjA0OCIsCiAgICAicG9ydCI6IDQ0ODY3LAogICAgInBzIjogIvCfh63wn4ewSEstNDcuMjQ0LjEyMC4xOTctNDUxOSIsCiAgICAidGxzIjogIiIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9",
+      "country": "Hong Kong",
+      "country_code": "HK",
+      "city": "Hong Kong",
+      "isp": "Alibaba us Technology Co., Ltd.",
+      "found_at": "2026-06-14T18:26:12.841091",
+      "hash": "fd30d6b13c277b794aa30f1c8718f679",
+      "sent_to_telegram": false
     }
   ],
-  "last_updated": "2026-06-14T17:11:31.820516",
-  "total_configs": 1288,
+  "last_updated": "2026-06-14T18:26:12.841106",
+  "total_configs": 1289,
   "created_at": "2026-05-22T15:35:41.926037"
 }
