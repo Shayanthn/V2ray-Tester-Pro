@@ -1,192 +1,6 @@
 {
   "configs": [
     {
-      "protocol": "vless",
-      "address": "45.13.119.219",
-      "ping": 326,
-      "jitter": 235,
-      "download_speed": 5.04,
-      "upload_speed": 0.0,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "45.13.119.219",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10805,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vless",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "45.13.119.219",
-                  "port": 8888,
-                  "users": [
-                    {
-                      "id": "eb77be10-9d9e-527b-a78d-8caaf58992d6",
-                      "encryption": "none",
-                      "flow": ""
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "tcp",
-              "security": "none",
-              "tcpSettings": {
-                "header": {
-                  "type": "none"
-                }
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vless://eb77be10-9d9e-527b-a78d-8caaf58992d6@45.13.119.219:8888?security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp#%F0%9F%8C%8AConfigV2RayNG",
-      "country": "France",
-      "country_code": "FR",
-      "city": "Paris",
-      "isp": "Dyjix SAS",
-      "found_at": "2026-06-20T16:19:32.633070",
-      "hash": "b89f7fd8dacada1292477e07515f6360",
-      "sent_to_telegram": false
-    },
-    {
-      "protocol": "vless",
-      "address": "82.202.141.198",
-      "ping": 539,
-      "jitter": 523,
-      "download_speed": 0.0,
-      "upload_speed": 6.99,
-      "is_bypassing": false,
-      "connectivity": {
-        "telegram": false,
-        "instagram": true,
-        "youtube": false
-      },
-      "ip": "82.202.141.198",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10818,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vless",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "82.202.141.198",
-                  "port": 51234,
-                  "users": [
-                    {
-                      "id": "02691193-6439-459d-b7e5-f64f6887aa32",
-                      "encryption": "none",
-                      "flow": ""
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "grpc",
-              "security": "reality",
-              "realitySettings": {
-                "serverName": "max.ru",
-                "allowInsecure": true,
-                "fingerprint": "firefox",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ],
-                "show": false,
-                "publicKey": "QOmBHIllrJ3GBWZ9Ik__p6FiuZeUAdJ3nyc4OJvMczI",
-                "shortId": "",
-                "spiderX": "/"
-              },
-              "grpcSettings": {
-                "serviceName": "public-ru",
-                "multiMode": true
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vless://02691193-6439-459d-b7e5-f64f6887aa32@82.202.141.198:51234?encryption=none&type=grpc&security=reality&mode=gun&serviceName=public-ru&fp=firefox&sni=max.ru&pbk=QOmBHIllrJ3GBWZ9Ik__p6FiuZeUAdJ3nyc4OJvMczI#",
-      "country": "Russia",
-      "country_code": "RU",
-      "city": "Moscow",
-      "isp": "Cloud Technologies LLC Trading AS Cloud.ru",
-      "found_at": "2026-06-20T16:44:43.646088",
-      "hash": "a629e1f53a3a09a554869685a52b0f2c",
-      "sent_to_telegram": false
-    },
-    {
       "protocol": "shadowsocks",
       "address": "156.146.38.167",
       "ping": 74,
@@ -553,7 +367,8 @@
       "isp": "Gsl Networks Pty LTD",
       "found_at": "2026-06-21T00:13:11.411514",
       "hash": "183696130a5f1577651add1d7a38c427",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-06-21T17:56:03.911936"
     },
     {
       "protocol": "shadowsocks",
@@ -626,7 +441,8 @@
       "isp": "Gsl Networks Pty LTD",
       "found_at": "2026-06-21T00:13:11.611160",
       "hash": "f061d584b4706d2805b2deec853408f6",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-06-21T17:56:03.911950"
     },
     {
       "protocol": "shadowsocks",
@@ -7295,7 +7111,8 @@
       "isp": "Dedicated.com",
       "found_at": "2026-06-21T00:19:23.348651",
       "hash": "602185f33994037ea0888ac310a67cae",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-06-21T17:56:03.911966"
     },
     {
       "protocol": "shadowsocks",
@@ -17933,7 +17750,8 @@
       "isp": "Netcrafters Ou",
       "found_at": "2026-06-21T09:14:13.026880",
       "hash": "2bc20b5eced35178550f7fbceda8354c",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-06-21T17:56:03.911984"
     },
     {
       "protocol": "vless",
@@ -18021,7 +17839,8 @@
       "isp": "Netcrafters Ou",
       "found_at": "2026-06-21T09:14:13.172469",
       "hash": "93330e7064c4ed339cfd2d8ade98ee3d",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-06-21T17:56:03.911985"
     },
     {
       "protocol": "vless",
@@ -92421,6 +92240,6 @@
     }
   ],
   "last_updated": "2026-06-21T09:46:26.561943",
-  "total_configs": 998,
+  "total_configs": 996,
   "created_at": "2026-05-22T15:35:41.926037"
 }
