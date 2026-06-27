@@ -187423,9 +187423,1879 @@
       "found_at": "2026-06-26T23:05:56.031062",
       "hash": "314b433c5330e53d46cfa98fb37ea15a",
       "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "104.17.77.77",
+      "ping": 697,
+      "jitter": 887,
+      "download_speed": 2.88,
+      "upload_speed": 2.9,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "104.17.77.77",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10805,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "104.17.77.77",
+                  "port": 8443,
+                  "users": [
+                    {
+                      "id": "60441548-b68e-43b2-8191-e3b884be4b3c",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "v2ray1.dozapp.xyz",
+                "allowInsecure": true,
+                "fingerprint": "chrome"
+              },
+              "wsSettings": {
+                "path": "/lMnsZUN4/",
+                "headers": {
+                  "Host": "v2ray1.dozapp.xyz"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICIxMDQuMTcuNzcuNzciLAogICAgImFpZCI6IDAsCiAgICAiaG9zdCI6ICJ2MnJheTEuZG96YXBwLnh5eiIsCiAgICAiaWQiOiAiNjA0NDE1NDgtYjY4ZS00M2IyLTgxOTEtZTNiODg0YmU0YjNjIiwKICAgICJuZXQiOiAid3MiLAogICAgInBhdGgiOiAiL2xNbnNaVU40LyIsCiAgICAicG9ydCI6IDg0NDMsCiAgICAicHMiOiAi8J+PgVJFTEFZLTEwNC4xNy43Ny43Ny0yMDU4IiwKICAgICJ0bHMiOiAidGxzIiwKICAgICJ0eXBlIjogImF1dG8iLAogICAgInNlY3VyaXR5IjogImF1dG8iLAogICAgInNraXAtY2VydC12ZXJpZnkiOiB0cnVlLAogICAgInNuaSI6ICIiCn0=",
+      "country": "United States",
+      "country_code": "US",
+      "city": "San Francisco",
+      "isp": "Cloudflare, Inc.",
+      "found_at": "2026-06-27T00:14:37.168619",
+      "hash": "d5b813ca35862e634ea687e390d89e57",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "103.177.136.45",
+      "ping": 552,
+      "jitter": 500,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": false
+      },
+      "ip": "103.177.136.45",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10800,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "103.177.136.45",
+                  "port": 46424,
+                  "password": "4f4d1167-ef14-4304-9bce-0740472503ef"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "de.01.naiun.bilibili.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://4f4d1167-ef14-4304-9bce-0740472503ef@103.177.136.45:46424?security=tls&sni=de.01.naiun.bilibili.com#%F0%9F%87%AD%F0%9F%87%B0HK-103.177.136.45-0798",
+      "country": "Canada",
+      "country_code": "CA",
+      "city": "Toronto",
+      "isp": "Tgs Networks Inc.",
+      "found_at": "2026-06-27T00:23:22.209991",
+      "hash": "17072f19a664cbe7b38d21749488af9f",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "185.126.236.44",
+      "ping": 316,
+      "jitter": 278,
+      "download_speed": 13.91,
+      "upload_speed": 8.89,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": false,
+        "youtube": false
+      },
+      "ip": "185.126.236.44",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10805,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "185.126.236.44",
+                  "port": 443,
+                  "password": "BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "www.mesaly.click",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL@185.126.236.44:443?security=tls&sni=www.mesaly.click#%F0%9F%87%A6%F0%9F%87%B9AT-185.126.236.44-2057",
+      "country": "Austria",
+      "country_code": "AT",
+      "city": "Vienna",
+      "isp": "Brainstorm Network, INC",
+      "found_at": "2026-06-27T00:36:52.120700",
+      "hash": "44df2386c76724e41f4db1bc6058ecfa",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "92.119.35.127",
+      "ping": 253,
+      "jitter": 227,
+      "download_speed": 6.92,
+      "upload_speed": 11.66,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "92.119.35.127",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10818,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "92.119.35.127",
+                  "port": 443,
+                  "password": "aR9EJWEB2Jp3m6xKJK=Ct7kLyqFSU-iDBR"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "92.119.35.127",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://aR9EJWEB2Jp3m6xKJK=Ct7kLyqFSU-iDBR@92.119.35.127:443?security=tls#%F0%9F%87%A9%F0%9F%87%AADE-92.119.35.127-2073",
+      "country": "Germany",
+      "country_code": "DE",
+      "city": "Frankfurt",
+      "isp": "Hivelocity LLC",
+      "found_at": "2026-06-27T00:37:04.573965",
+      "hash": "23b7e0f3a86149d10496ebb235a47072",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "92.119.35.117",
+      "ping": 249,
+      "jitter": 222,
+      "download_speed": 5.6,
+      "upload_speed": 12.09,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "92.119.35.117",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "92.119.35.117",
+                  "port": 443,
+                  "password": "aR9EJWEB2Jp3m6xKJK=Ct7kLyqFSU-iDBR"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "92.119.35.117",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://aR9EJWEB2Jp3m6xKJK=Ct7kLyqFSU-iDBR@92.119.35.117:443?security=tls#%F0%9F%87%A9%F0%9F%87%AADE-92.119.35.117-2072",
+      "country": "Germany",
+      "country_code": "DE",
+      "city": "Frankfurt",
+      "isp": "Hivelocity LLC",
+      "found_at": "2026-06-27T00:37:04.933454",
+      "hash": "d0707f62be42e7210ce88d4350606314",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "92.119.35.71",
+      "ping": 250,
+      "jitter": 223,
+      "download_speed": 13.73,
+      "upload_speed": 10.87,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "92.119.35.71",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10801,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "92.119.35.71",
+                  "port": 443,
+                  "password": "urhj8z8R8nBovrNsYzXhL35jLGC5ruguRh"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "92.119.35.71",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://urhj8z8R8nBovrNsYzXhL35jLGC5ruguRh@92.119.35.71:443?security=tls#%F0%9F%87%A9%F0%9F%87%AADE-92.119.35.71-2075",
+      "country": "Germany",
+      "country_code": "DE",
+      "city": "Frankfurt",
+      "isp": "Hivelocity LLC",
+      "found_at": "2026-06-27T00:37:05.235621",
+      "hash": "4cb1609b140e0d5101c70df9aab64c9f",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "92.119.35.105",
+      "ping": 254,
+      "jitter": 227,
+      "download_speed": 13.57,
+      "upload_speed": 10.8,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "92.119.35.105",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10813,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "92.119.35.105",
+                  "port": 443,
+                  "password": "urhj8z8R8nBovrNsYzXhL35jLGC5ruguRh"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "92.119.35.105",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://urhj8z8R8nBovrNsYzXhL35jLGC5ruguRh@92.119.35.105:443?security=tls#%F0%9F%87%A9%F0%9F%87%AADE-92.119.35.105-2076",
+      "country": "Germany",
+      "country_code": "DE",
+      "city": "Frankfurt",
+      "isp": "Hivelocity LLC",
+      "found_at": "2026-06-27T00:37:05.949420",
+      "hash": "d1959dc2d9c9c91f62e5545b346a9a98",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "shadowsocks",
+      "address": "82.38.31.155",
+      "ping": 218,
+      "jitter": 155,
+      "download_speed": 14.11,
+      "upload_speed": 12.9,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "82.38.31.155",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10810,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "shadowsocks",
+            "settings": {
+              "servers": [
+                {
+                  "address": "82.38.31.155",
+                  "port": 8080,
+                  "method": "chacha20-ietf-poly1305",
+                  "password": "oZIoA69Q8yhcQV8ka3Pa3A"
+                }
+              ]
+            },
+            "tag": "🇬🇧GB-82.38.31.155-5971"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.155:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.155-5971",
+      "country": "Netherlands",
+      "country_code": "NL",
+      "city": "Amsterdam",
+      "isp": "Greenhost BV",
+      "found_at": "2026-06-27T00:55:23.382352",
+      "hash": "5722843a30045f017ccaba59769f6a31",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "146.70.90.197",
+      "ping": 219,
+      "jitter": 196,
+      "download_speed": 15.46,
+      "upload_speed": 13.63,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "146.70.90.197",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10813,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "146.70.90.197",
+                  "port": 57452,
+                  "password": "t1k169n5zmvvwn96r9ft"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "146.70.90.197",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://t1k169n5zmvvwn96r9ft@146.70.90.197:57452?security=tls#%F0%9F%87%AE%F0%9F%87%AAIE-146.70.90.197-6003",
+      "country": "Ireland",
+      "country_code": "IE",
+      "city": "Dublin",
+      "isp": "M Europe SRL",
+      "found_at": "2026-06-27T00:55:25.204499",
+      "hash": "6afcd26c792827dd82c25eaaed35cba9",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "64.94.95.118",
+      "ping": 133,
+      "jitter": 186,
+      "download_speed": 79.66,
+      "upload_speed": 73.13,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "64.94.95.118",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10804,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "64.94.95.118",
+                  "port": 57142,
+                  "password": "kkzh2prsyr2ik47as615"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "64.94.95.118",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://kkzh2prsyr2ik47as615@64.94.95.118:57142?security=tls#%F0%9F%87%BA%F0%9F%87%B8US-64.94.95.118-6052",
+      "country": "United States",
+      "country_code": "US",
+      "city": "Dallas",
+      "isp": "Dedicated.com",
+      "found_at": "2026-06-27T00:55:25.953367",
+      "hash": "da00c0834713b5ce8f85fcb1fdedd3cb",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "47.250.45.234",
+      "ping": 340,
+      "jitter": 240,
+      "download_speed": 6.66,
+      "upload_speed": 7.92,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "47.250.45.234",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10813,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "47.250.45.234",
+                  "port": 43063,
+                  "users": [
+                    {
+                      "id": "c77f48f5-4be3-4461-b52b-49998e7b897b",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "",
+              "wsSettings": {
+                "path": "/arki?ed=2048",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICI0Ny4yNTAuNDUuMjM0IiwKICAgICJhaWQiOiAwLAogICAgImhvc3QiOiAiIiwKICAgICJpZCI6ICJjNzdmNDhmNS00YmUzLTQ0NjEtYjUyYi00OTk5OGU3Yjg5N2IiLAogICAgIm5ldCI6ICJ3cyIsCiAgICAicGF0aCI6ICIvYXJraT9lZD0yMDQ4IiwKICAgICJwb3J0IjogNDMwNjMsCiAgICAicHMiOiAi8J+HsvCfh75NWS00Ny4yNTAuNDUuMjM0LTYxMDkiLAogICAgInRscyI6ICIiLAogICAgInR5cGUiOiAiYXV0byIsCiAgICAic2VjdXJpdHkiOiAiYXV0byIsCiAgICAic2tpcC1jZXJ0LXZlcmlmeSI6IHRydWUsCiAgICAic25pIjogIiIKfQ==",
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Kuala Lumpur",
+      "isp": "Alibaba us Technology Co., Ltd.",
+      "found_at": "2026-06-27T00:55:36.517333",
+      "hash": "9589f81b5e90853556749b4b9073138b",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "47.250.45.234",
+      "ping": 339,
+      "jitter": 240,
+      "download_speed": 6.65,
+      "upload_speed": 7.95,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "47.250.45.234",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10804,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "47.250.45.234",
+                  "port": 8613,
+                  "users": [
+                    {
+                      "id": "80039b4d-bac0-4f89-82c7-54fad3b0a1ea",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "",
+              "wsSettings": {
+                "path": "/arki?ed=2048",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICI0Ny4yNTAuNDUuMjM0IiwKICAgICJhaWQiOiAwLAogICAgImhvc3QiOiAiIiwKICAgICJpZCI6ICI4MDAzOWI0ZC1iYWMwLTRmODktODJjNy01NGZhZDNiMGExZWEiLAogICAgIm5ldCI6ICJ3cyIsCiAgICAicGF0aCI6ICIvYXJraT9lZD0yMDQ4IiwKICAgICJwb3J0IjogODYxMywKICAgICJwcyI6ICLwn4ey8J+Hvk1ZLTQ3LjI1MC40NS4yMzQtNjExMCIsCiAgICAidGxzIjogIiIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9",
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Kuala Lumpur",
+      "isp": "Alibaba us Technology Co., Ltd.",
+      "found_at": "2026-06-27T00:55:37.231277",
+      "hash": "c1d3e3dead4ea0ead936c8051473942d",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "104.16.0.0",
+      "ping": 363,
+      "jitter": 268,
+      "download_speed": 28.56,
+      "upload_speed": 19.3,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "104.16.0.0",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10813,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "104.16.0.0",
+                  "port": 443,
+                  "users": [
+                    {
+                      "id": "95d2c461-61f5-4dae-bc74-4d10ce1f6236",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "gongyilm.dpdns.org",
+                "allowInsecure": true,
+                "fingerprint": "chrome"
+              },
+              "wsSettings": {
+                "path": "/ws-gongyi",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICIxMDQuMTYuMC4wIiwKICAgICJhaWQiOiAwLAogICAgImhvc3QiOiAiIiwKICAgICJpZCI6ICI5NWQyYzQ2MS02MWY1LTRkYWUtYmM3NC00ZDEwY2UxZjYyMzYiLAogICAgIm5ldCI6ICJ3cyIsCiAgICAicGF0aCI6ICIvd3MtZ29uZ3lpIiwKICAgICJwb3J0IjogNDQzLAogICAgInBzIjogIvCfj4FSRUxBWS0xMDQuMTYuMC4wLTYxMTgiLAogICAgInRscyI6ICJ0bHMiLAogICAgInR5cGUiOiAiYXV0byIsCiAgICAic2VjdXJpdHkiOiAiYXV0byIsCiAgICAic2tpcC1jZXJ0LXZlcmlmeSI6IGZhbHNlLAogICAgInNuaSI6ICJnb25neWlsbS5kcGRucy5vcmciCn0=",
+      "country": "United States",
+      "country_code": "US",
+      "city": "San Francisco",
+      "isp": "Cloudflare, Inc.",
+      "found_at": "2026-06-27T00:55:41.997655",
+      "hash": "e1d63b88f10fd94a3b4114b4667c2eb7",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "188.253.12.99",
+      "ping": 544,
+      "jitter": 494,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": false
+      },
+      "ip": "188.253.12.99",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10811,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "188.253.12.99",
+                  "port": 45553,
+                  "password": "4f4d1167-ef14-4304-9bce-0740472503ef"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "ch.01.naiun.bilibili.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://4f4d1167-ef14-4304-9bce-0740472503ef@188.253.12.99:45553?security=tls&sni=ch.01.naiun.bilibili.com#%F0%9F%87%B8%F0%9F%87%ACSG-188.253.12.99-6097",
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "isp": "Akari Networks Limited",
+      "found_at": "2026-06-27T00:55:43.318335",
+      "hash": "55a68dbe50e4bfed91722781cfe8d86b",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "188.253.12.94",
+      "ping": 544,
+      "jitter": 495,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": false
+      },
+      "ip": "188.253.12.94",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10801,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "188.253.12.94",
+                  "port": 45553,
+                  "password": "4f4d1167-ef14-4304-9bce-0740472503ef"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "ch.01.naiun.bilibili.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://4f4d1167-ef14-4304-9bce-0740472503ef@188.253.12.94:45553?security=tls&sni=ch.01.naiun.bilibili.com#%F0%9F%87%B8%F0%9F%87%ACSG-188.253.12.94-6098",
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "isp": "Akari Networks Limited",
+      "found_at": "2026-06-27T00:55:43.662999",
+      "hash": "ef35d5821ab82e33a51eef0991dc8304",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "188.253.12.99",
+      "ping": 543,
+      "jitter": 492,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": false
+      },
+      "ip": "188.253.12.99",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10816,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "188.253.12.99",
+                  "port": 41943,
+                  "password": "4f4d1167-ef14-4304-9bce-0740472503ef"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "az.01.naiun.bilibili.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://4f4d1167-ef14-4304-9bce-0740472503ef@188.253.12.99:41943?security=tls&sni=az.01.naiun.bilibili.com#%F0%9F%87%B8%F0%9F%87%ACSG-188.253.12.99-6099",
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "isp": "Akari Networks Limited",
+      "found_at": "2026-06-27T00:55:49.753919",
+      "hash": "a43aae79a58a1eaa48a34631c5596aad",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "188.253.12.93",
+      "ping": 543,
+      "jitter": 494,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": false
+      },
+      "ip": "188.253.12.93",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10806,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "188.253.12.93",
+                  "port": 41943,
+                  "password": "4f4d1167-ef14-4304-9bce-0740472503ef"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "az.01.naiun.bilibili.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://4f4d1167-ef14-4304-9bce-0740472503ef@188.253.12.93:41943?security=tls&sni=az.01.naiun.bilibili.com#%F0%9F%87%B8%F0%9F%87%ACSG-188.253.12.93-6100",
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "isp": "Akari Networks Limited",
+      "found_at": "2026-06-27T00:55:50.103625",
+      "hash": "59b8f2f52ba2dbcecd20e824b98bfc0b",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "103.177.136.41",
+      "ping": 656,
+      "jitter": 501,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": false
+      },
+      "ip": "103.177.136.41",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10802,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "103.177.136.41",
+                  "port": 48697,
+                  "password": "4f4d1167-ef14-4304-9bce-0740472503ef"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "gh.01.naiun.bilibili.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://4f4d1167-ef14-4304-9bce-0740472503ef@103.177.136.41:48697?security=tls&sni=gh.01.naiun.bilibili.com#%F0%9F%87%AD%F0%9F%87%B0HK-103.177.136.41-6121",
+      "country": "Canada",
+      "country_code": "CA",
+      "city": "Toronto",
+      "isp": "Tgs Networks Inc.",
+      "found_at": "2026-06-27T00:55:55.842957",
+      "hash": "12b519ceb99004f4bf75d63ca8748c66",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "104.17.77.77",
+      "ping": 875,
+      "jitter": 1049,
+      "download_speed": 6.78,
+      "upload_speed": 1.94,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": false,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "104.17.77.77",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10804,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "104.17.77.77",
+                  "port": 8443,
+                  "users": [
+                    {
+                      "id": "60441548-b68e-43b2-8191-e3b884be4b3c",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "v2ray1.dozapp.xyz",
+                "allowInsecure": true,
+                "fingerprint": "chrome"
+              },
+              "wsSettings": {
+                "path": "/lMnsZUN4/",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICIxMDQuMTcuNzcuNzciLAogICAgImFpZCI6IDAsCiAgICAiaG9zdCI6ICIiLAogICAgImlkIjogIjYwNDQxNTQ4LWI2OGUtNDNiMi04MTkxLWUzYjg4NGJlNGIzYyIsCiAgICAibmV0IjogIndzIiwKICAgICJwYXRoIjogIi9sTW5zWlVONC8iLAogICAgInBvcnQiOiA4NDQzLAogICAgInBzIjogIvCfj4FSRUxBWS0xMDQuMTcuNzcuNzctNjExOSIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogZmFsc2UsCiAgICAic25pIjogInYycmF5MS5kb3phcHAueHl6Igp9",
+      "country": "United States",
+      "country_code": "US",
+      "city": "San Francisco",
+      "isp": "Cloudflare, Inc.",
+      "found_at": "2026-06-27T00:55:59.060990",
+      "hash": "1bca94d130598605737b187f61c81c0a",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "103.177.136.45",
+      "ping": 571,
+      "jitter": 516,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": false
+      },
+      "ip": "103.177.136.45",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10803,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "103.177.136.45",
+                  "port": 41943,
+                  "password": "4f4d1167-ef14-4304-9bce-0740472503ef"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "az.01.naiun.bilibili.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://4f4d1167-ef14-4304-9bce-0740472503ef@103.177.136.45:41943?security=tls&sni=az.01.naiun.bilibili.com#%F0%9F%87%AD%F0%9F%87%B0HK-103.177.136.45-6120",
+      "country": "Canada",
+      "country_code": "CA",
+      "city": "Toronto",
+      "isp": "Tgs Networks Inc.",
+      "found_at": "2026-06-27T00:55:59.923621",
+      "hash": "00dc541c5db02c5aed0ac8f02e872bbb",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "103.177.136.41",
+      "ping": 665,
+      "jitter": 693,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": false
+      },
+      "ip": "103.177.136.41",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10813,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "103.177.136.41",
+                  "port": 45553,
+                  "password": "4f4d1167-ef14-4304-9bce-0740472503ef"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "ch.01.naiun.bilibili.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://4f4d1167-ef14-4304-9bce-0740472503ef@103.177.136.41:45553?security=tls&sni=ch.01.naiun.bilibili.com#%F0%9F%87%AD%F0%9F%87%B0HK-103.177.136.41-6122",
+      "country": "Canada",
+      "country_code": "CA",
+      "city": "Toronto",
+      "isp": "Tgs Networks Inc.",
+      "found_at": "2026-06-27T00:56:01.946530",
+      "hash": "e063fc777d07892e9293d5b8f5efe02c",
+      "sent_to_telegram": false
     }
   ],
-  "last_updated": "2026-06-26T23:05:56.031074",
-  "total_configs": 1991,
+  "last_updated": "2026-06-27T00:56:01.946542",
+  "total_configs": 2012,
   "created_at": "2026-05-22T15:35:41.926037"
 }
