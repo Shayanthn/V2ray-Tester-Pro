@@ -1,201 +1,6 @@
 {
   "configs": [
     {
-      "protocol": "vless",
-      "address": "cherry-nll-01.live",
-      "ping": 830,
-      "jitter": 1276,
-      "download_speed": 17.15,
-      "upload_speed": 17.3,
-      "is_bypassing": false,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "cherry-nll-01.live",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10815,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vless",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "cherry-nll-01.live",
-                  "port": 8443,
-                  "users": [
-                    {
-                      "id": "0047a8bc-0025-4d45-899b-c75c669f3ede",
-                      "encryption": "none",
-                      "flow": "xtls-rprx-vision"
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "raw",
-              "security": "reality",
-              "realitySettings": {
-                "serverName": "storage.yandex.net",
-                "allowInsecure": true,
-                "fingerprint": "chrome",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ],
-                "show": false,
-                "publicKey": "LT_0j3zQkaqgtJHvyaG24xz0IfmXUswVCTeC75Qsgjo",
-                "shortId": "6f15101ff2cc4887",
-                "spiderX": "/"
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vless://0047a8bc-0025-4d45-899b-c75c669f3ede@cherry-nll-01.live:8443?encryption=none&flow=xtls-rprx-vision&type=raw&headerType=none&security=reality&pbk=LT_0j3zQkaqgtJHvyaG24xz0IfmXUswVCTeC75Qsgjo&sni=storage.yandex.net&sid=6f15101ff2cc4887#",
-      "country": "The Netherlands",
-      "country_code": "The Netherlands",
-      "city": "Amsterdam",
-      "isp": "Individual Entrepreneur ARTEM VASILEV",
-      "found_at": "2026-06-28T21:12:05.587013",
-      "hash": "c36bbb925f1406f672e153b6d6ab5733",
-      "sent_to_telegram": false
-    },
-    {
-      "protocol": "vless",
-      "address": "cherry-nll-01.live",
-      "ping": 809,
-      "jitter": 1230,
-      "download_speed": 19.43,
-      "upload_speed": 17.35,
-      "is_bypassing": false,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "cherry-nll-01.live",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10805,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vless",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "cherry-nll-01.live",
-                  "port": 8443,
-                  "users": [
-                    {
-                      "id": "0047a8bc-0025-4d45-899b-c75c669f3ede",
-                      "encryption": "none",
-                      "flow": "xtls-rprx-vision"
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "tcp",
-              "security": "reality",
-              "realitySettings": {
-                "serverName": "storage.yandex.net",
-                "allowInsecure": true,
-                "fingerprint": "chrome",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ],
-                "show": false,
-                "publicKey": "LT_0j3zQkaqgtJHvyaG24xz0IfmXUswVCTeC75Qsgjo",
-                "shortId": "6f15101ff2cc4887",
-                "spiderX": "/"
-              },
-              "tcpSettings": {
-                "header": {
-                  "type": "none"
-                }
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vless://0047a8bc-0025-4d45-899b-c75c669f3ede@cherry-nll-01.live:8443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&pbk=LT_0j3zQkaqgtJHvyaG24xz0IfmXUswVCTeC75Qsgjo&sid=6f15101ff2cc4887&sni=storage.yandex.net#",
-      "country": "The Netherlands",
-      "country_code": "The Netherlands",
-      "city": "Amsterdam",
-      "isp": "Individual Entrepreneur ARTEM VASILEV",
-      "found_at": "2026-06-28T21:12:05.877827",
-      "hash": "4aeadc5bd90221278def0ca46b568151",
-      "sent_to_telegram": false
-    },
-    {
       "protocol": "shadowsocks",
       "address": "82.38.31.219",
       "ping": 261,
@@ -43145,7 +42950,8 @@
       "isp": "Cloudflare, Inc.",
       "found_at": "2026-06-29T14:13:51.740216",
       "hash": "47e25c1a057c6d9b1e0e02d6cdf43829",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-06-29T22:17:01.150061"
     },
     {
       "protocol": "vless",
@@ -79724,7 +79530,8 @@
       "isp": "Fastly, Inc.",
       "found_at": "2026-06-29T14:32:17.149715",
       "hash": "d954fff85e07a2d737645b8cbfec5869",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-06-29T22:17:01.150130"
     },
     {
       "protocol": "vless",
@@ -116938,7 +116745,8 @@
       "isp": "Hivelocity, Inc.",
       "found_at": "2026-06-29T21:16:19.201896",
       "hash": "5e3be7f1b718547d65845f62c5d880e6",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-06-29T22:17:01.150178"
     },
     {
       "protocol": "vmess",
@@ -117479,7 +117287,8 @@
       "isp": "Dedicated.com",
       "found_at": "2026-06-29T21:52:25.235058",
       "hash": "e02abd762ad5eaad3dea4c1a4293ae0e",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-06-29T22:17:01.150179"
     },
     {
       "protocol": "vmess",
@@ -118114,6 +117923,6 @@
     }
   ],
   "last_updated": "2026-06-29T21:52:43.804947",
-  "total_configs": 1273,
+  "total_configs": 1271,
   "created_at": "2026-05-22T15:35:41.926037"
 }
