@@ -205095,9 +205095,185 @@
       "found_at": "2026-06-30T12:15:07.551366",
       "hash": "bdf3681811d588dd4f86bb3f72ecebe5",
       "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "47.244.120.197",
+      "ping": 359,
+      "jitter": 244,
+      "download_speed": 0.31,
+      "upload_speed": 0.0,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "47.244.120.197",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10804,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "47.244.120.197",
+                  "port": 44867,
+                  "users": [
+                    {
+                      "id": "845e6b08-2919-4290-ade0-5dc7dcea59ca",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "",
+              "wsSettings": {
+                "path": "/arki?ed=2048",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICI0Ny4yNDQuMTIwLjE5NyIsCiAgICAiYWlkIjogMCwKICAgICJob3N0IjogIiIsCiAgICAiaWQiOiAiODQ1ZTZiMDgtMjkxOS00MjkwLWFkZTAtNWRjN2RjZWE1OWNhIiwKICAgICJuZXQiOiAid3MiLAogICAgInBhdGgiOiAiL2Fya2k/ZWQ9MjA0OCIsCiAgICAicG9ydCI6IDQ0ODY3LAogICAgInBzIjogIvCfh63wn4ewSEstNDcuMjQ0LjEyMC4xOTctNjIzMyIsCiAgICAidGxzIjogIiIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9",
+      "country": "Hong Kong",
+      "country_code": "HK",
+      "city": "Hong Kong",
+      "isp": "Alibaba us Technology Co., Ltd.",
+      "found_at": "2026-06-30T14:28:01.172122",
+      "hash": "bd24369e178d0e8dac6779962389ba37",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "185.126.236.44",
+      "ping": 554,
+      "jitter": 0,
+      "download_speed": 15.88,
+      "upload_speed": 10.05,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": false,
+        "youtube": true
+      },
+      "ip": "185.126.236.44",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10818,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "185.126.236.44",
+                  "port": 443,
+                  "password": "BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "www.mesaly.click",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL@185.126.236.44:443?security=tls&sni=www.mesaly.click#%F0%9F%87%A6%F0%9F%87%B9AT-185.126.236.44-2106",
+      "country": "Austria",
+      "country_code": "AT",
+      "city": "Vienna",
+      "isp": "Brainstorm Network, INC",
+      "found_at": "2026-06-30T14:50:33.767167",
+      "hash": "c45933044ed80c608c2fb249d36f75e8",
+      "sent_to_telegram": false
     }
   ],
-  "last_updated": "2026-06-30T12:15:07.551379",
-  "total_configs": 2187,
+  "last_updated": "2026-06-30T14:50:33.767183",
+  "total_configs": 2189,
   "created_at": "2026-05-22T15:35:41.926037"
 }
