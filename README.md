@@ -36,7 +36,7 @@
 ### Running from Source
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/V2ray-Tester-Pro.git
+   git clone https://github.com/Shayanthn/V2ray-Tester-Pro.git
    cd V2ray-Tester-Pro
    ```
 2. Install dependencies:
