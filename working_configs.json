@@ -2,402 +2,6 @@
   "configs": [
     {
       "protocol": "vless",
-      "address": "gr.teraideri.sbs",
-      "ping": 398,
-      "jitter": 407,
-      "download_speed": 10.09,
-      "upload_speed": 7.24,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "gr.teraideri.sbs",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vless",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "gr.teraideri.sbs",
-                  "port": 38733,
-                  "users": [
-                    {
-                      "id": "384a72e6-8a10-4695-9ee5-c93728ef7e2a",
-                      "encryption": "none",
-                      "flow": ""
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "grpc",
-              "security": "reality",
-              "realitySettings": {
-                "serverName": "play.google.com",
-                "allowInsecure": true,
-                "fingerprint": "chrome",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ],
-                "show": false,
-                "publicKey": "CXOpQI3hwCqEp5ul2SKWfdAK-PBjjzUn-eRb7bAxDgU",
-                "shortId": "09e78c1d381f98ed",
-                "spiderX": "/"
-              },
-              "grpcSettings": {
-                "serviceName": "",
-                "multiMode": true
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vless://384a72e6-8a10-4695-9ee5-c93728ef7e2a@gr.teraideri.sbs:38733?mode=gun&security=reality&encryption=none&pbk=CXOpQI3hwCqEp5ul2SKWfdAK-PBjjzUn-eRb7bAxDgU&type=grpc&sni=play.google.com&sid=09e78c1d381f98ed#@meliproxyy",
-      "country": "Germany",
-      "country_code": "Germany",
-      "city": "Frankfurt am Main",
-      "isp": "idhosting.dk",
-      "found_at": "2026-07-14T11:18:31.532237",
-      "hash": "fa6764a29b897d2e93d9bb6db6232ec6",
-      "sent_to_telegram": false
-    },
-    {
-      "protocol": "vless",
-      "address": "q4x-lab.se.auragg.org",
-      "ping": 360,
-      "jitter": 365,
-      "download_speed": 11.39,
-      "upload_speed": 10.76,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "q4x-lab.se.auragg.org",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10811,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vless",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "q4x-lab.se.auragg.org",
-                  "port": 443,
-                  "users": [
-                    {
-                      "id": "98dab41c-f18a-406b-8de2-3cc8bb797d5d",
-                      "encryption": "none",
-                      "flow": ""
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "grpc",
-              "security": "reality",
-              "realitySettings": {
-                "serverName": "cloudflare.com",
-                "allowInsecure": true,
-                "fingerprint": "chrome",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ],
-                "show": false,
-                "publicKey": "TGJxKbPG8ds2NwK6uhgQURUfVJ01BcRh3Eaoy3dtdGA",
-                "shortId": "a3d8f1e9b2c7d4e6",
-                "spiderX": "/"
-              },
-              "grpcSettings": {
-                "serviceName": "auragrpc",
-                "multiMode": true
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vless://98dab41c-f18a-406b-8de2-3cc8bb797d5d@q4x-lab.se.auragg.org:443?encryption=none&fp=&pbk=TGJxKbPG8ds2NwK6uhgQURUfVJ01BcRh3Eaoy3dtdGA&security=reality&serviceName=auragrpc&sid=a3d8f1e9b2c7d4e6&sni=cloudflare.com&type=grpc#🇺🇸109797",
-      "country": "United States",
-      "country_code": "United States",
-      "city": "Orem",
-      "isp": "Ace Data Centers II, LLC",
-      "found_at": "2026-07-14T11:31:41.905384",
-      "hash": "90b925e461926c4a790b5473c55caa48",
-      "sent_to_telegram": false
-    },
-    {
-      "protocol": "vless",
-      "address": "q4x-lab.se.auragg.org",
-      "ping": 412,
-      "jitter": 451,
-      "download_speed": 11.4,
-      "upload_speed": 9.57,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "q4x-lab.se.auragg.org",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10808,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vless",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "q4x-lab.se.auragg.org",
-                  "port": 443,
-                  "users": [
-                    {
-                      "id": "98dab41c-f18a-406b-8de2-3cc8bb797d5d",
-                      "encryption": "none",
-                      "flow": ""
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "grpc",
-              "security": "reality",
-              "realitySettings": {
-                "serverName": "cloudflare.com",
-                "allowInsecure": true,
-                "fingerprint": "chrome",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ],
-                "show": false,
-                "publicKey": "TGJxKbPG8ds2NwK6uhgQURUfVJ01BcRh3Eaoy3dtdGA",
-                "shortId": "a3d8f1e9b2c7d4e6",
-                "spiderX": "/"
-              },
-              "grpcSettings": {
-                "serviceName": "auragrpc",
-                "multiMode": true
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vless://98dab41c-f18a-406b-8de2-3cc8bb797d5d@q4x-lab.se.auragg.org:443?encryption=none&fp=&pbk=TGJxKbPG8ds2NwK6uhgQURUfVJ01BcRh3Eaoy3dtdGA&security=reality&serviceName=auragrpc&sid=a3d8f1e9b2c7d4e6&sni=cloudflare.com&type=grpc#[93611]",
-      "country": "United States",
-      "country_code": "United States",
-      "city": "Orem",
-      "isp": "Ace Data Centers II, LLC",
-      "found_at": "2026-07-14T11:31:42.384412",
-      "hash": "2ddb4c01bd7bb5a6b1d4a9c592644124",
-      "sent_to_telegram": false
-    },
-    {
-      "protocol": "vless",
-      "address": "q4x-lab.se.auragg.org",
-      "ping": 707,
-      "jitter": 559,
-      "download_speed": 4.77,
-      "upload_speed": 0.0,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "q4x-lab.se.auragg.org",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10812,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vless",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "q4x-lab.se.auragg.org",
-                  "port": 443,
-                  "users": [
-                    {
-                      "id": "98dab41c-f18a-406b-8de2-3cc8bb797d5d",
-                      "encryption": "none",
-                      "flow": ""
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "grpc",
-              "security": "reality",
-              "realitySettings": {
-                "serverName": "cloudflare.com",
-                "allowInsecure": true,
-                "fingerprint": "chrome",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ],
-                "show": false,
-                "publicKey": "TGJxKbPG8ds2NwK6uhgQURUfVJ01BcRh3Eaoy3dtdGA",
-                "shortId": "a3d8f1e9b2c7d4e6",
-                "spiderX": "/"
-              },
-              "grpcSettings": {
-                "serviceName": "auragrpc",
-                "multiMode": true
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vless://98dab41c-f18a-406b-8de2-3cc8bb797d5d@q4x-lab.se.auragg.org:443?encryption=none&fp=&pbk=TGJxKbPG8ds2NwK6uhgQURUfVJ01BcRh3Eaoy3dtdGA&security=reality&serviceName=auragrpc&sid=a3d8f1e9b2c7d4e6&sni=cloudflare.com&type=grpc#🎡85@oneclickvpnkeys",
-      "country": "United States",
-      "country_code": "United States",
-      "city": "Orem",
-      "isp": "Ace Data Centers II, LLC",
-      "found_at": "2026-07-14T11:31:59.615092",
-      "hash": "34f041bcebc4d076696b2eae935c5ad5",
-      "sent_to_telegram": false
-    },
-    {
-      "protocol": "vless",
       "address": "172.64.150.246",
       "ping": 72,
       "jitter": 96,
@@ -4649,7 +4253,8 @@
       "isp": "Datacamp Limited",
       "found_at": "2026-07-14T12:54:00.729578",
       "hash": "6f10659bb2fa92f761ab958cf4f6748a",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-07-15T12:43:26.190286"
     },
     {
       "protocol": "vmess",
@@ -7286,7 +6891,8 @@
       "isp": "Datacamp Limited",
       "found_at": "2026-07-14T13:00:32.227732",
       "hash": "a25c65d32d87ddbf46fcaa13471dce52",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-07-15T12:43:26.190326"
     },
     {
       "protocol": "vmess",
@@ -91362,7 +90968,8 @@
       "isp": "Microsoft Corporation",
       "found_at": "2026-07-15T00:53:44.731790",
       "hash": "cd128b9cea377322ea1f48ecdd9f641b",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-07-15T12:43:26.190495"
     },
     {
       "protocol": "vless",
@@ -107944,7 +107551,8 @@
       "isp": "Datacamp Limited",
       "found_at": "2026-07-15T00:58:28.983209",
       "hash": "554634c48f2558c138f9f3b959bd03ba",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-07-15T12:43:26.190519"
     },
     {
       "protocol": "vmess",
@@ -111674,7 +111282,8 @@
       "isp": "Datacamp Limited",
       "found_at": "2026-07-15T01:01:01.437133",
       "hash": "5f30b4c4305a641a6274dd43f4313c97",
-      "sent_to_telegram": false
+      "sent_to_telegram": true,
+      "sent_at": "2026-07-15T12:43:26.190525"
     },
     {
       "protocol": "trojan",
@@ -119006,6 +118615,6 @@
     }
   ],
   "last_updated": "2026-07-15T04:09:59.857333",
-  "total_configs": 1281,
+  "total_configs": 1277,
   "created_at": "2026-05-22T15:35:41.926037"
 }
