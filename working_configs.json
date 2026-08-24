@@ -213804,9 +213804,959 @@
       "found_at": "2026-08-24T15:33:46.161994",
       "hash": "57f533983d20d0e2e37c903317415713",
       "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "172.238.96.215",
+      "ping": 234,
+      "jitter": 238,
+      "download_speed": 16.9,
+      "upload_speed": 14.18,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "172.238.96.215",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10811,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "172.238.96.215",
+                  "port": 2053,
+                  "users": [
+                    {
+                      "id": "9a1a05d9-69be-45d3-e326-c6621edf7b31",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "deapp.jisuyun.top",
+                "allowInsecure": true,
+                "fingerprint": "chrome"
+              },
+              "wsSettings": {
+                "path": "/devm",
+                "headers": {
+                  "Host": "deapp.jisuyun.top"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICIxNzIuMjM4Ljk2LjIxNSIsCiAgICAiYWlkIjogMCwKICAgICJob3N0IjogImRlYXBwLmppc3V5dW4udG9wIiwKICAgICJpZCI6ICI5YTFhMDVkOS02OWJlLTQ1ZDMtZTMyNi1jNjYyMWVkZjdiMzEiLAogICAgIm5ldCI6ICJ3cyIsCiAgICAicGF0aCI6ICIvZGV2bSIsCiAgICAicG9ydCI6IDIwNTMsCiAgICAicHMiOiAi8J+HqfCfh6pERS0xNzIuMjM4Ljk2LjIxNS0xMTM5IiwKICAgICJ0bHMiOiAidGxzIiwKICAgICJ0eXBlIjogImF1dG8iLAogICAgInNlY3VyaXR5IjogImF1dG8iLAogICAgInNraXAtY2VydC12ZXJpZnkiOiB0cnVlLAogICAgInNuaSI6ICIiCn0=",
+      "country": "Germany",
+      "country_code": "DE",
+      "city": "Frankfurt am Main",
+      "isp": "Akamai Connected Cloud",
+      "found_at": "2026-08-24T15:44:43.374335",
+      "hash": "85afff2134d4d26302f035ee89e35be2",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "shadowsocks",
+      "address": "216.105.168.18",
+      "ping": 483,
+      "jitter": 709,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": false,
+        "instagram": false,
+        "youtube": false
+      },
+      "ip": "216.105.168.18",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "shadowsocks",
+            "settings": {
+              "servers": [
+                {
+                  "address": "216.105.168.18",
+                  "port": 443,
+                  "method": "chacha20-ietf-poly1305",
+                  "password": "hCCWOcIsK5wrFz4OX70rWf"
+                }
+              ]
+            },
+            "tag": "🇺🇸US-216.105.168.18-0134"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpoQ0NXT2NJc0s1d3JGejRPWDcwcldm@216.105.168.18:443#%F0%9F%87%BA%F0%9F%87%B8US-216.105.168.18-0134",
+      "country": "United States",
+      "country_code": "US",
+      "city": "Los Angeles",
+      "isp": "Dedicated.com",
+      "found_at": "2026-08-24T15:44:58.525760",
+      "hash": "7282e6edac9a454f89aba9e19720588d",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "152.67.8.205",
+      "ping": 458,
+      "jitter": 367,
+      "download_speed": 1.4,
+      "upload_speed": 0.0,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": false,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "152.67.8.205",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10803,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "152.67.8.205",
+                  "port": 80,
+                  "users": [
+                    {
+                      "id": "9db4c708-aef8-4359-821b-38e47990be0d",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "",
+              "wsSettings": {
+                "path": "/",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICIxNTIuNjcuOC4yMDUiLAogICAgImFpZCI6IDAsCiAgICAiaG9zdCI6ICIiLAogICAgImlkIjogIjlkYjRjNzA4LWFlZjgtNDM1OS04MjFiLTM4ZTQ3OTkwYmUwZCIsCiAgICAibmV0IjogIndzIiwKICAgICJwYXRoIjogIi8iLAogICAgInBvcnQiOiA4MCwKICAgICJwcyI6ICLwn4eu8J+Hs0lOLTE1Mi42Ny44LjIwNS0wMTYxIiwKICAgICJ0bHMiOiAiIiwKICAgICJ0eXBlIjogImF1dG8iLAogICAgInNlY3VyaXR5IjogImF1dG8iLAogICAgInNraXAtY2VydC12ZXJpZnkiOiBmYWxzZSwKICAgICJzbmkiOiAiMTUyLjY3LjguMjA1Igp9",
+      "country": "India",
+      "country_code": "IN",
+      "city": "Mumbai",
+      "isp": "Oracle Corporation",
+      "found_at": "2026-08-24T15:45:05.777877",
+      "hash": "abb6c3392dd1ae78877e33afdaedce01",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "47.250.84.25",
+      "ping": 474,
+      "jitter": 415,
+      "download_speed": 8.25,
+      "upload_speed": 6.36,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "47.250.84.25",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10800,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "47.250.84.25",
+                  "port": 443,
+                  "password": "5931134d1cde66bf83a54acdfebe7ab2"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "moltbot.doctoroyy.net",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://5931134d1cde66bf83a54acdfebe7ab2@47.250.84.25:443?security=tls&sni=moltbot.doctoroyy.net#%F0%9F%87%B2%F0%9F%87%BEMY-47.250.84.25-0425",
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Kuala Lumpur",
+      "isp": "Alibaba US Technology Co., Ltd.",
+      "found_at": "2026-08-24T15:47:29.329789",
+      "hash": "b6449a30325630b81386080e99776998",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "kkvlvvq-a.catcat321.com",
+      "ping": 573,
+      "jitter": 534,
+      "download_speed": 9.81,
+      "upload_speed": 7.28,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "kkvlvvq-a.catcat321.com",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10800,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "kkvlvvq-a.catcat321.com",
+                  "port": 20085,
+                  "password": "a126f35c-e832-4115-8593-b723ade3f7be"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "hk.catxstar.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://a126f35c-e832-4115-8593-b723ade3f7be@kkvlvvq-a.catcat321.com:20085?security=tls&sni=hk.catxstar.com#%F0%9F%87%BA%F0%9F%87%B8US-157.254.38.210-0486",
+      "country": "United States",
+      "country_code": "United States",
+      "city": "Los Angeles",
+      "isp": "Ipxo LLC",
+      "found_at": "2026-08-24T15:48:09.777302",
+      "hash": "e59a2ae01ce9255dae0ac9d225b18b37",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "hkdcrtc-e.catcat321.com",
+      "ping": 602,
+      "jitter": 558,
+      "download_speed": 8.62,
+      "upload_speed": 5.53,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "hkdcrtc-e.catcat321.com",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10815,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "hkdcrtc-e.catcat321.com",
+                  "port": 20066,
+                  "password": "a126f35c-e832-4115-8593-b723ade3f7be"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "hk.catxstar.com",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://a126f35c-e832-4115-8593-b723ade3f7be@hkdcrtc-e.catcat321.com:20066?security=tls&sni=hk.catxstar.com#%F0%9F%87%BA%F0%9F%87%B8US-157.254.38.210-0485",
+      "country": "United States",
+      "country_code": "United States",
+      "city": "Los Angeles",
+      "isp": "Ipxo LLC",
+      "found_at": "2026-08-24T15:48:10.823979",
+      "hash": "62ccdfad9cb67dee8dce77e0c7217884",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "47.83.19.148",
+      "ping": 536,
+      "jitter": 480,
+      "download_speed": 7.28,
+      "upload_speed": 6.27,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "47.83.19.148",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10804,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "47.83.19.148",
+                  "port": 443,
+                  "users": [
+                    {
+                      "id": "f23bb427-c1f9-4373-876c-2f43e9f790f3",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "6JDvArazgU3qQR6Q.v.3dns.vip",
+                "allowInsecure": true,
+                "fingerprint": "chrome"
+              },
+              "wsSettings": {
+                "path": "/ws-vmess",
+                "headers": {
+                  "Host": "6JDvArazgU3qQR6Q.v.3dns.vip"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICI0Ny44My4xOS4xNDgiLAogICAgImFpZCI6IDAsCiAgICAiaG9zdCI6ICI2SkR2QXJhemdVM3FRUjZRLnYuM2Rucy52aXAiLAogICAgImlkIjogImYyM2JiNDI3LWMxZjktNDM3My04NzZjLTJmNDNlOWY3OTBmMyIsCiAgICAibmV0IjogIndzIiwKICAgICJwYXRoIjogIi93cy12bWVzcyIsCiAgICAicG9ydCI6IDQ0MywKICAgICJwcyI6ICLwn4et8J+HsEhLLTQ3LjgzLjE5LjE0OC0xMTQwIiwKICAgICJ0bHMiOiAidGxzIiwKICAgICJ0eXBlIjogImF1dG8iLAogICAgInNlY3VyaXR5IjogImF1dG8iLAogICAgInNraXAtY2VydC12ZXJpZnkiOiB0cnVlLAogICAgInNuaSI6ICIiCn0=",
+      "country": "Hong Kong",
+      "country_code": "HK",
+      "city": "Hong Kong",
+      "isp": "Alibaba US Technology Co., Ltd.",
+      "found_at": "2026-08-24T15:55:26.188187",
+      "hash": "97481e2c46979a4b01c02be8f3a80db2",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "shadowsocks",
+      "address": "r3mrcg001286ek2.cybervena.com",
+      "ping": 550,
+      "jitter": 510,
+      "download_speed": 8.71,
+      "upload_speed": 7.89,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "r3mrcg001286ek2.cybervena.com",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10811,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "shadowsocks",
+            "settings": {
+              "servers": [
+                {
+                  "address": "r3mrcg001286ek2.cybervena.com",
+                  "port": 50099,
+                  "method": "chacha20-ietf-poly1305",
+                  "password": "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
+                }
+              ]
+            },
+            "tag": "🇹🇼TW-61.231.22.178-0151"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg001286ek2.cybervena.com:50099#%F0%9F%87%B9%F0%9F%87%BCTW-61.231.22.178-0151",
+      "country": "Taiwan",
+      "country_code": "Taiwan",
+      "city": "New Taipei City",
+      "isp": "Chunghwa Telecom Co. Ltd.",
+      "found_at": "2026-08-24T16:12:49.898873",
+      "hash": "ea1f74d67780585667054bcc50a6eb8b",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "trojan",
+      "address": "64.94.95.118",
+      "ping": 106,
+      "jitter": 97,
+      "download_speed": 31.98,
+      "upload_speed": 28.3,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "64.94.95.118",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10817,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "trojan",
+            "settings": {
+              "servers": [
+                {
+                  "address": "64.94.95.118",
+                  "port": 57142,
+                  "password": "kkzh2prsyr2ik47as615"
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "64.94.95.118",
+                "allowInsecure": true,
+                "fingerprint": "chrome",
+                "alpn": [
+                  "h2",
+                  "http/1.1"
+                ]
+              },
+              "tcpSettings": {
+                "header": {
+                  "type": "none"
+                }
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "trojan://kkzh2prsyr2ik47as615@64.94.95.118:57142?security=tls&sni=64.94.95.118#%F0%9F%87%BA%F0%9F%87%B8US-64.94.95.118-5399",
+      "country": "United States",
+      "country_code": "US",
+      "city": "Dallas",
+      "isp": "Dedicated.com",
+      "found_at": "2026-08-24T16:13:50.052227",
+      "hash": "7c3e35ad6eed217ed8d21e3debc3dbdd",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "172.111.146.64",
+      "ping": 788,
+      "jitter": 1009,
+      "download_speed": 5.09,
+      "upload_speed": 4.11,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "172.111.146.64",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10805,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "172.111.146.64",
+                  "port": 80,
+                  "users": [
+                    {
+                      "id": "05b8c783-7f59-47f9-9923-06a465679f6a",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "",
+              "wsSettings": {
+                "path": "/vmess/",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICIxNzIuMTExLjE0Ni42NCIsCiAgICAiYWlkIjogMCwKICAgICJob3N0IjogIiIsCiAgICAiaWQiOiAiMDViOGM3ODMtN2Y1OS00N2Y5LTk5MjMtMDZhNDY1Njc5ZjZhIiwKICAgICJuZXQiOiAid3MiLAogICAgInBhdGgiOiAiL3ZtZXNzLyIsCiAgICAicG9ydCI6IDgwLAogICAgInBzIjogIvCfh6/wn4e1SlAtMTcyLjExMS4xNDYuNjQtNTM2NiIsCiAgICAidGxzIjogIiIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9",
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Tokyo",
+      "isp": "Latitude.sh",
+      "found_at": "2026-08-24T16:14:00.345759",
+      "hash": "c74df7291705c3888d36ea54d1722994",
+      "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "47.250.45.234",
+      "ping": 1401,
+      "jitter": 1645,
+      "download_speed": 0.0,
+      "upload_speed": 0.0,
+      "is_bypassing": true,
+      "connectivity": {
+        "telegram": false,
+        "instagram": false,
+        "youtube": false
+      },
+      "ip": "47.250.45.234",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10806,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "47.250.45.234",
+                  "port": 43063,
+                  "users": [
+                    {
+                      "id": "c77f48f5-4be3-4461-b52b-49998e7b897b",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "",
+              "wsSettings": {
+                "path": "/arki?ed=2048",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICI0Ny4yNTAuNDUuMjM0IiwKICAgICJhaWQiOiAwLAogICAgImhvc3QiOiAiIiwKICAgICJpZCI6ICJjNzdmNDhmNS00YmUzLTQ0NjEtYjUyYi00OTk5OGU3Yjg5N2IiLAogICAgIm5ldCI6ICJ3cyIsCiAgICAicGF0aCI6ICIvYXJraT9lZD0yMDQ4IiwKICAgICJwb3J0IjogNDMwNjMsCiAgICAicHMiOiAi8J+HsvCfh75NWS00Ny4yNTAuNDUuMjM0LTUzNzQiLAogICAgInRscyI6ICIiLAogICAgInR5cGUiOiAiYXV0byIsCiAgICAic2VjdXJpdHkiOiAiYXV0byIsCiAgICAic2tpcC1jZXJ0LXZlcmlmeSI6IHRydWUsCiAgICAic25pIjogIiIKfQ==",
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Kuala Lumpur",
+      "isp": "Alibaba US Technology Co., Ltd.",
+      "found_at": "2026-08-24T16:14:02.032291",
+      "hash": "aa6a017952fcc49b787f6b8654f5511c",
+      "sent_to_telegram": false
     }
   ],
-  "last_updated": "2026-08-24T15:33:46.162007",
-  "total_configs": 2269,
+  "last_updated": "2026-08-24T16:14:02.032306",
+  "total_configs": 2280,
   "created_at": "2026-08-20T05:36:10.623541"
 }
