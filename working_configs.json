@@ -1,106 +1,6 @@
 {
   "configs": [
     {
-      "protocol": "vless",
-      "address": "31.76.4.128",
-      "ping": 409,
-      "jitter": 343,
-      "download_speed": 6.99,
-      "upload_speed": 6.39,
-      "is_bypassing": true,
-      "connectivity": {
-        "telegram": true,
-        "instagram": true,
-        "youtube": true
-      },
-      "ip": "31.76.4.128",
-      "config_json": {
-        "log": {
-          "loglevel": "warning"
-        },
-        "inbounds": [
-          {
-            "listen": "127.0.0.1",
-            "port": 10811,
-            "protocol": "http",
-            "settings": {
-              "timeout": 0,
-              "allowTransparent": false,
-              "userLevel": 0
-            },
-            "tag": "http-in"
-          }
-        ],
-        "outbounds": [
-          {
-            "protocol": "vless",
-            "settings": {
-              "vnext": [
-                {
-                  "address": "31.76.4.128",
-                  "port": 5001,
-                  "users": [
-                    {
-                      "id": "5a92a9d2-3067-49cd-bfc5-989bbdfc5d52",
-                      "encryption": "none",
-                      "flow": "xtls-rprx-vision"
-                    }
-                  ]
-                }
-              ]
-            },
-            "streamSettings": {
-              "network": "tcp",
-              "security": "reality",
-              "realitySettings": {
-                "serverName": "fi.aeternavpn.space",
-                "allowInsecure": true,
-                "fingerprint": "qq",
-                "alpn": [
-                  "h2",
-                  "http/1.1"
-                ],
-                "show": false,
-                "publicKey": "HNjZe5pYUhcuE8sASYVVrVSMW_jFfekgLnrnO4xXIyQ",
-                "shortId": "a1b2c3d4",
-                "spiderX": "/"
-              },
-              "tcpSettings": {
-                "header": {
-                  "type": "none"
-                }
-              }
-            },
-            "tag": "proxy"
-          },
-          {
-            "protocol": "freedom",
-            "tag": "direct"
-          }
-        ],
-        "routing": {
-          "domainStrategy": "IPIfNonMatch",
-          "rules": [
-            {
-              "type": "field",
-              "ip": [
-                "geoip:private"
-              ],
-              "outboundTag": "direct"
-            }
-          ]
-        }
-      },
-      "uri": "vless://5a92a9d2-3067-49cd-bfc5-989bbdfc5d52@31.76.4.128:5001?encryption=none&flow=xtls-rprx-vision&security=reality&sni=fi.aeternavpn.space&fp=qq&pbk=HNjZe5pYUhcuE8sASYVVrVSMW_jFfekgLnrnO4xXIyQ&sid=a1b2c3d4&type=tcp&headerType=none#%E8%8B%B1%E5%9B%BD+V2CROSS.COM",
-      "country": "Switzerland",
-      "country_code": "CH",
-      "city": "Zurich",
-      "isp": "SERV.HOST GROUP LTD",
-      "found_at": "2026-09-04T21:43:06.247673",
-      "hash": "5eb953913fae78cd5c650b4d4970981e",
-      "sent_to_telegram": false
-    },
-    {
       "protocol": "shadowsocks",
       "address": "51.222.136.236",
       "ping": 1205,
@@ -117935,6 +117835,6 @@
     }
   ],
   "last_updated": "2026-09-05T20:09:45.662088",
-  "total_configs": 1237,
+  "total_configs": 1236,
   "created_at": "2026-08-20T05:36:10.623541"
 }
