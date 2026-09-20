@@ -149093,9 +149093,100 @@
       "found_at": "2026-09-20T19:44:31.956457",
       "hash": "f9bf8855d0578cc252cabffacc649157",
       "sent_to_telegram": false
+    },
+    {
+      "protocol": "vmess",
+      "address": "104.17.77.77",
+      "ping": 602,
+      "jitter": 633,
+      "download_speed": 4.57,
+      "upload_speed": 0.0,
+      "is_bypassing": false,
+      "connectivity": {
+        "telegram": true,
+        "instagram": true,
+        "youtube": true
+      },
+      "ip": "104.17.77.77",
+      "config_json": {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "listen": "127.0.0.1",
+            "port": 10801,
+            "protocol": "http",
+            "settings": {
+              "timeout": 0,
+              "allowTransparent": false,
+              "userLevel": 0
+            },
+            "tag": "http-in"
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "vmess",
+            "settings": {
+              "vnext": [
+                {
+                  "address": "104.17.77.77",
+                  "port": 8443,
+                  "users": [
+                    {
+                      "id": "60441548-b68e-43b2-8191-e3b884be4b3c",
+                      "alterId": 0,
+                      "security": "auto"
+                    }
+                  ]
+                }
+              ]
+            },
+            "streamSettings": {
+              "network": "ws",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "v2ray1.dozapp.xyz",
+                "allowInsecure": true,
+                "fingerprint": "chrome"
+              },
+              "wsSettings": {
+                "path": "/lMnsZUN4/",
+                "headers": {}
+              }
+            },
+            "tag": "proxy"
+          },
+          {
+            "protocol": "freedom",
+            "tag": "direct"
+          }
+        ],
+        "routing": {
+          "domainStrategy": "IPIfNonMatch",
+          "rules": [
+            {
+              "type": "field",
+              "ip": [
+                "geoip:private"
+              ],
+              "outboundTag": "direct"
+            }
+          ]
+        }
+      },
+      "uri": "vmess://ewogICAgImFkZCI6ICIxMDQuMTcuNzcuNzciLAogICAgImFpZCI6IDAsCiAgICAiaG9zdCI6ICIiLAogICAgImlkIjogIjYwNDQxNTQ4LWI2OGUtNDNiMi04MTkxLWUzYjg4NGJlNGIzYyIsCiAgICAibmV0IjogIndzIiwKICAgICJwYXRoIjogIi9sTW5zWlVONC8iLAogICAgInBvcnQiOiA4NDQzLAogICAgInBzIjogIvCfj4FSRUxBWS0xMDQuMTcuNzcuNzctNTQ1MCIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogZmFsc2UsCiAgICAic25pIjogInYycmF5MS5kb3phcHAueHl6Igp9",
+      "country": "United States",
+      "country_code": "US",
+      "city": "San Francisco",
+      "isp": "Cloudflare, Inc.",
+      "found_at": "2026-09-20T21:58:11.754290",
+      "hash": "0e1367b786ccab49b48f65d8b0f843e1",
+      "sent_to_telegram": false
     }
   ],
-  "last_updated": "2026-09-20T19:44:31.956468",
-  "total_configs": 1574,
+  "last_updated": "2026-09-20T21:58:11.754305",
+  "total_configs": 1575,
   "created_at": "2026-08-20T05:36:10.623541"
 }
