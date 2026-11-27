@@ -71,6 +71,8 @@ class NetworkManager:
         geoip_providers = [
             f"https://ipwho.is/{ip}",  # Primary: HTTPS, free, better rate limits
             f"http://ip-api.com/json/{ip}",  # Secondary: free, 45 requests/min
+            # Tertiary: HTTPS, no key, country and ISP (https://internetdata.io/terms, https://internetdata.io/privacy)
+            f"https://api.internetdata.io/{ip}",
         ]
         
         for url in geoip_providers:
@@ -80,6 +82,8 @@ class NetworkManager:
                     data = json.loads(response_text)
                     # Handle different API response formats
                     if 'error' not in data and data.get('success', True) != False:
+                        if 'api.internetdata.io' in url:
+                            data = self._flatten_internetdata(data)
                         return {
                             'country': data.get('country_name') or data.get('country') or 'Unknown',
                             'country_code': data.get('country_code') or data.get('country') or 'XX',
@@ -90,6 +94,16 @@ class NetworkManager:
                 self.logger.debug(f"GeoIP lookup failed for {ip} with {url}: {e}")
                 continue
         return {}
+
+    @staticmethod
+    def _flatten_internetdata(data: Dict[str, Any]) -> Dict[str, Any]:
+        """Maps InternetData's nested answer onto the flat keys the other providers return."""
+        location = data.get('location') or {}
+        return {
+            'country_name': location.get('country_name'),
+            'country_code': location.get('country'),
+            'org': (data.get('company') or {}).get('name') or (data.get('asn') or {}).get('name'),
+        }
 
     async def resolve_doh(self, hostname: str, session: aiohttp.ClientSession = None) -> Optional[str]:
         """Resolves a hostname using DNS-over-HTTPS."""
